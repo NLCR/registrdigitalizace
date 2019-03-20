@@ -1,0 +1,403 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<desk bundle="ServerBundle">
+  <deskPackage>cz.incad.rd</deskPackage>
+  <deskName>DigKnihovna</deskName>
+  <deskHumanHelp>DigKnihovna_help</deskHumanHelp>
+  <deskHumanName>DigKnihovna</deskHumanName>
+  <deskDBName>DigKnihovna</deskDBName>
+  <deskRoot>cz.incad.core.basic.DLists</deskRoot>
+  <machineModel>cz.incad.rd.DigKnihovna</machineModel>
+  <historyEnabled>true</historyEnabled>
+  <fields>
+    <field>
+      <fieldName>adresaOrg</fieldName>
+      <fieldHumanName>DigKnihovna.adresaOrg</fieldHumanName>
+      <fieldHumanHelp>DigKnihovna.adresaOrg_help</fieldHumanHelp>
+      <fieldDBName>adresaOrg</fieldDBName>
+      <fieldType>TXT</fieldType>
+      <fieldRepresentation>TXT</fieldRepresentation>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>stav</fieldName>
+      <fieldHumanName>DigKnihovna.stav</fieldHumanName>
+      <fieldHumanHelp>DigKnihovna.stav_help</fieldHumanHelp>
+      <fieldDBName>stav</fieldDBName>
+      <fieldType>STR</fieldType>
+      <fieldRepresentation>COM</fieldRepresentation>
+      <list>SLDigKnihovnaStav</list>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>encodingInputXML</fieldName>
+      <fieldHumanName>DigKnihovna.encodingInputXML</fieldHumanName>
+      <fieldHumanHelp>DigKnihovna.encodingInputXML_help</fieldHumanHelp>
+      <fieldDBName>encodingInputXML</fieldDBName>
+      <fieldType>STR</fieldType>
+      <fieldRepresentation>EDI</fieldRepresentation>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>encodingOutputXML</fieldName>
+      <fieldHumanName>DigKnihovna.encodingOutputXML</fieldHumanName>
+      <fieldHumanHelp>DigKnihovna.encodingOutputXML_help</fieldHumanHelp>
+      <fieldDBName>encodingOutputXML</fieldDBName>
+      <fieldType>STR</fieldType>
+      <fieldRepresentation>EDI</fieldRepresentation>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>formatDat</fieldName>
+      <fieldHumanName>DigKnihovna.formatDat</fieldHumanName>
+      <fieldHumanHelp>DigKnihovna.formatDat_help</fieldHumanHelp>
+      <fieldDBName>formatDat</fieldDBName>
+      <fieldType>STR</fieldType>
+      <fieldRepresentation>COM</fieldRepresentation>
+      <list>SLformatDat</list>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>lastHarvest</fieldName>
+      <fieldHumanName>DigKnihovna.lastHarvest</fieldHumanName>
+      <fieldHumanHelp>DigKnihovna.lastHarvest_help</fieldHumanHelp>
+      <fieldDBName>lastHarvest</fieldDBName>
+      <fieldType>STR</fieldType>
+      <fieldRepresentation>EDI</fieldRepresentation>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>moznostiSklizeni</fieldName>
+      <fieldHumanName>DigKnihovna.moznostiSklizeni</fieldHumanName>
+      <fieldHumanHelp>DigKnihovna.moznostiSklizeni_help</fieldHumanHelp>
+      <fieldDBName>moznostiSklizeni</fieldDBName>
+      <fieldType>STR</fieldType>
+      <fieldRepresentation>EDI</fieldRepresentation>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>nazev</fieldName>
+      <fieldHumanName>DigKnihovna.nazev</fieldHumanName>
+      <fieldHumanHelp>DigKnihovna.nazev_help</fieldHumanHelp>
+      <fieldDBName>nazev</fieldDBName>
+      <fieldType>STR</fieldType>
+      <fieldRepresentation>EDI</fieldRepresentation>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>nazevOrg</fieldName>
+      <fieldHumanName>DigKnihovna.nazevOrg</fieldHumanName>
+      <fieldHumanHelp>DigKnihovna.nazevOrg_help</fieldHumanHelp>
+      <fieldDBName>nazevOrg</fieldDBName>
+      <fieldType>STR</fieldType>
+      <fieldRepresentation>EDI</fieldRepresentation>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>oaipmhCommand</fieldName>
+      <fieldHumanName>DigKnihovna.oaipmhCommand</fieldHumanName>
+      <fieldHumanHelp>DigKnihovna.oaipmhCommand_help</fieldHumanHelp>
+      <fieldDBName>oaipmhCommand</fieldDBName>
+      <fieldType>STR</fieldType>
+      <fieldRepresentation>EDI</fieldRepresentation>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>oaipmhServerBaseURL</fieldName>
+      <fieldHumanName>DigKnihovna.oaipmhServerBaseURL</fieldHumanName>
+      <fieldHumanHelp>DigKnihovna.oaipmhServerBaseURL_help</fieldHumanHelp>
+      <fieldDBName>oaipmhServerBaseURL</fieldDBName>
+      <fieldType>STR</fieldType>
+      <fieldRepresentation>EDI</fieldRepresentation>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>kontaktOrg</fieldName>
+      <fieldHumanName>DigKnihovna.kontaktOrg</fieldHumanName>
+      <fieldHumanHelp>DigKnihovna.kontaktOrg_help</fieldHumanHelp>
+      <fieldDBName>kontakt</fieldDBName>
+      <fieldType>STR</fieldType>
+      <fieldRepresentation>EDI</fieldRepresentation>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>rPrispevatel</fieldName>
+      <fieldHumanName>DigKnihovna.rPrispevatel</fieldHumanName>
+      <fieldHumanHelp>DigKnihovna.rPrispevatel_help</fieldHumanHelp>
+      <fieldDBName>RPrispevatel_DigKnihovna</fieldDBName>
+      <fieldType>REF</fieldType>
+      <fieldRepresentation>REF</fieldRepresentation>
+      <reference relationshipType="association" rTable="false">cz.incad.rd.Prispevatel</reference>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>protokol</fieldName>
+      <fieldHumanName>DigKnihovna.protokol</fieldHumanName>
+      <fieldHumanHelp>DigKnihovna.protokol_help</fieldHumanHelp>
+      <fieldDBName>protokol</fieldDBName>
+      <fieldType>STR</fieldType>
+      <fieldRepresentation>COM</fieldRepresentation>
+      <list>SLprotokol</list>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>sklizet</fieldName>
+      <fieldHumanName>DigKnihovna.sklizet</fieldHumanName>
+      <fieldHumanHelp>DigKnihovna.sklizet_help</fieldHumanHelp>
+      <fieldDBName>sklizet</fieldDBName>
+      <fieldType>BOL</fieldType>
+      <fieldRepresentation>CHK</fieldRepresentation>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>software</fieldName>
+      <fieldHumanName>DigKnihovna.software</fieldHumanName>
+      <fieldHumanHelp>DigKnihovna.software_help</fieldHumanHelp>
+      <fieldDBName>software</fieldDBName>
+      <fieldType>STR</fieldType>
+      <fieldRepresentation>COM</fieldRepresentation>
+      <list>SLsoftware</list>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>urlDigKnihovny</fieldName>
+      <fieldHumanName>DigKnihovna.urlDigKnihovny</fieldHumanName>
+      <fieldHumanHelp>DigKnihovna.urlDigKnihovny_help</fieldHumanHelp>
+      <fieldDBName>urlDigKnihovny</fieldDBName>
+      <fieldType>STR</fieldType>
+      <fieldRepresentation>EDI</fieldRepresentation>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>zkratka</fieldName>
+      <fieldHumanName>DigKnihovna.zkratka</fieldHumanName>
+      <fieldHumanHelp>DigKnihovna.zkratka_help</fieldHumanHelp>
+      <fieldDBName>zkratka</fieldDBName>
+      <fieldType>STR</fieldType>
+      <fieldRepresentation>EDI</fieldRepresentation>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>poznWeb</fieldName>
+      <fieldHumanName>DigKnihovna.poznWeb</fieldHumanName>
+      <fieldHumanHelp>DigKnihovna.poznWeb_help</fieldHumanHelp>
+      <fieldDBName>poznWeb</fieldDBName>
+      <fieldType>STR</fieldType>
+      <fieldRepresentation>EDI</fieldRepresentation>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+  </fields>
+  <forms>
+    <screen-form name="DigKnihovnaF" formHumanName="DigKnihovnaF" id="cz.incad.rd.DigKnihovna">
+      <form-body align="LEFT" valign="TOP">
+        <row fill="LEFT" vfill="TOP">
+          <row fill="LEFT" vfill="TOP">
+            <input align="LEFT" valign="TOP" indent="false" columnIndex="1" width="20ch" id="value" precision="19" scale="4" type="text">
+              <label place="TOP">
+                <from-field colon="true"/>
+              </label>
+            </input>
+            <check align="LEFT" valign="TOP" indent="false" columnIndex="2" id="use" precision="19" scale="4">
+              <label place="TOP">
+                <from-field colon="true"/>
+              </label>
+            </check>
+            <input align="LEFT" valign="TOP" indent="false" columnIndex="3" width="5ch" id="poradi" precision="19" scale="0" type="text">
+              <label place="TOP">
+                <from-field colon="true"/>
+              </label>
+            </input>
+            <select align="LEFT" valign="TOP" indent="false" columnIndex="4" id="stav" precision="19" scale="4" type="combo" multi="false" editable="false">
+              <label place="TOP">
+                <from-field colon="true"/>
+              </label>
+            </select>
+            <input align="LEFT" valign="TOP" indent="false" columnIndex="5" id="zkratka" precision="19" scale="4" type="text">
+              <label place="TOP">
+                <from-field colon="false"/>
+              </label>
+            </input>
+            <check align="LEFT" valign="TOP" indent="false" columnIndex="6" id="sklizet" precision="19" scale="4">
+              <label place="TOP">
+                <from-field colon="false"/>
+              </label>
+            </check>
+          </row>
+          <row fill="LEFT" vfill="TOP">
+            <select align="LEFT" valign="TOP" indent="false" columnIndex="1" width="30ch" id="software" precision="0" scale="0" type="combo" multi="false" editable="false">
+              <label place="TOP">
+                <from-field colon="true"/>
+              </label>
+            </select>
+            <select align="LEFT" valign="TOP" indent="false" columnIndex="2" width="30ch" id="protokol" precision="0" scale="0" type="combo" multi="false" editable="false">
+              <label place="TOP">
+                <from-field colon="true"/>
+              </label>
+            </select>
+            <select align="LEFT" valign="TOP" indent="false" columnIndex="3" width="30ch" id="formatDat" precision="0" scale="0" type="combo" multi="false" editable="false">
+              <label place="TOP">
+                <from-field colon="true"/>
+              </label>
+            </select>
+          </row>
+        </row>
+        <row fill="LEFT" vfill="TOP">
+          <border type="solid" color="">
+            <title>Spravce</title>
+          </border>
+          <row fill="LEFT" vfill="TOP">
+            <input align="LEFT" valign="TOP" indent="false" width="120ch" id="nazev" precision="19" scale="4" type="text">
+              <label place="TOP">
+                <from-field colon="false"/>
+              </label>
+            </input>
+            <input align="LEFT" valign="TOP" indent="false" width="120ch" id="poznWeb" precision="0" scale="0" type="longtext" rows="2">
+              <label place="TOP">
+                <from-field colon="false"/>
+              </label>
+            </input>
+          </row>
+          <row fill="LEFT" vfill="TOP">
+            <input align="LEFT" valign="TOP" indent="false" columnIndex="1" width="60ch" id="urlDigKnihovny" precision="19" scale="4" type="text" rows="3">
+              <label place="TOP">
+                <from-field colon="false"/>
+              </label>
+            </input>
+            <input align="LEFT" valign="TOP" indent="false" columnIndex="2" width="60ch" id="kontaktOrg" precision="0" scale="0" type="text" rows="3">
+              <label place="TOP">DigKnihovna.DigKnihovnaF.Kontakt</label>
+            </input>
+          </row>
+        </row>
+        <row fill="LEFT" vfill="TOP">
+          <border type="solid" color="">
+            <title>DigKnihovna.F.DigKnihovnaF.oaipmh</title>
+          </border>
+          <row fill="LEFT" vfill="TOP">
+            <input align="LEFT" valign="TOP" indent="false" width="120ch" id="oaipmhServerBaseURL" precision="0" scale="0" type="text">
+              <label place="TOP">
+                <from-field colon="true"/>
+              </label>
+            </input>
+          </row>
+          <row fill="LEFT" vfill="TOP">
+            <input align="LEFT" valign="TOP" indent="false" width="120ch" id="oaipmhCommand" precision="0" scale="0" type="text">
+              <label place="TOP">
+                <from-field colon="true"/>
+              </label>
+            </input>
+          </row>
+          <row fill="LEFT" vfill="TOP">
+            <input align="LEFT" valign="TOP" indent="false" columnIndex="1" width="40ch" id="encodingInputXML" precision="0" scale="0" type="text">
+              <label place="TOP">
+                <from-field colon="true"/>
+              </label>
+            </input>
+            <input align="LEFT" valign="TOP" indent="false" columnIndex="2" width="40ch" id="encodingOutputXML" precision="0" scale="0" type="text">
+              <label place="TOP">
+                <from-field colon="true"/>
+              </label>
+            </input>
+            <input align="LEFT" valign="TOP" indent="false" columnIndex="3" width="20ch" id="lastHarvest" precision="0" scale="0" type="text">
+              <label place="TOP">
+                <from-field colon="true"/>
+              </label>
+            </input>
+          </row>
+        </row>
+        <row fill="LEFT" vfill="TOP">
+          <input align="LEFT" valign="TOP" indent="false" width="120ch" id="poznamka" precision="19" scale="4" type="text" rows="5">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </input>
+        </row>
+        <row fill="LEFT" vfill="TOP">
+          <input align="LEFT" valign="TOP" indent="false" width="120ch" id="moznostiSklizeni" precision="19" scale="4" type="text" rows="4">
+            <label place="TOP">
+              <from-field colon="false"/>
+            </label>
+          </input>
+        </row>
+      </form-body>
+    </screen-form>
+    <screen-form name="DigKnihovnaF2" formHumanName="DigKnihovnaF2" id="cz.incad.rd.DigKnihovna">
+      <form-body align="LEFT" valign="TOP">
+        <row fill="LEFT" vfill="TOP">
+          <input align="LEFT" valign="TOP" indent="false" columnIndex="1" width="20ch" id="value" precision="19" scale="4" type="text">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </input>
+          <select align="LEFT" valign="TOP" indent="false" columnIndex="2" id="stav" precision="19" scale="4" type="combo" multi="false" editable="false">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </select>
+          <check align="LEFT" valign="TOP" indent="false" columnIndex="3" id="sklizet" precision="0" scale="0">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </check>
+        </row>
+        <row fill="LEFT" vfill="TOP">
+          <input align="LEFT" valign="TOP" indent="false" columnIndex="1" width="100ch" id="rPrispevatel.nazev" precision="19" scale="4" ref="true" type="text">
+            <label place="TOP">DigKnihovna.DigKnihovnaF2.Prispevatel</label>
+          </input>
+          <refbutton align="LEFT" valign="TOP" indent="false" columnIndex="2" id="rPrispevatel" precision="0" scale="0" refclass="cz.incad.rd.Prispevatel"/>
+        </row>
+        <row fill="LEFT" vfill="TOP">
+          <input align="LEFT" valign="TOP" indent="false" width="120ch" id="nazev" precision="0" scale="0" type="text">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </input>
+        </row>
+        <row fill="LEFT" vfill="TOP">
+          <input align="LEFT" valign="TOP" indent="false" width="30ch" id="zkratka" precision="0" scale="0" type="text">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </input>
+        </row>
+        <row fill="LEFT" vfill="TOP">
+          <input align="LEFT" valign="TOP" indent="false" width="120ch" id="urlDigKnihovny" precision="0" scale="0" type="text">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </input>
+        </row>
+        <row fill="LEFT" vfill="TOP">
+          <input align="LEFT" valign="TOP" indent="false" width="120ch" id="moznostiSklizeni" precision="0" scale="0" type="text" rows="4">
+            <label place="TOP">
+              <from-field colon="false"/>
+            </label>
+          </input>
+        </row>
+      </form-body>
+    </screen-form>
+    <tree name="AvailableForms">
+      <node formName="DigKnihovnaF"/>
+      <node formName="DigKnihovnaF2"/>
+    </tree>
+  </forms>
+  <uniqueFields/>
+</desk>

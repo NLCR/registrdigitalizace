@@ -1,0 +1,52 @@
+/* *****************************************************************************
+ * To change this template, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package cz.incad.relief3.rdcz.uniimporter.model;
+
+/** ****************************************************************************
+ * Třída popisující jeden záznam z agendy SIGLA
+ * @author martin
+ */
+public class OneSigla {
+    private final String name;
+    private final String reliefUserName;
+    private final String reliefUserPass;
+
+    /** ************************************************************************
+     * Konstruktor
+     * @param name
+     * @param reliefUserName
+     * @param reliefUserPass 
+     */
+    public OneSigla(String name, String reliefUserName, String reliefUserPass) {
+        this.name = name;
+        this.reliefUserName = reliefUserName;
+        this.reliefUserPass = reliefUserPass;
+    }
+
+    /** ************************************************************************
+     * 
+     * @return 
+     */
+    public String getName() {
+        return this.name;
+    }
+
+    /** ************************************************************************
+     * 
+     * @return 
+     */
+    public String getReliefUserName() {
+        return this.reliefUserName;
+    }
+
+    /** ************************************************************************
+     * 
+     * @return 
+     */
+    public String getReliefUserPass() {
+        return this.reliefUserPass;
+    }
+
+}

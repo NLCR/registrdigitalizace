@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<desk bundle="ServerBundle">
+  <deskPackage>cz.incad.nkp.digital</deskPackage>
+  <deskName>Vlastnik</deskName>
+  <deskHumanHelp>cz.incad.nkp.digital.Vlastnik_help</deskHumanHelp>
+  <deskHumanName>cz.incad.nkp.digital.Vlastnik</deskHumanName>
+  <deskDBName>Vlastnik</deskDBName>
+  <deskRoot/>
+  <machineModel>cz.incad.nkp.digital.Vlastnik</machineModel>
+  <fields>
+    <field>
+      <fieldName>vlastnik</fieldName>
+      <fieldHumanName>Vlastnik.vlastnik</fieldHumanName>
+      <fieldHumanHelp>Vlastnik.vlastnik_help</fieldHumanHelp>
+      <fieldDBName>vlastnik</fieldDBName>
+      <fieldType>STR</fieldType>
+      <fieldRepresentation>COM</fieldRepresentation>
+      <list>InsVlastnik</list>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+  </fields>
+  <forms>
+    <screen-form name="Vlastnik" formHumanName="Vlastnik" id="cz.incad.nkp.digital.Vlastnik">
+      <form-body align="LEFT" valign="TOP">
+        <row fill="LEFT" vfill="TOP">
+          <select align="LEFT" valign="TOP" indent="false" id="vlastnik" precision="0" scale="0" type="combo" multi="false" editable="false"/>
+        </row>
+      </form-body>
+    </screen-form>
+    <tree name="AvailableForms">
+      <node formName="Vlastnik"/>
+    </tree>
+  </forms>
+  <uniqueFields/>
+</desk>

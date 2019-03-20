@@ -1,0 +1,924 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<collection xmlns="http://www.loc.gov/MARC21/slim" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+   <record>
+      <leader>     nam a22     2a 4500</leader>
+      <controlfield tag="FMT">BK</controlfield>
+      <controlfield tag="001">000727418</controlfield>
+      <controlfield tag="003">CZ PrAS</controlfield>
+      <controlfield tag="005">20110617095226.0</controlfield>
+      <controlfield tag="008">100103s1789    it     e      ||| ||ita d</controlfield>
+      <datafield tag="040" ind1=" " ind2=" ">
+         <subfield code="a">ABA007</subfield>
+         <subfield code="b">cze</subfield>
+         <subfield code="d">ABA007</subfield>
+      </datafield>
+      <datafield tag="041" ind1="0" ind2=" ">
+         <subfield code="a">ita</subfield>
+      </datafield>
+      <datafield tag="044" ind1=" " ind2=" ">
+         <subfield code="a">it</subfield>
+      </datafield>
+      <datafield tag="100" ind1="1" ind2=" ">
+         <subfield code="a">Barbarotta, Luigi</subfield>
+         <subfield code="4">aut</subfield>
+      </datafield>
+      <datafield tag="245" ind1="1" ind2="0">
+         <subfield code="a">In occasione del viaggio aereo fatto in Napoli dal valorosissimo capitano Vincenzo Lunardi lucchese ... /</subfield>
+         <subfield code="c">[Luigi Barbarotta].</subfield>
+      </datafield>
+      <datafield tag="260" ind1=" " ind2=" ">
+         <subfield code="a">Napoli :</subfield>
+         <subfield code="b">[s.n.],</subfield>
+         <subfield code="c">1789.</subfield>
+      </datafield>
+      <datafield tag="300" ind1=" " ind2=" ">
+         <subfield code="a">vii s. :</subfield>
+         <subfield code="b">1 složená rytá tb.</subfield>
+      </datafield>
+      <datafield tag="599" ind1=" " ind2=" ">
+         <subfield code="a">RETROKON11</subfield>
+      </datafield>
+      <datafield tag="903" ind1=" " ind2=" ">
+         <subfield code="a">RP</subfield>
+      </datafield>
+      <datafield tag="910" ind1=" " ind2=" ">
+         <subfield code="a">ABA007</subfield>
+      </datafield>
+      <datafield tag="ITM" ind1=" " ind2=" ">
+         <subfield code="b">26007507771</subfield>
+         <subfield code="c">TE 403</subfield>
+         <subfield code="d"/>
+         <subfield code="v"/>
+         <subfield code="i"/>
+         <subfield code="y"/>
+      </datafield>
+      <controlfield tag="SYS">000727418</controlfield>
+   </record>
+   <record>
+      <leader>     nam a22     2a 4500</leader>
+      <controlfield tag="FMT">BK</controlfield>
+      <controlfield tag="001">000747101</controlfield>
+      <controlfield tag="003">CZ PrAS</controlfield>
+      <controlfield tag="005">20111122083154.0</controlfield>
+      <controlfield tag="008">100327s1783    fr     e      ||| ||fre d</controlfield>
+      <datafield tag="040" ind1=" " ind2=" ">
+         <subfield code="a">ABA007</subfield>
+         <subfield code="b">cze</subfield>
+         <subfield code="d">ABA007</subfield>
+      </datafield>
+      <datafield tag="041" ind1="0" ind2=" ">
+         <subfield code="a">fre</subfield>
+      </datafield>
+      <datafield tag="044" ind1=" " ind2=" ">
+         <subfield code="a">fr</subfield>
+      </datafield>
+      <datafield tag="245" ind1="0" ind2="0">
+         <subfield code="a">Considérations sur le globe aérostatique /</subfield>
+         <subfield code="c">Par M. D.*****.</subfield>
+      </datafield>
+      <datafield tag="260" ind1=" " ind2=" ">
+         <subfield code="a">Paris :</subfield>
+         <subfield code="b">Le Jay,</subfield>
+         <subfield code="c">1783.</subfield>
+      </datafield>
+      <datafield tag="300" ind1=" " ind2=" ">
+         <subfield code="a">2,16 s. :</subfield>
+         <subfield code="b">slož. rytý frontispice.</subfield>
+      </datafield>
+      <datafield tag="599" ind1=" " ind2=" ">
+         <subfield code="a">RETROKON 10</subfield>
+      </datafield>
+      <datafield tag="903" ind1=" " ind2=" ">
+         <subfield code="a">RP</subfield>
+      </datafield>
+      <datafield tag="910" ind1=" " ind2=" ">
+         <subfield code="a">ABA007</subfield>
+      </datafield>
+      <datafield tag="ITM" ind1=" " ind2=" ">
+         <subfield code="b">26007507748</subfield>
+         <subfield code="c">TE 381</subfield>
+         <subfield code="d"/>
+         <subfield code="v"/>
+         <subfield code="i"/>
+         <subfield code="y"/>
+      </datafield>
+      <controlfield tag="SYS">000747101</controlfield>
+   </record>
+   <record>
+      <leader>     nam a22     2a 4500</leader>
+      <controlfield tag="FMT">BK</controlfield>
+      <controlfield tag="001">000753472</controlfield>
+      <controlfield tag="003">CZ PrAS</controlfield>
+      <controlfield tag="005">20120411110857.0</controlfield>
+      <controlfield tag="008">100425s1847    xxk    e      ||| ||eng d</controlfield>
+      <datafield tag="040" ind1=" " ind2=" ">
+         <subfield code="a">ABA007</subfield>
+         <subfield code="b">cze</subfield>
+         <subfield code="d">ABA007</subfield>
+      </datafield>
+      <datafield tag="041" ind1="0" ind2=" ">
+         <subfield code="a">eng</subfield>
+      </datafield>
+      <datafield tag="044" ind1=" " ind2=" ">
+         <subfield code="a">xxk</subfield>
+      </datafield>
+      <datafield tag="100" ind1="1" ind2=" ">
+         <subfield code="a">Daedalus Britannicus</subfield>
+         <subfield code="4">aut</subfield>
+      </datafield>
+      <datafield tag="245" ind1="1" ind2="0">
+         <subfield code="a">Aerial Navigtation :</subfield>
+         <subfield code="b">containing a description of a proposed flying machine /</subfield>
+         <subfield code="c">Britannicus Daedalus.</subfield>
+      </datafield>
+      <datafield tag="260" ind1=" " ind2=" ">
+         <subfield code="a">London :</subfield>
+         <subfield code="b">James Gilbert,</subfield>
+         <subfield code="c">1847.</subfield>
+      </datafield>
+      <datafield tag="300" ind1=" " ind2=" ">
+         <subfield code="a">16 s.</subfield>
+      </datafield>
+      <datafield tag="599" ind1=" " ind2=" ">
+         <subfield code="a">RETROKON12</subfield>
+      </datafield>
+      <datafield tag="910" ind1=" " ind2=" ">
+         <subfield code="a">ABA007</subfield>
+      </datafield>
+      <datafield tag="ITM" ind1=" " ind2=" ">
+         <subfield code="b">26007507805</subfield>
+         <subfield code="c">TE 437</subfield>
+         <subfield code="d"/>
+         <subfield code="v"/>
+         <subfield code="i"/>
+         <subfield code="y"/>
+      </datafield>
+      <controlfield tag="SYS">000753472</controlfield>
+   </record>
+   <record>
+      <leader>     nam a22     2a 4500</leader>
+      <controlfield tag="FMT">BK</controlfield>
+      <controlfield tag="001">000806192</controlfield>
+      <controlfield tag="003">CZ PrAS</controlfield>
+      <controlfield tag="005">20120208104544.0</controlfield>
+      <controlfield tag="008">100531s1812    it     e      ||| ||ita d</controlfield>
+      <datafield tag="040" ind1=" " ind2=" ">
+         <subfield code="a">ABA007</subfield>
+         <subfield code="b">cze</subfield>
+         <subfield code="d">ABA007</subfield>
+      </datafield>
+      <datafield tag="041" ind1="0" ind2=" ">
+         <subfield code="a">ita</subfield>
+      </datafield>
+      <datafield tag="044" ind1=" " ind2=" ">
+         <subfield code="a">it</subfield>
+      </datafield>
+      <datafield tag="245" ind1="0" ind2="0">
+         <subfield code="a">Descrizione della nuova macchina aerostatica :</subfield>
+         <subfield code="b">Ľ Esperienza da eseguirsi in Bologna nel settembre 1812.</subfield>
+      </datafield>
+      <datafield tag="260" ind1=" " ind2=" ">
+         <subfield code="a">Bologna :</subfield>
+         <subfield code="b">Marsigli,</subfield>
+         <subfield code="c">1812.</subfield>
+      </datafield>
+      <datafield tag="300" ind1=" " ind2=" ">
+         <subfield code="a">8. s. :</subfield>
+         <subfield code="b">iii tb.</subfield>
+      </datafield>
+      <datafield tag="599" ind1=" " ind2=" ">
+         <subfield code="a">RETROKON12</subfield>
+      </datafield>
+      <datafield tag="910" ind1=" " ind2=" ">
+         <subfield code="a">ABA007</subfield>
+      </datafield>
+      <datafield tag="ITM" ind1=" " ind2=" ">
+         <subfield code="b">26007507786</subfield>
+         <subfield code="c">TE 418</subfield>
+         <subfield code="d"/>
+         <subfield code="v"/>
+         <subfield code="i"/>
+         <subfield code="y"/>
+      </datafield>
+      <controlfield tag="SYS">000806192</controlfield>
+   </record>
+   <record>
+      <leader>     nam a22     2a 4500</leader>
+      <controlfield tag="FMT">BK</controlfield>
+      <controlfield tag="001">000867351</controlfield>
+      <controlfield tag="003">CZ PrAS</controlfield>
+      <controlfield tag="005">20110208102454.0</controlfield>
+      <controlfield tag="008">110208s1784    xx     e      ||| ||fre d</controlfield>
+      <datafield tag="040" ind1=" " ind2=" ">
+         <subfield code="a">ABA007</subfield>
+         <subfield code="b">cze</subfield>
+         <subfield code="d">ABA007</subfield>
+      </datafield>
+      <datafield tag="041" ind1="1" ind2=" ">
+         <subfield code="a">fre</subfield>
+         <subfield code="h">ita</subfield>
+      </datafield>
+      <datafield tag="044" ind1=" " ind2=" ">
+         <subfield code="a">xx</subfield>
+      </datafield>
+      <datafield tag="245" ind1="0" ind2="0">
+         <subfield code="a">Relation des expériences de la machine aérostatique de Don Paul Andréani.</subfield>
+      </datafield>
+      <datafield tag="260" ind1=" " ind2=" ">
+         <subfield code="a">[S.l. :</subfield>
+         <subfield code="b">n.s.],</subfield>
+         <subfield code="c">1784.</subfield>
+      </datafield>
+      <datafield tag="300" ind1=" " ind2=" ">
+         <subfield code="a">29 s. :</subfield>
+         <subfield code="b">rytý fronisp.</subfield>
+      </datafield>
+      <datafield tag="599" ind1=" " ind2=" ">
+         <subfield code="a">RETROKON11</subfield>
+      </datafield>
+      <datafield tag="903" ind1=" " ind2=" ">
+         <subfield code="a">RP</subfield>
+      </datafield>
+      <datafield tag="910" ind1=" " ind2=" ">
+         <subfield code="a">ABA007</subfield>
+      </datafield>
+      <datafield tag="ITM" ind1=" " ind2=" ">
+         <subfield code="b">26007507767</subfield>
+         <subfield code="c">TE 399</subfield>
+         <subfield code="d"/>
+         <subfield code="v"/>
+         <subfield code="i"/>
+         <subfield code="y"/>
+      </datafield>
+      <controlfield tag="SYS">000867351</controlfield>
+   </record>
+   <record>
+      <leader>     nam a22     2a 4500</leader>
+      <controlfield tag="FMT">BK</controlfield>
+      <controlfield tag="001">001700948</controlfield>
+      <controlfield tag="003">CZ PrAS</controlfield>
+      <controlfield tag="005">20131025100000.0</controlfield>
+      <controlfield tag="008">131025s1839    it     e      ||| ||ita d</controlfield>
+      <datafield tag="040" ind1=" " ind2=" ">
+         <subfield code="a">ABA007</subfield>
+         <subfield code="b">cze</subfield>
+         <subfield code="d">ABA007</subfield>
+      </datafield>
+      <datafield tag="041" ind1="0" ind2=" ">
+         <subfield code="a">ita</subfield>
+      </datafield>
+      <datafield tag="044" ind1=" " ind2=" ">
+         <subfield code="a">it</subfield>
+      </datafield>
+      <datafield tag="100" ind1="1" ind2=" ">
+         <subfield code="a">Mazzacurali, Luigi</subfield>
+      </datafield>
+      <datafield tag="245" ind1="1" ind2="0">
+         <subfield code="a">Di un nuovo apparecchio chimico per caricare gli aerobati /</subfield>
+         <subfield code="c">Opiscolo di L. Mazzacurali.</subfield>
+      </datafield>
+      <datafield tag="260" ind1=" " ind2=" ">
+         <subfield code="a">Bologna :</subfield>
+         <subfield code="b">Sassi,</subfield>
+         <subfield code="c">1839.</subfield>
+      </datafield>
+      <datafield tag="300" ind1=" " ind2=" ">
+         <subfield code="a">14 s. :</subfield>
+         <subfield code="b">1 slož. tb.</subfield>
+      </datafield>
+      <datafield tag="599" ind1=" " ind2=" ">
+         <subfield code="a">RETROKON13</subfield>
+      </datafield>
+      <datafield tag="910" ind1=" " ind2=" ">
+         <subfield code="a">ABA007</subfield>
+      </datafield>
+      <datafield tag="ITM" ind1=" " ind2=" ">
+         <subfield code="b">26007507800</subfield>
+         <subfield code="c">TE 432</subfield>
+         <subfield code="d"/>
+         <subfield code="v"/>
+         <subfield code="i"/>
+         <subfield code="y"/>
+      </datafield>
+      <controlfield tag="SYS">001700948</controlfield>
+   </record>
+   <record>
+      <leader>     nam a22     2a 4500</leader>
+      <controlfield tag="FMT">BK</controlfield>
+      <controlfield tag="001">001732308</controlfield>
+      <controlfield tag="003">CZ PrAS</controlfield>
+      <controlfield tag="005">20140203101459.0</controlfield>
+      <controlfield tag="008">140203q17831784xx     e      ||| ||fre d</controlfield>
+      <datafield tag="040" ind1=" " ind2=" ">
+         <subfield code="a">ABA007</subfield>
+         <subfield code="b">cze</subfield>
+         <subfield code="d">ABA007</subfield>
+      </datafield>
+      <datafield tag="041" ind1="0" ind2=" ">
+         <subfield code="a">fre</subfield>
+      </datafield>
+      <datafield tag="044" ind1=" " ind2=" ">
+         <subfield code="a">xx</subfield>
+      </datafield>
+      <datafield tag="245" ind1="0" ind2="3">
+         <subfield code="a">La Montgolfier :</subfield>
+         <subfield code="b">pièce de musique, avec le texte.</subfield>
+      </datafield>
+      <datafield tag="260" ind1=" " ind2=" ">
+         <subfield code="a">[S.l. :</subfield>
+         <subfield code="b">s.n.],</subfield>
+         <subfield code="c">[1783 nebo 1784].</subfield>
+      </datafield>
+      <datafield tag="300" ind1=" " ind2=" ">
+         <subfield code="a">1 sv.</subfield>
+      </datafield>
+      <datafield tag="505" ind1="0" ind2=" ">
+         <subfield code="a">Rytý dvojlist</subfield>
+      </datafield>
+      <datafield tag="599" ind1=" " ind2=" ">
+         <subfield code="a">RETROKON14</subfield>
+      </datafield>
+      <datafield tag="903" ind1=" " ind2=" ">
+         <subfield code="a">RP</subfield>
+      </datafield>
+      <datafield tag="910" ind1=" " ind2=" ">
+         <subfield code="a">ABA007</subfield>
+      </datafield>
+      <datafield tag="ITM" ind1=" " ind2=" ">
+         <subfield code="b">26007507749</subfield>
+         <subfield code="c">TE 382</subfield>
+         <subfield code="d"/>
+         <subfield code="v"/>
+         <subfield code="i"/>
+         <subfield code="y"/>
+      </datafield>
+      <controlfield tag="SYS">001732308</controlfield>
+   </record>
+   <record>
+      <leader>     nam a22     2a 4500</leader>
+      <controlfield tag="FMT">BK</controlfield>
+      <controlfield tag="001">001745588</controlfield>
+      <controlfield tag="003">CZ PrAS</controlfield>
+      <controlfield tag="005">20140317101640.0</controlfield>
+      <controlfield tag="008">140317s1825    it     e      ||| ||ita d</controlfield>
+      <datafield tag="040" ind1=" " ind2=" ">
+         <subfield code="a">ABA007</subfield>
+         <subfield code="b">cze</subfield>
+         <subfield code="d">ABA007</subfield>
+      </datafield>
+      <datafield tag="041" ind1="0" ind2=" ">
+         <subfield code="a">ita</subfield>
+      </datafield>
+      <datafield tag="044" ind1=" " ind2=" ">
+         <subfield code="a">it</subfield>
+      </datafield>
+      <datafield tag="100" ind1="1" ind2=" ">
+         <subfield code="a">Orlandi, Francesco</subfield>
+      </datafield>
+      <datafield tag="245" ind1="1" ind2="0">
+         <subfield code="a">Descrizione dell'aerobata o macchina aerobatica construtta /</subfield>
+         <subfield code="c">Da Francesco Orlandi di Bologna.</subfield>
+      </datafield>
+      <datafield tag="260" ind1=" " ind2=" ">
+         <subfield code="a">Bologna :</subfield>
+         <subfield code="b">Marsigli,</subfield>
+         <subfield code="c">1825.</subfield>
+      </datafield>
+      <datafield tag="300" ind1=" " ind2=" ">
+         <subfield code="a">20,2 s.</subfield>
+      </datafield>
+      <datafield tag="599" ind1=" " ind2=" ">
+         <subfield code="a">RETROKON14</subfield>
+      </datafield>
+      <datafield tag="910" ind1=" " ind2=" ">
+         <subfield code="a">ABA007</subfield>
+      </datafield>
+      <datafield tag="ITM" ind1=" " ind2=" ">
+         <subfield code="b">26007507790</subfield>
+         <subfield code="c">TE 422</subfield>
+         <subfield code="d"/>
+         <subfield code="v"/>
+         <subfield code="i"/>
+         <subfield code="y"/>
+      </datafield>
+      <controlfield tag="SYS">001745588</controlfield>
+   </record>
+   <record>
+      <leader>     nam a22     2a 4500</leader>
+      <controlfield tag="FMT">BK</controlfield>
+      <controlfield tag="001">001745600</controlfield>
+      <controlfield tag="003">CZ PrAS</controlfield>
+      <controlfield tag="005">20140317102659.0</controlfield>
+      <controlfield tag="008">140317s1827    it     e      ||| ||ita d</controlfield>
+      <datafield tag="040" ind1=" " ind2=" ">
+         <subfield code="a">ABA007</subfield>
+         <subfield code="b">cze</subfield>
+         <subfield code="d">ABA007</subfield>
+      </datafield>
+      <datafield tag="041" ind1="0" ind2=" ">
+         <subfield code="a">ita</subfield>
+      </datafield>
+      <datafield tag="044" ind1=" " ind2=" ">
+         <subfield code="a">it</subfield>
+      </datafield>
+      <datafield tag="100" ind1="1" ind2=" ">
+         <subfield code="a">Orlandi, Francesco</subfield>
+      </datafield>
+      <datafield tag="245" ind1="1" ind2="0">
+         <subfield code="a">Descrizione della macchina aerobatica costrutta /</subfield>
+         <subfield code="c">F. Orlandi di Bologna.</subfield>
+      </datafield>
+      <datafield tag="260" ind1=" " ind2=" ">
+         <subfield code="a">Milano :</subfield>
+         <subfield code="b">Dova,</subfield>
+         <subfield code="c">1827.</subfield>
+      </datafield>
+      <datafield tag="300" ind1=" " ind2=" ">
+         <subfield code="a">15 s.</subfield>
+      </datafield>
+      <datafield tag="599" ind1=" " ind2=" ">
+         <subfield code="a">RETROKON14</subfield>
+      </datafield>
+      <datafield tag="910" ind1=" " ind2=" ">
+         <subfield code="a">ABA007</subfield>
+      </datafield>
+      <datafield tag="ITM" ind1=" " ind2=" ">
+         <subfield code="b">26007507792</subfield>
+         <subfield code="c">TE 424</subfield>
+         <subfield code="d"/>
+         <subfield code="v"/>
+         <subfield code="i"/>
+         <subfield code="y"/>
+      </datafield>
+      <controlfield tag="SYS">001745600</controlfield>
+   </record>
+   <record>
+      <leader>     nam a22     2a 4500</leader>
+      <controlfield tag="FMT">BK</controlfield>
+      <controlfield tag="001">001747237</controlfield>
+      <controlfield tag="003">CZ PrAS</controlfield>
+      <controlfield tag="005">20140320110755.0</controlfield>
+      <controlfield tag="008">140320s1830    it     e      ||| ||ita d</controlfield>
+      <datafield tag="040" ind1=" " ind2=" ">
+         <subfield code="a">ABA007</subfield>
+         <subfield code="b">cze</subfield>
+         <subfield code="d">ABA007</subfield>
+      </datafield>
+      <datafield tag="041" ind1="0" ind2=" ">
+         <subfield code="a">ita</subfield>
+      </datafield>
+      <datafield tag="044" ind1=" " ind2=" ">
+         <subfield code="a">it</subfield>
+      </datafield>
+      <datafield tag="100" ind1="1" ind2=" ">
+         <subfield code="a">Pagliaroli, Mercurio</subfield>
+      </datafield>
+      <datafield tag="245" ind1="1" ind2="0">
+         <subfield code="a">Progetti del dott.fisico Mercurio Pagliaroli di Veroli sulla direzione orizzontale degli aerostati per impluso aereo /</subfield>
+         <subfield code="c">M. Pagliaroli.</subfield>
+      </datafield>
+      <datafield tag="260" ind1=" " ind2=" ">
+         <subfield code="a">Roma :</subfield>
+         <subfield code="b">Tipografia Mauri,</subfield>
+         <subfield code="c">1830.</subfield>
+      </datafield>
+      <datafield tag="300" ind1=" " ind2=" ">
+         <subfield code="a">15,i s.</subfield>
+      </datafield>
+      <datafield tag="599" ind1=" " ind2=" ">
+         <subfield code="a">RETROKON14</subfield>
+      </datafield>
+      <datafield tag="910" ind1=" " ind2=" ">
+         <subfield code="a">ABA007</subfield>
+      </datafield>
+      <datafield tag="ITM" ind1=" " ind2=" ">
+         <subfield code="b">26007507794</subfield>
+         <subfield code="c">TE 426</subfield>
+         <subfield code="d"/>
+         <subfield code="v"/>
+         <subfield code="i"/>
+         <subfield code="y"/>
+      </datafield>
+      <controlfield tag="SYS">001747237</controlfield>
+   </record>
+   <record>
+      <leader>     nam a22     2a 4500</leader>
+      <controlfield tag="FMT">BK</controlfield>
+      <controlfield tag="001">001770435</controlfield>
+      <controlfield tag="003">CZ PrAS</controlfield>
+      <controlfield tag="005">20140520102948.0</controlfield>
+      <controlfield tag="008">140520s1523    xr     e      ||| ||cze d</controlfield>
+      <datafield tag="040" ind1=" " ind2=" ">
+         <subfield code="a">ABA007</subfield>
+         <subfield code="b">cze</subfield>
+         <subfield code="d">ABA007</subfield>
+      </datafield>
+      <datafield tag="041" ind1="0" ind2=" ">
+         <subfield code="a">cze</subfield>
+      </datafield>
+      <datafield tag="044" ind1=" " ind2=" ">
+         <subfield code="a">xr</subfield>
+      </datafield>
+      <datafield tag="100" ind1="1" ind2=" ">
+         <subfield code="a">Šúd ze Semanína, Mikuláš,</subfield>
+         <subfield code="d">asi 1490-1557</subfield>
+         <subfield code="7">ola2013795685</subfield>
+      </datafield>
+      <datafield tag="245" ind1="1" ind2="0">
+         <subfield code="a">Pranostyka Mikulasse Zsuda Litomyskeho :</subfield>
+         <subfield code="b">z Prahy Mistra ucženij Praskeho... /</subfield>
+         <subfield code="c">M. Šúd ze Semanína.</subfield>
+      </datafield>
+      <datafield tag="260" ind1=" " ind2=" ">
+         <subfield code="a">[Praha :</subfield>
+         <subfield code="b">s.n.],</subfield>
+         <subfield code="c">1523.</subfield>
+      </datafield>
+      <datafield tag="300" ind1=" " ind2=" ">
+         <subfield code="a">12 l.</subfield>
+      </datafield>
+      <datafield tag="599" ind1=" " ind2=" ">
+         <subfield code="a">RETROKON14</subfield>
+      </datafield>
+      <datafield tag="903" ind1=" " ind2=" ">
+         <subfield code="a">RP</subfield>
+      </datafield>
+      <datafield tag="910" ind1=" " ind2=" ">
+         <subfield code="a">ABA007</subfield>
+      </datafield>
+      <datafield tag="ITM" ind1=" " ind2=" ">
+         <subfield code="b">26006338375</subfield>
+         <subfield code="c">TG 1055</subfield>
+         <subfield code="d"/>
+         <subfield code="v"/>
+         <subfield code="i"/>
+         <subfield code="y"/>
+      </datafield>
+      <controlfield tag="SYS">001770435</controlfield>
+   </record>
+   <record>
+      <leader>     nam a22     2a 4500</leader>
+      <controlfield tag="FMT">BK</controlfield>
+      <controlfield tag="001">001774503</controlfield>
+      <controlfield tag="003">CZ PrAS</controlfield>
+      <controlfield tag="005">20140529104523.0</controlfield>
+      <controlfield tag="008">140529s1709    gw     e      ||| ||ger d</controlfield>
+      <datafield tag="040" ind1=" " ind2=" ">
+         <subfield code="a">ABA007</subfield>
+         <subfield code="b">cze</subfield>
+         <subfield code="d">ABA007</subfield>
+      </datafield>
+      <datafield tag="041" ind1="0" ind2=" ">
+         <subfield code="a">ger</subfield>
+      </datafield>
+      <datafield tag="044" ind1=" " ind2=" ">
+         <subfield code="a">gw</subfield>
+      </datafield>
+      <datafield tag="245" ind1="0" ind2="0">
+         <subfield code="a">Nachricht von dem Fliegenden Schiffe, so aus Portugal, den 24. Junii in Wien mit seinem Erfinder, glucklich ankommen.</subfield>
+      </datafield>
+      <datafield tag="260" ind1=" " ind2=" ">
+         <subfield code="a">[Naumburg :</subfield>
+         <subfield code="b">s.n.],</subfield>
+         <subfield code="c">1709.</subfield>
+      </datafield>
+      <datafield tag="300" ind1=" " ind2=" ">
+         <subfield code="a">4 s.</subfield>
+      </datafield>
+      <datafield tag="500" ind1=" " ind2=" ">
+         <subfield code="a">Novodobé faksimile vytištěné v Österreichische Nationalbibliothek [cca 1903]</subfield>
+      </datafield>
+      <datafield tag="599" ind1=" " ind2=" ">
+         <subfield code="a">RETROKON14</subfield>
+      </datafield>
+      <datafield tag="903" ind1=" " ind2=" ">
+         <subfield code="a">RP</subfield>
+      </datafield>
+      <datafield tag="910" ind1=" " ind2=" ">
+         <subfield code="a">ABA007</subfield>
+      </datafield>
+      <datafield tag="ITM" ind1=" " ind2=" ">
+         <subfield code="b">26007507747</subfield>
+         <subfield code="c">TE 380</subfield>
+         <subfield code="d"/>
+         <subfield code="v"/>
+         <subfield code="i"/>
+         <subfield code="y"/>
+      </datafield>
+      <controlfield tag="SYS">001774503</controlfield>
+   </record>
+   <record>
+      <leader>     nam a22     2a 4500</leader>
+      <controlfield tag="FMT">BK</controlfield>
+      <controlfield tag="001">001781215</controlfield>
+      <controlfield tag="003">CZ PrAS</controlfield>
+      <controlfield tag="005">20140616090558.0</controlfield>
+      <controlfield tag="008">140616s1812    it     e      ||| ||ita d</controlfield>
+      <datafield tag="040" ind1=" " ind2=" ">
+         <subfield code="a">ABA007</subfield>
+         <subfield code="b">cze</subfield>
+         <subfield code="d">ABA007</subfield>
+      </datafield>
+      <datafield tag="041" ind1="0" ind2=" ">
+         <subfield code="a">ita</subfield>
+      </datafield>
+      <datafield tag="044" ind1=" " ind2=" ">
+         <subfield code="a">it</subfield>
+      </datafield>
+      <datafield tag="245" ind1="0" ind2="0">
+         <subfield code="a">Lettera narrativa l'Infausto aerostatico sperimento del celebre aeronauta Francesco Zambeccari Bolognese nel giorno 11.settembre 1812 /</subfield>
+         <subfield code="c">con un cenno biografico sopra medesimo F. Tognetti.</subfield>
+      </datafield>
+      <datafield tag="260" ind1=" " ind2=" ">
+         <subfield code="a">Bologna :</subfield>
+         <subfield code="b">Sassi,</subfield>
+         <subfield code="c">1812.</subfield>
+      </datafield>
+      <datafield tag="300" ind1=" " ind2=" ">
+         <subfield code="a">1 sv.</subfield>
+      </datafield>
+      <datafield tag="500" ind1=" " ind2=" ">
+         <subfield code="a">Dvousloupečný dvojlist</subfield>
+      </datafield>
+      <datafield tag="599" ind1=" " ind2=" ">
+         <subfield code="a">RETROKON14</subfield>
+      </datafield>
+      <datafield tag="700" ind1="1" ind2=" ">
+         <subfield code="a">Tognetti, Francesco</subfield>
+         <subfield code="4">oth</subfield>
+      </datafield>
+      <datafield tag="910" ind1=" " ind2=" ">
+         <subfield code="a">ABA007</subfield>
+      </datafield>
+      <datafield tag="ITM" ind1=" " ind2=" ">
+         <subfield code="b">26007507785</subfield>
+         <subfield code="c">TE 417</subfield>
+         <subfield code="d"/>
+         <subfield code="v"/>
+         <subfield code="i"/>
+         <subfield code="y"/>
+      </datafield>
+      <controlfield tag="SYS">001781215</controlfield>
+   </record>
+   <record>
+      <leader>     nam a22     2a 4500</leader>
+      <controlfield tag="FMT">BK</controlfield>
+      <controlfield tag="001">001820588</controlfield>
+      <controlfield tag="003">CZ PrAS</controlfield>
+      <controlfield tag="005">20140929100323.0</controlfield>
+      <controlfield tag="008">140929s1804    it     e      ||| ||ita d</controlfield>
+      <datafield tag="040" ind1=" " ind2=" ">
+         <subfield code="a">ABA007</subfield>
+         <subfield code="b">cze</subfield>
+         <subfield code="d">ABA007</subfield>
+      </datafield>
+      <datafield tag="041" ind1="0" ind2=" ">
+         <subfield code="a">ita</subfield>
+      </datafield>
+      <datafield tag="044" ind1=" " ind2=" ">
+         <subfield code="a">it</subfield>
+      </datafield>
+      <datafield tag="245" ind1="0" ind2="0">
+         <subfield code="a">Relazione dell'esperienza aero-statica eseguita in Bologna ůi XXII. :</subfield>
+         <subfield code="b">Agosto MDCCCIV. Anno terzo della Repubblica Italiana /</subfield>
+         <subfield code="c">F. Zambeccari.</subfield>
+      </datafield>
+      <datafield tag="260" ind1=" " ind2=" ">
+         <subfield code="a">Bologna :</subfield>
+         <subfield code="b">Ulisse Ramponi,</subfield>
+         <subfield code="c">1804.</subfield>
+      </datafield>
+      <datafield tag="300" ind1=" " ind2=" ">
+         <subfield code="a">37,i s.</subfield>
+      </datafield>
+      <datafield tag="599" ind1=" " ind2=" ">
+         <subfield code="a">RETROKON14</subfield>
+      </datafield>
+      <datafield tag="700" ind1="1" ind2=" ">
+         <subfield code="a">Zambeccari, Francesco</subfield>
+         <subfield code="4">oth</subfield>
+      </datafield>
+      <datafield tag="910" ind1=" " ind2=" ">
+         <subfield code="a">ABA007</subfield>
+      </datafield>
+      <datafield tag="ITM" ind1=" " ind2=" ">
+         <subfield code="b">26007507780</subfield>
+         <subfield code="c">TE 412</subfield>
+         <subfield code="d"/>
+         <subfield code="v"/>
+         <subfield code="i"/>
+         <subfield code="y"/>
+      </datafield>
+      <controlfield tag="SYS">001820588</controlfield>
+   </record>
+   <record>
+      <leader>     nam a22     2a 4500</leader>
+      <controlfield tag="FMT">BK</controlfield>
+      <controlfield tag="001">001820593</controlfield>
+      <controlfield tag="003">CZ PrAS</controlfield>
+      <controlfield tag="005">20141003090659.0</controlfield>
+      <controlfield tag="008">140929s1803    it     e      ||| ||ita d</controlfield>
+      <datafield tag="040" ind1=" " ind2=" ">
+         <subfield code="a">ABA007</subfield>
+         <subfield code="b">cze</subfield>
+         <subfield code="d">ABA007</subfield>
+      </datafield>
+      <datafield tag="100" ind1="1" ind2=" ">
+         <subfield code="a">Zambeccari, Francesco</subfield>
+      </datafield>
+      <datafield tag="245" ind1="1" ind2="0">
+         <subfield code="a">Descrizione della macchina aerostatica del cittadino Francesco Zambeccari destinata a tentare il regolamento della medesima per l'Atmosfera /</subfield>
+         <subfield code="c">F. Zambeccari.</subfield>
+      </datafield>
+      <datafield tag="260" ind1=" " ind2=" ">
+         <subfield code="a">Bologna :</subfield>
+         <subfield code="b">Fratelli Masi,</subfield>
+         <subfield code="c">1803.</subfield>
+      </datafield>
+      <datafield tag="300" ind1=" " ind2=" ">
+         <subfield code="a">32 s. :</subfield>
+         <subfield code="b">3 slož. ryté tb.</subfield>
+      </datafield>
+      <datafield tag="599" ind1=" " ind2=" ">
+         <subfield code="a">RETROKON14</subfield>
+      </datafield>
+      <datafield tag="910" ind1=" " ind2=" ">
+         <subfield code="a">ABA007</subfield>
+      </datafield>
+      <datafield tag="ITM" ind1=" " ind2=" ">
+         <subfield code="b">26007507779</subfield>
+         <subfield code="c">TE 411</subfield>
+         <subfield code="d"/>
+         <subfield code="v"/>
+         <subfield code="i"/>
+         <subfield code="y"/>
+      </datafield>
+      <controlfield tag="SYS">001820593</controlfield>
+   </record>
+   <record>
+      <leader>     nam a22     2a 4500</leader>
+      <controlfield tag="FMT">BK</controlfield>
+      <controlfield tag="001">001855151</controlfield>
+      <controlfield tag="003">CZ PrAS</controlfield>
+      <controlfield tag="005">20150128110037.0</controlfield>
+      <controlfield tag="008">150128s1767    au     e      ||| ||ger d</controlfield>
+      <datafield tag="040" ind1=" " ind2=" ">
+         <subfield code="a">ABA007</subfield>
+         <subfield code="b">cze</subfield>
+         <subfield code="d">ABA007</subfield>
+      </datafield>
+      <datafield tag="041" ind1="0" ind2=" ">
+         <subfield code="a">ger</subfield>
+      </datafield>
+      <datafield tag="044" ind1=" " ind2=" ">
+         <subfield code="a">au</subfield>
+      </datafield>
+      <datafield tag="100" ind1="1" ind2=" ">
+         <subfield code="a">Wasserburger, Patricius,</subfield>
+         <subfield code="d">1706-</subfield>
+         <subfield code="7">mzk2011627897</subfield>
+      </datafield>
+      <datafield tag="245" ind1="1" ind2="4">
+         <subfield code="a">Der segenannte...durch die...Hand des Michaëlis Rentz gestochene...Todetanz :</subfield>
+         <subfield code="b">mit einigen Reimen und Versen versehen durch P. Wasserburger /</subfield>
+         <subfield code="c">P. Wasserburger ; M.H. Rentz.</subfield>
+      </datafield>
+      <datafield tag="260" ind1=" " ind2=" ">
+         <subfield code="a">Wien :</subfield>
+         <subfield code="b">Edler von Trattnern,</subfield>
+         <subfield code="c">1767.</subfield>
+      </datafield>
+      <datafield tag="300" ind1=" " ind2=" ">
+         <subfield code="a">cvli l.</subfield>
+      </datafield>
+      <datafield tag="599" ind1=" " ind2=" ">
+         <subfield code="a">RETROKON15</subfield>
+      </datafield>
+      <datafield tag="700" ind1="1" ind2=" ">
+         <subfield code="a">Rentz, Michael Jindřich,</subfield>
+         <subfield code="d">1698-1758</subfield>
+         <subfield code="4">aut</subfield>
+         <subfield code="7">jn20000728558</subfield>
+      </datafield>
+      <datafield tag="903" ind1=" " ind2=" ">
+         <subfield code="a">RP</subfield>
+      </datafield>
+      <datafield tag="910" ind1=" " ind2=" ">
+         <subfield code="a">ABA007</subfield>
+      </datafield>
+      <datafield tag="ITM" ind1=" " ind2=" ">
+         <subfield code="b">26005306585</subfield>
+         <subfield code="c">TG 4</subfield>
+         <subfield code="d"/>
+         <subfield code="v"/>
+         <subfield code="i"/>
+         <subfield code="y"/>
+      </datafield>
+      <controlfield tag="SYS">001855151</controlfield>
+   </record>
+   <record>
+      <leader>     nam a22     2a 4500</leader>
+      <controlfield tag="FMT">BK</controlfield>
+      <controlfield tag="001">001862822</controlfield>
+      <controlfield tag="003">CZ PrAS</controlfield>
+      <controlfield tag="005">20150306062319.0</controlfield>
+      <controlfield tag="008">150304q1800    it     e      ||| ||ita d</controlfield>
+      <datafield tag="040" ind1=" " ind2=" ">
+         <subfield code="a">ABA007</subfield>
+         <subfield code="b">cze</subfield>
+         <subfield code="d">ABA007</subfield>
+      </datafield>
+      <datafield tag="041" ind1="0" ind2=" ">
+         <subfield code="a">ita</subfield>
+      </datafield>
+      <datafield tag="044" ind1=" " ind2=" ">
+         <subfield code="a">it</subfield>
+      </datafield>
+      <datafield tag="100" ind1="1" ind2=" ">
+         <subfield code="a">Saladini, Girolamo</subfield>
+      </datafield>
+      <datafield tag="245" ind1="1" ind2="0">
+         <subfield code="a">Riflessioni circa la memoria intorno la salita delle macchine aerostatiche nell'aria /</subfield>
+         <subfield code="c">G. Saladini.</subfield>
+      </datafield>
+      <datafield tag="260" ind1=" " ind2=" ">
+         <subfield code="a">Bologna :</subfield>
+         <subfield code="b">[s.n.],</subfield>
+         <subfield code="c">[1800].</subfield>
+      </datafield>
+      <datafield tag="300" ind1=" " ind2=" ">
+         <subfield code="a">23 sw. :</subfield>
+         <subfield code="b">rytá slož. tb.</subfield>
+      </datafield>
+      <datafield tag="599" ind1=" " ind2=" ">
+         <subfield code="a">RETROKON15</subfield>
+      </datafield>
+      <datafield tag="903" ind1=" " ind2=" ">
+         <subfield code="a">RP</subfield>
+      </datafield>
+      <datafield tag="910" ind1=" " ind2=" ">
+         <subfield code="a">ABA007</subfield>
+      </datafield>
+      <datafield tag="ITM" ind1=" " ind2=" ">
+         <subfield code="b">26007507777</subfield>
+         <subfield code="c">TE 409</subfield>
+         <subfield code="d"/>
+         <subfield code="v"/>
+         <subfield code="i"/>
+         <subfield code="y"/>
+      </datafield>
+      <controlfield tag="SYS">001862822</controlfield>
+   </record>
+   <record>
+      <leader>     nam a22     2a 4500</leader>
+      <controlfield tag="FMT">BK</controlfield>
+      <controlfield tag="001">001862825</controlfield>
+      <controlfield tag="003">CZ PrAS</controlfield>
+      <controlfield tag="005">20150304103531.0</controlfield>
+      <controlfield tag="008">150304q1800    it     e      ||| ||ita d</controlfield>
+      <datafield tag="040" ind1=" " ind2=" ">
+         <subfield code="a">ABA007</subfield>
+         <subfield code="b">cze</subfield>
+         <subfield code="d">ABA007</subfield>
+      </datafield>
+      <datafield tag="041" ind1="0" ind2=" ">
+         <subfield code="a">ita</subfield>
+      </datafield>
+      <datafield tag="044" ind1=" " ind2=" ">
+         <subfield code="a">it</subfield>
+      </datafield>
+      <datafield tag="100" ind1="1" ind2=" ">
+         <subfield code="a">Saladini, Girolamo</subfield>
+      </datafield>
+      <datafield tag="245" ind1="1" ind2="0">
+         <subfield code="a">Memoria intorno ai globi aerostatici recitata... /</subfield>
+         <subfield code="c">G. Saladini.</subfield>
+      </datafield>
+      <datafield tag="260" ind1=" " ind2=" ">
+         <subfield code="a">Bologna :</subfield>
+         <subfield code="b">[s.n.,</subfield>
+         <subfield code="c">1800].</subfield>
+      </datafield>
+      <datafield tag="300" ind1=" " ind2=" ">
+         <subfield code="a">2,16 s.</subfield>
+      </datafield>
+      <datafield tag="599" ind1=" " ind2=" ">
+         <subfield code="a">RETROKON15</subfield>
+      </datafield>
+      <datafield tag="903" ind1=" " ind2=" ">
+         <subfield code="a">RP</subfield>
+      </datafield>
+      <datafield tag="910" ind1=" " ind2=" ">
+         <subfield code="a">ABA007</subfield>
+      </datafield>
+      <datafield tag="ITM" ind1=" " ind2=" ">
+         <subfield code="b">26007507776</subfield>
+         <subfield code="c">TE 408</subfield>
+         <subfield code="d"/>
+         <subfield code="v"/>
+         <subfield code="i"/>
+         <subfield code="y"/>
+      </datafield>
+      <controlfield tag="SYS">001862825</controlfield>
+   </record>
+</collection>

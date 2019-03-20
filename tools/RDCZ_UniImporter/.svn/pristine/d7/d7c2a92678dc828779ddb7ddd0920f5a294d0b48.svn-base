@@ -1,0 +1,147 @@
+/* *****************************************************************************
+ * To change this template, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package cz.incad.relief3.rdcz.uniimporter.model;
+
+import cz.incad.relief3.rdcz.uniImporter.model.FileCoordinatorIssue;
+import cz.incad.relief3.rdcz.uniimporter.utils.Configuration;
+import cz.manocz80.utils.StringUtils;
+import java.io.*;
+import java.nio.charset.Charset;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.xml.parsers.DocumentBuilderFactory;
+import javax.xml.parsers.ParserConfigurationException;
+import org.w3c.dom.Document;
+import org.xml.sax.SAXException;
+
+/** ****************************************************************************
+ *
+ * @author martin
+ */
+public class MarcXmlDataParser implements DataParser {
+    private static final Logger LOG = Logger.getLogger(MarcXmlDataParser.class.getName());
+
+    /** ************************************************************************
+     * 
+     * @param oneItem
+     * @return 
+     */
+    public FileCoordinatorIssue parseIt(FileCoordinatorIssue oneItem) {
+        List<OneRecord> lRecords = new LinkedList<OneRecord>();
+        OneRecord oneRecord;
+        //String encoding = Configuration.getInstance().getProperty(Configuration.KEY_PARSE_ENCODING);
+        Document doc;
+
+        System.out.println("PARSING");
+        DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
+        try {
+            doc = factory.newDocumentBuilder().parse(new BufferedInputStream(new FileInputStream(oneItem.getFile())));
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+        } catch (ParserConfigurationException ex) {
+            LOG.log(Level.SEVERE, null, ex);
+        } catch (SAXException ex) {
+            LOG.log(Level.SEVERE, null, ex);
+        } catch (IOException ex) {
+            LOG.log(Level.SEVERE, null, ex);
+        }
+
+        
+//        
+//        try {
+//            dataSource = new BufferedReader(new InputStreamReader(new FileInputStream(oneItem.getFile()), Charset.forName(encoding)));
+//            //Cyklus načítá z csv souboru řádek za řádkem
+//            while ((oneLine_RawData = dataSource.readLine()) != null) {
+//
+//                //Kontrola na počet sloupců v řádku
+//                oneLine_splited = StringUtils.spit(oneLine_RawData, FILED_SEPARATOR, true, true);
+//                if (COUNT_FIELDS == oneLine_splited.size()) {
+//                    oneRecord = new OneRecord();
+//
+//                    //Načtené hodnoty z CSV převedeme do Objektu představující jeden záznam pro Relief.
+//                    oneRecord.setDruhDokumentu(oneLine_splited.get(0));
+//                    //Číslo ČNB
+//                    if (oneLine_splited.get(1) != null) {
+//                        oneRecord.setCisloCNB(StringUtils.removeNullFromList(StringUtils.spit(oneLine_splited.get(1), MULTI_VALUES_SEPARATOR, true, true)));
+//                    }
+//                    oneRecord.setIdentifikatorZaznamu(oneLine_splited.get(2));
+//                    oneRecord.setBaze(oneLine_splited.get(3));
+//                    oneRecord.setSysno(oneLine_splited.get(4));
+//                    oneRecord.setAutor(oneLine_splited.get(5));
+//                    oneRecord.setNazev(oneLine_splited.get(6));
+//                    oneRecord.setRokyVydani(oneLine_splited.get(7));
+//                    if (oneLine_splited.get(8) != null) {
+//                        oneRecord.setIsbn(StringUtils.removeNullFromList(StringUtils.spit(oneLine_splited.get(8), MULTI_VALUES_SEPARATOR, true, true)));
+//                    }
+//                    if (oneLine_splited.get(9) != null) {
+//                        oneRecord.setIssn(StringUtils.removeNullFromList(StringUtils.spit(oneLine_splited.get(9), MULTI_VALUES_SEPARATOR, true, true)));
+//                    }
+//                    oneRecord.setSiglaVlastnika(oneLine_splited.get(10));
+//                    oneRecord.setVariantniNazev(oneLine_splited.get(11));
+//                    oneRecord.setZdrojFinancovani(oneLine_splited.get(12));
+//                    oneRecord.setPoznamky(oneLine_splited.get(13));
+//                    oneRecord.setUrlNaTitul(oneLine_splited.get(14));
+//                    oneRecord.setCarovyKod(oneLine_splited.get(15));
+//                    oneRecord.setSignatura(oneLine_splited.get(16));
+//                    oneRecord.setRokPeriodika(oneLine_splited.get(17));
+//                    oneRecord.setCastDilRocnik(oneLine_splited.get(18));
+//                    oneRecord.setCisloZakazky(oneLine_splited.get(19));
+//                    oneRecord.setUrlCastRokRocnik(oneLine_splited.get(20));
+//                    oneRecord.setPocetSouboru(oneLine_splited.get(21));
+//                    if (oneLine_splited.get(22) != null) {
+//                        if (oneLine_splited.get(22).toLowerCase().contains("1")) oneRecord.setOcr(true);
+//                    }
+//                    if (oneLine_splited.get(23) != null) {
+//                        if (oneLine_splited.get(23).toLowerCase().contains("1")) oneRecord.setOcrSvabach(true);
+//                    }
+//                    oneRecord.setTypSkeneru(oneLine_splited.get(24));
+//                    oneRecord.setParametrySkenovani(oneLine_splited.get(25));
+//                    oneRecord.setDpi(oneLine_splited.get(26));
+//                    oneRecord.setBarevnaHloubka(oneLine_splited.get(27));
+//                    if (oneLine_splited.get(28) != null) {
+//                        if (oneLine_splited.get(28).toLowerCase().contains("djvu")) oneRecord.setDjvu(true);
+//                        if (oneLine_splited.get(28).toLowerCase().contains("gif")) oneRecord.setGif(true);
+//                        if (oneLine_splited.get(28).toLowerCase().contains("jpeg")) oneRecord.setJpeg(true);
+//                        if (oneLine_splited.get(28).toLowerCase().contains("jpg")) oneRecord.setJpeg(true);
+//                        if (oneLine_splited.get(28).toLowerCase().contains("pdf")) oneRecord.setPdf(true);
+//                        if (oneLine_splited.get(28).toLowerCase().contains("tiff")) oneRecord.setTiff(true);
+//                        if (oneLine_splited.get(28).toLowerCase().contains("txt")) oneRecord.setTxt(true);
+//                    }
+//
+//                    lRecords.add(oneRecord);
+//                } else {
+//                    LOG.log(Level.WARNING, "SPATNY POCET SLOUPCU: {0}", oneLine_RawData);
+//                }
+//            }
+//        } catch (IOException ex) {
+//            Logger.getLogger(CsvDataParser.class.getName()).log(Level.SEVERE, null, ex);
+//        } finally {
+//            if (dataSource != null) try {
+//                dataSource.close();
+//            } catch (IOException ex) {
+//                LOG.log(Level.SEVERE, null, ex);
+//            }
+//        }
+        oneItem.setParsedDataList(lRecords);
+        return oneItem;
+    }
+
+}

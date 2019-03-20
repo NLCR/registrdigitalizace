@@ -1,0 +1,95 @@
+# -------------------------------------------------------------------
+# ----------------- RD.CZ UniImporter configuration -----------------
+# -------------------------------------------------------------------
+
+
+# ------------------------------ SOURCES ----------------------------
+DATASOURCE.COUNT=1
+
+# ------------------------------ SOURCE 1
+# ------------------------------ SOURCE 4 - MKP-OAIPMH - Probihajici digitalizace - UNIMARC
+# --- SOURCE
+# 0 - DISABLED
+# 1 - ENABLED
+DATASOURCE.1.SOURCE.STATE=1
+# DEFAULT 3600000
+# MINIMAL 60000
+# pr.:
+# 1 MIN  - 60000
+# 10 MIN - 600000
+# 30 MIN - 1800000
+# 1 HOD  - 3600000
+# 2 HOD  - 7200000
+# 4 HOD  - 14400000
+# 8 HOD  - 28800000
+# 12 HOD - 43200000
+DATASOURCE.1.SOURCE.SLEEPTIME=60000
+# DIRECTORY
+# FTP
+# OAIPMH
+# ZAHORIKWAY
+DATASOURCE.1.SOURCE=OAIPMH
+#
+#DATASOURCE.1.SOURCE.ARGUMENT1=http://web2.mlp.cz/cgi/oai
+DATASOURCE.1.SOURCE.ARGUMENT1=http://195.113.180.197/cgi/oai
+#
+DATASOURCE.1.SOURCE.ARGUMENT2=?verb=ListRecords&set=digitization&metadataPrefix=unimarc
+#
+DATASOURCE.1.SOURCE.ARGUMENT3=ABG001_P_
+#
+DATASOURCE.1.SOURCE.ARGUMENT4=UTF8
+#
+DATASOURCE.1.SOURCE.ARGUMENT5=UTF8
+DATASOURCE.1.SOURCE.ARGUMENT6=fromOAIPMH_ABG001_P
+#Pro OAIPMH - max count LIMIT
+# 0 - UNLIMITED
+# př.: 300
+DATASOURCE.1.SOURCE.ARGUMENT7=0
+# --- PARSING METHOD
+# CSV
+# MARCXML
+# UNIMARC
+# MARCXMLOAI
+DATASOURCE.1.PARSEMETHOD=UNIMARC
+DATASOURCE.1.PARSEMETHOD.ARGUMENT1=
+DATASOURCE.1.PARSEMETHOD.ARGUMENT2=
+DATASOURCE.1.PARSEMETHOD.ARGUMENT3=
+DATASOURCE.1.PARSEMETHOD.ARGUMENT4=
+DATASOURCE.1.PARSEMETHOD.ARGUMENT5=
+DATASOURCE.1.PARSEMETHOD.ARGUMENT6=
+
+
+
+# ------------------------------ RELIEF CONNECTION ------------------
+# Relief server connection string
+
+# DEVELOPMENT
+IMPORT.RELIEF.URL=ormi://localhost:23794/reliefAppName
+IMPORT.RELIEF.USER=admin
+IMPORT.RELIEF.PASS=123
+
+
+# ------------------------------ DATABASE SETTINGS ------------------
+IMPORT.DATABASE.URL=jdbc:oracle:thin:@oratest:1521:orcl
+IMPORT.DATABASE.USER=MNO_RD_CZ
+IMPORT.DATABASE.PASS=CZ
+
+
+# ------------------------------ IMPORTER SETTINGS ------------------
+# 0 - standartn\u00ed import dat
+# 1 - testovac\u00ed import dat - provede v\u0161e jako obvykle, ale nezap\u00ed\u0161e data do datab\u00e1ze
+# IMPORT.TEST=1
+IMPORT.TEST=0
+
+IMPORT.SLEEPTIME.FILE.NAMEPARSER=3000
+IMPORT.SLEEPTIME.DATA.HARVESTER=60000
+IMPORT.SLEEPTIME.DATA.PARSER=60000
+IMPORT.SLEEPTIME.DATA.IMPORTER=60000
+IMPORT.SLEEPTIME.DATA.LOGGER=60000
+
+IMPORT.LOG.MAIL.SMTPSERVER=194.108.215.115
+IMPORT.LOG.MAIL.FROM=rdcz@incad.cz
+IMPORT.LOG.MAIL.SUBJECT=RegistrDigitalizace.cz - IMPORT
+IMPORT.LOG.MAIL.ADMINISTRATOR=0
+IMPORT.LOG.MAIL.ADMINISTRATOR.TO=martin@incad.cz
+IMPORT.LOG.MAIL.USER=0

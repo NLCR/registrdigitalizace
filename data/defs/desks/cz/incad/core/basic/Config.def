@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<desk bundle="ServerBundle">
+  <deskPackage>cz.incad.core.basic</deskPackage>
+  <deskName>Config</deskName>
+  <deskHumanHelp>cz.incad.core.basic.Config_help</deskHumanHelp>
+  <deskHumanName>cz.incad.core.basic.Config</deskHumanName>
+  <deskDBName>Config</deskDBName>
+  <deskRoot/>
+  <machineModel>cz.incad.core.basic.Config</machineModel>
+  <fields>
+    <field>
+      <fieldName>parValue</fieldName>
+      <fieldHumanName>cz.incad.core.basic.Config.parValue</fieldHumanName>
+      <fieldHumanHelp>cz.incad.core.basic.Config.parValue_help</fieldHumanHelp>
+      <fieldDBName>parValue</fieldDBName>
+      <fieldType>STR</fieldType>
+      <fieldRepresentation>EDI</fieldRepresentation>
+      <validateEmpty/>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>parName</fieldName>
+      <fieldHumanName>cz.incad.core.basic.Config.parName</fieldHumanName>
+      <fieldHumanHelp>cz.incad.core.basic.Config.parName_help</fieldHumanHelp>
+      <fieldDBName>parName</fieldDBName>
+      <fieldType>STR</fieldType>
+      <fieldRepresentation>EDI</fieldRepresentation>
+      <validateEmpty/>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>parPozn</fieldName>
+      <fieldHumanName>cz.incad.core.basic.Config.parPozn</fieldHumanName>
+      <fieldHumanHelp>cz.incad.core.basic.Config.parPozn_help</fieldHumanHelp>
+      <fieldDBName>parPozn</fieldDBName>
+      <fieldType>STR</fieldType>
+      <fieldRepresentation>EDI</fieldRepresentation>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+  </fields>
+  <forms>
+    <screen-form name="ConfigF" formHumanName="cz.incad.core.basic.ConfigF" id="cz.incad.core.basic.Config">
+      <form-body align="LEFT" valign="TOP">
+        <row fill="LEFT" vfill="TOP">
+          <input align="LEFT" valign="TOP" indent="false" columnIndex="1" width="40ch" id="parName" precision="0" scale="0" type="text">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </input>
+          <input align="LEFT" valign="TOP" indent="false" columnIndex="2" width="40ch" id="parValue" precision="0" scale="0" type="text">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </input>
+        </row>
+        <row fill="LEFT" vfill="TOP">
+          <input align="LEFT" valign="TOP" indent="false" width="100ch" id="parPozn" precision="0" scale="0" type="text" rows="4">
+            <label place="TOP">
+              <from-field colon="false"/>
+            </label>
+          </input>
+        </row>
+      </form-body>
+    </screen-form>
+    <tree name="AvailableForms">
+      <node formName="ConfigF"/>
+    </tree>
+  </forms>
+  <functions>
+    <function>
+      <functionName>cz.incad.core.bf.ReloadCoreSettings</functionName>
+      <functionHumanName>cz.incad.core.bf.ReloadCoreSettings</functionHumanName>
+      <functionHumanHelp>cz.incad.core.bf.ReloadCoreSettings_help</functionHumanHelp>
+    </function>
+    <function>
+      <functionName>cz.incad.core.bf.ReloadAllProperties</functionName>
+      <functionHumanName>cz.incad.core.bf.ReloadAllProperties</functionHumanName>
+      <functionHumanHelp>Config_cz.incad.core.bf.ReloadAllProperties_help</functionHumanHelp>
+    </function>
+    <function>
+      <functionName>cz.incad.nkp.digital.bf.DataInspector</functionName>
+      <functionHumanName>cz.incad.nkp.digital.bf.DataInspector</functionHumanName>
+      <functionHumanHelp>Config_cz.incad.nkp.digital.bf.DataInspector_help</functionHumanHelp>
+      <wizardPanels>
+        <wizardPanel>
+          <panelName>DataInspectorDialog01</panelName>
+          <panelHumanName>DataInspectorDialog01</panelHumanName>
+          <description>DataInspectorDialog01</description>
+          <panelFields>
+            <panelField>
+              <fieldName>action</fieldName>
+              <fieldHumanName>action</fieldHumanName>
+              <fieldType>INT</fieldType>
+              <fieldRepresentation>LST</fieldRepresentation>
+              <list>SimpleList_BF_DataInspector_action</list>
+            </panelField>
+          </panelFields>
+        </wizardPanel>
+      </wizardPanels>
+    </function>
+    <function>
+      <functionName>cz.incad.rd.bf.Config_RepairAllMainFlags</functionName>
+      <functionHumanName>cz.incad.rd.bf.Config_RepairAllMainFlags</functionHumanName>
+      <functionHumanHelp>cz.incad.rd.bf.Config_RepairAllMainFlags_help</functionHumanHelp>
+      <openInMainWindow/>
+      <wizardPanels>
+        <wizardPanel>
+          <panelName>panel01</panelName>
+          <panelHumanName>Config_RepairAllMainFlags.panel01</panelHumanName>
+          <description>Config_RepairAllMainFlags.panel01_help</description>
+          <panelFields/>
+        </wizardPanel>
+      </wizardPanels>
+    </function>
+    <function>
+      <functionName>cz.incad.rd.bf.Config_SystemInfo</functionName>
+      <functionHumanName>cz.incad.rd.bf.Config_SystemInfo</functionHumanName>
+      <functionHumanHelp>Config_cz.incad.rd.bf.Config_SystemInfo_help</functionHumanHelp>
+    </function>
+    <tree name="AvailableBusinessFunctions">
+      <node functionName="cz.incad.core.bf.ReloadCoreSettings"/>
+      <node functionName="cz.incad.core.bf.ReloadAllProperties"/>
+      <node functionName="cz.incad.nkp.digital.bf.DataInspector"/>
+      <node functionName="cz.incad.rd.bf.Config_RepairAllMainFlags"/>
+      <node functionName="cz.incad.rd.bf.Config_SystemInfo"/>
+    </tree>
+  </functions>
+  <uniqueFields>
+    <field name="parName"/>
+  </uniqueFields>
+</desk>

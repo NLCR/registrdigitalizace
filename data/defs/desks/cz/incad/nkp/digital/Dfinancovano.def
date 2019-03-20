@@ -1,0 +1,257 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<desk bundle="ServerBundle">
+  <deskPackage>cz.incad.nkp.digital</deskPackage>
+  <deskName>Dfinancovano</deskName>
+  <deskHumanHelp>cz.incad.nkp.digital.Dfinancovano_help</deskHumanHelp>
+  <deskHumanName>cz.incad.nkp.digital.Dfinancovano</deskHumanName>
+  <deskDBName>Dfinancovano</deskDBName>
+  <deskRoot>cz.incad.core.basic.DLists</deskRoot>
+  <machineModel>cz.incad.nkp.digital.Dfinancovano</machineModel>
+  <fields>
+    <field>
+      <fieldName>dotace</fieldName>
+      <fieldHumanName>Dfinancovano.dotace</fieldHumanName>
+      <fieldHumanHelp>Dfinancovano.dotace_help</fieldHumanHelp>
+      <fieldDBName>dotace</fieldDBName>
+      <fieldType>STR</fieldType>
+      <fieldRepresentation>COM</fieldRepresentation>
+      <list>SLdotace</list>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>organizace</fieldName>
+      <fieldHumanName>Dfinancovano.organizace</fieldHumanName>
+      <fieldHumanHelp>Dfinancovano.organizace_help</fieldHumanHelp>
+      <fieldDBName>organizace</fieldDBName>
+      <fieldType>STR</fieldType>
+      <fieldRepresentation>EDI</fieldRepresentation>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>pocetPredloh</fieldName>
+      <fieldHumanName>Dfinancovano.pocetPredloh</fieldHumanName>
+      <fieldHumanHelp>Dfinancovano.pocetPredloh_help</fieldHumanHelp>
+      <fieldDBName>pocetPredloh</fieldDBName>
+      <fieldType>INT</fieldType>
+      <fieldRepresentation>EDI</fieldRepresentation>
+      <computed/>
+      <precision>19</precision>
+    </field>
+    <field>
+      <fieldName>pocetpredlohDok</fieldName>
+      <fieldHumanName>Dfinancovano.pocetpredlohDok</fieldHumanName>
+      <fieldHumanHelp>Dfinancovano.pocetpredlohDok_help</fieldHumanHelp>
+      <fieldDBName>pocetpredlohDok</fieldDBName>
+      <fieldType>INT</fieldType>
+      <fieldRepresentation>EDI</fieldRepresentation>
+      <computed/>
+      <precision>19</precision>
+    </field>
+    <field>
+      <fieldName>pocetVyplStr</fieldName>
+      <fieldHumanName>Dfinancovano.pocetVyplStr</fieldHumanName>
+      <fieldHumanHelp>Dfinancovano.pocetVyplStr_help</fieldHumanHelp>
+      <fieldDBName>pocetVyplStr</fieldDBName>
+      <fieldType>INT</fieldType>
+      <fieldRepresentation>EDI</fieldRepresentation>
+      <computed/>
+      <precision>19</precision>
+    </field>
+    <field>
+      <fieldName>pocetStran</fieldName>
+      <fieldHumanName>Dfinancovano.pocetStran</fieldHumanName>
+      <fieldHumanHelp>Dfinancovano.pocetStran_help</fieldHumanHelp>
+      <fieldDBName>pocetStran</fieldDBName>
+      <fieldType>INT</fieldType>
+      <fieldRepresentation>EDI</fieldRepresentation>
+      <computed/>
+      <precision>19</precision>
+    </field>
+    <field>
+      <fieldName>pocetStranDok</fieldName>
+      <fieldHumanName>Dfinancovano.pocetStranDok</fieldHumanName>
+      <fieldHumanHelp>Dfinancovano.pocetStranDok_help</fieldHumanHelp>
+      <fieldDBName>pocetStranDok</fieldDBName>
+      <fieldType>INT</fieldType>
+      <fieldRepresentation>EDI</fieldRepresentation>
+      <computed/>
+      <precision>19</precision>
+    </field>
+    <field>
+      <fieldName>plnyNazevProj</fieldName>
+      <fieldHumanName>Dfinancovano.plnyNazevProj</fieldHumanName>
+      <fieldHumanHelp>Dfinancovano.plnyNazevProj_help</fieldHumanHelp>
+      <fieldDBName>plnyNazevProj</fieldDBName>
+      <fieldType>STR</fieldType>
+      <fieldRepresentation>EDI</fieldRepresentation>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+  </fields>
+  <forms>
+    <screen-form name="DListsF" formHumanName="DListsF" id="cz.incad.nkp.digital.Dfinancovano">
+      <form-body align="LEFT" valign="TOP">
+        <row fill="LEFT" vfill="TOP">
+          <input align="LEFT" valign="TOP" indent="false" columnIndex="1" width="200px" id="value" precision="19" scale="4" type="text">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </input>
+          <check align="LEFT" valign="TOP" indent="false" columnIndex="2" id="use" precision="0" scale="0">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </check>
+          <input align="LEFT" valign="TOP" indent="false" columnIndex="3" id="poradi" precision="19" scale="0" type="text">
+            <label place="TOP">
+              <from-field colon="false"/>
+            </label>
+          </input>
+        </row>
+        <row fill="LEFT" vfill="TOP">
+          <empty align="LEFT" valign="TOP" indent="false" width="40px" height="40px"/>
+        </row>
+        <row fill="LEFT" vfill="TOP">
+          <input align="LEFT" valign="TOP" indent="false" columnIndex="1" width="300px" id="cz" precision="19" scale="4" type="text">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </input>
+          <input align="LEFT" valign="TOP" indent="false" columnIndex="2" width="300px" id="en" precision="19" scale="4" type="text">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </input>
+        </row>
+        <row fill="LEFT" vfill="TOP">
+          <input align="LEFT" valign="TOP" indent="false" columnIndex="1" width="300px" id="de" precision="19" scale="4" type="text">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </input>
+          <input align="LEFT" valign="TOP" indent="false" columnIndex="2" width="300px" id="fr" precision="19" scale="4" type="text">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </input>
+        </row>
+        <row fill="LEFT" vfill="TOP">
+          <input align="LEFT" valign="TOP" indent="false" width="600px" id="poznamka" precision="19" scale="4" type="text" rows="2">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </input>
+        </row>
+      </form-body>
+    </screen-form>
+    <screen-form name="FinancovanoF" formHumanName="FinancovanoF" id="cz.incad.nkp.digital.Dfinancovano">
+      <form-body align="LEFT" valign="TOP">
+        <row fill="LEFT" vfill="TOP">
+          <border type="solid" color="">
+            <title>Dfinancovano.F.FinancovanoF.DefiniceSeznamu</title>
+            <margin-outer top="4mm" left="4mm" right="4mm" bottom="4mm"/>
+            <margin-inner top="4mm" left="4mm" right="4mm" bottom="4mm"/>
+          </border>
+          <input align="LEFT" valign="TOP" indent="false" columnIndex="1" width="20ch" id="value" precision="19" scale="4" type="text">
+            <label place="TOP">Dfinancovano.FinancovanoF.hodnotaProDB</label>
+          </input>
+          <check align="LEFT" valign="TOP" indent="false" columnIndex="2" id="use" precision="19" scale="4">
+            <label place="TOP">
+              <from-field colon="false"/>
+            </label>
+          </check>
+          <input align="LEFT" valign="TOP" indent="false" columnIndex="3" width="10ch" id="poradi" precision="19" scale="0" type="text">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </input>
+          <input align="LEFT" valign="TOP" indent="false" width="60ch" id="cz" precision="19" scale="4" type="text">
+            <label place="TOP">Dfinancovano.FinancovanoF.hodnotaZlistu</label>
+          </input>
+        </row>
+        <row fill="LEFT" vfill="TOP">
+          <empty align="LEFT" valign="TOP" indent="false" width="40ch" height="5ch"/>
+        </row>
+        <row fill="LEFT" vfill="TOP">
+          <input align="LEFT" valign="TOP" indent="false" width="80ch" id="plnyNazevProj" precision="0" scale="0" type="text">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </input>
+        </row>
+        <row fill="LEFT" vfill="TOP">
+          <input align="LEFT" valign="TOP" indent="false" columnIndex="1" width="60ch" id="organizace" precision="0" scale="0" type="text" rows="3">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </input>
+          <select align="LEFT" valign="TOP" indent="false" columnIndex="2" width="20ch" id="dotace" precision="0" scale="0" type="combo" multi="false" editable="false">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </select>
+        </row>
+        <row fill="LEFT" vfill="TOP">
+          <empty align="LEFT" valign="TOP" indent="false" width="40ch" height="5ch"/>
+        </row>
+        <row fill="LEFT" vfill="TOP">
+          <border type="solid" color="">
+            <title>Statistika</title>
+            <margin-outer top="4mm" left="4mm" right="4mm" bottom="4mm"/>
+            <margin-inner top="4mm" left="4mm" right="4mm" bottom="4mm"/>
+          </border>
+          <input align="LEFT" valign="TOP" indent="false" columnIndex="1" width="30ch" id="pocetPredloh" precision="19" scale="0" type="text">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </input>
+          <input align="LEFT" valign="TOP" indent="false" columnIndex="1" width="30ch" id="pocetpredlohDok" precision="19" scale="0" type="text">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </input>
+          <input align="LEFT" valign="TOP" indent="false" columnIndex="2" width="30ch" id="pocetStran" precision="0" scale="0" type="text">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </input>
+          <input align="LEFT" valign="TOP" indent="false" columnIndex="2" width="30ch" id="pocetStranDok" precision="0" scale="0" type="text">
+            <label place="TOP">
+              <from-field colon="false"/>
+            </label>
+          </input>
+          <input align="LEFT" valign="TOP" indent="false" columnIndex="3" width="40ch" id="pocetVyplStr" precision="19" scale="0" type="text">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </input>
+        </row>
+        <row fill="LEFT" vfill="TOP">
+          <input align="LEFT" valign="TOP" indent="false" width="100ch" id="poznamka" precision="19" scale="4" type="text" rows="5">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </input>
+        </row>
+      </form-body>
+    </screen-form>
+    <tree name="AvailableForms">
+      <node formName="DListsF"/>
+      <node formName="FinancovanoF"/>
+    </tree>
+  </forms>
+  <functions>
+    <function>
+      <functionName>cz.incad.rd.bf.DfinancovanoStatistika</functionName>
+      <functionHumanName>cz.incad.rd.bf.DfinancovanoStatistika</functionHumanName>
+      <functionHumanHelp>Dfinancovano_cz.incad.rd.bf.DfinancovanoStatistika_help</functionHumanHelp>
+    </function>
+    <tree name="AvailableBusinessFunctions">
+      <node functionName="cz.incad.rd.bf.DfinancovanoStatistika"/>
+    </tree>
+  </functions>
+  <uniqueFields/>
+</desk>

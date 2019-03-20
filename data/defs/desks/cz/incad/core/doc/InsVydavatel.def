@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<desk bundle="ServerBundle">
+  <deskPackage>cz.incad.core.doc</deskPackage>
+  <deskName>InsVydavatel</deskName>
+  <deskHumanHelp>cz.incad.core.doc.InsVydavatel_help</deskHumanHelp>
+  <deskHumanName>cz.incad.core.doc.InsVydavatel</deskHumanName>
+  <deskDBName>InsVydavatel</deskDBName>
+  <deskRoot>cz.incad.core.doc.Inst</deskRoot>
+  <machineModel>cz.incad.core.doc.InsVydavatel</machineModel>
+  <forms>
+    <screen-form name="InsVydavatelF" formHumanName="cz.incad.core.doc.InsVydavatelF" id="cz.incad.core.doc.InsVydavatel">
+      <form-body align="LEFT" valign="TOP">
+        <row fill="LEFT" vfill="TOP">
+          <input align="LEFT" valign="TOP" indent="false" width="110ch" id="nazevInst" precision="19" scale="4" type="text">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </input>
+        </row>
+      </form-body>
+    </screen-form>
+    <tree name="AvailableForms">
+      <node formName="InsVydavatelF"/>
+    </tree>
+  </forms>
+  <uniqueFields/>
+</desk>

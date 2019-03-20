@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<desk bundle="ServerBundle">
+  <deskPackage>cz.incad.nkp.digital</deskPackage>
+  <deskName>AtypPrace</deskName>
+  <deskHumanHelp>cz.incad.nkp.digital.AtypPrace_help</deskHumanHelp>
+  <deskHumanName>cz.incad.nkp.digital.AtypPrace</deskHumanName>
+  <deskDBName>AtypPrace</deskDBName>
+  <deskRoot/>
+  <machineModel>cz.incad.nkp.digital.AtypPrace</machineModel>
+  <fields>
+    <field>
+      <fieldName>typPrace</fieldName>
+      <fieldHumanName>AtypPrace.typPrace</fieldHumanName>
+      <fieldHumanHelp>AtypPrace.typPrace_help</fieldHumanHelp>
+      <fieldDBName>typPrace</fieldDBName>
+      <fieldType>STR</fieldType>
+      <fieldRepresentation>COM</fieldRepresentation>
+      <list>DtypPrace</list>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>zpracovatel</fieldName>
+      <fieldHumanName>cz.incad.nkp.digital.AtypPrace.zpracovatel</fieldHumanName>
+      <fieldHumanHelp>cz.incad.nkp.digital.AtypPrace.zpracovatel_help</fieldHumanHelp>
+      <fieldDBName>zpracovatel</fieldDBName>
+      <fieldType>STR</fieldType>
+      <fieldRepresentation>COM</fieldRepresentation>
+      <list>InsZpracovatel</list>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+  </fields>
+  <forms>
+    <screen-form name="AtypPraceF" formHumanName="AtypPraceF" id="cz.incad.nkp.digital.AtypPrace">
+      <form-body align="LEFT" valign="TOP">
+        <row fill="LEFT" vfill="TOP">
+          <select align="LEFT" valign="TOP" indent="false" columnIndex="1" width="20ch" id="typPrace" precision="0" scale="0" type="combo" multi="false" editable="false"/>
+          <select align="LEFT" valign="TOP" indent="false" columnIndex="2" width="20ch" id="zpracovatel" precision="0" scale="0" type="combo" multi="false" editable="false"/>
+        </row>
+      </form-body>
+    </screen-form>
+    <tree name="AvailableForms">
+      <node formName="AtypPraceF"/>
+    </tree>
+  </forms>
+  <uniqueFields/>
+</desk>

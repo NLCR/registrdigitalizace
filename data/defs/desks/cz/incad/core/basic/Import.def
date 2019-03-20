@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<desk bundle="ServerBundle">
+  <deskPackage>cz.incad.core.basic</deskPackage>
+  <deskName>Import</deskName>
+  <deskHumanHelp>cz.incad.core.basic.Import_help</deskHumanHelp>
+  <deskHumanName>cz.incad.core.basic.Import</deskHumanName>
+  <deskDBName>Import</deskDBName>
+  <deskRoot>cz.incad.core.basic.Record</deskRoot>
+  <machineModel>cz.incad.core.basic.Import</machineModel>
+  <fields>
+    <field>
+      <fieldName>fileName</fieldName>
+      <fieldHumanName>Import.fileName</fieldHumanName>
+      <fieldHumanHelp>Import.fileName_help</fieldHumanHelp>
+      <fieldDBName>fileName</fieldDBName>
+      <fieldType>STR</fieldType>
+      <fieldRepresentation>EDI</fieldRepresentation>
+      <validateLength>1024</validateLength>
+      <computed/>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>log</fieldName>
+      <fieldHumanName>cz.incad.core.basic.Import.log</fieldHumanName>
+      <fieldHumanHelp>cz.incad.core.basic.Import.lgo_help</fieldHumanHelp>
+      <fieldDBName>log</fieldDBName>
+      <fieldType>TXT</fieldType>
+      <fieldRepresentation>TXT</fieldRepresentation>
+      <computed/>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>pocetExemplaru</fieldName>
+      <fieldHumanName>Import.pocetExemplaru</fieldHumanName>
+      <fieldHumanHelp>Import.pocetExemplaru_help</fieldHumanHelp>
+      <fieldDBName>pocetExemplaru</fieldDBName>
+      <fieldType>INT</fieldType>
+      <fieldRepresentation>EDI</fieldRepresentation>
+      <computed/>
+      <precision>19</precision>
+    </field>
+    <field>
+      <fieldName>pocetTitulu</fieldName>
+      <fieldHumanName>Import.pocetTitulu</fieldHumanName>
+      <fieldHumanHelp>Import.pocetTitulu_help</fieldHumanHelp>
+      <fieldDBName>pocetTitulu</fieldDBName>
+      <fieldType>INT</fieldType>
+      <fieldRepresentation>EDI</fieldRepresentation>
+      <computed/>
+      <precision>19</precision>
+    </field>
+  </fields>
+  <forms>
+    <screen-form name="ImportF" formHumanName="cz.incad.core.basic.Import.ImportF" id="cz.incad.core.basic.Import">
+      <form-body align="LEFT" valign="TOP">
+        <row fill="LEFT" vfill="TOP">
+          <input align="LEFT" valign="TOP" indent="false" columnIndex="1" width="40ch" id="idCislo" precision="19" scale="4" type="text">
+            <label place="TOP">
+              <from-field colon="false"/>
+            </label>
+          </input>
+          <selectDate align="LEFT" valign="TOP" indent="false" columnIndex="2" width="40ch" id="zalDate" precision="19" scale="4">
+            <label place="TOP">
+              <from-field colon="false"/>
+            </label>
+          </selectDate>
+          <input align="LEFT" valign="TOP" indent="false" columnIndex="3" width="40ch" id="zalUser" precision="19" scale="4" type="text">
+            <label place="TOP">
+              <from-field colon="false"/>
+            </label>
+          </input>
+        </row>
+        <row fill="LEFT" vfill="TOP">
+          <input align="LEFT" valign="TOP" indent="false" columnIndex="1" width="60ch" id="fileName" precision="0" scale="0" type="text">
+            <label place="TOP">
+              <from-field colon="false"/>
+            </label>
+          </input>
+          <select align="LEFT" valign="TOP" indent="false" columnIndex="2" width="40ch" id="stavRec" precision="19" scale="4" type="combo" multi="false" editable="false">
+            <label place="TOP">
+              <from-field colon="false"/>
+            </label>
+          </select>
+        </row>
+        <row fill="LEFT" vfill="TOP">
+          <input align="LEFT" valign="TOP" indent="false" width="100ch" id="poznRec" precision="19" scale="4" type="text" rows="4">
+            <label place="TOP">
+              <from-field colon="false"/>
+            </label>
+          </input>
+          <input align="LEFT" valign="TOP" indent="false" width="100ch" id="log" precision="0" scale="0" type="longtext" rows="20">
+            <label place="TOP">
+              <from-field colon="false"/>
+            </label>
+          </input>
+        </row>
+      </form-body>
+    </screen-form>
+    <tree name="AvailableForms">
+      <node formName="ImportF"/>
+    </tree>
+  </forms>
+  <uniqueFields/>
+</desk>

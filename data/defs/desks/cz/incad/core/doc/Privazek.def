@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<desk bundle="ServerBundle">
+  <deskPackage>cz.incad.core.doc</deskPackage>
+  <deskName>Privazek</deskName>
+  <deskHumanHelp>cz.incad.core.doc.Privazek_help</deskHumanHelp>
+  <deskHumanName>cz.incad.core.doc.Privazek</deskHumanName>
+  <deskDBName>Privazek</deskDBName>
+  <deskRoot/>
+  <machineModel>cz.incad.core.doc.Privazek</machineModel>
+  <fields>
+    <field>
+      <fieldName>poradi</fieldName>
+      <fieldHumanName>cz.incad.core.doc.Privazek.poradi</fieldHumanName>
+      <fieldHumanHelp>cz.incad.core.doc.Privazek.poradi_help</fieldHumanHelp>
+      <fieldDBName>poradi</fieldDBName>
+      <fieldType>INT</fieldType>
+      <fieldRepresentation>EDI</fieldRepresentation>
+      <precision>19</precision>
+    </field>
+    <field>
+      <fieldName>rExemplar</fieldName>
+      <fieldHumanName>cz.incad.core.doc.Privazek.rExemplar</fieldHumanName>
+      <fieldHumanHelp>cz.incad.core.doc.Privazek.rExemplar_help</fieldHumanHelp>
+      <fieldDBName>rExemplar</fieldDBName>
+      <fieldType>REF</fieldType>
+      <fieldRepresentation>REF</fieldRepresentation>
+      <reference relationshipType="association" rTable="false">cz.incad.core.doc.Exemplar</reference>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>poznamka</fieldName>
+      <fieldHumanName>cz.incad.core.doc.Privazek.poznamka</fieldHumanName>
+      <fieldHumanHelp>cz.incad.core.doc.Privazek.poznamka_help</fieldHumanHelp>
+      <fieldDBName>poznamka</fieldDBName>
+      <fieldType>STR</fieldType>
+      <fieldRepresentation>EDI</fieldRepresentation>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>rTitul</fieldName>
+      <fieldHumanName>cz.incad.core.doc.Privazek.rTitul</fieldHumanName>
+      <fieldHumanHelp>cz.incad.core.doc.Privazek.rTitul_help</fieldHumanHelp>
+      <fieldDBName>rTitul</fieldDBName>
+      <fieldType>REF</fieldType>
+      <fieldRepresentation>REF</fieldRepresentation>
+      <reference relationshipType="association" rTable="false">cz.incad.core.doc.Titul</reference>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+  </fields>
+  <forms>
+    <screen-form name="PrivazekFEx" formHumanName="cz.incad.core.doc.PrivazekFEx" id="cz.incad.core.doc.Privazek">
+      <form-body align="LEFT" valign="TOP">
+        <row fill="LEFT" vfill="TOP">
+          <refbutton align="LEFT" valign="TOP" indent="false" columnIndex="1" id="rExemplar" precision="0" scale="0" refclass="cz.incad.core.doc.Exemplar"/>
+          <input align="LEFT" valign="TOP" indent="false" columnIndex="2" width="25ch" id="rExemplar.carKod" precision="19" scale="0" ref="true" type="text">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </input>
+          <input align="LEFT" valign="TOP" indent="false" columnIndex="3" width="40ch" id="rExemplar.signatura" precision="19" scale="4" ref="true" type="text">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </input>
+          <input align="LEFT" valign="TOP" indent="false" columnIndex="4" width="10ch" id="poradi" precision="0" scale="0" type="text">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </input>
+        </row>
+      </form-body>
+    </screen-form>
+    <screen-form name="PrivazekFTi" formHumanName="cz.incad.core.doc.PrivazekFTi" id="cz.incad.core.doc.Privazek">
+      <form-body align="LEFT" valign="TOP">
+        <row fill="LEFT" vfill="TOP">
+          <refbutton align="LEFT" valign="TOP" indent="false" columnIndex="1" id="rTitul" precision="19" scale="4" refclass="cz.incad.core.doc.Titul"/>
+          <input align="LEFT" valign="TOP" indent="false" columnIndex="2" width="80ch" id="rTitul.hlNazev" precision="19" scale="4" ref="true" type="text">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </input>
+        </row>
+      </form-body>
+    </screen-form>
+    <screen-form name="PrivazekExcel" formHumanName="PrivazekExcel" id="cz.incad.core.doc.Privazek">
+      <form-body align="LEFT" valign="TOP">
+        <row fill="LEFT" vfill="TOP">
+          <refbutton align="LEFT" valign="TOP" indent="false" columnIndex="1" id="rExemplar" precision="19" scale="4" refclass="cz.incad.core.doc.Exemplar">
+            <label place="TOP">
+              <from-field colon="false"/>
+            </label>
+          </refbutton>
+          <input align="LEFT" valign="TOP" indent="false" columnIndex="2" width="20ch" id="rExemplar.signatura" precision="19" scale="4" ref="true" type="text">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </input>
+          <input align="LEFT" valign="TOP" indent="false" columnIndex="3" width="20ch" id="rExemplar.carKod" precision="19" scale="4" ref="true" type="text">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </input>
+          <input align="LEFT" valign="TOP" indent="false" columnIndex="4" width="30ch" id="rExemplar.poznRec" precision="19" scale="4" ref="true" type="text">
+            <label place="TOP">Privazek.PrivazekExcel.poznamkaExemplar</label>
+          </input>
+        </row>
+        <row fill="LEFT" vfill="TOP">
+          <input align="LEFT" valign="TOP" indent="false" columnIndex="1" width="20ch" id="poradi" precision="19" scale="0" type="text">
+            <label place="TOP">
+              <from-field colon="false"/>
+            </label>
+          </input>
+          <input align="LEFT" valign="TOP" indent="false" columnIndex="2" width="70ch" id="poznamka" precision="19" scale="4" type="text">
+            <label place="TOP">Privazek.PrivazekExcel.poznamkaPrivazek</label>
+          </input>
+        </row>
+      </form-body>
+    </screen-form>
+    <tree name="AvailableForms">
+      <node formName="PrivazekFEx"/>
+      <node formName="PrivazekFTi"/>
+      <node formName="PrivazekExcel"/>
+    </tree>
+  </forms>
+  <uniqueFields>
+    <field name="rExemplar"/>
+    <field name="rTitul"/>
+  </uniqueFields>
+</desk>

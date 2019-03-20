@@ -1,0 +1,409 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<desk bundle="ServerBundle">
+  <deskPackage>cz.incad.rd</deskPackage>
+  <deskName>XPredMikro</deskName>
+  <deskHumanHelp>XPredMikro_help</deskHumanHelp>
+  <deskHumanName>XPredMikro</deskHumanName>
+  <deskDBName>XPredMikro</deskDBName>
+  <deskRoot/>
+  <machineModel>cz.incad.rd.XPredMikro</machineModel>
+  <historyEnabled>true</historyEnabled>
+  <fields>
+    <field>
+      <fieldName>carKod</fieldName>
+      <fieldHumanName>XPredMikro.carKod</fieldHumanName>
+      <fieldHumanHelp>XPredMikro.carKod_help</fieldHumanHelp>
+      <fieldDBName>carKod</fieldDBName>
+      <fieldType>STR</fieldType>
+      <fieldRepresentation>EDI</fieldRepresentation>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>idCislo</fieldName>
+      <fieldHumanName>XPredMikro.idCislo</fieldHumanName>
+      <fieldHumanHelp>XPredMikro.idCislo_help</fieldHumanHelp>
+      <fieldDBName>idCislo</fieldDBName>
+      <fieldType>STR</fieldType>
+      <fieldRepresentation>EDI</fieldRepresentation>
+      <computed/>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>finDate</fieldName>
+      <fieldHumanName>XPredMikro.finDate</fieldHumanName>
+      <fieldHumanHelp>XPredMikro.finDate_help</fieldHumanHelp>
+      <fieldDBName>finDate</fieldDBName>
+      <fieldType>DAT</fieldType>
+      <fieldRepresentation>EDI</fieldRepresentation>
+      <computed/>
+      <formatPattern>dd.MM.yyyy</formatPattern>
+      <formatPatternForInput>dd.MM.yyyy</formatPatternForInput>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>ediDate</fieldName>
+      <fieldHumanName>XPredMikro.ediDate</fieldHumanName>
+      <fieldHumanHelp>XPredMikro.ediDate_help</fieldHumanHelp>
+      <fieldDBName>ediDate</fieldDBName>
+      <fieldType>DAT</fieldType>
+      <fieldRepresentation>EDI</fieldRepresentation>
+      <computed/>
+      <formatPattern>dd.MM.yyyy</formatPattern>
+      <formatPatternForInput>dd.MM.yyyy</formatPatternForInput>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>zalDate</fieldName>
+      <fieldHumanName>XPredMikro.zalDate</fieldHumanName>
+      <fieldHumanHelp>XPredMikro.zalDate_help</fieldHumanHelp>
+      <fieldDBName>zalDate</fieldDBName>
+      <fieldType>DAT</fieldType>
+      <fieldRepresentation>EDI</fieldRepresentation>
+      <computed/>
+      <formatPattern>dd.MM.yyyy</formatPattern>
+      <formatPatternForInput>dd.MM.yyyy</formatPatternForInput>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>finUser</fieldName>
+      <fieldHumanName>XPredMikro.finUser</fieldHumanName>
+      <fieldHumanHelp>XPredMikro.finUser_help</fieldHumanHelp>
+      <fieldDBName>finUser</fieldDBName>
+      <fieldType>STR</fieldType>
+      <fieldRepresentation>EDI</fieldRepresentation>
+      <computed/>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>ediUser</fieldName>
+      <fieldHumanName>XPredMikro.ediUser</fieldHumanName>
+      <fieldHumanHelp>XPredMikro.ediUser_help</fieldHumanHelp>
+      <fieldDBName>ediUser</fieldDBName>
+      <fieldType>STR</fieldType>
+      <fieldRepresentation>EDI</fieldRepresentation>
+      <computed/>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>mfeCislo</fieldName>
+      <fieldHumanName>XPredMikro.mfeCislo</fieldHumanName>
+      <fieldHumanHelp>XPredMikro.mfeCislo_help</fieldHumanHelp>
+      <fieldDBName>mfeCislo</fieldDBName>
+      <fieldType>STR</fieldType>
+      <fieldRepresentation>EDI</fieldRepresentation>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>rMikrofilm</fieldName>
+      <fieldHumanName>XPredMikro.rMikrofilm</fieldHumanName>
+      <fieldHumanHelp>XPredMikro.rMikrofilm_help</fieldHumanHelp>
+      <fieldDBName>rMikrofilm</fieldDBName>
+      <fieldType>REF</fieldType>
+      <fieldRepresentation>REF</fieldRepresentation>
+      <reference relationshipType="association" rTable="false">cz.incad.nkp.digital.Mikrofilm</reference>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>oldXTitNkpMfId</fieldName>
+      <fieldHumanName>XPredMikro.oldXTitNkpMfId</fieldHumanName>
+      <fieldHumanHelp>XPredMikro.oldXTitNkpMfId_help</fieldHumanHelp>
+      <fieldDBName>oldXTitNkpMfId</fieldDBName>
+      <fieldType>INT</fieldType>
+      <fieldRepresentation>EDI</fieldRepresentation>
+      <precision>19</precision>
+    </field>
+    <field>
+      <fieldName>oldTitulId</fieldName>
+      <fieldHumanName>XPredMikro.oldTitulId</fieldHumanName>
+      <fieldHumanHelp>XPredMikro.oldTitulId_help</fieldHumanHelp>
+      <fieldDBName>oldTitulId</fieldDBName>
+      <fieldType>INT</fieldType>
+      <fieldRepresentation>EDI</fieldRepresentation>
+      <precision>19</precision>
+    </field>
+    <field>
+      <fieldName>oznaceniCasti</fieldName>
+      <fieldHumanName>XPredMikro.oznaceniCasti</fieldHumanName>
+      <fieldHumanHelp>XPredMikro.oznaceniCasti_help</fieldHumanHelp>
+      <fieldDBName>oznaceniCasti</fieldDBName>
+      <fieldType>STR</fieldType>
+      <fieldRepresentation>EDI</fieldRepresentation>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>pocetScanu</fieldName>
+      <fieldHumanName>XPredMikro.pocetScanu</fieldHumanName>
+      <fieldHumanHelp>XPredMikro.pocetScanu_help</fieldHumanHelp>
+      <fieldDBName>pocetScanu</fieldDBName>
+      <fieldType>INT</fieldType>
+      <fieldRepresentation>EDI</fieldRepresentation>
+      <precision>19</precision>
+    </field>
+    <field>
+      <fieldName>poleCista</fieldName>
+      <fieldHumanName>XPredMikro.poleCista</fieldHumanName>
+      <fieldHumanHelp>XPredMikro.poleCista_help</fieldHumanHelp>
+      <fieldDBName>poleCista</fieldDBName>
+      <fieldType>INT</fieldType>
+      <fieldRepresentation>EDI</fieldRepresentation>
+      <precision>19</precision>
+    </field>
+    <field>
+      <fieldName>poleHruba</fieldName>
+      <fieldHumanName>XPredMikro.poleHruba</fieldHumanName>
+      <fieldHumanHelp>XPredMikro.poleHruba_help</fieldHumanHelp>
+      <fieldDBName>poleHruba</fieldDBName>
+      <fieldType>INT</fieldType>
+      <fieldRepresentation>EDI</fieldRepresentation>
+      <precision>19</precision>
+    </field>
+    <field>
+      <fieldName>poradiVeSvitku</fieldName>
+      <fieldHumanName>XPredMikro.poradiVeSvitku</fieldHumanName>
+      <fieldHumanHelp>XPredMikro.poradiVeSvitku_help</fieldHumanHelp>
+      <fieldDBName>poradiVeSvitku</fieldDBName>
+      <fieldType>INT</fieldType>
+      <fieldRepresentation>EDI</fieldRepresentation>
+      <precision>19</precision>
+    </field>
+    <field>
+      <fieldName>poznRec</fieldName>
+      <fieldHumanName>XPredMikro.poznRec</fieldHumanName>
+      <fieldHumanHelp>XPredMikro.poznRec_help</fieldHumanHelp>
+      <fieldDBName>poznRec</fieldDBName>
+      <fieldType>STR</fieldType>
+      <fieldRepresentation>EDI</fieldRepresentation>
+      <validateLength>500</validateLength>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>stavPozn</fieldName>
+      <fieldHumanName>XPredMikro.stavPozn</fieldHumanName>
+      <fieldHumanHelp>XPredMikro.stavPozn_help</fieldHumanHelp>
+      <fieldDBName>stavPozn</fieldDBName>
+      <fieldType>STR</fieldType>
+      <fieldRepresentation>EDI</fieldRepresentation>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>rPredloha</fieldName>
+      <fieldHumanName>XPredMikro.rPredloha</fieldHumanName>
+      <fieldHumanHelp>XPredMikro.rPredloha_help</fieldHumanHelp>
+      <fieldDBName>rPredloha</fieldDBName>
+      <fieldType>REF</fieldType>
+      <fieldRepresentation>REF</fieldRepresentation>
+      <reference relationshipType="association" rTable="false">cz.incad.rd.Predloha</reference>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>securityOwner</fieldName>
+      <fieldHumanName>XPredMikro.securityOwner</fieldHumanName>
+      <fieldHumanHelp>XPredMikro.securityOwner_help</fieldHumanHelp>
+      <fieldDBName>securityOwner</fieldDBName>
+      <fieldType>STR</fieldType>
+      <fieldRepresentation>COM</fieldRepresentation>
+      <list>DzarazeniUser</list>
+      <computed/>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>stavRec</fieldName>
+      <fieldHumanName>XPredMikro.stavRec</fieldHumanName>
+      <fieldHumanHelp>XPredMikro.stavRec_help</fieldHumanHelp>
+      <fieldDBName>stavRec</fieldDBName>
+      <fieldType>STR</fieldType>
+      <fieldRepresentation>COM</fieldRepresentation>
+      <list>DstavRec</list>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>zalUser</fieldName>
+      <fieldHumanName>XPredMikro.zalUser</fieldHumanName>
+      <fieldHumanHelp>XPredMikro.zalUser_help</fieldHumanHelp>
+      <fieldDBName>zalUser</fieldDBName>
+      <fieldType>STR</fieldType>
+      <fieldRepresentation>EDI</fieldRepresentation>
+      <computed/>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+  </fields>
+  <forms>
+    <screen-form name="XPredMikroF" formHumanName="XPredMikroF" id="cz.incad.rd.XPredMikro">
+      <form-body align="LEFT" valign="TOP">
+        <row fill="LEFT" vfill="TOP">
+          <refbutton align="LEFT" valign="TOP" indent="false" columnIndex="1" id="rPredloha" precision="19" scale="4" refclass="cz.incad.rd.Predloha">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </refbutton>
+          <input align="LEFT" valign="TOP" indent="false" columnIndex="2" width="90ch" id="rPredloha.vizitka" precision="19" scale="4" ref="true" type="text" rows="4">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </input>
+          <input align="LEFT" valign="TOP" indent="false" columnIndex="3" width="20ch" id="rPredloha.cast" precision="19" scale="4" ref="true" type="text">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </input>
+        </row>
+        <row fill="LEFT" vfill="TOP">
+          <refbutton align="LEFT" valign="TOP" indent="false" columnIndex="1" id="rMikrofilm" precision="19" scale="4" refclass="cz.incad.nkp.digital.Mikrofilm">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </refbutton>
+          <input align="LEFT" valign="TOP" indent="false" columnIndex="2" id="rMikrofilm.archCisloNeg" precision="19" scale="0" ref="true" type="text">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </input>
+        </row>
+        <row fill="LEFT" vfill="TOP">
+          <input align="LEFT" valign="TOP" indent="false" columnIndex="1" width="20ch" id="mfeCislo" precision="0" scale="0" type="text">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </input>
+          <input align="LEFT" valign="TOP" indent="false" columnIndex="2" width="20ch" id="poradiVeSvitku" precision="19" scale="0" type="text">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </input>
+          <input align="LEFT" valign="TOP" indent="false" columnIndex="3" width="20ch" id="poleCista" precision="19" scale="0" type="text">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </input>
+          <input align="LEFT" valign="TOP" indent="false" columnIndex="4" width="20ch" id="poleHruba" precision="19" scale="0" type="text">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </input>
+          <input align="LEFT" valign="TOP" indent="false" columnIndex="5" width="20ch" id="pocetScanu" precision="19" scale="0" type="text">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </input>
+        </row>
+      </form-body>
+    </screen-form>
+    <screen-form name="ProPredlohuF" formHumanName="ProPredlohuF" id="cz.incad.rd.XPredMikro">
+      <form-body align="LEFT" valign="TOP">
+        <row fill="LEFT" vfill="TOP">
+          <input align="LEFT" valign="TOP" indent="false" columnIndex="1" width="20ch" id="rMikrofilm.archCisloNeg" precision="19" scale="0" ref="true" type="text">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </input>
+          <select align="LEFT" valign="TOP" indent="false" columnIndex="2" width="20ch" id="rMikrofilm.kamera" precision="19" scale="4" type="combo" multi="false" editable="false">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </select>
+          <select align="LEFT" valign="TOP" indent="false" columnIndex="3" width="20ch" id="rMikrofilm.operator" precision="19" scale="4" type="combo" multi="false" editable="false">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </select>
+          <input align="LEFT" valign="TOP" indent="false" columnIndex="4" width="20ch" id="rMikrofilm.snimanoDate" precision="19" scale="4" ref="true" formatPattern="dd.MM.yyyy" formatPatternForInput="dd.MM.yyyy" type="text">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </input>
+        </row>
+        <row fill="LEFT" vfill="TOP">
+          <input align="LEFT" valign="TOP" indent="false" columnIndex="1" width="20ch" id="mfeCislo" precision="19" scale="4" type="text">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </input>
+          <input align="LEFT" valign="TOP" indent="false" columnIndex="2" width="20ch" id="poradiVeSvitku" precision="19" scale="0" type="text">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </input>
+          <input align="LEFT" valign="TOP" indent="false" columnIndex="3" width="20ch" id="poleCista" precision="19" scale="0" type="text">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </input>
+          <input align="LEFT" valign="TOP" indent="false" columnIndex="4" width="20ch" id="poleHruba" precision="19" scale="0" type="text">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </input>
+          <input align="LEFT" valign="TOP" indent="false" columnIndex="5" width="20ch" id="pocetScanu" precision="19" scale="0" type="text">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </input>
+          <input align="LEFT" valign="TOP" indent="false" columnIndex="6" width="20ch" id="carKod" precision="19" scale="4" type="text">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </input>
+        </row>
+      </form-body>
+    </screen-form>
+    <screen-form name="ProPredlohuNKF" formHumanName="ProPredlohuNKF" id="cz.incad.rd.XPredMikro">
+      <form-body align="LEFT" valign="TOP">
+        <row fill="LEFT" vfill="TOP">
+          <input align="LEFT" valign="TOP" indent="false" columnIndex="1" width="20ch" id="rMikrofilm.archCisloNeg" precision="19" scale="0" ref="true" type="text">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </input>
+          <input align="LEFT" valign="TOP" indent="false" columnIndex="2" width="20ch" id="mfeCislo" precision="19" scale="4" type="text">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </input>
+          <input align="LEFT" valign="TOP" indent="false" columnIndex="3" width="10ch" id="poradiVeSvitku" precision="19" scale="0" type="text">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </input>
+          <input align="LEFT" valign="TOP" indent="false" columnIndex="4" width="10ch" id="pocetScanu" precision="19" scale="0" type="text">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </input>
+          <input align="LEFT" valign="TOP" indent="false" columnIndex="5" width="10ch" id="poleCista" precision="19" scale="0" type="text">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </input>
+          <input align="LEFT" valign="TOP" indent="false" columnIndex="6" width="10ch" id="poleHruba" precision="19" scale="0" type="text">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </input>
+        </row>
+      </form-body>
+    </screen-form>
+    <tree name="AvailableForms">
+      <node formName="XPredMikroF"/>
+      <node formName="ProPredlohuF"/>
+      <node formName="ProPredlohuNKF"/>
+    </tree>
+  </forms>
+  <uniqueFields/>
+</desk>

@@ -1,0 +1,921 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<desk bundle="ServerBundle">
+  <deskPackage>cz.incad.nkp.digital</deskPackage>
+  <deskName>TFStareTisky</deskName>
+  <deskHumanHelp>cz.incad.nkp.digital.TFStareTisky_help</deskHumanHelp>
+  <deskHumanName>cz.incad.nkp.digital.TFStareTisky</deskHumanName>
+  <deskDBName/>
+  <deskRoot>cz.incad.nkp.digital.TitNkp</deskRoot>
+  <machineModel>cz.incad.nkp.digital.TFStareTisky</machineModel>
+  <forms>
+    <screen-form name="TFStareTiskyF" formHumanName="TFStareTiskyF" id="cz.incad.nkp.digital.TFStareTisky">
+      <form-body align="LEFT" valign="TOP">
+        <row fill="LEFT" vfill="TOP">
+          <input align="LEFT" valign="TOP" indent="false" columnIndex="1" width="20ch" id="idCislo" precision="19" scale="4" type="text">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </input>
+          <select align="LEFT" valign="TOP" indent="false" columnIndex="2" width="20ch" id="stavRec" precision="19" scale="4" type="combo" multi="false" editable="false">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </select>
+          <input align="LEFT" valign="TOP" indent="false" columnIndex="3" width="35ch" id="stavPozn" precision="19" scale="4" type="text">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </input>
+          <select align="LEFT" valign="TOP" indent="false" columnIndex="4" width="20ch" id="zpusobDig" precision="0" scale="0" type="combo" multi="false" editable="false">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </select>
+          <select align="LEFT" valign="TOP" indent="false" columnIndex="5" width="20ch" id="financovano" precision="0" scale="0" type="combo" multi="false" editable="false">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </select>
+        </row>
+        <row fill="LEFT" vfill="TOP">
+          <input align="LEFT" valign="TOP" indent="false" columnIndex="1" id="idNumber" precision="19" scale="4" type="text">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </input>
+          <input align="LEFT" valign="TOP" indent="false" columnIndex="2" id="idNumberAleph" precision="19" scale="4" type="text">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </input>
+          <select align="LEFT" valign="TOP" indent="false" columnIndex="3" id="bazeAleph" precision="19" scale="4" type="combo" multi="false" editable="false">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </select>
+        </row>
+        <row fill="LEFT" vfill="TOP">
+          <input align="LEFT" valign="TOP" indent="false" columnIndex="1" width="100ch" id="hlNazev" precision="19" scale="4" type="text" rows="3">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </input>
+          <input align="LEFT" valign="TOP" indent="false" columnIndex="1" width="100ch" id="cast" precision="19" scale="4" type="text">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </input>
+        </row>
+        <row fill="LEFT" vfill="TOP">
+          <input align="LEFT" valign="TOP" indent="false" columnIndex="1" width="80ch" id="autorPrij" precision="19" scale="4" type="text">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </input>
+          <input align="LEFT" valign="TOP" indent="false" columnIndex="2" width="20ch" id="rokVyd" precision="19" scale="4" type="text">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </input>
+        </row>
+        <row fill="LEFT" vfill="TOP">
+          <input align="LEFT" valign="TOP" indent="false" columnIndex="1" width="20ch" id="pocetStran" precision="19" scale="4" type="text">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </input>
+          <input align="LEFT" valign="TOP" indent="false" columnIndex="2" width="20ch" id="pocetPoli" precision="0" scale="0" type="text">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </input>
+          <input align="LEFT" valign="TOP" indent="false" columnIndex="3" width="20ch" id="vyskaVcm" precision="19" scale="4" type="text">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </input>
+        </row>
+        <row fill="LEFT" vfill="TOP">
+          <repeat align="LEFT" valign="TOP" indent="false" id="tExemplar" precision="19" scale="4" refclass="cz.incad.core.doc.Exemplar" form="ExemplarRadek">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </repeat>
+        </row>
+        <row fill="LEFT" vfill="TOP">
+          <tabview align="LEFT" valign="TOP" indent="false" id="tXTitNkpMf" precision="19" scale="4" refclass="cz.incad.nkp.digital.XTitNkpMf" rows="10">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </tabview>
+        </row>
+        <row fill="LEFT" vfill="TOP">
+          <tabview align="LEFT" valign="TOP" indent="false" id="tZakazka" precision="19" scale="4" refclass="cz.incad.nkp.digital.Zakazka" rows="10">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </tabview>
+        </row>
+        <row fill="LEFT" vfill="TOP">
+          <tabview align="LEFT" valign="TOP" indent="false" id="tSoubXML" precision="19" scale="4" refclass="cz.incad.nkp.digital.SoubXML" rows="10">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </tabview>
+        </row>
+        <row fill="LEFT" vfill="TOP">
+          <input align="LEFT" valign="TOP" indent="false" width="110ch" id="poznRec" precision="19" scale="4" type="text" rows="2">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </input>
+        </row>
+        <row fill="LEFT" vfill="TOP">
+          <input align="LEFT" valign="TOP" indent="false" columnIndex="1" width="20ch" id="zalDate" precision="19" scale="4" formatPattern="dd.MM.yyyy" formatPatternForInput="dd.MM.yyyy" type="text">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </input>
+          <input align="LEFT" valign="TOP" indent="false" columnIndex="2" width="20ch" id="zalUser" precision="19" scale="4" type="text">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </input>
+          <input align="LEFT" valign="TOP" indent="false" columnIndex="3" width="20ch" id="ediDate" precision="19" scale="4" formatPattern="dd.MM.yyyy" formatPatternForInput="dd.MM.yyyy" type="text">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </input>
+          <input align="LEFT" valign="TOP" indent="false" columnIndex="4" width="20ch" id="ediUser" precision="19" scale="4" type="text">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </input>
+          <input align="LEFT" valign="TOP" indent="false" columnIndex="5" width="20ch" id="finDate" precision="19" scale="4" formatPattern="dd.MM.yyyy" formatPatternForInput="dd.MM.yyyy" type="text">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </input>
+          <input align="LEFT" valign="TOP" indent="false" columnIndex="6" width="20ch" id="finUser" precision="19" scale="4" type="text">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </input>
+        </row>
+      </form-body>
+    </screen-form>
+    <screen-form name="TFStareTiskyPrip" formHumanName="TFStareTiskyPrip" id="cz.incad.nkp.digital.TFStareTisky">
+      <form-body align="LEFT" valign="TOP">
+        <row fill="LEFT" vfill="TOP">
+          <input align="LEFT" valign="TOP" indent="false" columnIndex="1" width="20ch" id="idCislo" precision="19" scale="4" type="text">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </input>
+          <select align="LEFT" valign="TOP" indent="false" columnIndex="2" width="20ch" id="stavRec" precision="19" scale="4" type="combo" multi="false" editable="false">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </select>
+          <input align="LEFT" valign="TOP" indent="false" columnIndex="3" width="25ch" id="stavPozn" precision="19" scale="4" type="text">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </input>
+          <select align="LEFT" valign="TOP" indent="false" columnIndex="4" width="20ch" id="zpusobDig" precision="0" scale="0" type="combo" multi="false" editable="false">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </select>
+          <select align="LEFT" valign="TOP" indent="false" columnIndex="5" width="20ch" id="financovano" precision="0" scale="0" type="combo" multi="false" editable="false">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </select>
+        </row>
+        <row fill="LEFT" vfill="TOP">
+          <input align="LEFT" valign="TOP" indent="false" columnIndex="1" id="idNumber" precision="19" scale="4" type="text">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </input>
+          <input align="LEFT" valign="TOP" indent="false" columnIndex="2" id="idNumberAleph" precision="19" scale="4" type="text">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </input>
+          <select align="LEFT" valign="TOP" indent="false" columnIndex="3" id="bazeAleph" precision="19" scale="4" type="combo" multi="false" editable="false">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </select>
+        </row>
+        <row fill="LEFT" vfill="TOP">
+          <input align="LEFT" valign="TOP" indent="false" columnIndex="1" width="90ch" id="hlNazev" precision="19" scale="4" type="text" rows="3">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </input>
+          <input align="LEFT" valign="TOP" indent="false" columnIndex="1" width="90ch" id="cast" precision="19" scale="4" type="text">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </input>
+          <check align="LEFT" valign="TOP" indent="false" columnIndex="2" id="opravaBibZaz" precision="0" scale="0"/>
+          <label align="LEFT" valign="TOP" indent="false" columnIndex="3">TitNkp.opravaBibZaz</label>
+        </row>
+        <row fill="LEFT" vfill="TOP">
+          <input align="LEFT" valign="TOP" indent="false" columnIndex="1" width="80ch" id="autorPrij" precision="19" scale="4" type="text">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </input>
+          <input align="LEFT" valign="TOP" indent="false" columnIndex="2" width="20ch" id="rokVyd" precision="19" scale="4" type="text">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </input>
+        </row>
+        <row fill="LEFT" vfill="TOP">
+          <input align="LEFT" valign="TOP" indent="false" columnIndex="1" width="20ch" id="pocetStran" precision="19" scale="4" type="text">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </input>
+          <input align="LEFT" valign="TOP" indent="false" columnIndex="2" width="20ch" id="pocetPoli" precision="0" scale="0" type="text">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </input>
+          <input align="LEFT" valign="TOP" indent="false" columnIndex="3" width="20ch" id="vyskaVcm" precision="19" scale="4" type="text">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </input>
+          <repeat align="LEFT" valign="TOP" indent="false" columnIndex="4" id="tCFyz" precision="19" scale="4" refclass="cz.incad.core.part.CFyz" form="CFyzF">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </repeat>
+          <repeat align="LEFT" valign="TOP" indent="false" columnIndex="5" id="tCJazyk" precision="19" scale="4" refclass="cz.incad.core.part.CJazyk" form="CJazykF">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </repeat>
+        </row>
+        <row fill="LEFT" vfill="TOP">
+          <repeat align="LEFT" valign="TOP" indent="false" columnIndex="1" id="tExemplar" precision="19" scale="4" refclass="cz.incad.core.doc.Exemplar" form="ExemplarRadek">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </repeat>
+          <repeat align="LEFT" valign="TOP" indent="false" columnIndex="2" id="tPrivazek" precision="19" scale="4" refclass="cz.incad.core.doc.Privazek" form="PrivazekFEx">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </repeat>
+        </row>
+        <row fill="LEFT" vfill="TOP">
+          <tabview align="LEFT" valign="TOP" indent="false" id="tXTitNkpMf" precision="19" scale="4" refclass="cz.incad.nkp.digital.XTitNkpMf" rows="10">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </tabview>
+        </row>
+        <row fill="LEFT" vfill="TOP">
+          <input align="LEFT" valign="TOP" indent="false" width="110ch" id="poznRec" precision="19" scale="4" type="text" rows="2">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </input>
+        </row>
+        <row fill="LEFT" vfill="TOP">
+          <input align="LEFT" valign="TOP" indent="false" columnIndex="1" width="20ch" id="zalDate" precision="19" scale="4" formatPattern="dd.MM.yyyy" formatPatternForInput="dd.MM.yyyy" type="text">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </input>
+          <input align="LEFT" valign="TOP" indent="false" columnIndex="2" width="20ch" id="zalUser" precision="19" scale="4" type="text">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </input>
+          <input align="LEFT" valign="TOP" indent="false" columnIndex="3" width="20ch" id="ediDate" precision="19" scale="4" formatPattern="dd.MM.yyyy" formatPatternForInput="dd.MM.yyyy" type="text">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </input>
+          <input align="LEFT" valign="TOP" indent="false" columnIndex="4" width="20ch" id="ediUser" precision="19" scale="4" type="text">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </input>
+          <input align="LEFT" valign="TOP" indent="false" columnIndex="5" width="20ch" id="finDate" precision="19" scale="4" formatPattern="dd.MM.yyyy" formatPatternForInput="dd.MM.yyyy" type="text">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </input>
+          <input align="LEFT" valign="TOP" indent="false" columnIndex="6" width="20ch" id="finUser" precision="19" scale="4" type="text">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </input>
+        </row>
+      </form-body>
+    </screen-form>
+    <screen-form name="MARCXML" formHumanName="MARCXML" id="cz.incad.nkp.digital.TFStareTisky">
+      <form-body align="LEFT" valign="TOP">
+        <row fill="LEFT" vfill="TOP">
+          <input align="LEFT" valign="TOP" indent="false" width="100ch" id="marcxml" precision="19" scale="4" type="longtext" rows="34">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </input>
+        </row>
+      </form-body>
+    </screen-form>
+    <screen-form name="TFStareTiskyKomplet" formHumanName="TFStareTiskyKomplet" id="cz.incad.nkp.digital.TFStareTisky">
+      <form-body align="LEFT" valign="TOP">
+        <row fill="LEFT" vfill="TOP">
+          <border type="raised" color="">
+            <margin-outer bottom="20px"/>
+            <margin-inner top="5px" left="5mm" right="5mm" bottom="5px"/>
+          </border>
+          <row fill="LEFT" vfill="TOP">
+            <input align="LEFT" valign="TOP" indent="false" width="100ch" id="hlNazev" precision="19" scale="4" type="text">
+              <label place="TOP">
+                <from-field colon="true"/>
+              </label>
+            </input>
+          </row>
+          <row fill="LEFT" vfill="TOP">
+            <input align="LEFT" valign="TOP" indent="false" columnIndex="1" width="20ch" id="rokVyd" precision="19" scale="4" type="text">
+              <label place="TOP">
+                <from-field colon="true"/>
+              </label>
+            </input>
+            <input align="LEFT" valign="TOP" indent="false" columnIndex="2" width="50ch" id="autorPrij" precision="19" scale="4" type="text">
+              <label place="TOP">
+                <from-field colon="true"/>
+              </label>
+            </input>
+          </row>
+        </row>
+        <row fill="LEFT" vfill="TOP">
+          <input align="LEFT" valign="TOP" indent="false" columnIndex="1" id="idNumber" precision="19" scale="4" type="text">
+            <label place="TOP">
+              <from-field colon="false"/>
+            </label>
+          </input>
+          <input align="LEFT" valign="TOP" indent="false" columnIndex="2" id="idNumberAleph" precision="19" scale="4" type="text">
+            <label place="TOP">
+              <from-field colon="false"/>
+            </label>
+          </input>
+          <select align="LEFT" valign="TOP" indent="false" columnIndex="3" id="bazeAleph" precision="0" scale="0" type="combo" multi="false" editable="false">
+            <label place="TOP">
+              <from-field colon="false"/>
+            </label>
+          </select>
+          <input align="LEFT" valign="TOP" indent="false" columnIndex="4" width="20ch" id="lccKlasifikace" precision="0" scale="0" type="text">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </input>
+        </row>
+        <row fill="LEFT" vfill="TOP">
+          <select align="LEFT" valign="TOP" indent="false" columnIndex="1" width="60ch" id="vlastnik" precision="0" scale="0" type="combo" multi="false" editable="false">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </select>
+          <select align="LEFT" valign="TOP" indent="false" columnIndex="2" width="30ch" id="financovano" precision="19" scale="4" type="combo" multi="false" editable="false">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </select>
+          <select align="LEFT" valign="TOP" indent="false" columnIndex="2" width="60ch" id="digitalniKnihovna" precision="0" scale="0" type="combo" multi="false" editable="false">
+            <label place="TOP">
+              <from-field colon="false"/>
+            </label>
+          </select>
+          <select align="LEFT" valign="TOP" indent="false" columnIndex="1" width="60ch" id="vlastnik2" precision="0" scale="0" type="combo" multi="false" editable="false">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </select>
+          <select align="LEFT" valign="TOP" indent="false" columnIndex="1" width="60ch" id="vlastnik3" precision="0" scale="0" type="combo" multi="false" editable="false">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </select>
+        </row>
+        <row fill="LEFT" vfill="TOP">
+          <input align="LEFT" valign="TOP" indent="false" width="60ch" id="mistoVyd" precision="19" scale="4" type="text">
+            <label place="TOP">
+              <from-field colon="false"/>
+            </label>
+          </input>
+        </row>
+        <row fill="LEFT" vfill="TOP">
+          <input align="LEFT" valign="TOP" indent="false" width="100ch" id="poznRec" precision="19" scale="4" type="text" rows="3">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </input>
+        </row>
+        <row fill="LEFT" vfill="TOP">
+          <repeat align="LEFT" valign="TOP" indent="false" id="tExemplar" precision="19" scale="4" refclass="cz.incad.core.doc.Exemplar" form="ExemplarRadek">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </repeat>
+        </row>
+        <row fill="LEFT" vfill="TOP">
+          <repeat align="LEFT" valign="TOP" indent="false" id="tPrivazek" precision="19" scale="4" refclass="cz.incad.core.doc.Privazek" form="PrivazekFEx">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </repeat>
+        </row>
+        <row fill="LEFT" vfill="TOP">
+          <tabview align="LEFT" valign="TOP" indent="false" id="tXTitNkpMf" precision="19" scale="4" refclass="cz.incad.nkp.digital.XTitNkpMf" rows="10">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </tabview>
+        </row>
+        <row fill="LEFT" vfill="TOP">
+          <tabview align="LEFT" valign="TOP" indent="false" id="tZakazka" precision="19" scale="4" refclass="cz.incad.nkp.digital.Zakazka" rows="10">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </tabview>
+        </row>
+        <row fill="LEFT" vfill="TOP">
+          <input align="LEFT" valign="TOP" indent="false" width="100ch" id="marcxml" precision="19" scale="4" type="longtext" rows="20">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </input>
+        </row>
+      </form-body>
+    </screen-form>
+    <screen-form name="StareTiskySTK" formHumanName="StareTiskySTK" id="cz.incad.nkp.digital.TFStareTisky">
+      <form-body align="LEFT" valign="TOP">
+        <row fill="LEFT" vfill="TOP">
+          <input align="LEFT" valign="TOP" indent="false" columnIndex="1" width="20ch" id="idCislo" precision="19" scale="4" type="text">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </input>
+          <input align="LEFT" valign="TOP" indent="false" columnIndex="3" width="20ch" id="formatAleph" precision="0" scale="0" type="text">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </input>
+          <input align="LEFT" valign="TOP" indent="false" columnIndex="2" width="20ch" id="idNumberAleph" precision="0" scale="0" type="text">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </input>
+          <select align="LEFT" valign="TOP" indent="false" columnIndex="4" id="vlastnik" precision="19" scale="4" type="combo" multi="false" editable="false">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </select>
+        </row>
+        <row fill="LEFT" vfill="TOP">
+          <input align="LEFT" valign="TOP" indent="false" columnIndex="1" width="100ch" id="hlNazev" precision="19" scale="4" type="longtext">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </input>
+        </row>
+        <row fill="LEFT" vfill="TOP">
+          <input align="LEFT" valign="TOP" indent="false" columnIndex="1" width="80ch" id="autorPrij" precision="19" scale="4" type="text">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </input>
+          <input align="LEFT" valign="TOP" indent="false" columnIndex="2" width="20ch" id="pocetStran" precision="19" scale="4" type="text">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </input>
+        </row>
+        <row fill="LEFT" vfill="TOP">
+          <input align="LEFT" valign="TOP" indent="false" columnIndex="1" id="rokVyd" precision="19" scale="4" type="text">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </input>
+          <input align="LEFT" valign="TOP" indent="false" columnIndex="2" id="mistoVyd" precision="19" scale="4" type="text">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </input>
+        </row>
+        <row fill="LEFT" vfill="TOP">
+          <repeat align="LEFT" valign="TOP" indent="false" id="tExemplar" precision="19" scale="4" refclass="cz.incad.core.doc.Exemplar" form="ExemplarRadek">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </repeat>
+        </row>
+        <row fill="LEFT" vfill="TOP">
+          <tabview align="LEFT" valign="TOP" indent="false" id="tZakazka" precision="0" scale="0" refclass="cz.incad.nkp.digital.Zakazka">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </tabview>
+        </row>
+        <row fill="LEFT" vfill="TOP">
+          <input align="LEFT" valign="TOP" indent="false" id="lccKlasifikace" precision="0" scale="0" type="text">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </input>
+        </row>
+        <row fill="LEFT" vfill="TOP">
+          <input align="LEFT" valign="TOP" indent="false" width="100ch" id="poznRec" precision="19" scale="4" type="longtext">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </input>
+        </row>
+        <row fill="LEFT" vfill="TOP">
+          <input align="LEFT" valign="TOP" indent="false" columnIndex="1" width="20ch" id="zalDate" precision="19" scale="4" formatPattern="dd.MM.yyyy" formatPatternForInput="dd.MM.yyyy" type="text">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </input>
+          <input align="LEFT" valign="TOP" indent="false" columnIndex="2" width="20ch" id="zalUser" precision="19" scale="4" type="text">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </input>
+          <input align="LEFT" valign="TOP" indent="false" columnIndex="3" width="20ch" id="ediDate" precision="19" scale="4" formatPattern="dd.MM.yyyy" formatPatternForInput="dd.MM.yyyy" type="text">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </input>
+          <input align="LEFT" valign="TOP" indent="false" columnIndex="4" id="ediUser" precision="19" scale="4" type="text">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </input>
+        </row>
+      </form-body>
+    </screen-form>
+    <screen-form name="StareTiskyKNAV" formHumanName="StareTiskyKNAV" id="cz.incad.nkp.digital.TFStareTisky">
+      <form-body align="LEFT" valign="TOP">
+        <row fill="LEFT" vfill="TOP">
+          <input align="LEFT" valign="TOP" indent="false" columnIndex="1" id="idCislo" precision="19" scale="4" type="text">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </input>
+          <select align="LEFT" valign="TOP" indent="false" columnIndex="2" id="stavRec" precision="19" scale="4" type="combo" multi="false" editable="false">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </select>
+          <input align="LEFT" valign="TOP" indent="false" columnIndex="3" width="35ch" id="stavPozn" precision="19" scale="4" type="text">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </input>
+          <select align="LEFT" valign="TOP" indent="false" columnIndex="4" id="zpusobDig" precision="19" scale="4" type="combo" multi="false" editable="false">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </select>
+          <select align="LEFT" valign="TOP" indent="false" columnIndex="5" id="financovano" precision="19" scale="4" type="combo" multi="false" editable="false">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </select>
+        </row>
+        <row fill="LEFT" vfill="TOP">
+          <input align="LEFT" valign="TOP" indent="false" columnIndex="1" id="idNumber" precision="19" scale="4" type="text">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </input>
+          <input align="LEFT" valign="TOP" indent="false" columnIndex="2" id="idNumberAleph" precision="19" scale="4" type="text">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </input>
+          <select align="LEFT" valign="TOP" indent="false" columnIndex="3" id="bazeAleph" precision="19" scale="4" type="combo" multi="false" editable="false">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </select>
+          <select align="LEFT" valign="TOP" indent="false" columnIndex="4" id="digitalniKnihovna" precision="19" scale="4" type="combo" multi="false" editable="false">
+            <label place="TOP">
+              <from-field colon="false"/>
+            </label>
+          </select>
+        </row>
+        <row fill="LEFT" vfill="TOP">
+          <input align="LEFT" valign="TOP" indent="false" columnIndex="1" id="isbn" precision="19" scale="4" type="text">
+            <label place="TOP">
+              <from-field colon="false"/>
+            </label>
+          </input>
+          <select align="LEFT" valign="TOP" indent="false" columnIndex="2" id="vlastnik" precision="19" scale="4" type="combo" multi="false" editable="false">
+            <label place="TOP">
+              <from-field colon="false"/>
+            </label>
+          </select>
+          <select align="LEFT" valign="TOP" indent="false" columnIndex="3" id="vlastnik2" precision="19" scale="4" type="combo" multi="false" editable="false">
+            <label place="TOP">
+              <from-field colon="false"/>
+            </label>
+          </select>
+          <select align="LEFT" valign="TOP" indent="false" columnIndex="4" id="vlastnik3" precision="19" scale="4" type="combo" multi="false" editable="false">
+            <label place="TOP">
+              <from-field colon="false"/>
+            </label>
+          </select>
+        </row>
+        <row fill="LEFT" vfill="TOP">
+          <input align="LEFT" valign="TOP" indent="false" columnIndex="1" width="100ch" id="hlNazev" precision="19" scale="4" type="text" rows="3">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </input>
+          <input align="LEFT" valign="TOP" indent="false" columnIndex="1" width="103ch" id="cast" precision="19" scale="4" type="text">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </input>
+        </row>
+        <row fill="LEFT" vfill="TOP">
+          <input align="LEFT" valign="TOP" indent="false" columnIndex="1" width="79ch" id="autorPrij" precision="19" scale="4" type="text">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </input>
+          <input align="LEFT" valign="TOP" indent="false" columnIndex="2" id="rokVyd" precision="19" scale="4" type="text">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </input>
+        </row>
+        <row fill="LEFT" vfill="TOP">
+          <input align="LEFT" valign="TOP" indent="false" columnIndex="1" id="pocetStran" precision="19" scale="4" type="text">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </input>
+          <input align="LEFT" valign="TOP" indent="false" columnIndex="2" id="pocetPoli" precision="19" scale="4" type="text">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </input>
+          <input align="LEFT" valign="TOP" indent="false" columnIndex="3" id="vyskaVcm" precision="19" scale="4" type="text">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </input>
+        </row>
+        <row fill="LEFT" vfill="TOP">
+          <repeat align="LEFT" valign="TOP" indent="false" id="tExemplar" precision="19" scale="4" refclass="cz.incad.core.doc.Exemplar" form="ExemplarRadek">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </repeat>
+        </row>
+        <row fill="LEFT" vfill="TOP">
+          <tabview align="LEFT" valign="TOP" indent="false" id="tXTitNkpMf" precision="19" scale="4" refclass="cz.incad.nkp.digital.XTitNkpMf">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </tabview>
+        </row>
+        <row fill="LEFT" vfill="TOP">
+          <tabview align="LEFT" valign="TOP" indent="false" id="tZakazka" precision="19" scale="4" refclass="cz.incad.nkp.digital.Zakazka">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </tabview>
+        </row>
+        <row fill="LEFT" vfill="TOP">
+          <tabview align="LEFT" valign="TOP" indent="false" id="tSoubXML" precision="19" scale="4" refclass="cz.incad.nkp.digital.SoubXML">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </tabview>
+        </row>
+        <row fill="LEFT" vfill="TOP">
+          <input align="LEFT" valign="TOP" indent="false" width="100ch" id="poznRec" precision="19" scale="4" type="text" rows="2">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </input>
+        </row>
+        <row fill="LEFT" vfill="TOP">
+          <input align="LEFT" valign="TOP" indent="false" columnIndex="1" id="zalDate" precision="19" scale="4" formatPattern="dd.MM.yyyy" formatPatternForInput="dd.MM.yyyy" type="text">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </input>
+          <input align="LEFT" valign="TOP" indent="false" columnIndex="2" id="zalUser" precision="19" scale="4" type="text">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </input>
+          <input align="LEFT" valign="TOP" indent="false" columnIndex="3" id="ediDate" precision="19" scale="4" formatPattern="dd.MM.yyyy" formatPatternForInput="dd.MM.yyyy" type="text">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </input>
+          <input align="LEFT" valign="TOP" indent="false" columnIndex="4" id="ediUser" precision="19" scale="4" type="text">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </input>
+          <input align="LEFT" valign="TOP" indent="false" columnIndex="5" id="finDate" precision="19" scale="4" formatPattern="dd.MM.yyyy" formatPatternForInput="dd.MM.yyyy" type="text">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </input>
+          <input align="LEFT" valign="TOP" indent="false" columnIndex="6" id="finUser" precision="19" scale="4" type="text">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </input>
+        </row>
+      </form-body>
+    </screen-form>
+    <screen-form name="StareTiskyExcel" formHumanName="StareTiskyExcel" id="cz.incad.nkp.digital.TFStareTisky">
+      <form-body align="LEFT" valign="TOP">
+        <row fill="LEFT" vfill="TOP">
+          <label align="CENTER" valign="TOP" indent="false">StareTiskyExcel_Label01</label>
+        </row>
+        <row fill="LEFT" vfill="TOP">
+          <input align="LEFT" valign="TOP" indent="false" columnIndex="1" id="formatAleph" precision="19" scale="4" type="text">
+            <label place="TOP">
+              <from-field colon="false"/>
+            </label>
+          </input>
+          <input align="LEFT" valign="TOP" indent="false" columnIndex="2" id="idNumber" precision="19" scale="4" type="text">
+            <label place="TOP">
+              <from-field colon="false"/>
+            </label>
+          </input>
+          <select align="LEFT" valign="TOP" indent="false" columnIndex="3" id="bazeAleph" precision="19" scale="4" type="combo" multi="false" editable="false">
+            <label place="TOP">
+              <from-field colon="false"/>
+            </label>
+          </select>
+          <input align="LEFT" valign="TOP" indent="false" columnIndex="4" id="idNumberAleph" precision="19" scale="4" type="text">
+            <label place="TOP">
+              <from-field colon="false"/>
+            </label>
+          </input>
+        </row>
+        <row fill="LEFT" vfill="TOP">
+          <input align="LEFT" valign="TOP" indent="false" width="100ch" id="autorPrij" precision="19" scale="4" type="text">
+            <label place="TOP">
+              <from-field colon="false"/>
+            </label>
+          </input>
+          <input align="LEFT" valign="TOP" indent="false" width="100ch" id="hlNazev" precision="19" scale="4" type="text" rows="2">
+            <label place="TOP">
+              <from-field colon="false"/>
+            </label>
+          </input>
+        </row>
+        <row fill="LEFT" vfill="TOP">
+          <input align="LEFT" valign="TOP" indent="false" columnIndex="1" width="20ch" id="rokVyd" precision="19" scale="4" type="text">
+            <label place="TOP">
+              <from-field colon="false"/>
+            </label>
+          </input>
+          <input align="LEFT" valign="TOP" indent="false" columnIndex="2" width="20ch" id="cast" precision="19" scale="4" type="text">
+            <label place="TOP">
+              <from-field colon="false"/>
+            </label>
+          </input>
+          <input align="LEFT" valign="TOP" indent="false" columnIndex="3" width="20ch" id="isbn" precision="19" scale="4" type="text">
+            <label place="TOP">
+              <from-field colon="false"/>
+            </label>
+          </input>
+        </row>
+        <row fill="LEFT" vfill="TOP">
+          <input align="LEFT" valign="TOP" indent="false" columnIndex="1" width="20ch" id="issn" precision="19" scale="4" type="text">
+            <label place="TOP">
+              <from-field colon="false"/>
+            </label>
+          </input>
+          <input align="LEFT" valign="TOP" indent="false" columnIndex="2" width="20ch" id="issn2" precision="19" scale="4" type="text">
+            <label place="TOP">
+              <from-field colon="false"/>
+            </label>
+          </input>
+          <input align="LEFT" valign="TOP" indent="false" columnIndex="3" width="20ch" id="issn3" precision="19" scale="4" type="text">
+            <label place="TOP">
+              <from-field colon="false"/>
+            </label>
+          </input>
+        </row>
+        <row fill="LEFT" vfill="TOP">
+          <select align="LEFT" valign="TOP" indent="false" width="20ch" id="vlastnik" precision="19" scale="4" type="combo" multi="false" editable="false">
+            <label place="TOP">
+              <from-field colon="false"/>
+            </label>
+          </select>
+          <select align="LEFT" valign="TOP" indent="false" width="20ch" id="vlastnik2" precision="19" scale="4" type="combo" multi="false" editable="false">
+            <label place="TOP">
+              <from-field colon="false"/>
+            </label>
+          </select>
+          <select align="LEFT" valign="TOP" indent="false" width="20ch" id="vlastnik3" precision="19" scale="4" type="combo" multi="false" editable="false">
+            <label place="TOP">
+              <from-field colon="false"/>
+            </label>
+          </select>
+        </row>
+        <row fill="LEFT" vfill="TOP">
+          <input align="LEFT" valign="TOP" indent="false" width="120ch" id="linkKatalog" precision="0" scale="0" type="text">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </input>
+        </row>
+        <row fill="LEFT" vfill="TOP">
+          <empty align="LEFT" valign="TOP" indent="false" height="3ch"/>
+        </row>
+        <row fill="LEFT" vfill="TOP">
+          <label align="LEFT" valign="TOP" indent="false">StareTiskyExcel_Label02</label>
+        </row>
+        <row fill="LEFT" vfill="TOP">
+          <label align="LEFT" valign="TOP" indent="false">StareTiskyExcel_Label04</label>
+        </row>
+        <row fill="LEFT" vfill="TOP">
+          <col fill="LEFT" vfill="TOP">
+            <repeat align="LEFT" valign="TOP" indent="false" id="tExemplar" precision="19" scale="4" refclass="cz.incad.core.doc.Exemplar" form="ExemplarExcel">
+              <label place="TOP">
+                <from-field colon="false"/>
+              </label>
+            </repeat>
+          </col>
+          <col fill="LEFT" vfill="TOP">
+            <repeat align="LEFT" valign="TOP" indent="false" id="tPrivazek" precision="19" scale="4" refclass="cz.incad.core.doc.Privazek" form="PrivazekExcel">
+              <label place="TOP">
+                <from-field colon="false"/>
+              </label>
+            </repeat>
+          </col>
+        </row>
+        <row fill="LEFT" vfill="TOP">
+          <empty align="LEFT" valign="TOP" indent="false" height="3ch"/>
+        </row>
+        <row fill="LEFT" vfill="TOP">
+          <label align="LEFT" valign="TOP" indent="false">StareTiskyExcel_Label03</label>
+        </row>
+        <row fill="LEFT" vfill="TOP">
+          <repeat align="LEFT" valign="TOP" indent="false" id="tZakazka" precision="19" scale="4" refclass="cz.incad.nkp.digital.Zakazka" form="ZakazkaExcel">
+            <label place="TOP">
+              <from-field colon="false"/>
+            </label>
+          </repeat>
+        </row>
+      </form-body>
+    </screen-form>
+    <tree name="AvailableForms">
+      <node formName="TFStareTiskyF"/>
+      <node formName="TFStareTiskyPrip"/>
+      <node formName="MARCXML"/>
+      <node formName="TFStareTiskyKomplet"/>
+      <node formName="StareTiskySTK"/>
+      <node formName="StareTiskyKNAV"/>
+      <node formName="StareTiskyExcel"/>
+    </tree>
+  </forms>
+  <functions>
+    <function>
+      <functionName>cz.incad.nkp.digital.bf.FinishTitulWorkFlow</functionName>
+      <functionHumanName>cz.incad.nkp.digital.bf.FinishTitulWorkFlow</functionHumanName>
+      <functionHumanHelp>TFStareTisky_cz.incad.nkp.digital.bf.FinishTitulWorkFlow_help</functionHumanHelp>
+      <wizardPanels>
+        <wizardPanel>
+          <panelName>FinishTitulWorkFlowPanel1</panelName>
+          <panelHumanName>FinishTitulWorkFlowPanel1</panelHumanName>
+          <description>FinishTitulWorkFlowPanel1_Description</description>
+          <panelFields/>
+        </wizardPanel>
+      </wizardPanels>
+    </function>
+    <tree name="AvailableBusinessFunctions">
+      <node functionName="cz.incad.nkp.digital.bf.FinishTitulWorkFlow"/>
+    </tree>
+  </functions>
+  <uniqueFields/>
+</desk>

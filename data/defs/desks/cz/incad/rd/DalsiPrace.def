@@ -1,0 +1,225 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<desk bundle="ServerBundle">
+  <deskPackage>cz.incad.rd</deskPackage>
+  <deskName>DalsiPrace</deskName>
+  <deskHumanHelp>DalsiPrace_help</deskHumanHelp>
+  <deskHumanName>DalsiPrace</deskHumanName>
+  <deskDBName>DalsiPrace</deskDBName>
+  <deskRoot/>
+  <machineModel>cz.incad.rd.DalsiPrace</machineModel>
+  <historyEnabled>true</historyEnabled>
+  <fields>
+    <field>
+      <fieldName>idCislo</fieldName>
+      <fieldHumanName>DalsiPrace.idCislo</fieldHumanName>
+      <fieldHumanHelp>DalsiPrace.idCislo_help</fieldHumanHelp>
+      <fieldDBName>idCislo</fieldDBName>
+      <fieldType>STR</fieldType>
+      <fieldRepresentation>EDI</fieldRepresentation>
+      <computed/>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>pracePrac</fieldName>
+      <fieldHumanName>DalsiPrace.pracePrac</fieldHumanName>
+      <fieldHumanHelp>DalsiPrace.pracePrac_help</fieldHumanHelp>
+      <fieldDBName>pracePrac</fieldDBName>
+      <fieldType>STR</fieldType>
+      <fieldRepresentation>COM</fieldRepresentation>
+      <list>DpracovnikUkol</list>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>praceStav</fieldName>
+      <fieldHumanName>DalsiPrace.praceStav</fieldHumanName>
+      <fieldHumanHelp>DalsiPrace.praceStav_help</fieldHumanHelp>
+      <fieldDBName>praceStav</fieldDBName>
+      <fieldType>STR</fieldType>
+      <fieldRepresentation>COM</fieldRepresentation>
+      <list>DdalPracePraceStav</list>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>finDate</fieldName>
+      <fieldHumanName>DalsiPrace.finDate</fieldHumanName>
+      <fieldHumanHelp>DalsiPrace.finDate_help</fieldHumanHelp>
+      <fieldDBName>finDate</fieldDBName>
+      <fieldType>DAT</fieldType>
+      <fieldRepresentation>EDI</fieldRepresentation>
+      <formatPattern>dd.MM.yyyy</formatPattern>
+      <formatPatternForInput>dd.MM.yyyy</formatPatternForInput>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>ediDate</fieldName>
+      <fieldHumanName>DalsiPrace.ediDate</fieldHumanName>
+      <fieldHumanHelp>DalsiPrace.ediDate_help</fieldHumanHelp>
+      <fieldDBName>ediDate</fieldDBName>
+      <fieldType>DAT</fieldType>
+      <fieldRepresentation>EDI</fieldRepresentation>
+      <computed/>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>zalDate</fieldName>
+      <fieldHumanName>DalsiPrace.zalDate</fieldHumanName>
+      <fieldHumanHelp>DalsiPrace.zalDate_help</fieldHumanHelp>
+      <fieldDBName>zalDate</fieldDBName>
+      <fieldType>DAT</fieldType>
+      <fieldRepresentation>COMD</fieldRepresentation>
+      <computed/>
+      <formatPattern>dd.MM.yyyy</formatPattern>
+      <formatPatternForInput>dd.MM.yyyy</formatPatternForInput>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>finUser</fieldName>
+      <fieldHumanName>DalsiPrace.finUser</fieldHumanName>
+      <fieldHumanHelp>DalsiPrace.finUser_help</fieldHumanHelp>
+      <fieldDBName>finUser</fieldDBName>
+      <fieldType>STR</fieldType>
+      <fieldRepresentation>EDI</fieldRepresentation>
+      <computed/>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>ediUser</fieldName>
+      <fieldHumanName>DalsiPrace.ediUser</fieldHumanName>
+      <fieldHumanHelp>DalsiPrace.ediUser_help</fieldHumanHelp>
+      <fieldDBName>ediUser</fieldDBName>
+      <fieldType>STR</fieldType>
+      <fieldRepresentation>EDI</fieldRepresentation>
+      <computed/>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>poznRec</fieldName>
+      <fieldHumanName>DalsiPrace.poznRec</fieldHumanName>
+      <fieldHumanHelp>DalsiPrace.poznRec_help</fieldHumanHelp>
+      <fieldDBName>poznRec</fieldDBName>
+      <fieldType>STR</fieldType>
+      <fieldRepresentation>EDI</fieldRepresentation>
+      <validateLength>500</validateLength>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>stavRec</fieldName>
+      <fieldHumanName>DalsiPrace.stavRec</fieldHumanName>
+      <fieldHumanHelp>DalsiPrace.stavRec_help</fieldHumanHelp>
+      <fieldDBName>stavRec</fieldDBName>
+      <fieldType>STR</fieldType>
+      <fieldRepresentation>COM</fieldRepresentation>
+      <list>DstavRec</list>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>typPrace</fieldName>
+      <fieldHumanName>DalsiPrace.typPrace</fieldHumanName>
+      <fieldHumanHelp>DalsiPrace.typPrace_help</fieldHumanHelp>
+      <fieldDBName>typPrace</fieldDBName>
+      <fieldType>STR</fieldType>
+      <fieldRepresentation>COM</fieldRepresentation>
+      <list>DtypPrace</list>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>securityOwner</fieldName>
+      <fieldHumanName>DalsiPrace.securityOwner</fieldHumanName>
+      <fieldHumanHelp>DalsiPrace.securityOwner_help</fieldHumanHelp>
+      <fieldDBName>securityOwner</fieldDBName>
+      <fieldType>STR</fieldType>
+      <fieldRepresentation>EDI</fieldRepresentation>
+      <computed/>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>zalUser</fieldName>
+      <fieldHumanName>DalsiPrace.zalUser</fieldHumanName>
+      <fieldHumanHelp>DalsiPrace.zalUser_help</fieldHumanHelp>
+      <fieldDBName>zalUser</fieldDBName>
+      <fieldType>STR</fieldType>
+      <fieldRepresentation>EDI</fieldRepresentation>
+      <computed/>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+  </fields>
+  <forms>
+    <screen-form name="DalsiPraceF" formHumanName="DalsiPraceF" id="cz.incad.rd.DalsiPrace">
+      <form-body align="LEFT" valign="TOP">
+        <row fill="LEFT" vfill="TOP">
+          <border type="solid" color=""/>
+          <row fill="LEFT" vfill="TOP">
+            <select align="LEFT" valign="TOP" indent="false" columnIndex="1" width="20ch" id="typPrace" precision="0" scale="0" type="combo" multi="false" editable="false">
+              <label place="TOP">
+                <from-field colon="true"/>
+              </label>
+            </select>
+            <select align="LEFT" valign="TOP" indent="false" columnIndex="2" width="20ch" id="praceStav" precision="0" scale="0" type="combo" multi="false" editable="false">
+              <label place="TOP">Form.stav</label>
+            </select>
+            <select align="LEFT" valign="TOP" indent="false" columnIndex="3" width="20ch" id="pracePrac" precision="0" scale="0" type="combo" multi="false" editable="false">
+              <label place="TOP">Form.prac</label>
+            </select>
+            <input align="LEFT" valign="TOP" indent="false" columnIndex="4" id="finDate" precision="19" scale="4" formatPattern="dd.MM.yyyy" formatPatternForInput="dd.MM.yyyy" type="text">
+              <label place="TOP">
+                <from-field colon="true"/>
+              </label>
+            </input>
+          </row>
+          <row fill="LEFT" vfill="TOP">
+            <empty align="LEFT" valign="TOP" indent="false" width="100ch"/>
+          </row>
+        </row>
+      </form-body>
+    </screen-form>
+    <screen-form name="DalsiPraceVProfilu" formHumanName="DalsiPraceVProfilu" id="cz.incad.rd.DalsiPrace">
+      <form-body align="LEFT" valign="TOP">
+        <row fill="LEFT" vfill="TOP">
+          <border type="solid" color=""/>
+          <row fill="LEFT" vfill="TOP">
+            <select align="LEFT" valign="TOP" indent="false" columnIndex="1" width="20ch" id="typPrace" precision="19" scale="4" type="combo" multi="false" editable="false">
+              <label place="TOP">
+                <from-field colon="true"/>
+              </label>
+            </select>
+            <select align="LEFT" valign="TOP" indent="false" columnIndex="2" width="20ch" id="pracePrac" precision="19" scale="4" type="combo" multi="false" editable="false">
+              <label place="TOP">Form.prac</label>
+            </select>
+            <select align="LEFT" valign="TOP" indent="false" columnIndex="3" id="praceStav" precision="0" scale="0" type="combo" multi="false" editable="false">
+              <label place="TOP">
+                <from-field colon="true"/>
+              </label>
+            </select>
+            <input align="LEFT" valign="TOP" indent="false" columnIndex="4" id="finDate" precision="19" scale="4" formatPattern="dd.MM.yyyy" formatPatternForInput="dd.MM.yyyy" type="text">
+              <label place="TOP">
+                <from-field colon="true"/>
+              </label>
+            </input>
+          </row>
+          <row fill="LEFT" vfill="TOP">
+            <empty align="LEFT" valign="TOP" indent="false" width="100ch"/>
+          </row>
+        </row>
+      </form-body>
+    </screen-form>
+    <tree name="AvailableForms">
+      <node formName="DalsiPraceF"/>
+      <node formName="DalsiPraceVProfilu"/>
+    </tree>
+  </forms>
+  <uniqueFields/>
+</desk>

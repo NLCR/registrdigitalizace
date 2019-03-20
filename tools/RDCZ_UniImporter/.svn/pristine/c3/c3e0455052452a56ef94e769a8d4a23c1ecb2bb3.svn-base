@@ -1,0 +1,31 @@
+/* *****************************************************************************
+ * To change this template, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package cz.incad.relief3.rdcz.uniimporter.utils;
+
+/** ****************************************************************************
+ *
+ * @author martin.novacek@incad.cz
+ */
+public class OnePrispevatelIdentificator {
+    public final String value;
+    public final String sigla;
+    public final String zalozeniUser;
+    public String katalog = null;
+    public String digKnihovna = null;
+
+
+    /** ************************************************************************
+     * 
+     * @param value
+     * @param sigla
+     * @param zalozeniUser 
+     */
+    public OnePrispevatelIdentificator(String value, String sigla, String zalozeniUser) {
+        this.value = value;
+        this.sigla = sigla;
+        this.zalozeniUser = zalozeniUser;
+    }
+
+}

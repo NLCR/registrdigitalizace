@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<desk bundle="ServerBundle">
+  <deskPackage>cz.incad.core.part</deskPackage>
+  <deskName>CRoleUser</deskName>
+  <deskHumanHelp>cz.incad.core.part.CRoleUser_help</deskHumanHelp>
+  <deskHumanName>cz.incad.core.part.CRoleUser</deskHumanName>
+  <deskDBName>CRoleUser</deskDBName>
+  <deskRoot/>
+  <machineModel>cz.incad.core.part.CRoleUser</machineModel>
+  <fields>
+    <field>
+      <fieldName>CRoleUser</fieldName>
+      <fieldHumanName>CRoleUser.value</fieldHumanName>
+      <fieldHumanHelp>CRoleUser.value_help</fieldHumanHelp>
+      <fieldDBName>value</fieldDBName>
+      <fieldType>STR</fieldType>
+      <fieldRepresentation>COM</fieldRepresentation>
+      <list>DroleUser</list>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+  </fields>
+  <forms>
+    <screen-form name="CRoleUserF" formHumanName="CRoleUserF" id="cz.incad.core.part.CRoleUser">
+      <form-body align="LEFT" valign="TOP">
+        <row fill="LEFT" vfill="TOP">
+          <select align="LEFT" valign="TOP" indent="false" width="600px" id="CRoleUser" precision="0" scale="0" type="combo" multi="false" editable="false">
+            <label place="TOP">
+              <from-field colon="false"/>
+            </label>
+          </select>
+        </row>
+      </form-body>
+    </screen-form>
+    <tree name="AvailableForms">
+      <node formName="CRoleUserF"/>
+    </tree>
+  </forms>
+  <uniqueFields/>
+</desk>

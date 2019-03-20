@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<desk bundle="ServerBundle">
+  <deskPackage>cz.incad.rd</deskPackage>
+  <deskName>NepISSN</deskName>
+  <deskHumanHelp>NepISSN_help</deskHumanHelp>
+  <deskHumanName>NepISSN</deskHumanName>
+  <deskDBName>NepISSN</deskDBName>
+  <deskRoot/>
+  <machineModel>cz.incad.rd.NepISSN</machineModel>
+  <fields>
+    <field>
+      <fieldName>value</fieldName>
+      <fieldHumanName>NepISSN.value</fieldHumanName>
+      <fieldHumanHelp>NepISSN.value_help</fieldHumanHelp>
+      <fieldDBName>value</fieldDBName>
+      <fieldType>STR</fieldType>
+      <fieldRepresentation>EDI</fieldRepresentation>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+  </fields>
+  <forms>
+    <screen-form name="NeplISSNForm" formHumanName="NeplISSNForm" id="cz.incad.rd.NepISSN">
+      <form-body align="LEFT" valign="TOP">
+        <input align="LEFT" valign="TOP" indent="false" width="20ch" id="value" precision="19" scale="4" type="text"/>
+      </form-body>
+    </screen-form>
+    <tree name="AvailableForms">
+      <node formName="NeplISSNForm"/>
+    </tree>
+  </forms>
+  <uniqueFields/>
+</desk>

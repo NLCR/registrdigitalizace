@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<desk bundle="ServerBundle">
+  <deskPackage>cz.incad.core.part</deskPackage>
+  <deskName>Adresa</deskName>
+  <deskHumanHelp>cz.incad.core.part.Adresa_help</deskHumanHelp>
+  <deskHumanName>cz.incad.core.part.Adresa</deskHumanName>
+  <deskDBName>Adresa</deskDBName>
+  <deskRoot/>
+  <machineModel>cz.incad.core.part.Adresa</machineModel>
+  <fields>
+    <field>
+      <fieldName>cisPop</fieldName>
+      <fieldHumanName>Adresa.cisPop</fieldHumanName>
+      <fieldHumanHelp>Adresa.cisPop_help</fieldHumanHelp>
+      <fieldDBName>cisPop</fieldDBName>
+      <fieldType>STR</fieldType>
+      <fieldRepresentation>EDI</fieldRepresentation>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>mesto</fieldName>
+      <fieldHumanName>Adresa.mesto</fieldHumanName>
+      <fieldHumanHelp>Adresa.mesto_help</fieldHumanHelp>
+      <fieldDBName>mesto</fieldDBName>
+      <fieldType>STR</fieldType>
+      <fieldRepresentation>EDI</fieldRepresentation>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>psc</fieldName>
+      <fieldHumanName>Adresa.psc</fieldHumanName>
+      <fieldHumanHelp>Adresa.psc_help</fieldHumanHelp>
+      <fieldDBName>psc</fieldDBName>
+      <fieldType>STR</fieldType>
+      <fieldRepresentation>EDI</fieldRepresentation>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>typ</fieldName>
+      <fieldHumanName>Adresa.typ</fieldHumanName>
+      <fieldHumanHelp>Adresa.typ_help</fieldHumanHelp>
+      <fieldDBName>typ</fieldDBName>
+      <fieldType>STR</fieldType>
+      <fieldRepresentation>COM</fieldRepresentation>
+      <list>DtypAdresa</list>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>ulice</fieldName>
+      <fieldHumanName>Adresa.ulice</fieldHumanName>
+      <fieldHumanHelp>Adresa.ulice_help</fieldHumanHelp>
+      <fieldDBName>ulice</fieldDBName>
+      <fieldType>STR</fieldType>
+      <fieldRepresentation>EDI</fieldRepresentation>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>listZeme</fieldName>
+      <fieldHumanName>Adresa.listZeme</fieldHumanName>
+      <fieldHumanHelp>Adresa.listZeme_help</fieldHumanHelp>
+      <fieldDBName>listZeme</fieldDBName>
+      <fieldType>STR</fieldType>
+      <fieldRepresentation>COM</fieldRepresentation>
+      <list>DlistZeme</list>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+  </fields>
+  <forms>
+    <screen-form name="AdresaF" formHumanName="AdresaF" id="cz.incad.core.part.Adresa">
+      <form-body align="LEFT" valign="TOP">
+        <row fill="LEFT" vfill="TOP">
+          <select align="LEFT" valign="TOP" indent="false" width="45ch" id="typ" precision="0" scale="0" type="combo" multi="false" editable="false">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </select>
+        </row>
+        <row fill="LEFT" vfill="TOP">
+          <input align="LEFT" valign="TOP" indent="false" columnIndex="1" width="60ch" id="ulice" precision="0" scale="0" type="text">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </input>
+          <input align="LEFT" valign="TOP" indent="false" columnIndex="2" width="15ch" id="cisPop" precision="0" scale="0" type="text">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </input>
+        </row>
+        <row fill="LEFT" vfill="TOP">
+          <input align="LEFT" valign="TOP" indent="false" width="60ch" id="mesto" precision="0" scale="0" type="text">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </input>
+        </row>
+        <row fill="LEFT" vfill="TOP">
+          <input align="LEFT" valign="TOP" indent="false" columnIndex="1" width="20ch" id="psc" precision="0" scale="0" type="text">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </input>
+          <input align="LEFT" valign="TOP" indent="false" columnIndex="2" width="45ch" id="listZeme" precision="0" scale="0" type="text">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </input>
+        </row>
+      </form-body>
+    </screen-form>
+    <screen-form name="AdresaF2" formHumanName="AdresaF2" id="cz.incad.core.part.Adresa">
+      <form-body align="LEFT" valign="TOP">
+        <row fill="LEFT" vfill="TOP">
+          <select align="LEFT" valign="TOP" indent="false" id="typ" precision="19" scale="4" type="combo" multi="false" editable="false">
+            <label place="LEFT">
+              <from-field colon="true"/>
+            </label>
+          </select>
+        </row>
+        <row fill="LEFT" vfill="TOP">
+          <input align="LEFT" valign="TOP" indent="false" columnIndex="1" width="40ch" id="ulice" precision="19" scale="4" type="text">
+            <label place="LEFT">
+              <from-field colon="true"/>
+            </label>
+          </input>
+          <input align="LEFT" valign="TOP" indent="false" columnIndex="2" width="15ch" id="cisPop" precision="19" scale="4" type="text">
+            <label place="LEFT">
+              <from-field colon="true"/>
+            </label>
+          </input>
+        </row>
+        <row fill="LEFT" vfill="TOP">
+          <input align="LEFT" valign="TOP" indent="false" columnIndex="1" width="30ch" id="mesto" precision="19" scale="4" type="text">
+            <label place="LEFT">
+              <from-field colon="true"/>
+            </label>
+          </input>
+          <input align="LEFT" valign="TOP" indent="false" columnIndex="2" width="15ch" id="psc" precision="19" scale="4" type="text">
+            <label place="LEFT">
+              <from-field colon="true"/>
+            </label>
+          </input>
+          <input align="LEFT" valign="TOP" indent="false" columnIndex="3" width="20ch" id="listZeme" precision="19" scale="4" type="text">
+            <label place="LEFT">
+              <from-field colon="true"/>
+            </label>
+          </input>
+        </row>
+      </form-body>
+    </screen-form>
+    <tree name="AvailableForms">
+      <node formName="AdresaF"/>
+      <node formName="AdresaF2"/>
+    </tree>
+  </forms>
+  <uniqueFields/>
+</desk>

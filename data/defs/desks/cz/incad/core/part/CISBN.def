@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<desk bundle="ServerBundle">
+  <deskPackage>cz.incad.core.part</deskPackage>
+  <deskName>CISBN</deskName>
+  <deskHumanHelp>cz.incad.core.part.CISBN_help</deskHumanHelp>
+  <deskHumanName>cz.incad.core.part.CISBN</deskHumanName>
+  <deskDBName>CISBN</deskDBName>
+  <deskRoot/>
+  <machineModel>cz.incad.core.part.CISBN</machineModel>
+  <fields>
+    <field>
+      <fieldName>typ</fieldName>
+      <fieldHumanName>CISBN.typ</fieldHumanName>
+      <fieldHumanHelp>CISBN.typ_help</fieldHumanHelp>
+      <fieldDBName>typ</fieldDBName>
+      <fieldType>STR</fieldType>
+      <fieldRepresentation>COM</fieldRepresentation>
+      <list>DtypISBN</list>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>hodnota</fieldName>
+      <fieldHumanName>CISBN.hodnota</fieldHumanName>
+      <fieldHumanHelp>CISBN.hodnota_help</fieldHumanHelp>
+      <fieldDBName>hodnota</fieldDBName>
+      <fieldType>STR</fieldType>
+      <fieldRepresentation>EDI</fieldRepresentation>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+  </fields>
+  <forms>
+    <screen-form name="CISBNF" formHumanName="CISBNF" id="cz.incad.core.part.CISBN">
+      <form-body align="LEFT" valign="TOP">
+        <row fill="LEFT" vfill="TOP">
+          <select align="LEFT" valign="TOP" indent="false" columnIndex="1" width="20ch" id="typ" precision="0" scale="0" type="combo" multi="false" editable="false"/>
+          <input align="LEFT" valign="TOP" indent="false" columnIndex="2" width="20ch" id="hodnota" precision="0" scale="0" type="text"/>
+        </row>
+      </form-body>
+    </screen-form>
+    <tree name="AvailableForms">
+      <node formName="CISBNF"/>
+    </tree>
+  </forms>
+  <uniqueFields/>
+</desk>

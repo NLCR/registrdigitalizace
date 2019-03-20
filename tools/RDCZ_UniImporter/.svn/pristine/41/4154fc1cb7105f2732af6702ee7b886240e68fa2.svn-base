@@ -1,0 +1,51 @@
+/* *****************************************************************************
+ * To change this template, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package cz.incad.relief3.rdcz.uniimporter.model;
+
+import cz.incad.relief3.rdcz.uniImporter.model.FileCoordinatorIssue;
+import cz.incad.relief3.rdcz.uniimporter.utils.Configuration;
+import cz.incad.relief3.rdcz.uniimporter.utils.TimeStamp;
+import java.io.File;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
+
+/** ****************************************************************************
+ *
+ * @author martin
+ */
+public class DirectoryDataListener implements DataListener {
+    private static final Logger LOG = Logger.getLogger(DirectoryDataListener.class.getName());
+
+
+    /** ************************************************************************
+     * 
+     */
+    public void getData() {
+        File sourceDirectory = new File(Configuration.getInstance().getProperty(Configuration.KEY_DATA_DIRECTORY));
+        File destinationFile;
+        String timeStamp = TimeStamp.getTimeStamp();
+
+        for (File sourceFile:sourceDirectory.listFiles()) {
+            // Odfiltrujeme pouze soubory
+            if (sourceFile.isFile()) {
+                // Soubory přesuneme do pracovní složky se změněným jménem a zaregistrujeme do parseru.
+                destinationFile = new File(Configuration.getInstance().F_WORKING_DIRECTORY.getAbsolutePath() + File.separator + timeStamp + "_" + sourceFile.getName());
+                LOG.log(Level.INFO, "Move file {0} -> {1}", new Object[]{sourceFile.getAbsolutePath(), destinationFile.getAbsolutePath()});
+                sourceFile.renameTo(destinationFile);
+                FileCoordinatorIssue oneIssue = FileNameParser.processFile(destinationFile);
+
+                if (oneIssue != null) {
+                    // Zařadíme soubor do listu zpracování
+                    FileCoordinator.getInstance().addFile(oneIssue);
+                } else {
+                    //soubor neprošel parzováním názvu a je odeslán do FAIL
+                    FileCoordinator.moveFileToFail(destinationFile);
+                }
+            }
+        }
+    }
+
+}

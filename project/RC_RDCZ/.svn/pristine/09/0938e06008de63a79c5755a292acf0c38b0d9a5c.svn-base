@@ -1,0 +1,96 @@
+/*
+ * cz.incad.nkp.digital.KopieMfEntity.java
+ * created on 1.4.2008
+ *
+ * author: Martin Nováček (mno)
+ * e-mail: <a href="mailto:martin.novacek@incad.cz">
+ *
+ * INCAD, spol. s r.o.
+ * U krčského nádraží 36
+ * 140 00  Praha 4, Česká republika
+ */
+
+package cz.incad.nkp.digital;
+
+import com.amaio.plaant.businessFunctions.AddException;
+import com.amaio.plaant.sync.Record;
+import cz.incad.core.basic.RecordEntity;
+import cz.incad.core.enums.ReliefSecurityDeskTypeEnum;
+import cz.incad.nkp.digital.constants.CnkpKopieMf;
+import cz.incad.nkp.digital.constants.CnkpSecurity;
+import java.util.Date;
+import java.util.Vector;
+
+
+/**
+ * @author mno
+ * <b>Class description:</b>
+ * 
+ */
+public class KopieMfEntity extends RecordEntity implements CnkpKopieMf, CnkpSecurity {
+    private static final ReliefSecurityDeskTypeEnum SECURITY_DESK_TYPE = ReliefSecurityDeskTypeEnum.DATA;
+    private static final String SECURITY_CAN_CREATE_COMPETITIONS[] = {SECURITY_ROLE_fotografRevizor};
+    private static final String SECURITY_POLE_HLIDANA[] = {
+        KOPIEMF_datumPredani,
+        KOPIEMF_datumVytvoreni,
+        //KOPIEMF_datumZpracovani,
+        KOPIEMF_objednavatel,
+        KOPIEMF_typMf,
+        KOPIEMF_zpracovatel,
+        RECORD_stavRec,
+        RECORD_poznRec,
+        RECORD_stavPozn};
+    
+    
+    /***************************************************************************
+     * 
+     * @param rec
+     * @return
+     */
+    @Override
+    public Record onGetRecord(Record rec) {
+        securityOnGetRecord(rec, SECURITY_DESK_TYPE, SECURITY_POLE_HLIDANA);
+        return rec;
+    }
+
+
+    /***************************************************************************
+     * 
+     * @param rec
+     * @param poleHlidana
+     * @param vRecordFieldsSecurity
+     * @param canErase
+     */
+    @Override
+    protected boolean setCustomSecurityOnGetRecord(Record rec, String[] poleHlidana, Vector<Integer> vRecordFieldsSecurity, boolean canErase, String kompetence) {
+        /* Kompetence - Fotograf Korektor */
+        if (kompetence.contains(SECURITY_ROLE_fotografRevizor)) {
+            canErase = Boolean.TRUE;
+            mergeSecurity(vRecordFieldsSecurity, 2,2,2,2,2,2,2,2);
+        }
+        /* Kompetence - Fotograf */
+        if (kompetence.contains(SECURITY_ROLE_fotograf)) {
+            mergeSecurity(vRecordFieldsSecurity, 1,1,1,1,1,1,1,1);
+        }
+        return canErase;
+    }
+
+
+    /***************************************************************************
+     * Nastavuje defaultni hodnoty
+     * @param rec
+     * @return
+     * @throws com.amaio.plaant.businessFunctions.AddException
+     */
+    @Override
+    public Record onCreateLocal(Record rec) throws AddException {
+        super.onCreateLocal(rec);
+        securityOnCreateLocal(rec, SECURITY_DESK_TYPE, SECURITY_CAN_CREATE_COMPETITIONS);
+        //nastaveni dnesniho datumu
+        rec.getSimpleField(KOPIEMF_datumVytvoreni).setValue(new Date());
+        
+        return rec;
+    }
+    
+    
+}//eof class KopieMfEntity

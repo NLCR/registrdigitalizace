@@ -1,0 +1,41 @@
+/* *****************************************************************************
+ * To change this template, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package cz.incad.relief3.rdcz.uniimporter;
+
+import cz.incad.relief3.rdcz.uniimporter.model.DataParserMarcXml;
+import cz.incad.relief3.rdcz.uniimporter.model.OneIssue;
+import cz.incad.relief3.rdcz.uniimporter.utils.OneSource;
+import java.io.File;
+
+/** ****************************************************************************
+ *
+ * @author martin.novacek@incad.cz
+ */
+public class Test_ParserXML {
+    
+    /** ************************************************************************
+     * 
+     * @param args 
+     */
+    public static void main(String[] args) {
+        System.out.println("Start TEST");
+        DataParserMarcXml dp = new DataParserMarcXml();
+        //File file = new File("data.xml");
+        File file = new File("aba001_p_hk_perio.xml");
+        OneSource oneSource = new OneSource();
+        OneIssue oneIssue = new OneIssue(file, oneSource);
+
+        dp.parseIt(oneIssue);
+
+        
+        for (int i = 0; i < oneIssue.lRecords.size(); i++) {
+            System.out.println("--------------------------------------------------------------------------------");
+            System.out.println(oneIssue.lRecords.get(i).allAboutMe());
+        }
+
+        System.out.println("Finish TEST");
+    }
+
+}

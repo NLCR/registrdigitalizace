@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<lists>
+  <list name="DtypPrace" className="cz.incad.nkp.digital.DtypPraceEntity" alphabetize="true"></list>
+  <list name="DstavRec" className="cz.incad.core.basic.DstavRecEntity" alphabetize="true"></list>
+  <list name="DlistJazyk" className="cz.incad.core.list.DlistJazykEntity" alphabetize="true"></list>
+  <list name="DlistZeme" className="cz.incad.core.list.DlistZemeEntity" alphabetize="true"></list>
+  <list name="DtypZeme" className="cz.incad.core.list.DtypZemeEntity" alphabetize="true"></list>
+  <list name="DtypJazyk" className="cz.incad.core.list.DtypJazykEntity" alphabetize="true"></list>
+  <list name="DtypNazev" className="cz.incad.core.list.DtypNazevEntity" alphabetize="true"></list>
+  <list name="DtypFyz" className="cz.incad.core.list.DtypFyzEntity" alphabetize="true"></list>
+  <list name="DtypISBN" className="cz.incad.core.list.DtypISBNEntity" alphabetize="true"></list>
+  <list name="DroleAutor" className="cz.incad.core.list.DroleAutorEntity" alphabetize="true"></list>
+  <list name="DroleInst" className="cz.incad.core.list.DroleInstEntity" alphabetize="true"></list>
+  <list name="DtypAdresa" className="cz.incad.core.list.DtypAdresaEntity" alphabetize="true"></list>
+  <list name="DtypKontakt" className="cz.incad.core.list.DtypKontaktEntity" alphabetize="true"></list>
+  <list name="DlistTematika" className="cz.incad.core.list.DlistTematikaEntity" alphabetize="true"></list>
+  <list name="DlistNosic" className="cz.incad.core.list.DlistNosicEntity" alphabetize="true"></list>
+  <list name="DstavRezervace" className="cz.incad.core.list.DstavRezervaceEntity" alphabetize="true"></list>
+  <list name="DstavVypujcky" className="cz.incad.core.list.DstavVypujckyEntity" alphabetize="true"></list>
+  <list name="Dulozeni" className="cz.incad.core.list.DulozeniEntity" alphabetize="true"></list>
+  <list name="KatCtenar" className="cz.incad.core.lend.KatCtenarEntity" alphabetize="true"></list>
+  <list name="KatExemplar" className="cz.incad.core.lend.KatExemplarEntity" alphabetize="true"></list>
+  <list name="InsZpracovatel" className="cz.incad.nkp.digital.InsZpracovatelEntity" alphabetize="true"></list>
+  <list name="InsVlastnik" className="cz.incad.nkp.digital.InsVlastnikEntity" alphabetize="true"></list>
+  <list name="Instituce" className="cz.incad.nkp.digital.InstituceEntity" alphabetize="true"></list>
+  <list name="Dkamera" className="cz.incad.nkp.digital.DkameraEntity" alphabetize="true"></list>
+  <list name="InsObjednavatel" className="cz.incad.nkp.digital.InsObjednavatelEntity" alphabetize="true"></list>
+  <list name="DtypMf" className="cz.incad.nkp.digital.DtypMfEntity" alphabetize="true"></list>
+  <list name="DzpusobDig" className="cz.incad.nkp.digital.DzpusobDigEntity" alphabetize="true"></list>
+  <list name="Dfinancovano" className="cz.incad.nkp.digital.DfinancovanoEntity" alphabetize="true"></list>
+  <list name="DsecurityBF" className="cz.incad.core.list.DsecurityBFEntity" alphabetize="true"></list>
+  <list name="DroleUser" className="cz.incad.core.list.DroleUserEntity" alphabetize="true"></list>
+  <list name="Doperator" className="cz.incad.nkp.digital.DoperatorEntity" alphabetize="true"></list>
+  <list name="Dpracovnik" className="cz.incad.nkp.digital.PracovnikEntity" alphabetize="true"></list>
+  <list name="DmikrofilmRevizor" className="cz.incad.nkp.digital.DmikrofilmRevizorEntity" alphabetize="true"></list>
+  <list name="Dbase" className="cz.incad.nkp.digital.DbaseEntity" alphabetize="true"></list>
+  <list name="DzarazeniUser" className="cz.incad.core.list.DzarazeniUserEntity" alphabetize="true"></list>
+  <list name="InsDigitalniKnihovna" className="cz.incad.nkp.digital.InsDigitalniKnihovnaEntity" alphabetize="true"></list>
+  <list name="SimpleList_BF_DataInspector_action" bundle="ServerBundle" alphabetize="true">
+    <item key="0">slAction0</item>
+    <item key="1">slAction1</item>
+    <item key="999">isActionTest</item>
+  </list>
+  <list name="DpracovnikUkol" className="cz.incad.nkp.digital.DpracovnikUkolEntity" alphabetize="true"></list>
+  <list name="Katalog" bundle="ServerBundle" alphabetize="true">
+    <item key="Katalog1">Katalog1</item>
+  </list>
+  <list name="DruhDokumentu" bundle="ServerBundle" alphabetize="true">
+    <item key="BK">monografie</item>
+    <item key="MP">mapa</item>
+    <item key="SE">svazekPeriodika</item>
+    <item key="GP">grafika</item>
+    <item key="RP">staryTisk</item>
+    <item key="MU">hudebnina</item>
+    <item key="M">M</item>
+    <item key="P">P</item>
+  </list>
+  <list name="SLpripStav" bundle="ServerBundle" alphabetize="true">
+    <item key="finished">finished</item>
+    <item key="incomplete">incomplete</item>
+  </list>
+  <list name="SLskenStav" bundle="ServerBundle" alphabetize="true">
+    <item key="finished">finished</item>
+    <item key="excluded">excluded</item>
+    <item key="incomplete">incomplete</item>
+  </list>
+  <list name="SLmikroStav" bundle="ServerBundle" alphabetize="true">
+    <item key="finished">finished</item>
+    <item key="excluded">excluded</item>
+    <item key="incomplete">incomplete</item>
+  </list>
+  <list name="SLmetaStav" bundle="ServerBundle" alphabetize="true">
+    <item key="finished">finished</item>
+    <item key="incomplete">incomplete</item>
+  </list>
+  <list name="SLdostupnost" bundle="ServerBundle" alphabetize="true">
+    <item key="volneDostupny">volneDostupny</item>
+    <item key="pouzeVknihovne">pouzeVknihovne</item>
+  </list>
+  <list name="SLpublStav" bundle="ServerBundle" alphabetize="true">
+    <item key="incomplete">incomplete</item>
+    <item key="finished">finished</item>
+  </list>
+  <list name="SLpraceStav" bundle="ServerBundle" alphabetize="true">
+    <item key="finished">finished</item>
+    <item key="incomplete">incomplete</item>
+  </list>
+  <list name="SLformatDokumentu" bundle="ServerBundle" alphabetize="true">
+    <item key="periodikum">periodikum</item>
+  </list>
+  <list name="SLsoftware" bundle="ServerBundle" alphabetize="true">
+    <item key="kramerius3">kramerius3</item>
+    <item key="manustcriptorium">manustcriptorium</item>
+    <item key="kramerius4">kramerius4</item>
+  </list>
+  <list name="SLprotokol" bundle="ServerBundle" alphabetize="true">
+    <item key="oaipmh">oaipmh</item>
+  </list>
+  <list name="SLformatDat" bundle="ServerBundle" alphabetize="true">
+    <item key="dc">SLformatDat.dc</item>
+    <item key="drkramerius4">SLformatDat.drkramerius4</item>
+  </list>
+  <list name="SLrevizeStav" bundle="ServerBundle" alphabetize="true">
+    <item key="automatickaRevizeOK">automatickaRevizeOK</item>
+    <item key="rucniRevizeNutna">rucniRevizeNutna</item>
+  </list>
+  <list name="SLtypAkce" bundle="ServerBundle" alphabetize="true">
+    <item key="predani">predani</item>
+    <item key="prevzeti">prevzeti</item>
+  </list>
+  <list name="DZpracovatel" className="cz.incad.rd.ZpracovatelEntity" alphabetize="true"></list>
+  <list name="SLbarevnaSkala" bundle="ServerBundle" alphabetize="true">
+    <item key="BW">BW</item>
+    <item key="GS">GS</item>
+    <item key="RGB">RGB</item>
+  </list>
+  <list name="SLtypSkeneru" bundle="ServerBundle" alphabetize="true">
+    <item key="mikrofilmovy">mikrofilmovy</item>
+    <item key="knizni">knizni</item>
+    <item key="plochy">plochy</item>
+    <item key="bubnovy">bubnovy</item>
+    <item key="dokumentovy">dokumentovy</item>
+    <item key="hybridni">hybridni</item>
+  </list>
+  <list name="SLtypZpracovatele" bundle="ServerBundle" alphabetize="true">
+    <item key="osoba">osoba2</item>
+    <item key="organizace">organizace</item>
+  </list>
+  <list name="DSkener" className="cz.incad.rd.SkenerEntity" alphabetize="true"></list>
+  <list name="SLurnnbnFlag" bundle="ServerBundle" alphabetize="true">
+    <item key="0">SLurnnbnFlag.0</item>
+    <item key="1">SLurnnbnFlag.1</item>
+    <item key="2">SLurnnbnFlag.2</item>
+    <item key="3">SLurnnbnFlag.3</item>
+  </list>
+  <list name="DdruhDokumentu" className="cz.incad.rd.list.DdruhDokumentuEntity" alphabetize="true"></list>
+  <list name="SLarchStav" bundle="ServerBundle" alphabetize="true">
+    <item key="finished"></item>
+    <item key="incomplete">incomplete</item>
+  </list>
+  <list name="Dprofil" className="cz.incad.rd.ProfilEntity" alphabetize="true"></list>
+  <list name="DdigPripStav" className="cz.incad.rd.list.DdigPripStavEntity" alphabetize="true"></list>
+  <list name="DdigSkenStav" className="cz.incad.rd.list.DdigSkenStavEntity" alphabetize="true"></list>
+  <list name="DdigMikroStav" className="cz.incad.rd.list.DdigMikroStavEntity" alphabetize="true"></list>
+  <list name="DdigMetaStav" className="cz.incad.rd.list.DdigMetaStavEntity" alphabetize="true"></list>
+  <list name="DdigPublStav" className="cz.incad.rd.list.DdigPublStavEntity" alphabetize="true"></list>
+  <list name="DdalPracePraceStav" className="cz.incad.rd.list.DdalsiPracePraceStavEntity" alphabetize="true"></list>
+  <list name="DdigArchStav" className="cz.incad.rd.list.DdigArchStavEntity" alphabetize="true"></list>
+  <list name="DdigZpracEditor" className="cz.incad.rd.list.DdigZpracEditorEntity" alphabetize="true"></list>
+  <list name="DdigZpracStav" className="cz.incad.rd.list.DdigZpracStavEntity" alphabetize="true"></list>
+  <list name="DmodelSkeneru" className="cz.incad.rd.list.DmodelSkeneruEntity" alphabetize="true"></list>
+  <list name="SLdotace" bundle="ServerBundle" alphabetize="true">
+    <item key="VISK7">SLdotace.VISK7</item>
+    <item key="norskeFondy">SLdotace.norskeFondy</item>
+    <item key="vlastni">SLdotace.vlastni</item>
+  </list>
+  <list name="SLPrispevatelStav" bundle="ServerBundle" alphabetize="true">
+    <item key="novy">SLPrispevatelStav.novy</item>
+    <item key="schvaleny">SLPrispevatelStav.schvaleny</item>
+    <item key="zruseny">SLPrispevatelStav.zruseny</item>
+  </list>
+  <list name="SLKatalogStav" bundle="ServerBundle" alphabetize="true">
+    <item key="novy">SLKatalogStav.novy</item>
+    <item key="schvaleny">SLKatalogStav.schvaleny</item>
+  </list>
+  <list name="SLDigKnihovnaStav" bundle="ServerBundle" alphabetize="true">
+    <item key="novy">SLDigKnihovnaStav.novy</item>
+    <item key="schvaleny">SLDigKnihovnaStav.schvaleny</item>
+  </list>
+  <list name="SLspecDruh" bundle="ServerBundle" alphabetize="true">
+    <item key="GL">SLspecDruh.GL</item>
+    <item key="ZL">SLspecDruh.ZL</item>
+    <item key="ED">SLspecDruh.ED</item>
+    <item key="[null]">SLspecDruh.empty</item>
+  </list>
+  <list name="DLKatalog" className="cz.incad.rd.KatalogEntity" alphabetize="true"></list>
+  <list name="DLDigitalniKnihovna" className="cz.incad.rd.DigKnihovnaEntity" alphabetize="true"></list>
+</lists>

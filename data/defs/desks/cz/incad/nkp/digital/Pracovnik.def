@@ -1,0 +1,250 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<desk bundle="ServerBundle">
+  <deskPackage>cz.incad.nkp.digital</deskPackage>
+  <deskName>Pracovnik</deskName>
+  <deskHumanHelp>cz.incad.nkp.digital.Pracovnik_help</deskHumanHelp>
+  <deskHumanName>cz.incad.nkp.digital.Pracovnik</deskHumanName>
+  <deskDBName>Pracovnik</deskDBName>
+  <deskRoot/>
+  <machineModel>cz.incad.nkp.digital.Pracovnik</machineModel>
+  <fields>
+    <field>
+      <fieldName>idCislo</fieldName>
+      <fieldHumanName>Pracovnik.idCislo</fieldHumanName>
+      <fieldHumanHelp>Pracovnik.idCislo_help</fieldHumanHelp>
+      <fieldDBName>idCislo</fieldDBName>
+      <fieldType>STR</fieldType>
+      <fieldRepresentation>EDI</fieldRepresentation>
+      <validateEmpty/>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>finDate</fieldName>
+      <fieldHumanName>Pracovnik.finDate</fieldHumanName>
+      <fieldHumanHelp>Pracovnik.finDate_help</fieldHumanHelp>
+      <fieldDBName>finDate</fieldDBName>
+      <fieldType>DAT</fieldType>
+      <fieldRepresentation>EDI</fieldRepresentation>
+      <computed/>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>ediDate</fieldName>
+      <fieldHumanName>Pracovnik.ediDate</fieldHumanName>
+      <fieldHumanHelp>Pracovnik.ediDate_help</fieldHumanHelp>
+      <fieldDBName>ediDate</fieldDBName>
+      <fieldType>DAT</fieldType>
+      <fieldRepresentation>EDI</fieldRepresentation>
+      <computed/>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>zalDate</fieldName>
+      <fieldHumanName>Pracovnik.zalDate</fieldHumanName>
+      <fieldHumanHelp>Pracovnik.zalDate_help</fieldHumanHelp>
+      <fieldDBName>zalDate</fieldDBName>
+      <fieldType>DAT</fieldType>
+      <fieldRepresentation>EDI</fieldRepresentation>
+      <computed/>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>finUser</fieldName>
+      <fieldHumanName>Pracovnik.finUser</fieldHumanName>
+      <fieldHumanHelp>Pracovnik.finUser_help</fieldHumanHelp>
+      <fieldDBName>finUser</fieldDBName>
+      <fieldType>STR</fieldType>
+      <fieldRepresentation>EDI</fieldRepresentation>
+      <computed/>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>ediUser</fieldName>
+      <fieldHumanName>Pracovnik.ediUser</fieldHumanName>
+      <fieldHumanHelp>Pracovnik.ediUser_help</fieldHumanHelp>
+      <fieldDBName>ediUser</fieldDBName>
+      <fieldType>STR</fieldType>
+      <fieldRepresentation>EDI</fieldRepresentation>
+      <computed/>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>instituce</fieldName>
+      <fieldHumanName>Pracovnik.instituce</fieldHumanName>
+      <fieldHumanHelp>Pracovnik.instituce_help</fieldHumanHelp>
+      <fieldDBName>instituce</fieldDBName>
+      <fieldType>STR</fieldType>
+      <fieldRepresentation>COM</fieldRepresentation>
+      <list>InsVlastnik</list>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>jmeno</fieldName>
+      <fieldHumanName>Pracovnik.jmeno</fieldHumanName>
+      <fieldHumanHelp>Pracovnik.jmeno_help</fieldHumanHelp>
+      <fieldDBName>jmeno</fieldDBName>
+      <fieldType>STR</fieldType>
+      <fieldRepresentation>EDI</fieldRepresentation>
+      <validateEmpty/>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>poznRec</fieldName>
+      <fieldHumanName>Pracovnik.poznRec</fieldHumanName>
+      <fieldHumanHelp>Pracovnik.poznRec_help</fieldHumanHelp>
+      <fieldDBName>poznRec</fieldDBName>
+      <fieldType>STR</fieldType>
+      <fieldRepresentation>EDI</fieldRepresentation>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>prijmeni</fieldName>
+      <fieldHumanName>Pracovnik.prijmeni</fieldHumanName>
+      <fieldHumanHelp>Pracovnik.prijmeni_help</fieldHumanHelp>
+      <fieldDBName>prijmeni</fieldDBName>
+      <fieldType>STR</fieldType>
+      <fieldRepresentation>EDI</fieldRepresentation>
+      <validateEmpty/>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>stavRec</fieldName>
+      <fieldHumanName>Pracovnik.stavRec</fieldHumanName>
+      <fieldHumanHelp>Pracovnik.stavRec_help</fieldHumanHelp>
+      <fieldDBName>stavRec</fieldDBName>
+      <fieldType>STR</fieldType>
+      <fieldRepresentation>COM</fieldRepresentation>
+      <list>DstavRec</list>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>stavPozn</fieldName>
+      <fieldHumanName>Pracovnik.stavPozn</fieldHumanName>
+      <fieldHumanHelp>Pracovnik.stavPozn_help</fieldHumanHelp>
+      <fieldDBName>stavPozn</fieldDBName>
+      <fieldType>STR</fieldType>
+      <fieldRepresentation>EDI</fieldRepresentation>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>securityOwner</fieldName>
+      <fieldHumanName>Pracovnik.securityOwner</fieldHumanName>
+      <fieldHumanHelp>Pracovnik.securityOwner_help</fieldHumanHelp>
+      <fieldDBName>securityOwner</fieldDBName>
+      <fieldType>STR</fieldType>
+      <fieldRepresentation>COM</fieldRepresentation>
+      <list>DzarazeniUser</list>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>zalUser</fieldName>
+      <fieldHumanName>Pracovnik.zalUser</fieldHumanName>
+      <fieldHumanHelp>Pracovnik.zalUser_help</fieldHumanHelp>
+      <fieldDBName>zalUser</fieldDBName>
+      <fieldType>STR</fieldType>
+      <fieldRepresentation>EDI</fieldRepresentation>
+      <computed/>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+  </fields>
+  <forms>
+    <screen-form name="PracovnikF" formHumanName="PracovnikF" id="cz.incad.nkp.digital.Pracovnik">
+      <form-body align="LEFT" valign="TOP">
+        <row fill="LEFT" vfill="TOP">
+          <input align="LEFT" valign="TOP" indent="false" columnIndex="1" width="20ch" id="idCislo" precision="0" scale="0" type="text">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </input>
+          <select align="LEFT" valign="TOP" indent="false" columnIndex="2" width="40ch" id="instituce" precision="0" scale="0" type="combo" multi="false" editable="false">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </select>
+          <select align="LEFT" valign="TOP" indent="false" columnIndex="3" width="20ch" id="stavRec" precision="19" scale="4" type="combo" multi="false" editable="false">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </select>
+        </row>
+        <row fill="LEFT" vfill="TOP">
+          <input align="LEFT" valign="TOP" indent="false" columnIndex="1" width="20ch" id="prijmeni" precision="0" scale="0" type="text">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </input>
+          <input align="LEFT" valign="TOP" indent="false" columnIndex="2" width="20ch" id="jmeno" precision="19" scale="4" type="text">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </input>
+        </row>
+        <row fill="LEFT" vfill="TOP">
+          <selectDate align="LEFT" valign="TOP" indent="false" columnIndex="1" width="15ch" id="zalDate" precision="0" scale="0">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </selectDate>
+          <input align="LEFT" valign="TOP" indent="false" columnIndex="2" width="10ch" id="zalUser" precision="19" scale="4" type="text">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </input>
+          <selectDate align="LEFT" valign="TOP" indent="false" columnIndex="3" width="15ch" id="ediDate" precision="19" scale="4">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </selectDate>
+          <input align="LEFT" valign="TOP" indent="false" columnIndex="4" width="10ch" id="ediUser" precision="19" scale="4" type="text">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </input>
+          <selectDate align="LEFT" valign="TOP" indent="false" columnIndex="5" width="15ch" id="finDate" precision="19" scale="4">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </selectDate>
+          <input align="LEFT" valign="TOP" indent="false" columnIndex="6" width="10ch" id="finUser" precision="19" scale="4" type="text">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </input>
+        </row>
+        <row fill="LEFT" vfill="TOP">
+          <input align="LEFT" valign="TOP" indent="false" columnIndex="1" width="40ch" id="poznRec" precision="19" scale="4" type="text" rows="4">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </input>
+          <input align="LEFT" valign="TOP" indent="false" columnIndex="2" width="40ch" id="stavPozn" precision="19" scale="4" type="text" rows="4">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </input>
+        </row>
+      </form-body>
+    </screen-form>
+    <tree name="AvailableForms">
+      <node formName="PracovnikF"/>
+    </tree>
+  </forms>
+  <uniqueFields>
+    <field name="idCislo"/>
+  </uniqueFields>
+</desk>

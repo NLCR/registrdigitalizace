@@ -1,0 +1,841 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<desk bundle="ServerBundle">
+  <deskPackage>cz.incad.nkp.digital</deskPackage>
+  <deskName>Zakazka</deskName>
+  <deskHumanHelp>cz.incad.nkp.digital.Zakazka_help</deskHumanHelp>
+  <deskHumanName>cz.incad.nkp.digital.Zakazka</deskHumanName>
+  <deskDBName>Zakazka</deskDBName>
+  <deskRoot>cz.incad.core.basic.Record</deskRoot>
+  <machineModel>cz.incad.nkp.digital.Zakazka</machineModel>
+  <fields>
+    <field>
+      <fieldName>carKod</fieldName>
+      <fieldHumanName>Zakazka.carKod</fieldHumanName>
+      <fieldHumanHelp>Zakazka.carKod_help</fieldHumanHelp>
+      <fieldDBName>carKod</fieldDBName>
+      <fieldType>STR</fieldType>
+      <fieldRepresentation>EDI</fieldRepresentation>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>cisloZakazky</fieldName>
+      <fieldHumanName>Zakazka.cisloZakazky</fieldHumanName>
+      <fieldHumanHelp>Zakazka.cisloZakazky_help</fieldHumanHelp>
+      <fieldDBName>cisloZakazky</fieldDBName>
+      <fieldType>STR</fieldType>
+      <fieldRepresentation>EDI</fieldRepresentation>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>rTitNkp</fieldName>
+      <fieldHumanName>Zakazka.rTitNkp</fieldHumanName>
+      <fieldHumanHelp>Zakazka.rTitNkp_help</fieldHumanHelp>
+      <fieldDBName>rTitNkpZa</fieldDBName>
+      <fieldType>REF</fieldType>
+      <fieldRepresentation>REF</fieldRepresentation>
+      <reference relationshipType="association" rTable="false">cz.incad.nkp.digital.TitNkp</reference>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>djvu</fieldName>
+      <fieldHumanName>Zakazka.djvu</fieldHumanName>
+      <fieldHumanHelp>Zakazka.djvu_help</fieldHumanHelp>
+      <fieldDBName>djvu</fieldDBName>
+      <fieldType>BOL</fieldType>
+      <fieldRepresentation>CHK</fieldRepresentation>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>dpi</fieldName>
+      <fieldHumanName>Zakazka.dpi</fieldHumanName>
+      <fieldHumanHelp>Zakazka.dpi_help</fieldHumanHelp>
+      <fieldDBName>dpi</fieldDBName>
+      <fieldType>STR</fieldType>
+      <fieldRepresentation>EDI</fieldRepresentation>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>jpeg</fieldName>
+      <fieldHumanName>Zakazka.jpeg</fieldHumanName>
+      <fieldHumanHelp>Zakazka.jpeg_help</fieldHumanHelp>
+      <fieldDBName>jpeg</fieldDBName>
+      <fieldType>BOL</fieldType>
+      <fieldRepresentation>CHK</fieldRepresentation>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>obrazky</fieldName>
+      <fieldHumanName>Zakazka.obrazky</fieldHumanName>
+      <fieldHumanHelp>Zakazka.obrazky_help</fieldHumanHelp>
+      <fieldDBName>obrazky</fieldDBName>
+      <fieldType>BOL</fieldType>
+      <fieldRepresentation>EDI</fieldRepresentation>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>ocr</fieldName>
+      <fieldHumanName>Zakazka.ocr</fieldHumanName>
+      <fieldHumanHelp>Zakazka.ocr_help</fieldHumanHelp>
+      <fieldDBName>ocr</fieldDBName>
+      <fieldType>BOL</fieldType>
+      <fieldRepresentation>CHK</fieldRepresentation>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>ocrSvabach</fieldName>
+      <fieldHumanName>Zakazka.ocrSvabach</fieldHumanName>
+      <fieldHumanHelp>Zakazka.ocrSvabach_help</fieldHumanHelp>
+      <fieldDBName>ocrSvabach</fieldDBName>
+      <fieldType>BOL</fieldType>
+      <fieldRepresentation>CHK</fieldRepresentation>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>parSkenovani</fieldName>
+      <fieldHumanName>Zakazka.parSkenovani</fieldHumanName>
+      <fieldHumanHelp>Zakazka.parSkenovani_help</fieldHumanHelp>
+      <fieldDBName>parSkenovani</fieldDBName>
+      <fieldType>STR</fieldType>
+      <fieldRepresentation>EDI</fieldRepresentation>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>parUpravySkenu</fieldName>
+      <fieldHumanName>Zakazka.parUpravySkenu</fieldHumanName>
+      <fieldHumanHelp>Zakazka.parUpravySkenu_help</fieldHumanHelp>
+      <fieldDBName>parUpravySkenu</fieldDBName>
+      <fieldType>STR</fieldType>
+      <fieldRepresentation>EDI</fieldRepresentation>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>pdf</fieldName>
+      <fieldHumanName>Zakazka.pdf</fieldHumanName>
+      <fieldHumanHelp>Zakazka.pdf_help</fieldHumanHelp>
+      <fieldDBName>pdf</fieldDBName>
+      <fieldType>BOL</fieldType>
+      <fieldRepresentation>CHK</fieldRepresentation>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>scanovanoStran</fieldName>
+      <fieldHumanName>Zakazka.scanovanoStran</fieldHumanName>
+      <fieldHumanHelp>Zakazka.scanovanoStran_help</fieldHumanHelp>
+      <fieldDBName>scanovanoStran</fieldDBName>
+      <fieldType>INT</fieldType>
+      <fieldRepresentation>EDI</fieldRepresentation>
+      <precision>19</precision>
+    </field>
+    <field>
+      <fieldName>pocetSouboru</fieldName>
+      <fieldHumanName>Zakazka.pocetSouboru</fieldHumanName>
+      <fieldHumanHelp>Zakazka.pocetSouboru_help</fieldHumanHelp>
+      <fieldDBName>pocetSouboru</fieldDBName>
+      <fieldType>INT</fieldType>
+      <fieldRepresentation>EDI</fieldRepresentation>
+      <precision>19</precision>
+    </field>
+    <field>
+      <fieldName>tempSignatura</fieldName>
+      <fieldHumanName>Zakazka.tempSignatura</fieldHumanName>
+      <fieldHumanHelp>Zakazka.tempSignatura_help</fieldHumanHelp>
+      <fieldDBName>tempSignatura</fieldDBName>
+      <fieldType>STR</fieldType>
+      <fieldRepresentation>EDI</fieldRepresentation>
+      <computed/>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>importKNAV1</fieldName>
+      <fieldHumanName>Zakazka.importKNAV1</fieldHumanName>
+      <fieldHumanHelp>Zakazka.importKNAV1_help</fieldHumanHelp>
+      <fieldDBName>importKNAV1</fieldDBName>
+      <fieldType>STR</fieldType>
+      <fieldRepresentation>EDI</fieldRepresentation>
+      <computed/>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>importKNAV2</fieldName>
+      <fieldHumanName>Zakazka.importKNAV2</fieldHumanName>
+      <fieldHumanHelp>Zakazka.importKNAV2_help</fieldHumanHelp>
+      <fieldDBName>importKNAV2</fieldDBName>
+      <fieldType>STR</fieldType>
+      <fieldRepresentation>EDI</fieldRepresentation>
+      <computed/>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>rozsah</fieldName>
+      <fieldHumanName>Zakazka.rozsah</fieldHumanName>
+      <fieldHumanHelp>Zakazka.rozsah_help</fieldHumanHelp>
+      <fieldDBName>rozsah</fieldDBName>
+      <fieldType>STR</fieldType>
+      <fieldRepresentation>EDI</fieldRepresentation>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>rozsahDo</fieldName>
+      <fieldHumanName>Zakazka.rozsahDo</fieldHumanName>
+      <fieldHumanHelp>Zakazka.rozsahDo_help</fieldHumanHelp>
+      <fieldDBName>rozsahDo</fieldDBName>
+      <fieldType>DAT</fieldType>
+      <fieldRepresentation>EDI</fieldRepresentation>
+      <formatPattern>dd.MM.yyyy</formatPattern>
+      <formatPatternForInput>dd.MM.yyyy</formatPatternForInput>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>rozsahOd</fieldName>
+      <fieldHumanName>Zakazka.rozsahOd</fieldHumanName>
+      <fieldHumanHelp>Zakazka.rozsahOd_help</fieldHumanHelp>
+      <fieldDBName>rozsahOd</fieldDBName>
+      <fieldType>DAT</fieldType>
+      <fieldRepresentation>EDI</fieldRepresentation>
+      <formatPattern>dd.MM.yyyy</formatPattern>
+      <formatPatternForInput>dd.MM.yyyy</formatPatternForInput>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>stupneSedi</fieldName>
+      <fieldHumanName>Zakazka.stupneSedi</fieldHumanName>
+      <fieldHumanHelp>Zakazka.stupneSedi_help</fieldHumanHelp>
+      <fieldDBName>stupneSedi</fieldDBName>
+      <fieldType>STR</fieldType>
+      <fieldRepresentation>EDI</fieldRepresentation>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>tiff</fieldName>
+      <fieldHumanName>Zakazka.tiff</fieldHumanName>
+      <fieldHumanHelp>Zakazka.tiff_help</fieldHumanHelp>
+      <fieldDBName>tiff</fieldDBName>
+      <fieldType>BOL</fieldType>
+      <fieldRepresentation>CHK</fieldRepresentation>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>txt</fieldName>
+      <fieldHumanName>Zakazka.txt</fieldHumanName>
+      <fieldHumanHelp>Zakazka.txt_help</fieldHumanHelp>
+      <fieldDBName>txt</fieldDBName>
+      <fieldType>BOL</fieldType>
+      <fieldRepresentation>CHK</fieldRepresentation>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>skener</fieldName>
+      <fieldHumanName>Zakazka.skener</fieldHumanName>
+      <fieldHumanHelp>Zakazka.skener_help</fieldHumanHelp>
+      <fieldDBName>skener</fieldDBName>
+      <fieldType>STR</fieldType>
+      <fieldRepresentation>EDI</fieldRepresentation>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>tUkol</fieldName>
+      <fieldHumanName>Zakazka.tUkol</fieldHumanName>
+      <fieldHumanHelp>Zakazka.tUkol_help</fieldHumanHelp>
+      <fieldDBName>rZakazkaUk</fieldDBName>
+      <fieldType>TAB</fieldType>
+      <fieldRepresentation>REP</fieldRepresentation>
+      <reference relationshipType="aggregation" rTable="false">cz.incad.nkp.digital.Ukol</reference>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>udirdcz</fieldName>
+      <fieldHumanName>Zakazka.udirdcz</fieldHumanName>
+      <fieldHumanHelp>Zakazka.udirdcz_help</fieldHumanHelp>
+      <fieldDBName>udirdcz</fieldDBName>
+      <fieldType>STR</fieldType>
+      <fieldRepresentation>EDI</fieldRepresentation>
+      <validateLength>30</validateLength>
+      <computed/>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>urlObrazku</fieldName>
+      <fieldHumanName>Zakazka.urlObrazku</fieldHumanName>
+      <fieldHumanHelp>Zakazka.urlObrazku_help</fieldHumanHelp>
+      <fieldDBName>urlObrazku</fieldDBName>
+      <fieldType>STR</fieldType>
+      <fieldRepresentation>EDI</fieldRepresentation>
+      <computed/>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>tURL</fieldName>
+      <fieldHumanName>Zakazka.tURL</fieldHumanName>
+      <fieldHumanHelp>Zakazka.tURL_help</fieldHumanHelp>
+      <fieldDBName>rZakazka</fieldDBName>
+      <fieldType>TAB</fieldType>
+      <fieldRepresentation>REP</fieldRepresentation>
+      <reference relationshipType="association" rTable="false">cz.incad.nkp.digital.URL</reference>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>url</fieldName>
+      <fieldHumanName>Zakazka.url</fieldHumanName>
+      <fieldHumanHelp>Zakazka.url_help</fieldHumanHelp>
+      <fieldDBName>url</fieldDBName>
+      <fieldType>STR</fieldType>
+      <fieldRepresentation>EDI</fieldRepresentation>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>tVlastnik</fieldName>
+      <fieldHumanName>Zakazka.tVlastnik</fieldHumanName>
+      <fieldHumanHelp>Zakazka.tVlastnik_help</fieldHumanHelp>
+      <fieldDBName>rZakazkaVl</fieldDBName>
+      <fieldType>TAB</fieldType>
+      <fieldRepresentation>REP</fieldRepresentation>
+      <reference relationshipType="aggregation" rTable="false">cz.incad.nkp.digital.Vlastnik</reference>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>xml</fieldName>
+      <fieldHumanName>Zakazka.xml</fieldHumanName>
+      <fieldHumanHelp>Zakazka.xml_help</fieldHumanHelp>
+      <fieldDBName>xml</fieldDBName>
+      <fieldType>BOL</fieldType>
+      <fieldRepresentation>EDI</fieldRepresentation>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+  </fields>
+  <forms>
+    <screen-form name="ZakazkaF" formHumanName="ZakazkaF" id="cz.incad.nkp.digital.Zakazka">
+      <form-body align="LEFT" valign="TOP">
+        <row fill="LEFT" vfill="TOP">
+          <input align="LEFT" valign="TOP" indent="false" columnIndex="1" width="140px" id="cisloZakazky" precision="19" scale="4" type="text">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </input>
+          <select align="LEFT" valign="TOP" indent="false" columnIndex="2" width="200px" id="stavRec" precision="19" scale="4" type="combo" multi="false" editable="false">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </select>
+          <input align="LEFT" valign="TOP" indent="false" columnIndex="3" width="30ch" id="stavPozn" precision="19" scale="4" type="text">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </input>
+          <input align="LEFT" valign="TOP" indent="false" columnIndex="4" width="20ch" id="carKod" precision="19" scale="4" type="text">
+            <label place="TOP">
+              <from-field colon="false"/>
+            </label>
+          </input>
+        </row>
+        <row fill="LEFT" vfill="TOP">
+          <repeat align="LEFT" valign="TOP" indent="false" id="tVlastnik" precision="19" scale="4" refclass="cz.incad.nkp.digital.Vlastnik" form="Vlastnik">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </repeat>
+        </row>
+        <row fill="LEFT" vfill="TOP">
+          <refbutton align="LEFT" valign="TOP" indent="false" columnIndex="1" id="rTitNkp" precision="19" scale="4" refclass="cz.incad.nkp.digital.TitNkp"/>
+          <input align="LEFT" valign="TOP" indent="false" columnIndex="2" width="100ch" id="rTitNkp.hlNazev" precision="19" scale="4" ref="true" type="text" rows="3">
+            <label place="TOP">Zakazka.ZakazkaF.hlNazev</label>
+          </input>
+        </row>
+        <row fill="LEFT" vfill="TOP">
+          <input align="LEFT" valign="TOP" indent="false" width="500px" id="rozsah" precision="19" scale="4" type="text">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </input>
+        </row>
+        <row fill="LEFT" vfill="TOP">
+          <repeat align="LEFT" valign="TOP" indent="false" id="tUkol" precision="19" scale="4" refclass="cz.incad.nkp.digital.Ukol" form="UkolF2">
+            <label place="TOP">Zakazka.ZakazkaF2.tUkol</label>
+          </repeat>
+        </row>
+        <row fill="LEFT" vfill="TOP">
+          <input align="LEFT" valign="TOP" indent="false" columnIndex="1" width="20ch" id="pocetSouboru" precision="19" scale="0" type="text">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </input>
+          <check align="LEFT" valign="TOP" indent="false" columnIndex="2" id="ocr" precision="19" scale="4">
+            <label place="TOP">
+              <from-field colon="false"/>
+            </label>
+          </check>
+          <check align="LEFT" valign="TOP" indent="false" columnIndex="3" id="ocrSvabach" precision="0" scale="0">
+            <label place="TOP">
+              <from-field colon="false"/>
+            </label>
+          </check>
+          <input align="LEFT" valign="TOP" indent="false" columnIndex="4" width="20ch" id="skener" precision="0" scale="0" type="text">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </input>
+          <input align="LEFT" valign="TOP" indent="false" columnIndex="5" width="20ch" id="parSkenovani" precision="0" scale="0" type="text">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </input>
+          <input align="LEFT" valign="TOP" indent="false" columnIndex="6" width="20ch" id="parUpravySkenu" precision="0" scale="0" type="text">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </input>
+        </row>
+        <row fill="LEFT" vfill="TOP">
+          <check align="LEFT" valign="TOP" indent="false" columnIndex="1" id="tiff" precision="0" scale="0">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </check>
+          <check align="LEFT" valign="TOP" indent="false" columnIndex="2" id="pdf" precision="0" scale="0">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </check>
+          <check align="LEFT" valign="TOP" indent="false" columnIndex="3" id="txt" precision="0" scale="0">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </check>
+          <check align="LEFT" valign="TOP" indent="false" columnIndex="4" id="jpeg" precision="19" scale="4">
+            <label place="TOP">
+              <from-field colon="false"/>
+            </label>
+          </check>
+          <input align="LEFT" valign="TOP" indent="false" columnIndex="1" width="20ch" id="scanovanoStran" precision="19" scale="0" type="text">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </input>
+          <input align="LEFT" valign="TOP" indent="false" columnIndex="2" width="20ch" id="dpi" precision="0" scale="0" type="text">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </input>
+          <input align="LEFT" valign="TOP" indent="false" columnIndex="3" width="20ch" id="stupneSedi" precision="0" scale="0" type="text">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </input>
+        </row>
+        <row fill="LEFT" vfill="TOP">
+          <input align="LEFT" valign="TOP" indent="false" width="100ch" id="poznRec" precision="19" scale="4" type="text" rows="4">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </input>
+        </row>
+        <row fill="LEFT" vfill="TOP">
+          <selectDate align="LEFT" valign="TOP" indent="false" columnIndex="1" width="140px" id="zalDate" precision="19" scale="4">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </selectDate>
+          <input align="LEFT" valign="TOP" indent="false" columnIndex="2" width="100px" id="zalUser" precision="0" scale="0" type="text">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </input>
+          <selectDate align="LEFT" valign="TOP" indent="false" columnIndex="3" width="140px" id="finDate" precision="19" scale="4">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </selectDate>
+          <input align="LEFT" valign="TOP" indent="false" columnIndex="4" width="100px" id="finUser" precision="19" scale="4" type="text">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </input>
+        </row>
+        <row fill="LEFT" vfill="TOP">
+          <input align="LEFT" valign="TOP" indent="false" width="100ch" id="url" precision="19" scale="4" type="text">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </input>
+        </row>
+        <row fill="LEFT" vfill="TOP">
+          <repeat align="LEFT" valign="TOP" indent="false" id="tURL" precision="0" scale="0" refclass="cz.incad.nkp.digital.URL" form="URL">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </repeat>
+        </row>
+      </form-body>
+    </screen-form>
+    <screen-form name="ZakazkaF2" formHumanName="ZakazkaF2" id="cz.incad.nkp.digital.Zakazka">
+      <form-body align="LEFT" valign="TOP">
+        <row fill="LEFT" vfill="TOP">
+          <input align="LEFT" valign="TOP" indent="false" columnIndex="1" width="20ch" id="cisloZakazky" precision="19" scale="4" type="text">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </input>
+          <repeat align="LEFT" valign="TOP" indent="false" columnIndex="2" id="tVlastnik" precision="0" scale="0" refclass="cz.incad.nkp.digital.Vlastnik" form="Vlastnik">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </repeat>
+          <check align="LEFT" valign="TOP" indent="false" columnIndex="3" id="obrazky" precision="0" scale="0">
+            <label place="LEFT">
+              <from-field colon="true"/>
+            </label>
+          </check>
+          <check align="LEFT" valign="TOP" indent="false" columnIndex="4" id="xml" precision="0" scale="0">
+            <label place="LEFT">
+              <from-field colon="true"/>
+            </label>
+          </check>
+        </row>
+        <row fill="LEFT" vfill="TOP">
+          <input align="LEFT" valign="TOP" indent="false" width="100ch" id="url" precision="0" scale="0" type="text">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </input>
+        </row>
+        <row fill="LEFT" vfill="TOP">
+          <repeat align="LEFT" valign="TOP" indent="false" id="tUkol" precision="19" scale="4" refclass="cz.incad.nkp.digital.Ukol" form="UkolF2">
+            <label place="TOP">Zakazka.ZakazkaF2.tUkol</label>
+          </repeat>
+        </row>
+        <row fill="LEFT" vfill="TOP">
+          <input align="LEFT" valign="TOP" indent="false" width="100ch" id="tempSignatura" precision="0" scale="0" type="text">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </input>
+        </row>
+        <row fill="LEFT" vfill="TOP">
+          <repeat align="LEFT" valign="TOP" indent="false" id="tURL" precision="0" scale="0" refclass="cz.incad.nkp.digital.URL" form="URL">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </repeat>
+        </row>
+      </form-body>
+    </screen-form>
+    <screen-form name="ZakazkaExcel" formHumanName="ZakazkaExcel" id="cz.incad.nkp.digital.Zakazka">
+      <form-body align="LEFT" valign="TOP">
+        <row fill="LEFT" vfill="TOP">
+          <input align="LEFT" valign="TOP" indent="false" width="100ch" id="url" precision="19" scale="4" type="text">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </input>
+        </row>
+        <row fill="LEFT" vfill="TOP">
+          <input align="LEFT" valign="TOP" indent="false" columnIndex="1" width="20ch" id="pocetSouboru" precision="19" scale="0" type="text">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </input>
+          <check align="LEFT" valign="TOP" indent="false" columnIndex="2" id="tiff" precision="19" scale="4">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </check>
+          <check align="LEFT" valign="TOP" indent="false" columnIndex="3" id="pdf" precision="19" scale="4">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </check>
+          <check align="LEFT" valign="TOP" indent="false" columnIndex="4" id="txt" precision="19" scale="4">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </check>
+          <check align="LEFT" valign="TOP" indent="false" columnIndex="5" id="jpeg" precision="19" scale="4">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </check>
+          <check align="LEFT" valign="TOP" indent="false" columnIndex="6" id="djvu" precision="0" scale="0">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </check>
+          <empty align="LEFT" valign="TOP" indent="false" columnIndex="7" width="5ch"/>
+          <check align="LEFT" valign="TOP" indent="false" columnIndex="8" id="ocr" precision="19" scale="4">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </check>
+          <check align="LEFT" valign="TOP" indent="false" columnIndex="9" id="ocrSvabach" precision="19" scale="4">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </check>
+        </row>
+        <row fill="LEFT" vfill="TOP">
+          <input align="LEFT" valign="TOP" indent="false" columnIndex="1" width="20ch" id="skener" precision="19" scale="4" type="text">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </input>
+          <input align="LEFT" valign="TOP" indent="false" columnIndex="2" width="40ch" id="parSkenovani" precision="19" scale="4" type="text">
+            <label place="TOP">Zakazka.ZakazkaExcel.parSkenovani</label>
+          </input>
+          <input align="LEFT" valign="TOP" indent="false" columnIndex="3" width="20ch" id="dpi" precision="19" scale="4" type="text">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </input>
+        </row>
+        <row fill="LEFT" vfill="TOP">
+          <select align="LEFT" valign="TOP" indent="false" columnIndex="1" width="20ch" id="stavRec" precision="19" scale="4" type="combo" multi="false" editable="false">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </select>
+          <input align="LEFT" valign="TOP" indent="false" columnIndex="2" width="70ch" id="poznRec" precision="19" scale="4" type="text">
+            <label place="TOP">Zakazka.ZakazkaExcel.poznamkaZakazka</label>
+          </input>
+        </row>
+      </form-body>
+    </screen-form>
+    <tree name="AvailableForms">
+      <node formName="ZakazkaF"/>
+      <node formName="ZakazkaF2"/>
+      <node formName="ZakazkaExcel"/>
+    </tree>
+  </forms>
+  <functions>
+    <function>
+      <functionName>cz.incad.nkp.digital.bf.FinishZakazka</functionName>
+      <functionHumanName>cz.incad.nkp.digital.bf.FinishZakazka</functionHumanName>
+      <functionHumanHelp>Zakazka_cz.incad.nkp.digital.bf.FinishZakazka_help</functionHumanHelp>
+      <wizardPanels>
+        <wizardPanel>
+          <panelName>FinishZakazkaPanel1</panelName>
+          <panelHumanName>FinishZakazkaPanel1</panelHumanName>
+          <description>FinishZakazkaPanel1_Description</description>
+          <panelFields/>
+        </wizardPanel>
+      </wizardPanels>
+    </function>
+    <function>
+      <functionName>cz.incad.nkp.digital.bf.FinishSpecificUkol</functionName>
+      <functionHumanName>cz.incad.nkp.digital.bf.FinishSpecificUkol</functionHumanName>
+      <functionHumanHelp>Zakazka_cz.incad.nkp.digital.bf.FinishSpecificUkol_help</functionHumanHelp>
+      <wizardPanels>
+        <wizardPanel>
+          <panelName>FinishSpecificUkolPanel1</panelName>
+          <panelHumanName>FinishSpecificUkolPanel1</panelHumanName>
+          <description>FinishSpecificUkolPanel1_Description</description>
+          <panelFields>
+            <panelField>
+              <fieldName>specificUkol1</fieldName>
+              <fieldHumanName>specificUkol1</fieldHumanName>
+              <fieldType>STR</fieldType>
+              <fieldRepresentation>COM</fieldRepresentation>
+              <list>DtypPrace</list>
+            </panelField>
+            <panelField>
+              <fieldName>specificUkol2</fieldName>
+              <fieldHumanName>specificUkol2</fieldHumanName>
+              <fieldType>STR</fieldType>
+              <fieldRepresentation>COM</fieldRepresentation>
+              <list>DtypPrace</list>
+            </panelField>
+            <panelField>
+              <fieldName>specificUkol3</fieldName>
+              <fieldHumanName>specificUkol3</fieldHumanName>
+              <fieldType>STR</fieldType>
+              <fieldRepresentation>COM</fieldRepresentation>
+              <list>DtypPrace</list>
+            </panelField>
+            <panelField>
+              <fieldName>specificUkol4</fieldName>
+              <fieldHumanName>specificUkol4</fieldHumanName>
+              <fieldType>STR</fieldType>
+              <fieldRepresentation>COM</fieldRepresentation>
+              <list>DtypPrace</list>
+            </panelField>
+            <panelField>
+              <fieldName>specificUkol5</fieldName>
+              <fieldHumanName>specificUkol5</fieldHumanName>
+              <fieldType>STR</fieldType>
+              <fieldRepresentation>COM</fieldRepresentation>
+              <list>DtypPrace</list>
+            </panelField>
+            <panelField>
+              <fieldName>specificUkol6</fieldName>
+              <fieldHumanName>specificUkol6</fieldHumanName>
+              <fieldType>STR</fieldType>
+              <fieldRepresentation>COM</fieldRepresentation>
+              <list>DtypPrace</list>
+            </panelField>
+            <panelField>
+              <fieldName>specificUkol7</fieldName>
+              <fieldHumanName>specificUkol7</fieldHumanName>
+              <fieldType>STR</fieldType>
+              <fieldRepresentation>COM</fieldRepresentation>
+              <list>DtypPrace</list>
+            </panelField>
+            <panelField>
+              <fieldName>specificUkol8</fieldName>
+              <fieldHumanName>specificUkol8</fieldHumanName>
+              <fieldType>STR</fieldType>
+              <fieldRepresentation>COM</fieldRepresentation>
+              <list>DtypPrace</list>
+            </panelField>
+            <panelField>
+              <fieldName>specificUkol9</fieldName>
+              <fieldHumanName>specificUkol9</fieldHumanName>
+              <fieldType>STR</fieldType>
+              <fieldRepresentation>COM</fieldRepresentation>
+              <list>DtypPrace</list>
+            </panelField>
+            <panelField>
+              <fieldName>specificUkol10</fieldName>
+              <fieldHumanName>specificUkol10</fieldHumanName>
+              <fieldType>STR</fieldType>
+              <fieldRepresentation>COM</fieldRepresentation>
+              <list>DtypPrace</list>
+            </panelField>
+            <panelField>
+              <fieldName>specificUkol11</fieldName>
+              <fieldHumanName>specificUkol11</fieldHumanName>
+              <fieldType>STR</fieldType>
+              <fieldRepresentation>COM</fieldRepresentation>
+              <list>DtypPrace</list>
+            </panelField>
+            <panelField>
+              <fieldName>specificUkol12</fieldName>
+              <fieldHumanName>specificUkol12</fieldHumanName>
+              <fieldType>STR</fieldType>
+              <fieldRepresentation>COM</fieldRepresentation>
+              <list>DtypPrace</list>
+            </panelField>
+          </panelFields>
+        </wizardPanel>
+      </wizardPanels>
+    </function>
+    <function>
+      <functionName>cz.incad.nkp.digital.bf.SetSpecificUkolPracovnik</functionName>
+      <functionHumanName>cz.incad.nkp.digital.bf.SetSpecificUkolPracovnik</functionHumanName>
+      <functionHumanHelp>Zakazka_cz.incad.nkp.digital.bf.SetSpecificUkolPracovnik_help</functionHumanHelp>
+      <wizardPanels>
+        <wizardPanel>
+          <panelName>SetSpecificUkolPracovnikPanel1</panelName>
+          <panelHumanName>SetSpecificUkolPracovnikPanel1</panelHumanName>
+          <description>SetSpecificUkolPracovnikPanel1</description>
+          <panelFields>
+            <panelField>
+              <fieldName>pracovnik01</fieldName>
+              <fieldHumanName>pracovnik01</fieldHumanName>
+              <fieldType>STR</fieldType>
+              <fieldRepresentation>COM</fieldRepresentation>
+              <list>DpracovnikUkol</list>
+            </panelField>
+            <panelField>
+              <fieldName>zpracovatel01</fieldName>
+              <fieldHumanName>zpracovatel01</fieldHumanName>
+              <fieldType>STR</fieldType>
+              <fieldRepresentation>COM</fieldRepresentation>
+              <list>InsZpracovatel</list>
+            </panelField>
+            <panelField>
+              <fieldName>ukol01</fieldName>
+              <fieldHumanName>ukol01</fieldHumanName>
+              <fieldType>STR</fieldType>
+              <fieldRepresentation>COM</fieldRepresentation>
+              <list>DtypPrace</list>
+            </panelField>
+            <panelField>
+              <fieldName>ukol02</fieldName>
+              <fieldHumanName>ukol02</fieldHumanName>
+              <fieldType>STR</fieldType>
+              <fieldRepresentation>COM</fieldRepresentation>
+              <list>DtypPrace</list>
+            </panelField>
+            <panelField>
+              <fieldName>ukol03</fieldName>
+              <fieldHumanName>ukol03</fieldHumanName>
+              <fieldType>STR</fieldType>
+              <fieldRepresentation>COM</fieldRepresentation>
+              <list>DtypPrace</list>
+            </panelField>
+            <panelField>
+              <fieldName>ukol04</fieldName>
+              <fieldHumanName>ukol04</fieldHumanName>
+              <fieldType>STR</fieldType>
+              <fieldRepresentation>COM</fieldRepresentation>
+              <list>DtypPrace</list>
+            </panelField>
+            <panelField>
+              <fieldName>ukol05</fieldName>
+              <fieldHumanName>ukol05</fieldHumanName>
+              <fieldType>STR</fieldType>
+              <fieldRepresentation>COM</fieldRepresentation>
+              <list>DtypPrace</list>
+            </panelField>
+            <panelField>
+              <fieldName>ukol06</fieldName>
+              <fieldHumanName>ukol06</fieldHumanName>
+              <fieldType>STR</fieldType>
+              <fieldRepresentation>COM</fieldRepresentation>
+              <list>DtypPrace</list>
+            </panelField>
+          </panelFields>
+        </wizardPanel>
+      </wizardPanels>
+    </function>
+    <function>
+      <functionName>cz.incad.nkp.digital.bf.CompleteUDIRDCZ</functionName>
+      <functionHumanName>cz.incad.nkp.digital.bf.CompleteUDIRDCZ</functionHumanName>
+      <functionHumanHelp>Zakazka_cz.incad.nkp.digital.bf.CompleteUDIRDCZ_help</functionHumanHelp>
+      <wizardPanels>
+        <wizardPanel>
+          <panelName>CompleteUDIRDCZPanel1</panelName>
+          <panelHumanName>CompleteUDIRDCZPanel1</panelHumanName>
+          <description>CompleteUDIRDCZPanel1_description</description>
+          <panelFields/>
+        </wizardPanel>
+      </wizardPanels>
+    </function>
+    <tree name="AvailableBusinessFunctions">
+      <node functionName="cz.incad.nkp.digital.bf.FinishZakazka"/>
+      <node functionName="cz.incad.nkp.digital.bf.FinishSpecificUkol"/>
+      <node functionName="cz.incad.nkp.digital.bf.SetSpecificUkolPracovnik"/>
+      <node functionName="cz.incad.nkp.digital.bf.CompleteUDIRDCZ"/>
+    </tree>
+  </functions>
+  <uniqueFields>
+    <field name="cisloZakazky"/>
+  </uniqueFields>
+</desk>

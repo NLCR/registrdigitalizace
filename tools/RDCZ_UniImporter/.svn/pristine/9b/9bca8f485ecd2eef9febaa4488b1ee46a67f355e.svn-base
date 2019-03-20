@@ -1,0 +1,308 @@
+/* *****************************************************************************
+ * To change this template, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package cz.incad.relief3.rdcz.uniimporter.demons;
+
+import cz.incad.commontools.utils.OracleConnection;
+import cz.incad.commontools.utils.StringUtils;
+import cz.incad.relief3.rdcz.uniimporter.model.Demon;
+import cz.incad.relief3.rdcz.uniimporter.model.IssueHeap;
+import cz.incad.relief3.rdcz.uniimporter.model.OneIssue;
+import cz.incad.relief3.rdcz.uniimporter.model.enums.DataStateEnum;
+import cz.incad.relief3.rdcz.uniimporter.model.enums.IssueStateEnum;
+import cz.incad.relief3.rdcz.uniimporter.utils.Configuration;
+import cz.incad.relief3.rdcz.uniimporter.utils.OnePrispevatelIdentificator;
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
+/**
+ *******************************************************************************
+ *
+ * @author martin
+ */
+public class FileNameParserDemon implements Demon {
+
+    private static final Logger LOG = Logger.getLogger(FileNameParserDemon.class.getName());
+    private boolean runAgain;
+    public static final char SPLITTER = '_';
+    private static final String SIGN_ZAMER = "z";
+    private static final String SIGN_PROBIHA = "p";
+    private static final String SIGN_HOTOVO = "h";
+    private static final String SIGN_REPAIR0 = "r0";
+    private static final String SIGN_REPAIR1 = "r1";
+    private static final String SIGN_TEST = "test";
+    private static final String SIGN_KVO = "kvo";
+
+    /**
+     ***************************************************************************
+     * Privátní konstruktor
+     */
+    public FileNameParserDemon() {
+        this.runAgain = true;
+    }
+
+    /**
+     ***************************************************************************
+     * Spouštěč démona
+     */
+    @Override
+    public synchronized void run() {
+        //Získáme odkaz na uložiště ISSUEs
+        IssueHeap issueHeap = IssueHeap.getInstance();
+        OneIssue issue;
+
+        while (this.runAgain) {
+            try {
+                //začneme zpracovávat issues
+                issue = issueHeap.getOneIssue(IssueStateEnum._0_readyForParseFileName);
+                if (issue != null) {
+                    parseFileName(issue, issueHeap);
+                }
+            } catch (Exception ex) {
+                LOG.log(Level.SEVERE, "Exception: {0}", ex.getMessage());
+                //TODO - dodelat nějaké počítadlo vyjímek a popřípadě řešit issue jinak
+                this.runAgain = false;
+            }
+
+            try {
+                //sleep
+                LOG.log(Level.FINER, "FileNameParser goes sleep for {0}", Configuration.getInstance().SLEEP_TIME_FILE_NAMEPARSER);
+                this.wait(Configuration.getInstance().SLEEP_TIME_FILE_NAMEPARSER);
+            } catch (InterruptedException ex) {
+                LOG.log(Level.SEVERE, null, ex);
+            }
+        }
+    }
+
+    /**
+     ***************************************************************************
+     *
+     */
+    @Override
+    public void stop() {
+        this.runAgain = false;
+    }
+
+    /**
+     ***************************************************************************
+     *
+     * @param issue
+     * @param issueHeap
+     */
+    private void parseFileName(OneIssue issue, IssueHeap issueHeap) {
+        //final int INDEX_TIMESTAMP        = 0;
+        final int INDEX_SIGLA = 1;
+        final int INDEX_DATA_STATE = 2;
+        String fileName;
+        List<String> splitedFileName;
+        OnePrispevatelIdentificator onePrispivatelIdentifikator;
+
+        if (issue.getFile() != null) {
+            //Issue má připojený soubor
+            fileName = issue.getFile().getName();
+            if (fileName != null) {
+                if (fileName.contains(".")) {
+                    fileName = fileName.substring(0, fileName.lastIndexOf('.'));
+                }
+                LOG.log(Level.INFO, "Parsujeme nazev souboru: {0}", fileName);
+                splitedFileName = StringUtils.split(fileName, SPLITTER, true, true);
+                if (splitedFileName.size() >= 3) {
+                    onePrispivatelIdentifikator = getOnePrispivatelIdentifikator(splitedFileName.get(INDEX_SIGLA));
+                    if (onePrispivatelIdentifikator != null) {
+                        issue.onePrispevatelIdentificator = onePrispivatelIdentifikator;
+                        issue.fileSigla = splitedFileName.get(INDEX_SIGLA);
+                        issue.issueState = IssueStateEnum._1_readyForParseData;
+                    } else {
+                        issue.appendLogFailInfo("Nepodařilo se identifikovat přispěvatele dle SIGLA " + splitedFileName.get(INDEX_SIGLA) + ", nebo přispěvatel neměl řádně vyplněna všechna pole.");
+                        issue.issueState = IssueStateEnum._9_readyForLog;
+                    }
+
+                    try {
+                        issue.dataState = getState(splitedFileName.get(INDEX_DATA_STATE));
+//                        if (DataStateEnum.REPAIR0.compareTo(issue.dataState) == 0) {
+//                            issue.issueState = IssueStateEnum._3_readyForImport_repair_0;
+//                        }
+                    } catch (IllegalArgumentException ex) {
+                        LOG.log(Level.SEVERE, null, ex);
+                        issue.appendLogFailInfo("Soubor má špatný formát stavu: " + fileName);
+                        issue.issueState = IssueStateEnum._9_readyForLog;
+                    }
+
+                    //test na to jestli se jedná o testovací soubor nebo KVO.
+                    for (int i = 0; i < splitedFileName.size(); i++) {
+                        if (SIGN_TEST.equalsIgnoreCase(splitedFileName.get(i))) {
+                            issue.isTest = true;
+                        } else if (SIGN_KVO.equalsIgnoreCase(splitedFileName.get(i))) {
+                            issue.iskvo = true;
+                        }
+                    }
+
+                } else {
+                    issue.appendLogFailInfo("Soubor má špatný formát názvu: " + fileName);
+                    issue.issueState = IssueStateEnum._9_readyForLog;
+                }
+
+            } else {
+                LOG.log(Level.WARNING, "Soubor je bez názvu.");
+                if (!issueHeap.removeIssue(issue)) {
+                    LOG.log(Level.WARNING, "Issue se nepodarilo odebrat z {0}", IssueHeap.class.getName());
+                }
+            }
+
+        } else {
+            LOG.log(Level.WARNING, "Issue bez souboru.");
+            if (!issueHeap.removeIssue(issue)) {
+                LOG.log(Level.WARNING, "Issue se nepodarilo odebrat z {0}", IssueHeap.class.getName());
+            }
+        }
+    }
+
+    /**
+     ***************************************************************************
+     * Převede String na datový typ DataStateEnum.
+     *
+     * @param value Hodnota vytažená z názvu souboru
+     * @return
+     * @throws IllegalArgumentException Vyhozena v případě, že vstupní hodnota
+     * nebyla rozpoznána.
+     */
+    private static DataStateEnum getState(String value) throws IllegalArgumentException {
+        if (value == null) {
+            throw new IllegalArgumentException("Unknown state value: null");
+        }
+        if (SIGN_ZAMER.equalsIgnoreCase(value)) {
+            return DataStateEnum.ZAMER;
+        }
+        if (SIGN_PROBIHA.equalsIgnoreCase(value)) {
+            return DataStateEnum.PROBIHA;
+        }
+        if (SIGN_HOTOVO.equalsIgnoreCase(value)) {
+            return DataStateEnum.HOTOVO;
+        }
+        if (SIGN_REPAIR0.equalsIgnoreCase(value)) {
+            return DataStateEnum.REPAIR0;
+        }
+        if (SIGN_REPAIR1.equalsIgnoreCase(value)) {
+            return DataStateEnum.REPAIR1;
+        }
+
+        throw new IllegalArgumentException("Unknown state value: " + value);
+    }
+
+    /**
+     ***************************************************************************
+     *
+     * @param sigla
+     * @return
+     */
+    private static OnePrispevatelIdentificator getOnePrispivatelIdentifikator(String sigla) {
+        final String SQL_PRISPIVATEL
+                = "select "
+                + "id,value,sigla,zarazeniUser,email "
+                + "from prispevatel "
+                + "where "
+                + "stav = 'schvaleny' "
+                + "and "
+                + "sigla = '" + sigla.toUpperCase() + "'";
+        final String SQL_KATALOG
+                = "select "
+                + "value "
+                + "from katalog "
+                + "where "
+                + "stav = 'schvaleny' "
+                + "and "
+                + "rprispevatel_katalogmf = 1 "
+                + "and "
+                + "rprispevatel_katalog = ";
+        final String SQL_DIGITALNIKNIHOVNA
+                = "select "
+                + "value "
+                + "from DigKnihovna join dlists on dlists.id = digknihovna.id "
+                + "where "
+                + "DigKnihovna.stav = 'schvaleny' "
+                + "and "
+                + "DigKnihovna.rprispevatel_digknihovnamf = 1 "
+                + "and "
+                + "DigKnihovna.rprispevatel_digknihovna = ";
+        Connection con = null;
+        Statement stmt = null;
+        ResultSet rs = null;
+        OnePrispevatelIdentificator onePrispevatelIdentificator = null;
+        String id;
+
+        try {
+            LOG.log(Level.INFO, "Try open database connection...");
+            con = OracleConnection.getConnection(Configuration.getInstance().IMPORT_DATABASE_URL, Configuration.getInstance().IMPORT_DATABASE_USER, Configuration.getInstance().IMPORT_DATABASE_PASS);
+            stmt = con.createStatement();
+            LOG.log(Level.INFO, "SQL: {0}", SQL_PRISPIVATEL);
+            rs = stmt.executeQuery(SQL_PRISPIVATEL);
+
+            if (rs.next()) {
+                if (rs.getString("value") != null && rs.getString("sigla") != null && rs.getString("zarazeniUser") != null) {
+                    onePrispevatelIdentificator = new OnePrispevatelIdentificator(rs.getString("value"), rs.getString("sigla"), rs.getString("zarazeniUser"), rs.getString("email"));
+                    id = rs.getString("id");
+                    //Kontrola na duplicitu, lestli je v pořadí ještě další záznam, znamená to duplicitu a návratová hodnota bude null.
+                    if (rs.next()) {
+                        return null;
+                    }
+
+                    //Načteme Katalog
+                    if (rs != null) {
+                        rs.close();
+                    }
+                    LOG.log(Level.INFO, "SQL: " + SQL_KATALOG + "{0}", id);
+                    rs = stmt.executeQuery(SQL_KATALOG + id);
+                    if (rs.next()) {
+                        onePrispevatelIdentificator.katalog = rs.getString("value");
+                    }
+                    if (rs != null) {
+                        rs.close();
+                    }
+
+                    //Načteme Digitální knihovnu
+                    LOG.log(Level.INFO, "SQL: " + SQL_DIGITALNIKNIHOVNA + "{0}", id);
+                    rs = stmt.executeQuery(SQL_DIGITALNIKNIHOVNA + id);
+                    if (rs.next()) {
+                        onePrispevatelIdentificator.digKnihovna = rs.getString("value");
+                    }
+                    if (rs != null) {
+                        rs.close();
+                    }
+
+                    return onePrispevatelIdentificator;
+                }
+            }
+
+            return null;
+        } catch (ClassNotFoundException ex) {
+            LOG.log(Level.SEVERE, null, ex);
+            return null;
+        } catch (SQLException ex) {
+            LOG.log(Level.SEVERE, null, ex);
+            return null;
+        } finally {
+            //Uzavření připojení do databáze
+            LOG.log(Level.INFO, "Close database connection...");
+            try {
+                if (rs != null) {
+                    rs.close();
+                }
+                if (stmt != null) {
+                    stmt.close();
+                }
+                if (con != null) {
+                    con.close();
+                }
+            } catch (SQLException ex) {
+                LOG.log(Level.WARNING, "Exception at closeing database connection", ex);
+            }
+        }
+    }
+
+}

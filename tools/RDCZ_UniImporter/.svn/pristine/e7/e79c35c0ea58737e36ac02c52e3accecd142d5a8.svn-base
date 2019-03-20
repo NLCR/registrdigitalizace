@@ -1,0 +1,32 @@
+/* *****************************************************************************
+ * To change this template, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package cz.incad.relief3.rdcz.uniimporter.utils;
+
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
+/** ****************************************************************************
+ *
+ * @author martin
+ */
+public class TimeStamp {
+    /* Délka stringu který vrací metoda getTimeStamp(). */
+    public static final int PREFIX_SIZE = 14;
+
+    /** ************************************************************************
+     * Privátní konstruktor
+     */
+    private TimeStamp() {
+    }
+
+    /** ************************************************************************
+     * Metoda vrátí aktuální datum ja String ve formátu yyyyMMddHHmmss.
+     * @return 
+     */
+    public static String getTimeStamp() {
+        return new SimpleDateFormat("yyyyMMddHHmmss").format(new Date());
+    }
+
+}

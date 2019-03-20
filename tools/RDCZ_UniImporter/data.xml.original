@@ -1,0 +1,136 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<collection xmlns="http://www.loc.gov/MARC21/slim"
+            xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+            xsi:schemaLocation="http://www.loc.gov/MARC21/slim http://www.loc.gov/standards/marcxml/schema/MARC21slim.xsd">
+   <record>
+      <leader>     nam a22      a 4500</leader>
+      <controlfield tag="FMT">BK</controlfield>
+      <controlfield tag="001">ck8300456</controlfield>
+      <controlfield tag="003">CZ PrNK</controlfield>
+      <controlfield tag="005">20041214172537.0</controlfield>
+      <controlfield tag="007">ta</controlfield>
+      <controlfield tag="008">830315s1981    xr afc        000   cze</controlfield>
+      <datafield tag="015" ind1=" " ind2=" ">
+        <subfield code="a">cnb000000474</subfield>
+		<subfield code="z">cnb000000475</subfield>
+		<subfield code="z">cnb000000476</subfield>
+      </datafield>
+      <datafield tag="020" ind1=" " ind2=" ">
+        <subfield code="a">(Váz.)</subfield>
+		<subfield code="a">999</subfield>
+		<subfield code="z">111</subfield>
+		<subfield code="z">hlava</subfield>
+      </datafield>
+      <datafield tag="035" ind1=" " ind2=" ">
+        <subfield code="a">(OCoLC)39567832</subfield>
+      </datafield>
+      <datafield tag="040" ind1=" " ind2=" ">
+        <subfield code="a">ABA001</subfield>
+        <subfield code="b">cze</subfield>
+        <subfield code="d">ABA001</subfield>
+      </datafield>
+      <datafield tag="072" ind1=" " ind2="7">
+        <subfield code="a">821-93</subfield>
+        <subfield code="x">Literatura pro děti a mládež (beletrie)</subfield>
+        <subfield code="2">Konspekt</subfield>
+        <subfield code="9">26</subfield>
+      </datafield>
+      <datafield tag="080" ind1=" " ind2=" ">
+        <subfield code="a">885.0-93</subfield>
+        <subfield code="2">undef</subfield>
+      </datafield>
+      <datafield tag="080" ind1=" " ind2=" ">
+        <subfield code="a">885.0-94</subfield>
+        <subfield code="2">undef</subfield>
+      </datafield>
+      <datafield tag="080" ind1=" " ind2=" ">
+        <subfield code="a">929</subfield>
+        <subfield code="2">undef</subfield>
+      </datafield>
+      <datafield tag="080" ind1=" " ind2=" ">
+        <subfield code="a">78.071.1</subfield>
+        <subfield code="2">undef</subfield>
+      </datafield>
+      <datafield tag="100" ind1="1" ind2=" ">
+        <subfield code="a">Pražák, Přemysl,</subfield>
+        <subfield code="d">1908-1966</subfield>
+        <subfield code="7">jk01100971</subfield>
+        <subfield code="4">aut</subfield>
+      </datafield>
+      <datafield tag="245" ind1="1" ind2="0">
+        <subfield code="a">Malá preludia :</subfield>
+        <subfield code="b">Název B podnázev /</subfield>
+        <subfield code="c">Název C</subfield>
+		<subfield code="n">Název N</subfield>
+		<subfield code="p">Název P</subfield>
+      </datafield>
+      <datafield tag="250" ind1=" " ind2=" ">
+        <subfield code="a">4. vyd.</subfield>
+      </datafield>
+      <datafield tag="260" ind1=" " ind2=" ">
+        <subfield code="a">Praha :</subfield>
+        <subfield code="b">Supraphon,</subfield>
+        <subfield code="c">1981</subfield>
+        <subfield code="f">(TZ 52)</subfield>
+      </datafield>
+      <datafield tag="300" ind1=" " ind2=" ">
+        <subfield code="a">366 s., [32] s. obr.příl. :</subfield>
+        <subfield code="b">il., portréty ;</subfield>
+        <subfield code="c">21 cm</subfield>
+      </datafield>
+      <datafield tag="500" ind1=" " ind2=" ">
+        <subfield code="a">20000 výt.</subfield>
+      </datafield>
+      <datafield tag="500" ind1=" " ind2=" ">
+        <subfield code="a">Obr. příl. sest. Stanislav Jareš</subfield>
+      </datafield>
+      <datafield tag="500" ind1=" " ind2=" ">
+        <subfield code="a">Obálka a vazba Ondřej Grygar</subfield>
+      </datafield>
+      <datafield tag="500" ind1=" " ind2=" ">
+        <subfield code="a">Vysvětl</subfield>
+      </datafield>
+      <datafield tag="500" ind1=" " ind2=" ">
+        <subfield code="a">Životopisné pozn. skladatelů</subfield>
+      </datafield>
+      <datafield tag="500" ind1=" " ind2=" ">
+        <subfield code="a">Fot. na frontispisu</subfield>
+      </datafield>
+      <datafield tag="655" ind1=" " ind2="7">
+        <subfield code="a">publikace pro mládež</subfield>
+        <subfield code="7">fd133157</subfield>
+        <subfield code="2">czenas</subfield>
+      </datafield>
+      <datafield tag="910" ind1=" " ind2=" ">
+        <subfield code="a">ABA001</subfield>
+      </datafield>
+      <datafield tag="964" ind1=" " ind2=" ">
+        <subfield code="a">skladatelé hudební - dětství a mládí - knihy pro mládež</subfield>
+      </datafield>
+      <datafield tag="ITM" ind1=" " ind2=" ">
+         <subfield code="b">exemplar b</subfield>
+         <subfield code="c">exemplar c</subfield>
+         <subfield code="d">exemplar d</subfield>
+         <subfield code="v">exemplar v</subfield>
+         <subfield code="i">exemplar i</subfield>
+         <subfield code="y">exemplar y</subfield>
+      </datafield>
+	  <datafield tag="ITM" ind1=" " ind2=" ">
+         <subfield code="b">exemplar b</subfield>
+         <subfield code="c">exemplar c</subfield>
+         <subfield code="d">exemplar d</subfield>
+         <subfield code="v">exemplar v</subfield>
+         <subfield code="i">exemplar i</subfield>
+         <subfield code="y">exemplar y</subfield>
+      </datafield>
+	  <datafield tag="ITM" ind1=" " ind2=" ">
+         <subfield code="b">exemplar b</subfield>
+         <subfield code="c">exemplar c</subfield>
+         <subfield code="d">exemplar d</subfield>
+         <subfield code="v">exemplar v</subfield>
+         <subfield code="i">exemplar i</subfield>
+         <subfield code="y">exemplar y</subfield>
+      </datafield>
+      <controlfield tag="SYS">000000474</controlfield>
+   </record>
+</collection>

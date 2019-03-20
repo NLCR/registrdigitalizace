@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<desk bundle="ServerBundle">
+  <deskPackage>cz.incad.nkp.digital</deskPackage>
+  <deskName>SouborZakazky</deskName>
+  <deskHumanHelp>cz.incad.nkp.digital.SouborZakazky_help</deskHumanHelp>
+  <deskHumanName>cz.incad.nkp.digital.SouborZakazky</deskHumanName>
+  <deskDBName>SouborZakazky</deskDBName>
+  <deskRoot/>
+  <machineModel>cz.incad.nkp.digital.SouborZakazky</machineModel>
+  <fields>
+    <field>
+      <fieldName>cisloZakazky</fieldName>
+      <fieldHumanName>SouborZakazky.cisloZakazky</fieldHumanName>
+      <fieldHumanHelp>SouborZakazky.cisloZakazky_help</fieldHumanHelp>
+      <fieldDBName>cisloZakazky</fieldDBName>
+      <fieldType>STR</fieldType>
+      <fieldRepresentation>EDI</fieldRepresentation>
+      <computed/>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>pocetObrazku</fieldName>
+      <fieldHumanName>SouborZakazky.pocetObrazku</fieldHumanName>
+      <fieldHumanHelp>SouborZakazky.pocetObrazku_help</fieldHumanHelp>
+      <fieldDBName>pocetObrazku</fieldDBName>
+      <fieldType>INT</fieldType>
+      <fieldRepresentation>EDI</fieldRepresentation>
+      <computed/>
+      <precision>19</precision>
+    </field>
+  </fields>
+  <forms>
+    <screen-form name="SouborZakazkyF" formHumanName="SouborZakazkyF" id="cz.incad.nkp.digital.SouborZakazky">
+      <form-body align="LEFT" valign="TOP">
+        <row fill="LEFT" vfill="TOP">
+          <input align="LEFT" valign="TOP" indent="false" columnIndex="1" width="200px" id="cisloZakazky" precision="19" scale="4" type="text">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </input>
+          <input align="LEFT" valign="TOP" indent="false" columnIndex="2" width="200px" id="pocetObrazku" precision="19" scale="4" type="text">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </input>
+        </row>
+      </form-body>
+    </screen-form>
+    <tree name="AvailableForms">
+      <node formName="SouborZakazkyF"/>
+    </tree>
+  </forms>
+  <uniqueFields/>
+</desk>

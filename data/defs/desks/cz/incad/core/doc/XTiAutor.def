@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<desk bundle="ServerBundle">
+  <deskPackage>cz.incad.core.doc</deskPackage>
+  <deskName>XTiAutor</deskName>
+  <deskHumanHelp>cz.incad.core.doc.XTiAutor_help</deskHumanHelp>
+  <deskHumanName>cz.incad.core.doc.XTiAutor</deskHumanName>
+  <deskDBName>XTiAutor</deskDBName>
+  <deskRoot/>
+  <machineModel>cz.incad.core.doc.XTiAutor</machineModel>
+  <fields>
+    <field>
+      <fieldName>rAutor</fieldName>
+      <fieldHumanName>XTiAutor.rAutor</fieldHumanName>
+      <fieldHumanHelp>XTiAutor.rAutor_help</fieldHumanHelp>
+      <fieldDBName>rAutorXT</fieldDBName>
+      <fieldType>REF</fieldType>
+      <fieldRepresentation>REF</fieldRepresentation>
+      <reference relationshipType="association" rTable="false">cz.incad.core.doc.Autor</reference>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>roleAutor</fieldName>
+      <fieldHumanName>XTiAutor.roleAutor</fieldHumanName>
+      <fieldHumanHelp>XTiAutor.roleAutor_help</fieldHumanHelp>
+      <fieldDBName>roleAutor</fieldDBName>
+      <fieldType>STR</fieldType>
+      <fieldRepresentation>COM</fieldRepresentation>
+      <list>DroleAutor</list>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+  </fields>
+  <forms>
+    <screen-form name="XTiAutorF" formHumanName="cz.incad.core.doc.XTiAutorF" id="cz.incad.core.doc.XTiAutor">
+      <form-body align="LEFT" valign="TOP">
+        <row fill="LEFT" vfill="TOP">
+          <select align="LEFT" valign="TOP" indent="false" columnIndex="1" width="25ch" id="roleAutor" precision="0" scale="0" type="combo" multi="false" editable="false"/>
+          <input align="LEFT" valign="TOP" indent="false" columnIndex="2" width="25ch" id="rAutor.prijmeni" precision="0" scale="0" ref="true" type="text">
+            <label place="LEFT">
+              <from-field colon="true"/>
+            </label>
+          </input>
+          <refbutton align="LEFT" valign="TOP" indent="false" columnIndex="3" id="rAutor" precision="0" scale="0" refclass="cz.incad.core.doc.Autor"/>
+          <input align="LEFT" valign="TOP" indent="false" columnIndex="4" width="25ch" id="rAutor.jmeno" precision="0" scale="0" ref="true" type="text">
+            <label place="LEFT">
+              <from-field colon="true"/>
+            </label>
+          </input>
+        </row>
+      </form-body>
+    </screen-form>
+    <tree name="AvailableForms">
+      <node formName="XTiAutorF"/>
+    </tree>
+  </forms>
+  <uniqueFields/>
+</desk>

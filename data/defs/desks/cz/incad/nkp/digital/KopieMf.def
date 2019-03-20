@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<desk bundle="ServerBundle">
+  <deskPackage>cz.incad.nkp.digital</deskPackage>
+  <deskName>KopieMf</deskName>
+  <deskHumanHelp>cz.incad.nkp.digital.KopieMf_help</deskHumanHelp>
+  <deskHumanName>cz.incad.nkp.digital.KopieMf</deskHumanName>
+  <deskDBName>KopieMf</deskDBName>
+  <deskRoot>cz.incad.core.basic.Record</deskRoot>
+  <machineModel>cz.incad.nkp.digital.KopieMf</machineModel>
+  <fields>
+    <field>
+      <fieldName>datumPredani</fieldName>
+      <fieldHumanName>KopieMf.datumPredani</fieldHumanName>
+      <fieldHumanHelp>KopieMf.datumPredani_help</fieldHumanHelp>
+      <fieldDBName>datumPredani</fieldDBName>
+      <fieldType>DAT</fieldType>
+      <fieldRepresentation>EDI</fieldRepresentation>
+      <formatPattern>dd.MM.yyyy</formatPattern>
+      <formatPatternForInput>dd.MM.yyyy</formatPatternForInput>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>datumVytvoreni</fieldName>
+      <fieldHumanName>KopieMf.datumVytvoreni</fieldHumanName>
+      <fieldHumanHelp>KopieMf.datumVytvoreni_help</fieldHumanHelp>
+      <fieldDBName>datumVytvoreni</fieldDBName>
+      <fieldType>DAT</fieldType>
+      <fieldRepresentation>EDI</fieldRepresentation>
+      <formatPattern>dd.MM.yyyy</formatPattern>
+      <formatPatternForInput>dd.MM.yyyy</formatPatternForInput>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>objednavatel</fieldName>
+      <fieldHumanName>KopieMf.objednavatel</fieldHumanName>
+      <fieldHumanHelp>KopieMf.objednavatel_help</fieldHumanHelp>
+      <fieldDBName>objednavatel</fieldDBName>
+      <fieldType>STR</fieldType>
+      <fieldRepresentation>COM</fieldRepresentation>
+      <list>InsObjednavatel</list>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>typMf</fieldName>
+      <fieldHumanName>KopieMf.typMf</fieldHumanName>
+      <fieldHumanHelp>KopieMf.typMf_help</fieldHumanHelp>
+      <fieldDBName>typMf</fieldDBName>
+      <fieldType>STR</fieldType>
+      <fieldRepresentation>COM</fieldRepresentation>
+      <list>DtypMf</list>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>zpracovatel</fieldName>
+      <fieldHumanName>KopieMf.zpracovatel</fieldHumanName>
+      <fieldHumanHelp>KopieMf.zpracovatel_help</fieldHumanHelp>
+      <fieldDBName>zpracovatel</fieldDBName>
+      <fieldType>STR</fieldType>
+      <fieldRepresentation>COM</fieldRepresentation>
+      <list>InsZpracovatel</list>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+  </fields>
+  <forms>
+    <screen-form name="KopieMfF" formHumanName="KopieMfF" id="cz.incad.nkp.digital.KopieMf">
+      <form-body align="LEFT" valign="TOP">
+        <row fill="LEFT" vfill="TOP">
+          <select align="LEFT" valign="TOP" indent="false" columnIndex="1" width="20ch" id="typMf" precision="0" scale="0" type="combo" multi="false" editable="false">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </select>
+          <selectDate align="LEFT" valign="TOP" indent="false" columnIndex="2" width="20ch" id="datumVytvoreni" precision="19" scale="4">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </selectDate>
+          <selectDate align="LEFT" valign="TOP" indent="false" columnIndex="3" width="20ch" id="datumPredani" precision="0" scale="0">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </selectDate>
+          <select align="LEFT" valign="TOP" indent="false" columnIndex="4" width="20ch" id="zpracovatel" precision="0" scale="0" type="combo" multi="false" editable="false">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </select>
+        </row>
+        <row fill="LEFT" vfill="TOP">
+          <select align="LEFT" valign="TOP" indent="false" width="20ch" id="objednavatel" precision="0" scale="0" type="combo" multi="false" editable="false">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </select>
+        </row>
+      </form-body>
+    </screen-form>
+    <tree name="AvailableForms">
+      <node formName="KopieMfF"/>
+    </tree>
+  </forms>
+  <uniqueFields/>
+</desk>

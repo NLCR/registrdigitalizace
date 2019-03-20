@@ -1,0 +1,71 @@
+/*
+ * cz.incad.nkp.digital.AtypPraceEntity.java
+ * created on 19.5.2008
+ *
+ * author: Martin Nováček (mno)
+ * e-mail: <a href="mailto:martin.novacek@incad.cz">
+ *
+ * INCAD, spol. s r.o.
+ * U krčského nádraží 36
+ * 140 00  Praha 4, Česká republika
+ */
+
+package cz.incad.nkp.digital;
+
+import com.amaio.plaant.businessFunctions.AddException;
+import com.amaio.plaant.sync.Record;
+import cz.incad.core.basic.EntityImplMother;
+import cz.incad.core.enums.ReliefSecurityDeskTypeEnum;
+import cz.incad.nkp.digital.constants.CnkpAtypPrace;
+import java.util.Vector;
+
+/*******************************************************************************
+ * @author mno
+ * <b>Class description:</b>
+ * 
+ */
+public class AtypPraceEntity extends EntityImplMother implements CnkpAtypPrace {
+    private static final ReliefSecurityDeskTypeEnum SECURITY_DESK_TYPE = ReliefSecurityDeskTypeEnum.DATA;
+    private static final String SECURITY_CAN_CREATE_COMPETITIONS[] = {};
+    private static final String SECURITY_POLE_HLIDANA[] = {
+        ATYPPRACE_typPracee,
+        ATYPPRACE_zpracovatel};
+    
+    /***************************************************************************
+     * 
+     * @param rec
+     * @return
+     */
+    @Override
+    public Record onGetRecord(Record rec) {
+        securityOnGetRecord(rec, SECURITY_DESK_TYPE, SECURITY_POLE_HLIDANA);
+        return rec;
+    }
+    
+    /***************************************************************************
+     * Implementace Lokálních Security pro trigger onGetRecord
+     * Metoda není implementována
+     * @param rec
+     * @param poleHlidana
+     * @param vRecordFieldsSecurity
+     * @param canErase
+     */
+    @Override
+    protected boolean setCustomSecurityOnGetRecord(Record rec, String[] poleHlidana, Vector<Integer> vRecordFieldsSecurity, boolean canErase, String kompetence) {
+        return canErase;
+    }
+    
+    /***************************************************************************
+     * 
+     * @param rec
+     * @return
+     * @throws com.amaio.plaant.businessFunctions.AddException
+     */
+    @Override
+    public Record onCreateLocal(Record rec) throws AddException {
+        securityOnCreateLocal(rec, SECURITY_DESK_TYPE, SECURITY_CAN_CREATE_COMPETITIONS);
+        return rec;
+    }
+    
+    
+}//eof class AtypPraceEntity

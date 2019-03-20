@@ -1,0 +1,232 @@
+/* *****************************************************************************
+ * To change this template, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package cz.incad.relief3.rdcz.uniimporter;
+
+import cz.incad.relief3.rdcz.uniimporter.demons.*;
+import cz.incad.relief3.rdcz.uniimporter.model.IssueHeap;
+import cz.incad.relief3.rdcz.uniimporter.utils.Configuration;
+import cz.incad.relief3.rdcz.uniimporter.utils.OneSource;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
+/**
+ *******************************************************************************
+ *
+ * @author martin
+ */
+public class Main {
+
+    private static final Logger LOG = Logger.getLogger(Main.class.getName());
+
+    /**
+     ***************************************************************************
+     *
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+        Runnable demonFileNameParser;
+        Thread demonFileNameParserThread;
+
+        Runnable demonDataParser;
+        Thread demonDataParserThread;
+
+        Runnable demonReliefImportStandard1;
+        Thread demonReliefImportStandard1Thread;
+
+        Runnable demonReliefImportStandard2;
+        Thread demonReliefImportStandard2Thread;
+
+        Runnable demonReliefImportStandard3;
+        Thread demonReliefImportStandard3Thread;
+
+        Runnable demonReliefImportStandard4;
+        Thread demonReliefImportStandard4Thread;
+
+        Runnable demonReliefImportStandardDedicatedBOA001;
+        Thread demonReliefImportStandardDedicatedBOA001Thread;
+
+        Runnable demonReliefImportRepair0;
+        Thread demonReliefImportRepair0Thread;
+
+        Runnable demonReliefImportRepair1;
+        Thread demonReliefImportRepair1Thread;
+
+        Runnable demonLog;
+        Thread demonLogThread;
+
+        Thread tempThread;
+        Runnable tempRunnable;
+
+        OneSource oneSource;
+
+        LOG.log(Level.INFO, "Demon master starting...");
+        // Inicializace, kontrola konfigurace
+        Configuration conf = Configuration.getInstance();
+
+        //Inicializace uložiště pro zpracovávané soubory
+        IssueHeap issueHeap = IssueHeap.getInstance();
+        LOG.log(Level.INFO, "Innitializing IssueHeap, size: {0}", issueHeap.size());
+
+        //Vypustíme démony Harvesters
+        for (int i = 0; i < conf.lSource.size(); i++) {
+            oneSource = conf.lSource.get(i);
+            //Kontorla na stav démona, popřípadě nebude spuštěn
+            if (!oneSource.source_state) {
+                LOG.log(Level.INFO, "SOURCE IGNORED, DEMON NOT RUN: {0}", oneSource.getInfo());
+                continue;
+            }
+
+            switch (oneSource.source) {
+                case DIRECTORY:
+                    try {
+                        LOG.log(Level.INFO, "Demon DataHarvesterDirectory wake up...");
+                        tempRunnable = new DataHarvesterDemonDirectory(oneSource);
+                        tempThread = new Thread(tempRunnable);
+                        //lDemonSources.add(tempThread);
+                        tempThread.start();
+                    } catch (Exception ex) {
+                        LOG.log(Level.SEVERE, "DEMON DATASOURCE START FAILED", ex);
+                    }
+                    break;
+                case FTP:
+                    try {
+                        LOG.log(Level.INFO, "Demon DataHarvesterFtp wake up...");
+                        tempRunnable = new DataHarvesterDemonFtp(oneSource);
+                        tempThread = new Thread(tempRunnable);
+                        //lDemonSources.add(tempThread);
+                        tempThread.start();
+                    } catch (Exception ex) {
+                        LOG.log(Level.SEVERE, "DEMON DATASOURCE START FAILED", ex);
+                    }
+                    break;
+                case OAIPMH:
+                    try {
+                        LOG.log(Level.INFO, "Demon DataHarvesterOaipmh wake up...");
+                        tempRunnable = new DataHarvesterDemonOaipmh(oneSource);
+                        tempThread = new Thread(tempRunnable);
+                        //lDemonSources.add(tempThread);
+                        tempThread.start();
+                    } catch (Exception ex) {
+                        LOG.log(Level.SEVERE, "DEMON DATASOURCE START FAILED", ex);
+                    }
+                    break;
+                case ZAHORIKWAY:
+                    try {
+                        LOG.log(Level.INFO, "Demon DataHarvesterZahorikway wake up...");
+                        tempRunnable = new DataHarvesterDemonZahorikway(oneSource);
+                        tempThread = new Thread(tempRunnable);
+                        //lDemonSources.add(tempThread);
+                        tempThread.start();
+                    } catch (Exception ex) {
+                        LOG.log(Level.SEVERE, "DEMON DATASOURCE START FAILED", ex);
+                    }
+                    break;
+            }
+        }
+
+        //Vypustíme démona FileNameParserDemon
+        try {
+            LOG.log(Level.INFO, "Demon FileNameParser wake up...");
+            demonFileNameParser = new FileNameParserDemon();
+            demonFileNameParserThread = new Thread(demonFileNameParser);
+            demonFileNameParserThread.start();
+        } catch (Exception ex) {
+            LOG.log(Level.SEVERE, "DEMON FILENAME PARSER START FAILED", ex);
+        }
+
+        //Vypustíme démona DataParserDemon
+        try {
+            LOG.log(Level.INFO, "Demon DataParserDemon wake up...");
+            demonDataParser = new DataParserDemon();
+            demonDataParserThread = new Thread(demonDataParser);
+            demonDataParserThread.start();
+        } catch (Exception ex) {
+            LOG.log(Level.SEVERE, "DEMON DATA PARSER START FAILED", ex);
+        }
+
+        //Vypustíme démona ReliefImportStandardDemon #1
+        try {
+            LOG.log(Level.INFO, "Demon ReliefImportStandardDemon #1 wake up...");
+            demonReliefImportStandard1 = new ReliefImportStandardDemon(null);
+            demonReliefImportStandard1Thread = new Thread(demonReliefImportStandard1);
+            demonReliefImportStandard1Thread.start();
+        } catch (Exception ex) {
+            LOG.log(Level.SEVERE, "DEMON IMPORT STANDARD START FAILED", ex);
+        }
+
+        //Vypustíme démona ReliefImportStandardDemon #2
+        try {
+            LOG.log(Level.INFO, "Demon ReliefImportStandardDemon #2 wake up...");
+            demonReliefImportStandard2 = new ReliefImportStandardDemon(null);
+            demonReliefImportStandard2Thread = new Thread(demonReliefImportStandard2);
+            demonReliefImportStandard2Thread.start();
+        } catch (Exception ex) {
+            LOG.log(Level.SEVERE, "DEMON IMPORT STANDARD START FAILED", ex);
+        }
+
+        //Vypustíme démona ReliefImportStandardDemon #3
+        try {
+            LOG.log(Level.INFO, "Demon ReliefImportStandardDemon #3 wake up...");
+            demonReliefImportStandard3 = new ReliefImportStandardDemon(null);
+            demonReliefImportStandard3Thread = new Thread(demonReliefImportStandard3);
+            demonReliefImportStandard3Thread.start();
+        } catch (Exception ex) {
+            LOG.log(Level.SEVERE, "DEMON IMPORT STANDARD START FAILED", ex);
+        }
+
+        //Vypustíme démona ReliefImportStandardDemon #4
+        try {
+            LOG.log(Level.INFO, "Demon ReliefImportStandardDemon #4 wake up...");
+            demonReliefImportStandard4 = new ReliefImportStandardDemon(null);
+            demonReliefImportStandard4Thread = new Thread(demonReliefImportStandard4);
+            demonReliefImportStandard4Thread.start();
+        } catch (Exception ex) {
+            LOG.log(Level.SEVERE, "DEMON IMPORT STANDARD START FAILED", ex);
+        }
+
+        //Vypustíme démona ReliefImportStandardDemon Dedicated BOA001
+        try {
+            LOG.log(Level.INFO, "Demon ReliefImportStandardDemon Dedicated BOA001 wake up...");
+            demonReliefImportStandardDedicatedBOA001 = new ReliefImportStandardDemon("BOA001");
+            demonReliefImportStandardDedicatedBOA001Thread = new Thread(demonReliefImportStandardDedicatedBOA001);
+            demonReliefImportStandardDedicatedBOA001Thread.start();
+        } catch (Exception ex) {
+            LOG.log(Level.SEVERE, "DEMON IMPORT STANDARD START FAILED", ex);
+        }
+
+        //Vypustíme démona ReliefImportRepair0dDemon
+        try {
+            LOG.log(Level.INFO, "Demon ReliefImportRepar0Demon wake up...");
+            demonReliefImportRepair0 = new ReliefImportRepair0Demon();
+            demonReliefImportRepair0Thread = new Thread(demonReliefImportRepair0);
+            demonReliefImportRepair0Thread.start();
+        } catch (Exception ex) {
+            LOG.log(Level.SEVERE, "DEMON IMPORT REPAIR 0 START FAILED", ex);
+        }
+
+        //Vypustíme démona ReliefImportRepair1dDemon
+        try {
+            LOG.log(Level.INFO, "Demon ReliefImportRepar1Demon wake up...");
+            demonReliefImportRepair1 = new ReliefImportRepair1Demon();
+            demonReliefImportRepair1Thread = new Thread(demonReliefImportRepair1);
+            demonReliefImportRepair1Thread.start();
+        } catch (Exception ex) {
+            LOG.log(Level.SEVERE, "DEMON IMPORT REPAIR 0 START FAILED", ex);
+        }
+
+        //Vypustíme démona LogDemon
+        try {
+            LOG.log(Level.INFO, "Demon LogDemon wake up...");
+            demonLog = new LogDemon();
+            demonLogThread = new Thread(demonLog);
+            demonLogThread.start();
+        } catch (Exception ex) {
+            LOG.log(Level.SEVERE, "DEMON LOG START FAILED", ex);
+        }
+
+        LOG.log(Level.INFO, "Demon master ending...");
+    }
+
+}

@@ -1,0 +1,16 @@
+compile.on.save=false
+do.depend=false
+do.jar=true
+file.reference.-oc4j=D:\\oc4j
+file.reference.common.jar=C:\\Documents and Settings\\martin\\My Documents\\My Music
+file.reference.common.jar-1=W:\\libJava\\plaant_2008d\\common.jar
+file.reference.plaant.jar=C:\\Documents and Settings\\martin\\My Documents\\My Music
+file.reference.plaant.jar-1=W:\\libJava\\plaant_2008d\\plaant.jar
+file.reference.repositoryAPI-1.0-SNAPSHOT.jar=D:\\oc4j\\applib\\repositoryAPI.jar
+file.reference.repositoryAPI.jar=C:\\Documents and Settings\\martin\\My Documents\\My Music
+file.reference.repositoryAPI.jar-1=W:\\libJava\\plaant_2008d\\repositoryAPI.jar
+javac.debug=true
+javadoc.preview=true
+jaxbwiz.endorsed.dirs=C:\\Program Files\\NetBeans\\ide12\\modules\\ext\\jaxb\\api
+project.ReliefCore=W:\\srcJava\\ReliefCore
+user.properties.file=C:\\Users\\martin.INCADSBS\\AppData\\Roaming\\NetBeans\\8.0.2\\build.properties

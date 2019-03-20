@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<desk bundle="ServerBundle">
+  <deskPackage>cz.incad.rd</deskPackage>
+  <deskName>Predani</deskName>
+  <deskHumanHelp>Predani_help</deskHumanHelp>
+  <deskHumanName>Predani</deskHumanName>
+  <deskDBName>Predani</deskDBName>
+  <deskRoot/>
+  <machineModel>cz.incad.rd.Predani</machineModel>
+  <fields>
+    <field>
+      <fieldName>idBf</fieldName>
+      <fieldHumanName>Predani.idBf</fieldHumanName>
+      <fieldHumanHelp>Predani.idBf_help</fieldHumanHelp>
+      <fieldDBName>idBf</fieldDBName>
+      <fieldType>STR</fieldType>
+      <fieldRepresentation>EDI</fieldRepresentation>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>kdo</fieldName>
+      <fieldHumanName>Predani.kdo</fieldHumanName>
+      <fieldHumanHelp>Predani.kdo_help</fieldHumanHelp>
+      <fieldDBName>kdo</fieldDBName>
+      <fieldType>STR</fieldType>
+      <fieldRepresentation>COM</fieldRepresentation>
+      <list>DzarazeniUser</list>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>kdyTime</fieldName>
+      <fieldHumanName>Predani.kdyTime</fieldHumanName>
+      <fieldHumanHelp>Predani.kdyTime_help</fieldHumanHelp>
+      <fieldDBName>kdyTime</fieldDBName>
+      <fieldType>TIM</fieldType>
+      <fieldRepresentation>EDI</fieldRepresentation>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>kdyDate</fieldName>
+      <fieldHumanName>Predani.kdyDate</fieldHumanName>
+      <fieldHumanHelp>Predani.kdyDate_help</fieldHumanHelp>
+      <fieldDBName>kdyDate</fieldDBName>
+      <fieldType>DAT</fieldType>
+      <fieldRepresentation>EDI</fieldRepresentation>
+      <formatPattern>dd.MM.yyyy</formatPattern>
+      <formatPatternForInput>dd.MM.yyyy</formatPatternForInput>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>komuOdKoho</fieldName>
+      <fieldHumanName>Predani.komuOdKoho</fieldHumanName>
+      <fieldHumanHelp>Predani.komuOdKoho_help</fieldHumanHelp>
+      <fieldDBName>komuOdKoho</fieldDBName>
+      <fieldType>STR</fieldType>
+      <fieldRepresentation>COM</fieldRepresentation>
+      <list>DzarazeniUser</list>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>rPredloha</fieldName>
+      <fieldHumanName>Predani.rPredloha</fieldHumanName>
+      <fieldHumanHelp>Predani.rPredloha_help</fieldHumanHelp>
+      <fieldDBName>rPredloha</fieldDBName>
+      <fieldType>REF</fieldType>
+      <fieldRepresentation>REF</fieldRepresentation>
+      <reference relationshipType="association" rTable="false">cz.incad.rd.Predloha</reference>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>typAkce</fieldName>
+      <fieldHumanName>Predani.typAkce</fieldHumanName>
+      <fieldHumanHelp>Predani.typAkce_help</fieldHumanHelp>
+      <fieldDBName>typAkce</fieldDBName>
+      <fieldType>STR</fieldType>
+      <fieldRepresentation>COM</fieldRepresentation>
+      <list>SLtypAkce</list>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>varka</fieldName>
+      <fieldHumanName>Predani.varka</fieldHumanName>
+      <fieldHumanHelp>Predani.varka_help</fieldHumanHelp>
+      <fieldDBName>varka</fieldDBName>
+      <fieldType>STR</fieldType>
+      <fieldRepresentation>EDI</fieldRepresentation>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+  </fields>
+  <forms>
+    <screen-form name="PredaniF" formHumanName="PredaniF" id="cz.incad.rd.Predani">
+      <form-body align="LEFT" valign="TOP">
+        <row fill="LEFT" vfill="TOP">
+          <select align="LEFT" valign="TOP" indent="false" columnIndex="1" width="30ch" id="typAkce" precision="19" scale="4" type="combo" multi="false" editable="false">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </select>
+          <input align="LEFT" valign="TOP" indent="false" columnIndex="2" width="30ch" id="varka" precision="0" scale="0" type="text">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </input>
+          <input align="LEFT" valign="TOP" indent="false" columnIndex="3" width="30ch" id="idBf" precision="0" scale="0" type="text">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </input>
+        </row>
+        <row fill="LEFT" vfill="TOP">
+          <select align="LEFT" valign="TOP" indent="false" columnIndex="1" width="30ch" id="kdo" precision="0" scale="0" type="combo" multi="false" editable="false">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </select>
+          <select align="LEFT" valign="TOP" indent="false" columnIndex="2" width="30ch" id="komuOdKoho" precision="19" scale="4" type="combo" multi="false" editable="false">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </select>
+        </row>
+        <row fill="LEFT" vfill="TOP">
+          <input align="LEFT" valign="TOP" indent="false" columnIndex="1" width="30ch" id="kdyDate" precision="19" scale="4" formatPattern="dd.MM.yyyy" formatPatternForInput="dd.MM.yyyy" type="text">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </input>
+          <input align="LEFT" valign="TOP" indent="false" columnIndex="2" width="30ch" id="kdyTime" precision="19" scale="4" type="text">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </input>
+        </row>
+      </form-body>
+    </screen-form>
+    <tree name="AvailableForms">
+      <node formName="PredaniF"/>
+    </tree>
+  </forms>
+  <uniqueFields/>
+</desk>

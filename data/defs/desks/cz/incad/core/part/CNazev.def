@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<desk bundle="ServerBundle">
+  <deskPackage>cz.incad.core.part</deskPackage>
+  <deskName>CNazev</deskName>
+  <deskHumanHelp>cz.incad.core.part.CNazev_help</deskHumanHelp>
+  <deskHumanName>cz.incad.core.part.CNazev</deskHumanName>
+  <deskDBName>CNazev</deskDBName>
+  <deskRoot/>
+  <machineModel>cz.incad.core.part.CNazev</machineModel>
+  <fields>
+    <field>
+      <fieldName>hodnota</fieldName>
+      <fieldHumanName>CNazev.hodnota</fieldHumanName>
+      <fieldHumanHelp>CNazev.hodnota_help</fieldHumanHelp>
+      <fieldDBName>hodnota</fieldDBName>
+      <fieldType>STR</fieldType>
+      <fieldRepresentation>EDI</fieldRepresentation>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>typ</fieldName>
+      <fieldHumanName>CNazev.typ</fieldHumanName>
+      <fieldHumanHelp>CNazev.typ_help</fieldHumanHelp>
+      <fieldDBName>typ</fieldDBName>
+      <fieldType>STR</fieldType>
+      <fieldRepresentation>COM</fieldRepresentation>
+      <list>DtypNazev</list>
+      <validateEmpty/>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+  </fields>
+  <forms>
+    <screen-form name="CNazevF" formHumanName="CNazevF" id="cz.incad.core.part.CNazev">
+      <form-body align="LEFT" valign="TOP">
+        <row fill="LEFT" vfill="TOP">
+          <select align="LEFT" valign="TOP" indent="false" columnIndex="1" width="45ch" id="typ" precision="0" scale="0" type="combo" multi="false" editable="false"/>
+          <input align="LEFT" valign="TOP" indent="false" columnIndex="2" width="75ch" id="hodnota" precision="0" scale="0" type="text"/>
+        </row>
+      </form-body>
+    </screen-form>
+    <tree name="AvailableForms">
+      <node formName="CNazevF"/>
+    </tree>
+  </forms>
+  <uniqueFields/>
+</desk>

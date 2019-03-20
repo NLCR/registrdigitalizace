@@ -1,0 +1,136 @@
+/* *****************************************************************************
+ * To change this template, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package cz.incad.relief3.rdcz.uniImporter.model;
+
+import cz.incad.relief3.rdcz.uniimporter.model.ParserMethodEnum;
+import cz.incad.relief3.rdcz.uniimporter.model.OneRecord;
+import cz.incad.relief3.rdcz.uniimporter.model.FileStateEnum;
+import java.io.File;
+import java.util.List;
+import java.util.UUID;
+
+/** ****************************************************************************
+ *
+ * @author martin
+ */
+public class FileCoordinatorIssue {
+    private final UUID uuid;
+    private final File file;
+    private final ParserMethodEnum method;
+    private final FileStateEnum state;
+    private final String sigla;
+    private String overrideUser = null;
+    private String overridePass = null;
+    private List<OneRecord> lRecords = null;
+    //private String encoding;
+
+
+    /** ************************************************************************
+     * 
+     * @param file soubor s importními daty
+     * @param method parsovací metoda
+     * @param state stav se kterým soubor přišel
+     * @param sigla SIGLA se kterou soubor přišel
+     */
+    public FileCoordinatorIssue(File file, ParserMethodEnum method, FileStateEnum state, String sigla) {
+        this.uuid = UUID.randomUUID();
+        this.file = file;
+        this.method = method;
+        this.state = state;
+        this.sigla = sigla;
+        //this.encoding = encoding;
+    }
+
+    /** ************************************************************************
+     * 
+     * @return 
+     */
+    public UUID getUUID() {
+        return this.uuid;
+    }
+
+    /** ************************************************************************
+     * 
+     * @return 
+     */
+    public File getFile() {
+        return this.file;
+    }
+
+    /** ************************************************************************
+     * 
+     * @return 
+     */
+    public ParserMethodEnum getMethod() {
+        return this.method;
+    }
+
+    /** ************************************************************************
+     * 
+     * @return 
+     */
+    public FileStateEnum getState() {
+        return this.state;
+    }
+
+    /** ************************************************************************
+     * 
+     * @return 
+     */
+    public String getSigla() {
+        return this.sigla;
+    }
+
+//    /** ************************************************************************
+//     * 
+//     * @return 
+//     */
+//    public String getEncoding() {
+//        return this.encoding;
+//    }
+
+    /** ************************************************************************
+     * 
+     * @param owerrideUser
+     * @param owerridePass 
+     */
+    public void setOverride(String overrideUser, String overridePass) {
+        this.overrideUser = overrideUser;
+        this.overridePass = overridePass;
+    }
+
+    /** ************************************************************************
+     * 
+     * @return 
+     */
+    public String overrideUser() {
+        return this.overrideUser;
+    }
+
+    /** ************************************************************************
+     * 
+     * @return 
+     */
+    public String overridePass() {
+        return this.overridePass;
+    }
+
+    /** ************************************************************************
+     * 
+     * @return 
+     */
+    public List<OneRecord> getParsedDataList() {
+        return this.lRecords;
+    }
+
+    /** ************************************************************************
+     * 
+     * @return 
+     */
+    public void setParsedDataList(List<OneRecord> lRecords) {
+        this.lRecords = lRecords;
+    }
+
+}

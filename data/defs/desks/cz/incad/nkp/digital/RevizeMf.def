@@ -1,0 +1,563 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<desk bundle="ServerBundle">
+  <deskPackage>cz.incad.nkp.digital</deskPackage>
+  <deskName>RevizeMf</deskName>
+  <deskHumanHelp>cz.incad.nkp.digital.RevizeMf_help</deskHumanHelp>
+  <deskHumanName>cz.incad.nkp.digital.RevizeMf</deskHumanName>
+  <deskDBName>RevizeMf</deskDBName>
+  <deskRoot>cz.incad.core.basic.Record</deskRoot>
+  <machineModel>cz.incad.nkp.digital.RevizeMf</machineModel>
+  <fields>
+    <field>
+      <fieldName>datumRevize</fieldName>
+      <fieldHumanName>RevizeMf.datumRevize</fieldHumanName>
+      <fieldHumanHelp>RevizeMf.datumRevize_help</fieldHumanHelp>
+      <fieldDBName>datumRevize</fieldDBName>
+      <fieldType>DAT</fieldType>
+      <fieldRepresentation>EDI</fieldRepresentation>
+      <formatPattern>dd.MM.yyyy</formatPattern>
+      <formatPatternForInput>dd.MM.yyyy</formatPatternForInput>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>defekty</fieldName>
+      <fieldHumanName>RevizeMf.defekty</fieldHumanName>
+      <fieldHumanHelp>RevizeMf.defekty_help</fieldHumanHelp>
+      <fieldDBName>defekty</fieldDBName>
+      <fieldType>STR</fieldType>
+      <fieldRepresentation>EDI</fieldRepresentation>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>denzitaZac</fieldName>
+      <fieldHumanName>RevizeMf.denzitaZac</fieldHumanName>
+      <fieldHumanHelp>RevizeMf.denzitaZac_help</fieldHumanHelp>
+      <fieldDBName>denzitaZac</fieldDBName>
+      <fieldType>STR</fieldType>
+      <fieldRepresentation>EDI</fieldRepresentation>
+      <validateLength>10</validateLength>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>denzitaKonec</fieldName>
+      <fieldHumanName>RevizeMf.denzitaKonec</fieldHumanName>
+      <fieldHumanHelp>RevizeMf.denzitaKonec_help</fieldHumanHelp>
+      <fieldDBName>denzitaKonec</fieldDBName>
+      <fieldType>STR</fieldType>
+      <fieldRepresentation>EDI</fieldRepresentation>
+      <validateLength>10</validateLength>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>dMin</fieldName>
+      <fieldHumanName>RevizeMf.dMin</fieldHumanName>
+      <fieldHumanHelp>RevizeMf.dMin_help</fieldHumanHelp>
+      <fieldDBName>dMin</fieldDBName>
+      <fieldType>STR</fieldType>
+      <fieldRepresentation>EDI</fieldRepresentation>
+      <validateLength>10</validateLength>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>endMf</fieldName>
+      <fieldHumanName>RevizeMf.endMf</fieldHumanName>
+      <fieldHumanHelp>RevizeMf.endMf_help</fieldHumanHelp>
+      <fieldDBName>endMf</fieldDBName>
+      <fieldType>STR</fieldType>
+      <fieldRepresentation>EDI</fieldRepresentation>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>faktorRoz</fieldName>
+      <fieldHumanName>RevizeMf.faktorRoz</fieldHumanName>
+      <fieldHumanHelp>RevizeMf.faktorRoz_help</fieldHumanHelp>
+      <fieldDBName>faktorRoz</fieldDBName>
+      <fieldType>STR</fieldType>
+      <fieldRepresentation>EDI</fieldRepresentation>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>ldB</fieldName>
+      <fieldHumanName>RevizeMf.ldB</fieldHumanName>
+      <fieldHumanHelp>RevizeMf.ldB_help</fieldHumanHelp>
+      <fieldDBName>ldB</fieldDBName>
+      <fieldType>STR</fieldType>
+      <fieldRepresentation>EDI</fieldRepresentation>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>ldC</fieldName>
+      <fieldHumanName>RevizeMf.ldC</fieldHumanName>
+      <fieldHumanHelp>RevizeMf.ldC_help</fieldHumanHelp>
+      <fieldDBName>ldC</fieldDBName>
+      <fieldType>STR</fieldType>
+      <fieldRepresentation>EDI</fieldRepresentation>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>ldP</fieldName>
+      <fieldHumanName>RevizeMf.ldP</fieldHumanName>
+      <fieldHumanHelp>RevizeMf.ldP_help</fieldHumanHelp>
+      <fieldDBName>ldP</fieldDBName>
+      <fieldType>STR</fieldType>
+      <fieldRepresentation>EDI</fieldRepresentation>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>lhB</fieldName>
+      <fieldHumanName>RevizeMf.lhB</fieldHumanName>
+      <fieldHumanHelp>RevizeMf.lhB_help</fieldHumanHelp>
+      <fieldDBName>lhB</fieldDBName>
+      <fieldType>STR</fieldType>
+      <fieldRepresentation>EDI</fieldRepresentation>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>lhC</fieldName>
+      <fieldHumanName>RevizeMf.lhC</fieldHumanName>
+      <fieldHumanHelp>RevizeMf.lhC_help</fieldHumanHelp>
+      <fieldDBName>lhC</fieldDBName>
+      <fieldType>STR</fieldType>
+      <fieldRepresentation>EDI</fieldRepresentation>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>lhP</fieldName>
+      <fieldHumanName>RevizeMf.lhP</fieldHumanName>
+      <fieldHumanHelp>RevizeMf.lhP_help</fieldHumanHelp>
+      <fieldDBName>lhP</fieldDBName>
+      <fieldType>STR</fieldType>
+      <fieldRepresentation>EDI</fieldRepresentation>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>rMikrofilm</fieldName>
+      <fieldHumanName>RevizeMf.rMikrofilm</fieldHumanName>
+      <fieldHumanHelp>RevizeMf.rMikrofilm_help</fieldHumanHelp>
+      <fieldDBName>rMikrofilmRe</fieldDBName>
+      <fieldType>REF</fieldType>
+      <fieldRepresentation>REF</fieldRepresentation>
+      <reference relationshipType="association" rTable="false">cz.incad.nkp.digital.Mikrofilm</reference>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>pdB</fieldName>
+      <fieldHumanName>RevizeMf.pdB</fieldHumanName>
+      <fieldHumanHelp>RevizeMf.pdB_help</fieldHumanHelp>
+      <fieldDBName>pdB</fieldDBName>
+      <fieldType>STR</fieldType>
+      <fieldRepresentation>EDI</fieldRepresentation>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>pdC</fieldName>
+      <fieldHumanName>RevizeMf.pdC</fieldHumanName>
+      <fieldHumanHelp>RevizeMf.pdC_help</fieldHumanHelp>
+      <fieldDBName>pdC</fieldDBName>
+      <fieldType>STR</fieldType>
+      <fieldRepresentation>EDI</fieldRepresentation>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>pdP</fieldName>
+      <fieldHumanName>RevizeMf.pdP</fieldHumanName>
+      <fieldHumanHelp>RevizeMf.pdP_help</fieldHumanHelp>
+      <fieldDBName>pdP</fieldDBName>
+      <fieldType>STR</fieldType>
+      <fieldRepresentation>EDI</fieldRepresentation>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>phB</fieldName>
+      <fieldHumanName>RevizeMf.phB</fieldHumanName>
+      <fieldHumanHelp>RevizeMf.phB_help</fieldHumanHelp>
+      <fieldDBName>phB</fieldDBName>
+      <fieldType>STR</fieldType>
+      <fieldRepresentation>EDI</fieldRepresentation>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>phC</fieldName>
+      <fieldHumanName>RevizeMf.phC</fieldHumanName>
+      <fieldHumanHelp>RevizeMf.phC_help</fieldHumanHelp>
+      <fieldDBName>phC</fieldDBName>
+      <fieldType>STR</fieldType>
+      <fieldRepresentation>EDI</fieldRepresentation>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>phP</fieldName>
+      <fieldHumanName>RevizeMf.phP</fieldHumanName>
+      <fieldHumanHelp>RevizeMf.phP_help</fieldHumanHelp>
+      <fieldDBName>phP</fieldDBName>
+      <fieldType>STR</fieldType>
+      <fieldRepresentation>EDI</fieldRepresentation>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>revizor</fieldName>
+      <fieldHumanName>RevizeMf.revizor</fieldHumanName>
+      <fieldHumanHelp>RevizeMf.revizor_help</fieldHumanHelp>
+      <fieldDBName>revizor</fieldDBName>
+      <fieldType>STR</fieldType>
+      <fieldRepresentation>COM</fieldRepresentation>
+      <list>DmikrofilmRevizor</list>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>startMf</fieldName>
+      <fieldHumanName>RevizeMf.startMf</fieldHumanName>
+      <fieldHumanHelp>RevizeMf.startMf_help</fieldHumanHelp>
+      <fieldDBName>startMf</fieldDBName>
+      <fieldType>STR</fieldType>
+      <fieldRepresentation>EDI</fieldRepresentation>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>sB</fieldName>
+      <fieldHumanName>RevizeMf.sB</fieldHumanName>
+      <fieldHumanHelp>RevizeMf.sB_help</fieldHumanHelp>
+      <fieldDBName>sB</fieldDBName>
+      <fieldType>STR</fieldType>
+      <fieldRepresentation>EDI</fieldRepresentation>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>sC</fieldName>
+      <fieldHumanName>RevizeMf.sC</fieldHumanName>
+      <fieldHumanHelp>RevizeMf.sC_help</fieldHumanHelp>
+      <fieldDBName>sC</fieldDBName>
+      <fieldType>STR</fieldType>
+      <fieldRepresentation>EDI</fieldRepresentation>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>sP</fieldName>
+      <fieldHumanName>RevizeMf.sP</fieldHumanName>
+      <fieldHumanHelp>RevizeMf.sP_help</fieldHumanHelp>
+      <fieldDBName>sP</fieldDBName>
+      <fieldType>STR</fieldType>
+      <fieldRepresentation>EDI</fieldRepresentation>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>techPredloha</fieldName>
+      <fieldHumanName>RevizeMf.techPredloha</fieldHumanName>
+      <fieldHumanHelp>RevizeMf.techPredloha_help</fieldHumanHelp>
+      <fieldDBName>techPredloha</fieldDBName>
+      <fieldType>STR</fieldType>
+      <fieldRepresentation>EDI</fieldRepresentation>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+  </fields>
+  <forms>
+    <screen-form name="RevizeMfF" formHumanName="RevizeMfF" id="cz.incad.nkp.digital.RevizeMf">
+      <form-body align="LEFT" valign="TOP">
+        <row fill="LEFT" vfill="TOP">
+          <selectDate align="LEFT" valign="TOP" indent="false" columnIndex="1" width="20ch" id="datumRevize" precision="19" scale="4">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </selectDate>
+          <select align="LEFT" valign="TOP" indent="false" columnIndex="2" width="20ch" id="revizor" precision="0" scale="0" type="combo" multi="false" editable="false">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </select>
+        </row>
+        <row fill="LEFT" vfill="TOP">
+          <input align="LEFT" valign="TOP" indent="false" columnIndex="1" width="20ch" id="techPredloha" precision="0" scale="0" type="text">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </input>
+          <input align="LEFT" valign="TOP" indent="false" columnIndex="2" width="20ch" id="startMf" precision="0" scale="0" type="text">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </input>
+          <input align="LEFT" valign="TOP" indent="false" columnIndex="3" width="20ch" id="endMf" precision="0" scale="0" type="text">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </input>
+        </row>
+        <row fill="LEFT" vfill="TOP">
+          <input align="LEFT" valign="TOP" indent="false" columnIndex="1" width="20ch" id="dMin" precision="0" scale="0" type="text">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </input>
+          <input align="LEFT" valign="TOP" indent="false" columnIndex="2" width="20ch" id="denzitaZac" precision="0" scale="0" type="text">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </input>
+          <input align="LEFT" valign="TOP" indent="false" columnIndex="3" width="20ch" id="denzitaKonec" precision="0" scale="0" type="text">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </input>
+        </row>
+        <row fill="LEFT" vfill="TOP">
+          <input align="LEFT" valign="TOP" indent="false" columnIndex="1" width="20ch" id="faktorRoz" precision="0" scale="0" type="text">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </input>
+        </row>
+        <row fill="LEFT" vfill="TOP">
+          <input align="LEFT" valign="TOP" indent="false" width="80ch" id="defekty" precision="0" scale="0" type="text" rows="2">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </input>
+        </row>
+      </form-body>
+    </screen-form>
+    <screen-form name="RevizeMfF2" formHumanName="RevizeMfF2" id="cz.incad.nkp.digital.RevizeMf">
+      <form-body align="LEFT" valign="TOP">
+        <row fill="LEFT" vfill="TOP">
+          <input align="LEFT" valign="TOP" indent="false" columnIndex="1" tabindex="1" width="30ch" id="rMikrofilm.archCisloNeg" precision="19" scale="4" ref="true" type="text">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </input>
+          <selectDate align="LEFT" valign="TOP" indent="false" columnIndex="2" tabindex="2" width="20ch" id="datumRevize" precision="19" scale="4">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </selectDate>
+          <select align="LEFT" valign="TOP" indent="false" columnIndex="3" tabindex="3" width="20ch" id="revizor" precision="0" scale="0" type="combo" multi="false" editable="false">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </select>
+        </row>
+        <row fill="LEFT" vfill="TOP">
+          <border type="solid" color="">
+            <margin-outer top="5mm" left="5mm" right="5mm" bottom="5mm"/>
+            <margin-inner top="5mm" left="5mm" right="5mm" bottom="5mm"/>
+          </border>
+          <input align="LEFT" valign="TOP" indent="false" tabindex="4" width="10ch" id="denzitaZac" precision="19" scale="4" type="text">
+            <label place="LEFT">
+              <from-field colon="true"/>
+            </label>
+          </input>
+          <input align="LEFT" valign="TOP" indent="false" tabindex="5" width="10ch" id="denzitaKonec" precision="19" scale="4" type="text">
+            <label place="LEFT">
+              <from-field colon="true"/>
+            </label>
+          </input>
+          <input align="LEFT" valign="TOP" indent="false" tabindex="6" width="10ch" id="dMin" precision="19" scale="4" type="text">
+            <label place="LEFT">
+              <from-field colon="true"/>
+            </label>
+          </input>
+        </row>
+        <row fill="LEFT" vfill="TOP">
+          <input align="LEFT" valign="TOP" indent="false" columnIndex="1" tabindex="7" width="20ch" id="techPredloha" precision="19" scale="4" type="text">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </input>
+          <input align="LEFT" valign="TOP" indent="false" columnIndex="2" tabindex="8" width="20ch" id="startMf" precision="19" scale="4" type="text">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </input>
+          <input align="LEFT" valign="TOP" indent="false" columnIndex="3" tabindex="9" width="20ch" id="endMf" precision="19" scale="4" type="text">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </input>
+          <input align="LEFT" valign="TOP" indent="false" columnIndex="4" tabindex="10" width="20ch" id="faktorRoz" precision="19" scale="4" type="text">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </input>
+        </row>
+        <row fill="LEFT" vfill="TOP">
+          <border type="solid" color="">
+            <margin-outer top="5mm" left="5mm" right="5mm" bottom="5mm"/>
+            <margin-inner top="5mm" left="5mm" right="5mm" bottom="5mm"/>
+          </border>
+          <empty align="LEFT" valign="TOP" indent="false" columnIndex="1"/>
+          <label align="LEFT" valign="TOP" indent="false" columnIndex="3">merkaCarBila</label>
+          <label align="LEFT" valign="TOP" indent="false" columnIndex="4">merkaCarCerna</label>
+          <label align="LEFT" valign="TOP" indent="false" columnIndex="2">merkaPisma</label>
+          <label align="LEFT" valign="TOP" indent="false" columnIndex="1">s</label>
+          <input align="LEFT" valign="TOP" indent="false" columnIndex="2" tabindex="11" width="15ch" id="sP" precision="19" scale="4" type="text"/>
+          <input align="LEFT" valign="TOP" indent="false" columnIndex="3" tabindex="16" width="15ch" id="sB" precision="19" scale="4" type="text"/>
+          <input align="LEFT" valign="TOP" indent="false" columnIndex="4" tabindex="21" width="15ch" id="sC" precision="19" scale="4" type="text"/>
+          <label align="LEFT" valign="TOP" indent="false" columnIndex="1">lh</label>
+          <input align="LEFT" valign="TOP" indent="false" columnIndex="2" tabindex="12" width="15ch" id="lhP" precision="19" scale="4" type="text"/>
+          <input align="LEFT" valign="TOP" indent="false" columnIndex="3" tabindex="17" width="15ch" id="lhB" precision="19" scale="4" type="text"/>
+          <input align="LEFT" valign="TOP" indent="false" columnIndex="4" tabindex="22" width="15ch" id="lhC" precision="19" scale="4" type="text"/>
+          <label align="LEFT" valign="TOP" indent="false" columnIndex="1" width="5ch">ph</label>
+          <input align="LEFT" valign="TOP" indent="false" columnIndex="2" tabindex="13" width="15ch" id="phP" precision="19" scale="4" type="text"/>
+          <input align="LEFT" valign="TOP" indent="false" columnIndex="3" tabindex="18" width="15ch" id="phB" precision="19" scale="4" type="text"/>
+          <input align="LEFT" valign="TOP" indent="false" columnIndex="4" tabindex="23" width="15ch" id="phC" precision="19" scale="4" type="text"/>
+          <label align="LEFT" valign="TOP" indent="false" columnIndex="1">ld</label>
+          <input align="LEFT" valign="TOP" indent="false" columnIndex="2" tabindex="14" width="15ch" id="ldP" precision="19" scale="4" type="text"/>
+          <input align="LEFT" valign="TOP" indent="false" columnIndex="3" tabindex="19" width="15ch" id="ldB" precision="19" scale="4" type="text"/>
+          <input align="LEFT" valign="TOP" indent="false" columnIndex="4" tabindex="24" width="15ch" id="ldC" precision="0" scale="0" type="text"/>
+          <label align="LEFT" valign="TOP" indent="false" columnIndex="1">pd</label>
+          <input align="LEFT" valign="TOP" indent="false" columnIndex="2" tabindex="15" width="15ch" id="pdP" precision="19" scale="4" type="text"/>
+          <input align="LEFT" valign="TOP" indent="false" columnIndex="3" tabindex="20" width="15ch" id="pdB" precision="0" scale="0" type="text"/>
+          <input align="LEFT" valign="TOP" indent="false" columnIndex="4" tabindex="25" width="15ch" id="pdC" precision="0" scale="0" type="text"/>
+        </row>
+        <row fill="LEFT" vfill="TOP">
+          <input align="LEFT" valign="TOP" indent="false" tabindex="26" width="80ch" id="defekty" precision="19" scale="4" type="text" rows="2">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </input>
+        </row>
+      </form-body>
+    </screen-form>
+    <screen-form name="RevizeMfF3" formHumanName="RevizeMfF3" id="cz.incad.nkp.digital.RevizeMf">
+      <form-body align="LEFT" valign="TOP">
+        <row fill="LEFT" vfill="TOP">
+          <input align="LEFT" valign="TOP" indent="false" columnIndex="1" width="30ch" id="rMikrofilm.archCisloNeg" precision="19" scale="4" ref="true" type="text">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </input>
+          <selectDate align="LEFT" valign="TOP" indent="false" columnIndex="2" width="20ch" id="datumRevize" precision="19" scale="4">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </selectDate>
+          <select align="LEFT" valign="TOP" indent="false" columnIndex="3" width="20ch" id="revizor" precision="0" scale="0" type="combo" multi="false" editable="false">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </select>
+        </row>
+        <row fill="LEFT" vfill="TOP">
+          <empty align="LEFT" valign="TOP" indent="false" width="80ch" height="20px"/>
+        </row>
+        <row fill="LEFT" vfill="TOP">
+          <input align="LEFT" valign="TOP" indent="false" width="10ch" id="denzitaZac" precision="19" scale="4" type="text">
+            <label place="LEFT">
+              <from-field colon="true"/>
+            </label>
+          </input>
+        </row>
+        <row fill="LEFT" vfill="TOP">
+          <input align="LEFT" valign="TOP" indent="false" width="10ch" id="denzitaKonec" precision="19" scale="4" type="text">
+            <label place="LEFT">
+              <from-field colon="true"/>
+            </label>
+          </input>
+        </row>
+        <row fill="LEFT" vfill="TOP">
+          <input align="LEFT" valign="TOP" indent="false" width="10ch" id="dMin" precision="19" scale="4" type="text">
+            <label place="LEFT">
+              <from-field colon="true"/>
+            </label>
+          </input>
+        </row>
+        <row fill="LEFT" vfill="TOP">
+          <empty align="LEFT" valign="TOP" indent="false" width="80ch" height="20px"/>
+        </row>
+        <row fill="LEFT" vfill="TOP">
+          <input align="LEFT" valign="TOP" indent="false" columnIndex="1" width="20ch" id="techPredloha" precision="19" scale="4" type="text">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </input>
+          <input align="LEFT" valign="TOP" indent="false" columnIndex="2" width="20ch" id="startMf" precision="19" scale="4" type="text">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </input>
+          <input align="LEFT" valign="TOP" indent="false" columnIndex="3" width="20ch" id="endMf" precision="19" scale="4" type="text">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </input>
+          <input align="LEFT" valign="TOP" indent="false" columnIndex="4" width="20ch" id="faktorRoz" precision="19" scale="4" type="text">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </input>
+        </row>
+        <row fill="LEFT" vfill="TOP">
+          <empty align="LEFT" valign="TOP" indent="false" width="80ch" height="20px"/>
+        </row>
+        <row fill="LEFT" vfill="TOP">
+          <empty align="LEFT" valign="TOP" indent="false" columnIndex="1"/>
+          <label align="LEFT" valign="TOP" indent="false" columnIndex="2">lh</label>
+          <label align="LEFT" valign="TOP" indent="false" columnIndex="3">ph</label>
+          <label align="LEFT" valign="TOP" indent="false" columnIndex="4">s</label>
+          <label align="LEFT" valign="TOP" indent="false" columnIndex="5">ld</label>
+          <label align="LEFT" valign="TOP" indent="false" columnIndex="6">pd</label>
+          <label align="LEFT" valign="TOP" indent="false" columnIndex="7">prumer</label>
+          <label align="LEFT" valign="TOP" indent="false" columnIndex="1">merkaCarBila</label>
+          <input align="LEFT" valign="TOP" indent="false" columnIndex="2" width="10ch" id="lhB" precision="19" scale="4" type="text"/>
+          <input align="LEFT" valign="TOP" indent="false" columnIndex="3" width="10ch" id="phB" precision="19" scale="4" type="text"/>
+          <input align="LEFT" valign="TOP" indent="false" columnIndex="4" width="10ch" id="sB" precision="19" scale="4" type="text"/>
+          <input align="LEFT" valign="TOP" indent="false" columnIndex="5" width="10ch" id="ldB" precision="19" scale="4" type="text"/>
+          <input align="LEFT" valign="TOP" indent="false" columnIndex="6" width="10ch" id="pdB" precision="19" scale="4" type="text"/>
+          <label align="LEFT" valign="TOP" indent="false" columnIndex="1">merkaCarCerna</label>
+          <input align="LEFT" valign="TOP" indent="false" columnIndex="2" width="10ch" id="lhC" precision="19" scale="4" type="text"/>
+          <input align="LEFT" valign="TOP" indent="false" columnIndex="3" width="10ch" id="phC" precision="19" scale="4" type="text"/>
+          <input align="LEFT" valign="TOP" indent="false" columnIndex="4" width="10ch" id="sC" precision="19" scale="4" type="text"/>
+          <input align="LEFT" valign="TOP" indent="false" columnIndex="5" width="10ch" id="ldC" precision="19" scale="4" type="text"/>
+          <input align="LEFT" valign="TOP" indent="false" columnIndex="6" width="10ch" id="pdC" precision="19" scale="4" type="text"/>
+          <label align="LEFT" valign="TOP" indent="false" columnIndex="1">merkaPisma</label>
+          <input align="LEFT" valign="TOP" indent="false" columnIndex="2" width="10ch" id="lhP" precision="19" scale="4" type="text"/>
+          <input align="LEFT" valign="TOP" indent="false" columnIndex="3" width="10ch" id="phP" precision="19" scale="4" type="text"/>
+          <input align="LEFT" valign="TOP" indent="false" columnIndex="4" width="10ch" id="sP" precision="19" scale="4" type="text"/>
+          <input align="LEFT" valign="TOP" indent="false" columnIndex="5" width="10ch" id="ldP" precision="19" scale="4" type="text"/>
+          <input align="LEFT" valign="TOP" indent="false" columnIndex="6" width="10ch" id="pdP" precision="19" scale="4" type="text"/>
+        </row>
+        <row fill="LEFT" vfill="TOP">
+          <empty align="LEFT" valign="TOP" indent="false" width="80ch" height="20px"/>
+        </row>
+        <row fill="LEFT" vfill="TOP">
+          <input align="LEFT" valign="TOP" indent="false" width="90ch" id="defekty" precision="19" scale="4" type="text" rows="2">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </input>
+        </row>
+      </form-body>
+    </screen-form>
+    <tree name="AvailableForms">
+      <node formName="RevizeMfF"/>
+      <node formName="RevizeMfF2"/>
+      <node formName="RevizeMfF3"/>
+    </tree>
+  </forms>
+  <uniqueFields/>
+</desk>

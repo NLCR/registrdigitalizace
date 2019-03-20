@@ -1,0 +1,24 @@
+/* *****************************************************************************
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package cz.incad.relief3.rdcz.uniimporter.utils;
+
+/**
+ *******************************************************************************
+ *
+ * @author martin
+ */
+public class Commons {
+
+    /**
+     ***************************************************************************
+     * 
+     */
+    private Commons() {
+    }
+    
+    public static final int MAX_STRING_LENGHT = 4000;
+
+}

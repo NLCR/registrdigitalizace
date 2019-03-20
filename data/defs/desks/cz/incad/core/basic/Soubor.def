@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<desk bundle="ServerBundle">
+  <deskPackage>cz.incad.core.basic</deskPackage>
+  <deskName>Soubor</deskName>
+  <deskHumanHelp>cz.incad.core.basic.Soubor_help</deskHumanHelp>
+  <deskHumanName>cz.incad.core.basic.Soubor</deskHumanName>
+  <deskDBName>Soubor</deskDBName>
+  <deskRoot>cz.incad.core.basic.Record</deskRoot>
+  <machineModel>cz.incad.core.basic.Soubor</machineModel>
+  <fields>
+    <field>
+      <fieldName>bSoubor</fieldName>
+      <fieldHumanName>cz.incad.core.basic.Soubor.bSoubor</fieldHumanName>
+      <fieldHumanHelp>cz.incad.core.basic.Soubor.bSoubor_help</fieldHumanHelp>
+      <fieldDBName>bSoubor</fieldDBName>
+      <fieldType rTable="false">BIN</fieldType>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>typ</fieldName>
+      <fieldHumanName>cz.incad.core.basic.Soubor.typ</fieldHumanName>
+      <fieldHumanHelp>cz.incad.core.basic.Soubor.typ_help</fieldHumanHelp>
+      <fieldDBName>typ</fieldDBName>
+      <fieldType>STR</fieldType>
+      <fieldRepresentation>EDI</fieldRepresentation>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>nazev</fieldName>
+      <fieldHumanName>cz.incad.core.basic.Soubor.nazev</fieldHumanName>
+      <fieldHumanHelp>cz.incad.core.basic.Soubor.nazev_help</fieldHumanHelp>
+      <fieldDBName>nazev</fieldDBName>
+      <fieldType>STR</fieldType>
+      <fieldRepresentation>EDI</fieldRepresentation>
+      <computed/>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>popis</fieldName>
+      <fieldHumanName>cz.incad.core.basic.Soubor.popis</fieldHumanName>
+      <fieldHumanHelp>cz.incad.core.basic.Soubor.popis_help</fieldHumanHelp>
+      <fieldDBName>popis</fieldDBName>
+      <fieldType>STR</fieldType>
+      <fieldRepresentation>EDI</fieldRepresentation>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>poradi</fieldName>
+      <fieldHumanName>cz.incad.core.basic.Soubor.poradi</fieldHumanName>
+      <fieldHumanHelp>cz.incad.core.basic.Soubor.poradi_help</fieldHumanHelp>
+      <fieldDBName>poradi</fieldDBName>
+      <fieldType>INT</fieldType>
+      <fieldRepresentation>EDI</fieldRepresentation>
+      <precision>19</precision>
+    </field>
+    <field>
+      <fieldName>rozmer</fieldName>
+      <fieldHumanName>cz.incad.core.basic.Soubor.rozmer</fieldHumanName>
+      <fieldHumanHelp>cz.incad.core.basic.Soubor.rozmer_help</fieldHumanHelp>
+      <fieldDBName>rozmer</fieldDBName>
+      <fieldType>STR</fieldType>
+      <fieldRepresentation>EDI</fieldRepresentation>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>velikost</fieldName>
+      <fieldHumanName>cz.incad.core.basic.Soubor.velikost</fieldHumanName>
+      <fieldHumanHelp>cz.incad.core.basic.Soubor.velikost_help</fieldHumanHelp>
+      <fieldDBName>velikost</fieldDBName>
+      <fieldType>STR</fieldType>
+      <fieldRepresentation>EDI</fieldRepresentation>
+      <computed/>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+  </fields>
+  <forms>
+    <screen-form name="SouborF" formHumanName="cz.incad.core.basic.SouborF" id="cz.incad.core.basic.Soubor">
+      <form-body align="LEFT" valign="TOP">
+        <row fill="LEFT" vfill="TOP">
+          <col fill="LEFT" vfill="TOP">
+            <bin align="LEFT" valign="TOP" indent="false" width="200px" height="200px" id="bSoubor" precision="19" scale="4"/>
+          </col>
+          <col fill="LEFT" vfill="TOP">
+            <row fill="LEFT" vfill="TOP">
+              <input align="LEFT" valign="TOP" indent="false" columnIndex="1" width="30ch" id="nazev" precision="19" scale="4" type="text">
+                <label place="TOP">
+                  <from-field colon="true"/>
+                </label>
+              </input>
+              <input align="LEFT" valign="TOP" indent="false" columnIndex="2" width="20ch" id="velikost" precision="19" scale="4" type="text">
+                <label place="TOP">
+                  <from-field colon="true"/>
+                </label>
+              </input>
+              <input align="LEFT" valign="TOP" indent="false" columnIndex="3" width="20ch" id="typ" precision="19" scale="4" type="text">
+                <label place="TOP">
+                  <from-field colon="true"/>
+                </label>
+              </input>
+            </row>
+            <row fill="LEFT" vfill="TOP">
+              <input align="LEFT" valign="TOP" indent="false" columnIndex="1" width="30ch" id="rozmer" precision="19" scale="4" type="text">
+                <label place="TOP">
+                  <from-field colon="true"/>
+                </label>
+              </input>
+              <input align="LEFT" valign="TOP" indent="false" columnIndex="2" width="20ch" id="poradi" precision="19" scale="0" type="text">
+                <label place="TOP">
+                  <from-field colon="true"/>
+                </label>
+              </input>
+            </row>
+            <row fill="LEFT" vfill="TOP">
+              <input align="LEFT" valign="TOP" indent="false" width="60ch" id="popis" precision="19" scale="4" type="text" rows="2">
+                <label place="TOP">
+                  <from-field colon="true"/>
+                </label>
+              </input>
+            </row>
+          </col>
+        </row>
+        <row fill="LEFT" vfill="TOP">
+          <input align="LEFT" valign="TOP" indent="false" width="110ch" id="poznRec" precision="19" scale="4" type="text" rows="2">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </input>
+        </row>
+        <row fill="LEFT" vfill="TOP">
+          <input align="LEFT" valign="TOP" indent="false" columnIndex="1" width="20ch" id="idCislo" precision="19" scale="4" type="text">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </input>
+          <input align="LEFT" valign="TOP" indent="false" columnIndex="2" width="20ch" id="zalDate" precision="19" scale="4" formatPattern="dd.MM.yyyy" formatPatternForInput="dd.MM.yyyy" type="text">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </input>
+          <input align="LEFT" valign="TOP" indent="false" columnIndex="3" width="20ch" id="zalUser" precision="19" scale="4" type="text">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </input>
+          <input align="LEFT" valign="TOP" indent="false" columnIndex="4" width="20ch" id="ediDate" precision="19" scale="4" formatPattern="dd.MM.yyyy" formatPatternForInput="dd.MM.yyyy" type="text">
+            <label place="TOP">
+              <from-field colon="false"/>
+            </label>
+          </input>
+          <input align="LEFT" valign="TOP" indent="false" columnIndex="5" width="20ch" id="ediUser" precision="19" scale="4" type="text">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </input>
+          <input align="LEFT" valign="TOP" indent="false" columnIndex="2" width="20ch" id="finDate" precision="19" scale="4" formatPattern="dd.MM.yyyy" formatPatternForInput="dd.MM.yyyy" type="text">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </input>
+          <input align="LEFT" valign="TOP" indent="false" columnIndex="3" width="20ch" id="finUser" precision="19" scale="4" type="text">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </input>
+          <select align="LEFT" valign="TOP" indent="false" columnIndex="1" id="stavRec" precision="19" scale="4" type="combo" multi="false" editable="false">
+            <label place="TOP">
+              <from-field colon="false"/>
+            </label>
+          </select>
+        </row>
+      </form-body>
+    </screen-form>
+    <tree name="AvailableForms">
+      <node formName="SouborF"/>
+    </tree>
+  </forms>
+  <uniqueFields/>
+</desk>

@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<desk bundle="ServerBundle">
+  <deskPackage>cz.incad.nkp.digital</deskPackage>
+  <deskName>DmikrofilmRevizor</deskName>
+  <deskHumanHelp>DmikrofilmRevizor_help</deskHumanHelp>
+  <deskHumanName>DmikrofilmRevizor</deskHumanName>
+  <deskDBName>DmikrofilmRevizor</deskDBName>
+  <deskRoot/>
+  <machineModel>cz.incad.nkp.digital.DmikrofilmRevizor</machineModel>
+  <fields>
+    <field>
+      <fieldName>poradi</fieldName>
+      <fieldHumanName>DmikrofilmRevizor.poradi</fieldHumanName>
+      <fieldHumanHelp>DmikrofilmRevizor.poradi_help</fieldHumanHelp>
+      <fieldDBName>poradi</fieldDBName>
+      <fieldType>INT</fieldType>
+      <fieldRepresentation>EDI</fieldRepresentation>
+      <precision>19</precision>
+    </field>
+    <field>
+      <fieldName>use</fieldName>
+      <fieldHumanName>DmikrofilmRevizor.use</fieldHumanName>
+      <fieldHumanHelp>DmikrofilmRevizor.use_help</fieldHumanHelp>
+      <fieldDBName>use</fieldDBName>
+      <fieldType>BOL</fieldType>
+      <fieldRepresentation>CHK</fieldRepresentation>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>poznRec</fieldName>
+      <fieldHumanName>DmikrofilmRevizor.poznRec</fieldHumanName>
+      <fieldHumanHelp>DmikrofilmRevizor.poznRec_help</fieldHumanHelp>
+      <fieldDBName>poznRec</fieldDBName>
+      <fieldType>STR</fieldType>
+      <fieldRepresentation>EDI</fieldRepresentation>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>value</fieldName>
+      <fieldHumanName>DmikrofilmRevizor.value</fieldHumanName>
+      <fieldHumanHelp>DmikrofilmRevizor.value_help</fieldHumanHelp>
+      <fieldDBName>value</fieldDBName>
+      <fieldType>STR</fieldType>
+      <fieldRepresentation>EDI</fieldRepresentation>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>humanName</fieldName>
+      <fieldHumanName>DmikrofilmRevizor.humanName</fieldHumanName>
+      <fieldHumanHelp>DmikrofilmRevizor.humanName_help</fieldHumanHelp>
+      <fieldDBName>humanName</fieldDBName>
+      <fieldType>STR</fieldType>
+      <fieldRepresentation>EDI</fieldRepresentation>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+  </fields>
+  <forms>
+    <screen-form name="DListsF" formHumanName="DListsF" id="cz.incad.nkp.digital.DmikrofilmRevizor">
+      <form-body align="LEFT" valign="TOP">
+        <row fill="LEFT" vfill="TOP">
+          <input align="LEFT" valign="TOP" indent="false" columnIndex="1" width="20ch" id="value" precision="0" scale="0" type="text">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </input>
+          <input align="LEFT" valign="TOP" indent="false" columnIndex="2" width="40ch" id="humanName" precision="0" scale="0" type="text">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </input>
+          <input align="LEFT" valign="TOP" indent="false" columnIndex="3" width="10ch" id="poradi" precision="19" scale="0" type="text">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </input>
+          <check align="LEFT" valign="TOP" indent="false" columnIndex="4" id="use" precision="0" scale="0">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </check>
+        </row>
+        <row fill="LEFT" vfill="TOP">
+          <input align="LEFT" valign="TOP" indent="false" width="60ch" id="poznRec" precision="0" scale="0" type="text" rows="3">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </input>
+        </row>
+      </form-body>
+    </screen-form>
+    <tree name="AvailableForms">
+      <node formName="DListsF"/>
+    </tree>
+  </forms>
+  <uniqueFields/>
+</desk>

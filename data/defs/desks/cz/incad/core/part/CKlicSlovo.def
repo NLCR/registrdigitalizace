@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<desk bundle="ServerBundle">
+  <deskPackage>cz.incad.core.part</deskPackage>
+  <deskName>CKlicSlovo</deskName>
+  <deskHumanHelp>cz.incad.core.part.CKlicSlovo_help</deskHumanHelp>
+  <deskHumanName>cz.incad.core.part.CKlicSlovo</deskHumanName>
+  <deskDBName>CKlicSlovo</deskDBName>
+  <deskRoot/>
+  <machineModel>cz.incad.core.part.CKlicSlovo</machineModel>
+  <fields>
+    <field>
+      <fieldName>klicSlovo</fieldName>
+      <fieldHumanName>CKlicSlovo.klicSlovo</fieldHumanName>
+      <fieldHumanHelp>CKlicSlovo.klicSlovo_help</fieldHumanHelp>
+      <fieldDBName>klicSlovo</fieldDBName>
+      <fieldType>STR</fieldType>
+      <fieldRepresentation>EDI</fieldRepresentation>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+  </fields>
+  <forms>
+    <screen-form name="CKlicSlovoF" formHumanName="CKlicSlovoF" id="cz.incad.core.part.CKlicSlovo">
+      <form-body align="LEFT" valign="TOP">
+        <row fill="LEFT" vfill="TOP">
+          <input align="LEFT" valign="TOP" indent="false" width="60ch" id="klicSlovo" precision="19" scale="4" type="text"/>
+        </row>
+      </form-body>
+    </screen-form>
+    <tree name="AvailableForms">
+      <node formName="CKlicSlovoF"/>
+    </tree>
+  </forms>
+  <uniqueFields/>
+</desk>

@@ -1,0 +1,390 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<desk bundle="ServerBundle">
+  <deskPackage>cz.incad.rd</deskPackage>
+  <deskName>DigObjekt</deskName>
+  <deskHumanHelp>DigObjekt_help</deskHumanHelp>
+  <deskHumanName>DigObjekt</deskHumanName>
+  <deskDBName>DigObjekt</deskDBName>
+  <deskRoot/>
+  <machineModel>cz.incad.rd.DigObjekt</machineModel>
+  <fields>
+    <field>
+      <fieldName>ediDate</fieldName>
+      <fieldHumanName>DigObjekt.ediDate</fieldHumanName>
+      <fieldHumanHelp>DigObjekt.ediDate_help</fieldHumanHelp>
+      <fieldDBName>ediDate</fieldDBName>
+      <fieldType>DAT</fieldType>
+      <fieldRepresentation>EDI</fieldRepresentation>
+      <computed/>
+      <formatPattern>dd.MM.yyyy</formatPattern>
+      <formatPatternForInput>dd.MM.yyyy</formatPatternForInput>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>zalDate</fieldName>
+      <fieldHumanName>DigObjekt.zalDate</fieldHumanName>
+      <fieldHumanHelp>DigObjekt.zalDate_help</fieldHumanHelp>
+      <fieldDBName>zalDate</fieldDBName>
+      <fieldType>DAT</fieldType>
+      <fieldRepresentation>EDI</fieldRepresentation>
+      <computed/>
+      <formatPattern>dd.MM.yyyy</formatPattern>
+      <formatPatternForInput>dd.MM.yyyy</formatPatternForInput>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>druhDokumentu</fieldName>
+      <fieldHumanName>DigObjekt.druhDokumentu</fieldHumanName>
+      <fieldHumanHelp>DigObjekt.druhDokumentu_help</fieldHumanHelp>
+      <fieldDBName>druhDokumentu</fieldDBName>
+      <fieldType>STR</fieldType>
+      <fieldRepresentation>EDI</fieldRepresentation>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>formatXML</fieldName>
+      <fieldHumanName>DigObjekt.formatXML</fieldHumanName>
+      <fieldHumanHelp>DigObjekt.formatXML_help</fieldHumanHelp>
+      <fieldDBName>formatXML</fieldDBName>
+      <fieldType>STR</fieldType>
+      <fieldRepresentation>EDI</fieldRepresentation>
+      <validateLength>4000</validateLength>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>isLeaf</fieldName>
+      <fieldHumanName>DigObjekt.isLeaf</fieldHumanName>
+      <fieldHumanHelp>DigObjekt.isLeaf_help</fieldHumanHelp>
+      <fieldDBName>isLeaf</fieldDBName>
+      <fieldType>BOL</fieldType>
+      <fieldRepresentation>CHK</fieldRepresentation>
+      <computed/>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>tMetadata</fieldName>
+      <fieldHumanName>DigObjekt.tMetadata</fieldHumanName>
+      <fieldHumanHelp>DigObjekt.tMetadata_help</fieldHumanHelp>
+      <fieldDBName>RDigObjekt_Metadata</fieldDBName>
+      <fieldType>TAB</fieldType>
+      <fieldRepresentation>REP</fieldRepresentation>
+      <reference relationshipType="aggregation" rTable="false">cz.incad.rd.Metadata</reference>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>xml</fieldName>
+      <fieldHumanName>DigObjekt.xml</fieldHumanName>
+      <fieldHumanHelp>DigObjekt.xml_help</fieldHumanHelp>
+      <fieldDBName>xml</fieldDBName>
+      <fieldType>TXT</fieldType>
+      <fieldRepresentation>TXT</fieldRepresentation>
+      <computed/>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>rPredloha</fieldName>
+      <fieldHumanName>DigObjekt.rPredloha</fieldHumanName>
+      <fieldHumanHelp>DigObjekt.rPredloha_help</fieldHumanHelp>
+      <fieldDBName>RPredloha_DigObjekt</fieldDBName>
+      <fieldType>REF</fieldType>
+      <fieldRepresentation>REF</fieldRepresentation>
+      <reference relationshipType="association" rTable="false">cz.incad.rd.Predloha</reference>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>stav</fieldName>
+      <fieldHumanName>DigObjekt.stav</fieldHumanName>
+      <fieldHumanHelp>DigObjekt.stav_help</fieldHumanHelp>
+      <fieldDBName>stav</fieldDBName>
+      <fieldType>STR</fieldType>
+      <fieldRepresentation>EDI</fieldRepresentation>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>uuid</fieldName>
+      <fieldHumanName>DigObjekt.uuid</fieldHumanName>
+      <fieldHumanHelp>DigObjekt.uuid_help</fieldHumanHelp>
+      <fieldDBName>uuid</fieldDBName>
+      <fieldType>STR</fieldType>
+      <fieldRepresentation>EDI</fieldRepresentation>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>rDigKnihovna</fieldName>
+      <fieldHumanName>DigObjekt.rDigKnihovna</fieldHumanName>
+      <fieldHumanHelp>DigObjekt.rDigKnihovna_help</fieldHumanHelp>
+      <fieldDBName>RDigKnihovna_DigObjekt</fieldDBName>
+      <fieldType>REF</fieldType>
+      <fieldRepresentation>REF</fieldRepresentation>
+      <reference relationshipType="association" rTable="false">cz.incad.rd.DigKnihovna</reference>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>tDigVazbyPodrizene</fieldName>
+      <fieldHumanName>DigObjekt.tDigVazbyPodrizene</fieldHumanName>
+      <fieldHumanHelp>DigObjekt.tDigVazbyPodrizene_help</fieldHumanHelp>
+      <fieldDBName>predek</fieldDBName>
+      <fieldType>TAB</fieldType>
+      <fieldRepresentation>REP</fieldRepresentation>
+      <reference relationshipType="association" rTable="false">cz.incad.rd.DigVazby</reference>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>tDigVazbyNadrazene</fieldName>
+      <fieldHumanName>DigObjekt.tDigVazbyNadrazene</fieldHumanName>
+      <fieldHumanHelp>DigObjekt.tDigVazbyNadrazene_help</fieldHumanHelp>
+      <fieldDBName>RDigObjekt_DigVazby_potomek</fieldDBName>
+      <fieldType>TAB</fieldType>
+      <fieldRepresentation>REP</fieldRepresentation>
+      <reference relationshipType="association" rTable="false">cz.incad.rd.DigVazby</reference>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>rPeriodikum</fieldName>
+      <fieldHumanName>DigObjekt.rPeriodikum</fieldHumanName>
+      <fieldHumanHelp>DigObjekt.rPeriodikum_help</fieldHumanHelp>
+      <fieldDBName>RPeriodikum_DigObjekt</fieldDBName>
+      <fieldType>REF</fieldType>
+      <fieldRepresentation>REF</fieldRepresentation>
+      <reference relationshipType="association" rTable="false">cz.incad.rd.Periodikum</reference>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>json</fieldName>
+      <fieldHumanName>DigObjekt.json</fieldHumanName>
+      <fieldHumanHelp>DigObjekt.json_help</fieldHumanHelp>
+      <fieldDBName>json</fieldDBName>
+      <fieldType>STR</fieldType>
+      <fieldRepresentation>EDI</fieldRepresentation>
+      <validateLength>4000</validateLength>
+      <computed/>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>nespojovat</fieldName>
+      <fieldHumanName>DigObjekt.nespojovat</fieldHumanName>
+      <fieldHumanHelp>DigObjekt.nespojovat_help</fieldHumanHelp>
+      <fieldDBName>nespojovat</fieldDBName>
+      <fieldType>BOL</fieldType>
+      <fieldRepresentation>CHK</fieldRepresentation>
+      <computed/>
+    </field>
+    <field>
+      <fieldName>rucniSpojeni</fieldName>
+      <fieldHumanName>DigObjekt.rucniSpojeni</fieldHumanName>
+      <fieldHumanHelp>DigObjekt.rucniSpojeni_help</fieldHumanHelp>
+      <fieldDBName>rucniSpojeni</fieldDBName>
+      <fieldType>BOL</fieldType>
+      <fieldRepresentation>CHK</fieldRepresentation>
+      <computed/>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+  </fields>
+  <forms>
+    <screen-form name="DigObjektF" formHumanName="DigObjektF" id="cz.incad.rd.DigObjekt">
+      <form-body align="LEFT" valign="TOP">
+        <row fill="LEFT" vfill="TOP">
+          <input align="LEFT" valign="TOP" indent="false" columnIndex="1" width="100ch" id="uuid" precision="19" scale="4" type="text">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </input>
+        </row>
+        <row fill="LEFT" vfill="TOP">
+          <input align="LEFT" valign="TOP" indent="false" columnIndex="1" width="20ch" id="druhDokumentu" precision="19" scale="4" type="text">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </input>
+          <input align="LEFT" valign="TOP" indent="false" columnIndex="2" width="20ch" id="stav" precision="0" scale="0" type="text">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </input>
+          <check align="LEFT" valign="TOP" indent="false" columnIndex="3" id="isLeaf" precision="19" scale="4">
+            <label place="LEFT">
+              <from-field colon="true"/>
+            </label>
+          </check>
+          <input align="LEFT" valign="TOP" indent="false" columnIndex="4" width="20ch" id="zalDate" precision="19" scale="4" formatPattern="dd.MM.yyyy" formatPatternForInput="dd.MM.yyyy" type="text">
+            <label place="TOP">
+              <from-field colon="false"/>
+            </label>
+          </input>
+          <input align="LEFT" valign="TOP" indent="false" columnIndex="5" width="20ch" id="ediDate" precision="19" scale="4" formatPattern="dd.MM.yyyy" formatPatternForInput="dd.MM.yyyy" type="text">
+            <label place="TOP">
+              <from-field colon="false"/>
+            </label>
+          </input>
+          <check align="LEFT" valign="TOP" indent="false" columnIndex="6" id="rucniSpojeni" precision="19" scale="4">
+            <label place="TOP">
+              <from-field colon="false"/>
+            </label>
+          </check>
+          <check align="LEFT" valign="TOP" indent="false" columnIndex="7" id="nespojovat" precision="19" scale="4">
+            <label place="TOP">
+              <from-field colon="false"/>
+            </label>
+          </check>
+        </row>
+        <row fill="LEFT" vfill="TOP">
+          <input align="LEFT" valign="TOP" indent="false" columnIndex="1" width="20ch" id="rPredloha.cCNB" precision="19" scale="4" ref="true" type="text">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </input>
+          <refbutton align="LEFT" valign="TOP" indent="false" columnIndex="4" id="rPredloha" precision="19" scale="4" refclass="cz.incad.rd.Predloha">
+            <label place="TOP">
+              <from-field colon="false"/>
+            </label>
+          </refbutton>
+          <input align="LEFT" valign="TOP" indent="false" columnIndex="3" width="20ch" id="rPredloha.carKod" precision="19" scale="4" ref="true" type="text">
+            <label place="TOP">
+              <from-field colon="false"/>
+            </label>
+          </input>
+          <input align="LEFT" valign="TOP" indent="false" columnIndex="2" id="rPredloha.pole001" precision="19" scale="4" ref="true" type="text">
+            <label place="TOP">
+              <from-field colon="false"/>
+            </label>
+          </input>
+        </row>
+        <row fill="LEFT" vfill="TOP">
+          <input align="LEFT" valign="TOP" indent="false" columnIndex="1" width="20ch" id="rPredloha.ISBN" precision="19" scale="4" ref="true" type="text">
+            <label place="TOP">
+              <from-field colon="false"/>
+            </label>
+          </input>
+          <input align="LEFT" valign="TOP" indent="false" columnIndex="2" width="20ch" id="rPredloha.issn" precision="19" scale="4" ref="true" type="text">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </input>
+          <select align="LEFT" valign="TOP" indent="false" columnIndex="3" width="20ch" id="rPredloha.sigla1" precision="19" scale="4" type="combo" multi="false" editable="false">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </select>
+          <select align="LEFT" valign="TOP" indent="false" columnIndex="4" width="20ch" id="rPredloha.sigla2" precision="19" scale="4" type="combo" multi="false" editable="false">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </select>
+          <select align="LEFT" valign="TOP" indent="false" columnIndex="5" width="20ch" id="rPredloha.katalog" precision="19" scale="4" type="combo" multi="false" editable="false">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </select>
+        </row>
+        <row fill="LEFT" vfill="TOP">
+          <input align="LEFT" valign="TOP" indent="false" columnIndex="1" width="40ch" id="rPredloha.nazev" precision="19" scale="4" ref="true" type="text">
+            <label place="TOP">
+              <from-field colon="false"/>
+            </label>
+          </input>
+          <input align="LEFT" valign="TOP" indent="false" columnIndex="2" width="40ch" id="rPredloha.autor" precision="19" scale="4" ref="true" type="text">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </input>
+          <input align="LEFT" valign="TOP" indent="false" columnIndex="3" width="20ch" id="rPredloha.rokVyd" precision="19" scale="4" ref="true" type="text">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </input>
+        </row>
+        <row fill="LEFT" vfill="TOP">
+          <repeat align="LEFT" valign="TOP" indent="false" id="tMetadata" precision="0" scale="0" refclass="cz.incad.rd.Metadata" form="MetadataF">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </repeat>
+        </row>
+        <row fill="LEFT" vfill="TOP">
+          <tabview align="LEFT" valign="TOP" indent="false" id="tDigVazbyNadrazene" precision="0" scale="0" refclass="cz.incad.rd.DigVazby" rows="3">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </tabview>
+          <tabview align="LEFT" valign="TOP" indent="false" id="tDigVazbyPodrizene" precision="0" scale="0" refclass="cz.incad.rd.DigVazby" rows="30">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </tabview>
+        </row>
+      </form-body>
+    </screen-form>
+    <screen-form name="DigDokumentXMLF" formHumanName="DigDokumentXMLF" id="cz.incad.rd.DigObjekt">
+      <form-body align="LEFT" valign="TOP">
+        <row fill="LEFT" vfill="TOP">
+          <input align="LEFT" valign="TOP" indent="false" width="100ch" id="xml" precision="0" scale="0" type="longtext" rows="40">
+            <label place="TOP">
+              <from-field colon="false"/>
+            </label>
+          </input>
+        </row>
+      </form-body>
+    </screen-form>
+    <screen-form name="DOshort" formHumanName="DOshort" id="cz.incad.rd.DigObjekt">
+      <form-body align="LEFT" valign="TOP">
+        <row fill="LEFT" vfill="TOP">
+          <input align="LEFT" valign="TOP" indent="false" columnIndex="1" id="druhDokumentu" precision="19" scale="4" type="text">
+            <label place="TOP">
+              <from-field colon="false"/>
+            </label>
+          </input>
+          <input align="LEFT" valign="TOP" indent="false" columnIndex="2" id="uuid" precision="19" scale="4" type="text">
+            <label place="TOP">
+              <from-field colon="false"/>
+            </label>
+          </input>
+          <input align="LEFT" valign="TOP" indent="false" columnIndex="3" id="zalDate" precision="19" scale="4" formatPattern="dd.MM.yyyy" formatPatternForInput="dd.MM.yyyy" type="text">
+            <label place="TOP">
+              <from-field colon="false"/>
+            </label>
+          </input>
+          <input align="LEFT" valign="TOP" indent="false" columnIndex="4" id="ediDate" precision="19" scale="4" formatPattern="dd.MM.yyyy" formatPatternForInput="dd.MM.yyyy" type="text">
+            <label place="TOP">
+              <from-field colon="false"/>
+            </label>
+          </input>
+        </row>
+      </form-body>
+    </screen-form>
+    <screen-form name="DigDokumentJSONF" formHumanName="DigDokumentJSONF" id="cz.incad.rd.DigObjekt">
+      <form-body align="LEFT" valign="TOP">
+        <row fill="LEFT" vfill="TOP">
+          <input align="LEFT" valign="TOP" indent="false" width="100ch" id="json" precision="19" scale="4" type="longtext" rows="40">
+            <label place="TOP">
+              <from-field colon="false"/>
+            </label>
+          </input>
+        </row>
+      </form-body>
+    </screen-form>
+    <tree name="AvailableForms">
+      <node formName="DigObjektF"/>
+      <node formName="DigDokumentXMLF"/>
+      <node formName="DOshort"/>
+      <node formName="DigDokumentJSONF"/>
+    </tree>
+  </forms>
+  <uniqueFields/>
+</desk>

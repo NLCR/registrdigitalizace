@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<desk bundle="ServerBundle">
+  <deskPackage>cz.incad.core.doc</deskPackage>
+  <deskName>XTiInst</deskName>
+  <deskHumanHelp>cz.incad.core.doc.XTiInst_help</deskHumanHelp>
+  <deskHumanName>cz.incad.core.doc.XTiInst</deskHumanName>
+  <deskDBName>XTiInst</deskDBName>
+  <deskRoot/>
+  <machineModel>cz.incad.core.doc.XTiInst</machineModel>
+  <fields>
+    <field>
+      <fieldName>roleInst</fieldName>
+      <fieldHumanName>XTiInst.roleInst</fieldHumanName>
+      <fieldHumanHelp>XTiInst.roleInst_help</fieldHumanHelp>
+      <fieldDBName>roleInst</fieldDBName>
+      <fieldType>STR</fieldType>
+      <fieldRepresentation>COM</fieldRepresentation>
+      <list>DroleInst</list>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>rInst</fieldName>
+      <fieldHumanName>XTiInst.rInst</fieldHumanName>
+      <fieldHumanHelp>XTiInst.rInst_help</fieldHumanHelp>
+      <fieldDBName>rInstXTI</fieldDBName>
+      <fieldType>REF</fieldType>
+      <fieldRepresentation>REF</fieldRepresentation>
+      <reference relationshipType="association" rTable="false">cz.incad.core.doc.Inst</reference>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+  </fields>
+  <forms>
+    <screen-form name="XTiInstF" formHumanName="cz.incad.core.doc.XTiInstF" id="cz.incad.core.doc.XTiInst">
+      <form-body align="LEFT" valign="TOP">
+        <row fill="LEFT" vfill="TOP">
+          <select align="LEFT" valign="TOP" indent="false" columnIndex="1" width="25ch" id="roleInst" precision="0" scale="0" type="combo" multi="false" editable="false"/>
+          <input align="LEFT" valign="TOP" indent="false" columnIndex="2" width="60ch" id="rInst.nazevInst" precision="0" scale="0" ref="true" type="text">
+            <label place="LEFT">XTiInst.XTiInstF.instituce</label>
+          </input>
+          <refbutton align="LEFT" valign="TOP" indent="false" columnIndex="3" id="rInst" precision="0" scale="0" refclass="cz.incad.core.doc.Inst"/>
+        </row>
+      </form-body>
+    </screen-form>
+    <tree name="AvailableForms">
+      <node formName="XTiInstF"/>
+    </tree>
+  </forms>
+  <uniqueFields/>
+</desk>

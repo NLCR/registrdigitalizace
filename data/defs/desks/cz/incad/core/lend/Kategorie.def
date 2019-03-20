@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<desk bundle="ServerBundle">
+  <deskPackage>cz.incad.core.lend</deskPackage>
+  <deskName>Kategorie</deskName>
+  <deskHumanHelp>cz.incad.core.lend.Kategorie_help</deskHumanHelp>
+  <deskHumanName>cz.incad.core.lend.Kategorie</deskHumanName>
+  <deskDBName>Kategorie</deskDBName>
+  <deskRoot>cz.incad.core.basic.DLists</deskRoot>
+  <machineModel>cz.incad.core.lend.Kategorie</machineModel>
+  <fields>
+    <field>
+      <fieldName>pocetDni</fieldName>
+      <fieldHumanName>cz.incad.core.lend.Kategorie.pocetDni</fieldHumanName>
+      <fieldHumanHelp>cz.incad.core.lend.Kategorie.pocetDni_help</fieldHumanHelp>
+      <fieldDBName>pocetDni</fieldDBName>
+      <fieldType>INT</fieldType>
+      <fieldRepresentation>EDI</fieldRepresentation>
+      <precision>19</precision>
+    </field>
+    <field>
+      <fieldName>skupina</fieldName>
+      <fieldHumanName>cz.incad.core.lend.Kategorie.skupina</fieldHumanName>
+      <fieldHumanHelp>cz.incad.core.lend.Kategorie.skupina_help</fieldHumanHelp>
+      <fieldDBName>skupina</fieldDBName>
+      <fieldType>STR</fieldType>
+      <fieldRepresentation>EDI</fieldRepresentation>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>vaha</fieldName>
+      <fieldHumanName>cz.incad.core.lend.Kategorie.vaha</fieldHumanName>
+      <fieldHumanHelp>cz.incad.core.lend.Kategorie.vaha_help</fieldHumanHelp>
+      <fieldDBName>vaha</fieldDBName>
+      <fieldType>INT</fieldType>
+      <fieldRepresentation>EDI</fieldRepresentation>
+      <precision>19</precision>
+    </field>
+  </fields>
+  <uniqueFields/>
+</desk>

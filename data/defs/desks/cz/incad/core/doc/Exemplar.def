@@ -1,0 +1,328 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<desk bundle="ServerBundle">
+  <deskPackage>cz.incad.core.doc</deskPackage>
+  <deskName>Exemplar</deskName>
+  <deskHumanHelp>cz.incad.core.doc.Exemplar_help</deskHumanHelp>
+  <deskHumanName>cz.incad.core.doc.Exemplar</deskHumanName>
+  <deskDBName>Exemplar</deskDBName>
+  <deskRoot>cz.incad.core.basic.Record</deskRoot>
+  <machineModel>cz.incad.core.doc.Exemplar</machineModel>
+  <fields>
+    <field>
+      <fieldName>carKod</fieldName>
+      <fieldHumanName>cz.incad.core.doc.Exemplar.carKod</fieldHumanName>
+      <fieldHumanHelp>cz.incad.core.doc.Exemplar.carKod_help</fieldHumanHelp>
+      <fieldDBName>carKod</fieldDBName>
+      <fieldType>STR</fieldType>
+      <fieldRepresentation>EDI</fieldRepresentation>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>cenaKc</fieldName>
+      <fieldHumanName>cz.incad.core.doc.Exemplar.cenaKc</fieldHumanName>
+      <fieldHumanHelp>cz.incad.core.doc.Exemplar.cenaKc_help</fieldHumanHelp>
+      <fieldDBName>cenaKc</fieldDBName>
+      <fieldType>NUM</fieldType>
+      <fieldRepresentation>EDI</fieldRepresentation>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>lendExemplar</fieldName>
+      <fieldHumanName>cz.incad.core.doc.Exemplar.lendExemplar</fieldHumanName>
+      <fieldHumanHelp>cz.incad.core.doc.Exemplar.lendExemplar_help</fieldHumanHelp>
+      <fieldDBName>lendExemplar</fieldDBName>
+      <fieldType>STR</fieldType>
+      <fieldRepresentation>EDI</fieldRepresentation>
+      <computed/>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>rKatExemplar</fieldName>
+      <fieldHumanName>cz.incad.core.doc.Exemplar.rKatExemplar</fieldHumanName>
+      <fieldHumanHelp>cz.incad.core.doc.Exemplar.rKatExemplar_help</fieldHumanHelp>
+      <fieldDBName>rKatExemplarEx</fieldDBName>
+      <fieldType>REF</fieldType>
+      <fieldRepresentation>REF</fieldRepresentation>
+      <reference relationshipType="association" rTable="false">cz.incad.core.lend.KatExemplar</reference>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>cKatExemplar</fieldName>
+      <fieldHumanName>cz.incad.core.doc.Exemplar.cKatExemplar</fieldHumanName>
+      <fieldHumanHelp>cz.incad.core.doc.Exemplar.cKatExemplar_help</fieldHumanHelp>
+      <fieldDBName>cKatExemplar</fieldDBName>
+      <fieldType>STR</fieldType>
+      <fieldRepresentation>COM</fieldRepresentation>
+      <list>KatExemplar</list>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>obdobi</fieldName>
+      <fieldHumanName>Exemplar.obdobi</fieldHumanName>
+      <fieldHumanHelp>Exemplar.obdobi_help</fieldHumanHelp>
+      <fieldDBName>obdobi</fieldDBName>
+      <fieldType>STR</fieldType>
+      <fieldRepresentation>EDI</fieldRepresentation>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>privazek</fieldName>
+      <fieldHumanName>cz.incad.core.doc.Exemplar.privazek</fieldHumanName>
+      <fieldHumanHelp>cz.incad.core.doc.Exemplar.privazek_help</fieldHumanHelp>
+      <fieldDBName>privazek</fieldDBName>
+      <fieldType>BOL</fieldType>
+      <fieldRepresentation>CHK</fieldRepresentation>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>tPrivazek</fieldName>
+      <fieldHumanName>cz.incad.core.doc.Exemplar.tPrivazek</fieldHumanName>
+      <fieldHumanHelp>cz.incad.core.doc.Exemplar.tPrivazek_help</fieldHumanHelp>
+      <fieldDBName>rExemplar</fieldDBName>
+      <fieldType>TAB</fieldType>
+      <fieldRepresentation>RTB</fieldRepresentation>
+      <reference relationshipType="association" rTable="false">cz.incad.core.doc.Privazek</reference>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>signatura</fieldName>
+      <fieldHumanName>cz.incad.core.doc.Exemplar.signatura</fieldHumanName>
+      <fieldHumanHelp>cz.incad.core.doc.Exemplar.signatura_help</fieldHumanHelp>
+      <fieldDBName>signatura</fieldDBName>
+      <fieldType>STR</fieldType>
+      <fieldRepresentation>EDI</fieldRepresentation>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>rTitul</fieldName>
+      <fieldHumanName>cz.incad.core.doc.Exemplar.rTitul</fieldHumanName>
+      <fieldHumanHelp>cz.incad.core.doc.Exemplar.rTitul_help</fieldHumanHelp>
+      <fieldDBName>rTitulEx</fieldDBName>
+      <fieldType>REF</fieldType>
+      <fieldRepresentation>REF</fieldRepresentation>
+      <reference relationshipType="association" rTable="false">cz.incad.core.doc.Titul</reference>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>ulozeni</fieldName>
+      <fieldHumanName>cz.incad.core.doc.Exemplar.ulozeni</fieldHumanName>
+      <fieldHumanHelp>cz.incad.core.doc.Exemplar.ulozeni_help</fieldHumanHelp>
+      <fieldDBName>ulozeni</fieldDBName>
+      <fieldType>STR</fieldType>
+      <fieldRepresentation>COM</fieldRepresentation>
+      <list>Dulozeni</list>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+  </fields>
+  <forms>
+    <screen-form name="ExemplarF" formHumanName="cz.incad.core.doc.ExemplarF" id="cz.incad.core.doc.Exemplar">
+      <form-body align="LEFT" valign="TOP">
+        <row fill="LEFT" vfill="TOP">
+          <input align="LEFT" valign="TOP" indent="false" columnIndex="1" width="110ch" id="rTitul.importCSV" precision="19" scale="4" ref="true" type="text">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </input>
+          <refbutton align="LEFT" valign="TOP" indent="false" columnIndex="2" id="rTitul" precision="19" scale="4" refclass="cz.incad.core.doc.Titul"/>
+        </row>
+        <row fill="LEFT" vfill="TOP">
+          <input align="LEFT" valign="TOP" indent="false" columnIndex="1" width="80ch" id="rTitul.hlNazev" precision="19" scale="4" ref="true" type="text">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </input>
+          <input align="LEFT" valign="TOP" indent="false" columnIndex="2" width="20ch" id="rTitul.idCislo" precision="19" scale="4" ref="true" type="text">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </input>
+        </row>
+        <row fill="LEFT" vfill="TOP">
+          <input align="LEFT" valign="TOP" indent="false" columnIndex="1" width="20ch" id="signatura" precision="0" scale="0" type="text">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </input>
+          <input align="LEFT" valign="TOP" indent="false" columnIndex="2" width="20ch" id="carKod" precision="19" scale="0" type="text">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </input>
+        </row>
+        <row fill="LEFT" vfill="TOP">
+          <input align="LEFT" valign="TOP" indent="false" columnIndex="1" width="20ch" id="lendExemplar" precision="0" scale="0" type="text">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </input>
+          <refbutton align="LEFT" valign="TOP" indent="false" columnIndex="2" id="rKatExemplar" precision="0" scale="0" refclass="cz.incad.core.lend.KatExemplar"/>
+        </row>
+        <row fill="LEFT" vfill="TOP">
+          <select align="LEFT" valign="TOP" indent="false" width="20ch" id="ulozeni" precision="0" scale="0" type="combo" multi="false" editable="false">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </select>
+        </row>
+      </form-body>
+    </screen-form>
+    <screen-form name="ExemplarRadek" formHumanName="cz.incad.core.doc.ExemplarRadek" id="cz.incad.core.doc.Exemplar">
+      <form-body align="LEFT" valign="TOP">
+        <row fill="LEFT" vfill="TOP">
+          <input align="LEFT" valign="TOP" indent="false" columnIndex="1" width="45ch" id="signatura" precision="19" scale="4" type="text">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </input>
+          <input align="LEFT" valign="TOP" indent="false" columnIndex="2" width="20ch" id="carKod" precision="19" scale="0" type="text">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </input>
+          <check align="LEFT" valign="TOP" indent="false" columnIndex="3" id="privazek" precision="0" scale="0">
+            <label place="TOP">Exemplar.ExemplarRadek.privazek</label>
+          </check>
+        </row>
+        <row fill="LEFT" vfill="TOP">
+          <input align="LEFT" valign="TOP" indent="false" columnIndex="1" width="50ch" id="poznRec" precision="19" scale="4" type="text">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </input>
+        </row>
+      </form-body>
+    </screen-form>
+    <screen-form name="ExemplarPrivazkyF" formHumanName="cz.incad.core.doc.ExemplarPrivazkyF" id="cz.incad.core.doc.Exemplar">
+      <form-body align="LEFT" valign="TOP">
+        <row fill="LEFT" vfill="TOP">
+          <input align="LEFT" valign="TOP" indent="false" columnIndex="1" width="40ch" id="signatura" precision="19" scale="4" type="text">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </input>
+          <input align="LEFT" valign="TOP" indent="false" columnIndex="2" width="25ch" id="carKod" precision="19" scale="0" type="text">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </input>
+          <check align="LEFT" valign="TOP" indent="false" columnIndex="3" id="privazek" precision="19" scale="4"/>
+          <label align="LEFT" valign="TOP" indent="false" columnIndex="4">Exemplar.privazek</label>
+        </row>
+        <row fill="LEFT" vfill="TOP">
+          <refbutton align="LEFT" valign="TOP" indent="false" columnIndex="1" id="rTitul" precision="19" scale="4" refclass="cz.incad.core.doc.Titul"/>
+          <input align="LEFT" valign="TOP" indent="false" columnIndex="2" width="80ch" id="rTitul.hlNazev" precision="19" scale="4" ref="true" type="text">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </input>
+          <input align="LEFT" valign="TOP" indent="false" columnIndex="3" width="20ch" id="rTitul.rokVyd" precision="19" scale="4" ref="true" type="text">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </input>
+        </row>
+        <row fill="LEFT" vfill="TOP">
+          <rtb align="LEFT" valign="TOP" indent="false" id="tPrivazek" precision="19" scale="4" refclass="cz.incad.core.doc.Privazek" form="PrivazekFTi">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </rtb>
+        </row>
+      </form-body>
+    </screen-form>
+    <screen-form name="ExemplarSerialF" formHumanName="ExemplarSerialF" id="cz.incad.core.doc.Exemplar">
+      <form-body align="LEFT" valign="TOP">
+        <row fill="LEFT" vfill="TOP">
+          <input align="LEFT" valign="TOP" indent="false" columnIndex="1" width="25ch" id="carKod" precision="19" scale="4" type="text">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </input>
+          <input align="LEFT" valign="TOP" indent="false" columnIndex="2" width="25ch" id="signatura" precision="19" scale="4" type="text">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </input>
+          <input align="LEFT" valign="TOP" indent="false" columnIndex="3" width="50ch" id="obdobi" precision="0" scale="0" type="text">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </input>
+        </row>
+      </form-body>
+    </screen-form>
+    <screen-form name="ExemplarExcel" formHumanName="ExemplarExcel" id="cz.incad.core.doc.Exemplar">
+      <form-body align="LEFT" valign="TOP">
+        <row fill="LEFT" vfill="TOP">
+          <input align="LEFT" valign="TOP" indent="false" columnIndex="1" width="20ch" id="signatura" precision="19" scale="4" type="text">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </input>
+          <input align="LEFT" valign="TOP" indent="false" columnIndex="2" width="20ch" id="carKod" precision="19" scale="4" type="text">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </input>
+          <input align="LEFT" valign="TOP" indent="false" columnIndex="3" width="70ch" id="poznRec" precision="19" scale="4" type="text">
+            <label place="TOP">Exemplar.ExemplarExcel.exemplarPoznamka</label>
+          </input>
+        </row>
+      </form-body>
+    </screen-form>
+    <tree name="AvailableForms">
+      <node formName="ExemplarF"/>
+      <node formName="ExemplarRadek"/>
+      <node formName="ExemplarPrivazkyF"/>
+      <node formName="ExemplarSerialF"/>
+      <node formName="ExemplarExcel"/>
+    </tree>
+  </forms>
+  <functions>
+    <function>
+      <functionName>cz.incad.nkp.digital.bf.PredaniBedny</functionName>
+      <functionHumanName>cz.incad.nkp.digital.bf.PredaniBedny</functionHumanName>
+      <functionHumanHelp>Exemplar_cz.incad.nkp.digital.bf.PredaniBedny_help</functionHumanHelp>
+    </function>
+    <function>
+      <functionName>cz.incad.core.bf.ZmenaStavuZaznamu</functionName>
+      <functionHumanName>cz.incad.core.bf.ZmenaStavuZaznamu</functionHumanName>
+      <functionHumanHelp>Exemplar_cz.incad.core.bf.ZmenaStavuZaznamu_help</functionHumanHelp>
+      <wizardPanels>
+        <wizardPanel>
+          <panelName>ZmenaStavuZaznamuPanel1</panelName>
+          <panelHumanName>ZmenaStavuZaznamuPanel1</panelHumanName>
+          <description>ZmenaStavuZaznamuPanel1</description>
+          <panelFields>
+            <panelField>
+              <fieldName>newStavZaznamu</fieldName>
+              <fieldHumanName>newStavZaznamu</fieldHumanName>
+              <fieldType>STR</fieldType>
+              <fieldRepresentation>COM</fieldRepresentation>
+              <list>DstavRec</list>
+            </panelField>
+          </panelFields>
+        </wizardPanel>
+      </wizardPanels>
+    </function>
+    <tree name="AvailableBusinessFunctions">
+      <node functionName="cz.incad.nkp.digital.bf.PredaniBedny"/>
+      <node functionName="cz.incad.core.bf.ZmenaStavuZaznamu"/>
+    </tree>
+  </functions>
+  <uniqueFields>
+    <field name="lendExemplar"/>
+  </uniqueFields>
+</desk>

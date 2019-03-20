@@ -1,0 +1,304 @@
+/* *****************************************************************************
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with this program. If not, see <http://www.gnu.org/licenses/>.
+ */
+package cz.incad.nkp.digital;
+
+import com.amaio.plaant.businessFunctions.AddException;
+import com.amaio.plaant.businessFunctions.RecordsIterator;
+import com.amaio.plaant.businessFunctions.UpdateException;
+import com.amaio.plaant.businessFunctions.ValidationException;
+import com.amaio.plaant.sync.Record;
+import com.amaio.plaant.sync.TableField;
+import cz.incad.core.basic.SouborEntity;
+import cz.incad.core.enums.ReliefSecurityDeskTypeEnum;
+import cz.incad.xml.XMLDOM;
+import cz.incad.core.tools.ReliefLogger;
+import java.util.Iterator;
+import java.util.Map;
+import java.util.TreeMap;
+import java.util.Vector;
+import javax.xml.xpath.XPathExpressionException;
+import org.w3c.dom.NodeList;
+import org.xml.sax.SAXException;
+
+/**
+ *******************************************************************************
+ * Zpracování XML souboru.
+ *
+ * @author <a href="mailto:pve@casd.cz">Ing. Pavel Vedral</a>
+ * @version $Revision: 1.4 $
+ */
+public class SoubXMLEntity extends SouborEntity {
+
+    /**
+     * Řetězec identifikující metadata monografie.
+     */
+    public static final String MONOGRAFIE_DOCTYPE_V100 = "-//NK CR//DTD for Digitized Monograph Metadata 1.0//EN";
+    /**
+     * Řetězec identifikující metadata monografie.
+     */
+    public static final String MONOGRAFIE_DOCTYPE_V200 = "-//NK CR//DTD for Digitized Monograph Metadata 2.0//EN";
+    /**
+     * Řetězec identifikující metadata monografie.
+     */
+    public static final String MONOGRAFIE_DOCTYPE_V210 = "-//NK CR//DTD for Digitized Monograph Metadata 2.10//EN";
+    /**
+     * Řetězec identifikující metadata periodikum.
+     */
+    public static final String PERIODIKUM_DOCTYPE_V100 = "-//NK CR//DTD for Digitized Periodical Metadata 1.0//EN";
+    /**
+     * Řetězec identifikující metadata periodikum.
+     */
+    public static final String PERIODIKUM_DOCTYPE_V200 = "-//NK CR//DTD for Digitized Periodical Metadata 2.0//EN";
+    /**
+     * Řetězec identifikující metadata periodikum.
+     */
+    public static final String PERIODIKUM_DOCTYPE_V210 = "-//NK CR//DTD for Digitized Periodical Metadata 2.10//EN";
+
+    private XMLDOM bindataAsDOM = null;
+    //private ReliefLogger logger = new ReliefLogger("cz.incad.nkp.digital.SouborXMLEntity.java");
+
+    private static final ReliefSecurityDeskTypeEnum SECURITY_DESK_TYPE = ReliefSecurityDeskTypeEnum.DATA;
+    private static final String SECURITY_CAN_CREATE_COMPETITIONS[] = {};
+    private static final String SECURITY_POLE_HLIDANA[] = {};
+
+    /**
+     ***************************************************************************
+     *
+     * @param rec
+     * @return
+     */
+    @Override
+    public Record onGetRecord(Record rec) {
+        securityOnGetRecord(rec, SECURITY_DESK_TYPE, SECURITY_POLE_HLIDANA);
+        return rec;
+    }
+
+    /**
+     ***************************************************************************
+     *
+     * @param rec
+     * @param poleHlidana
+     * @param vRecordFieldsSecurity
+     * @param canErase
+     */
+    @Override
+    protected boolean setCustomSecurityOnGetRecord(Record rec, String[] poleHlidana, Vector<Integer> vRecordFieldsSecurity, boolean canErase, String kompetence) {
+        return canErase;
+    }
+
+    /**
+     ***************************************************************************
+     *
+     * @param rec
+     * @return
+     * @throws com.amaio.plaant.businessFunctions.AddException
+     */
+    @Override
+    public Record onCreateLocal(Record rec) throws AddException {
+        super.onCreateLocal(rec);
+        securityOnCreateLocal(rec, SECURITY_DESK_TYPE, SECURITY_CAN_CREATE_COMPETITIONS);
+        return rec;
+    }
+
+    /**
+     ***************************************************************************
+     * Zavolá metodu předka.
+     */
+    @Override
+    public Record onCreate(Record rec) throws AddException, ValidationException {
+        rec = super.onCreate(rec);
+        Exception exc = null;
+
+        exc = onCreateonUpdate(rec);
+        if (exc != null) {
+            throw new AddException(exc);
+        }
+        return rec;
+    }
+
+    /**
+     ***************************************************************************
+     * Rozebere XML soubor a doplní údaje v popisných polích.
+     *
+     * @see cz.incad.xml.XMLDOM
+     */
+    @Override
+    public Record onUpdate(Record rec) throws ValidationException, UpdateException {
+        rec = super.onUpdate(rec);
+        //String docType = null;
+        Exception exc = null;
+
+        //bindataAsDOM = new XMLDOM();
+        exc = onCreateonUpdate(rec);
+        if (exc != null) {
+            throw new UpdateException(exc);
+        }
+//        try {
+//            // LADIT Vyzkoumat jestli to není pomalé při neustálém znovuzpracování XML
+//            if (! isBinDataDeleted(bindata) && bindata.getMimeType().getSubType().toUpperCase().equals("XML")) {
+//                bindataAsDOM.setXML(bindata.getInputStream());
+//                docType = bindataAsDOM.getDoctype();
+//                logger.putLogFine("Document Type : " + docType);
+//                //getLogger().info(getLogMsg("Document Type : " + docType));
+//                if (MONOGRAFIE_DOCTYPE.equals(docType)) {
+//                    zpracujMonografii(rec);
+//                }
+//                else if (PERIODIKUM_DOCTYPE.equals(docType)) {
+//                    zpracujPeriodikum(rec);
+//                }
+//                else {
+//                    throw new SAXException("Neznámý typ dokumentu: " + docType);
+//                }
+//            }
+//            else {
+//                TableField tSouborZakazky = rec.getTableField("tSouborZakazky");
+//                RecordsIterator itStareZakazky = tSouborZakazky.getTableRecords();
+//                while (itStareZakazky.hasMoreRecords()) {
+//                    tSouborZakazky.removeTableRecord(itStareZakazky.nextRecord());
+//                }
+//                rec.getSimpleField("pocetImg").setValue(null);
+//                rec.getSimpleField("rozsah").setValue(null);
+//            }
+//        }
+//        catch (Exception exc) {
+//            throw new UpdateException(exc);
+//        }
+
+        return rec;
+    }
+
+    /**
+     ***************************************************************************
+     *
+     * @param rec
+     * @return
+     */
+    private Exception onCreateonUpdate(Record rec) {
+        String docType = null;
+
+        bindataAsDOM = new XMLDOM();
+        try {
+            // LADIT Vyzkoumat jestli to není pomalé při neustálém znovuzpracování XML
+            if (!isBinDataDeleted(bindata) && bindata.getMimeType().getSubType().toUpperCase().equals("XML")) {
+                bindataAsDOM.setXML(bindata.getInputStream());
+                docType = bindataAsDOM.getDoctype();
+                ReliefLogger.fine("Document Type : " + docType);
+                //getLogger().info(getLogMsg("Document Type : " + docType));
+                if (MONOGRAFIE_DOCTYPE_V100.equals(docType) || MONOGRAFIE_DOCTYPE_V200.equals(docType) || MONOGRAFIE_DOCTYPE_V210.equals(docType)) {
+                    zpracujMonografii(rec);
+                } else if (PERIODIKUM_DOCTYPE_V100.equals(docType) || PERIODIKUM_DOCTYPE_V200.equals(docType) || PERIODIKUM_DOCTYPE_V210.equals(docType)) {
+                    zpracujPeriodikum(rec);
+                } else {
+                    throw new SAXException("Neznámý typ dokumentu: " + docType);
+                }
+            } else {
+                TableField tSouborZakazky = rec.getTableField("tSouborZakazky");
+                RecordsIterator itStareZakazky = tSouborZakazky.getTableRecords();
+                while (itStareZakazky.hasMoreRecords()) {
+                    tSouborZakazky.removeTableRecord(itStareZakazky.nextRecord());
+                }
+                rec.getSimpleField("pocetImg").setValue(null);
+                rec.getSimpleField("rozsah").setValue(null);
+            }
+        } catch (Exception exc) {
+            return exc;
+        }
+        return null;
+    }
+
+    /**
+     ***************************************************************************
+     *
+     * @param rec
+     * @throws javax.xml.xpath.XPathExpressionException
+     */
+    private void zpracujMonografii(Record rec) throws XPathExpressionException {
+        //zpracujXML("//Monograph/MonographPage/PageRepresentation/PageImage",rec);
+        zpracujXML("//MonographPage/PageRepresentation/PageImage", rec);
+    }
+
+    /**
+     ***************************************************************************
+     *
+     * @param xPathExpression
+     * @param rec
+     * @throws javax.xml.xpath.XPathExpressionException
+     */
+    private void zpracujXML(String xPathExpression, Record rec) throws XPathExpressionException {
+        NodeList nl = null;
+
+        Map zakazky = null;
+        String cisloZakazky = null;
+        int pocetObrazku = 0;
+
+        // Vytáhneme seznam všech odkazů na obrázky:
+        nl = bindataAsDOM.getNodeListByXPath(xPathExpression);
+        rec.getSimpleField("pocetImg").setValue(new Integer(nl.getLength())); // Jejich počet
+
+        // Teď začneme sestavovat počty obrázků podle jednotlivých zakázek.
+        zakazky = new TreeMap<String, Integer>();
+        for (int i = 0; i < nl.getLength(); i++) {
+            cisloZakazky = nl.item(i).getAttributes().getNamedItem("href").getTextContent();
+            cisloZakazky = cisloZakazky.substring(0, 5);
+            ReliefLogger.fine("Zakázka: " + cisloZakazky);
+            //getLogger().info(getLogMsg("Zakázka: " + cisloZakazky));
+            pocetObrazku = zakazky.get(cisloZakazky) == null
+                    ? 0 : ((Integer) zakazky.get(cisloZakazky)).intValue();
+            zakazky.put(cisloZakazky, ++pocetObrazku);
+        }
+
+        // Vymažeme staré záznamy
+        TableField tSouborZakazky = rec.getTableField("tSouborZakazky");
+        RecordsIterator itStareZakazky = tSouborZakazky.getTableRecords();
+        while (itStareZakazky.hasMoreRecords()) {
+            tSouborZakazky.removeTableRecord(itStareZakazky.nextRecord());
+        }
+
+        // Založíme nové vazby
+        Iterator<Map.Entry> itNoveZakazky = zakazky.entrySet().iterator();
+        while (itNoveZakazky.hasNext()) {
+            Map.Entry entry = itNoveZakazky.next();
+            Record novaZakazka = tSouborZakazky.createTableRecord();
+            novaZakazka.getSimpleField("cisloZakazky").setValue(entry.getKey());
+            novaZakazka.getSimpleField("pocetObrazku").setValue(entry.getValue());
+        }
+    }
+
+    /**
+     ***************************************************************************
+     *
+     * @param rec
+     * @throws javax.xml.xpath.XPathExpressionException
+     */
+    private void zpracujPeriodikum(Record rec) throws XPathExpressionException {
+        StringBuffer sb = new StringBuffer();
+        //Set rozsah = new TreeSet();
+
+        // Pole rozsah
+        NodeList nl = bindataAsDOM.getNodeListByXPath("//Periodical/PeriodicalVolume/PeriodicalVolumeIdentification/PeriodicalVolumeDate");
+        for (int i = 0; i < nl.getLength(); i++) {
+            sb.append(nl.item(i).getTextContent());
+            if (i < nl.getLength() - 1) {
+                sb.append("; ");
+            }
+        }
+        ReliefLogger.fine("Rozsah: " + sb);
+        //getLogger().info(getLogMsg("Rozsah: " + sb.toString()));
+        rec.getSimpleField("rozsah").setValue(sb.toString());
+
+        zpracujXML("//Periodical/PeriodicalVolume/PeriodicalItem//PageImage", rec);
+    }
+
+}

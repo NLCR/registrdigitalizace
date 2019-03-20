@@ -1,0 +1,271 @@
+<?xml version="1.0" encoding="utf-8"?>
+<collection xmlns="http://www.loc.gov/MARC21/slim"
+            xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+            xsi:schemaLocation="http://www.loc.gov/MARC21/slim http://www.loc.gov/standards/marcxml/schema/MARC21slim.xsd">
+<record>
+      <leader>     nas a22      i 4500</leader>
+      <controlfield tag="FMT">SE</controlfield>
+      <controlfield tag="001">nkc90091967789</controlfield>
+      <controlfield tag="003">CZ PrNK</controlfield>
+      <controlfield tag="005">20150909101301.0</controlfield>
+      <controlfield tag="007">ta</controlfield>
+      <controlfield tag="008">090716c20079999xr gr         1   b0cze</controlfield>
+      <datafield ind1=" " ind2=" " tag="015">
+         <subfield code="a">cnb901967789</subfield>
+      </datafield>
+      <datafield ind1=" " ind2=" " tag="035">
+         <subfield code="a">(OCoLC)436262802</subfield>
+      </datafield>
+      <datafield ind1=" " ind2=" " tag="040">
+         <subfield code="a">ABA001</subfield>
+         <subfield code="b">cze</subfield>
+         <subfield code="d">OLA001</subfield>
+         <subfield code="e">rda</subfield>
+      </datafield>
+      <datafield ind1="0" ind2=" " tag="041">
+         <subfield code="a">cze</subfield>
+         <subfield code="a">slo</subfield>
+      </datafield>
+      <datafield ind1=" " ind2="7" tag="072">
+         <subfield code="a">616</subfield>
+         <subfield code="x">Patologie. Klinická medicína</subfield>
+         <subfield code="2">Konspekt</subfield>
+         <subfield code="9">99</subfield>
+      </datafield>
+      <datafield ind1=" " ind2=" " tag="080">
+         <subfield code="a">616-001</subfield>
+         <subfield code="2">MRF</subfield>
+      </datafield>
+      <datafield ind1=" " ind2=" " tag="080">
+         <subfield code="a">343.983:61</subfield>
+         <subfield code="2">MRF</subfield>
+      </datafield>
+      <datafield ind1=" " ind2=" " tag="080">
+         <subfield code="a">(062.534)</subfield>
+         <subfield code="2">MRF</subfield>
+      </datafield>
+      <datafield ind1=" " ind2=" " tag="080">
+         <subfield code="a">(048.3)</subfield>
+         <subfield code="2">MRF</subfield>
+      </datafield>
+      <datafield ind1="2" ind2=" " tag="111">
+         <subfield code="a">Trilaterální sympozium</subfield>
+         <subfield code="7">kn20090721015</subfield>
+         <subfield code="4">aut</subfield>
+      </datafield>
+      <datafield ind1="1" ind2="0" tag="245">
+         <subfield code="a">... trilaterální sympozium :</subfield>
+         <subfield code="b">s mezinárodní účastí : sborník přednášek : Rožnov pod Radhoštěm ...</subfield>
+      </datafield>
+      <datafield ind1="1" ind2=" " tag="246">
+         <subfield code="i">V ročníku 5 (2015) mírná změna názvu:</subfield>
+         <subfield code="a">Sborník ... trilaterálního sympozia</subfield>
+      </datafield>
+      <datafield ind1="3" ind2=" " tag="246">
+         <subfield code="a">Sborník přednášek - Trilaterální sympozium</subfield>
+      </datafield>
+      <datafield ind1=" " ind2="1" tag="264">
+         <subfield code="a">[Ostrava] :</subfield>
+         <subfield code="b">Česká společnost pro úrazovou chirurgii ČLS JEP,</subfield>
+         <subfield code="c">[2007]-</subfield>
+      </datafield>
+      <datafield ind1="3" ind2="1" tag="264">
+         <subfield code="3">2015-</subfield>
+         <subfield code="a">Ostrava :</subfield>
+         <subfield code="b">Fakultní nemocnice Ostrava s Českou společností pro úrazovou chirurgii ČLS JEP</subfield>
+      </datafield>
+      <datafield ind1=" " ind2=" " tag="300">
+         <subfield code="a">^^^svazků ;</subfield>
+         <subfield code="c">21 cm</subfield>
+      </datafield>
+      <datafield ind1=" " ind2=" " tag="310">
+         <subfield code="a">1x za 2 roky</subfield>
+      </datafield>
+      <datafield ind1=" " ind2=" " tag="336">
+         <subfield code="a">text</subfield>
+         <subfield code="b">txt</subfield>
+         <subfield code="2">rdacontent</subfield>
+      </datafield>
+      <datafield ind1=" " ind2=" " tag="337">
+         <subfield code="a">bez média</subfield>
+         <subfield code="b">n</subfield>
+         <subfield code="2">rdamedia</subfield>
+      </datafield>
+      <datafield ind1=" " ind2=" " tag="338">
+         <subfield code="a">svazek</subfield>
+         <subfield code="b">nc</subfield>
+         <subfield code="2">rdacarrier</subfield>
+      </datafield>
+      <datafield ind1="1" ind2=" " tag="362">
+         <subfield code="a">2007-</subfield>
+      </datafield>
+      <datafield ind1=" " ind2=" " tag="500">
+         <subfield code="a">Nad názvem: Česká společnost úrazové chirurgie ČLS JEP, Česká společnost soudního lékařství a soudní toxikologie ČLS JEP, Lékařská fakulta Ostravské univerzity, Traumatologické centrum FN Ostrava, Ústav soudního lékařství FN Ostrava, Krajské ředitelství policie Moravskoslezského kraje, Kriminalistický ústav Praha, PČR, Česká asociace hasičských důstojníků, Profesní a odborová unie zdravotnických pracovníků</subfield>
+      </datafield>
+      <datafield ind1=" " ind2=" " tag="500">
+         <subfield code="a">Součástí názvu je označení pořadí sympozia, součástí podnázvu je datum konání akce</subfield>
+      </datafield>
+      <datafield ind1=" " ind2=" " tag="500">
+         <subfield code="a">Jednotlivé svazky mají ISBN</subfield>
+      </datafield>
+      <datafield ind1=" " ind2=" " tag="500">
+         <subfield code="a">Ročník 3 (2011) vydán ve 2 svazcích (program + sborník přednášek)</subfield>
+      </datafield>
+      <datafield ind1=" " ind2=" " tag="546">
+         <subfield code="a">Částečně slovenský text</subfield>
+      </datafield>
+      <datafield ind1=" " ind2=" " tag="588">
+         <subfield code="a">Popsáno podle: 2 (2009)</subfield>
+         <subfield code="5">CZ-PrNK</subfield>
+      </datafield>
+      <datafield ind1="0" ind2="7" tag="650">
+         <subfield code="a">traumatologie</subfield>
+         <subfield code="7">ph116478</subfield>
+         <subfield code="2">czenas</subfield>
+      </datafield>
+      <datafield ind1="0" ind2="7" tag="650">
+         <subfield code="a">soudní lékařství</subfield>
+         <subfield code="7">ph125854</subfield>
+         <subfield code="2">czenas</subfield>
+      </datafield>
+      <datafield ind1="0" ind2="9" tag="650">
+         <subfield code="a">traumatology</subfield>
+         <subfield code="2">eczenas</subfield>
+      </datafield>
+      <datafield ind1="0" ind2="9" tag="650">
+         <subfield code="a">forensic medicine</subfield>
+         <subfield code="2">eczenas</subfield>
+      </datafield>
+      <datafield ind1=" " ind2="7" tag="655">
+         <subfield code="a">sborníky konferencí</subfield>
+         <subfield code="7">fd133333</subfield>
+         <subfield code="2">czenas</subfield>
+      </datafield>
+      <datafield ind1=" " ind2="7" tag="655">
+         <subfield code="a">abstrakta</subfield>
+         <subfield code="7">fd131780</subfield>
+         <subfield code="2">czenas</subfield>
+      </datafield>
+      <datafield ind1=" " ind2="9" tag="655">
+         <subfield code="a">proceedings of conferences</subfield>
+         <subfield code="2">eczenas</subfield>
+      </datafield>
+      <datafield ind1=" " ind2="9" tag="655">
+         <subfield code="a">abstracts</subfield>
+         <subfield code="2">eczenas</subfield>
+      </datafield>
+      <datafield ind1="2" ind2=" " tag="710">
+         <subfield code="a">Česká společnost pro úrazovou chirurgii ČLS JEP</subfield>
+         <subfield code="7">pna2006331987</subfield>
+         <subfield code="4">pbl</subfield>
+         <subfield code="4">orm</subfield>
+      </datafield>
+      <datafield ind1="2" ind2=" " tag="710">
+         <subfield code="a">Česká společnost soudního lékařství a soudní toxikologie ČLS JEP</subfield>
+         <subfield code="7">mzk2004228734</subfield>
+         <subfield code="4">orm</subfield>
+      </datafield>
+      <datafield ind1="2" ind2=" " tag="710">
+         <subfield code="a">Ostravská univerzita.</subfield>
+         <subfield code="b">Lékařská fakulta</subfield>
+         <subfield code="7">kn20110309001</subfield>
+         <subfield code="4">orm</subfield>
+      </datafield>
+      <datafield ind1="2" ind2=" " tag="710">
+         <subfield code="a">Fakultní nemocnice (Ostrava, Česko).</subfield>
+         <subfield code="b">Traumatologické centrum</subfield>
+         <subfield code="7">xx0075347</subfield>
+         <subfield code="4">orm</subfield>
+      </datafield>
+      <datafield ind1="2" ind2=" " tag="710">
+         <subfield code="a">Fakultní nemocnice (Ostrava, Česko).</subfield>
+         <subfield code="b">Ústav soudního lékařství</subfield>
+         <subfield code="7">pna2009540564</subfield>
+         <subfield code="4">orm</subfield>
+      </datafield>
+      <datafield ind1="1" ind2=" " tag="710">
+         <subfield code="a">Česko.</subfield>
+         <subfield code="b">Policie.</subfield>
+         <subfield code="b">Krajské ředitelství Moravskoslezského kraje</subfield>
+         <subfield code="7">kn20130108003</subfield>
+         <subfield code="4">orm</subfield>
+      </datafield>
+      <datafield ind1="2" ind2=" " tag="710">
+         <subfield code="a">Kriminalistický ústav</subfield>
+         <subfield code="7">kn20030331017</subfield>
+         <subfield code="4">orm</subfield>
+      </datafield>
+      <datafield ind1="2" ind2=" " tag="710">
+         <subfield code="a">Česká asociace hasičských důstojníků</subfield>
+         <subfield code="7">kv2010593241</subfield>
+         <subfield code="4">orm</subfield>
+      </datafield>
+      <datafield ind1="2" ind2=" " tag="710">
+         <subfield code="a">Profesní a odborová unie zdravotnických pracovníků</subfield>
+         <subfield code="7">ko2010557176</subfield>
+         <subfield code="4">orm</subfield>
+      </datafield>
+      <datafield ind1=" " ind2=" " tag="902">
+         <subfield code="a">978-80-239-8634-1</subfield>
+         <subfield code="q">(1,2007 :</subfield>
+         <subfield code="q">brožováno)</subfield>
+      </datafield>
+      <datafield ind1=" " ind2=" " tag="902">
+         <subfield code="a">978-80-254-4418-4</subfield>
+         <subfield code="q">(2,2009 :</subfield>
+         <subfield code="q">brožováno)</subfield>
+      </datafield>
+      <datafield ind1=" " ind2=" " tag="902">
+         <subfield code="a">978-80-254-8741-9</subfield>
+         <subfield code="q">(3,2011 :</subfield>
+         <subfield code="q">sborník přednášek :</subfield>
+         <subfield code="q">brožováno)</subfield>
+      </datafield>
+      <datafield ind1=" " ind2=" " tag="902">
+         <subfield code="a">978-80-260-0147-8</subfield>
+         <subfield code="q">(3,2011 :</subfield>
+         <subfield code="q">program :</subfield>
+         <subfield code="q">v knize neuvedeno :</subfield>
+         <subfield code="q">brožováno)</subfield>
+      </datafield>
+      <datafield ind1=" " ind2=" " tag="902">
+         <subfield code="a">978-80-260-4213-6</subfield>
+         <subfield code="q">(4,2013 :</subfield>
+         <subfield code="q">sborník přednášek :</subfield>
+         <subfield code="q">brožováno)</subfield>
+      </datafield>
+      <datafield ind1=" " ind2=" " tag="902">
+         <subfield code="a">978-80-906002-1-8</subfield>
+         <subfield code="q">(5,2015 :</subfield>
+         <subfield code="q">brožováno)</subfield>
+      </datafield>
+      <datafield ind1=" " ind2=" " tag="910">
+         <subfield code="a">ABA001</subfield>
+      </datafield>
+      <datafield ind1=" " ind2=" " tag="ITM">
+         <subfield code="b">1002351491</subfield>
+         <subfield code="c">I 509693</subfield>
+         <subfield code="d">3 (2011), program</subfield>
+         <subfield code="v">3 (2011)</subfield>
+         <subfield code="i">1</subfield>
+         <subfield code="y"/>
+      </datafield>
+      <datafield ind1=" " ind2=" " tag="ITM">
+         <subfield code="b">1002351492</subfield>
+         <subfield code="c">I 509207</subfield>
+         <subfield code="d">3 (2011), sborník přednášek</subfield>
+         <subfield code="v">3 (2011)</subfield>
+         <subfield code="i">2</subfield>
+         <subfield code="y"/>
+      </datafield>
+      <datafield ind1=" " ind2=" " tag="ITM">
+         <subfield code="b">1002346138</subfield>
+         <subfield code="c">I 531084</subfield>
+         <subfield code="d">4 (2013)</subfield>
+         <subfield code="v">4 (2013)</subfield>
+         <subfield code="i"/>
+         <subfield code="y"/>
+      </datafield>
+      <controlfield tag="SYS">001967789</controlfield>
+   </record>
+</collection>

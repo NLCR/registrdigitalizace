@@ -1,0 +1,846 @@
+/* *****************************************************************************
+ * To change this template, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package cz.incad.rd;
+
+import com.amaio.plaant.DbBrowser;
+import com.amaio.plaant.businessFunctions.AddException;
+import com.amaio.plaant.businessFunctions.AnnotationKeys;
+import com.amaio.plaant.businessFunctions.RecordsIterator;
+import com.amaio.plaant.businessFunctions.TriggerContext;
+import com.amaio.plaant.businessFunctions.UpdateException;
+import com.amaio.plaant.businessFunctions.ValidationException;
+import com.amaio.plaant.desk.QueryException;
+import com.amaio.plaant.metadata.Column;
+import com.amaio.plaant.metadata.Filter;
+import com.amaio.plaant.metadata.FilterRule;
+import com.amaio.plaant.metadata.Metadata;
+import com.amaio.plaant.sync.Record;
+import com.amaio.plaant.util.PlaantUtilities;
+import cz.incad.commontools.utils.StringUtils;
+import cz.incad.core.basic.RecordEntity;
+import cz.incad.core.enums.ReliefSecurityDeskTypeEnum;
+import cz.incad.core.tools.DirectConnection;
+import cz.incad.core.tools.RecordWorker;
+import cz.incad.core.tools.ReliefLogger;
+import cz.incad.core.tools.ReliefUser;
+import cz.incad.core.tools.Utilities;
+import cz.incad.nkp.digital.constants.CnkpSecurity;
+//import cz.incad.rd.list.SpecificDynamicLists;
+import java.rmi.RemoteException;
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.Date;
+import java.util.Vector;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
+/**
+ *******************************************************************************
+ *
+ * @author martin
+ */
+public class PredlohaEntity extends RecordEntity implements CnkpSecurity {
+
+    private static final Logger LOG = Logger.getLogger(PredlohaEntity.class.getName());
+    public static final String CLASSNAME = "cz.incad.rd.Predloha";
+    //Plaant cast
+    public static final String f_carKod = "carKod";
+    public static final String f_signatura = "signatura";
+    public static final String f_katalog = "katalog";
+    public static final String f_sysno = "sysno";
+    public static final String f_pole001 = "pole001";
+    public static final String f_xml = "xml";
+    public static final String f_privazek = "privazek";
+    public static final String f_nazev = "nazev";
+    public static final String f_autor = "autor";
+    public static final String f_mistoVyd = "mistoVyd";
+    public static final String f_vydavatel = "vydavatel";
+    public static final String f_rokVyd = "rokVyd";
+    public static final String f_pocetStran = "pocetStran";
+    public static final String f_ISBN = "ISBN";
+    public static final String f_cast = "cast";
+    public static final String f_poradiPriv = "poradiPriv";
+    public static final String f_poznKExemplari = "poznKExemplari";
+    public static final String f_druhDokumentu = "druhDokumentu";
+    public static final String f_vizitka = "vizitka";
+    public static final String f_fmt = "fmt";
+    public static final String f_cCNB = "cCNB";
+    public static final String f_idSKC = "idSKC";
+    //public static final String f_rokPer             = "rokPer";
+    public static final String f_cisloPer = "cisloPer";
+    //public static final String f_rocnikPer          = "rocnikPer";
+    public static final String f_issn = "issn";
+    public static final String r_rPeriodikum = "rPeriodikum";
+    public static final String f_vznikZaznamu = "vznikZaznamu";
+    public static final String f_pripStav = "pripStav";
+    public static final String f_pripPrac = "pripPrac";
+    public static final String f_pripDate = "pripDate";
+    public static final String f_pripPozn = "pripPozn";
+    public static final String f_mikroStav = "mikroStav";
+    public static final String f_mikroPrac = "mikroPrac";
+    public static final String f_mikroDate = "mikroDate";
+    public static final String t_tXPredMikro = "tXPredMikro";
+    public static final String f_skenStav = "skenStav";
+    public static final String f_skenPrac = "skenPrac";
+    public static final String f_skenDate = "skenDate";
+    public static final String f_metaStav = "metaStav";
+    public static final String f_metaPrac = "metaPrac";
+    public static final String f_metaDate = "metaDate";
+    public static final String f_parSkenovani = "parSkenovani";
+    public static final String f_publStav = "publStav";
+    public static final String f_publPrac = "publPrac";
+    public static final String f_digKnihovna = "digKnihovna";
+    public static final String f_publDate = "publDate";
+    public static final String f_metaEditor = "metaEditor";
+    public static final String t_tXPredDigObj = "tXPredDigObj";
+    public static final String t_tDalsiPrace = "tDalsiPrace";
+    public static final String f_obdobi = "obdobi";
+    public static final String f_financovano = "financovano";
+    public static final String f_zpusobDig = "zpusobDig";
+    public static final String f_dostupnost = "dostupnost";
+    public static final String f_indexovano = "indexovano";
+    public static final String t_tPredani = "tPredani";
+    public static final String f_aktualniUlozeni = "aktualniUlozeni";
+    public static final String f_archNeg = "archNeg";
+    public static final String f_matNegativ = "matNegativ";
+    public static final String f_pozitiv = "pozitiv";
+    public static final String f_rozliseni = "rozliseni";
+    public static final String f_barevnaHloubka = "barevnaHloubka";
+    public static final String f_barevnaSkala = "barevnaSkala";
+    //public static final String f_druhDigitalizace   = "druhDigitalizace";
+    public static final String f_typSkeneru = "typSkeneru";
+    public static final String f_modelSkeneru = "modelSkeneru";
+    public static final String f_vyrobceSkeneru = "vyrobceSkeneru";
+    public static final String f_pouzitySW = "pouzitySW";
+    public static final String f_verzeSW = "verzeSW";
+    public static final String f_vyrobceSW = "vyrobceSW";
+    public static final String f_skenerProfil = "skenerProfil";
+    public static final String f_cisloZakazky = "cisloZakazky";
+    public static final String f_urnnbn = "urnnbn";
+    public static final String f_urnnbnFlag = "urnnbnFlag";
+    public static final String f_urnnbnNote = "urnnbnNote";
+    public static final String f_skenOCR = "skenOCR";
+    public static final String f_skenOCRSvabach = "skenOCRSvabach";
+    public static final String f_metaSirius = "metaSirius";
+    public static final String f_sigla1 = "sigla1";
+    public static final String f_sigla2 = "sigla2";
+    public static final String f_skenPocetSouboru = "skenPocetSouboru";
+    public static final String f_skenDJVU = "skenDJVU";
+    public static final String f_skenJPEG = "skenJPEG";
+    public static final String f_skenGIF = "skenGIF";
+    public static final String f_skenTIFF = "skenTIFF";
+    public static final String f_skenPDF = "skenPDF";
+    public static final String f_skenTXT = "skenTXT";
+    public static final String f_udirdcz = "udirdcz";
+    public static final String f_tempCarKod = "tempCarKod";
+    public static final String f_tempParSkenovani = "tempParSkenovani";
+    public static final String f_skenStupneSedi = "skenStupneSedi";
+    public static final String f_skenScanStran = "skenScanStran";
+    public static final String f_rozsah = "rozsah";
+    public static final String f_vyskaKnihy = "vyskaKnihy";
+    public static final String f_mfCislo = "mfCislo";
+    public static final String f_pocetPoli = "pocetPoli";
+    public static final String f_url = "url";
+    public static final String f_lccKlasifikace = "lccKlasifikace";
+    public static final String f_serieName = "serieName";
+    public static final String f_seriePart = "seriePart";
+    public static final String f_linkKatalog = "linkKatalog";
+    public static final String f_bibPoznamka = "bibPoznamka";
+    public static final String f_privazekPoznamka = "privazekPoznamka";
+    public static final String f_urlTitul = "urlTitul";
+    public static final String f_metaXML = "metaXML";
+    public static final String f_metaObrazky = "metaObrazky";
+    //public static final String f_obdobiExemplar     = "obdobiExemplar";
+    public static final String f_archStav = "archStav";
+    public static final String f_archPrac = "archPrac";
+    public static final String f_archDate = "archDate";
+    public static final String f_skenOCRPrac = "skenOCRPrac";
+    public static final String f_skenOCRDate = "skenOCRDate";
+    //public static final String f_skenSkenZMik       = "skenSkenZMik";
+    public static final String f_archNegPrac = "archNegPrac";
+    public static final String f_archNegDate = "archNegDate";
+    public static final String f_matNegativPrac = "matNegativPrac";
+    public static final String f_matNegativDate = "matNegativDate";
+    public static final String f_predTypAkce = "predTypAkce";
+    public static final String f_predKdo = "predKdo";
+    //public static final String f_predKdy            = "predKdy";
+    public static final String f_predKomuOdKoho = "predKomuOdKoho";
+    public static final String f_predVarka = "predVarka";
+    public static final String f_vlastnikSkeneru = "vlastnikSkeneru";
+    public static final String f_predKdyDate = "predKdyDate";
+    public static final String f_predKdyTime = "predKdyTime";
+    public static final String f_zpracStav = "zpracStav";
+    public static final String f_zpracPrac = "zpracPrac";
+    public static final String f_zpracEditor = "zpracEditor";
+    public static final String f_zpracParm = "zpracParm";
+    public static final String f_zpracDate = "zpracDate";
+    public static final String f_urlTitNK = "urlTitNK";
+    public static final String f_tVarNazev = "tVarNazev";
+    public static final String f_lProfil = "lProfil";
+    public static final String f_tNepCCNB = "tNepCCNB";
+    public static final String f_tNepISSN = "tNepISSN";
+    public static final String f_tNepISBN = "tNepISBN";
+    public static final String f_isKVO = "isKVO";
+    public static final String f_specDruh = "specDruh";
+    public static final String f_podnazev = "podnazev";
+    public static final String f_tURNNBN = "tURNNBN";
+    public static final String f_tDigObjekt = "tDigObjekt";
+    public static final String f_ediDateURL = "ediDateURL";
+    public static final String f_ediDateXML = "ediDateXML";
+    public static final String f_importSource = "importSource";
+    public static final String f_jeVlastniDuplicita = "jeVlastniDuplicita";
+
+    //SQL cast
+    public static final String sql_id = "id";
+    public static final String sql_carKod = "carKod";
+    public static final String sql_signatura = "signatura";
+    public static final String sql_katalog = "katalog";
+    public static final String sql_sysno = "sysno";
+    public static final String sql_pole001 = "pole001";
+    public static final String sql_xml = "xml";
+    public static final String sql_privazek = "privazek";
+    public static final String sql_nazev = "nazev";
+    public static final String sql_autor = "autor";
+    public static final String sql_mistoVyd = "mistoVyd";
+    public static final String sql_vydavatel = "vydavatel";
+    public static final String sql_rokVyd = "rokVyd";
+    public static final String sql_pocetStran = "pocetStran";
+    public static final String sql_ISBN = "ISBN";
+    public static final String sql_cast = "cast";
+    public static final String sql_poradiPriv = "poradiPriv";
+    public static final String sql_poznKExemplari = "poznKExemplari";
+    public static final String sql_druhDokumentu = "druhDokumentu";
+    public static final String sql_vizitka = "vizitka";
+    public static final String sql_fmt = "fmt";
+    public static final String sql_cCNB = "cCNB";
+    public static final String sql_idSKC = "idSKC";
+    //public static final String sql_rokPer           = "rokPer";
+    public static final String sql_cisloPer = "cisloPer";
+    public static final String sql_rocnikPer = "rocnikPer";
+    public static final String sql_issn = "issn";
+    public static final String sql_rPeriodikum = "rPeriodikum";
+    public static final String sql_vznikZaznamu = "vznikZaznamu";
+    public static final String sql_pripStav = "pripStav";
+    public static final String sql_pripPrac = "pripPrac";
+    public static final String sql_pripDate = "pripDate";
+    public static final String sql_pripPozn = "pripPozn";
+    public static final String sql_mikroStav = "mikroStav";
+    public static final String sql_mikroPrac = "mikroPrac";
+    public static final String sql_mikroDate = "mikroDate";
+    public static final String sql_skenStav = "skenStav";
+    public static final String sql_skenPrac = "skenPrac";
+    public static final String sql_skenDate = "skenDate";
+    public static final String sql_metaStav = "metaStav";
+    public static final String sql_metaPrac = "metaPrac";
+    public static final String sql_metaDate = "metaDate";
+    public static final String sql_parSkenovani = "parSkenovani";
+    public static final String sql_publStav = "publStav";
+    public static final String sql_publPrac = "publPrac";
+    public static final String sql_digKnihovna = "digKnihovna";
+    public static final String sql_publDate = "publDate";
+    public static final String sql_metaEditor = "metaEditor";
+    public static final String sql_obdobi = "obdobi";
+    public static final String sql_financovano = "financovano";
+    public static final String sql_zpusobDig = "zpusobDig";
+    public static final String sql_dostupnost = "dostupnost";
+    public static final String sql_indexovano = "indexovano";
+    public static final String sql_tPredani = "tPredani";
+    public static final String sql_aktualniUlozeni = "aktualniUlozeni";
+    public static final String sql_archNeg = "archNeg";
+    public static final String sql_matNegativ = "matNegativ";
+    public static final String sql_pozitiv = "pozitiv";
+    public static final String sql_rozliseni = "rozliseni";
+    public static final String sql_barevnaHloubka = "barevnaHloubka";
+    public static final String sql_barevnaSkala = "barevnaSkala";
+    //public static final String sql_druhDigitalizace = "druhDigitalizace";
+    public static final String sql_typSkeneru = "typSkeneru";
+    public static final String sql_modelSkeneru = "modelSkeneru";
+    public static final String sql_vyrobceSkeneru = "vyrobceSkeneru";
+    public static final String sql_pouzitySW = "pouzitySW";
+    public static final String sql_verzeSW = "verzeSW";
+    public static final String sql_vyrobceSW = "vyrobceSW";
+    public static final String sql_skenerProfil = "skenerProfil";
+    public static final String sql_cisloZakazky = "cisloZakazky";
+    public static final String sql_urnnbn = "urnnbn";
+    public static final String sql_urnnbnFlag = "urnnbnFlag";
+    public static final String sql_urnnbnNote = "urnnbnNote";
+    public static final String sql_skenOCR = "skenOCR";
+    public static final String sql_skenOCRSvabach = "skenOCRSvabach";
+    public static final String sql_metaSirius = "metaSirius";
+    public static final String sql_sigla1 = "sigla1";
+    public static final String sql_sigla2 = "sigla2";
+    public static final String sql_skenPocetSouboru = "skenPocetSouboru";
+    public static final String sql_skenDJVU = "skenDJVU";
+    public static final String sql_skenJPEG = "skenJPEG";
+    public static final String sql_skenGIF = "skenGIF";
+    public static final String sql_skenTIFF = "skenTIFF";
+    public static final String sql_skenPDF = "skenPDF";
+    public static final String sql_skenTXT = "skenTXT";
+    public static final String sql_udirdcz = "udirdcz";
+    public static final String sql_tempCarKod = "tempCarKod";
+    public static final String sql_tempParSkenovani = "tempParSkenovani";
+    public static final String sql_skenStupneSedi = "skenStupneSedi";
+    public static final String sql_skenScanStran = "skenScanStran";
+    public static final String sql_rozsah = "rozsah";
+    public static final String sql_vyskaKnihy = "vyskaKnihy";
+    public static final String sql_mfCislo = "mfCislo";
+    public static final String sql_pocetPoli = "pocetPoli";
+    public static final String sql_url = "url";
+    public static final String sql_lccKlasifikace = "lccKlasifikace";
+    public static final String sql_serieName = "serieName";
+    public static final String sql_seriePart = "seriePart";
+    public static final String sql_linkKatalog = "linkKatalog";
+    public static final String sql_bibPoznamka = "bibPoznamka";
+    public static final String sql_privazekPoznamka = "privazekPoznamka";
+    public static final String sql_oldZakazkaId = "oldZakazkaId";
+    public static final String sql_urlTitul = "urlTitul";
+    public static final String sql_metaXML = "metaXML";
+    public static final String sql_metaObrazky = "metaObrazky";
+    //public static final String sql_obdobiExemplar   = "obdobiExemplar";
+    public static final String sql_oldTitulId = "oldTitulId";
+    public static final String sql_oldExemplarId = "oldExemplarId";
+    public static final String sql_oldPrivazekId = "oldPrivazekId";
+    public static final String sql_oldClassTitul = "oldClassTitul";
+    public static final String sql_archStav = "archStav";
+    public static final String sql_archPrac = "archPrac";
+    public static final String sql_archDate = "archDate";
+    public static final String sql_skenOCRPrac = "skenOCRPrac";
+    public static final String sql_skenOCRDate = "skenOCRDate";
+    //public static final String sql_skenSkenZMik     = "skenSkenZMik";
+    public static final String sql_archNegPrac = "archNegPrac";
+    public static final String sql_archNegDate = "archNegDate";
+    public static final String sql_matNegativPrac = "matNegativPrac";
+    public static final String sql_matNegativDate = "matNegativDate";
+    public static final String sql_predTypAkce = "predTypAkce";
+    public static final String sql_predKdo = "predKdo";
+    //public static final String sql_predKdy          = "predKdy";
+    public static final String sql_predKomuOdKoho = "predKomuOdKoho";
+    public static final String sql_predVarka = "predVarka";
+    public static final String sql_vlastnikSkeneru = "vlastnikSkeneru";
+    public static final String sql_predKdyDate = "predKdyDate";
+    public static final String sql_predKdyTime = "predKdyTime";
+    public static final String sql_zpracStav = "zpracStav";
+    public static final String sql_zpracPrac = "zpracPrac";
+    public static final String sql_zpracEditor = "zpracEditor";
+    public static final String sql_zpracParm = "zpracParm";
+    public static final String sql_zpracDate = "zpracDate";
+    public static final String sql_urlTitNK = "urlTitNK";
+    public static final String sql_tVarNazev = "rPredloha_TVN";
+    public static final String sql_lProfil = "lProfil";
+    public static final String sql_tNeplatnaCCNB = "RPredloha_NepCCNB";
+    public static final String sql_tNeplatnaISSN = "RPredloha_NepISSN";
+    public static final String sql_tNeplatnaISBN = "RPredloha_NepISBN";
+    public static final String sql_isKVO = "isKVO";
+    public static final String sql_specDruh = "specDruh";
+    public static final String sql_podnazev = "podnazev";
+    public static final String sql_tURNNBN = "RPredloha_URNNBN";
+    public static final String sql_ediDateURL = "ediDateURL";
+    public static final String sql_ediDateXML = "ediDateXML";
+    public static final String sql_importSource = "importSource";
+
+    private static final ReliefSecurityDeskTypeEnum SECURITY_DESK_TYPE = ReliefSecurityDeskTypeEnum.DATA;
+    private static final String SECURITY_CAN_CREATE_COMPETITIONS[] = {SECURITY_ROLE_apppredloha};
+    private static final String SECURITY_POLE_HLIDANA[] = {
+        PredlohaEntity.f_cCNB
+    };
+
+    /**
+     ***************************************************************************
+     *
+     * @param metadata
+     * @return
+     * @throws QueryException
+     */
+    @Override
+    public Metadata onMetadataChanged(Metadata metadata) throws QueryException {
+        metadata = super.onMetadataChanged(metadata);
+        ReliefUser ru = new ReliefUser(getTriggerContext());
+
+        //Přidání implicitního filtru pro pracovníky KNAV - KVO
+        if (ru.getKompetence().contains(SECURITY_ROLE_knavkvo)) {
+            DbBrowser browser = (DbBrowser) PlaantUtilities.getDbBrowser(null);
+            String classname = getClassName();
+            Filter filtr;
+            boolean isFilterActive = false;
+            //vytvoříme nové pravidlo pro pracovníky KNAV KVO
+            Column filtrSloupecSignatura = new Column();
+            Column filtrSloupecSecurityOwner = new Column();
+            FilterRule filterRuleSignatura_T;
+            FilterRule filterRuleSignatura_SH;
+            FilterRule filterRuleSecurityOwner;
+
+            //filtrSloupec.setColumnName(PredlohaEntity.f_isKVO);
+            filtrSloupecSignatura.setColumnName(PredlohaEntity.f_signatura);
+            filtrSloupecSecurityOwner.setColumnName(PredlohaEntity.f_securityOwner);
+
+            try {
+                filtrSloupecSignatura.setDbField(browser.findObject(classname).getMember(PredlohaEntity.f_signatura));
+                filtrSloupecSecurityOwner.setDbField(browser.findObject(classname).getMember(PredlohaEntity.f_securityOwner));
+            } catch (RemoteException ex) {
+                ReliefLogger.severe("Chyba pri sestavovani fltru.", ex);
+            }
+            filterRuleSignatura_T = new FilterRule(Filter.AND_OP, 2, filtrSloupecSignatura, Filter.BEGIN_CRIT, "T", 0, false, true);
+            filterRuleSignatura_SH = new FilterRule(Filter.OR_OP, 0, filtrSloupecSignatura, Filter.BEGIN_CRIT, "S-H", 1, false, true);
+            filterRuleSecurityOwner = new FilterRule(Filter.AND_OP, 1, filtrSloupecSecurityOwner, Filter.EQUAL_CRIT, "zuknav", 2, false, true);
+
+            filtr = metadata.getFilter();
+            if (filtr != null) {
+                if (filtr.getRulesCount() < 3) {
+                    isFilterActive = false;
+                } else {
+                    //zjistíme jestli pravidlo ve filtru již je
+                    if ((filterRuleSignatura_T.getColumn().getColumnName().equals(filtr.getRule(0).getColumn().getColumnName()) && filtr.getRule(0).getCriterium() == filterRuleSignatura_T.getCriterium() && filterRuleSignatura_T.getValue().equals(filtr.getRule(0).getValue()))
+                            && (filterRuleSignatura_SH.getColumn().getColumnName().equals(filtr.getRule(1).getColumn().getColumnName()) && filtr.getRule(1).getCriterium() == filterRuleSignatura_SH.getCriterium() && filterRuleSignatura_SH.getValue().equals(filtr.getRule(1).getValue()))
+                            && (filterRuleSecurityOwner.getColumn().getColumnName().equals(filtr.getRule(2).getColumn().getColumnName()) && filtr.getRule(2).getCriterium() == filterRuleSecurityOwner.getCriterium() && filterRuleSecurityOwner.getValue().equals(filtr.getRule(2).getValue()))) {
+                        isFilterActive = true;
+                    } else {
+                        isFilterActive = false;
+                    }
+                }
+
+                if (!isFilterActive) {
+                    filtr = new Filter();
+                    filtr.addRule(filterRuleSignatura_T);
+                    filtr.addRule(filterRuleSignatura_SH);
+                    filtr.addRule(filterRuleSecurityOwner);
+                    metadata.setFilter(filtr);
+                }
+            } else {
+                filtr = new Filter();
+                filtr.addRule(filterRuleSignatura_T);
+                filtr.addRule(filterRuleSignatura_SH);
+                filtr.addRule(filterRuleSecurityOwner);
+                metadata.setFilter(filtr);
+            }
+        }
+
+        return metadata;
+    }
+
+    /**
+     ***************************************************************************
+     *
+     * @param rec
+     * @return
+     */
+    @Override
+    public Record onGetRecord(Record rec) {
+        securityOnGetRecord(rec, SECURITY_DESK_TYPE, SECURITY_POLE_HLIDANA);
+        //rec.getTableField(t_tXPredMikro).setAnnotation(AnnotationKeys.READ_ONLY_SECURITY_PROPERTY, AnnotationKeys.TRUE_VALUE);
+        ReliefUser ru = new ReliefUser(getTriggerContext());
+//        String userName = ru.getLogin();
+
+        rec.getTableField(PredlohaEntity.t_tXPredMikro).setAnnotation(AnnotationKeys.READ_ONLY_SECURITY_PROPERTY, AnnotationKeys.TRUE_VALUE);
+//        if (!userName.contains("import")) {
+//            ReliefLogger.severe("TOTO NENI IMPORTNI UZIVATEL");
+////            rec.getField(PredlohaEntity.f_skenerProfil).setAnnotation(AnnotationKeys.LIST_SOURCE_CUSTOM_PROPERTY, new SpecificDynamicLists(new ReliefUser(getTriggerContext()), null, null, null, null, null, null, null, null, null));
+//        } else {
+//            ReliefLogger.severe("TOTO JE IMPORTNI UZIVATEL");
+//        }
+        return rec;
+    }
+
+    /**
+     ***************************************************************************
+     *
+     * @param rec
+     * @param poleHlidana
+     * @param vRecordFieldsSecurity
+     * @param canErase
+     * @return
+     */
+    @Override
+    protected boolean setCustomSecurityOnGetRecord(Record rec, String[] poleHlidana, Vector<Integer> vRecordFieldsSecurity, boolean canErase, String kompetence) {
+        //ReliefLogger.severe("Predloha: setCustomSecurityOnGetRecord");
+        // Guru agnedy
+        if (kompetence.contains(SECURITY_ROLE_apppredloha)) {
+            mergeSecurity(vRecordFieldsSecurity, 2);
+            canErase = Boolean.TRUE;
+            //ReliefLogger.severe("Predloha: " + SECURITY_ROLE_apppredloha);
+        }
+
+        //Kompetence - Fotograf
+        if (kompetence.contains(SECURITY_ROLE_fotograf)) {
+            mergeSecurity(vRecordFieldsSecurity, 1);
+        }
+
+        return canErase;
+    }
+
+    /**
+     ***************************************************************************
+     *
+     * @param rec
+     * @return
+     * @throws AddException
+     */
+    @Override
+    public Record onCreateLocal(Record rec) throws AddException {
+        securityOnCreateLocal(rec, SECURITY_DESK_TYPE, SECURITY_CAN_CREATE_COMPETITIONS);
+        super.onCreateLocal(rec);
+        //rec.getSimpleField(PredlohaEntity.f_skenSkenZMik).setValue(false);
+
+        return rec;
+    }
+
+    /**
+     ***************************************************************************
+     *
+     * @param rec
+     * @return
+     * @throws AddException
+     * @throws ValidationException
+     */
+    @Override
+    public Record onCreate(Record rec) throws AddException, ValidationException {
+        super.onCreate(rec);
+        this.onCreateOnUpdate(rec, getTriggerContext(), true);
+        return rec;
+    }
+
+    /**
+     ***************************************************************************
+     *
+     * @param rec
+     * @return
+     * @throws ValidationException
+     * @throws UpdateException
+     */
+    @Override
+    public Record onUpdate(Record rec) throws ValidationException, UpdateException {
+        super.onUpdate(rec);
+        this.onCreateOnUpdate(rec, getTriggerContext(), false);
+        return rec;
+    }
+
+    /**
+     ***************************************************************************
+     *
+     * @param rec
+     */
+    private void onCreateOnUpdate(Record rec, TriggerContext tc, boolean isCreate) throws ValidationException {
+        //Oprava Dat - ořezání mezer na začátku a na konci
+        if (rec.getSimpleField(f_pole001).getValue() != null) {
+            rec.getSimpleField(f_pole001).setValue(((String) rec.getSimpleField(f_pole001).getValue()).trim());
+        }
+        if (rec.getSimpleField(f_cCNB).getValue() != null) {
+            rec.getSimpleField(f_cCNB).setValue(((String) rec.getSimpleField(f_cCNB).getValue()).trim());
+        }
+        if (rec.getSimpleField(f_ISBN).getValue() != null) {
+            rec.getSimpleField(f_ISBN).setValue(((String) rec.getSimpleField(f_ISBN).getValue()).trim());
+        }
+        if (rec.getSimpleField(f_issn).getValue() != null) {
+            rec.getSimpleField(f_issn).setValue(((String) rec.getSimpleField(f_issn).getValue()).trim());
+        }
+        if (rec.getSimpleField(f_carKod).getValue() != null) {
+            rec.getSimpleField(f_carKod).setValue(((String) rec.getSimpleField(f_carKod).getValue()).trim());
+        }
+        if (rec.getSimpleField(f_signatura).getValue() != null) {
+            rec.getSimpleField(f_signatura).setValue(((String) rec.getSimpleField(f_signatura).getValue()).trim());
+        }
+        if (rec.getSimpleField(f_sysno).getValue() != null) {
+            rec.getSimpleField(f_sysno).setValue(((String) rec.getSimpleField(f_sysno).getValue()).trim());
+        }
+        
+        //pokud je stav různý od revize, nulovat informaci o vlastní duplicitě
+        if (!"revize".equals(rec.getSimpleField(f_stavRec).getValue())) {
+            if (Boolean.TRUE.equals(rec.getSimpleField(f_jeVlastniDuplicita).getValue())) {
+                rec.getSimpleField(f_jeVlastniDuplicita).setValue(Boolean.FALSE);
+            }
+        }
+
+        //úprava délky názvu
+        if (rec.getSimpleField(f_nazev).getValue() != null) {
+            try {
+                rec.getSimpleField(f_nazev).setValue(StringUtils.trimTextToLength((String) rec.getSimpleField(f_nazev).getValue(), 2990, "UTF8"));
+            } catch (Exception ex) {
+                LOG.log(Level.SEVERE, null, ex);
+            }
+        }
+        
+        //úprava délky podnázvu
+        if (rec.getSimpleField(f_podnazev).getValue() != null) {
+            try {
+                rec.getSimpleField(f_podnazev).setValue(StringUtils.trimTextToLength((String) rec.getSimpleField(f_podnazev).getValue(), 2990, "UTF8"));
+            } catch (Exception ex) {
+                LOG.log(Level.SEVERE, null, ex);
+            }
+        }
+
+        //Tvorba Vizitky záznamu
+        Object jmeno = rec.getSimpleField(f_nazev).getValue();
+        Object autor = rec.getSimpleField(f_autor).getValue();
+        Object rok = rec.getSimpleField(f_rokVyd).getValue();
+        Object cast = rec.getSimpleField(f_cast).getValue();
+        Object rozsah = rec.getSimpleField(f_rozsah).getValue();
+        Object cisloPer = rec.getSimpleField(f_cisloPer).getValue();
+        Object ccnb = rec.getSimpleField(f_cCNB).getValue();
+        Object carKod = rec.getSimpleField(f_carKod).getValue();
+        Object signatura = rec.getSimpleField(f_signatura).getValue();
+        Object druhDokumentu = rec.getSimpleField(f_druhDokumentu).getValue();
+        Object ISSN = rec.getSimpleField(f_issn).getValue();
+        Object ISBN = rec.getSimpleField(f_ISBN).getValue();
+
+        Date predaniDate;
+        Date predaniDateNext;
+        Date predaniTime;
+        Date predaniTimeNext;
+
+        RecordsIterator ritPredaniPrevzeti;
+        Record recPredaniPrevzeti = null;
+        Record recPredaniPrevzetiNext = null;
+
+        String vizitka = makePredloha(druhDokumentu, jmeno, autor, rok, cast, rozsah, cisloPer, ccnb, carKod, signatura, ISSN, ISBN, false);
+        //úprava délky vizitky
+        if (vizitka != null) {
+            try {
+                vizitka = StringUtils.trimTextToLength(vizitka, 2990, "UTF8");
+            } catch (Exception ex) {
+                LOG.log(Level.SEVERE, null, ex);
+            }
+        }
+        rec.getSimpleField(f_vizitka).setValue(vizitka);
+
+//        //Doplnění čísla zakázky
+//        if (rec.getSimpleField(PredlohaEntity.f_cisloZakazky).getValue() == null) {
+//            //Národní knihovna
+//            if ("zunkphostivar".equals(rec.getSimpleField(PredlohaEntity.f_securityOwner).getValue())) {
+//                //mame záznam NK který nemá zakázkové číslo.
+//                if (rec.getSimpleField(f_zpusobDig).getValue() != null) {
+//                    rec.getSimpleField(PredlohaEntity.f_cisloZakazky).setValue(getFormattedNextNumber("Zakazka.cisloZakazky", ""));
+//                }
+//            }
+//        }
+        //Kontrola na doplnění čísla zakázky - pouze v případě, že číslo zakázky je různé od null
+        if (rec.getSimpleField(f_cisloZakazky).getValue() != null) {
+            Connection conn = DirectConnection.getConnection();
+            Statement stmt;
+            ResultSet rs;
+            int count;
+            String SQL_SELECT_CISLO_ZAKAZKY_DUPLICITY;
+            ValidationException vex;
+
+            if (isCreate) {
+                //Defaultní nastavení pro případ Create(isCreate = true)
+                SQL_SELECT_CISLO_ZAKAZKY_DUPLICITY = "select count(cislozakazky) from predloha where cislozakazky = '" + rec.getSimpleField(f_cisloZakazky).getValue() + "'";
+            } else {
+                //Defaultní nastavení pro případ UpDate(isCreate = false)
+                String recordID = RecordWorker.getRecordID(rec.getKey());
+                SQL_SELECT_CISLO_ZAKAZKY_DUPLICITY = "select count(cislozakazky) from predloha where cislozakazky = '" + rec.getSimpleField(f_cisloZakazky).getValue() + "' and id != " + recordID;
+            }
+
+            try {
+                stmt = conn.createStatement();
+                rs = stmt.executeQuery(SQL_SELECT_CISLO_ZAKAZKY_DUPLICITY);
+                rs.next();
+                count = rs.getInt(1);
+                conn.close();
+                if (count > 0) {
+                    vex = Utilities.getValidationException(tc);
+                    vex.addField(f_cisloZakazky, "Zadali jste duplicitní číslo zakázky.", false);
+                    throw vex;
+                }
+            } catch (SQLException ex) {
+                ReliefLogger.severe("Chyba pri praci s DB na ostro.", ex);
+                try {
+                    if (conn != null) {
+                        conn.close();
+                    }
+                } catch (SQLException ex1) {
+                    ReliefLogger.severe("Chyba pri zavirani databazoveho spojeni.", ex1);
+                }
+            }
+        }
+
+        //Doplnění speciálního druhu
+        if (rec.getSimpleField(f_stavRec).getValue() != null && rec.getSimpleField(f_specDruh).getValue() == null) {
+            String poznamkaValue = (String) rec.getSimpleField(f_stavRec).getValue();
+
+            if (poznamkaValue.startsWith("ZL") || poznamkaValue.startsWith("GL")) {
+                rec.getSimpleField(f_stavRec).setValue("ZL");
+            } else if (poznamkaValue.startsWith("GL") || poznamkaValue.startsWith("GL")) {
+                rec.getSimpleField(f_stavRec).setValue("GL");
+            }
+        }
+
+        //Doplnění datumů dokončení u prací
+        //Příprava
+        if (rec.getSimpleField(f_pripDate).getValue() == null && "dokonceno".equals(rec.getSimpleField(f_pripStav).getValue())) {
+            rec.getSimpleField(f_pripDate).setValue(new Date());
+        }
+
+        //Mikrofilmování
+        if (rec.getSimpleField(f_mikroDate).getValue() == null && "dokonceno".equals(rec.getSimpleField(f_mikroStav).getValue())) {
+            rec.getSimpleField(f_mikroDate).setValue(new Date());
+        }
+
+        //Skenování
+        if (rec.getSimpleField(f_skenDate).getValue() == null && "dokonceno".equals(rec.getSimpleField(f_skenStav).getValue())) {
+            rec.getSimpleField(f_skenDate).setValue(new Date());
+        }
+
+        //Metadata
+        if (rec.getSimpleField(f_metaDate).getValue() == null && "dokonceno".equals(rec.getSimpleField(f_metaStav).getValue())) {
+            rec.getSimpleField(f_metaDate).setValue(new Date());
+        }
+
+        //Zpracování
+        if (rec.getSimpleField(f_zpracDate).getValue() == null && "dokonceno".equals(rec.getSimpleField(f_zpracStav).getValue())) {
+            rec.getSimpleField(f_zpracDate).setValue(new Date());
+        }
+
+        //Zveřejnění
+        if (rec.getSimpleField(f_publDate).getValue() == null && "dokonceno".equals(rec.getSimpleField(f_publStav).getValue())) {
+            rec.getSimpleField(f_publDate).setValue(new Date());
+        }
+
+        //Archivace
+        if (rec.getSimpleField(f_archDate).getValue() == null && "dokonceno".equals(rec.getSimpleField(f_archStav).getValue())) {
+            rec.getSimpleField(f_archDate).setValue(new Date());
+        }
+
+        //Dolpnění čísla UDIRDCZ
+        if (("finished".equals(rec.getSimpleField(RECORD_stavRec).getValue())) && (rec.getSimpleField(PredlohaEntity.f_udirdcz).getValue() == null)) {
+            rec.getSimpleField(PredlohaEntity.f_udirdcz).setValue(getNextNumber("UDIRDCZ"));
+        }
+
+        //Doplnění předání
+        //nejde dělat přes SQL ani v Plaant API - poslední informace není ještě v DB
+        ritPredaniPrevzeti = rec.getTableField(PredlohaEntity.t_tPredani).getTableRecords();
+        if (ritPredaniPrevzeti.hasMoreRecords()) {
+            recPredaniPrevzeti = ritPredaniPrevzeti.nextRecord();
+        }
+        //testujeme další
+        while (ritPredaniPrevzeti.hasMoreRecords()) {
+            recPredaniPrevzetiNext = ritPredaniPrevzeti.nextRecord();
+            //Porovnání starého a nového
+            predaniDate = (Date) recPredaniPrevzeti.getSimpleField(PredaniEntity.f_kdyDate).getValue();
+            predaniDateNext = (Date) recPredaniPrevzetiNext.getSimpleField(PredaniEntity.f_kdyDate).getValue();
+            predaniTime = (Date) recPredaniPrevzeti.getSimpleField(PredaniEntity.f_kdyTime).getValue();
+            predaniTimeNext = (Date) recPredaniPrevzetiNext.getSimpleField(PredaniEntity.f_kdyTime).getValue();
+            if (predaniDate.compareTo(predaniDateNext) == 0) {
+                //DATUM JE STEJNY predaniDate
+                if (predaniTime.compareTo(predaniTimeNext) < 0) {
+                    //Datum je starsi PredaniTime
+                    recPredaniPrevzeti = recPredaniPrevzetiNext;
+                }
+
+            } else if (predaniDate.compareTo(predaniDateNext) < 0) {
+                //Datum je starsi PredaniDate
+                recPredaniPrevzeti = recPredaniPrevzetiNext;
+            }
+        }
+
+        //Jestliže existuje záznam doplníme z něj informace do Předlohy
+        if (recPredaniPrevzeti != null) {
+            rec.getSimpleField(PredlohaEntity.f_predKdo).setValue(recPredaniPrevzeti.getSimpleField(PredaniEntity.f_kdo).getValue());
+            rec.getSimpleField(PredlohaEntity.f_predKdyDate).setValue(recPredaniPrevzeti.getSimpleField(PredaniEntity.f_kdyDate).getValue());
+            rec.getSimpleField(PredlohaEntity.f_predKdyTime).setValue(recPredaniPrevzeti.getSimpleField(PredaniEntity.f_kdyTime).getValue());
+            rec.getSimpleField(PredlohaEntity.f_predKomuOdKoho).setValue(recPredaniPrevzeti.getSimpleField(PredaniEntity.f_komuOdKoho).getValue());
+            rec.getSimpleField(PredlohaEntity.f_predTypAkce).setValue(recPredaniPrevzeti.getSimpleField(PredaniEntity.f_typAkce).getValue());
+            rec.getSimpleField(PredlohaEntity.f_predVarka).setValue(recPredaniPrevzeti.getSimpleField(PredaniEntity.f_varka).getValue());
+        }
+    }
+
+    /**
+     ***************************************************************************
+     *
+     * @param dryhDokumentu
+     * @param jmeno
+     * @param autor
+     * @param rok
+     * @param cast
+     * @param rozsah
+     * @param cisloPer
+     * @param ccnb
+     * @param carkod
+     * @param signatura
+     * @param ISSN
+     * @param isForSQL
+     * @param ISBN
+     * @return
+     */
+    public static String makePredloha(Object dryhDokumentu, Object jmeno, Object autor, Object rok, Object cast, Object rozsah, Object cisloPer, Object ccnb, Object carkod, Object signatura, Object ISSN, Object ISBN, boolean isForSQL) {
+        String exit;
+        String endLine;
+
+        if (isForSQL) {
+            //pro SQL
+            endLine = "|| CHR(10)||";
+            exit = "'" + jmeno + "'";
+            if (autor != null) {
+                exit += endLine + "'Autor: " + autor + "'";
+            }
+            if (rok != null) {
+                exit += endLine + "'Rok(y) vyd.: " + rok + "'";
+            }
+            if (cast != null) {
+                exit += endLine + "'Část/Roč. per.: " + cast + "'";
+            }
+            if (rozsah != null) {
+                exit += endLine + "'Rok per.: " + rozsah + "'";
+            }
+            if (cisloPer != null) {
+                exit += endLine + "'Čís. per.: " + cisloPer + "'";
+            }
+            if (ccnb != null) {
+                exit += endLine + "'Č. ČNB: " + ccnb + "'";
+            }
+            if (ISSN != null) {
+                exit += endLine + "'ISSN: " + ISSN + "'";
+            }
+            if (ISBN != null) {
+                exit += endLine + "'ISBN: " + ISBN + "'";
+            }
+            if (carkod != null) {
+                exit += endLine + "'Čár. kód: " + carkod + "'";
+            }
+            if (carkod != null) {
+                exit += endLine + "'Signatura: " + signatura + "'";
+            }
+
+        } else {
+            //pro Relief
+            endLine = "\n";
+
+            exit = "" + jmeno;
+            if (autor != null) {
+                exit += endLine + "Autor: " + autor;
+            }
+            if (rok != null) {
+                exit += endLine + "Rok(y) vyd.: " + rok;
+            }
+            if (cast != null) {
+                exit += endLine + "Část/Roč. per.: " + cast;
+            }
+            if (rozsah != null) {
+                exit += endLine + "Rok per.: " + rozsah;
+            }
+            if (cisloPer != null) {
+                exit += endLine + "Čís. per.: " + cisloPer;
+            }
+            if (ccnb != null) {
+                exit += endLine + "Č. ČNB: " + ccnb;
+            }
+            if (ISSN != null) {
+                exit += endLine + "ISSN: " + ISSN;
+            }
+            if (ISBN != null) {
+                exit += endLine + "ISBN: " + ISBN;
+            }
+            if (carkod != null) {
+                exit += endLine + "Čár. kód: " + carkod;
+            }
+            if (carkod != null) {
+                exit += endLine + "Signatura: " + signatura;
+            }
+        }
+
+        return exit;
+    }
+
+}

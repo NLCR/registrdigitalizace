@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<desk bundle="ServerBundle">
+  <deskPackage>cz.incad.rd</deskPackage>
+  <deskName>TabVarNazev</deskName>
+  <deskHumanHelp>TabVarNazev_help</deskHumanHelp>
+  <deskHumanName>TabVarNazev</deskHumanName>
+  <deskDBName>TabVarNazev</deskDBName>
+  <deskRoot/>
+  <machineModel>cz.incad.rd.TabVarNazev</machineModel>
+  <fields>
+    <field>
+      <fieldName>varNazev</fieldName>
+      <fieldHumanName>TabVarNazev.varNazev</fieldHumanName>
+      <fieldHumanHelp>TabVarNazev.varNazev_help</fieldHumanHelp>
+      <fieldDBName>varNazev</fieldDBName>
+      <fieldType>STR</fieldType>
+      <fieldRepresentation>EDI</fieldRepresentation>
+      <validateLength>2048</validateLength>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+  </fields>
+  <forms>
+    <screen-form name="TabVarNazev.default" formHumanName="TabVarNazev.default" id="cz.incad.rd.TabVarNazev">
+      <form-body align="LEFT" valign="TOP">
+        <row fill="LEFT" vfill="TOP">
+          <input align="LEFT" valign="TOP" indent="false" width="100ch" id="varNazev" precision="0" scale="0" type="text" rows="2">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </input>
+        </row>
+      </form-body>
+    </screen-form>
+    <screen-form name="TabVarNazev.fromPredloha" formHumanName="TabVarNazev.fromPredloha" id="cz.incad.rd.TabVarNazev">
+      <form-body align="LEFT" valign="TOP">
+        <row fill="LEFT" vfill="TOP">
+          <input align="LEFT" valign="TOP" indent="false" width="100ch" id="varNazev" precision="0" scale="0" type="text" rows="1"/>
+        </row>
+      </form-body>
+    </screen-form>
+    <tree name="AvailableForms">
+      <node formName="TabVarNazev.default"/>
+      <node formName="TabVarNazev.fromPredloha"/>
+    </tree>
+  </forms>
+  <uniqueFields/>
+</desk>

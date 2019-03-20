@@ -1,0 +1,26 @@
+/* *****************************************************************************
+ * To change this template, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package cz.incad.relief3.rdcz.uniimporter.model;
+
+import cz.incad.relief3.rdcz.uniImporter.model.FileCoordinatorIssue;
+import java.util.logging.Logger;
+
+/** ****************************************************************************
+ *
+ * @author martin
+ */
+public class UniMarcDataParser implements DataParser {
+    private static final Logger LOG = Logger.getLogger(UniMarcDataParser.class.getName());
+
+    /** ************************************************************************
+     * 
+     * @param oneItem
+     * @return 
+     */
+    public FileCoordinatorIssue parseIt(FileCoordinatorIssue oneItem) {
+        throw new UnsupportedOperationException("Not supported yet.");
+    }
+    
+}

@@ -1,0 +1,503 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<desk bundle="ServerBundle">
+  <deskPackage>cz.incad.nkp.digital</deskPackage>
+  <deskName>Mikrofilm</deskName>
+  <deskHumanHelp>cz.incad.nkp.digital.Mikrofilm_help</deskHumanHelp>
+  <deskHumanName>cz.incad.nkp.digital.Mikrofilm</deskHumanName>
+  <deskDBName>Mikrofilm</deskDBName>
+  <deskRoot>cz.incad.core.basic.Record</deskRoot>
+  <machineModel>cz.incad.nkp.digital.Mikrofilm</machineModel>
+  <fields>
+    <field>
+      <fieldName>celkemDokumentu</fieldName>
+      <fieldHumanName>Mikrofilm.celkemDokumentu</fieldHumanName>
+      <fieldHumanHelp>Mikrofilm.celkemDokumentu_help</fieldHumanHelp>
+      <fieldDBName>celkemDokumentu</fieldDBName>
+      <fieldType>INT</fieldType>
+      <fieldRepresentation>EDI</fieldRepresentation>
+      <computed/>
+      <precision>19</precision>
+    </field>
+    <field>
+      <fieldName>archCisloNeg</fieldName>
+      <fieldHumanName>Mikrofilm.archCisloNeg</fieldHumanName>
+      <fieldHumanHelp>Mikrofilm.archCisloNeg_help</fieldHumanHelp>
+      <fieldDBName>archCisloNeg</fieldDBName>
+      <fieldType>INT</fieldType>
+      <fieldRepresentation>EDI</fieldRepresentation>
+      <precision>19</precision>
+    </field>
+    <field>
+      <fieldName>tXTitNkpMf</fieldName>
+      <fieldHumanName>Mikrofilm.tXTitNkpMf</fieldHumanName>
+      <fieldHumanHelp>Mikrofilm.tXTitNkpMf_help</fieldHumanHelp>
+      <fieldDBName>rMikrofilmXT</fieldDBName>
+      <fieldType>TAB</fieldType>
+      <fieldRepresentation>REP</fieldRepresentation>
+      <reference relationshipType="association" rTable="false">cz.incad.nkp.digital.XTitNkpMf</reference>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>faktorZvet</fieldName>
+      <fieldHumanName>Mikrofilm.faktorZvet</fieldHumanName>
+      <fieldHumanHelp>Mikrofilm.faktorZvet_help</fieldHumanHelp>
+      <fieldDBName>faktorZvet</fieldDBName>
+      <fieldType>STR</fieldType>
+      <fieldRepresentation>EDI</fieldRepresentation>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>kamera</fieldName>
+      <fieldHumanName>Mikrofilm.kamera</fieldHumanName>
+      <fieldHumanHelp>Mikrofilm.kamera_help</fieldHumanHelp>
+      <fieldDBName>kamera</fieldDBName>
+      <fieldType>STR</fieldType>
+      <fieldRepresentation>COM</fieldRepresentation>
+      <list>Dkamera</list>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>tKopieMf</fieldName>
+      <fieldHumanName>Mikrofilm.tKopieMf</fieldHumanName>
+      <fieldHumanHelp>Mikrofilm.tKopieMf_help</fieldHumanHelp>
+      <fieldDBName>rMikrofilmKo</fieldDBName>
+      <fieldType>TAB</fieldType>
+      <fieldRepresentation>REP</fieldRepresentation>
+      <reference relationshipType="aggregation" rTable="false">cz.incad.nkp.digital.KopieMf</reference>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>operator</fieldName>
+      <fieldHumanName>Mikrofilm.operator</fieldHumanName>
+      <fieldHumanHelp>Mikrofilm.operator_help</fieldHumanHelp>
+      <fieldDBName>operator</fieldDBName>
+      <fieldType>STR</fieldType>
+      <fieldRepresentation>COM</fieldRepresentation>
+      <list>Doperator</list>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>celkemCistaP</fieldName>
+      <fieldHumanName>Mikrofilm.celkemCistaP</fieldHumanName>
+      <fieldHumanHelp>Mikrofilm.celkemCistaP_help</fieldHumanHelp>
+      <fieldDBName>celkemCistaP</fieldDBName>
+      <fieldType>INT</fieldType>
+      <fieldRepresentation>EDI</fieldRepresentation>
+      <computed/>
+      <precision>19</precision>
+    </field>
+    <field>
+      <fieldName>celkemHrubaP</fieldName>
+      <fieldHumanName>Mikrofilm.celkemHrubaP</fieldHumanName>
+      <fieldHumanHelp>Mikrofilm.celkemHrubaP_help</fieldHumanHelp>
+      <fieldDBName>celkemHrubaP</fieldDBName>
+      <fieldType>INT</fieldType>
+      <fieldRepresentation>EDI</fieldRepresentation>
+      <computed/>
+      <precision>19</precision>
+    </field>
+    <field>
+      <fieldName>tXPredMikro</fieldName>
+      <fieldHumanName>Mikrofilm.tXPredMikro</fieldHumanName>
+      <fieldHumanHelp>Mikrofilm.tXPredMikro_help</fieldHumanHelp>
+      <fieldDBName>rMikrofilm</fieldDBName>
+      <fieldType>TAB</fieldType>
+      <fieldRepresentation>REP</fieldRepresentation>
+      <reference relationshipType="association" rTable="false">cz.incad.rd.XPredMikro</reference>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>tRevizeMf</fieldName>
+      <fieldHumanName>Mikrofilm.tRevizeMf</fieldHumanName>
+      <fieldHumanHelp>Mikrofilm.tRevizeMf_help</fieldHumanHelp>
+      <fieldDBName>rMikrofilmRe</fieldDBName>
+      <fieldType>TAB</fieldType>
+      <fieldRepresentation>RTB</fieldRepresentation>
+      <reference relationshipType="aggregation" rTable="false">cz.incad.nkp.digital.RevizeMf</reference>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>pocetScanu</fieldName>
+      <fieldHumanName>Mikrofilm.pocetScanu</fieldHumanName>
+      <fieldHumanHelp>Mikrofilm.pocetScanu_help</fieldHumanHelp>
+      <fieldDBName>pocetScanu</fieldDBName>
+      <fieldType>INT</fieldType>
+      <fieldRepresentation>EDI</fieldRepresentation>
+      <computed/>
+      <precision>19</precision>
+    </field>
+    <field>
+      <fieldName>snimanoDate</fieldName>
+      <fieldHumanName>Mikrofilm.snimanoDate</fieldHumanName>
+      <fieldHumanHelp>Mikrofilm.snimanoDate_help</fieldHumanHelp>
+      <fieldDBName>snimanoDate</fieldDBName>
+      <fieldType>DAT</fieldType>
+      <fieldRepresentation>EDI</fieldRepresentation>
+      <formatPattern>dd.MM.yyyy</formatPattern>
+      <formatPatternForInput>dd.MM.yyyy</formatPatternForInput>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>vlastnik</fieldName>
+      <fieldHumanName>cz.incad.nkp.digital.Mikrofilm.vlastnik</fieldHumanName>
+      <fieldHumanHelp>cz.incad.nkp.digital.Mikrofilm.vlastnik_help</fieldHumanHelp>
+      <fieldDBName>vlastnik</fieldDBName>
+      <fieldType>STR</fieldType>
+      <fieldRepresentation>COM</fieldRepresentation>
+      <list>InsVlastnik</list>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>zpracovatel</fieldName>
+      <fieldHumanName>cz.incad.nkp.digital.Mikrofilm.zpracovatel</fieldHumanName>
+      <fieldHumanHelp>cz.incad.nkp.digital.Mikrofilm.zpracovatel_help</fieldHumanHelp>
+      <fieldDBName>zpracovatel</fieldDBName>
+      <fieldType>STR</fieldType>
+      <fieldRepresentation>COM</fieldRepresentation>
+      <list>InsZpracovatel</list>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+  </fields>
+  <forms>
+    <screen-form name="MikrofilmF" formHumanName="MikrofilmF" id="cz.incad.nkp.digital.Mikrofilm">
+      <form-body align="LEFT" valign="TOP">
+        <row fill="LEFT" vfill="TOP">
+          <input align="LEFT" valign="TOP" indent="false" columnIndex="1" width="40ch" id="archCisloNeg" precision="19" scale="4" type="text">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </input>
+          <selectDate align="LEFT" valign="TOP" indent="false" columnIndex="2" width="20ch" id="snimanoDate" precision="19" scale="4">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </selectDate>
+        </row>
+        <row fill="LEFT" vfill="TOP">
+          <select align="LEFT" valign="TOP" indent="false" columnIndex="1" width="30ch" id="zpracovatel" precision="0" scale="0" type="combo" multi="false" editable="false">
+            <label place="TOP">
+              <from-field colon="false"/>
+            </label>
+          </select>
+          <select align="LEFT" valign="TOP" indent="false" columnIndex="2" width="30ch" id="vlastnik" precision="0" scale="0" type="combo" multi="false" editable="false">
+            <label place="TOP">
+              <from-field colon="false"/>
+            </label>
+          </select>
+        </row>
+        <row fill="LEFT" vfill="TOP">
+          <select align="LEFT" valign="TOP" indent="false" columnIndex="2" width="20ch" id="kamera" precision="19" scale="4" type="combo" multi="false" editable="false">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </select>
+          <select align="LEFT" valign="TOP" indent="false" columnIndex="1" width="20ch" id="operator" precision="0" scale="0" type="combo" multi="false" editable="false">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </select>
+          <input align="LEFT" valign="TOP" indent="false" columnIndex="3" width="20ch" id="faktorZvet" precision="19" scale="4" type="text">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </input>
+        </row>
+        <row fill="LEFT" vfill="TOP">
+          <input align="LEFT" valign="TOP" indent="false" columnIndex="1" width="25ch" id="celkemCistaP" precision="0" scale="0" type="text">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </input>
+          <input align="LEFT" valign="TOP" indent="false" columnIndex="2" width="25ch" id="celkemHrubaP" precision="0" scale="0" type="text">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </input>
+          <input align="LEFT" valign="TOP" indent="false" columnIndex="3" width="25ch" id="pocetScanu" precision="0" scale="0" type="text">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </input>
+          <input align="LEFT" valign="TOP" indent="false" columnIndex="4" width="25ch" id="celkemDokumentu" precision="19" scale="0" type="text">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </input>
+        </row>
+        <row fill="LEFT" vfill="TOP">
+          <rtb align="LEFT" valign="TOP" indent="false" id="tRevizeMf" precision="0" scale="0" refclass="cz.incad.nkp.digital.RevizeMf" form="RevizeMfF2">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </rtb>
+        </row>
+        <row fill="LEFT" vfill="TOP">
+          <repeat align="LEFT" valign="TOP" indent="false" id="tXTitNkpMf" precision="0" scale="0" refclass="cz.incad.nkp.digital.XTitNkpMf" form="XTiMfTitulF">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </repeat>
+        </row>
+        <row fill="LEFT" vfill="TOP">
+          <repeat align="LEFT" valign="TOP" indent="false" id="tKopieMf" precision="0" scale="0" refclass="cz.incad.nkp.digital.KopieMf" form="KopieMfF">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </repeat>
+        </row>
+      </form-body>
+    </screen-form>
+    <screen-form name="MikrofilmF2" formHumanName="MikrofilmF2" id="cz.incad.nkp.digital.Mikrofilm">
+      <form-body align="LEFT" valign="TOP">
+        <row fill="LEFT" vfill="TOP">
+          <input align="LEFT" valign="TOP" indent="false" columnIndex="1" width="40ch" id="archCisloNeg" precision="19" scale="4" type="text">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </input>
+          <selectDate align="LEFT" valign="TOP" indent="false" columnIndex="2" width="20ch" id="snimanoDate" precision="19" scale="4">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </selectDate>
+        </row>
+        <row fill="LEFT" vfill="TOP">
+          <select align="LEFT" valign="TOP" indent="false" columnIndex="1" width="30ch" id="zpracovatel" precision="0" scale="0" type="combo" multi="false" editable="false">
+            <label place="TOP">
+              <from-field colon="false"/>
+            </label>
+          </select>
+          <select align="LEFT" valign="TOP" indent="false" columnIndex="2" width="30ch" id="vlastnik" precision="0" scale="0" type="combo" multi="false" editable="false">
+            <label place="TOP">
+              <from-field colon="false"/>
+            </label>
+          </select>
+        </row>
+        <row fill="LEFT" vfill="TOP">
+          <select align="LEFT" valign="TOP" indent="false" columnIndex="2" width="20ch" id="kamera" precision="19" scale="4" type="combo" multi="false" editable="false">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </select>
+          <select align="LEFT" valign="TOP" indent="false" columnIndex="1" width="20ch" id="operator" precision="0" scale="0" type="combo" multi="false" editable="false">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </select>
+          <input align="LEFT" valign="TOP" indent="false" columnIndex="3" width="30ch" id="faktorZvet" precision="19" scale="4" type="text">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </input>
+        </row>
+        <row fill="LEFT" vfill="TOP">
+          <input align="LEFT" valign="TOP" indent="false" columnIndex="1" width="25ch" id="celkemCistaP" precision="0" scale="0" type="text">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </input>
+          <input align="LEFT" valign="TOP" indent="false" columnIndex="2" width="25ch" id="celkemHrubaP" precision="0" scale="0" type="text">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </input>
+          <input align="LEFT" valign="TOP" indent="false" columnIndex="3" width="25ch" id="pocetScanu" precision="0" scale="0" type="text">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </input>
+          <input align="LEFT" valign="TOP" indent="false" columnIndex="4" width="25ch" id="celkemDokumentu" precision="19" scale="0" type="text">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </input>
+        </row>
+        <row fill="LEFT" vfill="TOP">
+          <rtb align="LEFT" valign="TOP" indent="false" id="tRevizeMf" precision="0" scale="0" refclass="cz.incad.nkp.digital.RevizeMf" form="RevizeMfF2">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </rtb>
+        </row>
+        <row fill="LEFT" vfill="TOP">
+          <repeat align="LEFT" valign="TOP" indent="false" id="tXPredMikro" precision="0" scale="0" refclass="cz.incad.rd.XPredMikro" form="XPredMikroF">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </repeat>
+        </row>
+        <row fill="LEFT" vfill="TOP">
+          <repeat align="LEFT" valign="TOP" indent="false" id="tKopieMf" precision="19" scale="4" refclass="cz.incad.nkp.digital.KopieMf" form="KopieMfF">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </repeat>
+        </row>
+      </form-body>
+    </screen-form>
+    <tree name="AvailableForms">
+      <node formName="MikrofilmF"/>
+      <node formName="MikrofilmF2"/>
+    </tree>
+  </forms>
+  <functions>
+    <function>
+      <functionName>cz.incad.nkp.digital.bf.PrepoctiMikrofilmy</functionName>
+      <functionHumanName>cz.incad.nkp.digital.bf.PrepoctiMikrofilmy</functionHumanName>
+      <functionHumanHelp>cz.incad.nkp.digital.bf.PrepoctiMikrofilmy_help</functionHumanHelp>
+    </function>
+    <function>
+      <functionName>cz.incad.nkp.digital.bf.PridejMonografii</functionName>
+      <functionHumanName>cz.incad.nkp.digital.bf.PridejMonografii</functionHumanName>
+      <functionHumanHelp>cz.incad.nkp.digital.bf.PridejMonografii_help</functionHumanHelp>
+      <wizardPanels>
+        <wizardPanel>
+          <panelName>Panel1</panelName>
+          <panelHumanName>cz.incad.nkp.digital.bf.PridejMonografii.Panel1</panelHumanName>
+          <description>cz.incad.nkp.digital.bf.PridejMonografii.Panel1_help</description>
+          <panelFields>
+            <panelField>
+              <fieldName>lendExemplar</fieldName>
+              <fieldHumanName>lendExemplar</fieldHumanName>
+              <fieldType>STR</fieldType>
+              <fieldRepresentation>EDI</fieldRepresentation>
+            </panelField>
+            <panelField>
+              <fieldName>sigla</fieldName>
+              <fieldHumanName>sigla</fieldHumanName>
+              <fieldType>STR</fieldType>
+              <fieldRepresentation>COM</fieldRepresentation>
+              <list>InsVlastnik</list>
+            </panelField>
+          </panelFields>
+        </wizardPanel>
+      </wizardPanels>
+    </function>
+    <function>
+      <functionName>cz.incad.nkp.digital.bf.GenerujECislo</functionName>
+      <functionHumanName>cz.incad.nkp.digital.bf.GenerujECislo</functionHumanName>
+      <functionHumanHelp>cz.incad.nkp.digital.bf.GenerujECislo_help</functionHumanHelp>
+      <wizardPanels>
+        <wizardPanel>
+          <panelName>Panel1</panelName>
+          <panelHumanName>cz.incad.nkp.digital.bf.GenerujECislo.Panel1</panelHumanName>
+          <description>cz.incad.nkp.digital.bf.GenerujECislo.Panel1_help</description>
+          <panelFields>
+            <panelField>
+              <fieldName>eCislo</fieldName>
+              <fieldHumanName>cz.incad.nkp.digital.bf.GenerujECislo.eCislo</fieldHumanName>
+              <fieldType>INT</fieldType>
+              <fieldRepresentation>EDI</fieldRepresentation>
+            </panelField>
+          </panelFields>
+        </wizardPanel>
+      </wizardPanels>
+    </function>
+    <function>
+      <functionName>cz.incad.nkp.digital.bf.GenerujECisloAutomat</functionName>
+      <functionHumanName>cz.incad.nkp.digital.bf.GenerujECisloAutomat</functionHumanName>
+      <functionHumanHelp>Mikrofilm_cz.incad.nkp.digital.bf.GenerujECisloAutomat_help</functionHumanHelp>
+    </function>
+    <function>
+      <functionName>cz.incad.nkp.digital.bf.TiskObsahovaPredloha</functionName>
+      <functionHumanName>cz.incad.nkp.digital.bf.TiskObsahovaPredloha</functionHumanName>
+      <functionHumanHelp>Mikrofilm_cz.incad.nkp.digital.bf.TiskObsahovaPredloha_help</functionHumanHelp>
+    </function>
+    <function>
+      <functionName>cz.incad.nkp.digital.bf.TiskPruvodkaMikrofilmu</functionName>
+      <functionHumanName>cz.incad.nkp.digital.bf.TiskPruvodkaMikrofilmu</functionHumanName>
+      <functionHumanHelp>Mikrofilm_cz.incad.nkp.digital.bf.TiskPruvodkaMikrofilmu_help</functionHumanHelp>
+    </function>
+    <function>
+      <functionName>cz.incad.nkp.digital.bf.PridejPeriodikum</functionName>
+      <functionHumanName>cz.incad.nkp.digital.bf.PridejPeriodikum</functionHumanName>
+      <functionHumanHelp>Mikrofilm_cz.incad.nkp.digital.bf.PridejPeriodikum_help</functionHumanHelp>
+      <wizardPanels>
+        <wizardPanel>
+          <panelName>PridejPeriodikumPanel1</panelName>
+          <panelHumanName>PridejPeriodikumPanel1</panelHumanName>
+          <description>PridejPeriodikumPanel1_help</description>
+          <panelFields>
+            <panelField>
+              <fieldName>lendExemplar</fieldName>
+              <fieldHumanName>lendExemplar</fieldHumanName>
+              <fieldType>STR</fieldType>
+              <fieldRepresentation>EDI</fieldRepresentation>
+            </panelField>
+            <panelField>
+              <fieldName>sigla</fieldName>
+              <fieldHumanName>sigla</fieldHumanName>
+              <fieldType>STR</fieldType>
+              <fieldRepresentation>COM</fieldRepresentation>
+              <list>InsVlastnik</list>
+            </panelField>
+          </panelFields>
+        </wizardPanel>
+      </wizardPanels>
+    </function>
+    <function>
+      <functionName>cz.incad.core.bf.ZmenaStavuZaznamu</functionName>
+      <functionHumanName>cz.incad.core.bf.ZmenaStavuZaznamu</functionHumanName>
+      <functionHumanHelp>Mikrofilm_cz.incad.core.bf.ZmenaStavuZaznamu_help</functionHumanHelp>
+      <wizardPanels>
+        <wizardPanel>
+          <panelName>ZmenaStavuZaznamuPanel1</panelName>
+          <panelHumanName>ZmenaStavuZaznamuPanel1</panelHumanName>
+          <description>ZmenaStavuZaznamuPanel1</description>
+          <panelFields>
+            <panelField>
+              <fieldName>newStavZaznamu</fieldName>
+              <fieldHumanName>newStavZaznamu</fieldHumanName>
+              <fieldType>STR</fieldType>
+              <fieldRepresentation>COM</fieldRepresentation>
+              <list>DstavRec</list>
+            </panelField>
+          </panelFields>
+        </wizardPanel>
+      </wizardPanels>
+    </function>
+    <function>
+      <functionName>cz.incad.rd.bf.Mikrofilm_PridejTitul</functionName>
+      <functionHumanName>cz.incad.rd.bf.Mikrofilm_PridejTitul</functionHumanName>
+      <functionHumanHelp>Mikrofilm_cz.incad.rd.bf.Mikrofilm_PridejTitul_help</functionHumanHelp>
+      <wizardPanels>
+        <wizardPanel>
+          <panelName>panel01</panelName>
+          <panelHumanName>Mikrofilm_PridejTitul_panel01</panelHumanName>
+          <description>Mikrofilm_PridejTitul_panel01_help</description>
+          <panelFields>
+            <panelField>
+              <fieldName>carKod</fieldName>
+              <fieldHumanName>cz.incad.rd.bf.Mikrofilm_PridejTitul.panel01.carKod</fieldHumanName>
+              <fieldType>STR</fieldType>
+              <fieldRepresentation>EDI</fieldRepresentation>
+            </panelField>
+          </panelFields>
+        </wizardPanel>
+      </wizardPanels>
+    </function>
+    <tree name="AvailableBusinessFunctions">
+      <node functionName="cz.incad.nkp.digital.bf.PrepoctiMikrofilmy"/>
+      <node functionName="cz.incad.nkp.digital.bf.GenerujECislo"/>
+      <node functionName="cz.incad.nkp.digital.bf.GenerujECisloAutomat"/>
+      <node functionName="cz.incad.nkp.digital.bf.TiskObsahovaPredloha"/>
+      <node functionName="cz.incad.nkp.digital.bf.TiskPruvodkaMikrofilmu"/>
+      <node functionName="cz.incad.core.bf.ZmenaStavuZaznamu"/>
+      <node functionName="cz.incad.rd.bf.Mikrofilm_PridejTitul"/>
+    </tree>
+  </functions>
+  <uniqueFields>
+    <field name="archCisloNeg"/>
+  </uniqueFields>
+</desk>

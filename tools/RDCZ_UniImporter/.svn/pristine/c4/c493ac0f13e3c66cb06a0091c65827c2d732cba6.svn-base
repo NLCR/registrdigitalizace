@@ -1,0 +1,25 @@
+/* *****************************************************************************
+ * To change this template, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package cz.incad.relief3.rdcz.uniimporter.model;
+
+import java.util.logging.Logger;
+
+/** ****************************************************************************
+ *
+ * @author martin
+ */
+public class DataParserUniMarc implements DataParser {
+    private static final Logger LOG = Logger.getLogger(DataParserUniMarc.class.getName());
+
+    /** ************************************************************************
+     * 
+     * @param oneItem
+     * @return 
+     */
+    public OneIssue parseIt(OneIssue oneItem) {
+        throw new UnsupportedOperationException("Not supported yet.");
+    }
+    
+}

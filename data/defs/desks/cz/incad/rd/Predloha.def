@@ -1,0 +1,3695 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<desk bundle="ServerBundle">
+  <deskPackage>cz.incad.rd</deskPackage>
+  <deskName>Predloha</deskName>
+  <deskHumanHelp>Predloha_help</deskHumanHelp>
+  <deskHumanName>Predloha</deskHumanName>
+  <deskDBName>Predloha</deskDBName>
+  <deskRoot/>
+  <machineModel>cz.incad.rd.Predloha</machineModel>
+  <historyEnabled>true</historyEnabled>
+  <fields>
+    <field>
+      <fieldName>aktualniUlozeni</fieldName>
+      <fieldHumanName>Predloha.aktualniUlozeni</fieldHumanName>
+      <fieldHumanHelp>Predloha.aktualniUlozeni_help</fieldHumanHelp>
+      <fieldDBName>aktualniUlozeni</fieldDBName>
+      <fieldType>STR</fieldType>
+      <fieldRepresentation>COM</fieldRepresentation>
+      <list>DzarazeniUser</list>
+      <computed/>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>archDate</fieldName>
+      <fieldHumanName>Predloha.archDate</fieldHumanName>
+      <fieldHumanHelp>Predloha.archDate_help</fieldHumanHelp>
+      <fieldDBName>archDate</fieldDBName>
+      <fieldType>DAT</fieldType>
+      <fieldRepresentation>EDI</fieldRepresentation>
+      <formatPattern>dd.MM.yyyy</formatPattern>
+      <formatPatternForInput>dd.MM.yyyy</formatPatternForInput>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>archPrac</fieldName>
+      <fieldHumanName>Predloha.archPrac</fieldHumanName>
+      <fieldHumanHelp>Predloha.archPrac_help</fieldHumanHelp>
+      <fieldDBName>archPrac</fieldDBName>
+      <fieldType>STR</fieldType>
+      <fieldRepresentation>COM</fieldRepresentation>
+      <list>DpracovnikUkol</list>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>archNeg</fieldName>
+      <fieldHumanName>Predloha.archNeg</fieldHumanName>
+      <fieldHumanHelp>Predloha.archNeg_help</fieldHumanHelp>
+      <fieldDBName>archNeg</fieldDBName>
+      <fieldType>BOL</fieldType>
+      <fieldRepresentation>CHK</fieldRepresentation>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>archNegDate</fieldName>
+      <fieldHumanName>Predloha.archNegDate</fieldHumanName>
+      <fieldHumanHelp>Predloha.archNegDate_help</fieldHumanHelp>
+      <fieldDBName>archNegDate</fieldDBName>
+      <fieldType>DAT</fieldType>
+      <fieldRepresentation>EDI</fieldRepresentation>
+      <formatPattern>dd.MM.yyyy</formatPattern>
+      <formatPatternForInput>dd.MM.yyyy</formatPatternForInput>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>archNegPrac</fieldName>
+      <fieldHumanName>Predloha.archNegPrac</fieldHumanName>
+      <fieldHumanHelp>Predloha.archNegPrac_help</fieldHumanHelp>
+      <fieldDBName>archNegPrac</fieldDBName>
+      <fieldType>STR</fieldType>
+      <fieldRepresentation>COM</fieldRepresentation>
+      <list>DpracovnikUkol</list>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>autor</fieldName>
+      <fieldHumanName>Predloha.autor</fieldHumanName>
+      <fieldHumanHelp>Predloha.autor_help</fieldHumanHelp>
+      <fieldDBName>autor</fieldDBName>
+      <fieldType>STR</fieldType>
+      <fieldRepresentation>EDI</fieldRepresentation>
+      <validateLength>2048</validateLength>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>barevnaHloubka</fieldName>
+      <fieldHumanName>Predloha.barevnaHloubka</fieldHumanName>
+      <fieldHumanHelp>Predloha.barevnaHloubka_help</fieldHumanHelp>
+      <fieldDBName>barevnaHloubka</fieldDBName>
+      <fieldType>STR</fieldType>
+      <fieldRepresentation>EDI</fieldRepresentation>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>barevnaSkala</fieldName>
+      <fieldHumanName>Predloha.barevnaSkala</fieldHumanName>
+      <fieldHumanHelp>Predloha.barevnaSkala_help</fieldHumanHelp>
+      <fieldDBName>barevnaSkala</fieldDBName>
+      <fieldType>STR</fieldType>
+      <fieldRepresentation>COM</fieldRepresentation>
+      <list>SLbarevnaSkala</list>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>carKod</fieldName>
+      <fieldHumanName>Predloha.carKod</fieldHumanName>
+      <fieldHumanHelp>Predloha.carKod_help</fieldHumanHelp>
+      <fieldDBName>carKod</fieldDBName>
+      <fieldType>STR</fieldType>
+      <fieldRepresentation>EDI</fieldRepresentation>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>predKdyTime</fieldName>
+      <fieldHumanName>Predloha.predKdyTime</fieldHumanName>
+      <fieldHumanHelp>Predloha.predKdyTime_help</fieldHumanHelp>
+      <fieldDBName>predKdyTime</fieldDBName>
+      <fieldType>TIM</fieldType>
+      <fieldRepresentation>EDI</fieldRepresentation>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>cast</fieldName>
+      <fieldHumanName>Predloha.cast</fieldHumanName>
+      <fieldHumanHelp>Predloha.cast_help</fieldHumanHelp>
+      <fieldDBName>cast</fieldDBName>
+      <fieldType>STR</fieldType>
+      <fieldRepresentation>EDI</fieldRepresentation>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>cCNB</fieldName>
+      <fieldHumanName>Predloha.cCNB</fieldHumanName>
+      <fieldHumanHelp>Predloha.cCNB_help</fieldHumanHelp>
+      <fieldDBName>cCNB</fieldDBName>
+      <fieldType>STR</fieldType>
+      <fieldRepresentation>EDI</fieldRepresentation>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>seriePart</fieldName>
+      <fieldHumanName>Predloha.seriePart</fieldHumanName>
+      <fieldHumanHelp>Predloha.seriePart_help</fieldHumanHelp>
+      <fieldDBName>seriePart</fieldDBName>
+      <fieldType>STR</fieldType>
+      <fieldRepresentation>EDI</fieldRepresentation>
+      <validateLength>2048</validateLength>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>cisloPer</fieldName>
+      <fieldHumanName>Predloha.cisloPer</fieldHumanName>
+      <fieldHumanHelp>Predloha.cisloPer_help</fieldHumanHelp>
+      <fieldDBName>cisloPer</fieldDBName>
+      <fieldType>STR</fieldType>
+      <fieldRepresentation>EDI</fieldRepresentation>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>cisloZakazky</fieldName>
+      <fieldHumanName>Predloha.cisloZakazky</fieldHumanName>
+      <fieldHumanHelp>Predloha.cisloZakazky_help</fieldHumanHelp>
+      <fieldDBName>cisloZakazky</fieldDBName>
+      <fieldType>STR</fieldType>
+      <fieldRepresentation>EDI</fieldRepresentation>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>idCislo</fieldName>
+      <fieldHumanName>Predloha.idCislo</fieldHumanName>
+      <fieldHumanHelp>Predloha.idCislo_help</fieldHumanHelp>
+      <fieldDBName>idCislo</fieldDBName>
+      <fieldType>STR</fieldType>
+      <fieldRepresentation>EDI</fieldRepresentation>
+      <computed/>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>tDalsiPrace</fieldName>
+      <fieldHumanName>Predloha.tDalsiPrace</fieldHumanName>
+      <fieldHumanHelp>Predloha.tDalsiPrace_help</fieldHumanHelp>
+      <fieldDBName>rPredlohaDP</fieldDBName>
+      <fieldType>TAB</fieldType>
+      <fieldRepresentation>REP</fieldRepresentation>
+      <reference relationshipType="aggregation" rTable="false">cz.incad.rd.DalsiPrace</reference>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>predKdyDate</fieldName>
+      <fieldHumanName>Predloha.predKdyDate</fieldHumanName>
+      <fieldHumanHelp>Predloha.predKdyDate_help</fieldHumanHelp>
+      <fieldDBName>predKdyDate</fieldDBName>
+      <fieldType>DAT</fieldType>
+      <fieldRepresentation>EDI</fieldRepresentation>
+      <formatPattern>dd.MM.yyyy</formatPattern>
+      <formatPatternForInput>dd.MM.yyyy</formatPatternForInput>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>finDate</fieldName>
+      <fieldHumanName>Predloha.finDate</fieldHumanName>
+      <fieldHumanHelp>Predloha.finDate_help</fieldHumanHelp>
+      <fieldDBName>finDate</fieldDBName>
+      <fieldType>DAT</fieldType>
+      <fieldRepresentation>EDI</fieldRepresentation>
+      <computed/>
+      <formatPattern>dd.MM.yyyy</formatPattern>
+      <formatPatternForInput>dd.MM.yyyy</formatPatternForInput>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>ediDate</fieldName>
+      <fieldHumanName>Predloha.ediDate</fieldHumanName>
+      <fieldHumanHelp>Predloha.ediDate_help</fieldHumanHelp>
+      <fieldDBName>ediDate</fieldDBName>
+      <fieldType>DAT</fieldType>
+      <fieldRepresentation>EDI</fieldRepresentation>
+      <computed/>
+      <formatPattern>dd.MM.yyyy</formatPattern>
+      <formatPatternForInput>dd.MM.yyyy</formatPatternForInput>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>zalDate</fieldName>
+      <fieldHumanName>Predloha.zalDate</fieldHumanName>
+      <fieldHumanHelp>Predloha.zalDate_help</fieldHumanHelp>
+      <fieldDBName>zalDate</fieldDBName>
+      <fieldType>DAT</fieldType>
+      <fieldRepresentation>EDI</fieldRepresentation>
+      <computed/>
+      <formatPattern>dd.MM.yyyy</formatPattern>
+      <formatPatternForInput>dd.MM.yyyy</formatPatternForInput>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>digKnihovna</fieldName>
+      <fieldHumanName>Predloha.digKnihovna</fieldHumanName>
+      <fieldHumanHelp>Predloha.digKnihovna_help</fieldHumanHelp>
+      <fieldDBName>digKnihovna</fieldDBName>
+      <fieldType>STR</fieldType>
+      <fieldRepresentation>COM</fieldRepresentation>
+      <list>DLDigitalniKnihovna</list>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>tDigObjekt</fieldName>
+      <fieldHumanName>Predloha.tDigObjekt</fieldHumanName>
+      <fieldHumanHelp>Predloha.tDigObjekt_help</fieldHumanHelp>
+      <fieldDBName>RPredloha_DigObjekt</fieldDBName>
+      <fieldType>TAB</fieldType>
+      <fieldRepresentation>TAB</fieldRepresentation>
+      <reference relationshipType="association" rTable="false">cz.incad.rd.DigObjekt</reference>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>skenDJVU</fieldName>
+      <fieldHumanName>Predloha.skenDJVU</fieldHumanName>
+      <fieldHumanHelp>Predloha.skenDJVU_help</fieldHumanHelp>
+      <fieldDBName>skenDJVU</fieldDBName>
+      <fieldType>BOL</fieldType>
+      <fieldRepresentation>CHK</fieldRepresentation>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>finUser</fieldName>
+      <fieldHumanName>Predloha.finUser</fieldHumanName>
+      <fieldHumanHelp>Predloha.finUser_help</fieldHumanHelp>
+      <fieldDBName>finUser</fieldDBName>
+      <fieldType>STR</fieldType>
+      <fieldRepresentation>EDI</fieldRepresentation>
+      <computed/>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>dostupnost</fieldName>
+      <fieldHumanName>Predloha.dostupnost</fieldHumanName>
+      <fieldHumanHelp>Predloha.dostupnost_help</fieldHumanHelp>
+      <fieldDBName>dostupnost</fieldDBName>
+      <fieldType>STR</fieldType>
+      <fieldRepresentation>COM</fieldRepresentation>
+      <list>SLdostupnost</list>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>druhDokumentu</fieldName>
+      <fieldHumanName>Predloha.druhDokumentu</fieldHumanName>
+      <fieldHumanHelp>Predloha.druhDokumentu_help</fieldHumanHelp>
+      <fieldDBName>druhDokumentu</fieldDBName>
+      <fieldType>STR</fieldType>
+      <fieldRepresentation>COM</fieldRepresentation>
+      <list>DdruhDokumentu</list>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>serieName</fieldName>
+      <fieldHumanName>Predloha.serieName</fieldHumanName>
+      <fieldHumanHelp>Predloha.serieName_help</fieldHumanHelp>
+      <fieldDBName>serieName</fieldDBName>
+      <fieldType>STR</fieldType>
+      <fieldRepresentation>EDI</fieldRepresentation>
+      <validateLength>2048</validateLength>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>ediUser</fieldName>
+      <fieldHumanName>Predloha.ediUser</fieldHumanName>
+      <fieldHumanHelp>Predloha.ediUser_help</fieldHumanHelp>
+      <fieldDBName>ediUser</fieldDBName>
+      <fieldType>STR</fieldType>
+      <fieldRepresentation>EDI</fieldRepresentation>
+      <computed/>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>ediDateURL</fieldName>
+      <fieldHumanName>Predloha.ediDateURL</fieldHumanName>
+      <fieldHumanHelp>Predloha.ediDateURL_help</fieldHumanHelp>
+      <fieldDBName>ediDateURL</fieldDBName>
+      <fieldType>DAT</fieldType>
+      <fieldRepresentation>COMD</fieldRepresentation>
+      <computed/>
+      <formatPattern>dd.MM.yyyy</formatPattern>
+      <formatPatternForInput>dd.MM.yyyy</formatPatternForInput>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>ediDateXML</fieldName>
+      <fieldHumanName>Predloha.ediDateXML</fieldHumanName>
+      <fieldHumanHelp>Predloha.ediDateXML_help</fieldHumanHelp>
+      <fieldDBName>ediDateXML</fieldDBName>
+      <fieldType>DAT</fieldType>
+      <fieldRepresentation>COMD</fieldRepresentation>
+      <computed/>
+      <formatPattern>dd.MM.yyyy</formatPattern>
+      <formatPatternForInput>dd.MM.yyyy</formatPatternForInput>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>financovano</fieldName>
+      <fieldHumanName>Predloha.financovano</fieldHumanName>
+      <fieldHumanHelp>Predloha.financovano_help</fieldHumanHelp>
+      <fieldDBName>financovano</fieldDBName>
+      <fieldType>STR</fieldType>
+      <fieldRepresentation>COM</fieldRepresentation>
+      <list>Dfinancovano</list>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>skenGIF</fieldName>
+      <fieldHumanName>Predloha.skenGIF</fieldHumanName>
+      <fieldHumanHelp>Predloha.skenGIF_help</fieldHumanHelp>
+      <fieldDBName>skenGIF</fieldDBName>
+      <fieldType>BOL</fieldType>
+      <fieldRepresentation>CHK</fieldRepresentation>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>ISBN</fieldName>
+      <fieldHumanName>Predloha.ISBN</fieldHumanName>
+      <fieldHumanHelp>Predloha.ISBN_help</fieldHumanHelp>
+      <fieldDBName>ISBN</fieldDBName>
+      <fieldType>STR</fieldType>
+      <fieldRepresentation>EDI</fieldRepresentation>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>issn</fieldName>
+      <fieldHumanName>Predloha.issn</fieldHumanName>
+      <fieldHumanHelp>Predloha.issn_help</fieldHumanHelp>
+      <fieldDBName>issn</fieldDBName>
+      <fieldType>STR</fieldType>
+      <fieldRepresentation>EDI</fieldRepresentation>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>skenJPEG</fieldName>
+      <fieldHumanName>Predloha.skenJPEG</fieldHumanName>
+      <fieldHumanHelp>Predloha.skenJPEG_help</fieldHumanHelp>
+      <fieldDBName>skenJPEG</fieldDBName>
+      <fieldType>BOL</fieldType>
+      <fieldRepresentation>CHK</fieldRepresentation>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>katalog</fieldName>
+      <fieldHumanName>Predloha.katalog</fieldHumanName>
+      <fieldHumanHelp>Predloha.katalog_help</fieldHumanHelp>
+      <fieldDBName>katalog</fieldDBName>
+      <fieldType>STR</fieldType>
+      <fieldRepresentation>COM</fieldRepresentation>
+      <list>DLKatalog</list>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>predKdo</fieldName>
+      <fieldHumanName>Predloha.predKdo</fieldHumanName>
+      <fieldHumanHelp>Predloha.predKdo_help</fieldHumanHelp>
+      <fieldDBName>predKdo</fieldDBName>
+      <fieldType>STR</fieldType>
+      <fieldRepresentation>COM</fieldRepresentation>
+      <list>DzarazeniUser</list>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>predKomuOdKoho</fieldName>
+      <fieldHumanName>Predloha.predKomuOdKoho</fieldHumanName>
+      <fieldHumanHelp>Predloha.predKomuOdKoho_help</fieldHumanHelp>
+      <fieldDBName>predKomuOdKoho</fieldDBName>
+      <fieldType>STR</fieldType>
+      <fieldRepresentation>COM</fieldRepresentation>
+      <list>DzarazeniUser</list>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>isKVO</fieldName>
+      <fieldHumanName>Predloha.isKVO</fieldHumanName>
+      <fieldHumanHelp>Predloha.isKVO_help</fieldHumanHelp>
+      <fieldDBName>isKVO</fieldDBName>
+      <fieldType>BOL</fieldType>
+      <fieldRepresentation>CHK</fieldRepresentation>
+      <computed/>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>lccKlasifikace</fieldName>
+      <fieldHumanName>Predloha.lccKlasifikace</fieldHumanName>
+      <fieldHumanHelp>Predloha.lccKlasifikace_help</fieldHumanHelp>
+      <fieldDBName>lccKlasifikace</fieldDBName>
+      <fieldType>STR</fieldType>
+      <fieldRepresentation>EDI</fieldRepresentation>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>linkKatalog</fieldName>
+      <fieldHumanName>Predloha.linkKatalog</fieldHumanName>
+      <fieldHumanHelp>Predloha.linkKatalog_help</fieldHumanHelp>
+      <fieldDBName>linkKatalog</fieldDBName>
+      <fieldType>STR</fieldType>
+      <fieldRepresentation>EDI</fieldRepresentation>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>matNegativ</fieldName>
+      <fieldHumanName>Predloha.matNegativ</fieldHumanName>
+      <fieldHumanHelp>Predloha.matNegativ_help</fieldHumanHelp>
+      <fieldDBName>matNegativ</fieldDBName>
+      <fieldType>BOL</fieldType>
+      <fieldRepresentation>CHK</fieldRepresentation>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>matNegativDate</fieldName>
+      <fieldHumanName>Predloha.matNegativDate</fieldHumanName>
+      <fieldHumanHelp>Predloha.matNegativDate_help</fieldHumanHelp>
+      <fieldDBName>matNegativDate</fieldDBName>
+      <fieldType>DAT</fieldType>
+      <fieldRepresentation>EDI</fieldRepresentation>
+      <formatPattern>dd.MM.yyyy</formatPattern>
+      <formatPatternForInput>dd.MM.yyyy</formatPatternForInput>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>matNegativPrac</fieldName>
+      <fieldHumanName>Predloha.matNegativPrac</fieldHumanName>
+      <fieldHumanHelp>Predloha.matNegativPrac_help</fieldHumanHelp>
+      <fieldDBName>matNegativPrac</fieldDBName>
+      <fieldType>STR</fieldType>
+      <fieldRepresentation>COM</fieldRepresentation>
+      <list>DpracovnikUkol</list>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>metaObrazky</fieldName>
+      <fieldHumanName>Predloha.metaObrazky</fieldHumanName>
+      <fieldHumanHelp>Predloha.metaObrazky_help</fieldHumanHelp>
+      <fieldDBName>metaObrazky</fieldDBName>
+      <fieldType>BOL</fieldType>
+      <fieldRepresentation>EDI</fieldRepresentation>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>metaXML</fieldName>
+      <fieldHumanName>Predloha.metaXML</fieldHumanName>
+      <fieldHumanHelp>Predloha.metaXML_help</fieldHumanHelp>
+      <fieldDBName>metaXML</fieldDBName>
+      <fieldType>BOL</fieldType>
+      <fieldRepresentation>EDI</fieldRepresentation>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>metaDate</fieldName>
+      <fieldHumanName>Predloha.metaDate</fieldHumanName>
+      <fieldHumanHelp>Predloha.metaDate_help</fieldHumanHelp>
+      <fieldDBName>metaDate</fieldDBName>
+      <fieldType>DAT</fieldType>
+      <fieldRepresentation>EDI</fieldRepresentation>
+      <formatPattern>dd.MM.yyyy</formatPattern>
+      <formatPatternForInput>dd.MM.yyyy</formatPatternForInput>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>metaEditor</fieldName>
+      <fieldHumanName>Predloha.metaEditor</fieldHumanName>
+      <fieldHumanHelp>Predloha.metaEditor_help</fieldHumanHelp>
+      <fieldDBName>metaEditor</fieldDBName>
+      <fieldType>STR</fieldType>
+      <fieldRepresentation>EDI</fieldRepresentation>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>metaPrac</fieldName>
+      <fieldHumanName>Predloha.metaPrac</fieldHumanName>
+      <fieldHumanHelp>Predloha.metaPrac_help</fieldHumanHelp>
+      <fieldDBName>metaPrac</fieldDBName>
+      <fieldType>STR</fieldType>
+      <fieldRepresentation>COM</fieldRepresentation>
+      <list>DpracovnikUkol</list>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>metaStav</fieldName>
+      <fieldHumanName>Predloha.metaStav</fieldHumanName>
+      <fieldHumanHelp>Predloha.metaStav_help</fieldHumanHelp>
+      <fieldDBName>metaStav</fieldDBName>
+      <fieldType>STR</fieldType>
+      <fieldRepresentation>COM</fieldRepresentation>
+      <list>DdigMetaStav</list>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>mfCislo</fieldName>
+      <fieldHumanName>Predloha.mfCislo</fieldHumanName>
+      <fieldHumanHelp>Predloha.mfCislo_help</fieldHumanHelp>
+      <fieldDBName>mfCislo</fieldDBName>
+      <fieldType>STR</fieldType>
+      <fieldRepresentation>EDI</fieldRepresentation>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>mikroDate</fieldName>
+      <fieldHumanName>Predloha.mikroDate</fieldHumanName>
+      <fieldHumanHelp>Predloha.mikroDate_help</fieldHumanHelp>
+      <fieldDBName>mikroDate</fieldDBName>
+      <fieldType>DAT</fieldType>
+      <fieldRepresentation>EDI</fieldRepresentation>
+      <formatPattern>dd.MM.yyyy</formatPattern>
+      <formatPatternForInput>dd.MM.yyyy</formatPatternForInput>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>mikroPrac</fieldName>
+      <fieldHumanName>Predloha.mikroPrac</fieldHumanName>
+      <fieldHumanHelp>Predloha.mikroPrac_help</fieldHumanHelp>
+      <fieldDBName>mikroPrac</fieldDBName>
+      <fieldType>STR</fieldType>
+      <fieldRepresentation>COM</fieldRepresentation>
+      <list>DpracovnikUkol</list>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>mikroStav</fieldName>
+      <fieldHumanName>Predloha.mikroStav</fieldHumanName>
+      <fieldHumanHelp>Predloha.mikroStav_help</fieldHumanHelp>
+      <fieldDBName>mikroStav</fieldDBName>
+      <fieldType>STR</fieldType>
+      <fieldRepresentation>COM</fieldRepresentation>
+      <list>DdigMikroStav</list>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>mistoVyd</fieldName>
+      <fieldHumanName>Predloha.mistoVyd</fieldHumanName>
+      <fieldHumanHelp>Predloha.mistoVyd_help</fieldHumanHelp>
+      <fieldDBName>mistoVyd</fieldDBName>
+      <fieldType>STR</fieldType>
+      <fieldRepresentation>EDI</fieldRepresentation>
+      <validateLength>2048</validateLength>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>modelSkeneru</fieldName>
+      <fieldHumanName>Predloha.modelSkeneru</fieldHumanName>
+      <fieldHumanHelp>Predloha.modelSkeneru_help</fieldHumanHelp>
+      <fieldDBName>modelSkeneru</fieldDBName>
+      <fieldType>STR</fieldType>
+      <fieldRepresentation>COM</fieldRepresentation>
+      <list>DmodelSkeneru</list>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>tXPredMikro</fieldName>
+      <fieldHumanName>Predloha.tXPredMikro</fieldHumanName>
+      <fieldHumanHelp>Predloha.tXPredMikro_help</fieldHumanHelp>
+      <fieldDBName>rPredloha</fieldDBName>
+      <fieldType>TAB</fieldType>
+      <fieldRepresentation>REP</fieldRepresentation>
+      <reference relationshipType="association" rTable="false">cz.incad.rd.XPredMikro</reference>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>nazev</fieldName>
+      <fieldHumanName>Predloha.nazev</fieldHumanName>
+      <fieldHumanHelp>Predloha.nazev_help</fieldHumanHelp>
+      <fieldDBName>nazev</fieldDBName>
+      <fieldType>STR</fieldType>
+      <fieldRepresentation>EDI</fieldRepresentation>
+      <validateLength>4000</validateLength>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>importSource</fieldName>
+      <fieldHumanName>Predloha.importSource</fieldHumanName>
+      <fieldHumanHelp>Predloha.importSource_help</fieldHumanHelp>
+      <fieldDBName>importSource</fieldDBName>
+      <fieldType>STR</fieldType>
+      <fieldRepresentation>EDI</fieldRepresentation>
+      <validateLength>500</validateLength>
+      <computed/>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>tNepCCNB</fieldName>
+      <fieldHumanName>Predloha.tNepCCNB</fieldHumanName>
+      <fieldHumanHelp>Predloha.tNepCCNB_help</fieldHumanHelp>
+      <fieldDBName>RPredloha_NepCCNB</fieldDBName>
+      <fieldType>TAB</fieldType>
+      <fieldRepresentation>REP</fieldRepresentation>
+      <reference relationshipType="aggregation" rTable="false">cz.incad.rd.NepCCNB</reference>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>tNepISBN</fieldName>
+      <fieldHumanName>Predloha.tNepISBN</fieldHumanName>
+      <fieldHumanHelp>Predloha.tNepISBN_help</fieldHumanHelp>
+      <fieldDBName>RPredloha_NepISBN</fieldDBName>
+      <fieldType>TAB</fieldType>
+      <fieldRepresentation>REP</fieldRepresentation>
+      <reference relationshipType="aggregation" rTable="false">cz.incad.rd.NepISBN</reference>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>tNepISSN</fieldName>
+      <fieldHumanName>Predloha.tNepISSN</fieldHumanName>
+      <fieldHumanHelp>Predloha.tNepISSN_help</fieldHumanHelp>
+      <fieldDBName>RPredloha_NepISSN</fieldDBName>
+      <fieldType>TAB</fieldType>
+      <fieldRepresentation>REP</fieldRepresentation>
+      <reference relationshipType="aggregation" rTable="false">cz.incad.rd.NepISSN</reference>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>obdobi</fieldName>
+      <fieldHumanName>Predloha.obdobi</fieldHumanName>
+      <fieldHumanHelp>Predloha.obdobi_help</fieldHumanHelp>
+      <fieldDBName>obdobi</fieldDBName>
+      <fieldType>STR</fieldType>
+      <fieldRepresentation>EDI</fieldRepresentation>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>skenOCR</fieldName>
+      <fieldHumanName>Predloha.skenOCR</fieldHumanName>
+      <fieldHumanHelp>Predloha.skenOCR_help</fieldHumanHelp>
+      <fieldDBName>skenOCR</fieldDBName>
+      <fieldType>BOL</fieldType>
+      <fieldRepresentation>EDI</fieldRepresentation>
+      <initValue>false</initValue>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>skenOCRSvabach</fieldName>
+      <fieldHumanName>Predloha.skenOCRSvabach</fieldHumanName>
+      <fieldHumanHelp>Predloha.skenOCRSvabach_help</fieldHumanHelp>
+      <fieldDBName>skenOCRSvabach</fieldDBName>
+      <fieldType>BOL</fieldType>
+      <fieldRepresentation>EDI</fieldRepresentation>
+      <initValue>false</initValue>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>oldZakazakzaId</fieldName>
+      <fieldHumanName>Predloha.oldZakazakzaId</fieldHumanName>
+      <fieldHumanHelp>Predloha.oldZakazakzaId_help</fieldHumanHelp>
+      <fieldDBName>oldZakazakzaId</fieldDBName>
+      <fieldType>INT</fieldType>
+      <fieldRepresentation>EDI</fieldRepresentation>
+      <computed/>
+      <precision>19</precision>
+    </field>
+    <field>
+      <fieldName>parSkenovani</fieldName>
+      <fieldHumanName>Predloha.parSkenovani</fieldHumanName>
+      <fieldHumanHelp>Predloha.parSkenovani_help</fieldHumanHelp>
+      <fieldDBName>parSkenovani</fieldDBName>
+      <fieldType>STR</fieldType>
+      <fieldRepresentation>EDI</fieldRepresentation>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>skenPDF</fieldName>
+      <fieldHumanName>Predloha.skenPDF</fieldHumanName>
+      <fieldHumanHelp>Predloha.skenPDF_help</fieldHumanHelp>
+      <fieldDBName>skenPDF</fieldDBName>
+      <fieldType>BOL</fieldType>
+      <fieldRepresentation>CHK</fieldRepresentation>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>rPeriodikum</fieldName>
+      <fieldHumanName>Predloha.rPeriodikum</fieldHumanName>
+      <fieldHumanHelp>Predloha.rPeriodikum_help</fieldHumanHelp>
+      <fieldDBName>rPeriodikum</fieldDBName>
+      <fieldType>REF</fieldType>
+      <fieldRepresentation>REF</fieldRepresentation>
+      <reference relationshipType="association" rTable="false">cz.incad.rd.Periodikum</reference>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>xml</fieldName>
+      <fieldHumanName>Predloha.xml</fieldHumanName>
+      <fieldHumanHelp>Predloha.xml_help</fieldHumanHelp>
+      <fieldDBName>xml</fieldDBName>
+      <fieldType>TXT</fieldType>
+      <fieldRepresentation>TXT</fieldRepresentation>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>pocetPoli</fieldName>
+      <fieldHumanName>Predloha.pocetPoli</fieldHumanName>
+      <fieldHumanHelp>Predloha.pocetPoli_help</fieldHumanHelp>
+      <fieldDBName>pocetPoli</fieldDBName>
+      <fieldType>INT</fieldType>
+      <fieldRepresentation>EDI</fieldRepresentation>
+      <precision>19</precision>
+    </field>
+    <field>
+      <fieldName>skenPocetSouboru</fieldName>
+      <fieldHumanName>Predloha.skenPocetSouboru</fieldHumanName>
+      <fieldHumanHelp>Predloha.skenPocetSouboru_help</fieldHumanHelp>
+      <fieldDBName>skenPocetSouboru</fieldDBName>
+      <fieldType>STR</fieldType>
+      <fieldRepresentation>EDI</fieldRepresentation>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>pocetStran</fieldName>
+      <fieldHumanName>Predloha.pocetStran</fieldHumanName>
+      <fieldHumanHelp>Predloha.pocetStran_help</fieldHumanHelp>
+      <fieldDBName>pocetStran</fieldDBName>
+      <fieldType>STR</fieldType>
+      <fieldRepresentation>EDI</fieldRepresentation>
+      <validateLength>2048</validateLength>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>podnazev</fieldName>
+      <fieldHumanName>Predloha.podnazev</fieldHumanName>
+      <fieldHumanHelp>Predloha.podnazev_help</fieldHumanHelp>
+      <fieldDBName>podnazev</fieldDBName>
+      <fieldType>STR</fieldType>
+      <fieldRepresentation>EDI</fieldRepresentation>
+      <validateLength>3000</validateLength>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>pole001</fieldName>
+      <fieldHumanName>Predloha.pole001</fieldHumanName>
+      <fieldHumanHelp>Predloha.pole001_help</fieldHumanHelp>
+      <fieldDBName>pole001</fieldDBName>
+      <fieldType>STR</fieldType>
+      <fieldRepresentation>EDI</fieldRepresentation>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>poradiPriv</fieldName>
+      <fieldHumanName>Predloha.poradiPriv</fieldHumanName>
+      <fieldHumanHelp>Predloha.poradiPriv_help</fieldHumanHelp>
+      <fieldDBName>poradiPriv</fieldDBName>
+      <fieldType>INT</fieldType>
+      <fieldRepresentation>EDI</fieldRepresentation>
+      <precision>19</precision>
+    </field>
+    <field>
+      <fieldName>pouzitySW</fieldName>
+      <fieldHumanName>Predloha.pouzitySW</fieldHumanName>
+      <fieldHumanHelp>Predloha.pouzitySW_help</fieldHumanHelp>
+      <fieldDBName>pouzitySW</fieldDBName>
+      <fieldType>STR</fieldType>
+      <fieldRepresentation>EDI</fieldRepresentation>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>pozitiv</fieldName>
+      <fieldHumanName>Predloha.pozitiv</fieldHumanName>
+      <fieldHumanHelp>Predloha.pozitiv_help</fieldHumanHelp>
+      <fieldDBName>pozitiv</fieldDBName>
+      <fieldType>BOL</fieldType>
+      <fieldRepresentation>CHK</fieldRepresentation>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>poznKExemplari</fieldName>
+      <fieldHumanName>Predloha.poznKExemplari</fieldHumanName>
+      <fieldHumanHelp>Predloha.poznKExemplari_help</fieldHumanHelp>
+      <fieldDBName>poznKExemplari</fieldDBName>
+      <fieldType>STR</fieldType>
+      <fieldRepresentation>EDI</fieldRepresentation>
+      <validateLength>2048</validateLength>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>poznRec</fieldName>
+      <fieldHumanName>Predloha.poznRec</fieldHumanName>
+      <fieldHumanHelp>Predloha.poznRec_help</fieldHumanHelp>
+      <fieldDBName>poznRec</fieldDBName>
+      <fieldType>STR</fieldType>
+      <fieldRepresentation>EDI</fieldRepresentation>
+      <validateLength>2048</validateLength>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>privazekPoznamka</fieldName>
+      <fieldHumanName>Predloha.privazekPoznamka</fieldHumanName>
+      <fieldHumanHelp>Predloha.privazekPoznamka_help</fieldHumanHelp>
+      <fieldDBName>privazekPoznamka</fieldDBName>
+      <fieldType>STR</fieldType>
+      <fieldRepresentation>EDI</fieldRepresentation>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>bibPoznamka</fieldName>
+      <fieldHumanName>Predloha.bibPoznamka</fieldHumanName>
+      <fieldHumanHelp>Predloha.bibPoznamka_help</fieldHumanHelp>
+      <fieldDBName>bibPoznamka</fieldDBName>
+      <fieldType>STR</fieldType>
+      <fieldRepresentation>EDI</fieldRepresentation>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>tPredani</fieldName>
+      <fieldHumanName>Predloha.tPredani</fieldHumanName>
+      <fieldHumanHelp>Predloha.tPredani_help</fieldHumanHelp>
+      <fieldDBName>rPredlohaP</fieldDBName>
+      <fieldType>TAB</fieldType>
+      <fieldRepresentation>TAB</fieldRepresentation>
+      <reference relationshipType="aggregation" rTable="false">cz.incad.rd.Predani</reference>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>vizitka</fieldName>
+      <fieldHumanName>Predloha.vizitka</fieldHumanName>
+      <fieldHumanHelp>Predloha.vizitka_help</fieldHumanHelp>
+      <fieldDBName>vizitka</fieldDBName>
+      <fieldType>STR</fieldType>
+      <fieldRepresentation>EDI</fieldRepresentation>
+      <validateLength>3000</validateLength>
+      <computed/>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>pripDate</fieldName>
+      <fieldHumanName>Predloha.pripDate</fieldHumanName>
+      <fieldHumanHelp>Predloha.pripDate_help</fieldHumanHelp>
+      <fieldDBName>pripDate</fieldDBName>
+      <fieldType>DAT</fieldType>
+      <fieldRepresentation>EDI</fieldRepresentation>
+      <formatPattern>dd.MM.yyyy</formatPattern>
+      <formatPatternForInput>dd.MM.yyyy</formatPatternForInput>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>pripPozn</fieldName>
+      <fieldHumanName>Predloha.pripPozn</fieldHumanName>
+      <fieldHumanHelp>Predloha.pripPozn_help</fieldHumanHelp>
+      <fieldDBName>pripPozn</fieldDBName>
+      <fieldType>STR</fieldType>
+      <fieldRepresentation>EDI</fieldRepresentation>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>pripPrac</fieldName>
+      <fieldHumanName>Predloha.pripPrac</fieldHumanName>
+      <fieldHumanHelp>Predloha.pripPrac_help</fieldHumanHelp>
+      <fieldDBName>pripPrac</fieldDBName>
+      <fieldType>STR</fieldType>
+      <fieldRepresentation>COM</fieldRepresentation>
+      <list>DpracovnikUkol</list>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>pripStav</fieldName>
+      <fieldHumanName>Predloha.pripStav</fieldHumanName>
+      <fieldHumanHelp>Predloha.pripStav_help</fieldHumanHelp>
+      <fieldDBName>pripStav</fieldDBName>
+      <fieldType>STR</fieldType>
+      <fieldRepresentation>COM</fieldRepresentation>
+      <list>DdigPripStav</list>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>privazek</fieldName>
+      <fieldHumanName>Predloha.privazek</fieldHumanName>
+      <fieldHumanHelp>Predloha.privazek_help</fieldHumanHelp>
+      <fieldDBName>privazek</fieldDBName>
+      <fieldType>BOL</fieldType>
+      <fieldRepresentation>CHK</fieldRepresentation>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>lProfil</fieldName>
+      <fieldHumanName>Predloha.lProfil</fieldHumanName>
+      <fieldHumanHelp>Predloha.lProfil_help</fieldHumanHelp>
+      <fieldDBName>lProfil</fieldDBName>
+      <fieldType>STR</fieldType>
+      <fieldRepresentation>COM</fieldRepresentation>
+      <list>Dprofil</list>
+      <computed/>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>rozsah</fieldName>
+      <fieldHumanName>Predloha.rozsah</fieldHumanName>
+      <fieldHumanHelp>Predloha.rozsah_help</fieldHumanHelp>
+      <fieldDBName>rozsah</fieldDBName>
+      <fieldType>STR</fieldType>
+      <fieldRepresentation>EDI</fieldRepresentation>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>rokVyd</fieldName>
+      <fieldHumanName>Predloha.rokVyd</fieldHumanName>
+      <fieldHumanHelp>Predloha.rokVyd_help</fieldHumanHelp>
+      <fieldDBName>rokVyd</fieldDBName>
+      <fieldType>STR</fieldType>
+      <fieldRepresentation>EDI</fieldRepresentation>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>rozliseni</fieldName>
+      <fieldHumanName>Predloha.rozliseni</fieldHumanName>
+      <fieldHumanHelp>Predloha.rozliseni_help</fieldHumanHelp>
+      <fieldDBName>rozliseni</fieldDBName>
+      <fieldType>STR</fieldType>
+      <fieldRepresentation>EDI</fieldRepresentation>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>indexovano</fieldName>
+      <fieldHumanName>Predloha.indexovano</fieldHumanName>
+      <fieldHumanHelp>Predloha.indexovano_help</fieldHumanHelp>
+      <fieldDBName>indexovano</fieldDBName>
+      <fieldType>BOL</fieldType>
+      <fieldRepresentation>CHK</fieldRepresentation>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>sigla1</fieldName>
+      <fieldHumanName>Predloha.sigla1</fieldHumanName>
+      <fieldHumanHelp>Predloha.sigla1_help</fieldHumanHelp>
+      <fieldDBName>sigla1</fieldDBName>
+      <fieldType>STR</fieldType>
+      <fieldRepresentation>COM</fieldRepresentation>
+      <list>InsVlastnik</list>
+      <validateLength>32</validateLength>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>sigla2</fieldName>
+      <fieldHumanName>Predloha.sigla2</fieldHumanName>
+      <fieldHumanHelp>Predloha.sigla2_help</fieldHumanHelp>
+      <fieldDBName>sigla2</fieldDBName>
+      <fieldType>STR</fieldType>
+      <fieldRepresentation>COM</fieldRepresentation>
+      <list>InsVlastnik</list>
+      <validateLength>32</validateLength>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>signatura</fieldName>
+      <fieldHumanName>Predloha.signatura</fieldHumanName>
+      <fieldHumanHelp>Predloha.signatura_help</fieldHumanHelp>
+      <fieldDBName>signatura</fieldDBName>
+      <fieldType>STR</fieldType>
+      <fieldRepresentation>EDI</fieldRepresentation>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>metaSirius</fieldName>
+      <fieldHumanName>Predloha.metaSirius</fieldHumanName>
+      <fieldHumanHelp>Predloha.metaSirius_help</fieldHumanHelp>
+      <fieldDBName>metaSirius</fieldDBName>
+      <fieldType>BOL</fieldType>
+      <fieldRepresentation>EDI</fieldRepresentation>
+      <initValue>false</initValue>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>skenerProfil</fieldName>
+      <fieldHumanName>Predloha.skenerProfil</fieldHumanName>
+      <fieldHumanHelp>Predloha.skenerProfil_help</fieldHumanHelp>
+      <fieldDBName>skenerProfil</fieldDBName>
+      <fieldType>STR</fieldType>
+      <fieldRepresentation>COM</fieldRepresentation>
+      <list>DSkener</list>
+      <computed/>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>skenDate</fieldName>
+      <fieldHumanName>Predloha.skenDate</fieldHumanName>
+      <fieldHumanHelp>Predloha.skenDate_help</fieldHumanHelp>
+      <fieldDBName>skenDate</fieldDBName>
+      <fieldType>DAT</fieldType>
+      <fieldRepresentation>EDI</fieldRepresentation>
+      <formatPattern>dd.MM.yyyy</formatPattern>
+      <formatPatternForInput>dd.MM.yyyy</formatPatternForInput>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>skenPrac</fieldName>
+      <fieldHumanName>Predloha.skenPrac</fieldHumanName>
+      <fieldHumanHelp>Predloha.skenPrac_help</fieldHumanHelp>
+      <fieldDBName>skenPrac</fieldDBName>
+      <fieldType>STR</fieldType>
+      <fieldRepresentation>COM</fieldRepresentation>
+      <list>DpracovnikUkol</list>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>skenStav</fieldName>
+      <fieldHumanName>Predloha.skenStav</fieldHumanName>
+      <fieldHumanHelp>Predloha.skenStav_help</fieldHumanHelp>
+      <fieldDBName>skenStav</fieldDBName>
+      <fieldType>STR</fieldType>
+      <fieldRepresentation>COM</fieldRepresentation>
+      <list>DdigSkenStav</list>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>skenScanStran</fieldName>
+      <fieldHumanName>Predloha.skenScanStran</fieldHumanName>
+      <fieldHumanHelp>Predloha.skenScanStran_help</fieldHumanHelp>
+      <fieldDBName>skenScanStran</fieldDBName>
+      <fieldType>INT</fieldType>
+      <fieldRepresentation>EDI</fieldRepresentation>
+      <precision>19</precision>
+    </field>
+    <field>
+      <fieldName>specDruh</fieldName>
+      <fieldHumanName>Predloha.specDruh</fieldHumanName>
+      <fieldHumanHelp>Predloha.specDruh_help</fieldHumanHelp>
+      <fieldDBName>specDruh</fieldDBName>
+      <fieldType>STR</fieldType>
+      <fieldRepresentation>COM</fieldRepresentation>
+      <list>SLspecDruh</list>
+      <validateLength>16</validateLength>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>stavRec</fieldName>
+      <fieldHumanName>Predloha.stavRec</fieldHumanName>
+      <fieldHumanHelp>Predloha.stavRec_help</fieldHumanHelp>
+      <fieldDBName>stavRec</fieldDBName>
+      <fieldType>STR</fieldType>
+      <fieldRepresentation>COM</fieldRepresentation>
+      <list>DstavRec</list>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>archStav</fieldName>
+      <fieldHumanName>Predloha.archStav</fieldHumanName>
+      <fieldHumanHelp>Predloha.archStav_help</fieldHumanHelp>
+      <fieldDBName>archStav</fieldDBName>
+      <fieldType>STR</fieldType>
+      <fieldRepresentation>COM</fieldRepresentation>
+      <list>DdigArchStav</list>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>skenStupneSedi</fieldName>
+      <fieldHumanName>Predloha.skenStupneSedi</fieldHumanName>
+      <fieldHumanHelp>Predloha.skenStupneSedi_help</fieldHumanHelp>
+      <fieldDBName>skenStupneSedi</fieldDBName>
+      <fieldType>STR</fieldType>
+      <fieldRepresentation>EDI</fieldRepresentation>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>fmt</fieldName>
+      <fieldHumanName>Predloha.fmt</fieldHumanName>
+      <fieldHumanHelp>Predloha.fmt_help</fieldHumanHelp>
+      <fieldDBName>fmt</fieldDBName>
+      <fieldType>STR</fieldType>
+      <fieldRepresentation>EDI</fieldRepresentation>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>idSKC</fieldName>
+      <fieldHumanName>Predloha.idSKC</fieldHumanName>
+      <fieldHumanHelp>Predloha.idSKC_help</fieldHumanHelp>
+      <fieldDBName>idSKC</fieldDBName>
+      <fieldType>STR</fieldType>
+      <fieldRepresentation>EDI</fieldRepresentation>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>oldClassTitul</fieldName>
+      <fieldHumanName>Predloha.oldClassTitul</fieldHumanName>
+      <fieldHumanHelp>Predloha.oldClassTitul_help</fieldHumanHelp>
+      <fieldDBName>oldClassTitul</fieldDBName>
+      <fieldType>STR</fieldType>
+      <fieldRepresentation>EDI</fieldRepresentation>
+      <computed/>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>oldExemplarId</fieldName>
+      <fieldHumanName>Predloha.oldExemplarId</fieldHumanName>
+      <fieldHumanHelp>Predloha.oldExemplarId_help</fieldHumanHelp>
+      <fieldDBName>oldExemplarId</fieldDBName>
+      <fieldType>INT</fieldType>
+      <fieldRepresentation>EDI</fieldRepresentation>
+      <computed/>
+      <precision>19</precision>
+    </field>
+    <field>
+      <fieldName>oldPrivazekId</fieldName>
+      <fieldHumanName>Predloha.oldPrivazekId</fieldHumanName>
+      <fieldHumanHelp>Predloha.oldPrivazekId_help</fieldHumanHelp>
+      <fieldDBName>oldPrivazekId</fieldDBName>
+      <fieldType>INT</fieldType>
+      <fieldRepresentation>EDI</fieldRepresentation>
+      <computed/>
+      <precision>19</precision>
+    </field>
+    <field>
+      <fieldName>oldTitulId</fieldName>
+      <fieldHumanName>Predloha.oldTitulId</fieldHumanName>
+      <fieldHumanHelp>Predloha.oldTitulId_help</fieldHumanHelp>
+      <fieldDBName>oldTitulId</fieldDBName>
+      <fieldType>INT</fieldType>
+      <fieldRepresentation>EDI</fieldRepresentation>
+      <computed/>
+      <precision>19</precision>
+    </field>
+    <field>
+      <fieldName>oldZakazkaId</fieldName>
+      <fieldHumanName>Predloha.oldZakazkaId</fieldHumanName>
+      <fieldHumanHelp>Predloha.oldZakazkaId_help</fieldHumanHelp>
+      <fieldDBName>oldZakazkaId</fieldDBName>
+      <fieldType>STR</fieldType>
+      <fieldRepresentation>EDI</fieldRepresentation>
+      <computed/>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>vznikZaznamu</fieldName>
+      <fieldHumanName>Predloha.vznikZaznamu</fieldHumanName>
+      <fieldHumanHelp>Predloha.vznikZaznamu_help</fieldHumanHelp>
+      <fieldDBName>vznikZaznamu</fieldDBName>
+      <fieldType>STR</fieldType>
+      <fieldRepresentation>EDI</fieldRepresentation>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>sysno</fieldName>
+      <fieldHumanName>Predloha.sysno</fieldHumanName>
+      <fieldHumanHelp>Predloha.sysno_help</fieldHumanHelp>
+      <fieldDBName>sysno</fieldDBName>
+      <fieldType>STR</fieldType>
+      <fieldRepresentation>EDI</fieldRepresentation>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>tempCarKod</fieldName>
+      <fieldHumanName>Predloha.tempCarKod</fieldHumanName>
+      <fieldHumanHelp>Predloha.tempCarKod_help</fieldHumanHelp>
+      <fieldDBName>tempCarKod</fieldDBName>
+      <fieldType>STR</fieldType>
+      <fieldRepresentation>EDI</fieldRepresentation>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>tempParSkenovani</fieldName>
+      <fieldHumanName>Predloha.tempParSkenovani</fieldHumanName>
+      <fieldHumanHelp>Predloha.tempParSkenovani_help</fieldHumanHelp>
+      <fieldDBName>tempParSkenovani</fieldDBName>
+      <fieldType>STR</fieldType>
+      <fieldRepresentation>EDI</fieldRepresentation>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>skenTIFF</fieldName>
+      <fieldHumanName>Predloha.skenTIFF</fieldHumanName>
+      <fieldHumanHelp>Predloha.skenTIFF_help</fieldHumanHelp>
+      <fieldDBName>skenTIFF</fieldDBName>
+      <fieldType>BOL</fieldType>
+      <fieldRepresentation>CHK</fieldRepresentation>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>skenTXT</fieldName>
+      <fieldHumanName>Predloha.skenTXT</fieldHumanName>
+      <fieldHumanHelp>Predloha.skenTXT_help</fieldHumanHelp>
+      <fieldDBName>skenTXT</fieldDBName>
+      <fieldType>BOL</fieldType>
+      <fieldRepresentation>CHK</fieldRepresentation>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>predTypAkce</fieldName>
+      <fieldHumanName>Predloha.predTypAkce</fieldHumanName>
+      <fieldHumanHelp>Predloha.predTypAkce_help</fieldHumanHelp>
+      <fieldDBName>predTypAkce</fieldDBName>
+      <fieldType>STR</fieldType>
+      <fieldRepresentation>COM</fieldRepresentation>
+      <list>SLtypAkce</list>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>typSkeneru</fieldName>
+      <fieldHumanName>Predloha.typSkeneru</fieldHumanName>
+      <fieldHumanHelp>Predloha.typSkeneru_help</fieldHumanHelp>
+      <fieldDBName>typSkeneru</fieldDBName>
+      <fieldType>STR</fieldType>
+      <fieldRepresentation>COM</fieldRepresentation>
+      <list>SLtypSkeneru</list>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>udirdcz</fieldName>
+      <fieldHumanName>Predloha.udirdcz</fieldHumanName>
+      <fieldHumanHelp>Predloha.udirdcz_help</fieldHumanHelp>
+      <fieldDBName>udirdcz</fieldDBName>
+      <fieldType>STR</fieldType>
+      <fieldRepresentation>EDI</fieldRepresentation>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>url</fieldName>
+      <fieldHumanName>Predloha.url</fieldHumanName>
+      <fieldHumanHelp>Predloha.url_help</fieldHumanHelp>
+      <fieldDBName>url</fieldDBName>
+      <fieldType>STR</fieldType>
+      <fieldRepresentation>EDI</fieldRepresentation>
+      <validateLength>2048</validateLength>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>urlTitul</fieldName>
+      <fieldHumanName>Predloha.urlTitul</fieldHumanName>
+      <fieldHumanHelp>Predloha.urlTitul_help</fieldHumanHelp>
+      <fieldDBName>urlTitul</fieldDBName>
+      <fieldType>STR</fieldType>
+      <fieldRepresentation>EDI</fieldRepresentation>
+      <validateLength>2048</validateLength>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>urlTitNK</fieldName>
+      <fieldHumanName>Predloha.urlTitNK</fieldHumanName>
+      <fieldHumanHelp>Predloha.urlTitNK_help</fieldHumanHelp>
+      <fieldDBName>urlTitNK</fieldDBName>
+      <fieldType>STR</fieldType>
+      <fieldRepresentation>EDI</fieldRepresentation>
+      <validateLength>2048</validateLength>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>urnnbn</fieldName>
+      <fieldHumanName>Predloha.urnnbn</fieldHumanName>
+      <fieldHumanHelp>Predloha.urnnbn_help</fieldHumanHelp>
+      <fieldDBName>urnnbn</fieldDBName>
+      <fieldType>STR</fieldType>
+      <fieldRepresentation>EDI</fieldRepresentation>
+      <validateLength>4000</validateLength>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>tURNNBN</fieldName>
+      <fieldHumanName>Predloha.tURNNBN</fieldHumanName>
+      <fieldHumanHelp>Predloha.tURNNBN_help</fieldHumanHelp>
+      <fieldDBName>RPredloha_URNNBN</fieldDBName>
+      <fieldType>TAB</fieldType>
+      <fieldRepresentation>REP</fieldRepresentation>
+      <reference relationshipType="aggregation" rTable="false">cz.incad.rd.URNNBN</reference>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>urnnbnFlag</fieldName>
+      <fieldHumanName>Predloha.urnnbnFlag</fieldHumanName>
+      <fieldHumanHelp>Predloha.urnnbnFlag_help</fieldHumanHelp>
+      <fieldDBName>urnnbnflag</fieldDBName>
+      <fieldType>INT</fieldType>
+      <fieldRepresentation>COM</fieldRepresentation>
+      <list>SLurnnbnFlag</list>
+      <precision>19</precision>
+    </field>
+    <field>
+      <fieldName>urnnbnNote</fieldName>
+      <fieldHumanName>Predloha.urnnbnNote</fieldHumanName>
+      <fieldHumanHelp>Predloha.urnnbnNote_help</fieldHumanHelp>
+      <fieldDBName>urnnbnNote</fieldDBName>
+      <fieldType>TXT</fieldType>
+      <fieldRepresentation>TXT</fieldRepresentation>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>tUUIDt</fieldName>
+      <fieldHumanName>Predloha.tUUID</fieldHumanName>
+      <fieldHumanHelp>Predloha.tUUID_help</fieldHumanHelp>
+      <fieldDBName>RPredloha_UUID</fieldDBName>
+      <fieldType>TAB</fieldType>
+      <fieldRepresentation>TAB</fieldRepresentation>
+      <reference relationshipType="aggregation" rTable="false">cz.incad.rd.UUID</reference>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>tVarNazev</fieldName>
+      <fieldHumanName>Predloha.tVarNazev</fieldHumanName>
+      <fieldHumanHelp>Predloha.tVarNazev_help</fieldHumanHelp>
+      <fieldDBName>rPredloha_TVN</fieldDBName>
+      <fieldType>TAB</fieldType>
+      <fieldRepresentation>REP</fieldRepresentation>
+      <reference relationshipType="aggregation" rTable="false">cz.incad.rd.TabVarNazev</reference>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>predVarka</fieldName>
+      <fieldHumanName>Predloha.predVarka</fieldHumanName>
+      <fieldHumanHelp>Predloha.predVarka_help</fieldHumanHelp>
+      <fieldDBName>predVarka</fieldDBName>
+      <fieldType>STR</fieldType>
+      <fieldRepresentation>EDI</fieldRepresentation>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>verzeSW</fieldName>
+      <fieldHumanName>Predloha.verzeSW</fieldHumanName>
+      <fieldHumanHelp>Predloha.verzeSW_help</fieldHumanHelp>
+      <fieldDBName>verzeSW</fieldDBName>
+      <fieldType>STR</fieldType>
+      <fieldRepresentation>EDI</fieldRepresentation>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>vlastnikSkeneru</fieldName>
+      <fieldHumanName>Predloha.vlastnikSkeneru</fieldHumanName>
+      <fieldHumanHelp>Predloha.vlastnikSkeneru_help</fieldHumanHelp>
+      <fieldDBName>vlastnikSkeneru</fieldDBName>
+      <fieldType>STR</fieldType>
+      <fieldRepresentation>COM</fieldRepresentation>
+      <list>DzarazeniUser</list>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>securityOwner</fieldName>
+      <fieldHumanName>Predloha.securityOwner</fieldHumanName>
+      <fieldHumanHelp>Predloha.securityOwner_help</fieldHumanHelp>
+      <fieldDBName>securityOwner</fieldDBName>
+      <fieldType>STR</fieldType>
+      <fieldRepresentation>COM</fieldRepresentation>
+      <list>DzarazeniUser</list>
+      <computed/>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>vydavatel</fieldName>
+      <fieldHumanName>Predloha.vydavatel</fieldHumanName>
+      <fieldHumanHelp>Predloha.vydavatel_help</fieldHumanHelp>
+      <fieldDBName>vydavatel</fieldDBName>
+      <fieldType>STR</fieldType>
+      <fieldRepresentation>EDI</fieldRepresentation>
+      <validateLength>2048</validateLength>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>vyrobceSkeneru</fieldName>
+      <fieldHumanName>Predloha.vyrobceSkeneru</fieldHumanName>
+      <fieldHumanHelp>Predloha.vyrobceSkeneru_help</fieldHumanHelp>
+      <fieldDBName>vyrobceSkeneru</fieldDBName>
+      <fieldType>STR</fieldType>
+      <fieldRepresentation>EDI</fieldRepresentation>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>vyrobceSW</fieldName>
+      <fieldHumanName>Predloha.vyrobceSW</fieldHumanName>
+      <fieldHumanHelp>Predloha.vyrobceSW_help</fieldHumanHelp>
+      <fieldDBName>vyrobceSW</fieldDBName>
+      <fieldType>STR</fieldType>
+      <fieldRepresentation>EDI</fieldRepresentation>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>vyskaKnihy</fieldName>
+      <fieldHumanName>Predloha.vyskaKnihy</fieldHumanName>
+      <fieldHumanHelp>Predloha.vyskaKnihy_help</fieldHumanHelp>
+      <fieldDBName>vyskaKnihy</fieldDBName>
+      <fieldType>STR</fieldType>
+      <fieldRepresentation>EDI</fieldRepresentation>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>zalUser</fieldName>
+      <fieldHumanName>Predloha.zalUser</fieldHumanName>
+      <fieldHumanHelp>Predloha.zalUser_help</fieldHumanHelp>
+      <fieldDBName>zalUser</fieldDBName>
+      <fieldType>STR</fieldType>
+      <fieldRepresentation>EDI</fieldRepresentation>
+      <computed/>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>zpracDate</fieldName>
+      <fieldHumanName>Predloha.zpracDate</fieldHumanName>
+      <fieldHumanHelp>Predloha.zpracDate_help</fieldHumanHelp>
+      <fieldDBName>zpracDate</fieldDBName>
+      <fieldType>DAT</fieldType>
+      <fieldRepresentation>EDI</fieldRepresentation>
+      <formatPattern>dd.MM.yyyy</formatPattern>
+      <formatPatternForInput>dd.MM.yyyy</formatPatternForInput>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>zpracEditor</fieldName>
+      <fieldHumanName>Predloha.zpracEditor</fieldHumanName>
+      <fieldHumanHelp>Predloha.zpracEditor_help</fieldHumanHelp>
+      <fieldDBName>zpracEditor</fieldDBName>
+      <fieldType>STR</fieldType>
+      <fieldRepresentation>COM</fieldRepresentation>
+      <list>DdigZpracEditor</list>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>zpracParm</fieldName>
+      <fieldHumanName>Predloha.zpracParm</fieldHumanName>
+      <fieldHumanHelp>Predloha.zpracParm_help</fieldHumanHelp>
+      <fieldDBName>zpracParm</fieldDBName>
+      <fieldType>STR</fieldType>
+      <fieldRepresentation>EDI</fieldRepresentation>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>zpracPrac</fieldName>
+      <fieldHumanName>Predloha.zpracPrac</fieldHumanName>
+      <fieldHumanHelp>Predloha.zpracPrac_help</fieldHumanHelp>
+      <fieldDBName>zpracPrac</fieldDBName>
+      <fieldType>STR</fieldType>
+      <fieldRepresentation>COM</fieldRepresentation>
+      <list>DpracovnikUkol</list>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>zpracStav</fieldName>
+      <fieldHumanName>Predloha.zpracStav</fieldHumanName>
+      <fieldHumanHelp>Predloha.zpracStav_help</fieldHumanHelp>
+      <fieldDBName>zpracStav</fieldDBName>
+      <fieldType>STR</fieldType>
+      <fieldRepresentation>COM</fieldRepresentation>
+      <list>DdigZpracStav</list>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>zpusobDig</fieldName>
+      <fieldHumanName>Predloha.zpusobDig</fieldHumanName>
+      <fieldHumanHelp>Predloha.zpusobDig_help</fieldHumanHelp>
+      <fieldDBName>zpusobDig</fieldDBName>
+      <fieldType>STR</fieldType>
+      <fieldRepresentation>COM</fieldRepresentation>
+      <list>DzpusobDig</list>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>skenOCRDate</fieldName>
+      <fieldHumanName>Predloha.skenOCRDate</fieldHumanName>
+      <fieldHumanHelp>Predloha.skenOCRDate_help</fieldHumanHelp>
+      <fieldDBName>skenOCRDate</fieldDBName>
+      <fieldType>DAT</fieldType>
+      <fieldRepresentation>EDI</fieldRepresentation>
+      <formatPattern>dd.MM.yyyy</formatPattern>
+      <formatPatternForInput>dd.MM.yyyy</formatPatternForInput>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>skenOCRPrac</fieldName>
+      <fieldHumanName>Predloha.skenOCRPrac</fieldHumanName>
+      <fieldHumanHelp>Predloha.skenOCRPrac_help</fieldHumanHelp>
+      <fieldDBName>skenOCRPrac</fieldDBName>
+      <fieldType>STR</fieldType>
+      <fieldRepresentation>COM</fieldRepresentation>
+      <list>DpracovnikUkol</list>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>publDate</fieldName>
+      <fieldHumanName>Predloha.publDate</fieldHumanName>
+      <fieldHumanHelp>Predloha.publDate_help</fieldHumanHelp>
+      <fieldDBName>publDate</fieldDBName>
+      <fieldType>DAT</fieldType>
+      <fieldRepresentation>EDI</fieldRepresentation>
+      <formatPattern>dd.MM.yyyy</formatPattern>
+      <formatPatternForInput>dd.MM.yyyy</formatPatternForInput>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>publPrac</fieldName>
+      <fieldHumanName>Predloha.publPrac</fieldHumanName>
+      <fieldHumanHelp>Predloha.publPrac_help</fieldHumanHelp>
+      <fieldDBName>publPrac</fieldDBName>
+      <fieldType>STR</fieldType>
+      <fieldRepresentation>COM</fieldRepresentation>
+      <list>DpracovnikUkol</list>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>publStav</fieldName>
+      <fieldHumanName>Predloha.publStav</fieldHumanName>
+      <fieldHumanHelp>Predloha.publStav_help</fieldHumanHelp>
+      <fieldDBName>publStav</fieldDBName>
+      <fieldType>STR</fieldType>
+      <fieldRepresentation>COM</fieldRepresentation>
+      <list>DdigPublStav</list>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>jeVlastniDuplicita</fieldName>
+      <fieldHumanName>Predloha.jeVlastniDuplicita</fieldHumanName>
+      <fieldHumanHelp>Predloha.jeVlastniDuplicita_help</fieldHumanHelp>
+      <fieldDBName>jeVlastniDuplicita</fieldDBName>
+      <fieldType>BOL</fieldType>
+      <fieldRepresentation>CHK</fieldRepresentation>
+      <computed/>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+  </fields>
+  <forms>
+    <screen-form name="PredlohaF" formHumanName="PredlohaF" id="cz.incad.rd.Predloha">
+      <form-body align="LEFT" valign="TOP">
+        <row fill="LEFT" vfill="TOP">
+          <select align="LEFT" valign="TOP" indent="false" columnIndex="1" width="40ch" id="druhDokumentu" precision="0" scale="0" type="combo" multi="false" editable="false">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </select>
+          <empty align="LEFT" valign="TOP" indent="false" columnIndex="2" width="40ch"/>
+          <check align="LEFT" valign="TOP" indent="false" columnIndex="3" id="indexovano" precision="0" scale="0"/>
+          <label align="LEFT" valign="TOP" indent="false" columnIndex="4">Predloha.indexovano</label>
+        </row>
+        <row fill="LEFT" vfill="TOP">
+          <border type="solid" color="">
+            <title>Predloha.F.PredlohaF.Exemplar</title>
+          </border>
+          <row fill="LEFT" vfill="TOP">
+            <input align="LEFT" valign="TOP" indent="false" columnIndex="1" width="20ch" id="carKod" precision="0" scale="0" type="text">
+              <label place="TOP">
+                <from-field colon="true"/>
+              </label>
+            </input>
+            <input align="LEFT" valign="TOP" indent="false" columnIndex="2" width="30ch" id="signatura" precision="0" scale="0" type="text">
+              <label place="TOP">
+                <from-field colon="true"/>
+              </label>
+            </input>
+            <select align="LEFT" valign="TOP" indent="false" columnIndex="3" width="40ch" id="katalog" precision="0" scale="0" type="combo" multi="false" editable="false">
+              <label place="TOP">
+                <from-field colon="true"/>
+              </label>
+            </select>
+            <check align="LEFT" valign="TOP" indent="false" columnIndex="4" id="privazek" precision="19" scale="4">
+              <label place="TOP">
+                <from-field colon="true"/>
+              </label>
+            </check>
+            <input align="LEFT" valign="TOP" indent="false" columnIndex="5" width="10ch" id="poradiPriv" precision="19" scale="4" type="text">
+              <label place="TOP">
+                <from-field colon="true"/>
+              </label>
+            </input>
+          </row>
+          <row fill="LEFT" vfill="TOP">
+            <input align="LEFT" valign="TOP" indent="false" columnIndex="1" width="80ch" id="poznKExemplari" precision="0" scale="0" type="text">
+              <label place="TOP">
+                <from-field colon="true"/>
+              </label>
+            </input>
+            <select align="LEFT" valign="TOP" indent="false" columnIndex="2" width="40ch" id="aktualniUlozeni" precision="0" scale="0" type="combo" multi="false" editable="false">
+              <label place="TOP">
+                <from-field colon="true"/>
+              </label>
+            </select>
+          </row>
+          <row fill="LEFT" vfill="TOP">
+            <empty align="LEFT" valign="TOP" indent="false" width="100ch"/>
+          </row>
+        </row>
+        <row fill="LEFT" vfill="TOP">
+          <border type="solid" color="">
+            <title>Predloha.F.PredlohaF.BibPopis</title>
+          </border>
+          <row fill="LEFT" vfill="TOP">
+            <input align="LEFT" valign="TOP" indent="false" width="120ch" id="nazev" precision="0" scale="0" type="text" rows="2">
+              <label place="TOP">
+                <from-field colon="true"/>
+              </label>
+            </input>
+          </row>
+          <row fill="LEFT" vfill="TOP">
+            <input align="LEFT" valign="TOP" indent="false" width="120ch" id="podnazev" precision="19" scale="4" type="text">
+              <label place="TOP">
+                <from-field colon="true"/>
+              </label>
+            </input>
+          </row>
+          <row fill="LEFT" vfill="TOP">
+            <repeat align="LEFT" valign="TOP" indent="false" id="tVarNazev" precision="0" scale="0" refclass="cz.incad.rd.TabVarNazev" form="TabVarNazev.fromPredloha">
+              <label place="TOP">
+                <from-field colon="true"/>
+              </label>
+            </repeat>
+          </row>
+          <row fill="LEFT" vfill="TOP">
+            <input align="LEFT" valign="TOP" indent="false" columnIndex="1" width="40ch" id="cast" precision="0" scale="0" type="text">
+              <label place="TOP">
+                <from-field colon="true"/>
+              </label>
+            </input>
+            <input align="LEFT" valign="TOP" indent="false" columnIndex="2" width="70ch" id="autor" precision="19" scale="4" type="text">
+              <label place="TOP">
+                <from-field colon="true"/>
+              </label>
+            </input>
+          </row>
+          <row fill="LEFT" vfill="TOP">
+            <input align="LEFT" valign="TOP" indent="false" columnIndex="1" width="30ch" id="mistoVyd" precision="0" scale="0" type="text">
+              <label place="TOP">
+                <from-field colon="true"/>
+              </label>
+            </input>
+            <input align="LEFT" valign="TOP" indent="false" columnIndex="2" width="40ch" id="vydavatel" precision="0" scale="0" type="text">
+              <label place="TOP">
+                <from-field colon="true"/>
+              </label>
+            </input>
+            <input align="LEFT" valign="TOP" indent="false" columnIndex="3" width="20ch" id="rokVyd" precision="0" scale="0" type="text">
+              <label place="TOP">
+                <from-field colon="true"/>
+              </label>
+            </input>
+          </row>
+          <row fill="LEFT" vfill="TOP">
+            <input align="LEFT" valign="TOP" indent="false" columnIndex="1" width="30ch" id="pocetStran" precision="0" scale="0" type="text">
+              <label place="TOP">
+                <from-field colon="true"/>
+              </label>
+            </input>
+            <input align="LEFT" valign="TOP" indent="false" columnIndex="2" width="30ch" id="ISBN" precision="0" scale="0" type="text">
+              <label place="TOP">
+                <from-field colon="true"/>
+              </label>
+            </input>
+          </row>
+          <row fill="LEFT" vfill="TOP">
+            <input align="LEFT" valign="TOP" indent="false" columnIndex="1" width="72ch" id="serieName" precision="19" scale="4" type="text">
+              <label place="TOP">
+                <from-field colon="true"/>
+              </label>
+            </input>
+            <input align="LEFT" valign="TOP" indent="false" columnIndex="2" width="20ch" id="seriePart" precision="19" scale="4" type="text">
+              <label place="TOP">
+                <from-field colon="true"/>
+              </label>
+            </input>
+          </row>
+          <row fill="LEFT" vfill="TOP">
+            <empty align="LEFT" valign="TOP" indent="false" width="100ch"/>
+          </row>
+        </row>
+        <row fill="LEFT" vfill="TOP">
+          <border type="solid" color="">
+            <title>Predloha.F.PredlohaF.Periodikum</title>
+          </border>
+          <row fill="LEFT" vfill="TOP">
+            <refbutton align="LEFT" valign="TOP" indent="false" columnIndex="1" width="100ch" id="rPeriodikum" precision="0" scale="0" refclass="cz.incad.rd.Periodikum"/>
+            <input align="LEFT" valign="TOP" indent="false" columnIndex="2" width="100ch" id="rPeriodikum.nazev" precision="19" scale="4" ref="true" type="text">
+              <label place="TOP">
+                <from-field colon="true"/>
+              </label>
+            </input>
+            <input align="LEFT" valign="TOP" indent="false" columnIndex="3" width="20ch" id="rPeriodikum.issn" precision="19" scale="4" ref="true" type="text">
+              <label place="TOP">
+                <from-field colon="true"/>
+              </label>
+            </input>
+          </row>
+          <row fill="LEFT" vfill="TOP">
+            <input align="LEFT" valign="TOP" indent="false" id="rozsah" precision="0" scale="0" type="text">
+              <label place="TOP">
+                <from-field colon="true"/>
+              </label>
+            </input>
+            <input align="LEFT" valign="TOP" indent="false" columnIndex="2" width="20ch" id="cisloPer" precision="0" scale="0" type="text">
+              <label place="TOP">
+                <from-field colon="true"/>
+              </label>
+            </input>
+            <input align="LEFT" valign="TOP" indent="false" columnIndex="2" width="40ch" id="obdobi" precision="0" scale="0" type="text">
+              <label place="TOP">
+                <from-field colon="true"/>
+              </label>
+            </input>
+          </row>
+          <row fill="LEFT" vfill="TOP">
+            <empty align="LEFT" valign="TOP" indent="false" width="100ch"/>
+          </row>
+        </row>
+      </form-body>
+    </screen-form>
+    <screen-form name="SysDataF" formHumanName="SysDataF" id="cz.incad.rd.Predloha">
+      <form-body align="LEFT" valign="TOP">
+        <row fill="LEFT" vfill="TOP">
+          <input align="LEFT" valign="TOP" indent="false" width="100ch" id="vizitka" precision="0" scale="0" type="text" rows="3">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </input>
+        </row>
+        <row fill="LEFT" vfill="TOP">
+          <select align="LEFT" valign="TOP" indent="false" columnIndex="1" width="40ch" id="katalog" precision="0" scale="0" type="combo" multi="false" editable="false">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </select>
+          <input align="LEFT" valign="TOP" indent="false" columnIndex="2" width="20ch" id="sysno" precision="0" scale="0" type="text">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </input>
+          <input align="LEFT" valign="TOP" indent="false" columnIndex="3" width="20ch" id="pole001" precision="0" scale="0" type="text">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </input>
+          <input align="LEFT" valign="TOP" indent="false" columnIndex="4" width="10ch" id="fmt" precision="0" scale="0" type="text">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </input>
+        </row>
+        <row fill="LEFT" vfill="TOP">
+          <input align="LEFT" valign="TOP" indent="false" columnIndex="1" id="carKod" precision="0" scale="0" type="text">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </input>
+          <input align="LEFT" valign="TOP" indent="false" columnIndex="2" width="30ch" id="signatura" precision="0" scale="0" type="text">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </input>
+          <check align="LEFT" valign="TOP" indent="false" columnIndex="3" id="privazek" precision="0" scale="0">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </check>
+        </row>
+        <row fill="LEFT" vfill="TOP">
+          <input align="LEFT" valign="TOP" indent="false" columnIndex="1" width="20ch" id="oldTitulId" precision="19" scale="0" type="text">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </input>
+          <input align="LEFT" valign="TOP" indent="false" columnIndex="2" width="20ch" id="oldExemplarId" precision="0" scale="0" type="text">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </input>
+          <input align="LEFT" valign="TOP" indent="false" columnIndex="3" width="20ch" id="oldPrivazekId" precision="19" scale="0" type="text">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </input>
+          <input align="LEFT" valign="TOP" indent="false" columnIndex="5" width="40ch" id="oldClassTitul" precision="0" scale="0" type="text">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </input>
+          <input align="LEFT" valign="TOP" indent="false" columnIndex="4" width="20ch" id="oldZakazkaId" precision="0" scale="0" type="text">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </input>
+        </row>
+        <row fill="LEFT" vfill="TOP">
+          <input align="LEFT" valign="TOP" indent="false" columnIndex="1" width="20ch" id="cCNB" precision="0" scale="0" type="text">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </input>
+          <input align="LEFT" valign="TOP" indent="false" columnIndex="2" width="40ch" id="idSKC" precision="0" scale="0" type="text">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </input>
+        </row>
+        <row fill="LEFT" vfill="TOP">
+          <input align="LEFT" valign="TOP" indent="false" columnIndex="1" width="20ch" id="ISBN" precision="19" scale="4" type="text">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </input>
+          <input align="LEFT" valign="TOP" indent="false" columnIndex="2" width="20ch" id="issn" precision="19" scale="4" type="text">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </input>
+        </row>
+        <row fill="LEFT" vfill="TOP">
+          <input align="LEFT" valign="TOP" indent="false" width="100ch" id="vznikZaznamu" precision="0" scale="0" type="text" rows="2">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </input>
+        </row>
+        <row fill="LEFT" vfill="TOP">
+          <tabview align="LEFT" valign="TOP" indent="false" id="tPredani" precision="0" scale="0" refclass="cz.incad.rd.Predani" rows="5">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </tabview>
+        </row>
+      </form-body>
+    </screen-form>
+    <screen-form name="XMLF" formHumanName="XMLF" id="cz.incad.rd.Predloha">
+      <form-body align="LEFT" valign="TOP">
+        <row fill="LEFT" vfill="TOP">
+          <input align="LEFT" valign="TOP" indent="false" width="100ch" id="xml" precision="0" scale="0" type="longtext" rows="30">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </input>
+        </row>
+      </form-body>
+    </screen-form>
+    <screen-form name="PraceF" formHumanName="PraceF" id="cz.incad.rd.Predloha">
+      <form-body align="LEFT" valign="TOP">
+        <row fill="LEFT" vfill="TOP">
+          <input align="LEFT" valign="TOP" indent="false" width="100ch" id="vizitka" precision="19" scale="4" type="text" rows="3">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </input>
+        </row>
+        <row fill="LEFT" vfill="TOP">
+          <input align="LEFT" valign="TOP" indent="false" columnIndex="1" width="30ch" id="cisloZakazky" precision="19" scale="4" type="text">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </input>
+          <select align="LEFT" valign="TOP" indent="false" columnIndex="2" width="30ch" id="financovano" precision="19" scale="4" type="combo" multi="false" editable="false">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </select>
+          <select align="LEFT" valign="TOP" indent="false" columnIndex="3" width="30ch" id="zpusobDig" precision="19" scale="4" type="combo" multi="false" editable="false">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </select>
+          <select align="LEFT" valign="TOP" indent="false" columnIndex="4" id="lProfil" precision="19" scale="4" type="combo" multi="false" editable="false">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </select>
+        </row>
+        <row fill="LEFT" vfill="TOP">
+          <border type="solid" color="">
+            <title>Predloha.F.PraceF.Priprava</title>
+          </border>
+          <row fill="LEFT" vfill="TOP">
+            <select align="LEFT" valign="TOP" indent="false" columnIndex="1" width="20ch" id="pripStav" precision="0" scale="0" type="combo" multi="false" editable="false">
+              <label place="TOP">Form.stav</label>
+            </select>
+            <select align="LEFT" valign="TOP" indent="false" columnIndex="2" width="20ch" id="pripPrac" precision="0" scale="0" type="combo" multi="false" editable="false">
+              <label place="TOP">Form.prac</label>
+            </select>
+            <selectDate align="LEFT" valign="TOP" indent="false" columnIndex="3" width="20ch" id="pripDate" precision="0" scale="0">
+              <label place="TOP">Form.date</label>
+            </selectDate>
+            <input align="LEFT" valign="TOP" indent="false" columnIndex="4" width="40ch" id="pripPozn" precision="19" scale="4" type="text">
+              <label place="TOP">Form.pozn</label>
+            </input>
+          </row>
+          <row fill="LEFT" vfill="TOP">
+            <empty align="LEFT" valign="TOP" indent="false" width="100ch"/>
+          </row>
+        </row>
+        <row fill="LEFT" vfill="TOP">
+          <border type="solid" color="">
+            <title>Predloha.F.PraceF.Mikrofilmovani</title>
+          </border>
+          <row fill="LEFT" vfill="TOP">
+            <select align="LEFT" valign="TOP" indent="false" columnIndex="1" width="20ch" id="mikroStav" precision="0" scale="0" type="combo" multi="false" editable="false">
+              <label place="TOP">Form.stav</label>
+            </select>
+            <select align="LEFT" valign="TOP" indent="false" columnIndex="2" width="20ch" id="mikroPrac" precision="0" scale="0" type="combo" multi="false" editable="false">
+              <label place="TOP">Form.prac</label>
+            </select>
+            <selectDate align="LEFT" valign="TOP" indent="false" columnIndex="3" width="20ch" id="mikroDate" precision="0" scale="0">
+              <label place="TOP">Form.date</label>
+            </selectDate>
+            <check align="LEFT" valign="TOP" indent="false" columnIndex="4" id="archNeg" precision="0" scale="0">
+              <label place="LEFT">
+                <from-field colon="true"/>
+              </label>
+            </check>
+            <check align="LEFT" valign="TOP" indent="false" columnIndex="5" id="matNegativ" precision="0" scale="0">
+              <label place="LEFT">
+                <from-field colon="true"/>
+              </label>
+            </check>
+            <check align="LEFT" valign="TOP" indent="false" columnIndex="6" id="pozitiv" precision="0" scale="0">
+              <label place="LEFT">
+                <from-field colon="true"/>
+              </label>
+            </check>
+          </row>
+          <row fill="LEFT" vfill="TOP">
+            <tabview align="LEFT" valign="TOP" indent="false" id="tXPredMikro" precision="19" scale="4" refclass="cz.incad.rd.XPredMikro">
+              <label place="TOP">
+                <from-field colon="true"/>
+              </label>
+            </tabview>
+          </row>
+          <row fill="LEFT" vfill="TOP">
+            <empty align="LEFT" valign="TOP" indent="false" width="100ch"/>
+          </row>
+        </row>
+        <row fill="LEFT" vfill="TOP">
+          <border type="solid" color="">
+            <title>Predloha.F.PraceF.Skenovani</title>
+          </border>
+          <row fill="LEFT" vfill="TOP">
+            <select align="LEFT" valign="TOP" indent="false" columnIndex="1" width="20ch" id="skenStav" precision="0" scale="0" type="combo" multi="false" editable="false">
+              <label place="TOP">Form.stav</label>
+            </select>
+            <select align="LEFT" valign="TOP" indent="false" columnIndex="2" width="20ch" id="skenPrac" precision="0" scale="0" type="combo" multi="false" editable="false">
+              <label place="TOP">Form.prac</label>
+            </select>
+            <selectDate align="LEFT" valign="TOP" indent="false" columnIndex="3" width="20ch" id="skenDate" precision="0" scale="0">
+              <label place="TOP">Form.date</label>
+            </selectDate>
+            <input align="LEFT" valign="TOP" indent="false" columnIndex="4" width="20ch" id="rozliseni" precision="0" scale="0" type="text">
+              <label place="TOP">
+                <from-field colon="true"/>
+              </label>
+            </input>
+            <input align="LEFT" valign="TOP" indent="false" columnIndex="5" width="20ch" id="barevnaHloubka" precision="0" scale="0" type="text">
+              <label place="TOP">
+                <from-field colon="true"/>
+              </label>
+            </input>
+            <select align="LEFT" valign="TOP" indent="false" columnIndex="6" width="20ch" id="barevnaSkala" precision="0" scale="0" type="combo" multi="false" editable="false">
+              <label place="TOP">
+                <from-field colon="true"/>
+              </label>
+            </select>
+            <select align="LEFT" valign="TOP" indent="false" columnIndex="7" width="20ch" id="skenerProfil" precision="0" scale="0" type="combo" multi="false" editable="false">
+              <label place="TOP">
+                <from-field colon="true"/>
+              </label>
+            </select>
+          </row>
+          <row fill="LEFT" vfill="TOP">
+            <select align="LEFT" valign="TOP" indent="false" columnIndex="1" id="typSkeneru" precision="0" scale="0" type="combo" multi="false" editable="false">
+              <label place="TOP">
+                <from-field colon="true"/>
+              </label>
+            </select>
+            <select align="LEFT" valign="TOP" indent="false" columnIndex="2" width="30ch" id="modelSkeneru" precision="0" scale="0" type="combo" multi="false" editable="false">
+              <label place="TOP">
+                <from-field colon="true"/>
+              </label>
+            </select>
+            <input align="LEFT" valign="TOP" indent="false" columnIndex="3" width="30ch" id="pouzitySW" precision="0" scale="0" type="text">
+              <label place="TOP">
+                <from-field colon="true"/>
+              </label>
+            </input>
+            <input align="LEFT" valign="TOP" indent="false" columnIndex="4" width="30ch" id="verzeSW" precision="0" scale="0" type="text">
+              <label place="TOP">
+                <from-field colon="true"/>
+              </label>
+            </input>
+            <input align="LEFT" valign="TOP" indent="false" columnIndex="5" width="30ch" id="vyrobceSW" precision="0" scale="0" type="text">
+              <label place="TOP">
+                <from-field colon="true"/>
+              </label>
+            </input>
+          </row>
+          <row fill="LEFT" vfill="TOP">
+            <input align="LEFT" valign="TOP" indent="false" columnIndex="1" width="10ch" id="skenPocetSouboru" precision="19" scale="0" type="text">
+              <label place="TOP">
+                <from-field colon="true"/>
+              </label>
+            </input>
+            <input align="LEFT" valign="TOP" indent="false" columnIndex="2" width="10ch" id="skenScanStran" precision="19" scale="0" type="text">
+              <label place="TOP">
+                <from-field colon="true"/>
+              </label>
+            </input>
+            <empty align="LEFT" valign="TOP" indent="false" columnIndex="3" width="2ch"/>
+            <check align="LEFT" valign="TOP" indent="false" columnIndex="4" id="skenDJVU" precision="19" scale="4">
+              <label place="TOP">
+                <from-field colon="true"/>
+              </label>
+            </check>
+            <empty align="LEFT" valign="TOP" indent="false" columnIndex="5" width="2ch"/>
+            <check align="LEFT" valign="TOP" indent="false" columnIndex="6" id="skenGIF" precision="19" scale="4">
+              <label place="TOP">
+                <from-field colon="true"/>
+              </label>
+            </check>
+            <empty align="LEFT" valign="TOP" indent="false" columnIndex="7" width="2ch"/>
+            <check align="LEFT" valign="TOP" indent="false" columnIndex="8" id="skenJPEG" precision="19" scale="4">
+              <label place="TOP">
+                <from-field colon="true"/>
+              </label>
+            </check>
+            <empty align="LEFT" valign="TOP" indent="false" columnIndex="9" width="2ch"/>
+            <check align="LEFT" valign="TOP" indent="false" columnIndex="10" id="skenPDF" precision="19" scale="4">
+              <label place="TOP">
+                <from-field colon="true"/>
+              </label>
+            </check>
+            <empty align="LEFT" valign="TOP" indent="false" columnIndex="11" width="2ch"/>
+            <check align="LEFT" valign="TOP" indent="false" columnIndex="12" id="skenTIFF" precision="19" scale="4">
+              <label place="TOP">
+                <from-field colon="true"/>
+              </label>
+            </check>
+            <empty align="LEFT" valign="TOP" indent="false" columnIndex="13" width="2ch"/>
+            <check align="LEFT" valign="TOP" indent="false" columnIndex="14" id="skenTXT" precision="19" scale="4">
+              <label place="TOP">
+                <from-field colon="true"/>
+              </label>
+            </check>
+            <empty align="LEFT" valign="TOP" indent="false" columnIndex="15" width="2ch"/>
+            <input align="LEFT" valign="TOP" indent="false" columnIndex="16" id="skenStupneSedi" precision="19" scale="4" type="text">
+              <label place="TOP">
+                <from-field colon="true"/>
+              </label>
+            </input>
+          </row>
+          <row fill="LEFT" vfill="TOP">
+            <empty align="LEFT" valign="TOP" indent="false" width="100ch"/>
+          </row>
+        </row>
+        <row fill="LEFT" vfill="TOP">
+          <border type="solid" color="">
+            <title>Predloha.F.PraceF.Zpracovani</title>
+          </border>
+          <row fill="LEFT" vfill="TOP">
+            <select align="LEFT" valign="TOP" indent="false" columnIndex="1" id="zpracStav" precision="0" scale="0" type="combo" multi="false" editable="false">
+              <label place="TOP">
+                <from-field colon="true"/>
+              </label>
+            </select>
+            <select align="LEFT" valign="TOP" indent="false" columnIndex="2" id="zpracPrac" precision="0" scale="0" type="combo" multi="false" editable="false">
+              <label place="TOP">Form.prac</label>
+            </select>
+            <selectDate align="LEFT" valign="TOP" indent="false" columnIndex="3" id="zpracDate" precision="0" scale="0">
+              <label place="TOP">
+                <from-field colon="false"/>
+              </label>
+            </selectDate>
+            <select align="LEFT" valign="TOP" indent="false" columnIndex="4" id="zpracEditor" precision="0" scale="0" type="combo" multi="false" editable="false">
+              <label place="TOP">
+                <from-field colon="true"/>
+              </label>
+            </select>
+            <input align="LEFT" valign="TOP" indent="false" columnIndex="5" width="40ch" id="zpracParm" precision="0" scale="0" type="text">
+              <label place="TOP">
+                <from-field colon="true"/>
+              </label>
+            </input>
+          </row>
+          <row fill="LEFT" vfill="TOP">
+            <empty align="LEFT" valign="TOP" indent="false" width="100ch"/>
+          </row>
+        </row>
+        <row fill="LEFT" vfill="TOP">
+          <border type="solid" color="">
+            <title>Predloha.F.PraceF.Metadata</title>
+          </border>
+          <row fill="LEFT" vfill="TOP">
+            <select align="LEFT" valign="TOP" indent="false" columnIndex="1" width="20ch" id="metaStav" precision="0" scale="0" type="combo" multi="false" editable="false">
+              <label place="TOP">Form.stav</label>
+            </select>
+            <select align="LEFT" valign="TOP" indent="false" columnIndex="2" width="20ch" id="metaPrac" precision="0" scale="0" type="combo" multi="false" editable="false">
+              <label place="TOP">Form.prac</label>
+            </select>
+            <selectDate align="LEFT" valign="TOP" indent="false" columnIndex="3" width="20ch" id="metaDate" precision="0" scale="0">
+              <label place="TOP">Form.date</label>
+            </selectDate>
+            <input align="LEFT" valign="TOP" indent="false" columnIndex="4" width="40ch" id="metaEditor" precision="0" scale="0" type="text">
+              <label place="TOP">
+                <from-field colon="true"/>
+              </label>
+            </input>
+            <check align="LEFT" valign="TOP" indent="false" columnIndex="5" id="skenOCR" precision="19" scale="4">
+              <label place="TOP">
+                <from-field colon="true"/>
+              </label>
+            </check>
+            <empty align="LEFT" valign="TOP" indent="false" columnIndex="6" width="2ch"/>
+            <check align="LEFT" valign="TOP" indent="false" columnIndex="7" id="skenOCRSvabach" precision="19" scale="4">
+              <label place="TOP">
+                <from-field colon="true"/>
+              </label>
+            </check>
+          </row>
+          <row fill="LEFT" vfill="TOP">
+            <empty align="LEFT" valign="TOP" indent="false" width="100ch"/>
+          </row>
+        </row>
+        <row fill="LEFT" vfill="TOP">
+          <border type="solid" color="">
+            <title>Predloha.F.PraceF.Zverejneni</title>
+          </border>
+          <row fill="LEFT" vfill="TOP">
+            <select align="LEFT" valign="TOP" indent="false" columnIndex="1" width="20ch" id="publStav" precision="0" scale="0" type="combo" multi="false" editable="false">
+              <label place="TOP">
+                <from-field colon="true"/>
+              </label>
+            </select>
+            <select align="LEFT" valign="TOP" indent="false" columnIndex="2" width="20ch" id="publPrac" precision="0" scale="0" type="combo" multi="false" editable="false">
+              <label place="TOP">Form.prac</label>
+            </select>
+            <selectDate align="LEFT" valign="TOP" indent="false" columnIndex="3" width="20ch" id="publDate" precision="0" scale="0">
+              <label place="TOP">
+                <from-field colon="true"/>
+              </label>
+            </selectDate>
+            <select align="LEFT" valign="TOP" indent="false" columnIndex="4" width="40ch" id="digKnihovna" precision="0" scale="0" type="combo" multi="false" editable="false">
+              <label place="TOP">
+                <from-field colon="true"/>
+              </label>
+            </select>
+          </row>
+          <row fill="LEFT" vfill="TOP">
+            <empty align="LEFT" valign="TOP" indent="false" width="100ch"/>
+          </row>
+        </row>
+        <row fill="LEFT" vfill="TOP">
+          <border type="etched" color="">
+            <title>Predloha.F.PraceF.Archivace</title>
+          </border>
+          <row fill="LEFT" vfill="TOP">
+            <select align="LEFT" valign="TOP" indent="false" columnIndex="1" id="archStav" precision="19" scale="4" type="combo" multi="false" editable="false">
+              <label place="TOP">
+                <from-field colon="true"/>
+              </label>
+            </select>
+            <select align="LEFT" valign="TOP" indent="false" columnIndex="2" id="archPrac" precision="19" scale="4" type="combo" multi="false" editable="false">
+              <label place="TOP">Form.prac</label>
+            </select>
+            <selectDate align="LEFT" valign="TOP" indent="false" columnIndex="3" id="archDate" precision="0" scale="0">
+              <label place="TOP">
+                <from-field colon="true"/>
+              </label>
+            </selectDate>
+          </row>
+          <row fill="LEFT" vfill="TOP">
+            <empty align="LEFT" valign="TOP" indent="false" width="100ch"/>
+          </row>
+        </row>
+        <row fill="LEFT" vfill="TOP">
+          <border type="solid" color="">
+            <title>Predloha.F.PraceF.DalsiPrace</title>
+          </border>
+          <repeat align="LEFT" valign="TOP" indent="false" id="tDalsiPrace" precision="0" scale="0" refclass="cz.incad.rd.DalsiPrace" form="DalsiPraceF"/>
+        </row>
+      </form-body>
+    </screen-form>
+    <screen-form name="MikrofilmovaniF" formHumanName="MikrofilmovaniF" id="cz.incad.rd.Predloha">
+      <form-body align="LEFT" valign="TOP">
+        <row fill="LEFT" vfill="TOP">
+          <input align="LEFT" valign="TOP" indent="false" width="120ch" id="vizitka" precision="19" scale="4" type="text" rows="3">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </input>
+        </row>
+        <row fill="LEFT" vfill="TOP">
+          <border type="solid" color="">
+            <title>Predloha.F.PraceF.Priprava</title>
+          </border>
+          <row fill="LEFT" vfill="TOP">
+            <select align="LEFT" valign="TOP" indent="false" columnIndex="1" width="20ch" id="pripStav" precision="19" scale="4" type="combo" multi="false" editable="false">
+              <label place="TOP">Form.stav</label>
+            </select>
+            <select align="LEFT" valign="TOP" indent="false" columnIndex="2" width="20ch" id="pripPrac" precision="19" scale="4" type="combo" multi="false" editable="false">
+              <label place="TOP">Form.prac</label>
+            </select>
+            <selectDate align="LEFT" valign="TOP" indent="false" columnIndex="3" width="20ch" id="pripDate" precision="0" scale="0">
+              <label place="TOP">Form.date</label>
+            </selectDate>
+            <input align="LEFT" valign="TOP" indent="false" columnIndex="4" width="40ch" id="pripPozn" precision="19" scale="4" type="text">
+              <label place="TOP">Form.pozn</label>
+            </input>
+          </row>
+          <row fill="LEFT" vfill="TOP">
+            <empty align="LEFT" valign="TOP" indent="false" width="100ch"/>
+          </row>
+        </row>
+        <row fill="LEFT" vfill="TOP">
+          <border type="solid" color="">
+            <title>Predloha.F.PraceF.Mikrofilmovani</title>
+          </border>
+          <row fill="LEFT" vfill="TOP">
+            <select align="LEFT" valign="TOP" indent="false" columnIndex="1" width="20ch" id="mikroStav" precision="19" scale="4" type="combo" multi="false" editable="false">
+              <label place="TOP">Form.stav</label>
+            </select>
+            <select align="LEFT" valign="TOP" indent="false" columnIndex="2" width="20ch" id="mikroPrac" precision="19" scale="4" type="combo" multi="false" editable="false">
+              <label place="TOP">Form.prac</label>
+            </select>
+            <selectDate align="LEFT" valign="TOP" indent="false" columnIndex="3" width="20ch" id="mikroDate" precision="0" scale="0">
+              <label place="TOP">Form.date</label>
+            </selectDate>
+          </row>
+          <row fill="LEFT" vfill="TOP">
+            <empty align="LEFT" valign="TOP" indent="false" width="100ch"/>
+          </row>
+        </row>
+        <row fill="LEFT" vfill="TOP">
+          <tabview align="LEFT" valign="TOP" indent="false" id="tXPredMikro" precision="19" scale="4" refclass="cz.incad.rd.XPredMikro">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </tabview>
+        </row>
+      </form-body>
+    </screen-form>
+    <screen-form name="DigitalizaceF" formHumanName="DigitalizaceF" id="cz.incad.rd.Predloha">
+      <form-body align="LEFT" valign="TOP">
+        <row fill="LEFT" vfill="TOP">
+          <input align="LEFT" valign="TOP" indent="false" width="120ch" id="vizitka" precision="19" scale="4" type="text" rows="3">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </input>
+        </row>
+        <row fill="LEFT" vfill="TOP">
+          <select align="LEFT" valign="TOP" indent="false" columnIndex="1" width="20ch" id="zpusobDig" precision="0" scale="0" type="combo" multi="false" editable="false">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </select>
+          <select align="LEFT" valign="TOP" indent="false" columnIndex="2" width="20ch" id="financovano" precision="0" scale="0" type="combo" multi="false" editable="false">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </select>
+          <select align="LEFT" valign="TOP" indent="false" columnIndex="3" width="20ch" id="dostupnost" precision="0" scale="0" type="combo" multi="false" editable="false">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </select>
+        </row>
+        <row fill="LEFT" vfill="TOP">
+          <input align="LEFT" valign="TOP" indent="false" width="100ch" id="url" precision="19" scale="4" type="text" rows="2">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </input>
+          <input align="LEFT" valign="TOP" indent="false" width="100ch" id="urlTitul" precision="0" scale="0" type="text" rows="2">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </input>
+          <input align="LEFT" valign="TOP" indent="false" width="100ch" id="urlTitNK" precision="0" scale="0" type="text" rows="2">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </input>
+        </row>
+        <row fill="LEFT" vfill="TOP">
+          <repeat align="LEFT" valign="TOP" indent="false" id="tURNNBN" precision="0" scale="0" refclass="cz.incad.rd.URNNBN" form="default">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </repeat>
+        </row>
+        <row fill="LEFT" vfill="TOP">
+          <border type="solid" color="">
+            <title>Predloha.F.PraceF.Skenovani</title>
+          </border>
+          <row fill="LEFT" vfill="TOP">
+            <select align="LEFT" valign="TOP" indent="false" columnIndex="1" width="20ch" id="skenStav" precision="19" scale="4" type="combo" multi="false" editable="false">
+              <label place="TOP">Form.stav</label>
+            </select>
+            <select align="LEFT" valign="TOP" indent="false" columnIndex="2" width="20ch" id="skenPrac" precision="19" scale="4" type="combo" multi="false" editable="false">
+              <label place="TOP">Form.prac</label>
+            </select>
+            <selectDate align="LEFT" valign="TOP" indent="false" columnIndex="3" width="20ch" id="skenDate" precision="0" scale="0">
+              <label place="TOP">Form.date</label>
+            </selectDate>
+            <input align="LEFT" valign="TOP" indent="false" columnIndex="4" width="30ch" id="parSkenovani" precision="19" scale="4" type="text">
+              <label place="TOP">
+                <from-field colon="true"/>
+              </label>
+            </input>
+          </row>
+          <row fill="LEFT" vfill="TOP">
+            <empty align="LEFT" valign="TOP" indent="false" width="100ch"/>
+          </row>
+        </row>
+      </form-body>
+    </screen-form>
+    <screen-form name="PredaniF" formHumanName="PredaniF" id="cz.incad.rd.Predloha">
+      <form-body align="LEFT" valign="TOP">
+        <row fill="LEFT" vfill="TOP">
+          <border type="solid" color="">
+            <title>Predloha.F.PredaniF.AktualniStav</title>
+          </border>
+          <select align="LEFT" valign="TOP" indent="false" columnIndex="1" id="predTypAkce" precision="0" scale="0" type="combo" multi="false" editable="false">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </select>
+          <select align="LEFT" valign="TOP" indent="false" columnIndex="2" id="predKdo" precision="0" scale="0" type="combo" multi="false" editable="false">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </select>
+          <select align="LEFT" valign="TOP" indent="false" columnIndex="3" id="predKomuOdKoho" precision="0" scale="0" type="combo" multi="false" editable="false">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </select>
+          <selectDate align="LEFT" valign="TOP" indent="false" columnIndex="4" width="12ch" id="predKdyDate" precision="0" scale="0">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </selectDate>
+          <input align="LEFT" valign="TOP" indent="false" columnIndex="5" width="12ch" id="predKdyTime" precision="0" scale="0" type="text">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </input>
+          <input align="LEFT" valign="TOP" indent="false" columnIndex="6" width="30ch" id="predVarka" precision="0" scale="0" type="text">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </input>
+        </row>
+        <row fill="LEFT" vfill="TOP">
+          <tabview align="LEFT" valign="TOP" indent="false" id="tPredani" precision="0" scale="0" refclass="cz.incad.rd.Predani">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </tabview>
+        </row>
+      </form-body>
+    </screen-form>
+    <screen-form name="NKF1" formHumanName="NKF1" id="cz.incad.rd.Predloha">
+      <form-body align="LEFT" valign="TOP">
+        <row fill="LEFT" vfill="TOP">
+          <row fill="LEFT" vfill="TOP">
+            <input align="LEFT" valign="TOP" indent="false" columnIndex="1" width="30ch" id="idCislo" precision="19" scale="4" type="text">
+              <label place="TOP">
+                <from-field colon="true"/>
+              </label>
+            </input>
+            <select align="LEFT" valign="TOP" indent="false" columnIndex="2" width="30ch" id="stavRec" precision="19" scale="4" type="combo" multi="false" editable="false">
+              <label place="TOP">
+                <from-field colon="true"/>
+              </label>
+            </select>
+            <select align="LEFT" valign="TOP" indent="false" columnIndex="3" id="lProfil" precision="0" scale="0" type="combo" multi="false" editable="false">
+              <label place="TOP">
+                <from-field colon="true"/>
+              </label>
+            </select>
+          </row>
+        </row>
+        <row fill="LEFT" vfill="TOP">
+          <empty align="LEFT" valign="TOP" indent="false" height="1ch"/>
+        </row>
+        <row fill="LEFT" vfill="TOP">
+          <border type="solid" color="">
+            <title>Predloha.F.NKF1.bibliografickyZaznam</title>
+          </border>
+          <row fill="LEFT" vfill="TOP">
+            <input align="LEFT" valign="TOP" indent="false" width="80ch" id="nazev" precision="19" scale="4" type="text" rows="3">
+              <label place="TOP">
+                <from-field colon="true"/>
+              </label>
+            </input>
+            <repeat align="LEFT" valign="TOP" indent="false" width="80ch" id="tVarNazev" precision="19" scale="4" refclass="cz.incad.rd.TabVarNazev" form="TabVarNazev.fromPredloha">
+              <label place="TOP">
+                <from-field colon="true"/>
+              </label>
+            </repeat>
+            <input align="LEFT" valign="TOP" indent="false" width="80ch" id="cast" precision="19" scale="4" type="text">
+              <label place="TOP">
+                <from-field colon="true"/>
+              </label>
+            </input>
+          </row>
+          <row fill="LEFT" vfill="TOP">
+            <input align="LEFT" valign="TOP" indent="false" columnIndex="1" width="60ch" id="autor" precision="19" scale="4" type="text">
+              <label place="TOP">
+                <from-field colon="true"/>
+              </label>
+            </input>
+            <input align="LEFT" valign="TOP" indent="false" columnIndex="2" width="20ch" id="rokVyd" precision="19" scale="4" type="text">
+              <label place="TOP">
+                <from-field colon="true"/>
+              </label>
+            </input>
+          </row>
+          <row fill="LEFT" vfill="TOP">
+            <input align="LEFT" valign="TOP" indent="false" columnIndex="1" width="32ch" id="carKod" precision="19" scale="4" type="text">
+              <label place="TOP">
+                <from-field colon="true"/>
+              </label>
+            </input>
+            <input align="LEFT" valign="TOP" indent="false" columnIndex="2" width="32ch" id="signatura" precision="19" scale="4" type="text">
+              <label place="TOP">
+                <from-field colon="true"/>
+              </label>
+            </input>
+            <check align="LEFT" valign="TOP" indent="false" columnIndex="3" id="privazek" precision="19" scale="4">
+              <label place="TOP">
+                <from-field colon="true"/>
+              </label>
+            </check>
+            <input align="LEFT" valign="TOP" indent="false" columnIndex="4" width="10ch" id="poradiPriv" precision="19" scale="0" type="text">
+              <label place="TOP">
+                <from-field colon="true"/>
+              </label>
+            </input>
+          </row>
+          <row fill="LEFT" vfill="TOP">
+            <select align="LEFT" valign="TOP" indent="false" width="80ch" id="sigla1" precision="0" scale="0" type="combo" multi="false" editable="false">
+              <label place="TOP">
+                <from-field colon="true"/>
+              </label>
+            </select>
+            <select align="LEFT" valign="TOP" indent="false" width="80ch" id="sigla2" precision="0" scale="0" type="combo" multi="false" editable="false">
+              <label place="TOP">
+                <from-field colon="true"/>
+              </label>
+            </select>
+          </row>
+          <row fill="LEFT" vfill="TOP">
+            <select align="LEFT" valign="TOP" indent="false" columnIndex="1" width="30ch" id="katalog" precision="19" scale="4" type="combo" multi="false" editable="false">
+              <label place="TOP">
+                <from-field colon="true"/>
+              </label>
+            </select>
+            <input align="LEFT" valign="TOP" indent="false" columnIndex="2" width="30ch" id="pole001" precision="19" scale="4" type="text">
+              <label place="TOP">
+                <from-field colon="true"/>
+              </label>
+            </input>
+            <input align="LEFT" valign="TOP" indent="false" columnIndex="3" width="20ch" id="sysno" precision="19" scale="4" type="text">
+              <label place="TOP">
+                <from-field colon="true"/>
+              </label>
+            </input>
+          </row>
+          <row fill="LEFT" vfill="TOP">
+            <input align="LEFT" valign="TOP" indent="false" columnIndex="1" width="30ch" id="cCNB" precision="19" scale="4" type="text">
+              <label place="TOP">
+                <from-field colon="true"/>
+              </label>
+            </input>
+            <input align="LEFT" valign="TOP" indent="false" columnIndex="2" width="20ch" id="ISBN" precision="19" scale="4" type="text">
+              <label place="TOP">
+                <from-field colon="true"/>
+              </label>
+            </input>
+            <input align="LEFT" valign="TOP" indent="false" columnIndex="3" width="20ch" id="issn" precision="19" scale="4" type="text">
+              <label place="TOP">
+                <from-field colon="true"/>
+              </label>
+            </input>
+          </row>
+          <row fill="LEFT" vfill="TOP">
+            <input align="LEFT" valign="TOP" indent="false" columnIndex="1" width="30ch" id="rozsah" precision="19" scale="4" type="text">
+              <label place="TOP">
+                <from-field colon="true"/>
+              </label>
+            </input>
+            <input align="LEFT" valign="TOP" indent="false" columnIndex="2" width="15ch" id="cisloPer" precision="19" scale="4" type="text">
+              <label place="TOP">
+                <from-field colon="true"/>
+              </label>
+            </input>
+            <input align="LEFT" valign="TOP" indent="false" columnIndex="2" width="30ch" id="obdobi" precision="19" scale="4" type="text">
+              <label place="TOP">
+                <from-field colon="true"/>
+              </label>
+            </input>
+          </row>
+        </row>
+        <row fill="LEFT" vfill="TOP">
+          <empty align="LEFT" valign="TOP" indent="false" height="1ch"/>
+        </row>
+        <row fill="LEFT" vfill="TOP">
+          <border type="solid" color="">
+            <title>Predloha.F.NKF1.Digitalizace</title>
+          </border>
+          <row fill="LEFT" vfill="TOP">
+            <input align="LEFT" valign="TOP" indent="false" columnIndex="1" width="20ch" id="cisloZakazky" precision="19" scale="4" type="text">
+              <label place="TOP">
+                <from-field colon="true"/>
+              </label>
+            </input>
+            <select align="LEFT" valign="TOP" indent="false" columnIndex="2" width="30ch" id="zpusobDig" precision="19" scale="4" type="combo" multi="false" editable="false">
+              <label place="TOP">
+                <from-field colon="true"/>
+              </label>
+            </select>
+            <select align="LEFT" valign="TOP" indent="false" columnIndex="3" width="30ch" id="financovano" precision="19" scale="4" type="combo" multi="false" editable="false">
+              <label place="TOP">
+                <from-field colon="true"/>
+              </label>
+            </select>
+          </row>
+          <row fill="LEFT" vfill="TOP">
+            <input align="LEFT" valign="TOP" indent="false" width="80ch" id="url" precision="0" scale="0" type="text" rows="3">
+              <label place="TOP">
+                <from-field colon="true"/>
+              </label>
+            </input>
+          </row>
+          <row fill="LEFT" vfill="TOP">
+            <empty align="LEFT" valign="TOP" indent="false" height="1ch"/>
+          </row>
+          <row fill="LEFT" vfill="TOP">
+            <border type="solid" color="">
+              <title>Predloha.F.NKF1.Mikrofilmovani</title>
+            </border>
+            <tabview align="LEFT" valign="TOP" indent="false" id="tXPredMikro" precision="19" scale="4" refclass="cz.incad.rd.XPredMikro"/>
+          </row>
+        </row>
+        <row fill="LEFT" vfill="TOP">
+          <empty align="LEFT" valign="TOP" indent="false" height="1ch"/>
+        </row>
+        <row fill="LEFT" vfill="TOP">
+          <input align="LEFT" valign="TOP" indent="false" width="80ch" id="poznKExemplari" precision="0" scale="0" type="text" rows="3">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </input>
+        </row>
+        <row fill="LEFT" vfill="TOP">
+          <input align="LEFT" valign="TOP" indent="false" columnIndex="1" width="20ch" id="zalUser" precision="19" scale="4" type="text">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </input>
+          <selectDate align="LEFT" valign="TOP" indent="false" columnIndex="1" width="20ch" id="zalDate" precision="0" scale="0">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </selectDate>
+          <input align="LEFT" valign="TOP" indent="false" columnIndex="2" width="20ch" id="ediUser" precision="19" scale="4" type="text">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </input>
+          <selectDate align="LEFT" valign="TOP" indent="false" columnIndex="2" width="20ch" id="ediDate" precision="0" scale="0">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </selectDate>
+          <input align="LEFT" valign="TOP" indent="false" columnIndex="3" width="20ch" id="finUser" precision="19" scale="4" type="text">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </input>
+          <selectDate align="LEFT" valign="TOP" indent="false" columnIndex="3" width="20ch" id="finDate" precision="0" scale="0">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </selectDate>
+        </row>
+      </form-body>
+    </screen-form>
+    <screen-form name="NKF2" formHumanName="NKF2" id="cz.incad.rd.Predloha">
+      <form-body align="LEFT" valign="TOP">
+        <row fill="LEFT" vfill="TOP">
+          <row fill="LEFT" vfill="TOP">
+            <input align="LEFT" valign="TOP" indent="false" columnIndex="1" width="15ch" id="idCislo" precision="19" scale="4" type="text">
+              <label place="TOP">
+                <from-field colon="true"/>
+              </label>
+            </input>
+            <select align="LEFT" valign="TOP" indent="false" columnIndex="2" id="druhDokumentu" precision="19" scale="4" type="combo" multi="false" editable="false">
+              <label place="TOP">
+                <from-field colon="true"/>
+              </label>
+            </select>
+            <select align="LEFT" valign="TOP" indent="false" columnIndex="3" width="30ch" id="stavRec" precision="19" scale="4" type="combo" multi="false" editable="false">
+              <label place="TOP">
+                <from-field colon="true"/>
+              </label>
+            </select>
+            <check align="LEFT" valign="TOP" indent="false" columnIndex="4" id="jeVlastniDuplicita" precision="19" scale="4">
+              <label place="TOP">
+                <from-field colon="false"/>
+              </label>
+            </check>
+            <select align="LEFT" valign="TOP" indent="false" columnIndex="5" id="lProfil" precision="19" scale="4" type="combo" multi="false" editable="false">
+              <label place="TOP">
+                <from-field colon="true"/>
+              </label>
+            </select>
+          </row>
+        </row>
+        <row fill="LEFT" vfill="TOP">
+          <empty align="LEFT" valign="TOP" indent="false" height="1ch"/>
+        </row>
+        <row fill="LEFT" vfill="TOP">
+          <border type="solid" color="">
+            <title>Predloha.F.NKF2.bibliografickyZaznam</title>
+          </border>
+          <row fill="LEFT" vfill="TOP">
+            <input align="LEFT" valign="TOP" indent="false" width="90ch" id="nazev" precision="19" scale="4" type="text" rows="2">
+              <label place="TOP">
+                <from-field colon="true"/>
+              </label>
+            </input>
+            <input align="LEFT" valign="TOP" indent="false" width="90ch" id="podnazev" precision="0" scale="0" type="text">
+              <label place="TOP">
+                <from-field colon="true"/>
+              </label>
+            </input>
+            <repeat align="LEFT" valign="TOP" indent="false" width="80ch" id="tVarNazev" precision="19" scale="4" refclass="cz.incad.rd.TabVarNazev" form="TabVarNazev.fromPredloha">
+              <label place="TOP">
+                <from-field colon="true"/>
+              </label>
+            </repeat>
+          </row>
+          <row fill="LEFT" vfill="TOP">
+            <input align="LEFT" valign="TOP" indent="false" columnIndex="1" width="60ch" id="autor" precision="19" scale="4" type="text">
+              <label place="TOP">
+                <from-field colon="true"/>
+              </label>
+            </input>
+            <input align="LEFT" valign="TOP" indent="false" columnIndex="2" width="20ch" id="rokVyd" precision="19" scale="4" type="text">
+              <label place="TOP">
+                <from-field colon="true"/>
+              </label>
+            </input>
+          </row>
+          <row fill="LEFT" vfill="TOP">
+            <input align="LEFT" valign="TOP" indent="false" columnIndex="1" width="20ch" id="mistoVyd" precision="19" scale="4" type="text">
+              <label place="TOP">
+                <from-field colon="true"/>
+              </label>
+            </input>
+            <input align="LEFT" valign="TOP" indent="false" columnIndex="2" width="25ch" id="vydavatel" precision="19" scale="4" type="text">
+              <label place="TOP">
+                <from-field colon="true"/>
+              </label>
+            </input>
+            <input align="LEFT" valign="TOP" indent="false" columnIndex="3" width="15ch" id="pocetStran" precision="19" scale="4" type="text">
+              <label place="TOP">
+                <from-field colon="true"/>
+              </label>
+            </input>
+          </row>
+          <row fill="LEFT" vfill="TOP">
+            <input align="LEFT" valign="TOP" indent="false" columnIndex="1" width="20ch" id="cCNB" precision="19" scale="4" type="text">
+              <label place="TOP">
+                <from-field colon="true"/>
+              </label>
+            </input>
+            <input align="LEFT" valign="TOP" indent="false" columnIndex="2" width="20ch" id="ISBN" precision="19" scale="4" type="text">
+              <label place="TOP">
+                <from-field colon="true"/>
+              </label>
+            </input>
+            <input align="LEFT" valign="TOP" indent="false" columnIndex="3" width="20ch" id="issn" precision="19" scale="4" type="text">
+              <label place="TOP">
+                <from-field colon="true"/>
+              </label>
+            </input>
+            <select align="LEFT" valign="TOP" indent="false" columnIndex="4" width="10ch" id="specDruh" precision="0" scale="0" type="combo" multi="false" editable="false">
+              <label place="TOP">
+                <from-field colon="true"/>
+              </label>
+            </select>
+            <repeat align="LEFT" valign="TOP" indent="false" columnIndex="1" id="tNepCCNB" precision="19" scale="4" refclass="cz.incad.rd.NepCCNB" form="NepCCNBForm">
+              <label place="TOP">
+                <from-field colon="true"/>
+              </label>
+            </repeat>
+            <repeat align="LEFT" valign="TOP" indent="false" columnIndex="2" id="tNepISBN" precision="19" scale="4" refclass="cz.incad.rd.NepISBN" form="NeplISBNForm">
+              <label place="TOP">
+                <from-field colon="true"/>
+              </label>
+            </repeat>
+            <repeat align="LEFT" valign="TOP" indent="false" columnIndex="3" id="tNepISSN" precision="19" scale="4" refclass="cz.incad.rd.NepISSN" form="NeplISSNForm">
+              <label place="TOP">
+                <from-field colon="true"/>
+              </label>
+            </repeat>
+          </row>
+          <row fill="LEFT" vfill="TOP">
+            <select align="LEFT" valign="TOP" indent="false" columnIndex="1" width="10ch" id="sigla1" precision="19" scale="4" type="combo" multi="false" editable="false">
+              <label place="TOP">
+                <from-field colon="true"/>
+              </label>
+            </select>
+            <input align="LEFT" valign="TOP" indent="false" columnIndex="2" width="15ch" id="pole001" precision="19" scale="4" type="text">
+              <label place="TOP">
+                <from-field colon="true"/>
+              </label>
+            </input>
+            <select align="LEFT" valign="TOP" indent="false" columnIndex="3" width="30ch" id="katalog" precision="19" scale="4" type="combo" multi="false" editable="false">
+              <label place="TOP">
+                <from-field colon="true"/>
+              </label>
+            </select>
+            <input align="LEFT" valign="TOP" indent="false" columnIndex="4" width="15ch" id="sysno" precision="19" scale="4" type="text">
+              <label place="TOP">
+                <from-field colon="true"/>
+              </label>
+            </input>
+            <select align="LEFT" valign="TOP" indent="false" columnIndex="5" width="10ch" id="sigla2" precision="19" scale="4" type="combo" multi="false" editable="false">
+              <label place="TOP">
+                <from-field colon="true"/>
+              </label>
+            </select>
+          </row>
+          <row fill="LEFT" vfill="TOP">
+            <input align="LEFT" valign="TOP" indent="false" width="90ch" id="bibPoznamka" precision="19" scale="4" type="text" rows="1">
+              <label place="TOP">
+                <from-field colon="true"/>
+              </label>
+            </input>
+          </row>
+        </row>
+        <row fill="LEFT" vfill="TOP">
+          <empty align="LEFT" valign="TOP" indent="false" height="1ch"/>
+        </row>
+        <row fill="LEFT" vfill="TOP">
+          <border type="solid" color="">
+            <title>Predloha.F.NKF2.ExemplarInfo</title>
+          </border>
+          <row fill="LEFT" vfill="TOP">
+            <input align="LEFT" valign="TOP" indent="false" columnIndex="1" width="20ch" id="cast" precision="19" scale="4" type="text">
+              <label place="TOP">
+                <from-field colon="true"/>
+              </label>
+            </input>
+            <input align="LEFT" valign="TOP" indent="false" columnIndex="2" width="15ch" id="carKod" precision="19" scale="4" type="text">
+              <label place="TOP">
+                <from-field colon="true"/>
+              </label>
+            </input>
+            <input align="LEFT" valign="TOP" indent="false" columnIndex="3" width="15ch" id="signatura" precision="19" scale="4" type="text">
+              <label place="TOP">
+                <from-field colon="true"/>
+              </label>
+            </input>
+            <check align="LEFT" valign="TOP" indent="false" columnIndex="4" id="privazek" precision="19" scale="4">
+              <label place="TOP">
+                <from-field colon="true"/>
+              </label>
+            </check>
+            <input align="LEFT" valign="TOP" indent="false" columnIndex="5" width="3ch" id="poradiPriv" precision="19" scale="0" type="text">
+              <label place="TOP">
+                <from-field colon="true"/>
+              </label>
+            </input>
+          </row>
+          <row fill="LEFT" vfill="TOP">
+            <input align="LEFT" valign="TOP" indent="false" columnIndex="1" width="20ch" id="rozsah" precision="19" scale="4" type="text">
+              <label place="TOP">
+                <from-field colon="true"/>
+              </label>
+            </input>
+            <input align="LEFT" valign="TOP" indent="false" columnIndex="2" width="20ch" id="cisloPer" precision="19" scale="4" type="text">
+              <label place="TOP">
+                <from-field colon="true"/>
+              </label>
+            </input>
+          </row>
+          <row fill="LEFT" vfill="TOP">
+            <input align="LEFT" valign="TOP" indent="false" width="90ch" id="poznKExemplari" precision="19" scale="4" type="text" rows="1">
+              <label place="TOP">
+                <from-field colon="true"/>
+              </label>
+            </input>
+          </row>
+          <row fill="LEFT" vfill="TOP">
+            <input align="LEFT" valign="TOP" indent="false" columnIndex="1" width="20ch" id="cisloZakazky" precision="19" scale="4" type="text">
+              <label place="TOP">
+                <from-field colon="true"/>
+              </label>
+            </input>
+            <select align="LEFT" valign="TOP" indent="false" columnIndex="2" width="30ch" id="zpusobDig" precision="19" scale="4" type="combo" multi="false" editable="false">
+              <label place="TOP">
+                <from-field colon="true"/>
+              </label>
+            </select>
+            <select align="LEFT" valign="TOP" indent="false" columnIndex="3" width="30ch" id="financovano" precision="19" scale="4" type="combo" multi="false" editable="false">
+              <label place="TOP">
+                <from-field colon="true"/>
+              </label>
+            </select>
+          </row>
+        </row>
+        <row fill="LEFT" vfill="TOP">
+          <border type="solid" color="">
+            <title>Predloha.F.NKF2.Zdigitalizovano</title>
+            <margin-outer top="4mm" left="4mm" right="4mm" bottom="4mm"/>
+            <margin-inner top="4mm" left="4mm" right="4mm" bottom="4mm"/>
+          </border>
+          <input align="LEFT" valign="TOP" indent="false" width="90ch" id="urlTitul" precision="19" scale="4" type="text">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </input>
+          <input align="LEFT" valign="TOP" indent="false" width="90ch" id="url" precision="19" scale="4" type="text">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </input>
+          <input align="LEFT" valign="TOP" indent="false" width="90ch" id="urlTitNK" precision="19" scale="4" type="text">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </input>
+        </row>
+        <row fill="LEFT" vfill="TOP">
+          <empty align="LEFT" valign="TOP" indent="false" height="1ch"/>
+        </row>
+        <row fill="LEFT" vfill="TOP">
+          <row fill="LEFT" vfill="TOP">
+            <tabview align="LEFT" valign="TOP" indent="false" id="tDigObjekt" precision="19" scale="4" refclass="cz.incad.rd.DigObjekt" rows="2">
+              <label place="TOP">
+                <from-field colon="false"/>
+              </label>
+            </tabview>
+          </row>
+          <row fill="LEFT" vfill="TOP">
+            <tabview align="LEFT" valign="TOP" indent="false" id="tURNNBN" precision="19" scale="4" refclass="cz.incad.rd.URNNBN" rows="2">
+              <label place="TOP">
+                <from-field colon="false"/>
+              </label>
+            </tabview>
+          </row>
+        </row>
+        <row fill="LEFT" vfill="TOP">
+          <empty align="LEFT" valign="TOP" indent="false" height="1ch"/>
+        </row>
+        <row fill="LEFT" vfill="TOP">
+          <tabview align="LEFT" valign="TOP" indent="false" id="tXPredMikro" precision="19" scale="4" refclass="cz.incad.rd.XPredMikro" rows="10">
+            <label place="TOP">Mikrofilmovani</label>
+          </tabview>
+        </row>
+        <row fill="LEFT" vfill="TOP">
+          <empty align="LEFT" valign="TOP" indent="false" height="1ch"/>
+        </row>
+        <row fill="LEFT" vfill="TOP">
+          <input align="LEFT" valign="TOP" indent="false" columnIndex="1" width="80ch" id="poznRec" precision="19" scale="4" type="text" rows="3">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </input>
+          <input align="LEFT" valign="TOP" indent="false" columnIndex="2" width="20ch" id="zalUser" precision="19" scale="4" type="text">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </input>
+          <selectDate align="LEFT" valign="TOP" indent="false" columnIndex="2" width="20ch" id="zalDate" precision="0" scale="0">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </selectDate>
+          <input align="LEFT" valign="TOP" indent="false" columnIndex="3" width="20ch" id="ediUser" precision="19" scale="4" type="text">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </input>
+          <selectDate align="LEFT" valign="TOP" indent="false" columnIndex="3" width="20ch" id="ediDate" precision="0" scale="0">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </selectDate>
+          <input align="LEFT" valign="TOP" indent="false" columnIndex="4" width="20ch" id="finUser" precision="19" scale="4" type="text">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </input>
+          <selectDate align="LEFT" valign="TOP" indent="false" columnIndex="4" width="20ch" id="finDate" precision="0" scale="0">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </selectDate>
+        </row>
+      </form-body>
+    </screen-form>
+    <screen-form name="PredlohaUniversal" formHumanName="PredlohaUniversal" id="cz.incad.rd.Predloha">
+      <form-body align="LEFT" valign="TOP">
+        <row fill="LEFT" vfill="TOP">
+          <border type="etched" color="">
+            <title>Predloha.F.PredlohaUniversal.biblio</title>
+          </border>
+          <row fill="LEFT" vfill="TOP">
+            <select align="LEFT" valign="TOP" indent="false" columnIndex="1" width="10ch" id="sigla1" precision="19" scale="4" type="combo" multi="false" editable="false">
+              <label place="TOP">
+                <from-field colon="true"/>
+              </label>
+            </select>
+            <empty align="LEFT" valign="TOP" indent="false" columnIndex="2" width="2ch"/>
+            <input align="LEFT" valign="TOP" indent="false" columnIndex="3" width="20ch" id="pole001" precision="19" scale="4" type="text">
+              <label place="TOP">
+                <from-field colon="true"/>
+              </label>
+            </input>
+            <empty align="LEFT" valign="TOP" indent="false" columnIndex="4" width="2ch"/>
+            <select align="LEFT" valign="TOP" indent="false" columnIndex="5" width="15ch" id="katalog" precision="19" scale="4" type="combo" multi="false" editable="false">
+              <label place="TOP">
+                <from-field colon="true"/>
+              </label>
+            </select>
+            <empty align="LEFT" valign="TOP" indent="false" columnIndex="6" width="2ch"/>
+            <input align="LEFT" valign="TOP" indent="false" columnIndex="7" width="20ch" id="sysno" precision="19" scale="4" type="text">
+              <label place="TOP">
+                <from-field colon="true"/>
+              </label>
+            </input>
+            <empty align="LEFT" valign="TOP" indent="false" columnIndex="8" width="2ch"/>
+            <select align="LEFT" valign="TOP" indent="false" columnIndex="9" id="financovano" precision="19" scale="4" type="combo" multi="false" editable="false">
+              <label place="TOP">
+                <from-field colon="true"/>
+              </label>
+            </select>
+          </row>
+          <row fill="LEFT" vfill="TOP">
+            <input align="LEFT" valign="TOP" indent="false" width="80ch" id="bibPoznamka" precision="19" scale="4" type="text" rows="2">
+              <label place="TOP">
+                <from-field colon="true"/>
+              </label>
+            </input>
+          </row>
+          <row fill="LEFT" vfill="TOP">
+            <empty align="LEFT" valign="TOP" indent="false" width="90ch"/>
+          </row>
+        </row>
+        <row fill="LEFT" vfill="TOP">
+          <empty align="LEFT" valign="TOP" indent="false" height="2ch"/>
+        </row>
+        <row fill="LEFT" vfill="TOP">
+          <border type="etched" color="">
+            <title>Predloha.F.PredlohaUniversal.exemplar</title>
+          </border>
+          <row fill="LEFT" vfill="TOP">
+            <input align="LEFT" valign="TOP" indent="false" columnIndex="1" width="20ch" id="cast" precision="19" scale="4" type="text">
+              <label place="TOP">
+                <from-field colon="true"/>
+              </label>
+            </input>
+            <empty align="LEFT" valign="TOP" indent="false" columnIndex="2" width="2ch"/>
+            <input align="LEFT" valign="TOP" indent="false" columnIndex="3" width="20ch" id="carKod" precision="19" scale="4" type="text">
+              <label place="TOP">
+                <from-field colon="true"/>
+              </label>
+            </input>
+            <empty align="LEFT" valign="TOP" indent="false" columnIndex="4" width="2ch"/>
+            <input align="LEFT" valign="TOP" indent="false" columnIndex="5" width="20ch" id="signatura" precision="19" scale="4" type="text">
+              <label place="TOP">
+                <from-field colon="true"/>
+              </label>
+            </input>
+          </row>
+          <row fill="LEFT" vfill="TOP">
+            <input align="LEFT" valign="TOP" indent="false" columnIndex="1" width="20ch" id="rozsah" precision="19" scale="4" type="text">
+              <label place="TOP">
+                <from-field colon="true"/>
+              </label>
+            </input>
+            <empty align="LEFT" valign="TOP" indent="false" columnIndex="2" width="2ch"/>
+            <input align="LEFT" valign="TOP" indent="false" columnIndex="3" width="20ch" id="cisloPer" precision="19" scale="4" type="text">
+              <label place="TOP">
+                <from-field colon="true"/>
+              </label>
+            </input>
+          </row>
+          <row fill="LEFT" vfill="TOP">
+            <empty align="LEFT" valign="TOP" indent="false" width="90ch"/>
+          </row>
+        </row>
+        <row fill="LEFT" vfill="TOP">
+          <empty align="LEFT" valign="TOP" indent="false" height="2ch"/>
+        </row>
+        <row fill="LEFT" vfill="TOP">
+          <border type="etched" color="">
+            <title>Predloha.F.PredlohaUniversal.digitalizace</title>
+          </border>
+          <row fill="LEFT" vfill="TOP">
+            <input align="LEFT" valign="TOP" indent="false" width="80ch" id="urlTitul" precision="19" scale="4" type="text">
+              <label place="TOP">
+                <from-field colon="true"/>
+              </label>
+            </input>
+          </row>
+          <row fill="LEFT" vfill="TOP">
+            <empty align="LEFT" valign="TOP" indent="false" width="90ch"/>
+          </row>
+        </row>
+        <row fill="LEFT" vfill="TOP">
+          <empty align="LEFT" valign="TOP" indent="false" height="2ch"/>
+        </row>
+        <row fill="LEFT" vfill="TOP">
+          <border type="etched" color="">
+            <title>Predloha.F.PredlohaUniversal.recordmetadata</title>
+          </border>
+          <row fill="LEFT" vfill="TOP">
+            <input align="LEFT" valign="TOP" indent="false" columnIndex="1" width="20ch" id="zalUser" precision="19" scale="4" type="text">
+              <label place="TOP">
+                <from-field colon="true"/>
+              </label>
+            </input>
+            <empty align="LEFT" valign="TOP" indent="false" columnIndex="2" width="2ch"/>
+            <input align="LEFT" valign="TOP" indent="false" columnIndex="3" id="zalDate" precision="19" scale="4" formatPattern="dd.MM.yyyy" formatPatternForInput="dd.MM.yyyy" type="text">
+              <label place="TOP">
+                <from-field colon="true"/>
+              </label>
+            </input>
+          </row>
+          <row fill="LEFT" vfill="TOP">
+            <input align="LEFT" valign="TOP" indent="false" columnIndex="1" width="20ch" id="ediUser" precision="19" scale="4" type="text">
+              <label place="TOP">
+                <from-field colon="true"/>
+              </label>
+            </input>
+            <empty align="LEFT" valign="TOP" indent="false" columnIndex="2" width="2ch"/>
+            <input align="LEFT" valign="TOP" indent="false" columnIndex="3" id="ediDate" precision="19" scale="4" formatPattern="dd.MM.yyyy" formatPatternForInput="dd.MM.yyyy" type="text">
+              <label place="TOP">
+                <from-field colon="true"/>
+              </label>
+            </input>
+          </row>
+          <row fill="LEFT" vfill="TOP">
+            <empty align="LEFT" valign="TOP" indent="false" width="90ch"/>
+          </row>
+        </row>
+      </form-body>
+    </screen-form>
+    <tree name="AvailableForms">
+      <node formName="PredlohaF"/>
+      <node formName="SysDataF"/>
+      <node formName="XMLF"/>
+      <node formName="PraceF"/>
+      <node formName="MikrofilmovaniF"/>
+      <node formName="DigitalizaceF"/>
+      <node formName="PredaniF"/>
+      <node formName="NKF1"/>
+      <node formName="NKF2"/>
+      <node formName="PredlohaUniversal"/>
+    </tree>
+  </forms>
+  <functions>
+    <function>
+      <functionName>cz.incad.rd.bf.Predloha_Predat</functionName>
+      <functionHumanName>cz.incad.rd.bf.Predloha_Predat</functionHumanName>
+      <functionHumanHelp>Predloha_cz.incad.rd.bf.Predloha_Predat_help</functionHumanHelp>
+      <wizardPanels>
+        <wizardPanel>
+          <panelName>PredatP1</panelName>
+          <panelHumanName>PredatP1</panelHumanName>
+          <description>PredatP1</description>
+          <panelFields>
+            <panelField>
+              <fieldName>komu</fieldName>
+              <fieldHumanName>komu</fieldHumanName>
+              <fieldType>STR</fieldType>
+              <fieldRepresentation>COM</fieldRepresentation>
+              <list>DzarazeniUser</list>
+            </panelField>
+            <panelField>
+              <fieldName>varka</fieldName>
+              <fieldHumanName>varka</fieldHumanName>
+              <fieldType>STR</fieldType>
+              <fieldRepresentation>EDI</fieldRepresentation>
+            </panelField>
+          </panelFields>
+        </wizardPanel>
+        <wizardPanel>
+          <panelName>PredatPcarKod</panelName>
+          <panelHumanName>PredatPcarKod</panelHumanName>
+          <description>PredatPcarKod</description>
+          <panelFields>
+            <panelField>
+              <fieldName>carKod</fieldName>
+              <fieldHumanName>carKod</fieldHumanName>
+              <fieldType>STR</fieldType>
+              <fieldRepresentation>EDI</fieldRepresentation>
+            </panelField>
+          </panelFields>
+        </wizardPanel>
+      </wizardPanels>
+    </function>
+    <function>
+      <functionName>cz.incad.rd.bf.Predloha_Prevzit</functionName>
+      <functionHumanName>cz.incad.rd.bf.Predloha_Prevzit</functionHumanName>
+      <functionHumanHelp>Predloha_cz.incad.rd.bf.Predloha_Prevzit_help</functionHumanHelp>
+      <wizardPanels>
+        <wizardPanel>
+          <panelName>PrevzitP1</panelName>
+          <panelHumanName>PrevzitP1</panelHumanName>
+          <description>PrevzitP1</description>
+          <panelFields>
+            <panelField>
+              <fieldName>odKoho</fieldName>
+              <fieldHumanName>odKoho</fieldHumanName>
+              <fieldType>STR</fieldType>
+              <fieldRepresentation>COM</fieldRepresentation>
+              <list>DzarazeniUser</list>
+            </panelField>
+            <panelField>
+              <fieldName>varka</fieldName>
+              <fieldHumanName>varka</fieldHumanName>
+              <fieldType>STR</fieldType>
+              <fieldRepresentation>EDI</fieldRepresentation>
+            </panelField>
+          </panelFields>
+        </wizardPanel>
+        <wizardPanel>
+          <panelName>PrevzitPcarKod</panelName>
+          <panelHumanName>PrevzitPcarKod</panelHumanName>
+          <description>PrevzitPcarKod</description>
+          <panelFields>
+            <panelField>
+              <fieldName>carKod</fieldName>
+              <fieldHumanName>carKod</fieldHumanName>
+              <fieldType>STR</fieldType>
+              <fieldRepresentation>EDI</fieldRepresentation>
+            </panelField>
+          </panelFields>
+        </wizardPanel>
+      </wizardPanels>
+    </function>
+    <function>
+      <functionName>cz.incad.rd.bf.Predloha_TiskPredani</functionName>
+      <functionHumanName>cz.incad.rd.bf.Predloha_TiskPredani</functionHumanName>
+      <functionHumanHelp>Predloha_cz.incad.rd.bf.Predloha_TiskPredani_help</functionHumanHelp>
+      <wizardPanels>
+        <wizardPanel>
+          <panelName>panel01</panelName>
+          <panelHumanName>cz.incad.rd.bf.Predloha_TiskPredani.panel01</panelHumanName>
+          <description>cz.incad.rd.bf.Predloha_TiskPredani.panel01_help</description>
+          <panelFields>
+            <panelField>
+              <fieldName>varka</fieldName>
+              <fieldHumanName>cz.incad.rd.bf.Predloha_TiskPredani.panel01.varka</fieldHumanName>
+              <fieldType>STR</fieldType>
+              <fieldRepresentation>EDI</fieldRepresentation>
+            </panelField>
+          </panelFields>
+        </wizardPanel>
+        <wizardPanel>
+          <panelName>panel02</panelName>
+          <panelHumanName>cz.incad.rd.bf.Predloha_TiskPredani.panel02</panelHumanName>
+          <description>cz.incad.rd.bf.Predloha_TiskPredani.panel02_help</description>
+          <panelFields/>
+        </wizardPanel>
+      </wizardPanels>
+    </function>
+    <function>
+      <functionName>cz.incad.rd.bf.Predloha_KonverzeDatZeStareStrukturySQL</functionName>
+      <functionHumanName>cz.incad.rd.bf.Predloha_KonverzeDatZeStareStrukturySQL</functionHumanName>
+      <functionHumanHelp>cz.incad.rd.bf.Predloha_KonverzeDatZeStareStrukturySQL_help</functionHumanHelp>
+      <openInMainWindow/>
+      <wizardPanels>
+        <wizardPanel>
+          <panelName>panel01</panelName>
+          <panelHumanName>cz.incad.rd.bf.Predloha_KonverzeDatZeStareStrukturySQL.panel01</panelHumanName>
+          <description>cz.incad.rd.bf.Predloha_KonverzeDatZeStareStrukturySQL.panel01_help</description>
+          <panelFields/>
+        </wizardPanel>
+      </wizardPanels>
+    </function>
+    <function>
+      <functionName>cz.incad.rd.bf.Predloha_SetVizitka</functionName>
+      <functionHumanName>cz.incad.rd.bf.Predloha_SetVizitka</functionHumanName>
+      <functionHumanHelp>cz.incad.rd.bf.Predloha_SetVizitka_help</functionHumanHelp>
+      <openInMainWindow/>
+      <wizardPanels>
+        <wizardPanel>
+          <panelName>panel01</panelName>
+          <panelHumanName>cz.incad.rd.bf.Predloha_SetVizitka.panel01</panelHumanName>
+          <description>cz.incad.rd.bf.Predloha_SetVizitka.panel01_help</description>
+          <panelFields/>
+        </wizardPanel>
+      </wizardPanels>
+    </function>
+    <function>
+      <functionName>cz.incad.rd.bf.Predloha_TransformDalsiPrace</functionName>
+      <functionHumanName>cz.incad.rd.bf.Predloha_TransformDalsiPrace</functionHumanName>
+      <functionHumanHelp>cz.incad.rd.bf.Predloha_TransformDalsiPrace_help</functionHumanHelp>
+      <openInMainWindow/>
+      <wizardPanels>
+        <wizardPanel>
+          <panelName>panel01</panelName>
+          <panelHumanName>cz.incad.rd.bf.Predloha_TransformDalsiPrace.panel01</panelHumanName>
+          <description>cz.incad.rd.bf.Predloha_TransformDalsiPrace.panel01_help</description>
+          <panelFields/>
+        </wizardPanel>
+      </wizardPanels>
+    </function>
+    <function>
+      <functionName>cz.incad.core.bf.ZmenaStavuZaznamu</functionName>
+      <functionHumanName>cz.incad.core.bf.ZmenaStavuZaznamu</functionHumanName>
+      <functionHumanHelp>Predloha_cz.incad.core.bf.ZmenaStavuZaznamu_help</functionHumanHelp>
+      <openInMainWindow/>
+      <wizardPanels>
+        <wizardPanel>
+          <panelName>panel01</panelName>
+          <panelHumanName>cz.incad.core.bf.ZmenaStavuZaznamu.panel01</panelHumanName>
+          <description>cz.incad.core.bf.ZmenaStavuZaznamu.panel01_help</description>
+          <panelFields>
+            <panelField>
+              <fieldName>newStavZaznamu</fieldName>
+              <fieldHumanName>cz.incad.core.bf.ZmenaStavuZaznamu.panel01.newStavZaznamu</fieldHumanName>
+              <fieldType>STR</fieldType>
+              <fieldRepresentation>COM</fieldRepresentation>
+              <list>DstavRec</list>
+            </panelField>
+          </panelFields>
+        </wizardPanel>
+      </wizardPanels>
+    </function>
+    <function>
+      <functionName>cz.incad.rd.bf.Predloha_SetProfilZpracovaniSelectedRecords</functionName>
+      <functionHumanName>cz.incad.rd.bf.Predloha_SetProfilZpracovaniSelectedRecords</functionHumanName>
+      <functionHumanHelp>cz.incad.rd.bf.Predloha_SetProfilZpracovaniSelectedRecords_help</functionHumanHelp>
+      <wizardPanels>
+        <wizardPanel>
+          <panelName>panel01</panelName>
+          <panelHumanName>cz.incad.rd.bf.Predloha_SetProfilZpracovaniSelectedRecords.panel01</panelHumanName>
+          <description>cz.incad.rd.bf.Predloha_SetProfilZpracovaniSelectedRecords.panel01_help</description>
+          <panelFields>
+            <panelField>
+              <fieldName>profil</fieldName>
+              <fieldHumanName>cz.incad.rd.bf.Predloha_SetProfilZpracovaniSelectedRecords.panel01.profil</fieldHumanName>
+              <fieldType>STR</fieldType>
+              <fieldRepresentation>COM</fieldRepresentation>
+              <list>Dprofil</list>
+            </panelField>
+          </panelFields>
+        </wizardPanel>
+      </wizardPanels>
+    </function>
+    <function>
+      <functionName>cz.incad.rd.bf.Predloha_SetProfilZpracovaniCarovyKod</functionName>
+      <functionHumanName>cz.incad.rd.bf.Predloha_SetProfilZpracovaniCarovyKod</functionHumanName>
+      <functionHumanHelp>Predloha_cz.incad.rd.bf.Predloha_SetProfilZpracovaniCarovyKod_help</functionHumanHelp>
+      <wizardPanels>
+        <wizardPanel>
+          <panelName>panel01</panelName>
+          <panelHumanName>cz.incad.rd.bf.Predloha_SetProfilZpracovaniCarovyKod.panel01</panelHumanName>
+          <description>cz.incad.rd.bf.Predloha_SetProfilZpracovaniCarovyKod.panel01_help</description>
+          <panelFields>
+            <panelField>
+              <fieldName>profil</fieldName>
+              <fieldHumanName>cz.incad.rd.bf.Predloha_SetProfilZpracovaniCarovyKod.panel01.profil</fieldHumanName>
+              <fieldType>STR</fieldType>
+              <fieldRepresentation>COM</fieldRepresentation>
+              <list>Dprofil</list>
+            </panelField>
+            <panelField>
+              <fieldName>useVarka</fieldName>
+              <fieldHumanName>cz.incad.rd.bf.Predloha_SetProfilZpracovaniCarovyKod.panel01.useVarka</fieldHumanName>
+              <fieldType>BOL</fieldType>
+              <fieldRepresentation>CHK</fieldRepresentation>
+            </panelField>
+            <panelField>
+              <fieldName>varka</fieldName>
+              <fieldHumanName>cz.incad.rd.bf.Predloha_SetProfilZpracovaniCarovyKod.panel01.varka</fieldHumanName>
+              <fieldType>STR</fieldType>
+              <fieldRepresentation>EDI</fieldRepresentation>
+            </panelField>
+          </panelFields>
+        </wizardPanel>
+        <wizardPanel>
+          <panelName>panel02</panelName>
+          <panelHumanName>cz.incad.rd.bf.Predloha_SetProfilZpracovaniCarovyKod.panel02</panelHumanName>
+          <description>cz.incad.rd.bf.Predloha_SetProfilZpracovaniCarovyKod.panel02_help</description>
+          <panelFields>
+            <panelField>
+              <fieldName>carKod</fieldName>
+              <fieldHumanName>cz.incad.rd.bf.Predloha_SetProfilZpracovaniCarovyKod.panel02.carKod</fieldHumanName>
+              <fieldType>STR</fieldType>
+              <fieldRepresentation>EDI</fieldRepresentation>
+            </panelField>
+          </panelFields>
+        </wizardPanel>
+        <wizardPanel>
+          <panelName>panel03</panelName>
+          <panelHumanName>cz.incad.rd.bf.Predloha_SetProfilZpracovaniCarovyKod.panel03</panelHumanName>
+          <description>cz.incad.rd.bf.Predloha_SetProfilZpracovaniCarovyKod.panel03_help</description>
+          <panelFields/>
+        </wizardPanel>
+      </wizardPanels>
+    </function>
+    <function>
+      <functionName>cz.incad.rd.bf.Predloha_PredatCarovyKod</functionName>
+      <functionHumanName>cz.incad.rd.bf.Predloha_PredatCarovyKod</functionHumanName>
+      <functionHumanHelp>Predloha_cz.incad.rd.bf.Predloha_PredatCarovyKod_help</functionHumanHelp>
+      <wizardPanels>
+        <wizardPanel>
+          <panelName>panel01</panelName>
+          <panelHumanName>cz.incad.rd.bf.Predloha_PredatCarovyKod.panel01</panelHumanName>
+          <description>cz.incad.rd.bf.Predloha_PredatCarovyKod.panel01_help</description>
+          <panelFields>
+            <panelField>
+              <fieldName>komu</fieldName>
+              <fieldHumanName>cz.incad.rd.bf.Predloha_PredatCarovyKod.panel01.komu</fieldHumanName>
+              <fieldType>STR</fieldType>
+              <fieldRepresentation>COM</fieldRepresentation>
+              <list>DzarazeniUser</list>
+            </panelField>
+            <panelField>
+              <fieldName>varka</fieldName>
+              <fieldHumanName>cz.incad.rd.bf.Predloha_PredatCarovyKod.panel01.varka</fieldHumanName>
+              <fieldType>STR</fieldType>
+              <fieldRepresentation>EDI</fieldRepresentation>
+            </panelField>
+          </panelFields>
+        </wizardPanel>
+        <wizardPanel>
+          <panelName>panel02</panelName>
+          <panelHumanName>cz.incad.rd.bf.Predloha_PredatCarovyKod.panel02</panelHumanName>
+          <description>cz.incad.rd.bf.Predloha_PredatCarovyKod.panel02_help</description>
+          <panelFields>
+            <panelField>
+              <fieldName>carKod</fieldName>
+              <fieldHumanName>cz.incad.rd.bf.Predloha_PredatCarovyKod.panel02.carKod</fieldHumanName>
+              <fieldType>STR</fieldType>
+              <fieldRepresentation>EDI</fieldRepresentation>
+            </panelField>
+          </panelFields>
+        </wizardPanel>
+        <wizardPanel>
+          <panelName>panel03</panelName>
+          <panelHumanName>cz.incad.rd.bf.Predloha_PredatCarovyKod.panel03</panelHumanName>
+          <description>cz.incad.rd.bf.Predloha_PredatCarovyKod.panel03_help</description>
+          <panelFields/>
+        </wizardPanel>
+      </wizardPanels>
+    </function>
+    <function>
+      <functionName>cz.incad.rd.bf.Predloha_PrevzitCarovyKod</functionName>
+      <functionHumanName>cz.incad.rd.bf.Predloha_PrevzitCarovyKod</functionHumanName>
+      <functionHumanHelp>Predloha_cz.incad.rd.bf.Predloha_PrevzitCarovyKod_help</functionHumanHelp>
+      <wizardPanels>
+        <wizardPanel>
+          <panelName>panel01</panelName>
+          <panelHumanName>cz.incad.rd.bf.Predloha_PrevzitCarovyKod.panel01</panelHumanName>
+          <description>cz.incad.rd.bf.Predloha_PrevzitCarovyKod.panel01_help</description>
+          <panelFields>
+            <panelField>
+              <fieldName>odKoho</fieldName>
+              <fieldHumanName>cz.incad.rd.bf.Predloha_PrevzitCarovyKod.panel01.odKoho</fieldHumanName>
+              <fieldType>STR</fieldType>
+              <fieldRepresentation>COM</fieldRepresentation>
+              <list>DzarazeniUser</list>
+            </panelField>
+            <panelField>
+              <fieldName>varka</fieldName>
+              <fieldHumanName>cz.incad.rd.bf.Predloha_PrevzitCarovyKod.panel01.varka</fieldHumanName>
+              <fieldType>STR</fieldType>
+              <fieldRepresentation>EDI</fieldRepresentation>
+            </panelField>
+          </panelFields>
+        </wizardPanel>
+        <wizardPanel>
+          <panelName>panel02</panelName>
+          <panelHumanName>cz.incad.rd.bf.Predloha_PrevzitCarovyKod.panel02</panelHumanName>
+          <description>cz.incad.rd.bf.Predloha_PrevzitCarovyKod.panel02_help</description>
+          <panelFields>
+            <panelField>
+              <fieldName>carKod</fieldName>
+              <fieldHumanName>cz.incad.rd.bf.Predloha_PrevzitCarovyKod.panel02.carKod</fieldHumanName>
+              <fieldType>STR</fieldType>
+              <fieldRepresentation>EDI</fieldRepresentation>
+            </panelField>
+          </panelFields>
+        </wizardPanel>
+        <wizardPanel>
+          <panelName>panel03</panelName>
+          <panelHumanName>cz.incad.rd.bf.Predloha_PrevzitCarovyKod.panel03</panelHumanName>
+          <description>cz.incad.rd.bf.Predloha_PrevzitCarovyKod.panel03_help</description>
+          <panelFields/>
+        </wizardPanel>
+      </wizardPanels>
+    </function>
+    <function>
+      <functionName>cz.incad.rd.bf.Predloha_AddPredloha</functionName>
+      <functionHumanName>cz.incad.rd.bf.Predloha_AddPredloha</functionHumanName>
+      <functionHumanHelp>Predloha_cz.incad.rd.bf.Predloha_AddPredloha_help</functionHumanHelp>
+      <wizardPanels>
+        <wizardPanel>
+          <panelName>panel01</panelName>
+          <panelHumanName>cz.incad.rd.bf.Predloha_AddPredloha.panel01</panelHumanName>
+          <description>cz.incad.rd.bf.Predloha_AddPredloha.panel01_help</description>
+          <panelFields>
+            <panelField>
+              <fieldName>ccnb</fieldName>
+              <fieldHumanName>cz.incad.rd.bf.Predloha_AddPredloha.panel01.ccnb</fieldHumanName>
+              <fieldType>STR</fieldType>
+              <fieldRepresentation>EDI</fieldRepresentation>
+            </panelField>
+            <panelField>
+              <fieldName>issn</fieldName>
+              <fieldHumanName>cz.incad.rd.bf.Predloha_AddPredloha.panel01.issn</fieldHumanName>
+              <fieldType>STR</fieldType>
+              <fieldRepresentation>EDI</fieldRepresentation>
+            </panelField>
+            <panelField>
+              <fieldName>isbn</fieldName>
+              <fieldHumanName>cz.incad.rd.bf.Predloha_AddPredloha.panel01.isbn</fieldHumanName>
+              <fieldType>STR</fieldType>
+              <fieldRepresentation>EDI</fieldRepresentation>
+            </panelField>
+          </panelFields>
+        </wizardPanel>
+        <wizardPanel>
+          <panelName>panel02</panelName>
+          <panelHumanName>cz.incad.rd.bf.Predloha_AddPredloha.panel02</panelHumanName>
+          <description>cz.incad.rd.bf.Predloha_AddPredloha.panel02_help</description>
+          <panelFields>
+            <panelField>
+              <fieldName>nazev</fieldName>
+              <fieldHumanName>cz.incad.rd.bf.Predloha_AddPredloha.panel02.nazev</fieldHumanName>
+              <fieldType>STR</fieldType>
+              <fieldRepresentation>EDI</fieldRepresentation>
+            </panelField>
+            <panelField>
+              <fieldName>autor</fieldName>
+              <fieldHumanName>cz.incad.rd.bf.Predloha_AddPredloha.panel02.autor</fieldHumanName>
+              <fieldType>STR</fieldType>
+              <fieldRepresentation>EDI</fieldRepresentation>
+            </panelField>
+            <panelField>
+              <fieldName>rok</fieldName>
+              <fieldHumanName>cz.incad.rd.bf.Predloha_AddPredloha.panel02.rok</fieldHumanName>
+              <fieldType>STR</fieldType>
+              <fieldRepresentation>EDI</fieldRepresentation>
+            </panelField>
+            <panelField>
+              <fieldName>castRocnik</fieldName>
+              <fieldHumanName>cz.incad.rd.bf.Predloha_AddPredloha.panel02.castRocnik</fieldHumanName>
+              <fieldType>STR</fieldType>
+              <fieldRepresentation>EDI</fieldRepresentation>
+            </panelField>
+            <panelField>
+              <fieldName>cisloPeriodika</fieldName>
+              <fieldHumanName>cz.incad.rd.bf.Predloha_AddPredloha.panel02.cisloPeriodika</fieldHumanName>
+              <fieldType>STR</fieldType>
+              <fieldRepresentation>EDI</fieldRepresentation>
+            </panelField>
+          </panelFields>
+        </wizardPanel>
+        <wizardPanel>
+          <panelName>panel03</panelName>
+          <panelHumanName>cz.incad.rd.bf.Predloha_AddPredloha.panel03</panelHumanName>
+          <description>cz.incad.rd.bf.Predloha_AddPredloha.panel03_help</description>
+          <panelFields>
+            <panelField>
+              <fieldName>carKod</fieldName>
+              <fieldHumanName>cz.incad.rd.bf.Predloha_AddPredloha.panel03.carKod</fieldHumanName>
+              <fieldType>STR</fieldType>
+              <fieldRepresentation>EDI</fieldRepresentation>
+            </panelField>
+            <panelField>
+              <fieldName>signatura</fieldName>
+              <fieldHumanName>cz.incad.rd.bf.Predloha_AddPredloha.panel03.signatura</fieldHumanName>
+              <fieldType>STR</fieldType>
+              <fieldRepresentation>EDI</fieldRepresentation>
+            </panelField>
+            <panelField>
+              <fieldName>pocetStranek</fieldName>
+              <fieldHumanName>cz.incad.rd.bf.Predloha_AddPredloha.panel03.pocetStranek</fieldHumanName>
+              <fieldType>STR</fieldType>
+              <fieldRepresentation>EDI</fieldRepresentation>
+            </panelField>
+          </panelFields>
+        </wizardPanel>
+        <wizardPanel>
+          <panelName>panel04</panelName>
+          <panelHumanName>cz.incad.rd.bf.Predloha_AddPredloha.panel04</panelHumanName>
+          <description>cz.incad.rd.bf.Predloha_AddPredloha.panel04_help</description>
+          <panelFields/>
+        </wizardPanel>
+      </wizardPanels>
+    </function>
+    <function>
+      <functionName>cz.incad.rd.bf.Predloha_ZmenaStavuZaznamuByMetadata</functionName>
+      <functionHumanName>cz.incad.rd.bf.Predloha_ZmenaStavuZaznamuByMetadata</functionHumanName>
+      <functionHumanHelp>Predloha_cz.incad.rd.bf.Predloha_ZmenaStavuZaznamuByMetadata_help</functionHumanHelp>
+      <wizardPanels>
+        <wizardPanel>
+          <panelName>panel01</panelName>
+          <panelHumanName>cz.incad.rd.bf.Predloha_ZmenaStavuZaznamuByMetadata.panel01</panelHumanName>
+          <description>cz.incad.rd.bf.Predloha_ZmenaStavuZaznamuByMetadata.panel01_help</description>
+          <panelFields>
+            <panelField>
+              <fieldName>newStavZaznamu</fieldName>
+              <fieldHumanName>cz.incad.rd.bf.Predloha_ZmenaStavuZaznamuByMetadata.panel01.newStavZaznamu</fieldHumanName>
+              <fieldType>STR</fieldType>
+              <fieldRepresentation>COM</fieldRepresentation>
+              <list>DstavRec</list>
+            </panelField>
+          </panelFields>
+        </wizardPanel>
+      </wizardPanels>
+    </function>
+    <tree name="AvailableBusinessFunctions">
+      <node functionName="cz.incad.rd.bf.Predloha_Predat"/>
+      <node functionName="cz.incad.rd.bf.Predloha_Prevzit"/>
+      <node functionName="cz.incad.rd.bf.Predloha_TiskPredani"/>
+      <node functionName="cz.incad.rd.bf.Predloha_KonverzeDatZeStareStrukturySQL"/>
+      <node functionName="cz.incad.rd.bf.Predloha_SetVizitka"/>
+      <node functionName="cz.incad.rd.bf.Predloha_TransformDalsiPrace"/>
+      <node functionName="cz.incad.core.bf.ZmenaStavuZaznamu"/>
+      <node functionName="cz.incad.rd.bf.Predloha_SetProfilZpracovaniSelectedRecords"/>
+      <node functionName="cz.incad.rd.bf.Predloha_SetProfilZpracovaniCarovyKod"/>
+      <node functionName="cz.incad.rd.bf.Predloha_PredatCarovyKod"/>
+      <node functionName="cz.incad.rd.bf.Predloha_PrevzitCarovyKod"/>
+      <node functionName="cz.incad.rd.bf.Predloha_AddPredloha"/>
+      <node functionName="cz.incad.rd.bf.Predloha_ZmenaStavuZaznamuByMetadata"/>
+    </tree>
+  </functions>
+  <uniqueFields/>
+</desk>

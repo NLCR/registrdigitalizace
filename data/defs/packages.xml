@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<packages>
+  <package>cz.incad.core.basic</package>
+  <package>cz.incad.core.doc</package>
+  <package>cz.incad.core.lend</package>
+  <package>cz.incad.core.list</package>
+  <package>cz.incad.core.part</package>
+  <package>cz.incad.nkp.digital</package>
+  <package>cz.incad.rd</package>
+  <package>cz.incad.rd.list</package>
+</packages>

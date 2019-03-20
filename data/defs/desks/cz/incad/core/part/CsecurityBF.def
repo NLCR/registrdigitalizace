@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<desk bundle="ServerBundle">
+  <deskPackage>cz.incad.core.part</deskPackage>
+  <deskName>CsecurityBF</deskName>
+  <deskHumanHelp>cz.incad.core.part.CsecurityBF_help</deskHumanHelp>
+  <deskHumanName>cz.incad.core.part.CsecurityBF</deskHumanName>
+  <deskDBName>CsecurityBF</deskDBName>
+  <deskRoot/>
+  <machineModel>cz.incad.core.part.CsecurityBF</machineModel>
+  <fields>
+    <field>
+      <fieldName>CsecurityBF</fieldName>
+      <fieldHumanName>CsecurityBF.value</fieldHumanName>
+      <fieldHumanHelp>CsecurityBF.value_help</fieldHumanHelp>
+      <fieldDBName>value</fieldDBName>
+      <fieldType>STR</fieldType>
+      <fieldRepresentation>COM</fieldRepresentation>
+      <list>DsecurityBF</list>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+  </fields>
+  <forms>
+    <screen-form name="CsecurityBFF" formHumanName="CsecurityBFF" id="cz.incad.core.part.CsecurityBF">
+      <form-body align="LEFT" valign="TOP">
+        <row fill="LEFT" vfill="TOP">
+          <select align="LEFT" valign="TOP" indent="false" width="600px" id="CsecurityBF" precision="0" scale="0" type="combo" multi="false" editable="false">
+            <label place="TOP">
+              <from-field colon="false"/>
+            </label>
+          </select>
+        </row>
+      </form-body>
+    </screen-form>
+    <tree name="AvailableForms">
+      <node formName="CsecurityBFF"/>
+    </tree>
+  </forms>
+  <uniqueFields/>
+</desk>

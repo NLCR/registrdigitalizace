@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<locales used="cs_CZ" default="cs_CZ">
+  <locale id="cs_CZ" language="cs" country="CZ" variant=""></locale>
+  <locale id="en" language="en" country="" variant=""></locale>
+  <locale id="de" language="de" country="" variant=""></locale>
+  <locale id="fr" language="fr" country="" variant=""></locale>
+</locales>

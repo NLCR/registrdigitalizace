@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<desk bundle="ServerBundle">
+  <deskPackage>cz.incad.core.part</deskPackage>
+  <deskName>CZeme</deskName>
+  <deskHumanHelp>cz.incad.core.part.CZeme_help</deskHumanHelp>
+  <deskHumanName>cz.incad.core.part.CZeme</deskHumanName>
+  <deskDBName>CZeme</deskDBName>
+  <deskRoot/>
+  <machineModel>cz.incad.core.part.CZeme</machineModel>
+  <fields>
+    <field>
+      <fieldName>typ</fieldName>
+      <fieldHumanName>CZeme.typ</fieldHumanName>
+      <fieldHumanHelp>CZeme.typ_help</fieldHumanHelp>
+      <fieldDBName>typ</fieldDBName>
+      <fieldType>STR</fieldType>
+      <fieldRepresentation>COM</fieldRepresentation>
+      <list>DtypZeme</list>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>listZeme</fieldName>
+      <fieldHumanName>CZeme.listZeme</fieldHumanName>
+      <fieldHumanHelp>CZeme.listZeme_help</fieldHumanHelp>
+      <fieldDBName>listZeme</fieldDBName>
+      <fieldType>STR</fieldType>
+      <fieldRepresentation>COM</fieldRepresentation>
+      <list>DlistZeme</list>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+  </fields>
+  <forms>
+    <screen-form name="CZemeF" formHumanName="CZemeF" id="cz.incad.core.part.CZeme">
+      <form-body align="LEFT" valign="TOP">
+        <row fill="LEFT" vfill="TOP">
+          <select align="LEFT" valign="TOP" indent="false" columnIndex="1" width="45ch" id="typ" precision="0" scale="0" type="combo" multi="false" editable="false"/>
+          <select align="LEFT" valign="TOP" indent="false" columnIndex="2" width="45ch" id="listZeme" precision="0" scale="0" type="combo" multi="false" editable="false"/>
+        </row>
+      </form-body>
+    </screen-form>
+    <tree name="AvailableForms">
+      <node formName="CZemeF"/>
+    </tree>
+  </forms>
+  <uniqueFields/>
+</desk>

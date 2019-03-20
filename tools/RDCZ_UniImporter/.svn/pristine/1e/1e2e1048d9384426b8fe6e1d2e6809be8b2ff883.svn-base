@@ -1,0 +1,680 @@
+/* *****************************************************************************
+ * To change this template, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package cz.incad.relief3.rdcz.uniimporter.model;
+
+import java.util.LinkedList;
+import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
+/** ****************************************************************************
+ *
+ * @author martin
+ */
+public class OneRecord {
+    private static final Logger LOG = Logger.getLogger(OneRecord.class.getName());
+    //souhr vsech polí
+
+    //Bibliograficke udaje
+    private String druhDokumentu         = null;
+    private List<String> cisloCNB        = null;
+    private String identifikatorZaznamu  = null;//např Pole001
+    private String baze                  = null;
+    private String sysno                 = null;
+    private String autor                 = null;
+    private String nazev                 = null;
+    private String rokyVydani            = null;
+    private List<String> isbn            = null;
+    private List<String> issn            = null;
+    private String siglaVlastnika        = null;
+    private String variantniNazev        = null;
+    private String zdrojFinancovani      = null;
+    private String poznamky              = null;
+    private String urlNaTitul            = null;
+
+    //Exemplar
+    private String carovyKod             = null;
+    private String signatura             = null;
+    private String rokPeriodika          = null;
+    private String castDilRocnik         = null;
+    private String cisloZakazky          = null;
+
+    //Udaje o digitalizaci
+    private String urlCastRokRocnik      = null;
+    private String pocetSouboru          = null;
+    private boolean ocr                  = false;
+    private boolean ocrSvabach           = false;
+    private String typSkeneru            = null;
+    private String parametrySkenovani    = null;
+    private String dpi                   = null;
+    private String barevnaHloubka        = null;
+    
+    private boolean djvu                 = false;
+    private boolean gif                  = false;
+    private boolean jpeg                 = false;
+    private boolean pdf                  = false;
+    private boolean tiff                 = false;
+    private boolean txt                  = false;
+
+
+    /** ************************************************************************
+     * 
+     * @return 
+     */
+    public String getDruhDokumentu() {
+        return this.druhDokumentu;
+    }
+
+    /** ************************************************************************
+     * 
+     * @return 
+     */
+    public List<String> getCisloCNB() {
+        return this.cisloCNB;
+    }
+
+    /** ************************************************************************
+     * 
+     * @return 
+     */
+    public String getIdentifikatorZaznamu() {
+        return this.identifikatorZaznamu;
+    }
+
+    /** ************************************************************************
+     * 
+     * @return 
+     */
+    public String getBaze() {
+        return this.baze;
+    }
+
+    /** ************************************************************************
+     * 
+     * @return 
+     */
+    public String getSysno() {
+        return this.sysno;
+    }
+
+    /** ************************************************************************
+     * 
+     * @return 
+     */
+    public String getAutor() {
+        return this.autor;
+    }
+
+    /** ************************************************************************
+     * 
+     * @return 
+     */
+    public String getNazev() {
+        return this.nazev;
+    }
+
+    /** ************************************************************************
+     * 
+     * @return 
+     */
+    public String getRokyVydani() {
+        return this.rokyVydani;
+    }
+
+    /** ************************************************************************
+     * 
+     * @return 
+     */
+    public List<String> getIsbn() {
+        return this.isbn;
+    }
+
+    /** ************************************************************************
+     * 
+     * @return 
+     */
+    public List<String> getIssn() {
+        return issn;
+    }
+
+    /** ************************************************************************
+     * 
+     * @return 
+     */
+    public String getSiglaVlastnika() {
+        return this.siglaVlastnika;
+    }
+
+    /** ************************************************************************
+     * 
+     * @return 
+     */
+    public String getVariantniNazev() {
+        return this.variantniNazev;
+    }
+
+    /** ************************************************************************
+     * 
+     * @return 
+     */
+    public String getZdrojFinancovani() {
+        return this.zdrojFinancovani;
+    }
+
+    /** ************************************************************************
+     * 
+     * @return 
+     */
+    public String getPoznamky() {
+        return this.poznamky;
+    }
+
+    /** ************************************************************************
+     * 
+     * @return 
+     */
+    public String getUrlNaTitul() {
+        return this.urlNaTitul;
+    }
+
+    /** ************************************************************************
+     * 
+     * @return 
+     */
+    public String getCarovyKod() {
+        return this.carovyKod;
+    }
+
+    /** ************************************************************************
+     * 
+     * @return 
+     */
+    public String getSignatura() {
+        return this.signatura;
+    }
+
+    /** ************************************************************************
+     * 
+     * @return 
+     */
+    public String getRokPeriodika() {
+        return this.rokPeriodika;
+    }
+
+    /** ************************************************************************
+     * 
+     * @return 
+     */
+    public String getCastDilRocnik() {
+        return this.castDilRocnik;
+    }
+
+    /** ************************************************************************
+     * 
+     * @return 
+     */
+    public String getCisloZakazky() {
+        return this.cisloZakazky;
+    }
+
+    /** ************************************************************************
+     * 
+     * @return 
+     */
+    public String getUrlCastRokRocnik() {
+        return this.urlCastRokRocnik;
+    }
+
+    /** ************************************************************************
+     * 
+     * @return 
+     */
+    public String getPocetSouboru() {
+        return this.pocetSouboru;
+    }
+
+    /** ************************************************************************
+     * 
+     * @return 
+     */
+    public boolean getOcr() {
+        return this.ocr;
+    }
+
+    /** ************************************************************************
+     * 
+     * @return 
+     */
+    public boolean getOcrSvabach() {
+        return this.ocrSvabach;
+    }
+
+    /** ************************************************************************
+     * 
+     * @return 
+     */
+    public String getTypSkeneru() {
+        return this.typSkeneru;
+    }
+
+    /** ************************************************************************
+     * 
+     * @return 
+     */
+    public String getParametrySkenovani() {
+        return this.parametrySkenovani;
+    }
+
+    /** ************************************************************************
+     * 
+     * @return 
+     */
+    public String getDpi() {
+        return this.dpi;
+    }
+
+    /** ************************************************************************
+     * 
+     * @return 
+     */
+    public String getBarevnaHloubka() {
+        return this.barevnaHloubka;
+    }
+
+    /** ************************************************************************
+     * 
+     * @return 
+     */
+    public boolean getDjvu() {
+        return this.djvu;
+    }
+
+    /** ************************************************************************
+     * 
+     * @return 
+     */
+    public boolean getGif() {
+        return this.gif;
+    }
+
+    /** ************************************************************************
+     * 
+     * @return 
+     */
+    public boolean getJpeg() {
+        return this.jpeg;
+    }
+
+    /** ************************************************************************
+     * 
+     * @return 
+     */
+    public boolean getPdf() {
+        return this.pdf;
+    }
+
+    /** ************************************************************************
+     * 
+     * @return 
+     */
+    public boolean getTiff() {
+        return this.tiff;
+    }
+
+    /** ************************************************************************
+     * 
+     * @return 
+     */
+    public boolean getTxt() {
+        return this.txt;
+    }
+
+//-----------------------------------------------------------------------------------------    
+//-----------------------------------------------------------------------------------------
+//-----------------------------------------------------------------------------------------
+
+    /** ************************************************************************
+     * 
+     * @return 
+     */
+    public void setDruhDokumentu(String value) {
+        this.druhDokumentu = value;
+    }
+
+    /** ************************************************************************
+     * 
+     * @return 
+     */
+    public void setCisloCNB(List<String> value) {
+        if (value != null) {
+            if (!value.isEmpty()) {
+                this.cisloCNB = new LinkedList<String>();
+                for(String one : value) {
+                    //DEBUG
+                    this.cisloCNB.add(one);
+                }
+            }
+        }
+    }
+
+    /** ************************************************************************
+     * 
+     * @return 
+     */
+    public void setIdentifikatorZaznamu(String value) {
+        this.identifikatorZaznamu = value;
+    }
+
+    /** ************************************************************************
+     * 
+     * @return 
+     */
+    public void setBaze(String value) {
+        this.baze = value;
+    }
+
+    /** ************************************************************************
+     * 
+     * @return 
+     */
+    public void setSysno(String value) {
+        this.sysno = value;
+    }
+
+    /** ************************************************************************
+     * 
+     * @return 
+     */
+    public void setAutor(String value) {
+        this.autor = value;
+    }
+
+    /** ************************************************************************
+     * 
+     * @return 
+     */
+    public void setNazev(String value) {
+        this.nazev = value;
+    }
+
+    /** ************************************************************************
+     * 
+     * @return 
+     */
+    public void setRokyVydani(String value) {
+        this.rokyVydani = value;
+    }
+
+    /** ************************************************************************
+     * 
+     * @return 
+     */
+    public void setIsbn(List<String> value) {
+        if (value != null) {
+            if (!value.isEmpty()) {
+                this.isbn = new LinkedList<String>();
+                for(String one : value) {
+                    //DEBUG
+                    this.isbn.add(one);
+                }
+            }
+        }
+    }
+
+    /** ************************************************************************
+     * 
+     * @return 
+     */
+    public void setIssn(List<String> value) {
+        if (value != null) {
+            if (!value.isEmpty()) {
+                this.issn = new LinkedList<String>();
+                for(String one : value) {
+                    //DEBUG
+                    this.issn.add(one);
+                }
+            }
+        }
+    }
+
+    /** ************************************************************************
+     * 
+     * @return 
+     */
+    public void setSiglaVlastnika(String value) {
+        this.siglaVlastnika = value;
+    }
+
+    /** ************************************************************************
+     * 
+     * @return 
+     */
+    public void setVariantniNazev(String value) {
+        this.variantniNazev = value;
+    }
+
+    /** ************************************************************************
+     * 
+     * @return 
+     */
+    public void setZdrojFinancovani(String value) {
+        this.zdrojFinancovani = value;
+    }
+
+    /** ************************************************************************
+     * 
+     * @return 
+     */
+    public void setPoznamky(String value) {
+        this.poznamky = value;
+    }
+
+    /** ************************************************************************
+     * 
+     * @return 
+     */
+    public void setUrlNaTitul(String value) {
+        this.urlNaTitul = value;
+    }
+
+    /** ************************************************************************
+     * 
+     * @return 
+     */
+    public void setCarovyKod(String value) {
+        this.carovyKod = value;
+    }
+
+    /** ************************************************************************
+     * 
+     * @return 
+     */
+    public void setSignatura(String value) {
+        this.signatura = value;
+    }
+
+    /** ************************************************************************
+     * 
+     * @return 
+     */
+    public void setRokPeriodika(String value) {
+        this.rokPeriodika = value;
+    }
+
+    /** ************************************************************************
+     * 
+     * @return 
+     */
+    public void setCastDilRocnik(String value) {
+        this.castDilRocnik = value;
+    }
+
+    /** ************************************************************************
+     * 
+     * @return 
+     */
+    public void setCisloZakazky(String value) {
+        this.cisloZakazky = value;
+    }
+
+    /** ************************************************************************
+     * 
+     * @return 
+     */
+    public void setUrlCastRokRocnik(String value) {
+        this.urlCastRokRocnik = value;
+    }
+
+    /** ************************************************************************
+     * 
+     * @return 
+     */
+    public void setPocetSouboru(String value) {
+        this.pocetSouboru = value;
+    }
+
+    /** ************************************************************************
+     * 
+     * @return 
+     */
+    public void setOcr(boolean value) {
+        this.ocr = value;
+    }
+
+    /** ************************************************************************
+     * 
+     * @return 
+     */
+    public void setOcrSvabach(boolean value) {
+        this.ocrSvabach = value;
+    }
+
+    /** ************************************************************************
+     * 
+     * @return 
+     */
+    public void setTypSkeneru(String value) {
+        this.typSkeneru = value;
+    }
+
+    /** ************************************************************************
+     * 
+     * @return 
+     */
+    public void setParametrySkenovani(String value) {
+        this.parametrySkenovani = value;
+    }
+
+    /** ************************************************************************
+     * 
+     * @return 
+     */
+    public void setDpi(String value) {
+        this.dpi = value;
+    }
+
+    /** ************************************************************************
+     * 
+     * @return 
+     */
+    public void setBarevnaHloubka(String value) {
+        this.barevnaHloubka = value;
+    }
+
+    /** ************************************************************************
+     * 
+     * @return 
+     */
+    public void setDjvu(boolean value) {
+        this.djvu = value;
+    }
+
+    /** ************************************************************************
+     * 
+     * @return 
+     */
+    public void setGif(boolean value) {
+        this.gif = value;
+    }
+
+    /** ************************************************************************
+     * 
+     * @return 
+     */
+    public void setJpeg(boolean value) {
+        this.jpeg = value;
+    }
+
+    /** ************************************************************************
+     * 
+     * @return 
+     */
+    public void setPdf(boolean value) {
+        this.pdf = value;
+    }
+
+    /** ************************************************************************
+     * 
+     * @return 
+     */
+    public void setTiff(boolean value) {
+        this.tiff = value;
+    }
+
+    /** ************************************************************************
+     * 
+     * @return 
+     */
+    public void setTxt(boolean value) {
+        this.txt = value;
+    }
+
+    /** ************************************************************************
+     * 
+     * @return 
+     */
+    public String getPrijmeniAutora() {
+        String value = getAutor();
+        StringBuilder exit = new StringBuilder();
+
+        if (value == null) return null;
+
+        for (int i = 0; i < value.length(); i++) {
+            if (Character.isAlphabetic(value.charAt(i)) || Character.isDigit(value.charAt(i))) {
+                exit.append(value.charAt(i));
+            } else if (exit.length() != 0) {
+                LOG.log(Level.INFO, "Prijmeni autora: {0}", exit.toString());
+                return exit.toString();
+            }
+        }
+
+        LOG.log(Level.INFO, "Prijmeni autora: {0}", exit.toString());
+        return exit.toString();
+    }
+
+    /** ************************************************************************
+     * 
+     * @return 
+     */
+    public String getNazevDoDvojteckyNeboLomitka() {
+        String value = getNazev();
+        if (value == null) return null;
+        StringBuilder exit = new StringBuilder();
+
+        value = value.trim();
+        for (int i = 0; i < value.length(); i++) {
+            if (value.charAt(i) == 47 || value.charAt(i) == 58) {
+                LOG.log(Level.INFO, "Nazev do dvojtecky nebo lomitka: {0}", exit.toString());
+                return exit.toString();
+            } else {
+                exit.append(value.charAt(i));
+            }
+        }
+
+        LOG.log(Level.INFO, "Nazev do dvojtecky nebo lomitka: {0}", exit.toString());
+        return exit.toString();
+    }
+
+}

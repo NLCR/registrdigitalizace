@@ -1,0 +1,21 @@
+/*
+ * To change this template, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package cz.incad.relief3.rdcz.uniimporter.model;
+
+import cz.incad.relief3.rdcz.uniImporter.model.Issue;
+
+/** ****************************************************************************
+ *
+ * @author martin
+ */
+public interface DataParser {
+
+    /** ************************************************************************
+     * 
+     * @param oneItem 
+     */
+    public Issue parseIt(Issue oneItem);
+
+}

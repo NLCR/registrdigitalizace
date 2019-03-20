@@ -1,0 +1,610 @@
+/* *****************************************************************************
+ * To change this template, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package cz.incad.relief3.rdcz.uniimporter.model;
+
+import com.amaio.plaant.DbBrowser;
+import com.amaio.plaant.businessFunctions.AddException;
+import com.amaio.plaant.businessFunctions.ApplicationErrorException;
+import com.amaio.plaant.businessFunctions.RecordsIterator;
+import com.amaio.plaant.businessFunctions.impl.ExternalContextServer;
+import com.amaio.plaant.desk.QueryException;
+import com.amaio.plaant.metadata.Filter;
+import com.amaio.plaant.sync.Record;
+import cz.incad.r3tools.R3Commons;
+import cz.incad.r3tools.R3FilterTools;
+import cz.incad.rd.NepCCNBEntity;
+import cz.incad.rd.NepISBNEntity;
+import cz.incad.rd.NepISSNEntity;
+import cz.incad.rd.PredlohaEntity;
+import cz.incad.rd.TabVarNazevEntity;
+import cz.incad.relief3.rdcz.uniImporter.model.Issue;
+import cz.incad.relief3.rdcz.uniimporter.utils.Configuration;
+import java.rmi.RemoteException;
+import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.ejb.CreateException;
+import javax.naming.NamingException;
+
+/** ****************************************************************************
+ *
+ * @author martin
+ */
+public class ReliefImportListener implements ImportListener {
+    private static final Logger LOG = Logger.getLogger(ReliefImportListener.class.getName());
+
+    /** ************************************************************************
+     * 
+     * @param oneIssue 
+     */
+    public void ImportIt(Issue oneIssue) {
+        ExternalContextServer ctx = null;
+        List<OneRecord> lRecords;
+        DbBrowser dbb;
+
+        String URL = Configuration.getInstance().getProperty(Configuration.KEY_RELIEF_URL);
+        String LOGIN = Configuration.getInstance().getProperty(Configuration.KEY_RELIEF_OVERRIDE_USER);
+        String PASS = Configuration.getInstance().getProperty(Configuration.KEY_RELIEF_OVERRIDE_PASS);
+//        String LOGIN = oneIssue.overrideUser();
+//        String PASS = oneIssue.overridePass();
+        try {
+            LOG.info("Opening Relief connection...");
+            System.out.println("Opening Relief connection...");
+            ctx = R3Commons.getConnection(URL, LOGIN, PASS);
+            LOG.info("Get DB Browser...");
+            System.out.println("Get DB Browser...");
+            dbb = R3Commons.getDbBrowser();
+
+            lRecords = oneIssue.getParsedDataList();
+            if (lRecords != null) {
+                //Máme importní data začneme importovat
+                for (int i = 0; i < lRecords.size(); i++) {
+                    doOneRecord(lRecords.get(i), oneIssue.getState(), ctx, dbb);
+                }
+
+            } else {
+                LOG.warning("SOUBOR NEMA ZADNA IMPORTNI DATA: " + oneIssue.getFile().getAbsolutePath());
+            }
+
+            LOG.info("Closing Relief connection...");
+            if (ctx != null) ctx.close();
+
+        } catch (RemoteException ex) {
+            LOG.log(Level.SEVERE, null, ex);
+        } catch (NamingException ex) {
+            LOG.log(Level.SEVERE, null, ex);
+        } catch (CreateException ex) {
+            LOG.log(Level.SEVERE, null, ex);
+        } catch (Exception ex) {
+            LOG.log(Level.SEVERE, null, ex);
+        }
+
+    }
+
+    /** ************************************************************************
+     * 
+     * @param oneRec
+     * @param state
+     * @param ctx
+     * @param dbb
+     * @return 
+     */
+    private boolean doOneRecord(OneRecord oneRec, DataStateEnum state, ExternalContextServer ctx, DbBrowser dbb) {
+        boolean isRevize = false;
+        RecordsIterator rit;
+        Record recPredloha = null;
+        String cnPredloha = R3Commons.getClassnameWithoutEntity(PredlohaEntity.class.getName());
+        
+        //1. kontrola jestli záznam má vyplněné alespoň jedno z polí
+        //název-rokvydání 
+        if (oneRec.getNazev() == null && oneRec.getRokyVydani() == null) {
+            //TODO zapsat do LOGU že byl záznam vyřazen z důvodu neúplnosti
+            return false;
+        }
+
+        switch(state) {
+            case ZAMER ://------------------------------------------------------
+                System.out.println("ZAMER");
+
+                //kontrola duplicit na čísloČNB
+                if (oneRec.getCisloCNB() != null) {
+                    rit = findRecordByMultiFields(ctx, dbb, MultiFieldEnum.CCNB, oneRec.getCisloCNB());
+                    if (rit.hasMoreRecords()) isRevize = true;
+                }
+
+                //kontrola duplicit na ISSN
+                if (!isRevize && oneRec.getIssn() != null) {
+                    rit = findRecordByMultiFields(ctx, dbb, MultiFieldEnum.ISSN, oneRec.getIssn());
+                    if (rit.hasMoreRecords()) isRevize = true;
+                }
+
+                //kontrola duplicit na ISBN
+                if (!isRevize && oneRec.getIsbn() != null) {
+                    rit = findRecordByMultiFields(ctx, dbb, MultiFieldEnum.ISBN, oneRec.getIsbn());
+                    if (rit.hasMoreRecords()) isRevize = true;
+                }
+
+                //kontrola duplicit na Autor(příjmení) + název(do dvojtečky nebo lomítka) + roky vydání
+                if (!isRevize && oneRec.getPrijmeniAutora() != null && oneRec.getNazevDoDvojteckyNeboLomitka() != null && oneRec.getRokyVydani() != null && !oneRec.getPrijmeniAutora().isEmpty() && !oneRec.getNazevDoDvojteckyNeboLomitka().isEmpty()) {
+                    rit = findRecordBy4Fields(ctx, dbb, PredlohaEntity.f_autor, oneRec.getPrijmeniAutora(), PredlohaEntity.f_nazev, oneRec.getNazevDoDvojteckyNeboLomitka(), PredlohaEntity.f_rozsah, oneRec.getRokyVydani(), null, null, Filter.CONTAIN_CRIT);
+                    if (rit.hasMoreRecords()) isRevize = true;
+                }
+
+                //kontrola duplicit na Sigla + 001
+                if (!isRevize && oneRec.getSiglaVlastnika() != null && oneRec.getIdentifikatorZaznamu() != null) {
+                    rit = findRecordBySiglaPole001(ctx, dbb, oneRec.getSiglaVlastnika(), oneRec.getIdentifikatorZaznamu());
+                    if (rit.hasMoreRecords()) isRevize = true;
+                }
+
+                //Rozskok pro periodika a ostatní
+                if ("se".equalsIgnoreCase(oneRec.getDruhDokumentu())) {
+                    //Kontrola duplicit na Sigla + ISSN
+                    if (!isRevize && oneRec.getSiglaVlastnika() != null && !oneRec.getIssn().isEmpty()) {
+                        rit = findRecordBy4Fields(ctx, dbb, PredlohaEntity.f_sigla1, oneRec.getSiglaVlastnika(), PredlohaEntity.f_ISBN, oneRec.getIssn().get(0), null, null, null, null, Filter.EQUAL_CRIT);
+                        if (rit.hasMoreRecords()) isRevize = true;
+                    }
+                } else {
+                    //Kontrola duplicit na Sigla + ČCNB
+                    if (!isRevize && oneRec.getSiglaVlastnika() != null && !oneRec.getCisloCNB().isEmpty()) {
+                        rit = findRecordBy4Fields(ctx, dbb, PredlohaEntity.f_sigla1, oneRec.getSiglaVlastnika(), PredlohaEntity.f_cCNB, oneRec.getCisloCNB().get(0), null, null, null, null, Filter.EQUAL_CRIT);
+                        if (rit.hasMoreRecords()) isRevize = true;
+                    }
+                }
+
+                //Prolezli jsme podmínkani a víme jestli je záznam ve stavu Revize - můžeme záznam importovat
+                try {
+                    ctx.addRootDomain(R3Commons.getDomain(ctx, cnPredloha));
+                    recPredloha = ctx.create(R3Commons.getDomain(ctx, cnPredloha));
+                    if (isRevize) {
+                        recPredloha.getSimpleField(PredlohaEntity.RECORD_stavRec).setValue("revize");
+                        System.out.println("CREATE - REVIZE");
+                    } else {
+                        recPredloha.getSimpleField(PredlohaEntity.RECORD_stavRec).setValue("planovane");
+                        System.out.println("CREATE");
+                    }
+
+                    setRecord(recPredloha, oneRec);
+                    if ("1".equals(Configuration.getInstance().getProperty(Configuration.KEY_IMPORT_TEST))) {
+                        System.out.println("ONLY TESTING - DROP DATA");
+                        ctx.rollback();
+                    } else {
+                        ctx.commit();
+                    }
+                } catch (AddException ex) {
+                    LOG.log(Level.SEVERE, null, ex);
+                    ctx.rollback();
+                } catch (ApplicationErrorException ex) {
+                    LOG.log(Level.SEVERE, null, ex);
+                    ctx.rollback();
+                } catch (Exception ex) {
+                    LOG.log(Level.SEVERE, null, ex);
+                    ctx.rollback();
+                }
+
+                break;
+
+
+            case PROBIHA ://----------------------------------------------------
+                System.out.println("PROBIHA");
+
+                //kontroly proti duplicitám ve vlastní knihovně
+                //kontrola duplicit na sigla + 001 + carkod
+                if (recPredloha == null && oneRec.getSiglaVlastnika() != null && oneRec.getIdentifikatorZaznamu() != null && oneRec.getCarovyKod() != null) {
+                    rit = findRecordBy4Fields(ctx, dbb, PredlohaEntity.f_sigla1, oneRec.getSiglaVlastnika(), PredlohaEntity.f_pole001, oneRec.getIdentifikatorZaznamu(), PredlohaEntity.f_carKod, oneRec.getCarovyKod(), null, null, Filter.EQUAL_CRIT);
+                    if (rit.hasMoreRecords()) {
+                        recPredloha = rit.nextRecord();
+                    }
+                }
+
+                //kontrola duplicit na sigla + 001 + rokPeriodika(rozmezí)
+                if (recPredloha == null && oneRec.getSiglaVlastnika() != null && oneRec.getIdentifikatorZaznamu() != null && oneRec.getRokPeriodika() != null) {
+                    rit = findRecordBy4Fields(ctx, dbb, PredlohaEntity.f_sigla1, oneRec.getSiglaVlastnika(), PredlohaEntity.f_pole001, oneRec.getIdentifikatorZaznamu(), PredlohaEntity.f_rozsah, oneRec.getRokPeriodika(), null, null, Filter.EQUAL_CRIT);
+                    if (rit.hasMoreRecords()) {
+                        recPredloha = rit.nextRecord();
+                    }
+                }
+
+                //kontrola duplicit na sigla + 001 + část/ročník
+                if (recPredloha == null && oneRec.getSiglaVlastnika() != null && oneRec.getIdentifikatorZaznamu() != null && oneRec.getCastDilRocnik() != null) {
+                    rit = findRecordBy4Fields(ctx, dbb, PredlohaEntity.f_sigla1, oneRec.getSiglaVlastnika(), PredlohaEntity.f_pole001, oneRec.getIdentifikatorZaznamu(), PredlohaEntity.f_cast, oneRec.getCastDilRocnik(), null, null, Filter.EQUAL_CRIT);
+                    if (rit.hasMoreRecords()) {
+                        recPredloha = rit.nextRecord();
+                    }
+                }
+
+                //kontrola duplicit na Sigla + 001
+                if (recPredloha == null && oneRec.getSiglaVlastnika() != null && oneRec.getIdentifikatorZaznamu() != null) {
+                    rit = findRecordBySiglaPole001(ctx, dbb, oneRec.getSiglaVlastnika(), oneRec.getIdentifikatorZaznamu());
+                    if (rit.hasMoreRecords()) {
+                        recPredloha = rit.nextRecord();
+                    }
+                }
+
+                //Rozskok pro periodika a ostatní
+                if ("se".equalsIgnoreCase(oneRec.getDruhDokumentu())) {
+                    //Kontrola duplicit na Sigla + ISSN
+                    if (recPredloha == null && oneRec.getSiglaVlastnika() != null && !oneRec.getIssn().isEmpty()) {
+                        rit = findRecordBy4Fields(ctx, dbb, PredlohaEntity.f_sigla1, oneRec.getSiglaVlastnika(), PredlohaEntity.f_ISBN, oneRec.getIssn().get(0), null, null, null, null, Filter.EQUAL_CRIT);
+                        if (rit.hasMoreRecords()) {
+                            recPredloha = rit.nextRecord();
+                        }
+                    }
+                } else {
+                    //Kontrola duplicit na Sigla + ČCNB
+                    if (recPredloha == null && oneRec.getSiglaVlastnika() != null && !oneRec.getCisloCNB().isEmpty()) {
+                        rit = findRecordBy4Fields(ctx, dbb, PredlohaEntity.f_sigla1, oneRec.getSiglaVlastnika(), PredlohaEntity.f_cCNB, oneRec.getCisloCNB().get(0), null, null, null, null, Filter.EQUAL_CRIT);
+                        if (rit.hasMoreRecords()) {
+                            recPredloha = rit.nextRecord();
+                        }
+                    }
+                }
+
+                //Kontroly proti ostatním knihovnám
+                //kontrola duplicit na čísloČNB
+                if (recPredloha == null && oneRec.getCisloCNB() != null) {
+                    rit = findRecordByMultiFields(ctx, dbb, MultiFieldEnum.CCNB, oneRec.getCisloCNB());
+                    if (rit.hasMoreRecords()) {
+                        isRevize = true;
+                    }
+                }
+
+                //kontrola duplicit na ISSN
+                if (!isRevize && recPredloha == null && oneRec.getIssn() != null) {
+                    rit = findRecordByMultiFields(ctx, dbb, MultiFieldEnum.ISSN, oneRec.getIssn());
+                    if (rit.hasMoreRecords()) {
+                        isRevize = true;
+                    }
+                }
+
+                //kontrola duplicit na ISBN
+                if (!isRevize && recPredloha == null && oneRec.getIsbn() != null) {
+                    rit = findRecordByMultiFields(ctx, dbb, MultiFieldEnum.ISBN, oneRec.getIsbn());
+                    if (rit.hasMoreRecords()) {
+                        isRevize = true;
+                    }
+                }
+
+                //kontrola duplicit na Autor(příjmení) + název(do dvojtečky nebo lomítka) + roky vydání
+                if (!isRevize && recPredloha == null && oneRec.getPrijmeniAutora() != null && oneRec.getNazevDoDvojteckyNeboLomitka() != null && oneRec.getRokyVydani() != null && !oneRec.getPrijmeniAutora().isEmpty() && !oneRec.getNazevDoDvojteckyNeboLomitka().isEmpty()) {
+                    rit = findRecordBy4Fields(ctx, dbb, PredlohaEntity.f_autor, oneRec.getPrijmeniAutora(), PredlohaEntity.f_nazev, oneRec.getNazevDoDvojteckyNeboLomitka(), PredlohaEntity.f_rozsah, oneRec.getRokyVydani(), null, null, Filter.CONTAIN_CRIT);
+                    if (rit.hasMoreRecords()) {
+                        isRevize = true;
+                    }
+                }
+
+                try {
+                    ctx.addRootDomain(R3Commons.getDomain(ctx, cnPredloha));
+                    if (recPredloha == null) {
+                        recPredloha = ctx.create(R3Commons.getDomain(ctx, cnPredloha));
+                        System.out.println("CREATE");
+                    } else {
+                        System.out.println("UPDATE");
+                    }
+
+                    if (isRevize) {
+                        recPredloha.getSimpleField(PredlohaEntity.RECORD_stavRec).setValue("revize");
+                        System.out.println("REVIZE");
+                    } else {
+                        recPredloha.getSimpleField(PredlohaEntity.RECORD_stavRec).setValue("progress");
+                    }
+
+                    setRecord(recPredloha, oneRec);
+                    if ("1".equals(Configuration.getInstance().getProperty(Configuration.KEY_IMPORT_TEST))) {
+                        System.out.println("ONLY TESTING - DROP DATA");
+                        ctx.rollback();
+                    } else {
+                        ctx.commit();
+                    }
+                } catch (AddException ex) {
+                    LOG.log(Level.SEVERE, null, ex);
+                    ctx.rollback();
+                } catch (ApplicationErrorException ex) {
+                    LOG.log(Level.SEVERE, null, ex);
+                    ctx.rollback();
+                } catch (Exception ex) {
+                    LOG.log(Level.SEVERE, null, ex);
+                    ctx.rollback();
+                }
+
+                break;
+
+
+            case HOTOVO ://-----------------------------------------------------
+                System.out.println("HOTOVO");
+
+                //kontrola duplicit na sigla + 001 + carkod
+                if (recPredloha == null && oneRec.getSiglaVlastnika() != null && oneRec.getIdentifikatorZaznamu() != null && oneRec.getCarovyKod() != null) {
+                    rit = findRecordBy4Fields(ctx, dbb, PredlohaEntity.f_sigla1, oneRec.getSiglaVlastnika(), PredlohaEntity.f_pole001, oneRec.getIdentifikatorZaznamu(), PredlohaEntity.f_carKod, oneRec.getCarovyKod(), null, null, Filter.EQUAL_CRIT);
+                    if (rit.hasMoreRecords()) {
+                        recPredloha = rit.nextRecord();
+                    }
+                }
+
+                //kontrola duplicit na sigla + 001 + rokPeriodika(rozmezí)
+                if (recPredloha == null && oneRec.getSiglaVlastnika() != null && oneRec.getIdentifikatorZaznamu() != null && oneRec.getRokPeriodika() != null) {
+                    rit = findRecordBy4Fields(ctx, dbb, PredlohaEntity.f_sigla1, oneRec.getSiglaVlastnika(), PredlohaEntity.f_pole001, oneRec.getIdentifikatorZaznamu(), PredlohaEntity.f_rozsah, oneRec.getRokPeriodika(), null, null, Filter.EQUAL_CRIT);
+                    if (rit.hasMoreRecords()) {
+                        recPredloha = rit.nextRecord();
+                    }
+                }
+
+                //kontrola duplicit na sigla + 001 + část/ročník
+                if (recPredloha == null && oneRec.getSiglaVlastnika() != null && oneRec.getIdentifikatorZaznamu() != null && oneRec.getCastDilRocnik() != null) {
+                    rit = findRecordBy4Fields(ctx, dbb, PredlohaEntity.f_sigla1, oneRec.getSiglaVlastnika(), PredlohaEntity.f_pole001, oneRec.getIdentifikatorZaznamu(), PredlohaEntity.f_cast, oneRec.getCastDilRocnik(), null, null, Filter.EQUAL_CRIT);
+                    if (rit.hasMoreRecords()) {
+                        recPredloha = rit.nextRecord();
+                    }
+                }
+                
+                //kontrola duplicit na sigla + 001 + část/ročník
+                if (recPredloha == null && oneRec.getSiglaVlastnika() != null && oneRec.getIdentifikatorZaznamu() != null) {
+                    rit = findRecordBy4Fields(ctx, dbb, PredlohaEntity.f_sigla1, oneRec.getSiglaVlastnika(), PredlohaEntity.f_pole001, oneRec.getIdentifikatorZaznamu(), null, null, null, null, Filter.EQUAL_CRIT);
+                    if (rit.hasMoreRecords()) {
+                        recPredloha = rit.nextRecord();
+                    }
+                }
+
+                //Rozskok pro periodika a ostatní
+                if ("se".equalsIgnoreCase(oneRec.getDruhDokumentu())) {
+                    //Kontrola duplicit na Sigla + ISSN
+                    if (recPredloha == null && oneRec.getSiglaVlastnika() != null && !oneRec.getIssn().isEmpty()) {
+                        rit = findRecordBy4Fields(ctx, dbb, PredlohaEntity.f_sigla1, oneRec.getSiglaVlastnika(), PredlohaEntity.f_ISBN, oneRec.getIssn().get(0), null, null, null, null, Filter.EQUAL_CRIT);
+                        if (rit.hasMoreRecords()) {
+                            recPredloha = rit.nextRecord();
+                        }
+                    }
+                } else {
+                    //Kontrola duplicit na Sigla + ČCNB
+                    if (recPredloha == null && oneRec.getSiglaVlastnika() != null && !oneRec.getCisloCNB().isEmpty()) {
+                        rit = findRecordBy4Fields(ctx, dbb, PredlohaEntity.f_sigla1, oneRec.getSiglaVlastnika(), PredlohaEntity.f_cCNB, oneRec.getCisloCNB().get(0), null, null, null, null, Filter.EQUAL_CRIT);
+                        if (rit.hasMoreRecords()) {
+                            recPredloha = rit.nextRecord();
+                        }
+                    }
+                }
+
+                //Prošli jsme podmínkami a možná jsme našli záznam který je potřeba update update, když ne založíme si nový
+                try {
+                    if (recPredloha == null) {
+                        recPredloha = ctx.create(R3Commons.getDomain(ctx, cnPredloha));
+                        System.out.println("CREATE");
+                    } else {
+                        System.out.println("UPDATE");
+                    }
+                    ctx.addRootDomain(R3Commons.getDomain(ctx, cnPredloha));
+                    recPredloha.getSimpleField(PredlohaEntity.RECORD_stavRec).setValue("finished");
+                    setRecord(recPredloha, oneRec);
+                    if ("1".equals(Configuration.getInstance().getProperty(Configuration.KEY_IMPORT_TEST))) {
+                        System.out.println("ONLY TESTING - DROP DATA");
+                        ctx.rollback();
+                    } else {
+                        ctx.commit();
+                    }
+                } catch (AddException ex) {
+                    LOG.log(Level.SEVERE, null, ex);
+                    ctx.rollback();
+                } catch (ApplicationErrorException ex) {
+                    LOG.log(Level.SEVERE, null, ex);
+                    ctx.rollback();
+                } catch (Exception ex) {
+                    LOG.log(Level.SEVERE, null, ex);
+                    ctx.rollback();
+                }
+
+                break;
+        }
+
+        return true;
+    }
+
+    /** ************************************************************************
+     * 
+     */
+    private enum MultiFieldEnum {
+        CCNB,ISSN,ISBN
+    }
+
+    /** ************************************************************************
+     * 
+     * @param ctx
+     * @param dbb
+     * @param mf
+     * @param value
+     * @return 
+     */
+    private static RecordsIterator findRecordByMultiFields(ExternalContextServer ctx, DbBrowser dbb, MultiFieldEnum mf, List values) {
+        Filter filter = R3FilterTools.getEmptyFilter();
+        String cnPredloha = R3Commons.getClassnameWithoutEntity(PredlohaEntity.class.getName());
+        String simpleField = null;
+        String multiField = null;
+        switch(mf) {
+            case CCNB :
+                simpleField = PredlohaEntity.f_cCNB;
+                multiField = PredlohaEntity.f_tNepCCNB;
+                break;
+            case ISSN :
+                simpleField = PredlohaEntity.f_issn;
+                multiField = PredlohaEntity.f_tNepISSN;
+                
+                break;
+            case ISBN :
+                simpleField = PredlohaEntity.f_ISBN;
+                multiField = PredlohaEntity.f_tNepISBN;
+                break;
+        }
+
+        try {
+            R3FilterTools.addFilterRule(filter, dbb, cnPredloha, Filter.AND_OP, 1, simpleField, Filter.IN_LIST_CRIT, values.toArray(), 1, true);
+            R3FilterTools.addFilterRule(filter, dbb, cnPredloha, Filter.OR_OP, 1, multiField + ".value", Filter.IN_LIST_CRIT, values.toArray(), 1, true);
+            return R3FilterTools.getRecords(ctx, cnPredloha, filter, null);
+        } catch (RemoteException ex) {
+            LOG.log(Level.SEVERE, null, ex);
+        } catch (QueryException ex) {
+            LOG.log(Level.SEVERE, null, ex);
+        }
+
+        return null;
+    }
+
+    /** ************************************************************************
+     * 
+     * @param ctx
+     * @param dbb
+     * @param sigla
+     * @param pole001
+     * @return 
+     */
+    private static RecordsIterator findRecordBySiglaPole001(ExternalContextServer ctx, DbBrowser dbb, String sigla, String pole001) {
+        Filter filter = R3FilterTools.getEmptyFilter();
+        String cnPredloha = R3Commons.getClassnameWithoutEntity(PredlohaEntity.class.getName());
+
+        try {
+            R3FilterTools.addFilterRule(filter, dbb, cnPredloha, Filter.AND_OP, 1, PredlohaEntity.f_sigla1, Filter.EQUAL_CRIT, sigla, 0, true);
+            R3FilterTools.addFilterRule(filter, dbb, cnPredloha, Filter.OR_OP, 0, PredlohaEntity.f_sigla2, Filter.EQUAL_CRIT, sigla, 1, true);
+            R3FilterTools.addFilterRule(filter, dbb, cnPredloha, Filter.AND_OP, 1, PredlohaEntity.f_pole001, Filter.EQUAL_CRIT, pole001, 1, true);
+            return R3FilterTools.getRecords(ctx, cnPredloha, filter, null);
+        } catch (RemoteException ex) {
+            LOG.log(Level.SEVERE, null, ex);
+        } catch (QueryException ex) {
+            LOG.log(Level.SEVERE, null, ex);
+        }
+
+        return null;
+    }
+
+    /** ************************************************************************
+     * 
+     * @param ctx
+     * @param dbb
+     * @param column1
+     * @param value1
+     * @param column2
+     * @param value2
+     * @param column3
+     * @param value3
+     * @param porovnavaciPravidlo Filter.*_CRIT
+     * @return 
+     */
+    private static RecordsIterator findRecordBy4Fields(ExternalContextServer ctx, DbBrowser dbb, String column1, String value1, String column2, String value2, String column3, String value3,  String column4, String value4, byte porovnavaciPravidlo) {
+        Filter filter = R3FilterTools.getEmptyFilter();
+        String cnPredloha = R3Commons.getClassnameWithoutEntity(PredlohaEntity.class.getName());
+
+        try {
+            if (column1 != null) {
+                R3FilterTools.addFilterRule(filter, dbb, cnPredloha, Filter.AND_OP, 1, column1, porovnavaciPravidlo, value1, 1, true);
+            }
+            if (column2 != null) {
+                R3FilterTools.addFilterRule(filter, dbb, cnPredloha, Filter.AND_OP, 1, column2, porovnavaciPravidlo, value2, 1, true);
+            }
+            if (column3 != null) {
+                R3FilterTools.addFilterRule(filter, dbb, cnPredloha, Filter.AND_OP, 1, column3, porovnavaciPravidlo, value3, 1, true);
+            }
+            if (column4 != null) {
+                R3FilterTools.addFilterRule(filter, dbb, cnPredloha, Filter.AND_OP, 1, column4, porovnavaciPravidlo, value4, 1, true);
+            }
+            return R3FilterTools.getRecords(ctx, cnPredloha, filter, null);
+        } catch (RemoteException ex) {
+            LOG.log(Level.SEVERE, null, ex);
+        } catch (QueryException ex) {
+            LOG.log(Level.SEVERE, null, ex);
+        }
+
+        return null;
+    }
+
+    /** ************************************************************************
+     * 
+     * @param rec
+     * @param oneRec
+     * @return 
+     */
+    private static Record setRecord(Record rec, OneRecord oneRec) {
+        Record recNepCCNB;
+        Record recNepISSN;
+        Record recNepISBN;
+
+        rec.getSimpleField(PredlohaEntity.f_druhDokumentu).setValue(oneRec.getDruhDokumentu());
+
+        if (oneRec.getCisloCNB() == null) {
+            rec.getSimpleField(PredlohaEntity.f_cCNB).setValue(null);
+        } else {
+            List<String> list = oneRec.getCisloCNB();
+            for (int i = 0; i < list.size(); i++) {
+                if (i == 0) {
+                    rec.getSimpleField(PredlohaEntity.f_cCNB).setValue(list.get(i));
+                }
+                recNepCCNB = rec.getTableField(PredlohaEntity.f_tNepCCNB).createTableRecord();
+                recNepCCNB.getSimpleField(NepCCNBEntity.f_value).setValue(list.get(i));
+                rec.getTableField(PredlohaEntity.f_tNepCCNB).addKey(recNepCCNB.getKey());
+            }
+        }
+
+        rec.getSimpleField(PredlohaEntity.f_pole001).setValue(oneRec.getIdentifikatorZaznamu());
+        rec.getSimpleField(PredlohaEntity.f_katalog).setValue(oneRec.getBaze());
+        rec.getSimpleField(PredlohaEntity.f_sysno).setValue(oneRec.getSysno());
+        rec.getSimpleField(PredlohaEntity.f_autor).setValue(oneRec.getAutor());
+        rec.getSimpleField(PredlohaEntity.f_nazev).setValue(oneRec.getNazev());
+        rec.getSimpleField(PredlohaEntity.f_rokVyd).setValue(oneRec.getRokyVydani());
+
+        if (oneRec.getCisloCNB() == null) {
+            rec.getSimpleField(PredlohaEntity.f_issn).setValue(null);
+        } else {
+            List<String> list = oneRec.getCisloCNB();
+            for (int i = 0; i < list.size(); i++) {
+                if (i == 0) {
+                    rec.getSimpleField(PredlohaEntity.f_issn).setValue(list.get(i));
+                }
+                recNepISSN = rec.getTableField(PredlohaEntity.f_tNepISSN).createTableRecord();
+                recNepISSN.getSimpleField(NepISSNEntity.f_value).setValue(list.get(i));
+                rec.getTableField(PredlohaEntity.f_tNepISSN).addKey(recNepISSN.getKey());
+            }
+        }
+
+        if (oneRec.getIsbn() == null) {
+            rec.getSimpleField(PredlohaEntity.f_ISBN).setValue(null);
+        } else {
+            List<String> list = oneRec.getIsbn();
+            for (int i = 0; i < list.size(); i++) {
+                if (i == 0) {
+                    rec.getSimpleField(PredlohaEntity.f_ISBN).setValue(list.get(i));
+                }
+                recNepISBN = rec.getTableField(PredlohaEntity.f_tNepISBN).createTableRecord();
+                recNepISBN.getSimpleField(NepISBNEntity.f_value).setValue(list.get(i));
+                rec.getTableField(PredlohaEntity.f_tNepISBN).addKey(recNepISBN.getKey());
+            }
+        }
+
+        rec.getSimpleField(PredlohaEntity.f_sigla1).setValue(oneRec.getSiglaVlastnika());
+        if (oneRec.getVariantniNazev() != null) {
+            //FIX - nekontroluje existující hodnoty
+            rec.getTableField(PredlohaEntity.t_tVarNazev).createTableRecord().getSimpleField(TabVarNazevEntity.f_varNazev).setValue(oneRec.getVariantniNazev());
+        }
+
+        rec.getSimpleField(PredlohaEntity.f_financovano).setValue(oneRec.getZdrojFinancovani());
+        rec.getSimpleField(PredlohaEntity.f_bibPoznamka).setValue(oneRec.getPoznamky());
+        rec.getSimpleField(PredlohaEntity.f_urlTitul).setValue(oneRec.getUrlNaTitul());
+        rec.getSimpleField(PredlohaEntity.f_carKod).setValue(oneRec.getCarovyKod());
+        rec.getSimpleField(PredlohaEntity.f_signatura).setValue(oneRec.getSignatura());
+        rec.getSimpleField(PredlohaEntity.f_rozsah).setValue(oneRec.getRokPeriodika());
+        rec.getSimpleField(PredlohaEntity.f_cast).setValue(oneRec.getCastDilRocnik());
+        rec.getSimpleField(PredlohaEntity.f_cisloZakazky).setValue(oneRec.getCisloZakazky());
+        rec.getSimpleField(PredlohaEntity.f_url).setValue(oneRec.getUrlCastRokRocnik());
+        rec.getSimpleField(PredlohaEntity.f_skenPocetSouboru).setValue(oneRec.getPocetSouboru());
+        rec.getSimpleField(PredlohaEntity.f_skenOCR).setValue(oneRec.getOcr());
+        rec.getSimpleField(PredlohaEntity.f_skenOCRSvabach).setValue(oneRec.getOcrSvabach());
+        rec.getSimpleField(PredlohaEntity.f_typSkeneru).setValue(oneRec.getTypSkeneru());
+        rec.getSimpleField(PredlohaEntity.f_parSkenovani).setValue(oneRec.getParametrySkenovani());
+        rec.getSimpleField(PredlohaEntity.f_rozliseni).setValue(oneRec.getDpi());
+        rec.getSimpleField(PredlohaEntity.f_barevnaHloubka).setValue(oneRec.getBarevnaHloubka());
+        rec.getSimpleField(PredlohaEntity.f_skenDJVU).setValue(oneRec.getDjvu());
+        rec.getSimpleField(PredlohaEntity.f_skenGIF).setValue(oneRec.getGif());
+        rec.getSimpleField(PredlohaEntity.f_skenJPEG).setValue(oneRec.getJpeg());
+        rec.getSimpleField(PredlohaEntity.f_skenTIFF).setValue(oneRec.getTiff());
+        rec.getSimpleField(PredlohaEntity.f_skenTXT).setValue(oneRec.getTxt());
+
+        return rec;
+    }
+
+}

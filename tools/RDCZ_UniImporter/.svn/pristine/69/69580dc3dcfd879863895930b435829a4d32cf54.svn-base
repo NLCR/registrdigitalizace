@@ -1,0 +1,112 @@
+/* *****************************************************************************
+ * To change this template, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package cz.incad.relief3.rdcz.uniimporter.utils;
+
+import cz.incad.commontools.utils.StringUtils;
+import cz.incad.relief3.rdcz.uniimporter.model.enums.DataSourceEnum;
+import cz.incad.relief3.rdcz.uniimporter.model.enums.ParserMethodEnum;
+import java.util.UUID;
+
+/**
+ *******************************************************************************
+ *
+ * @author martin.novacek@incad.cz
+ */
+public class OneSource {
+
+    public final String id;
+    public DataSourceEnum source = null;
+    public String source_argument1 = null;
+    public String source_argument2 = null;
+    public String source_argument3 = null;
+    public String source_argument4 = null;
+    public String source_argument5 = null;
+    public String source_argument6 = null;
+    public ParserMethodEnum source_parseMethod = null;
+    public String source_parseMethod_argument1 = null;
+    public String source_parseMethod_argument2 = null;
+    public String source_parseMethod_argument3 = null;
+    public String source_parseMethod_argument4 = null;
+    public String source_parseMethod_argument5 = null;
+    public String source_parseMethod_argument6 = null;
+    //public int sleep_time;
+
+    /**
+     ***************************************************************************
+     *
+     */
+    public OneSource() {
+        this.id = UUID.randomUUID().toString();
+    }
+
+    /**
+     ***************************************************************************
+     *
+     * @param value
+     */
+    public void setSource(String value) {
+        if (value == null) {
+            this.source = null;
+        } else {
+            if (DataSourceEnum.DIRECTORY.toString().equalsIgnoreCase(value)) {
+                this.source = DataSourceEnum.DIRECTORY;
+            } else if (DataSourceEnum.FTP.toString().equalsIgnoreCase(value)) {
+                this.source = DataSourceEnum.FTP;
+            } else if (DataSourceEnum.OAIPMH.toString().equalsIgnoreCase(value)) {
+                this.source = DataSourceEnum.OAIPMH;
+            } else if (DataSourceEnum.ZAHORIKWAY.toString().equalsIgnoreCase(value)) {
+                this.source = DataSourceEnum.ZAHORIKWAY;
+            }
+        }
+    }
+
+    /**
+     ***************************************************************************
+     *
+     * @param value
+     */
+    public void setSource_parseMethod(String value) {
+        if (value == null) {
+            this.source_parseMethod = null;
+        } else {
+            if (ParserMethodEnum.CSV.toString().equalsIgnoreCase(value)) {
+                this.source_parseMethod = ParserMethodEnum.CSV;
+            } else if (ParserMethodEnum.MARCXML.toString().equalsIgnoreCase(value)) {
+                this.source_parseMethod = ParserMethodEnum.MARCXML;
+            } else if (ParserMethodEnum.UNIMARC.toString().equalsIgnoreCase(value)) {
+                this.source_parseMethod = ParserMethodEnum.UNIMARC;
+            } else if (ParserMethodEnum.MARCXMLOAI.toString().equalsIgnoreCase(value)) {
+                this.source_parseMethod = ParserMethodEnum.MARCXMLOAI;
+            }
+        }
+    }
+
+    /**
+     ***************************************************************************
+     *
+     * @return
+     */
+    public final String getInfo() {
+        StringBuilder sb = new StringBuilder(0);
+        sb.append("ID: ").append(this.id).append(StringUtils.LINE_SEPARATOR_WINDOWS);
+        sb.append("DataSource: ").append(this.source).append(StringUtils.LINE_SEPARATOR_WINDOWS);
+        sb.append("Argument 1: ").append(this.source_argument1).append(StringUtils.LINE_SEPARATOR_WINDOWS);
+        sb.append("Argument 2: ").append(this.source_argument2).append(StringUtils.LINE_SEPARATOR_WINDOWS);
+        sb.append("Argument 3: ").append(this.source_argument3).append(StringUtils.LINE_SEPARATOR_WINDOWS);
+        sb.append("Argument 4: ").append(this.source_argument4).append(StringUtils.LINE_SEPARATOR_WINDOWS);
+        sb.append("Argument 5: ").append(this.source_argument5).append(StringUtils.LINE_SEPARATOR_WINDOWS);
+        sb.append("Argument 6: ").append(this.source_argument6).append(StringUtils.LINE_SEPARATOR_WINDOWS);
+        sb.append("ParseMethod : ").append(this.source_parseMethod).append(StringUtils.LINE_SEPARATOR_WINDOWS);
+        sb.append("Argument 1: ").append(this.source_parseMethod_argument1).append(StringUtils.LINE_SEPARATOR_WINDOWS);
+        sb.append("Argument 2: ").append(this.source_parseMethod_argument2).append(StringUtils.LINE_SEPARATOR_WINDOWS);
+        sb.append("Argument 3: ").append(this.source_parseMethod_argument3).append(StringUtils.LINE_SEPARATOR_WINDOWS);
+        sb.append("Argument 4: ").append(this.source_parseMethod_argument4).append(StringUtils.LINE_SEPARATOR_WINDOWS);
+        sb.append("Argument 5: ").append(this.source_parseMethod_argument5).append(StringUtils.LINE_SEPARATOR_WINDOWS);
+        sb.append("Argument 6: ").append(this.source_parseMethod_argument6).append(StringUtils.LINE_SEPARATOR_WINDOWS);
+
+        return sb.toString();
+    }
+
+}

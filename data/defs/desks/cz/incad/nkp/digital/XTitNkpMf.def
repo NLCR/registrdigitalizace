@@ -1,0 +1,288 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<desk bundle="ServerBundle">
+  <deskPackage>cz.incad.nkp.digital</deskPackage>
+  <deskName>XTitNkpMf</deskName>
+  <deskHumanHelp>cz.incad.nkp.digital.XTitNkpMf_help</deskHumanHelp>
+  <deskHumanName>cz.incad.nkp.digital.XTitNkpMf</deskHumanName>
+  <deskDBName>XTitNkpMf</deskDBName>
+  <deskRoot>cz.incad.core.basic.Record</deskRoot>
+  <machineModel>cz.incad.nkp.digital.XTitNkpMf</machineModel>
+  <fields>
+    <field>
+      <fieldName>carKod</fieldName>
+      <fieldHumanName>XTitNkpMf.carKod</fieldHumanName>
+      <fieldHumanHelp>XTitNkpMf.carKod_help</fieldHumanHelp>
+      <fieldDBName>carKod</fieldDBName>
+      <fieldType>STR</fieldType>
+      <fieldRepresentation>EDI</fieldRepresentation>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>rTitNkp</fieldName>
+      <fieldHumanName>XTitNkpMf.rTitNkp</fieldHumanName>
+      <fieldHumanHelp>XTitNkpMf.rTitNkp_help</fieldHumanHelp>
+      <fieldDBName>rTitNkpXT</fieldDBName>
+      <fieldType>REF</fieldType>
+      <fieldRepresentation>REF</fieldRepresentation>
+      <reference relationshipType="association" rTable="false">cz.incad.nkp.digital.TitNkp</reference>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>mfeCislo</fieldName>
+      <fieldHumanName>XTitNkpMf.mfeCislo</fieldHumanName>
+      <fieldHumanHelp>XTitNkpMf.mfeCislo_help</fieldHumanHelp>
+      <fieldDBName>mfeCislo</fieldDBName>
+      <fieldType>STR</fieldType>
+      <fieldRepresentation>EDI</fieldRepresentation>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>rMikrofilm</fieldName>
+      <fieldHumanName>XTitNkpMf.rMikrofilm</fieldHumanName>
+      <fieldHumanHelp>XTitNkpMf.rMikrofilm_help</fieldHumanHelp>
+      <fieldDBName>rMikrofilmXT</fieldDBName>
+      <fieldType>REF</fieldType>
+      <fieldRepresentation>REF</fieldRepresentation>
+      <reference relationshipType="association" rTable="false">cz.incad.nkp.digital.Mikrofilm</reference>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>oznaceniCasti</fieldName>
+      <fieldHumanName>XTitNkpMf.oznaceniCasti</fieldHumanName>
+      <fieldHumanHelp>XTitNkpMf.oznaceniCasti_help</fieldHumanHelp>
+      <fieldDBName>oznaceniCasti</fieldDBName>
+      <fieldType>STR</fieldType>
+      <fieldRepresentation>EDI</fieldRepresentation>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>pocetScanu</fieldName>
+      <fieldHumanName>XTitNkpMf.pocetScanu</fieldHumanName>
+      <fieldHumanHelp>XTitNkpMf.pocetScanu_help</fieldHumanHelp>
+      <fieldDBName>pocetScanu</fieldDBName>
+      <fieldType>INT</fieldType>
+      <fieldRepresentation>EDI</fieldRepresentation>
+      <precision>19</precision>
+    </field>
+    <field>
+      <fieldName>poleCista</fieldName>
+      <fieldHumanName>XTitNkpMf.poleCista</fieldHumanName>
+      <fieldHumanHelp>XTitNkpMf.poleCista_help</fieldHumanHelp>
+      <fieldDBName>poleCista</fieldDBName>
+      <fieldType>INT</fieldType>
+      <fieldRepresentation>EDI</fieldRepresentation>
+      <precision>19</precision>
+    </field>
+    <field>
+      <fieldName>poleHruba</fieldName>
+      <fieldHumanName>XTitNkpMf.poleHruba</fieldHumanName>
+      <fieldHumanHelp>XTitNkpMf.poleHruba_help</fieldHumanHelp>
+      <fieldDBName>poleHruba</fieldDBName>
+      <fieldType>INT</fieldType>
+      <fieldRepresentation>EDI</fieldRepresentation>
+      <precision>19</precision>
+    </field>
+    <field>
+      <fieldName>poradiVeSvitku</fieldName>
+      <fieldHumanName>XTitNkpMf.poradiVeSvitku</fieldHumanName>
+      <fieldHumanHelp>XTitNkpMf.poradiVeSvitku_help</fieldHumanHelp>
+      <fieldDBName>poradiVeSvitku</fieldDBName>
+      <fieldType>INT</fieldType>
+      <fieldRepresentation>EDI</fieldRepresentation>
+      <precision>19</precision>
+    </field>
+  </fields>
+  <forms>
+    <screen-form name="XTitNkpMfF" formHumanName="XTitNkpMfF" id="cz.incad.nkp.digital.XTitNkpMf">
+      <form-body align="LEFT" valign="TOP">
+        <row fill="LEFT" vfill="TOP">
+          <refbutton align="LEFT" valign="TOP" indent="false" columnIndex="1" id="rTitNkp" precision="19" scale="4" refclass="cz.incad.nkp.digital.TitNkp"/>
+          <input align="LEFT" valign="TOP" indent="false" columnIndex="2" width="100ch" id="rTitNkp.hlNazev" precision="19" scale="4" ref="true" type="text">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </input>
+        </row>
+        <row fill="LEFT" vfill="TOP">
+          <input align="LEFT" valign="TOP" indent="false" columnIndex="1" width="60ch" id="rTitNkp.autorPrij" precision="19" scale="4" ref="true" type="text">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </input>
+          <input align="LEFT" valign="TOP" indent="false" columnIndex="2" width="20ch" id="rTitNkp.rokVyd" precision="19" scale="4" ref="true" type="text">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </input>
+          <input align="LEFT" valign="TOP" indent="false" columnIndex="3" width="20ch" id="rTitNkp.inverze" precision="0" scale="0" ref="true" type="text">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </input>
+        </row>
+        <row fill="LEFT" vfill="TOP">
+          <empty align="LEFT" valign="TOP" indent="false" width="600px" height="40px"/>
+        </row>
+        <row fill="LEFT" vfill="TOP">
+          <refbutton align="LEFT" valign="TOP" indent="false" columnIndex="1" id="rMikrofilm" precision="19" scale="4" refclass="cz.incad.nkp.digital.Mikrofilm"/>
+          <input align="LEFT" valign="TOP" indent="false" columnIndex="2" width="30ch" id="rMikrofilm.archCisloNeg" precision="19" scale="4" ref="true" type="text">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </input>
+          <selectDate align="LEFT" valign="TOP" indent="false" columnIndex="3" width="20ch" id="rMikrofilm.snimanoDate" precision="19" scale="4">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </selectDate>
+          <input align="LEFT" valign="TOP" indent="false" columnIndex="4" width="20ch" id="rMikrofilm.kamera" precision="19" scale="4" ref="true" type="text">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </input>
+        </row>
+        <row fill="LEFT" vfill="TOP">
+          <empty align="LEFT" valign="TOP" indent="false" width="600px" height="40px"/>
+        </row>
+        <row fill="LEFT" vfill="TOP">
+          <input align="LEFT" valign="TOP" indent="false" width="90ch" id="oznaceniCasti" precision="0" scale="0" type="text">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </input>
+        </row>
+        <row fill="LEFT" vfill="TOP">
+          <input align="LEFT" valign="TOP" indent="false" columnIndex="1" id="mfeCislo" precision="19" scale="4" type="text">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </input>
+          <input align="LEFT" valign="TOP" indent="false" columnIndex="2" width="20ch" id="poradiVeSvitku" precision="19" scale="4" type="text">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </input>
+          <input align="LEFT" valign="TOP" indent="false" columnIndex="3" width="20ch" id="poleCista" precision="19" scale="4" type="text">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </input>
+          <input align="LEFT" valign="TOP" indent="false" columnIndex="4" width="20ch" id="poleHruba" precision="19" scale="4" type="text">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </input>
+        </row>
+      </form-body>
+    </screen-form>
+    <screen-form name="XTiMfTitulF" formHumanName="XTiMfTitulF" id="cz.incad.nkp.digital.XTitNkpMf">
+      <form-body align="LEFT" valign="TOP">
+        <border type="solid" color="">
+          <margin-outer top="1mm" left="1mm" right="1mm" bottom="1mm"/>
+          <margin-inner top="1mm" left="1mm" right="1mm" bottom="1mm"/>
+        </border>
+        <row fill="LEFT" vfill="TOP">
+          <refbutton align="LEFT" valign="TOP" indent="false" columnIndex="1" id="rTitNkp" precision="19" scale="4" refclass="cz.incad.nkp.digital.TitNkp"/>
+          <input align="LEFT" valign="TOP" indent="false" columnIndex="2" width="80ch" id="rTitNkp.hlNazev" precision="19" scale="4" ref="true" type="text" rows="3">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </input>
+          <input align="LEFT" valign="TOP" indent="false" columnIndex="3" width="20ch" id="rTitNkp.rokVyd" precision="19" scale="4" ref="true" type="text">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </input>
+        </row>
+        <row fill="LEFT" vfill="TOP">
+          <input align="LEFT" valign="TOP" indent="false" columnIndex="1" width="20ch" id="mfeCislo" precision="0" scale="0" type="text">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </input>
+          <input align="LEFT" valign="TOP" indent="false" columnIndex="2" width="10ch" id="poradiVeSvitku" precision="19" scale="4" type="text">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </input>
+          <input align="LEFT" valign="TOP" indent="false" columnIndex="3" width="10ch" id="poleCista" precision="19" scale="4" type="text">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </input>
+          <input align="LEFT" valign="TOP" indent="false" columnIndex="4" width="10ch" id="poleHruba" precision="19" scale="4" type="text">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </input>
+          <input align="LEFT" valign="TOP" indent="false" columnIndex="5" width="10ch" id="pocetScanu" precision="0" scale="0" type="text">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </input>
+          <input align="LEFT" valign="TOP" indent="false" columnIndex="6" width="25ch" id="rTitNkp.cast" precision="19" scale="4" ref="true" type="text">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </input>
+          <input align="LEFT" valign="TOP" indent="false" columnIndex="7" width="20ch" id="carKod" precision="0" scale="0" type="text">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </input>
+        </row>
+      </form-body>
+    </screen-form>
+    <screen-form name="XTiMfMfF" formHumanName="XTiMfMfF" id="cz.incad.nkp.digital.XTitNkpMf">
+      <form-body align="LEFT" valign="TOP">
+        <row fill="LEFT" vfill="TOP">
+          <refbutton align="LEFT" valign="TOP" indent="false" columnIndex="1" id="rMikrofilm" precision="19" scale="4" refclass="cz.incad.nkp.digital.Mikrofilm"/>
+          <input align="LEFT" valign="TOP" indent="false" columnIndex="2" width="20ch" id="rMikrofilm.archCisloNeg" precision="19" scale="0" ref="true" type="text">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </input>
+          <input align="LEFT" valign="TOP" indent="false" columnIndex="3" width="20ch" id="mfeCislo" precision="19" scale="4" type="text">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </input>
+        </row>
+        <row fill="LEFT" vfill="TOP">
+          <input align="LEFT" valign="TOP" indent="false" columnIndex="1" width="20ch" id="poradiVeSvitku" precision="19" scale="0" type="text">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </input>
+          <input align="LEFT" valign="TOP" indent="false" columnIndex="2" width="20ch" id="rMikrofilm.celkemDokumentu" precision="19" scale="0" ref="true" type="text">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </input>
+          <input align="LEFT" valign="TOP" indent="false" columnIndex="3" width="20ch" id="poleCista" precision="19" scale="0" type="text">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </input>
+          <input align="LEFT" valign="TOP" indent="false" columnIndex="4" width="20ch" id="poleHruba" precision="19" scale="0" type="text">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </input>
+        </row>
+      </form-body>
+    </screen-form>
+    <tree name="AvailableForms">
+      <node formName="XTitNkpMfF"/>
+      <node formName="XTiMfTitulF"/>
+      <node formName="XTiMfMfF"/>
+    </tree>
+  </forms>
+  <uniqueFields/>
+</desk>

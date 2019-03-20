@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<desk bundle="ServerBundle">
+  <deskPackage>cz.incad.core.lend</deskPackage>
+  <deskName>Ulozeni</deskName>
+  <deskHumanHelp>cz.incad.core.lend.Ulozeni_help</deskHumanHelp>
+  <deskHumanName>cz.incad.core.lend.Ulozeni</deskHumanName>
+  <deskDBName>Ulozeni</deskDBName>
+  <deskRoot/>
+  <machineModel>cz.incad.core.lend.Ulozeni</machineModel>
+  <fields>
+    <field>
+      <fieldName>ulozeni</fieldName>
+      <fieldHumanName>cz.incad.core.lend.Ulozeni.ulozeni</fieldHumanName>
+      <fieldHumanHelp>cz.incad.core.lend.Ulozeni.ulozeni_help</fieldHumanHelp>
+      <fieldDBName>ulozeni</fieldDBName>
+      <fieldType>STR</fieldType>
+      <fieldRepresentation>COM</fieldRepresentation>
+      <list>Dulozeni</list>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+  </fields>
+  <forms>
+    <screen-form name="UlozeniF" formHumanName="cz.incad.core.lend.UlozeniF" id="cz.incad.core.lend.Ulozeni">
+      <form-body align="LEFT" valign="TOP">
+        <row fill="LEFT" vfill="TOP">
+          <select align="LEFT" valign="TOP" indent="false" width="30ch" id="ulozeni" precision="0" scale="0" type="combo" multi="false" editable="false"/>
+        </row>
+      </form-body>
+    </screen-form>
+    <tree name="AvailableForms">
+      <node formName="UlozeniF"/>
+    </tree>
+  </forms>
+  <uniqueFields/>
+</desk>

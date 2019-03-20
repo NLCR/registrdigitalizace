@@ -1,0 +1,11 @@
+<linked-hash-map>
+  <entry>
+    <string>security</string>
+    <com.amaio.active.impl.EntityImpl>
+      <annotations class="linked-hash-map"/>
+      <descr></descr>
+      <id>com.amaio.repository.security</id>
+      <name>security</name>
+    </com.amaio.active.impl.EntityImpl>
+  </entry>
+</linked-hash-map>

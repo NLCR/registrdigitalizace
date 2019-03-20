@@ -1,0 +1,357 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<desk bundle="ServerBundle">
+  <deskPackage>cz.incad.rd</deskPackage>
+  <deskName>Periodikum</deskName>
+  <deskHumanHelp>Periodikum_help</deskHumanHelp>
+  <deskHumanName>Periodikum</deskHumanName>
+  <deskDBName>Periodikum</deskDBName>
+  <deskRoot/>
+  <machineModel>cz.incad.rd.Periodikum</machineModel>
+  <historyEnabled>true</historyEnabled>
+  <fields>
+    <field>
+      <fieldName>cCNB</fieldName>
+      <fieldHumanName>Periodikum.cCNB</fieldHumanName>
+      <fieldHumanHelp>Periodikum.cCNB_help</fieldHumanHelp>
+      <fieldDBName>cCNB</fieldDBName>
+      <fieldType>STR</fieldType>
+      <fieldRepresentation>EDI</fieldRepresentation>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>idCislo</fieldName>
+      <fieldHumanName>Periodikum.idCislo</fieldHumanName>
+      <fieldHumanHelp>Periodikum.idCislo_help</fieldHumanHelp>
+      <fieldDBName>idCislo</fieldDBName>
+      <fieldType>STR</fieldType>
+      <fieldRepresentation>EDI</fieldRepresentation>
+      <computed/>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>finDate</fieldName>
+      <fieldHumanName>Periodikum.finDate</fieldHumanName>
+      <fieldHumanHelp>Periodikum.finDate_help</fieldHumanHelp>
+      <fieldDBName>finDate</fieldDBName>
+      <fieldType>DAT</fieldType>
+      <fieldRepresentation>EDI</fieldRepresentation>
+      <computed/>
+      <formatPattern>dd.MM.yyyy</formatPattern>
+      <formatPatternForInput>dd.MM.yyyy</formatPatternForInput>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>ediDate</fieldName>
+      <fieldHumanName>Periodikum.ediDate</fieldHumanName>
+      <fieldHumanHelp>Periodikum.ediDate_help</fieldHumanHelp>
+      <fieldDBName>ediDate</fieldDBName>
+      <fieldType>DAT</fieldType>
+      <fieldRepresentation>EDI</fieldRepresentation>
+      <computed/>
+      <formatPattern>dd.MM.yyyy</formatPattern>
+      <formatPatternForInput>dd.MM.yyyy</formatPatternForInput>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>zalDate</fieldName>
+      <fieldHumanName>Periodikum.zalDate</fieldHumanName>
+      <fieldHumanHelp>Periodikum.zalDate_help</fieldHumanHelp>
+      <fieldDBName>zalDate</fieldDBName>
+      <fieldType>DAT</fieldType>
+      <fieldRepresentation>EDI</fieldRepresentation>
+      <computed/>
+      <formatPattern>dd.MM.yyyy</formatPattern>
+      <formatPatternForInput>dd.MM.yyyy</formatPatternForInput>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>finUser</fieldName>
+      <fieldHumanName>Periodikum.finUser</fieldHumanName>
+      <fieldHumanHelp>Periodikum.finUser_help</fieldHumanHelp>
+      <fieldDBName>finUser</fieldDBName>
+      <fieldType>STR</fieldType>
+      <fieldRepresentation>EDI</fieldRepresentation>
+      <computed/>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>druhDokumentu</fieldName>
+      <fieldHumanName>Periodikum.druhDokumentu</fieldHumanName>
+      <fieldHumanHelp>Periodikum.druhDokumentu_help</fieldHumanHelp>
+      <fieldDBName>druhDokumentu</fieldDBName>
+      <fieldType>STR</fieldType>
+      <fieldRepresentation>COM</fieldRepresentation>
+      <list>DdruhDokumentu</list>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>ediUser</fieldName>
+      <fieldHumanName>Periodikum.ediUser</fieldHumanName>
+      <fieldHumanHelp>Periodikum.ediUser_help</fieldHumanHelp>
+      <fieldDBName>ediUser</fieldDBName>
+      <fieldType>STR</fieldType>
+      <fieldRepresentation>EDI</fieldRepresentation>
+      <computed/>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>isbn</fieldName>
+      <fieldHumanName>Periodikum.isbn</fieldHumanName>
+      <fieldHumanHelp>Periodikum.isbn_help</fieldHumanHelp>
+      <fieldDBName>isbn</fieldDBName>
+      <fieldType>STR</fieldType>
+      <fieldRepresentation>EDI</fieldRepresentation>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>issn</fieldName>
+      <fieldHumanName>Periodikum.issn</fieldHumanName>
+      <fieldHumanHelp>Periodikum.issn_help</fieldHumanHelp>
+      <fieldDBName>issn</fieldDBName>
+      <fieldType>STR</fieldType>
+      <fieldRepresentation>EDI</fieldRepresentation>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>mfD</fieldName>
+      <fieldHumanName>Periodikum.mfD</fieldHumanName>
+      <fieldHumanHelp>Periodikum.mfD_help</fieldHumanHelp>
+      <fieldDBName>mfD</fieldDBName>
+      <fieldType>STR</fieldType>
+      <fieldRepresentation>EDI</fieldRepresentation>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>nazev</fieldName>
+      <fieldHumanName>Periodikum.nazev</fieldHumanName>
+      <fieldHumanHelp>Periodikum.nazev_help</fieldHumanHelp>
+      <fieldDBName>nazev</fieldDBName>
+      <fieldType>STR</fieldType>
+      <fieldRepresentation>EDI</fieldRepresentation>
+      <validateLength>1000</validateLength>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>oldTitulId</fieldName>
+      <fieldHumanName>Periodikum.oldTitulId</fieldHumanName>
+      <fieldHumanHelp>Periodikum.oldTitulId_help</fieldHumanHelp>
+      <fieldDBName>oldTitulId</fieldDBName>
+      <fieldType>STR</fieldType>
+      <fieldRepresentation>EDI</fieldRepresentation>
+      <computed/>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>pole001</fieldName>
+      <fieldHumanName>Periodikum.pole001</fieldHumanName>
+      <fieldHumanHelp>Periodikum.pole001_help</fieldHumanHelp>
+      <fieldDBName>pole001</fieldDBName>
+      <fieldType>STR</fieldType>
+      <fieldRepresentation>EDI</fieldRepresentation>
+      <computed/>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>poznRec</fieldName>
+      <fieldHumanName>Periodikum.poznRec</fieldHumanName>
+      <fieldHumanHelp>Periodikum.poznRec_help</fieldHumanHelp>
+      <fieldDBName>poznRec</fieldDBName>
+      <fieldType>STR</fieldType>
+      <fieldRepresentation>EDI</fieldRepresentation>
+      <validateLength>500</validateLength>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>stavPozn</fieldName>
+      <fieldHumanName>Periodikum.stavPozn</fieldHumanName>
+      <fieldHumanHelp>Periodikum.stavPozn_help</fieldHumanHelp>
+      <fieldDBName>stavPozn</fieldDBName>
+      <fieldType>STR</fieldType>
+      <fieldRepresentation>EDI</fieldRepresentation>
+      <validateLength>600</validateLength>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>tPredloha</fieldName>
+      <fieldHumanName>Periodikum.tPredloha</fieldHumanName>
+      <fieldHumanHelp>Periodikum.tPredloha_help</fieldHumanHelp>
+      <fieldDBName>rPeriodikum</fieldDBName>
+      <fieldType>TAB</fieldType>
+      <fieldRepresentation>TAB</fieldRepresentation>
+      <reference relationshipType="association" rTable="false">cz.incad.rd.Predloha</reference>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>stavRec</fieldName>
+      <fieldHumanName>Periodikum.stavRec</fieldHumanName>
+      <fieldHumanHelp>Periodikum.stavRec_help</fieldHumanHelp>
+      <fieldDBName>stavRec</fieldDBName>
+      <fieldType>STR</fieldType>
+      <fieldRepresentation>COM</fieldRepresentation>
+      <list>DstavRec</list>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>sysno</fieldName>
+      <fieldHumanName>Periodikum.sysno</fieldHumanName>
+      <fieldHumanHelp>Periodikum.sysno_help</fieldHumanHelp>
+      <fieldDBName>sysno</fieldDBName>
+      <fieldType>STR</fieldType>
+      <fieldRepresentation>EDI</fieldRepresentation>
+      <computed/>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>urnnbn</fieldName>
+      <fieldHumanName>Periodikum.urnnbn</fieldHumanName>
+      <fieldHumanHelp>Periodikum.urnnbn_help</fieldHumanHelp>
+      <fieldDBName>urnnbn</fieldDBName>
+      <fieldType>STR</fieldType>
+      <fieldRepresentation>EDI</fieldRepresentation>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>securityOwner</fieldName>
+      <fieldHumanName>Periodikum.securityOwner</fieldHumanName>
+      <fieldHumanHelp>Periodikum.securityOwner_help</fieldHumanHelp>
+      <fieldDBName>securityOwner</fieldDBName>
+      <fieldType>STR</fieldType>
+      <fieldRepresentation>COM</fieldRepresentation>
+      <list>DzarazeniUser</list>
+      <computed/>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>zalUser</fieldName>
+      <fieldHumanName>Periodikum.zalUser</fieldHumanName>
+      <fieldHumanHelp>Periodikum.zalUser_help</fieldHumanHelp>
+      <fieldDBName>zalUser</fieldDBName>
+      <fieldType>STR</fieldType>
+      <fieldRepresentation>EDI</fieldRepresentation>
+      <computed/>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>digitalBornDate</fieldName>
+      <fieldHumanName>Periodikum.digitalBornDate</fieldHumanName>
+      <fieldHumanHelp>Periodikum.digitalBornDate_help</fieldHumanHelp>
+      <fieldDBName>digitalBornDate</fieldDBName>
+      <fieldType>DAT</fieldType>
+      <fieldRepresentation>EDI</fieldRepresentation>
+      <formatPattern>dd.MM.yyyy</formatPattern>
+      <formatPatternForInput>dd.MM.yyyy</formatPatternForInput>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+  </fields>
+  <forms>
+    <screen-form name="PeriodikumF" formHumanName="PeriodikumF" id="cz.incad.rd.Periodikum">
+      <form-body align="LEFT" valign="TOP">
+        <row fill="LEFT" vfill="TOP">
+          <input align="LEFT" valign="TOP" indent="false" width="100ch" id="nazev" precision="0" scale="0" type="text" rows="3">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </input>
+        </row>
+        <row fill="LEFT" vfill="TOP">
+          <select align="LEFT" valign="TOP" indent="false" columnIndex="1" id="druhDokumentu" precision="19" scale="4" type="combo" multi="false" editable="false">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </select>
+          <input align="LEFT" valign="TOP" indent="false" columnIndex="2" width="20ch" id="issn" precision="0" scale="0" type="text">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </input>
+          <input align="LEFT" valign="TOP" indent="false" columnIndex="3" width="20ch" id="isbn" precision="0" scale="0" type="text">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </input>
+          <input align="LEFT" valign="TOP" indent="false" columnIndex="4" width="20ch" id="cCNB" precision="0" scale="0" type="text">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </input>
+          <input align="LEFT" valign="TOP" indent="false" columnIndex="5" width="20ch" id="mfD" precision="0" scale="0" type="text">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </input>
+        </row>
+        <row fill="LEFT" vfill="TOP">
+          <input align="LEFT" valign="TOP" indent="false" columnIndex="1" width="20ch" id="digitalBornDate" precision="0" scale="0" formatPattern="dd.MM.yyyy" formatPatternForInput="dd.MM.yyyy" type="text">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </input>
+          <input align="LEFT" valign="TOP" indent="false" columnIndex="2" width="60ch" id="urnnbn" precision="19" scale="4" type="text">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </input>
+        </row>
+        <row fill="LEFT" vfill="TOP">
+          <tabview align="LEFT" valign="TOP" indent="false" id="tPredloha" precision="19" scale="4" refclass="cz.incad.rd.Predloha" rows="10">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </tabview>
+        </row>
+      </form-body>
+    </screen-form>
+    <screen-form name="SysDataF" formHumanName="SysDataF" id="cz.incad.rd.Periodikum">
+      <form-body align="LEFT" valign="TOP">
+        <row fill="LEFT" vfill="TOP">
+          <input align="LEFT" valign="TOP" indent="false" columnIndex="1" width="30ch" id="pole001" precision="0" scale="0" type="text">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </input>
+          <input align="LEFT" valign="TOP" indent="false" columnIndex="2" width="30ch" id="sysno" precision="0" scale="0" type="text">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </input>
+        </row>
+        <row fill="LEFT" vfill="TOP">
+          <input align="LEFT" valign="TOP" indent="false" width="30ch" id="oldTitulId" precision="0" scale="0" type="text">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </input>
+        </row>
+      </form-body>
+    </screen-form>
+    <tree name="AvailableForms">
+      <node formName="PeriodikumF"/>
+      <node formName="SysDataF"/>
+    </tree>
+  </forms>
+  <uniqueFields/>
+</desk>

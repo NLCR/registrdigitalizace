@@ -1,0 +1,122 @@
+/* *****************************************************************************
+ * To change this template, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package cz.incad.relief3.rdcz.uniimporter.model;
+
+import cz.incad.relief3.rdcz.uniImporter.model.Issue;
+import cz.incad.relief3.rdcz.uniimporter.utils.Configuration;
+import java.io.File;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
+
+/** ****************************************************************************
+ * Třída zodpovídá za postupné zpracování souborů,
+ * které prošly validační kontrolou názvu souboru. 
+ * @author martin
+ */
+public class IssueHeap {
+    private static final Logger LOG = Logger.getLogger(IssueHeap.class.getName());
+    private static final IssueHeap _instance  = new IssueHeap();
+    private List<Issue> lIssues;
+
+    /** ************************************************************************
+     * Privátní konstruktor - třída je definována jako 'Jedináček'.
+     */
+    private IssueHeap() {
+        LOG.info("Initializing...");
+        this.lIssues = new LinkedList<Issue>();
+    }
+
+    /** ************************************************************************
+     * Třída je nadefinovaná jako 'Jedináček',
+     * metoda vrátí vždy odkaz na stejnou instanci třídy.
+     * @return 
+     */
+    public static IssueHeap getInstance() {
+        return _instance;
+    }
+
+    /** ************************************************************************
+     * Metoda přidá do spolešného listu issues další položku.
+     * @param issue 
+     */
+    public void addFile(Issue issue) {
+        LOG.log(Level.INFO, "Adding new file: {0}", issue.getFile().getName());
+        this.lIssues.add(issue);
+    }
+
+    /** ************************************************************************
+     * Metoda vyzvedne ze společného listu další položku
+     * @return v případě, že je list prázdný vrátí null.
+     */
+    private Issue getNextIssue() {
+        try {
+            return this.lIssues.remove(0);
+        } catch(IndexOutOfBoundsException ex) {
+            System.out.println(ex.getMessage());
+            return null;
+        }    
+    }
+
+    /** ************************************************************************
+     * Přesune soubor do adresáře FAIL.
+     * @param file 
+     */
+    public static void moveFileToFail(File file) {
+        File destination = new File (Configuration.getInstance().F_FAIL_DIRECTORY.getAbsolutePath() + File.separator + file.getName());
+        LOG.log(Level.INFO, "Move file {0} -> {1}", new Object[]{file.getAbsolutePath(), destination.getAbsolutePath()});
+        if (!file.renameTo(destination)) {
+            LOG.log(Level.WARNING, "Move file fail: {0} -> {1}", new Object[]{file.getAbsolutePath(), destination.getAbsolutePath()});
+        }
+
+    }
+
+    /** ************************************************************************
+     * Metoda zapne zpracování souborů čekajících na zpracování.
+     */
+    public void startCoordine() {
+        LOG.info("Starting coordine...");
+        Boolean run = true;
+        Issue ih;
+        ParserMethodEnum method;
+        ImportListener il = new ReliefImportListener();
+        DataParser dp;
+        
+        while(run) {
+            ih = IssueHeap.getInstance().getNextIssue();
+            if (ih != null) {
+                method = ih.getMethod();
+                switch(method) {
+                    case CSV:
+                        LOG.log(Level.INFO, "Method= {0}", ParserMethodEnum.CSV);
+                        dp = new CsvDataParser();
+                        LOG.log(Level.INFO, "Method= {0}", "Start Import data...");
+                        il.ImportIt(dp.parseIt(ih));
+                        break;
+
+                    case MARCXML:
+                        LOG.log(Level.INFO, "Method= {0}", ParserMethodEnum.MARCXML);
+                        dp = new MarcXmlDataParser();
+                        LOG.log(Level.INFO, "Method= {0}", "Start Import data...");
+                        il.ImportIt(dp.parseIt(ih));
+                        break;
+
+                    case UNIMARC:
+                        LOG.log(Level.INFO, "Method= {0}", ParserMethodEnum.UNIMARC);
+                        dp = new UniMarcDataParser();
+                        LOG.log(Level.INFO, "Method= {0}", "Start Import data...");
+                        il.ImportIt(dp.parseIt(ih));
+                        break;
+                }
+            } else {
+                LOG.info("File-list is empty...");
+                run = false;
+            }
+        }
+    }
+
+}

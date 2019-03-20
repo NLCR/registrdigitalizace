@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<desk bundle="ServerBundle">
+  <deskPackage>cz.incad.core.doc</deskPackage>
+  <deskName>Inst</deskName>
+  <deskHumanHelp>cz.incad.core.doc.Inst_help</deskHumanHelp>
+  <deskHumanName>cz.incad.core.doc.Inst</deskHumanName>
+  <deskDBName>Inst</deskDBName>
+  <deskRoot/>
+  <machineModel>cz.incad.core.doc.Inst</machineModel>
+  <fields>
+    <field>
+      <fieldName>nazevInst</fieldName>
+      <fieldHumanName>cz.incad.core.doc.Inst.nazevInst</fieldHumanName>
+      <fieldHumanHelp>cz.incad.core.doc.Inst.nazevInst_help</fieldHumanHelp>
+      <fieldDBName>nazevInst</fieldDBName>
+      <fieldType>STR</fieldType>
+      <fieldRepresentation>EDI</fieldRepresentation>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+  </fields>
+  <forms>
+    <screen-form name="InstF" formHumanName="cz.incad.core.doc.InstF" id="cz.incad.core.doc.Inst">
+      <form-body align="LEFT" valign="TOP">
+        <row fill="LEFT" vfill="TOP">
+          <input align="LEFT" valign="TOP" indent="false" width="110ch" id="nazevInst" precision="0" scale="0" type="text">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </input>
+        </row>
+      </form-body>
+    </screen-form>
+    <tree name="AvailableForms">
+      <node formName="InstF"/>
+    </tree>
+  </forms>
+  <uniqueFields/>
+</desk>

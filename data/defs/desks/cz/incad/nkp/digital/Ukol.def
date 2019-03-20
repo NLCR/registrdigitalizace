@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<desk bundle="ServerBundle">
+  <deskPackage>cz.incad.nkp.digital</deskPackage>
+  <deskName>Ukol</deskName>
+  <deskHumanHelp>cz.incad.nkp.digital.Ukol_help</deskHumanHelp>
+  <deskHumanName>cz.incad.nkp.digital.Ukol</deskHumanName>
+  <deskDBName>Ukol</deskDBName>
+  <deskRoot>cz.incad.core.basic.Record</deskRoot>
+  <machineModel>cz.incad.nkp.digital.Ukol</machineModel>
+  <fields>
+    <field>
+      <fieldName>pracovnik</fieldName>
+      <fieldHumanName>Ukol.pracovnik</fieldHumanName>
+      <fieldHumanHelp>Ukol.pracovnik_help</fieldHumanHelp>
+      <fieldDBName>pracovnik</fieldDBName>
+      <fieldType>STR</fieldType>
+      <fieldRepresentation>COM</fieldRepresentation>
+      <list>DpracovnikUkol</list>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>typPrace</fieldName>
+      <fieldHumanName>Ukol.typPrace</fieldHumanName>
+      <fieldHumanHelp>Ukol.typPrace_help</fieldHumanHelp>
+      <fieldDBName>typPrace</fieldDBName>
+      <fieldType>STR</fieldType>
+      <fieldRepresentation>COM</fieldRepresentation>
+      <list>DtypPrace</list>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>rZakazka</fieldName>
+      <fieldHumanName>Ukol.rZakazka</fieldHumanName>
+      <fieldHumanHelp>Ukol.rZakazka_help</fieldHumanHelp>
+      <fieldDBName>rZakazkaUk</fieldDBName>
+      <fieldType>REF</fieldType>
+      <fieldRepresentation>REF</fieldRepresentation>
+      <reference relationshipType="association" rTable="false">cz.incad.nkp.digital.Zakazka</reference>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>zpracovatel</fieldName>
+      <fieldHumanName>Ukol.zpracovatel</fieldHumanName>
+      <fieldHumanHelp>Ukol.zpracovatel_help</fieldHumanHelp>
+      <fieldDBName>zpracovatel</fieldDBName>
+      <fieldType>STR</fieldType>
+      <fieldRepresentation>COM</fieldRepresentation>
+      <list>InsZpracovatel</list>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+  </fields>
+  <forms>
+    <screen-form name="UkolF" formHumanName="UkolF" id="cz.incad.nkp.digital.Ukol">
+      <form-body align="LEFT" valign="TOP">
+        <row fill="LEFT" vfill="TOP">
+          <select align="LEFT" valign="TOP" indent="false" columnIndex="1" width="200px" id="typPrace" precision="19" scale="4" type="combo" multi="false" editable="false">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </select>
+          <select align="LEFT" valign="TOP" indent="false" columnIndex="2" width="140px" id="stavRec" precision="19" scale="4" type="combo" multi="false" editable="false">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </select>
+          <input align="LEFT" valign="TOP" indent="false" columnIndex="3" width="300px" id="stavPozn" precision="0" scale="0" type="text">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </input>
+        </row>
+        <row fill="LEFT" vfill="TOP">
+          <select align="LEFT" valign="TOP" indent="false" columnIndex="1" width="30ch" id="zpracovatel" precision="19" scale="4" type="combo" multi="false" editable="false">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </select>
+          <select align="LEFT" valign="TOP" indent="false" columnIndex="2" id="pracovnik" precision="0" scale="0" type="combo" multi="false" editable="false">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </select>
+        </row>
+        <row fill="LEFT" vfill="TOP">
+          <input align="LEFT" valign="TOP" indent="false" columnIndex="1" width="15ch" id="rZakazka.cisloZakazky" precision="19" scale="4" ref="true" type="text">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </input>
+          <input align="LEFT" valign="TOP" indent="false" columnIndex="2" width="55ch" id="rZakazka.rTitNkp.hlNazev" precision="19" scale="4" ref="true" type="text">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </input>
+          <input align="LEFT" valign="TOP" indent="false" columnIndex="3" width="30ch" id="rZakazka.rozsah" precision="19" scale="4" ref="true" type="text">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </input>
+        </row>
+        <row fill="LEFT" vfill="TOP">
+          <input align="LEFT" valign="TOP" indent="false" width="110ch" id="poznRec" precision="19" scale="4" type="text" rows="2">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </input>
+        </row>
+        <row fill="LEFT" vfill="TOP">
+          <input align="LEFT" valign="TOP" indent="false" columnIndex="1" width="15ch" id="idCislo" precision="19" scale="4" type="text">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </input>
+          <input align="LEFT" valign="TOP" indent="false" columnIndex="2" width="15ch" id="zalDate" precision="19" scale="4" formatPattern="dd.MM.yyyy" formatPatternForInput="dd.MM.yyyy" type="text">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </input>
+          <input align="LEFT" valign="TOP" indent="false" columnIndex="3" width="15ch" id="zalUser" precision="19" scale="4" type="text">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </input>
+          <input align="LEFT" valign="TOP" indent="false" columnIndex="4" width="15ch" id="finDate" precision="19" scale="4" formatPattern="dd.MM.yyyy" formatPatternForInput="dd.MM.yyyy" type="text">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </input>
+          <input align="LEFT" valign="TOP" indent="false" columnIndex="5" width="15ch" id="finUser" precision="19" scale="4" type="text">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </input>
+        </row>
+      </form-body>
+    </screen-form>
+    <screen-form name="UkolF2" formHumanName="UkolF2" id="cz.incad.nkp.digital.Ukol">
+      <form-body align="LEFT" valign="TOP">
+        <row fill="LEFT" vfill="TOP">
+          <select align="LEFT" valign="TOP" indent="false" columnIndex="1" width="20ch" id="typPrace" precision="19" scale="4" type="combo" multi="false" editable="false"/>
+          <select align="LEFT" valign="TOP" indent="false" columnIndex="2" width="30ch" id="zpracovatel" precision="0" scale="0" type="combo" multi="false" editable="false"/>
+          <select align="LEFT" valign="TOP" indent="false" columnIndex="3" width="30ch" id="pracovnik" precision="0" scale="0" type="combo" multi="false" editable="false"/>
+          <select align="LEFT" valign="TOP" indent="false" columnIndex="4" width="20ch" id="stavRec" precision="19" scale="4" type="combo" multi="false" editable="false"/>
+          <input align="LEFT" valign="TOP" indent="false" columnIndex="5" width="30ch" id="stavPozn" precision="19" scale="4" type="text"/>
+        </row>
+      </form-body>
+    </screen-form>
+    <screen-form name="UkolproPredlohuF" formHumanName="UkolproPredlohuF" id="cz.incad.nkp.digital.Ukol">
+      <form-body align="LEFT" valign="TOP">
+        <row fill="LEFT" vfill="TOP">
+          <select align="LEFT" valign="TOP" indent="false" columnIndex="1" width="20ch" id="typPrace" precision="19" scale="4" type="combo" multi="false" editable="false">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </select>
+          <select align="LEFT" valign="TOP" indent="false" columnIndex="2" width="20ch" id="pracovnik" precision="19" scale="4" type="combo" multi="false" editable="false">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </select>
+        </row>
+      </form-body>
+    </screen-form>
+    <tree name="AvailableForms">
+      <node formName="UkolF"/>
+      <node formName="UkolF2"/>
+      <node formName="UkolproPredlohuF"/>
+    </tree>
+  </forms>
+  <uniqueFields/>
+</desk>

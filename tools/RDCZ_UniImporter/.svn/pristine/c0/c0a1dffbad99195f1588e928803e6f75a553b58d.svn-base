@@ -1,0 +1,69 @@
+/* *****************************************************************************
+ * To change this template, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package cz.incad.relief3.rdcz.uniimporter;
+
+import cz.incad.relief3.rdcz.uniimporter.model.DataListenerEnum;
+import cz.incad.relief3.rdcz.uniimporter.model.DataListener;
+import cz.incad.relief3.rdcz.uniimporter.model.DirectoryDataListener;
+import cz.incad.relief3.rdcz.uniimporter.model.FileCoordinator;
+import cz.incad.relief3.rdcz.uniimporter.utils.Configuration;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
+/** ****************************************************************************
+ *
+ * @author martin
+ */
+public class Main {
+    private static final Logger LOG = Logger.getLogger(Main.class.getName());
+
+    /** ************************************************************************
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+        System.out.println("Neplecha započata...");
+        // Inicializace, kontrola konfigurace
+        Configuration conf = Configuration.getInstance();
+        FileCoordinator fileCoordinator = FileCoordinator.getInstance();
+        DataListener ddl;
+
+        //Získání souborů pro import
+        //# 1 - DIRECTORY
+        //# 2 - FTP
+        //# 3 - OAIPMH
+        //# 4 - ZAHORIKWAY
+        // *********************************************************************
+        if (DataListenerEnum.DIRECTORY.toString().equals(conf.getProperty(Configuration.KEY_DATA_SOURCE))) {
+            LOG.log(Level.INFO, "SOURCE = {0}", DataListenerEnum.DIRECTORY.toString());
+            //Získáme data ze zdrojového adresáře a přesuneme je do pracovního.
+            ddl = new DirectoryDataListener();
+            ddl.getData();
+
+
+        } else if (DataListenerEnum.FTP.toString().equals(conf.getProperty(Configuration.KEY_DATA_SOURCE))) {
+            LOG.log(Level.INFO, "SOURCE = {0}", DataListenerEnum.FTP.toString());
+            System.out.println("Not supported yet.");
+            return;
+
+
+        } else if (DataListenerEnum.OAIPMH.toString().equals(conf.getProperty(Configuration.KEY_DATA_SOURCE))) {
+            LOG.log(Level.INFO, "SOURCE = {0}", DataListenerEnum.OAIPMH.toString());
+            System.out.println("Not supported yet.");
+            return;
+
+
+        } else if (DataListenerEnum.ZAHORIKWAY.toString().equals(conf.getProperty(Configuration.KEY_DATA_SOURCE))) {
+            LOG.log(Level.INFO, "SOURCE = {0}", DataListenerEnum.ZAHORIKWAY.toString());
+            System.out.println("Not supported yet.");
+            return;
+        }
+
+        //Zpracujeme soubory v listu --- časem to musí být nezávislé vlákno které si běží samo.
+        fileCoordinator.startCoordine();
+
+        System.out.println("Neplecha ukončena...");
+    }
+
+}

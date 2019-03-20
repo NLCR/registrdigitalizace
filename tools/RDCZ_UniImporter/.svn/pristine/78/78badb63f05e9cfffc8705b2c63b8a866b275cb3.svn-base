@@ -1,0 +1,115 @@
+/* *****************************************************************************
+ * To change this template, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package cz.incad.relief3.rdcz.uniimporter;
+
+import cz.incad.relief3.rdcz.uniimporter.demons.*;
+import cz.incad.relief3.rdcz.uniimporter.model.IssueHeap;
+import cz.incad.relief3.rdcz.uniimporter.utils.Configuration;
+import cz.incad.relief3.rdcz.uniimporter.utils.OneSource;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
+/** ****************************************************************************
+ *
+ * @author martin
+ */
+public class Main {
+    private static final Logger LOG = Logger.getLogger(Main.class.getName());
+
+    /** ************************************************************************
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+        Runnable demonFileNameParser;
+        Thread demonFileNameParserThread;
+
+        Runnable demonDataParser;
+        Thread demonDataParserThread;
+
+        Runnable demonReliefImport;
+        Thread demonReliefImportThread;
+
+        Runnable demonLog;
+        Thread demonLogThread;
+
+        List<Thread> lDemonSources = new LinkedList<Thread>();
+        Thread tempThread;
+        Runnable tempRunnable;
+
+        OneSource oneSource;
+
+        LOG.log(Level.INFO, "Demon master starting...");
+        // Inicializace, kontrola konfigurace
+        Configuration conf = Configuration.getInstance();
+
+        //Inicializace uložiště pro zpracovávané soubory
+        IssueHeap issueHeap = IssueHeap.getInstance();
+        LOG.log(Level.INFO, "Innitializing IssueHeap, size: {0}", issueHeap.size());
+
+        //Vypustíme démony Harvesters
+        for (int i = 0; i < conf.lSource.size(); i++) {
+            oneSource = conf.lSource.get(i);
+            switch(oneSource.source) {
+                case DIRECTORY:
+                    LOG.log(Level.INFO, "Demon DataHarvesterDirectory wake up...");
+                    tempRunnable = new DataHarvesterDemonDirectory(oneSource);
+                    tempThread = new Thread(tempRunnable);
+                    lDemonSources.add(tempThread);
+                    tempThread.start();
+                    break;
+                case FTP:
+                    LOG.log(Level.INFO, "Demon DataHarvesterFtp wake up...");
+                    tempRunnable = new DataHarvesterDemonFtp(oneSource);
+                    tempThread = new Thread(tempRunnable);
+                    lDemonSources.add(tempThread);
+                    tempThread.start();
+                    break;
+                case OAIPMH:
+                    LOG.log(Level.INFO, "Demon DataHarvesterOaipmh wake up...");
+                    tempRunnable = new DataHarvesterDemonOaipmh(oneSource);
+                    tempThread = new Thread(tempRunnable);
+                    lDemonSources.add(tempThread);
+                    tempThread.start();
+                    break;
+                case ZAHORIKWAY:
+                    LOG.log(Level.INFO, "Demon DataHarvesterZahorikway wake up...");
+                    tempRunnable = new DataHarvesterDemonZahorikway(oneSource);
+                    tempThread = new Thread(tempRunnable);
+                    lDemonSources.add(tempThread);
+                    tempThread.start();
+                    break;
+            }
+        }
+
+        //Vypustíme démona FileNameParserDemon
+        LOG.log(Level.INFO, "Demon FileNameParser wake up...");
+        demonFileNameParser = new FileNameParserDemon();
+        demonFileNameParserThread = new Thread(demonFileNameParser);
+        demonFileNameParserThread.start();
+
+        //Vypustíme démona DataParserDemon
+        LOG.log(Level.INFO, "Demon DataParserDemon wake up...");
+        demonDataParser = new DataParserDemon();
+        demonDataParserThread = new Thread(demonDataParser);
+        demonDataParserThread.start();
+
+        //Vypustíme démona ReliefImportDemon
+        LOG.log(Level.INFO, "Demon ReliefImportDemon wake up...");
+        demonReliefImport = new ReliefImportDemon();
+        demonReliefImportThread = new Thread(demonReliefImport);
+        demonReliefImportThread.start();
+
+        //Vypustíme démona LogDemon
+        LOG.log(Level.INFO, "Demon LogDemon wake up...");
+        demonLog = new LogDemon();
+        demonLogThread = new Thread(demonLog);
+        demonLogThread.start();
+
+        LOG.log(Level.INFO, "Demon master ending...");
+    }
+
+}

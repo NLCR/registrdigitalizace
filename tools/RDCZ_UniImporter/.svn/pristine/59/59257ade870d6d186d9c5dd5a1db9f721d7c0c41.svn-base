@@ -1,0 +1,35 @@
+# -------------------------------------------------------------------
+# ----------------- RD.CZ UniImporter configuration -----------------
+# -------------------------------------------------------------------
+
+# ------------------------------ SOURCE -----------------------------
+# DIRECTORY
+# FTP
+# OAIPMH
+# ZAHORIKWAY
+DATA.SOURCE=DIRECTORY
+# Path to directory with files to proced.
+DATA.DIRECTORY=xDATA
+
+
+# ------------------------------ PARSING METHOD ---------------------
+# CSV
+# MARCXML
+# UNIMARC
+PARSE.METHOD=CSV
+PARSE.ENCODING=UTF8
+PARSE.1.SEPARATOR=|
+
+
+# ------------------------------ RELIEF CONNECTION ------------------
+# Relief server connection string
+# RELIEF.URL=ormi://localhost:23794/reliefAppName
+RELIEF.URL=ormi://jarka02:23794/reliefAppName
+# Leave empty if you want use settings from Relief attached by SIGLA
+RELIEF.OVERRIDE.USER=admin
+RELIEF.OVERRIDE.PASS=123
+
+# ------------------------------ IMPORTER SETTINGS ------------------
+# 0 - standartn\u00ed import dat
+# 1 - testovac\u00ed import dat - provede v\u0161e jako obvykle ale nezap\u00ed\u0161e data do datab\u00e1ze
+IMPORT.TEST=1

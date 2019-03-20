@@ -1,0 +1,229 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<desk bundle="ServerBundle">
+  <deskPackage>cz.incad.core.basic</deskPackage>
+  <deskName>UsersAdministration</deskName>
+  <deskHumanHelp>cz.incad.core.basic.UsersAdministration_help</deskHumanHelp>
+  <deskHumanName>cz.incad.core.basic.UsersAdministration</deskHumanName>
+  <deskDBName>UsersAdministration</deskDBName>
+  <deskRoot/>
+  <machineModel>cz.incad.core.basic.UsersAdministration</machineModel>
+  <fields>
+    <field>
+      <fieldName>isActive</fieldName>
+      <fieldHumanName>UsersAdministration.isActive</fieldHumanName>
+      <fieldHumanHelp>UsersAdministration.isActive_help</fieldHumanHelp>
+      <fieldDBName>isActive</fieldDBName>
+      <fieldType>BOL</fieldType>
+      <fieldRepresentation>CHK</fieldRepresentation>
+      <computed/>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>securityBF</fieldName>
+      <fieldHumanName>cz.incad.core.basic.UsersAdministration.securityBF</fieldHumanName>
+      <fieldHumanHelp>cz.incad.core.basic.UsersAdministration.securityBF_help</fieldHumanHelp>
+      <fieldDBName>rUsersCsecurityBF</fieldDBName>
+      <fieldType>TAB</fieldType>
+      <fieldRepresentation>REP</fieldRepresentation>
+      <reference relationshipType="aggregation" rTable="false">cz.incad.core.part.CsecurityBF</reference>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>email</fieldName>
+      <fieldHumanName>cz.incad.core.basic.UsersAdministration.email</fieldHumanName>
+      <fieldHumanHelp>cz.incad.core.basic.UsersAdministration.email_help</fieldHumanHelp>
+      <fieldDBName>email</fieldDBName>
+      <fieldType>STR</fieldType>
+      <fieldRepresentation>EDI</fieldRepresentation>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>name</fieldName>
+      <fieldHumanName>cz.incad.core.basic.UsersAdministration.name</fieldHumanName>
+      <fieldHumanHelp>cz.incad.core.basic.UsersAdministration.name_help</fieldHumanHelp>
+      <fieldDBName>name</fieldDBName>
+      <fieldType>STR</fieldType>
+      <fieldRepresentation>EDI</fieldRepresentation>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>login</fieldName>
+      <fieldHumanName>cz.incad.core.basic.UsersAdministration.login</fieldHumanName>
+      <fieldHumanHelp>cz.incad.core.basic.UsersAdministration.login_help</fieldHumanHelp>
+      <fieldDBName>login</fieldDBName>
+      <fieldType>STR</fieldType>
+      <fieldRepresentation>EDI</fieldRepresentation>
+      <validateEmpty/>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>surname</fieldName>
+      <fieldHumanName>cz.incad.core.basic.UsersAdministration.surname</fieldHumanName>
+      <fieldHumanHelp>cz.incad.core.basic.UsersAdministration.surname_help</fieldHumanHelp>
+      <fieldDBName>surname</fieldDBName>
+      <fieldType>STR</fieldType>
+      <fieldRepresentation>EDI</fieldRepresentation>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>roleUser</fieldName>
+      <fieldHumanName>cz.incad.core.basic.UsersAdministration.roleUser</fieldHumanName>
+      <fieldHumanHelp>cz.incad.core.basic.UsersAdministration.roleUser_help</fieldHumanHelp>
+      <fieldDBName>rUsersCRoleUser</fieldDBName>
+      <fieldType>TAB</fieldType>
+      <fieldRepresentation>REP</fieldRepresentation>
+      <reference relationshipType="aggregation" rTable="false">cz.incad.core.part.CRoleUser</reference>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>zarazeniUser</fieldName>
+      <fieldHumanName>cz.incad.core.basic.UsersAdministration.zarazeniUser</fieldHumanName>
+      <fieldHumanHelp>cz.incad.core.basic.UsersAdministration.zarazeniUser_help</fieldHumanHelp>
+      <fieldDBName>zarazeniUser</fieldDBName>
+      <fieldType>STR</fieldType>
+      <fieldRepresentation>COM</fieldRepresentation>
+      <list>DzarazeniUser</list>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+  </fields>
+  <forms>
+    <screen-form name="UsersAdministrationF" formHumanName="cz.incad.core.basic.UsersAdministrationF" id="cz.incad.core.basic.UsersAdministration">
+      <form-body align="LEFT" valign="TOP">
+        <row fill="LEFT" vfill="TOP">
+          <input align="LEFT" valign="TOP" indent="false" columnIndex="1" width="30ch" id="login" precision="0" scale="0" type="text">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </input>
+          <check align="LEFT" valign="TOP" indent="false" columnIndex="2" id="isActive" precision="0" scale="0">
+            <label place="LEFT">
+              <from-field colon="true"/>
+            </label>
+          </check>
+        </row>
+        <row fill="LEFT" vfill="TOP">
+          <input align="LEFT" valign="TOP" indent="false" columnIndex="1" width="20ch" id="name" precision="0" scale="0" type="text">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </input>
+          <input align="LEFT" valign="TOP" indent="false" columnIndex="2" width="30ch" id="surname" precision="0" scale="0" type="text">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </input>
+        </row>
+        <row fill="LEFT" vfill="TOP">
+          <input align="LEFT" valign="TOP" indent="false" width="30ch" id="email" precision="0" scale="0" type="text">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </input>
+        </row>
+        <row fill="LEFT" vfill="TOP">
+          <select align="LEFT" valign="TOP" indent="false" width="600px" id="zarazeniUser" precision="0" scale="0" type="combo" multi="false" editable="false">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </select>
+        </row>
+        <row fill="LEFT" vfill="TOP">
+          <repeat align="LEFT" valign="TOP" indent="false" id="roleUser" precision="0" scale="0" refclass="cz.incad.core.part.CRoleUser" form="CRoleUserF">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </repeat>
+        </row>
+        <row fill="LEFT" vfill="TOP">
+          <empty align="LEFT" valign="TOP" indent="false"/>
+        </row>
+        <row fill="LEFT" vfill="TOP">
+          <repeat align="LEFT" valign="TOP" indent="false" width="600px" id="securityBF" precision="0" scale="0" refclass="cz.incad.core.part.CsecurityBF" form="CsecurityBFF">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </repeat>
+        </row>
+      </form-body>
+    </screen-form>
+    <tree name="AvailableForms">
+      <node formName="UsersAdministrationF"/>
+    </tree>
+  </forms>
+  <functions>
+    <function>
+      <functionName>cz.incad.core.bf.ReloadUsers</functionName>
+      <functionHumanName>cz.incad.core.bf.ReloadUsers</functionHumanName>
+      <functionHumanHelp>cz.incad.core.bf.ReloadUsers_help</functionHumanHelp>
+    </function>
+    <function>
+      <functionName>cz.incad.core.bf.CopyUserMetadata</functionName>
+      <functionHumanName>cz.incad.core.bf.CopyUserMetadata</functionHumanName>
+      <functionHumanHelp>UsersAdministration_cz.incad.core.bf.CopyUserMetadata_help</functionHumanHelp>
+      <wizardPanels>
+        <wizardPanel>
+          <panelName>Panel1</panelName>
+          <panelHumanName>cz.incad.core.bf.CopyUserMetadata.Panel1</panelHumanName>
+          <description>cz.incad.core.bf.CopyUserMetadata.Panel1_help</description>
+          <panelFields>
+            <panelField>
+              <fieldName>userName</fieldName>
+              <fieldHumanName>cz.incad.core.bf.CopyUserMetadata.Panel1.userName</fieldHumanName>
+              <fieldType>STR</fieldType>
+              <fieldRepresentation>EDI</fieldRepresentation>
+            </panelField>
+            <panelField>
+              <fieldName>potvrzeni</fieldName>
+              <fieldHumanName>cz.incad.core.bf.CopyUserMetadata.Panel1.potvrzeni</fieldHumanName>
+              <fieldType>BOL</fieldType>
+              <fieldRepresentation>CHK</fieldRepresentation>
+            </panelField>
+          </panelFields>
+        </wizardPanel>
+      </wizardPanels>
+    </function>
+    <function>
+      <functionName>cz.incad.core.bf.SetUserPassword</functionName>
+      <functionHumanName>cz.incad.core.bf.SetUserPassword</functionHumanName>
+      <functionHumanHelp>UsersAdministration_cz.incad.core.bf.SetUserPassword_help</functionHumanHelp>
+      <wizardPanels>
+        <wizardPanel>
+          <panelName>Panel1</panelName>
+          <panelHumanName>cz.incad.core.bf.SetUserPAssword.Panel1</panelHumanName>
+          <description>cz.incad.core.bf.SetUserPAssword.Panel1_help</description>
+          <panelFields>
+            <panelField>
+              <fieldName>newPassword</fieldName>
+              <fieldHumanName>cz.incad.core.bf.SetUserPAssword.Panel1.newPassword</fieldHumanName>
+              <fieldType>STR</fieldType>
+              <fieldRepresentation>EDI</fieldRepresentation>
+            </panelField>
+            <panelField>
+              <fieldName>potvrzeni</fieldName>
+              <fieldHumanName>cz.incad.core.bf.SetUserPAssword.Panel1.potvrzeni</fieldHumanName>
+              <fieldType>BOL</fieldType>
+              <fieldRepresentation>CHK</fieldRepresentation>
+            </panelField>
+          </panelFields>
+        </wizardPanel>
+      </wizardPanels>
+    </function>
+    <tree name="AvailableBusinessFunctions">
+      <node functionName="cz.incad.core.bf.ReloadUsers"/>
+      <node functionName="cz.incad.core.bf.CopyUserMetadata"/>
+      <node functionName="cz.incad.core.bf.SetUserPassword"/>
+    </tree>
+  </functions>
+  <uniqueFields>
+    <field name="login"/>
+  </uniqueFields>
+</desk>

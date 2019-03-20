@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<desk bundle="ServerBundle">
+  <deskPackage>cz.incad.core.doc</deskPackage>
+  <deskName>Autor</deskName>
+  <deskHumanHelp>cz.incad.core.doc.Autor_help</deskHumanHelp>
+  <deskHumanName>cz.incad.core.doc.Autor</deskHumanName>
+  <deskDBName>Autor</deskDBName>
+  <deskRoot/>
+  <machineModel>cz.incad.core.doc.Autor</machineModel>
+  <fields>
+    <field>
+      <fieldName>akTitulPred</fieldName>
+      <fieldHumanName>cz.incad.core.doc.Autor.akTitulPred</fieldHumanName>
+      <fieldHumanHelp>cz.incad.core.doc.Autor.akTitulPred_help</fieldHumanHelp>
+      <fieldDBName>akTitulPred</fieldDBName>
+      <fieldType>STR</fieldType>
+      <fieldRepresentation>EDI</fieldRepresentation>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>akTitulZa</fieldName>
+      <fieldHumanName>cz.incad.core.doc.Autor.akTitulZa</fieldHumanName>
+      <fieldHumanHelp>cz.incad.core.doc.Autor.akTitulZa_help</fieldHumanHelp>
+      <fieldDBName>akTitulZa</fieldDBName>
+      <fieldType>STR</fieldType>
+      <fieldRepresentation>EDI</fieldRepresentation>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>jmeno</fieldName>
+      <fieldHumanName>cz.incad.core.doc.Autor.jmeno</fieldHumanName>
+      <fieldHumanHelp>cz.incad.core.doc.Autor.jmeno_help</fieldHumanHelp>
+      <fieldDBName>jmeno</fieldDBName>
+      <fieldType>STR</fieldType>
+      <fieldRepresentation>EDI</fieldRepresentation>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>prijmeni</fieldName>
+      <fieldHumanName>cz.incad.core.doc.Autor.prijmeni</fieldHumanName>
+      <fieldHumanHelp>cz.incad.core.doc.Autor.prijmeni_help</fieldHumanHelp>
+      <fieldDBName>prijmeni</fieldDBName>
+      <fieldType>STR</fieldType>
+      <fieldRepresentation>EDI</fieldRepresentation>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+  </fields>
+  <forms>
+    <screen-form name="AutorF" formHumanName="cz.incad.core.doc.AutorF" id="cz.incad.core.doc.Autor">
+      <form-body align="LEFT" valign="TOP">
+        <row fill="LEFT" vfill="TOP">
+          <input align="LEFT" valign="TOP" indent="false" columnIndex="1" width="10ch" id="akTitulPred" precision="0" scale="0" type="text">
+            <label place="TOP">Autor.AutorF.titul</label>
+          </input>
+          <input align="LEFT" valign="TOP" indent="false" columnIndex="2" width="40ch" id="jmeno" precision="0" scale="0" type="text">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </input>
+          <input align="LEFT" valign="TOP" indent="false" columnIndex="3" width="40ch" id="prijmeni" precision="0" scale="0" type="text">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </input>
+          <input align="LEFT" valign="TOP" indent="false" columnIndex="4" width="10ch" id="akTitulZa" precision="0" scale="0" type="text">
+            <label place="TOP">Autor.AutorF.titul</label>
+          </input>
+        </row>
+      </form-body>
+    </screen-form>
+    <tree name="AvailableForms">
+      <node formName="AutorF"/>
+    </tree>
+  </forms>
+  <uniqueFields/>
+</desk>

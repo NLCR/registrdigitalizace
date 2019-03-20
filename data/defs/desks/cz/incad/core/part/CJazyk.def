@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<desk bundle="ServerBundle">
+  <deskPackage>cz.incad.core.part</deskPackage>
+  <deskName>CJazyk</deskName>
+  <deskHumanHelp>cz.incad.core.part.CJazyk_help</deskHumanHelp>
+  <deskHumanName>cz.incad.core.part.CJazyk</deskHumanName>
+  <deskDBName>CJazyk</deskDBName>
+  <deskRoot/>
+  <machineModel>cz.incad.core.part.CJazyk</machineModel>
+  <fields>
+    <field>
+      <fieldName>typ</fieldName>
+      <fieldHumanName>CJazyk.typ</fieldHumanName>
+      <fieldHumanHelp>CJazyk.typ_help</fieldHumanHelp>
+      <fieldDBName>typ</fieldDBName>
+      <fieldType>STR</fieldType>
+      <fieldRepresentation>COM</fieldRepresentation>
+      <list>DtypJazyk</list>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>listJazyk</fieldName>
+      <fieldHumanName>CJazyk.listJazyk</fieldHumanName>
+      <fieldHumanHelp>CJazyk.listJazyk_help</fieldHumanHelp>
+      <fieldDBName>listJazyk</fieldDBName>
+      <fieldType>STR</fieldType>
+      <fieldRepresentation>COM</fieldRepresentation>
+      <list>DlistJazyk</list>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+  </fields>
+  <forms>
+    <screen-form name="CJazykF" formHumanName="CJazykF" id="cz.incad.core.part.CJazyk">
+      <form-body align="LEFT" valign="TOP">
+        <row fill="LEFT" vfill="TOP">
+          <select align="LEFT" valign="TOP" indent="false" columnIndex="1" width="20ch" id="typ" precision="0" scale="0" type="combo" multi="false" editable="false"/>
+          <select align="LEFT" valign="TOP" indent="false" columnIndex="2" width="20ch" id="listJazyk" precision="0" scale="0" type="combo" multi="false" editable="false"/>
+        </row>
+      </form-body>
+    </screen-form>
+    <tree name="AvailableForms">
+      <node formName="CJazykF"/>
+    </tree>
+  </forms>
+  <uniqueFields/>
+</desk>

@@ -1,0 +1,419 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<desk bundle="ServerBundle">
+  <deskPackage>cz.incad.rd</deskPackage>
+  <deskName>Iso</deskName>
+  <deskHumanHelp>Iso_help</deskHumanHelp>
+  <deskHumanName>Iso</deskHumanName>
+  <deskDBName>Iso</deskDBName>
+  <deskRoot/>
+  <machineModel>cz.incad.rd.Iso</machineModel>
+  <historyEnabled>true</historyEnabled>
+  <fields>
+    <field>
+      <fieldName>autor</fieldName>
+      <fieldHumanName>Iso.autor</fieldHumanName>
+      <fieldHumanHelp>Iso.autor_help</fieldHumanHelp>
+      <fieldDBName>autor</fieldDBName>
+      <fieldType>STR</fieldType>
+      <fieldRepresentation>EDI</fieldRepresentation>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>cCNB</fieldName>
+      <fieldHumanName>Iso.cCNB</fieldHumanName>
+      <fieldHumanHelp>Iso.cCNB_help</fieldHumanHelp>
+      <fieldDBName>cCNB</fieldDBName>
+      <fieldType>STR</fieldType>
+      <fieldRepresentation>EDI</fieldRepresentation>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>carKod</fieldName>
+      <fieldHumanName>Iso.carKod</fieldHumanName>
+      <fieldHumanHelp>Iso.carKod_help</fieldHumanHelp>
+      <fieldDBName>carKod</fieldDBName>
+      <fieldType>STR</fieldType>
+      <fieldRepresentation>EDI</fieldRepresentation>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>cast</fieldName>
+      <fieldHumanName>Iso.cast</fieldHumanName>
+      <fieldHumanHelp>Iso.cast_help</fieldHumanHelp>
+      <fieldDBName>cast</fieldDBName>
+      <fieldType>STR</fieldType>
+      <fieldRepresentation>EDI</fieldRepresentation>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>idCislo</fieldName>
+      <fieldHumanName>Iso.idCislo</fieldHumanName>
+      <fieldHumanHelp>Iso.idCislo_help</fieldHumanHelp>
+      <fieldDBName>idCislo</fieldDBName>
+      <fieldType>STR</fieldType>
+      <fieldRepresentation>EDI</fieldRepresentation>
+      <computed/>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>finDate</fieldName>
+      <fieldHumanName>Iso.finDate</fieldHumanName>
+      <fieldHumanHelp>Iso.finDate_help</fieldHumanHelp>
+      <fieldDBName>finDate</fieldDBName>
+      <fieldType>DAT</fieldType>
+      <fieldRepresentation>COMD</fieldRepresentation>
+      <computed/>
+      <formatPattern>dd.MM.yyyy</formatPattern>
+      <formatPatternForInput>dd.MM.yyyy</formatPatternForInput>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>ediDate</fieldName>
+      <fieldHumanName>Iso.ediDate</fieldHumanName>
+      <fieldHumanHelp>Iso.ediDate_help</fieldHumanHelp>
+      <fieldDBName>ediDate</fieldDBName>
+      <fieldType>DAT</fieldType>
+      <fieldRepresentation>COMD</fieldRepresentation>
+      <computed/>
+      <formatPattern>dd.MM.yyyy</formatPattern>
+      <formatPatternForInput>dd.MM.yyyy</formatPatternForInput>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>zalDate</fieldName>
+      <fieldHumanName>Iso.zalDate</fieldHumanName>
+      <fieldHumanHelp>Iso.zalDate_help</fieldHumanHelp>
+      <fieldDBName>zalDate</fieldDBName>
+      <fieldType>DAT</fieldType>
+      <fieldRepresentation>COMD</fieldRepresentation>
+      <computed/>
+      <formatPattern>dd.MM.yyyy</formatPattern>
+      <formatPatternForInput>dd.MM.yyyy</formatPatternForInput>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>finUser</fieldName>
+      <fieldHumanName>Iso.finUser</fieldHumanName>
+      <fieldHumanHelp>Iso.finUser_help</fieldHumanHelp>
+      <fieldDBName>finUser</fieldDBName>
+      <fieldType>STR</fieldType>
+      <fieldRepresentation>EDI</fieldRepresentation>
+      <computed/>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>druhDokumentu</fieldName>
+      <fieldHumanName>Iso.druhDokumentu</fieldHumanName>
+      <fieldHumanHelp>Iso.druhDokumentu_help</fieldHumanHelp>
+      <fieldDBName>druhDokumentu</fieldDBName>
+      <fieldType>STR</fieldType>
+      <fieldRepresentation>COM</fieldRepresentation>
+      <list>DdruhDokumentu</list>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>ediUser</fieldName>
+      <fieldHumanName>Iso.ediUser</fieldHumanName>
+      <fieldHumanHelp>Iso.ediUser_help</fieldHumanHelp>
+      <fieldDBName>ediUser</fieldDBName>
+      <fieldType>STR</fieldType>
+      <fieldRepresentation>EDI</fieldRepresentation>
+      <computed/>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>isbn</fieldName>
+      <fieldHumanName>Iso.isbn</fieldHumanName>
+      <fieldHumanHelp>Iso.isbn_help</fieldHumanHelp>
+      <fieldDBName>isbn</fieldDBName>
+      <fieldType>STR</fieldType>
+      <fieldRepresentation>EDI</fieldRepresentation>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>issn</fieldName>
+      <fieldHumanName>Iso.issn</fieldHumanName>
+      <fieldHumanHelp>Iso.issn_help</fieldHumanHelp>
+      <fieldDBName>issn</fieldDBName>
+      <fieldType>STR</fieldType>
+      <fieldRepresentation>EDI</fieldRepresentation>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>mistoVydani</fieldName>
+      <fieldHumanName>Iso.mistoVydani</fieldHumanName>
+      <fieldHumanHelp>Iso.mistoVydani_help</fieldHumanHelp>
+      <fieldDBName>mistoVydani</fieldDBName>
+      <fieldType>STR</fieldType>
+      <fieldRepresentation>EDI</fieldRepresentation>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>nazev</fieldName>
+      <fieldHumanName>Iso.nazev</fieldHumanName>
+      <fieldHumanHelp>Iso.nazev_help</fieldHumanHelp>
+      <fieldDBName>nazev</fieldDBName>
+      <fieldType>STR</fieldType>
+      <fieldRepresentation>EDI</fieldRepresentation>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>pole001</fieldName>
+      <fieldHumanName>Iso.pole001</fieldHumanName>
+      <fieldHumanHelp>Iso.pole001_help</fieldHumanHelp>
+      <fieldDBName>pole001</fieldDBName>
+      <fieldType>STR</fieldType>
+      <fieldRepresentation>EDI</fieldRepresentation>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>poznRec</fieldName>
+      <fieldHumanName>Iso.poznRec</fieldHumanName>
+      <fieldHumanHelp>Iso.poznRec_help</fieldHumanHelp>
+      <fieldDBName>poznRec</fieldDBName>
+      <fieldType>STR</fieldType>
+      <fieldRepresentation>EDI</fieldRepresentation>
+      <validateLength>500</validateLength>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>rokVydani</fieldName>
+      <fieldHumanName>Iso.rokVydani</fieldHumanName>
+      <fieldHumanHelp>Iso.rokVydani_help</fieldHumanHelp>
+      <fieldDBName>rokVydani</fieldDBName>
+      <fieldType>STR</fieldType>
+      <fieldRepresentation>EDI</fieldRepresentation>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>sigla1</fieldName>
+      <fieldHumanName>Iso.sigla1</fieldHumanName>
+      <fieldHumanHelp>Iso.sigla1_help</fieldHumanHelp>
+      <fieldDBName>sigla1</fieldDBName>
+      <fieldType>STR</fieldType>
+      <fieldRepresentation>COM</fieldRepresentation>
+      <list>InsVlastnik</list>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>Signatura</fieldName>
+      <fieldHumanName>Iso.Signatura</fieldHumanName>
+      <fieldHumanHelp>Iso.Signatura_help</fieldHumanHelp>
+      <fieldDBName>Signatura</fieldDBName>
+      <fieldType>STR</fieldType>
+      <fieldRepresentation>EDI</fieldRepresentation>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>stavRec</fieldName>
+      <fieldHumanName>Iso.stavRec</fieldHumanName>
+      <fieldHumanHelp>Iso.stavRec_help</fieldHumanHelp>
+      <fieldDBName>stavRec</fieldDBName>
+      <fieldType>STR</fieldType>
+      <fieldRepresentation>EDI</fieldRepresentation>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>sysno</fieldName>
+      <fieldHumanName>Iso.sysno</fieldHumanName>
+      <fieldHumanHelp>Iso.sysno_help</fieldHumanHelp>
+      <fieldDBName>sysno</fieldDBName>
+      <fieldType>STR</fieldType>
+      <fieldRepresentation>EDI</fieldRepresentation>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>securityOwner</fieldName>
+      <fieldHumanName>Iso.securityOwner</fieldHumanName>
+      <fieldHumanHelp>Iso.securityOwner_help</fieldHumanHelp>
+      <fieldDBName>securityOwner</fieldDBName>
+      <fieldType>STR</fieldType>
+      <fieldRepresentation>EDI</fieldRepresentation>
+      <computed/>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>vydavatel</fieldName>
+      <fieldHumanName>Iso.vydavatel</fieldHumanName>
+      <fieldHumanHelp>Iso.vydavatel_help</fieldHumanHelp>
+      <fieldDBName>vydavatel</fieldDBName>
+      <fieldType>STR</fieldType>
+      <fieldRepresentation>EDI</fieldRepresentation>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>isZaloha</fieldName>
+      <fieldHumanName>Iso.isZaloha</fieldHumanName>
+      <fieldHumanHelp>Iso.isZaloha_help</fieldHumanHelp>
+      <fieldDBName>isZaloha</fieldDBName>
+      <fieldType>BOL</fieldType>
+      <fieldRepresentation>CHK</fieldRepresentation>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>zalUser</fieldName>
+      <fieldHumanName>Iso.zalUser</fieldHumanName>
+      <fieldHumanHelp>Iso.zalUser_help</fieldHumanHelp>
+      <fieldDBName>zalUser</fieldDBName>
+      <fieldType>STR</fieldType>
+      <fieldRepresentation>EDI</fieldRepresentation>
+      <computed/>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+  </fields>
+  <forms>
+    <screen-form name="default" formHumanName="Iso.form.default" id="cz.incad.rd.Iso">
+      <form-body align="LEFT" valign="TOP">
+        <row fill="LEFT" vfill="TOP">
+          <check align="LEFT" valign="TOP" indent="false" id="isZaloha" precision="0" scale="0">
+            <label place="LEFT">
+              <from-field colon="true"/>
+            </label>
+          </check>
+        </row>
+        <row fill="LEFT" vfill="TOP">
+          <empty align="LEFT" valign="TOP" indent="false" height="2ch"/>
+        </row>
+        <row fill="LEFT" vfill="TOP">
+          <border type="solid" color="">
+            <title>Iso.F.default.bibliografickaData</title>
+          </border>
+          <row fill="LEFT" vfill="TOP">
+            <select align="LEFT" valign="TOP" indent="false" width="20ch" id="druhDokumentu" precision="19" scale="4" type="combo" multi="false" editable="false">
+              <label place="TOP">
+                <from-field colon="true"/>
+              </label>
+            </select>
+            <select align="LEFT" valign="TOP" indent="false" width="40ch" id="sigla1" precision="0" scale="0" type="combo" multi="false" editable="false">
+              <label place="TOP">
+                <from-field colon="true"/>
+              </label>
+            </select>
+            <input align="LEFT" valign="TOP" indent="false" width="40ch" id="cCNB" precision="19" scale="4" type="text">
+              <label place="TOP">
+                <from-field colon="true"/>
+              </label>
+            </input>
+          </row>
+          <row fill="LEFT" vfill="TOP">
+            <input align="LEFT" valign="TOP" indent="false" width="118ch" id="nazev" precision="19" scale="4" type="text" rows="3">
+              <label place="TOP">
+                <from-field colon="true"/>
+              </label>
+            </input>
+            <input align="LEFT" valign="TOP" indent="false" width="120ch" id="cast" precision="19" scale="4" type="text">
+              <label place="TOP">
+                <from-field colon="true"/>
+              </label>
+            </input>
+          </row>
+          <row fill="LEFT" vfill="TOP">
+            <input align="LEFT" valign="TOP" indent="false" columnIndex="1" width="100ch" id="autor" precision="19" scale="4" type="text">
+              <label place="TOP">
+                <from-field colon="true"/>
+              </label>
+            </input>
+            <input align="LEFT" valign="TOP" indent="false" columnIndex="2" width="20ch" id="rokVydani" precision="19" scale="4" type="text">
+              <label place="TOP">
+                <from-field colon="true"/>
+              </label>
+            </input>
+          </row>
+          <row fill="LEFT" vfill="TOP">
+            <input align="LEFT" valign="TOP" indent="false" columnIndex="1" width="60ch" id="mistoVydani" precision="19" scale="4" type="text">
+              <label place="TOP">
+                <from-field colon="true"/>
+              </label>
+            </input>
+            <input align="LEFT" valign="TOP" indent="false" columnIndex="2" width="60ch" id="vydavatel" precision="19" scale="4" type="text">
+              <label place="TOP">
+                <from-field colon="true"/>
+              </label>
+            </input>
+          </row>
+          <row fill="LEFT" vfill="TOP">
+            <input align="LEFT" valign="TOP" indent="false" columnIndex="1" width="40ch" id="Signatura" precision="19" scale="4" type="text">
+              <label place="TOP">
+                <from-field colon="true"/>
+              </label>
+            </input>
+            <input align="LEFT" valign="TOP" indent="false" columnIndex="2" width="40ch" id="carKod" precision="19" scale="4" type="text">
+              <label place="TOP">
+                <from-field colon="true"/>
+              </label>
+            </input>
+          </row>
+          <row fill="LEFT" vfill="TOP">
+            <input align="LEFT" valign="TOP" indent="false" columnIndex="1" width="40ch" id="isbn" precision="19" scale="4" type="text">
+              <label place="TOP">
+                <from-field colon="true"/>
+              </label>
+            </input>
+            <input align="LEFT" valign="TOP" indent="false" columnIndex="2" width="40ch" id="issn" precision="19" scale="4" type="text">
+              <label place="TOP">
+                <from-field colon="true"/>
+              </label>
+            </input>
+          </row>
+          <row fill="LEFT" vfill="TOP">
+            <empty align="LEFT" valign="TOP" indent="false" width="90ch"/>
+          </row>
+        </row>
+        <row fill="LEFT" vfill="TOP">
+          <empty align="LEFT" valign="TOP" indent="false" height="2ch"/>
+        </row>
+        <row fill="LEFT" vfill="TOP">
+          <border type="solid" color="">
+            <title>Iso.F.default.systemData</title>
+          </border>
+          <row fill="LEFT" vfill="TOP">
+            <input align="LEFT" valign="TOP" indent="false" columnIndex="1" width="40ch" id="sysno" precision="19" scale="4" type="text">
+              <label place="TOP">
+                <from-field colon="true"/>
+              </label>
+            </input>
+            <input align="LEFT" valign="TOP" indent="false" columnIndex="2" width="40ch" id="pole001" precision="19" scale="4" type="text">
+              <label place="TOP">
+                <from-field colon="true"/>
+              </label>
+            </input>
+          </row>
+          <row fill="LEFT" vfill="TOP">
+            <empty align="LEFT" valign="TOP" indent="false" width="90ch"/>
+          </row>
+        </row>
+      </form-body>
+    </screen-form>
+    <tree name="AvailableForms">
+      <node formName="default"/>
+    </tree>
+  </forms>
+  <uniqueFields/>
+</desk>

@@ -1,0 +1,39 @@
+/* *****************************************************************************
+ * To change this template, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package cz.incad.relief3.rdcz.uniimporter;
+
+import cz.incad.relief3.rdcz.uniimporter.model.DataParserCsv;
+import cz.incad.relief3.rdcz.uniimporter.model.OneIssue;
+import cz.incad.relief3.rdcz.uniimporter.utils.OneSource;
+import java.io.File;
+
+/** ****************************************************************************
+ *
+ * @author martin.novacek@incad.cz
+ */
+public class Test_ParserCSV {
+
+    /** ************************************************************************
+     * 
+     * @param args 
+     */
+    public static void main(String[] args) {
+        System.out.println("Start TEST");
+        DataParserCsv dp = new DataParserCsv();
+        File file = new File("data.csv");
+        OneSource oneSource = new OneSource();
+        OneIssue oneIssue = new OneIssue(file, oneSource);
+        oneIssue.source.source_parseMethod_argument1 = "CP1250";
+        oneIssue.source.source_parseMethod_argument2 = "|";
+        
+        dp.parseIt(oneIssue);
+        for (int i = 0; i < oneIssue.lRecords.size(); i++) {
+            System.out.println("--------------------------------------------------------------------------------");
+            System.out.println(oneIssue.lRecords.get(i).allAboutMe());
+        }
+        System.out.println("Finish TEST");
+    }
+
+}

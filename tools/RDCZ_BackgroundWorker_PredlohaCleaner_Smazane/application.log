@@ -1,0 +1,33 @@
+VI 20, 2017 4:18:21 ODP. cz.incad.rd.backgroundworker_predlohacleaner_smazane.Main main
+INFO: Neplecha zapo?ata...
+VI 20, 2017 4:18:21 ODP. cz.incad.rd.backgroundworker_predlohacleaner_smazane.Peon <init>
+INFO: Pokus o p?ipojení do Releif.
+URL:ormi://127.0.0.1:23794/reliefAppName
+LOGIN:admin
+PASSWORD:123
+VI 20, 2017 4:18:21 ODP. com.amaio.plaant.businessFunctions.impl.BusinessFunctionContextImpl initServices
+WARNING: Unable to get Plaant datasource from JNDI. One possible cause is that the code is not running on server. Message:jdbc/PlaantEJBDataSource not found in Application Client
+VI 20, 2017 4:18:21 ODP. cz.incad.rd.backgroundworker_predlohacleaner_smazane.Peon <init>
+INFO: Relief connection sucessfull.
+VI 20, 2017 4:18:22 ODP. cz.incad.r3tools.R3FilterTools addFilterRule
+FINEST: DEBUG - CLASSNAME: cz.incad.rd.Predloha
+VI 20, 2017 4:18:22 ODP. cz.incad.r3tools.R3FilterTools addFilterRule
+FINEST: DEBUG - FIELDNAME: stavRec
+VI 20, 2017 4:18:22 ODP. cz.incad.r3tools.R3FilterTools addFilterRule
+FINEST: DEBUG - FILTER-VALUE: vyrazeno
+VI 20, 2017 4:18:23 ODP. cz.incad.rd.backgroundworker_predlohacleaner_smazane.Peon run
+INFO:  hledam: 351720
+VI 20, 2017 4:18:23 ODP. cz.incad.r3tools.R3FilterTools addFilterRule
+FINEST: DEBUG - CLASSNAME: cz.incad.rd.DigObjekt
+VI 20, 2017 4:18:23 ODP. cz.incad.r3tools.R3FilterTools addFilterRule
+FINEST: DEBUG - FIELDNAME: rPredloha
+VI 20, 2017 4:18:23 ODP. cz.incad.r3tools.R3FilterTools addFilterRule
+FINEST: DEBUG - FILTER-VALUE: 351720
+VI 20, 2017 4:18:23 ODP. cz.incad.rd.backgroundworker_predlohacleaner_smazane.Peon run
+SEVERE:  zaznam obsahuje Digitalni objekt. mazu
+VI 20, 2017 4:18:23 ODP. cz.incad.rd.backgroundworker_predlohacleaner_smazane.Peon run
+SEVERE:  mazu digObjekt: cz.incad.rd.DigObjekt:3
+VI 20, 2017 4:18:25 ODP. cz.incad.rd.backgroundworker_predlohacleaner_smazane.Peon run
+INFO: DELETING: cz.incad.rd.Predloha:351720 - Pr000351940 (smazan 1 zaznam digObjektu)
+VI 20, 2017 4:18:26 ODP. cz.incad.rd.backgroundworker_predlohacleaner_smazane.Main main
+INFO: Neplecha ukon?ena...

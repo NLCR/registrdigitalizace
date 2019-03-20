@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<desk bundle="ServerBundle">
+  <deskPackage>cz.incad.core.lend</deskPackage>
+  <deskName>KatCtenar</deskName>
+  <deskHumanHelp>cz.incad.core.lend.KatCtenar_help</deskHumanHelp>
+  <deskHumanName>cz.incad.core.lend.KatCtenar</deskHumanName>
+  <deskDBName>KatCtenar</deskDBName>
+  <deskRoot>cz.incad.core.lend.Kategorie</deskRoot>
+  <machineModel>cz.incad.core.lend.KatCtenar</machineModel>
+  <fields>
+    <field>
+      <fieldName>tUlozeni</fieldName>
+      <fieldHumanName>cz.incad.core.lend.KatCtenar.tUlozeni</fieldHumanName>
+      <fieldHumanHelp>cz.incad.core.lend.KatCtenar.tUlozeni_help</fieldHumanHelp>
+      <fieldDBName>rKatCtenarUl</fieldDBName>
+      <fieldType>TAB</fieldType>
+      <fieldRepresentation>REP</fieldRepresentation>
+      <reference relationshipType="aggregation" rTable="false">cz.incad.core.lend.Ulozeni</reference>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+  </fields>
+  <forms>
+    <screen-form name="KatCtenarF" formHumanName="cz.incad.core.lend.KatCtenarF" id="cz.incad.core.lend.KatCtenar">
+      <form-body align="LEFT" valign="TOP">
+        <row fill="LEFT" vfill="TOP">
+          <input align="LEFT" valign="TOP" indent="false" columnIndex="1" width="30ch" id="value" precision="19" scale="4" type="text">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </input>
+          <input align="LEFT" valign="TOP" indent="false" columnIndex="2" width="30ch" id="cz" precision="19" scale="4" type="text">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </input>
+        </row>
+        <row fill="LEFT" vfill="TOP">
+          <input align="LEFT" valign="TOP" indent="false" columnIndex="1" width="20ch" id="en" precision="19" scale="4" type="text">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </input>
+          <input align="LEFT" valign="TOP" indent="false" columnIndex="2" width="20ch" id="de" precision="19" scale="4" type="text">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </input>
+          <input align="LEFT" valign="TOP" indent="false" columnIndex="3" width="20ch" id="fr" precision="19" scale="4" type="text">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </input>
+        </row>
+        <row fill="LEFT" vfill="TOP">
+          <input align="LEFT" valign="TOP" indent="false" columnIndex="1" width="20ch" id="vaha" precision="0" scale="0" type="text">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </input>
+          <input align="LEFT" valign="TOP" indent="false" columnIndex="2" width="20ch" id="pocetDni" precision="19" scale="0" type="text">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </input>
+        </row>
+        <row fill="LEFT" vfill="TOP">
+          <repeat align="LEFT" valign="TOP" indent="false" id="tUlozeni" precision="0" scale="0" refclass="cz.incad.core.lend.Ulozeni" form="UlozeniF">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </repeat>
+        </row>
+      </form-body>
+    </screen-form>
+    <tree name="AvailableForms">
+      <node formName="KatCtenarF"/>
+    </tree>
+  </forms>
+  <uniqueFields/>
+</desk>

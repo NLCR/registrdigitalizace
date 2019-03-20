@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<desk bundle="ServerBundle">
+  <deskPackage>cz.incad.rd</deskPackage>
+  <deskName>Skener</deskName>
+  <deskHumanHelp>Skener_help</deskHumanHelp>
+  <deskHumanName>Skener</deskHumanName>
+  <deskDBName>Skener</deskDBName>
+  <deskRoot>cz.incad.core.basic.DLists</deskRoot>
+  <machineModel>cz.incad.rd.Skener</machineModel>
+  <historyEnabled>true</historyEnabled>
+  <fields>
+    <field>
+      <fieldName>modelSkeneru</fieldName>
+      <fieldHumanName>Skener.modelSkeneru</fieldHumanName>
+      <fieldHumanHelp>Skener.modelSkeneru_help</fieldHumanHelp>
+      <fieldDBName>modelSkeneru</fieldDBName>
+      <fieldType>STR</fieldType>
+      <fieldRepresentation>COM</fieldRepresentation>
+      <list>DmodelSkeneru</list>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>pouzitySW</fieldName>
+      <fieldHumanName>Skener.pouzitySW</fieldHumanName>
+      <fieldHumanHelp>Skener.pouzitySW_help</fieldHumanHelp>
+      <fieldDBName>pouzitySW</fieldDBName>
+      <fieldType>STR</fieldType>
+      <fieldRepresentation>EDI</fieldRepresentation>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>typSkeneru</fieldName>
+      <fieldHumanName>Skener.typSkeneru</fieldHumanName>
+      <fieldHumanHelp>Skener.typSkeneru_help</fieldHumanHelp>
+      <fieldDBName>typSkeneru</fieldDBName>
+      <fieldType>STR</fieldType>
+      <fieldRepresentation>COM</fieldRepresentation>
+      <list>SLtypSkeneru</list>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>verzeSW</fieldName>
+      <fieldHumanName>Skener.verzeSW</fieldHumanName>
+      <fieldHumanHelp>Skener.verzeSW_help</fieldHumanHelp>
+      <fieldDBName>verzeSW</fieldDBName>
+      <fieldType>STR</fieldType>
+      <fieldRepresentation>EDI</fieldRepresentation>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>vlastnik</fieldName>
+      <fieldHumanName>Skener.vlastnik</fieldHumanName>
+      <fieldHumanHelp>Skener.vlastnik_help</fieldHumanHelp>
+      <fieldDBName>vlastnik</fieldDBName>
+      <fieldType>STR</fieldType>
+      <fieldRepresentation>COM</fieldRepresentation>
+      <list>DzarazeniUser</list>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>vyrobceSkeneru</fieldName>
+      <fieldHumanName>Skener.vyrobceSkeneru</fieldHumanName>
+      <fieldHumanHelp>Skener.vyrobceSkeneru_help</fieldHumanHelp>
+      <fieldDBName>vyrobceSkeneru</fieldDBName>
+      <fieldType>STR</fieldType>
+      <fieldRepresentation>EDI</fieldRepresentation>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>vyrobceSW</fieldName>
+      <fieldHumanName>Skener.vyrobceSW</fieldHumanName>
+      <fieldHumanHelp>Skener.vyrobceSW_help</fieldHumanHelp>
+      <fieldDBName>vyrobceSW</fieldDBName>
+      <fieldType>STR</fieldType>
+      <fieldRepresentation>EDI</fieldRepresentation>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+  </fields>
+  <forms>
+    <screen-form name="SkenerF" formHumanName="SkenerF" id="cz.incad.rd.Skener">
+      <form-body align="LEFT" valign="TOP">
+        <row fill="LEFT" vfill="TOP">
+          <input align="LEFT" valign="TOP" indent="false" columnIndex="1" width="20ch" id="value" precision="19" scale="4" type="text">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </input>
+          <check align="LEFT" valign="TOP" indent="false" columnIndex="2" id="use" precision="19" scale="4">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </check>
+          <input align="LEFT" valign="TOP" indent="false" columnIndex="3" width="5ch" id="poradi" precision="19" scale="0" type="text">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </input>
+        </row>
+        <row fill="LEFT" vfill="TOP">
+          <input align="LEFT" valign="TOP" indent="false" columnIndex="1" width="25ch" id="cz" precision="19" scale="4" type="text">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </input>
+          <input align="LEFT" valign="TOP" indent="false" columnIndex="2" width="25ch" id="en" precision="19" scale="4" type="text">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </input>
+        </row>
+        <row fill="LEFT" vfill="TOP">
+          <input align="LEFT" valign="TOP" indent="false" columnIndex="1" width="25ch" id="de" precision="19" scale="4" type="text">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </input>
+          <input align="LEFT" valign="TOP" indent="false" columnIndex="2" width="25ch" id="fr" precision="19" scale="4" type="text">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </input>
+        </row>
+        <row fill="LEFT" vfill="TOP">
+          <select align="LEFT" valign="TOP" indent="false" columnIndex="1" id="listZarazeniUser" precision="19" scale="4" type="list" multi="true" editable="false" rows="15">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </select>
+          <select align="LEFT" valign="TOP" indent="false" columnIndex="2" id="listRoleUser" precision="19" scale="4" type="list" multi="true" editable="false" rows="15">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </select>
+        </row>
+        <row fill="LEFT" vfill="TOP">
+          <select align="LEFT" valign="TOP" indent="false" width="80ch" id="vlastnik" precision="0" scale="0" type="combo" multi="false" editable="false">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </select>
+        </row>
+        <row fill="LEFT" vfill="TOP">
+          <select align="LEFT" valign="TOP" indent="false" columnIndex="1" width="30ch" id="typSkeneru" precision="0" scale="0" type="combo" multi="false" editable="false">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </select>
+          <select align="LEFT" valign="TOP" indent="false" columnIndex="2" width="30ch" id="modelSkeneru" precision="0" scale="0" type="combo" multi="false" editable="false">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </select>
+          <input align="LEFT" valign="TOP" indent="false" columnIndex="3" width="40ch" id="vyrobceSkeneru" precision="0" scale="0" type="text">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </input>
+        </row>
+        <row fill="LEFT" vfill="TOP">
+          <input align="LEFT" valign="TOP" indent="false" columnIndex="1" width="30ch" id="pouzitySW" precision="0" scale="0" type="text">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </input>
+          <input align="LEFT" valign="TOP" indent="false" columnIndex="2" width="30ch" id="verzeSW" precision="0" scale="0" type="text">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </input>
+          <input align="LEFT" valign="TOP" indent="false" columnIndex="3" width="40ch" id="vyrobceSW" precision="0" scale="0" type="text">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </input>
+        </row>
+        <row fill="LEFT" vfill="TOP">
+          <input align="LEFT" valign="TOP" indent="false" width="60ch" id="poznamka" precision="19" scale="4" type="text" rows="5">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </input>
+        </row>
+      </form-body>
+    </screen-form>
+    <tree name="AvailableForms">
+      <node formName="SkenerF"/>
+    </tree>
+  </forms>
+  <uniqueFields/>
+</desk>

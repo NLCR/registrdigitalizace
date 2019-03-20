@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<desk bundle="ServerBundle">
+  <deskPackage>cz.incad.rd</deskPackage>
+  <deskName>UUID</deskName>
+  <deskHumanHelp>UUID_help</deskHumanHelp>
+  <deskHumanName>UUID</deskHumanName>
+  <deskDBName>UUID</deskDBName>
+  <deskRoot/>
+  <machineModel>cz.incad.rd.UUID</machineModel>
+  <fields>
+    <field>
+      <fieldName>druhDokumentu</fieldName>
+      <fieldHumanName>UUID.druhDokumentu</fieldHumanName>
+      <fieldHumanHelp>UUID.druhDokumentu_help</fieldHumanHelp>
+      <fieldDBName>druhDokumentu</fieldDBName>
+      <fieldType>STR</fieldType>
+      <fieldRepresentation>EDI</fieldRepresentation>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>uuid</fieldName>
+      <fieldHumanName>UUID.uuid</fieldHumanName>
+      <fieldHumanHelp>UUID.uuid_help</fieldHumanHelp>
+      <fieldDBName>uuid</fieldDBName>
+      <fieldType>STR</fieldType>
+      <fieldRepresentation>EDI</fieldRepresentation>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+  </fields>
+  <forms>
+    <screen-form name="UUID_F" formHumanName="UUID_F" id="cz.incad.rd.UUID">
+      <form-body align="LEFT" valign="TOP">
+        <row fill="LEFT" vfill="TOP">
+          <input align="LEFT" valign="TOP" indent="false" columnIndex="1" width="80ch" id="uuid" precision="0" scale="0" type="text">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </input>
+          <input align="LEFT" valign="TOP" indent="false" columnIndex="2" width="20ch" id="druhDokumentu" precision="0" scale="0" type="text">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </input>
+        </row>
+      </form-body>
+    </screen-form>
+    <tree name="AvailableForms">
+      <node formName="UUID_F"/>
+    </tree>
+  </forms>
+  <uniqueFields/>
+</desk>

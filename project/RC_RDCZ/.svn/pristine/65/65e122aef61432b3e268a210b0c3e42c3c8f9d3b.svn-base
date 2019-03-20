@@ -1,0 +1,137 @@
+/* *****************************************************************************
+ * To change this template, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package cz.incad.rd;
+
+import com.amaio.plaant.dbdef.ListValue;
+import com.amaio.plaant.sync.Record;
+import cz.incad.core.constants.CcoreDLists;
+import cz.incad.core.lair.DynamicListMother;
+import cz.incad.core.tools.DirectConnection;
+import cz.incad.core.tools.ReliefLogger;
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.text.MessageFormat;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.Locale;
+
+/** ****************************************************************************
+ *
+ * @author martin
+ */
+public class PrispevatelEntity extends DynamicListMother implements CcoreDLists {
+    public static final String F_nazev_STR          = "nazev";
+    public static final String F_sigla_STR          = "sigla";
+    public static final String F_nazevEn_STR        = "nazevEn";
+    public static final String F_zkratka_STR        = "zkratka";
+    public static final String F_osoba_STR          = "osoba";
+    public static final String F_email_STR          = "email";
+    public static final String F_homepage_STR       = "homepage";
+    public static final String F_tDigKnihovna_TAB   = "tDigKnihovna";
+    public static final String F_tKatalog_TAB       = "tKatalog";
+    public static final String F_adresa_STR         = "adresa";
+    public static final String F_reliefUser_STR     = "reliefUser";
+    public static final String F_linkRejstrik_STR   = "linkRejstrik";
+    public static final String F_tImporty_TAB       = "tImporty";
+    public static final String F_stav_STR           = "stav";
+    public static final String F_telefon_STR        = "telefon";
+    public static final String F_login_STR          = "login";
+    public static final String F_heslo_STR          = "heslo";
+    
+    private static final String IS_LANG_SUPPORTED_SQL = 
+        "SELECT COUNT(COLUMN_NAME) FROM USER_TAB_COLUMNS" +
+        " WHERE TABLE_NAME = ''Prispevatel'' AND" +
+        " COLUMN_NAME = ''{0}''";
+    /** Šablona pro výběr hodnot. */
+    private static final String SELECT_VALUES_SQL = "SELECT VALUE,{0} FROM Prispevatel WHERE (CLASSNAME = ''{1}'') ORDER BY {3}, {2}";
+
+    /** ************************************************************************
+     * 
+     * @param rec
+     * @return 
+     */
+    @Override
+    public Record onGetRecord(Record rec) {
+        return rec;
+    }
+
+    /** ************************************************************************
+     * 
+     * @param loc
+     * @return 
+     */
+    public List getLocalizedList(Locale locale) {
+        Connection con;
+        List<ListValue> items = new LinkedList<ListValue>();
+        MessageFormat mf;
+        Object[] args = new Object[4];
+        ResultSet rs;
+        String sql;
+        Statement stmt;
+        
+        args[0] = validateLanguage(locale);
+        args[1] = getClassName();
+        args[2] = isAlphabetize()?args[0]:"VALUE";
+        args[3] = "PORADI";
+        mf = new MessageFormat(SELECT_VALUES_SQL);
+        sql = mf.format(args);
+        ReliefLogger.info("Calling:\n" + sql);
+        try {
+            con = DirectConnection.getConnection();
+            stmt = con.createStatement();
+            rs = stmt.executeQuery(sql);
+            //přidání prázdné hodnoty na začátek listu.
+            items.add(new ListValue("", "[null]"));
+            while (rs.next()) {
+                items.add(new ListValue(rs.getString(2), rs.getString(1)));
+            }
+            if (rs != null) rs.close();
+            if (stmt != null) stmt.close();
+            if (con != null) con.close();
+        }
+        catch (SQLException exc) {
+            ReliefLogger.throwing("", "", exc);
+        }
+        return items;
+    }
+
+    /***************************************************************************
+     * Zjistí jestli jazyk daného locale je podporován v naší tabulce.
+     * @param locale Daný jazyk
+     * @return Pokud se jedná o podporovaný jazyk vrátí jazykový řetězec
+     * vyextrahovaný z parametru, jinak vrátí výchozí jazyk "CZ".
+     */
+    protected String validateLanguage(Locale locale) {
+        Connection con;
+        MessageFormat mf;
+        ResultSet rs;
+        String jazyk = locale.getLanguage().toUpperCase();
+        String sql;
+        Statement stmt;
+
+        ReliefLogger.severe("   " + locale.getLanguage() + ", " + locale.getCountry() + ", " + locale.getVariant() + ", " + locale.getDisplayName());
+        mf = new MessageFormat(IS_LANG_SUPPORTED_SQL);
+        sql = mf.format(new Object[] {jazyk});
+        ReliefLogger.info("RELIEF: Calling:\n" + sql);
+        try {
+            con = DirectConnection.getConnection();
+            stmt = con.createStatement();
+            rs = stmt.executeQuery(sql);
+            rs.next();
+            jazyk = rs.getInt(1) == 1?jazyk:"CZ";
+            if (rs != null) rs.close();
+            if (stmt != null) stmt.close();
+            if (con != null) con.close();
+        }
+        catch (SQLException exc) {
+            jazyk = "CZ";
+            ReliefLogger.throwing("", "", exc);
+        }
+        return jazyk;
+    }
+
+ }

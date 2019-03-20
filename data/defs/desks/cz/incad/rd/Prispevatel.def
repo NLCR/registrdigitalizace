@@ -1,0 +1,513 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<desk bundle="ServerBundle">
+  <deskPackage>cz.incad.rd</deskPackage>
+  <deskName>Prispevatel</deskName>
+  <deskHumanHelp>Prispevatel_help</deskHumanHelp>
+  <deskHumanName>Prispevatel</deskHumanName>
+  <deskDBName>Prispevatel</deskDBName>
+  <deskRoot/>
+  <machineModel>cz.incad.rd.Prispevatel</machineModel>
+  <fields>
+    <field>
+      <fieldName>adresa</fieldName>
+      <fieldHumanName>Prispevatel.adresa</fieldHumanName>
+      <fieldHumanHelp>Prispevatel.adresa_help</fieldHumanHelp>
+      <fieldDBName>adresa</fieldDBName>
+      <fieldType>STR</fieldType>
+      <fieldRepresentation>EDI</fieldRepresentation>
+      <validateLength>1000</validateLength>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>cz</fieldName>
+      <fieldHumanName>cz.incad.core.basic.DList.cz</fieldHumanName>
+      <fieldHumanHelp>cz.incad.core.basic.DLists.cz_help</fieldHumanHelp>
+      <fieldDBName>cz</fieldDBName>
+      <fieldType>STR</fieldType>
+      <fieldRepresentation>EDI</fieldRepresentation>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>ediDate</fieldName>
+      <fieldHumanName>Prispevatel.ediDate</fieldHumanName>
+      <fieldHumanHelp>Prispevatel.ediDate_help</fieldHumanHelp>
+      <fieldDBName>ediDate</fieldDBName>
+      <fieldType>DAT</fieldType>
+      <fieldRepresentation>EDI</fieldRepresentation>
+      <computed/>
+      <formatPattern>dd.MM.yyyy</formatPattern>
+      <formatPatternForInput>dd.MM.yyyy</formatPatternForInput>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>zalDate</fieldName>
+      <fieldHumanName>Prispevatel.zalDate</fieldHumanName>
+      <fieldHumanHelp>Prispevatel.zalDate_help</fieldHumanHelp>
+      <fieldDBName>zalDate</fieldDBName>
+      <fieldType>DAT</fieldType>
+      <fieldRepresentation>EDI</fieldRepresentation>
+      <computed/>
+      <formatPattern>dd.MM.yyyy</formatPattern>
+      <formatPatternForInput>dd.MM.yyyy</formatPatternForInput>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>de</fieldName>
+      <fieldHumanName>cz.incad.core.basic.DLists.de</fieldHumanName>
+      <fieldHumanHelp>cz.incad.core.basic.DLists.de_help</fieldHumanHelp>
+      <fieldDBName>de</fieldDBName>
+      <fieldType>STR</fieldType>
+      <fieldRepresentation>EDI</fieldRepresentation>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>tDigKnihovna</fieldName>
+      <fieldHumanName>Prispevatel.tDigKnihovna</fieldHumanName>
+      <fieldHumanHelp>Prispevatel.tDigKnihovna_help</fieldHumanHelp>
+      <fieldDBName>RPrispevatel_DigKnihovna</fieldDBName>
+      <fieldType>TAB</fieldType>
+      <fieldRepresentation>REP</fieldRepresentation>
+      <reference relationshipType="aggregation" rTable="false">cz.incad.rd.DigKnihovna</reference>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>email</fieldName>
+      <fieldHumanName>Prispevatel.email</fieldHumanName>
+      <fieldHumanHelp>Prispevatel.email_help</fieldHumanHelp>
+      <fieldDBName>email</fieldDBName>
+      <fieldType>STR</fieldType>
+      <fieldRepresentation>EDI</fieldRepresentation>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>ediUser</fieldName>
+      <fieldHumanName>Prispevatel.ediUser</fieldHumanName>
+      <fieldHumanHelp>Prispevatel.ediUser_help</fieldHumanHelp>
+      <fieldDBName>ediUser</fieldDBName>
+      <fieldType>STR</fieldType>
+      <fieldRepresentation>EDI</fieldRepresentation>
+      <computed/>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>fr</fieldName>
+      <fieldHumanName>cz.incad.core.basic.DLists.fr</fieldHumanName>
+      <fieldHumanHelp>cz.incad.core.basic.DLists.fr_help</fieldHumanHelp>
+      <fieldDBName>fr</fieldDBName>
+      <fieldType>STR</fieldType>
+      <fieldRepresentation>EDI</fieldRepresentation>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>en</fieldName>
+      <fieldHumanName>cz.incad.core.basic.DLists.en</fieldHumanName>
+      <fieldHumanHelp>cz.incad.core.basic.DLists.en_help</fieldHumanHelp>
+      <fieldDBName>en</fieldDBName>
+      <fieldType>STR</fieldType>
+      <fieldRepresentation>EDI</fieldRepresentation>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>homepage</fieldName>
+      <fieldHumanName>Prispevatel.homepage</fieldHumanName>
+      <fieldHumanHelp>Prispevatel.homepage_help</fieldHumanHelp>
+      <fieldDBName>homepage</fieldDBName>
+      <fieldType>STR</fieldType>
+      <fieldRepresentation>EDI</fieldRepresentation>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>tImporty</fieldName>
+      <fieldHumanName>Prispevatel.tImporty</fieldHumanName>
+      <fieldHumanHelp>Prispevatel.tImporty_help</fieldHumanHelp>
+      <fieldDBName>RPrispevatel_Importy</fieldDBName>
+      <fieldType>TAB</fieldType>
+      <fieldRepresentation>TAB</fieldRepresentation>
+      <reference relationshipType="aggregation" rTable="false">cz.incad.rd.Importy</reference>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>tKatalog</fieldName>
+      <fieldHumanName>Prispevatel.tKatalog</fieldHumanName>
+      <fieldHumanHelp>Prispevatel.tKatalog_help</fieldHumanHelp>
+      <fieldDBName>RPrispevatel_Katalog</fieldDBName>
+      <fieldType>TAB</fieldType>
+      <fieldRepresentation>REP</fieldRepresentation>
+      <reference relationshipType="aggregation" rTable="false">cz.incad.rd.Katalog</reference>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>osoba</fieldName>
+      <fieldHumanName>Prispevatel.osoba</fieldHumanName>
+      <fieldHumanHelp>Prispevatel.osoba_help</fieldHumanHelp>
+      <fieldDBName>osoba</fieldDBName>
+      <fieldType>STR</fieldType>
+      <fieldRepresentation>EDI</fieldRepresentation>
+      <validateLength>1000</validateLength>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>nazev</fieldName>
+      <fieldHumanName>Prispevatel.nazev</fieldHumanName>
+      <fieldHumanHelp>Prispevatel.nazev_help</fieldHumanHelp>
+      <fieldDBName>nazev</fieldDBName>
+      <fieldType>STR</fieldType>
+      <fieldRepresentation>EDI</fieldRepresentation>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>nazevEn</fieldName>
+      <fieldHumanName>Prispevatel.nazevEn</fieldHumanName>
+      <fieldHumanHelp>Prispevatel.nazevEn_help</fieldHumanHelp>
+      <fieldDBName>nazevEn</fieldDBName>
+      <fieldType>STR</fieldType>
+      <fieldRepresentation>EDI</fieldRepresentation>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>poradi</fieldName>
+      <fieldHumanName>DLists.poradi</fieldHumanName>
+      <fieldHumanHelp>DLists.poradi_help</fieldHumanHelp>
+      <fieldDBName>poradi</fieldDBName>
+      <fieldType>INT</fieldType>
+      <fieldRepresentation>EDI</fieldRepresentation>
+      <precision>19</precision>
+    </field>
+    <field>
+      <fieldName>use</fieldName>
+      <fieldHumanName>cz.incad.core.basic.DLists.use</fieldHumanName>
+      <fieldHumanHelp>cz.incad.core.basic.DLists.use_help</fieldHumanHelp>
+      <fieldDBName>use</fieldDBName>
+      <fieldType>BOL</fieldType>
+      <fieldRepresentation>CHK</fieldRepresentation>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>poznamka</fieldName>
+      <fieldHumanName>cz.incad.core.basic.DLists.poznamka</fieldHumanName>
+      <fieldHumanHelp>cz.incad.core.basic.DLists.poznamka_help</fieldHumanHelp>
+      <fieldDBName>poznamka</fieldDBName>
+      <fieldType>STR</fieldType>
+      <fieldRepresentation>EDI</fieldRepresentation>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>sigla</fieldName>
+      <fieldHumanName>Prispevatel.sigla</fieldHumanName>
+      <fieldHumanHelp>Prispevatel.sigla_help</fieldHumanHelp>
+      <fieldDBName>sigla</fieldDBName>
+      <fieldType>STR</fieldType>
+      <fieldRepresentation>COM</fieldRepresentation>
+      <list>InsVlastnik</list>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>stav</fieldName>
+      <fieldHumanName>Prispevatel.stav</fieldHumanName>
+      <fieldHumanHelp>Prispevatel.stav_help</fieldHumanHelp>
+      <fieldDBName>stav</fieldDBName>
+      <fieldType>STR</fieldType>
+      <fieldRepresentation>COM</fieldRepresentation>
+      <list>SLPrispevatelStav</list>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>telefon</fieldName>
+      <fieldHumanName>Prispevatel.telefon</fieldHumanName>
+      <fieldHumanHelp>Prispevatel.telefon_help</fieldHumanHelp>
+      <fieldDBName>telefon</fieldDBName>
+      <fieldType>STR</fieldType>
+      <fieldRepresentation>EDI</fieldRepresentation>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>listRoleUser</fieldName>
+      <fieldHumanName>DLists.listRoleUser</fieldHumanName>
+      <fieldHumanHelp>DLists.listRoleUser_help</fieldHumanHelp>
+      <fieldDBName>listRoleUser</fieldDBName>
+      <fieldType>STR</fieldType>
+      <fieldRepresentation>COM</fieldRepresentation>
+      <list>DroleUser</list>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>value</fieldName>
+      <fieldHumanName>cz.incad.core.basic.DList.value</fieldHumanName>
+      <fieldHumanHelp>cz.incad.core.basic.DList.value_help</fieldHumanHelp>
+      <fieldDBName>value</fieldDBName>
+      <fieldType>STR</fieldType>
+      <fieldRepresentation>EDI</fieldRepresentation>
+      <validateEmpty/>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>zalUser</fieldName>
+      <fieldHumanName>Prispevatel.zalUser</fieldHumanName>
+      <fieldHumanHelp>Prispevatel.zalUser_help</fieldHumanHelp>
+      <fieldDBName>zalUser</fieldDBName>
+      <fieldType>STR</fieldType>
+      <fieldRepresentation>EDI</fieldRepresentation>
+      <computed/>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>zarazeniUser</fieldName>
+      <fieldHumanName>Prispevatel.zarazeniUser</fieldHumanName>
+      <fieldHumanHelp>Prispevatel.zarazeniUser_help</fieldHumanHelp>
+      <fieldDBName>zarazeniUser</fieldDBName>
+      <fieldType>STR</fieldType>
+      <fieldRepresentation>COM</fieldRepresentation>
+      <list>DzarazeniUser</list>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>listZarazeniUser</fieldName>
+      <fieldHumanName>DLists.listZarazeniUser</fieldHumanName>
+      <fieldHumanHelp>DLists.listZarazeniUser_help</fieldHumanHelp>
+      <fieldDBName>listZarazeniUser</fieldDBName>
+      <fieldType>STR</fieldType>
+      <fieldRepresentation>COM</fieldRepresentation>
+      <list>DzarazeniUser</list>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>linkRejstrik</fieldName>
+      <fieldHumanName>Prispevatel.linkRejstrik</fieldHumanName>
+      <fieldHumanHelp>Prispevatel.linkRejstrik_help</fieldHumanHelp>
+      <fieldDBName>linkRejstrik</fieldDBName>
+      <fieldType>STR</fieldType>
+      <fieldRepresentation>EDI</fieldRepresentation>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>zkratka</fieldName>
+      <fieldHumanName>Prispevatel.zkratka</fieldHumanName>
+      <fieldHumanHelp>Prispevatel.zkratka_help</fieldHumanHelp>
+      <fieldDBName>zkratka</fieldDBName>
+      <fieldType>STR</fieldType>
+      <fieldRepresentation>EDI</fieldRepresentation>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+  </fields>
+  <forms>
+    <screen-form name="PrispevatelF" formHumanName="PrispevatelF" id="cz.incad.rd.Prispevatel">
+      <form-body align="LEFT" valign="TOP">
+        <row fill="LEFT" vfill="TOP">
+          <input align="LEFT" valign="TOP" indent="false" width="20ch" id="value" precision="0" scale="0" type="text">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </input>
+        </row>
+        <row fill="LEFT" vfill="TOP">
+          <input align="LEFT" valign="TOP" indent="false" width="120ch" id="nazev" precision="19" scale="4" type="text">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </input>
+        </row>
+        <row fill="LEFT" vfill="TOP">
+          <input align="LEFT" valign="TOP" indent="false" width="120ch" id="nazevEn" precision="19" scale="4" type="text">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </input>
+        </row>
+        <row fill="LEFT" vfill="TOP">
+          <select align="LEFT" valign="TOP" indent="false" columnIndex="1" width="30ch" id="sigla" precision="0" scale="0" type="combo" multi="false" editable="false">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </select>
+          <input align="LEFT" valign="TOP" indent="false" columnIndex="2" width="30ch" id="zkratka" precision="19" scale="4" type="text">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </input>
+          <select align="LEFT" valign="TOP" indent="false" columnIndex="3" id="zarazeniUser" precision="0" scale="0" type="combo" multi="false" editable="false">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </select>
+        </row>
+        <row fill="LEFT" vfill="TOP">
+          <input align="LEFT" valign="TOP" indent="false" width="90ch" id="osoba" precision="19" scale="4" type="text">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </input>
+        </row>
+        <row fill="LEFT" vfill="TOP">
+          <input align="LEFT" valign="TOP" indent="false" columnIndex="1" width="50ch" id="telefon" precision="0" scale="0" type="text">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </input>
+          <input align="LEFT" valign="TOP" indent="false" columnIndex="2" width="50ch" id="email" precision="0" scale="0" type="text">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </input>
+        </row>
+        <row fill="LEFT" vfill="TOP">
+          <input align="LEFT" valign="TOP" indent="false" width="120ch" id="adresa" precision="0" scale="0" type="text">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </input>
+        </row>
+        <row fill="LEFT" vfill="TOP">
+          <input align="LEFT" valign="TOP" indent="false" width="120ch" id="homepage" precision="19" scale="4" type="text">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </input>
+        </row>
+        <row fill="LEFT" vfill="TOP">
+          <input align="LEFT" valign="TOP" indent="false" width="120ch" id="poznamka" precision="19" scale="4" type="text" rows="4">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </input>
+        </row>
+        <row fill="LEFT" vfill="TOP">
+          <select align="LEFT" valign="TOP" indent="false" width="20ch" id="stav" precision="0" scale="0" type="combo" multi="false" editable="false">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </select>
+          <input align="LEFT" valign="TOP" indent="false" columnIndex="2" width="20ch" id="zalDate" precision="0" scale="0" formatPattern="dd.MM.yyyy" formatPatternForInput="dd.MM.yyyy" type="text">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </input>
+          <input align="LEFT" valign="TOP" indent="false" columnIndex="3" width="20ch" id="zalUser" precision="0" scale="0" type="text">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </input>
+          <input align="LEFT" valign="TOP" indent="false" columnIndex="4" width="20ch" id="ediDate" precision="0" scale="0" formatPattern="dd.MM.yyyy" formatPatternForInput="dd.MM.yyyy" type="text">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </input>
+          <input align="LEFT" valign="TOP" indent="false" columnIndex="5" width="20ch" id="ediUser" precision="0" scale="0" type="text">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </input>
+        </row>
+        <row fill="LEFT" vfill="TOP">
+          <tabview align="LEFT" valign="TOP" indent="false" id="tKatalog" precision="19" scale="4" refclass="cz.incad.rd.Katalog" rows="10">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </tabview>
+        </row>
+        <row fill="LEFT" vfill="TOP">
+          <tabview align="LEFT" valign="TOP" indent="false" id="tDigKnihovna" precision="19" scale="4" refclass="cz.incad.rd.DigKnihovna" rows="10">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </tabview>
+        </row>
+        <row fill="LEFT" vfill="TOP">
+          <tabview align="LEFT" valign="TOP" indent="false" id="tImporty" precision="0" scale="0" refclass="cz.incad.rd.Importy" rows="10">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </tabview>
+        </row>
+      </form-body>
+    </screen-form>
+    <screen-form name="DListsF" formHumanName="DListsF" id="cz.incad.rd.Prispevatel">
+      <form-body align="LEFT" valign="TOP">
+        <row fill="LEFT" vfill="TOP">
+          <input align="LEFT" valign="TOP" indent="false" columnIndex="1" width="200px" id="value" precision="19" scale="4" type="text">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </input>
+          <check align="LEFT" valign="TOP" indent="false" columnIndex="2" id="use" precision="19" scale="4">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </check>
+          <input align="LEFT" valign="TOP" indent="false" columnIndex="3" id="poradi" precision="19" scale="0" type="text">
+            <label place="TOP">
+              <from-field colon="false"/>
+            </label>
+          </input>
+        </row>
+        <row fill="LEFT" vfill="TOP">
+          <empty align="LEFT" valign="TOP" indent="false" width="40px" height="40px"/>
+        </row>
+        <row fill="LEFT" vfill="TOP">
+          <input align="LEFT" valign="TOP" indent="false" columnIndex="1" width="300px" id="cz" precision="19" scale="4" type="text">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </input>
+          <input align="LEFT" valign="TOP" indent="false" columnIndex="2" width="300px" id="en" precision="19" scale="4" type="text">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </input>
+        </row>
+        <row fill="LEFT" vfill="TOP">
+          <input align="LEFT" valign="TOP" indent="false" columnIndex="1" width="300px" id="de" precision="19" scale="4" type="text">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </input>
+          <input align="LEFT" valign="TOP" indent="false" columnIndex="2" width="300px" id="fr" precision="19" scale="4" type="text">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </input>
+        </row>
+        <row fill="LEFT" vfill="TOP">
+          <input align="LEFT" valign="TOP" indent="false" width="600px" id="poznamka" precision="19" scale="4" type="text" rows="2">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </input>
+        </row>
+      </form-body>
+    </screen-form>
+    <tree name="AvailableForms">
+      <node formName="PrispevatelF"/>
+      <node formName="DListsF"/>
+    </tree>
+  </forms>
+  <uniqueFields/>
+</desk>

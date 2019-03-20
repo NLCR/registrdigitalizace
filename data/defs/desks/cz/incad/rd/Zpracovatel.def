@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<desk bundle="ServerBundle">
+  <deskPackage>cz.incad.rd</deskPackage>
+  <deskName>Zpracovatel</deskName>
+  <deskHumanHelp>Zpracovatel_help</deskHumanHelp>
+  <deskHumanName>Zpracovatel</deskHumanName>
+  <deskDBName>Zpracovatel</deskDBName>
+  <deskRoot/>
+  <machineModel>cz.incad.rd.Zpracovatel</machineModel>
+  <historyEnabled>true</historyEnabled>
+  <fields>
+    <field>
+      <fieldName>humanName</fieldName>
+      <fieldHumanName>Zpracovatel.humanName</fieldHumanName>
+      <fieldHumanHelp>Zpracovatel.humanName_help</fieldHumanHelp>
+      <fieldDBName>humanName</fieldDBName>
+      <fieldType>STR</fieldType>
+      <fieldRepresentation>EDI</fieldRepresentation>
+      <computed/>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>jmeno</fieldName>
+      <fieldHumanName>Zpracovatel.jmeno</fieldHumanName>
+      <fieldHumanHelp>Zpracovatel.jmeno_help</fieldHumanHelp>
+      <fieldDBName>jmeno</fieldDBName>
+      <fieldType>STR</fieldType>
+      <fieldRepresentation>EDI</fieldRepresentation>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>meta</fieldName>
+      <fieldHumanName>Zpracovatel.meta</fieldHumanName>
+      <fieldHumanHelp>Zpracovatel.meta_help</fieldHumanHelp>
+      <fieldDBName>meta</fieldDBName>
+      <fieldType>BOL</fieldType>
+      <fieldRepresentation>CHK</fieldRepresentation>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>mikro</fieldName>
+      <fieldHumanName>Zpracovatel.mikro</fieldHumanName>
+      <fieldHumanHelp>Zpracovatel.mikro_help</fieldHumanHelp>
+      <fieldDBName>mikro</fieldDBName>
+      <fieldType>BOL</fieldType>
+      <fieldRepresentation>CHK</fieldRepresentation>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>nazevOrg</fieldName>
+      <fieldHumanName>Zpracovatel.nazevOrg</fieldHumanName>
+      <fieldHumanHelp>Zpracovatel.nazevOrg_help</fieldHumanHelp>
+      <fieldDBName>nazevOrg</fieldDBName>
+      <fieldType>STR</fieldType>
+      <fieldRepresentation>EDI</fieldRepresentation>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>prijmeni</fieldName>
+      <fieldHumanName>Zpracovatel.prijmeni</fieldHumanName>
+      <fieldHumanHelp>Zpracovatel.prijmeni_help</fieldHumanHelp>
+      <fieldDBName>prijmeni</fieldDBName>
+      <fieldType>STR</fieldType>
+      <fieldRepresentation>EDI</fieldRepresentation>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>prip</fieldName>
+      <fieldHumanName>Zpracovatel.prip</fieldHumanName>
+      <fieldHumanHelp>Zpracovatel.prip_help</fieldHumanHelp>
+      <fieldDBName>prip</fieldDBName>
+      <fieldType>BOL</fieldType>
+      <fieldRepresentation>CHK</fieldRepresentation>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>proKoho</fieldName>
+      <fieldHumanName>Zpracovatel.proKoho</fieldHumanName>
+      <fieldHumanHelp>Zpracovatel.proKoho_help</fieldHumanHelp>
+      <fieldDBName>proKoho</fieldDBName>
+      <fieldType>STR</fieldType>
+      <fieldRepresentation>LST</fieldRepresentation>
+      <list>DzarazeniUser</list>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>sken</fieldName>
+      <fieldHumanName>Zpracovatel.sken</fieldHumanName>
+      <fieldHumanHelp>Zpracovatel.sken_help</fieldHumanHelp>
+      <fieldDBName>sken</fieldDBName>
+      <fieldType>BOL</fieldType>
+      <fieldRepresentation>CHK</fieldRepresentation>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>typZpracovatele</fieldName>
+      <fieldHumanName>Zpracovatel.typZpracovatele</fieldHumanName>
+      <fieldHumanHelp>Zpracovatel.typZpracovatele_help</fieldHumanHelp>
+      <fieldDBName>typZpracovatele</fieldDBName>
+      <fieldType>STR</fieldType>
+      <fieldRepresentation>RAD</fieldRepresentation>
+      <list>SLtypZpracovatele</list>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>value</fieldName>
+      <fieldHumanName>Zpracovatel.value</fieldHumanName>
+      <fieldHumanHelp>Zpracovatel.value_help</fieldHumanHelp>
+      <fieldDBName>value</fieldDBName>
+      <fieldType>STR</fieldType>
+      <fieldRepresentation>EDI</fieldRepresentation>
+      <computed/>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>publ</fieldName>
+      <fieldHumanName>Zpracovatel.publ</fieldHumanName>
+      <fieldHumanHelp>Zpracovatel.publ_help</fieldHumanHelp>
+      <fieldDBName>publ</fieldDBName>
+      <fieldType>BOL</fieldType>
+      <fieldRepresentation>CHK</fieldRepresentation>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+  </fields>
+  <forms>
+    <screen-form name="ZpracovatelF" formHumanName="ZpracovatelF" id="cz.incad.rd.Zpracovatel">
+      <form-body align="LEFT" valign="TOP">
+        <row fill="LEFT" vfill="TOP">
+          <radio align="LEFT" valign="TOP" indent="false" id="typZpracovatele" precision="0" scale="0" rows="1" cols="2"/>
+        </row>
+        <row fill="LEFT" vfill="TOP">
+          <input align="LEFT" valign="TOP" indent="false" columnIndex="1" width="30ch" id="prijmeni" precision="0" scale="0" type="text">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </input>
+          <input align="LEFT" valign="TOP" indent="false" columnIndex="2" width="30ch" id="jmeno" precision="0" scale="0" type="text">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </input>
+        </row>
+        <row fill="LEFT" vfill="TOP">
+          <input align="LEFT" valign="TOP" indent="false" width="120ch" id="nazevOrg" precision="0" scale="0" type="text">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </input>
+        </row>
+        <row fill="LEFT" vfill="TOP">
+          <select align="LEFT" valign="TOP" indent="false" id="proKoho" precision="0" scale="0" type="list" multi="true" editable="false" rows="10">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </select>
+        </row>
+      </form-body>
+    </screen-form>
+    <tree name="AvailableForms">
+      <node formName="ZpracovatelF"/>
+    </tree>
+  </forms>
+  <uniqueFields/>
+</desk>

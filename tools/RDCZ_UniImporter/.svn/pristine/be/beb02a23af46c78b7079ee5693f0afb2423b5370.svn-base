@@ -1,0 +1,714 @@
+/* *****************************************************************************
+ * To change this template, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package cz.incad.relief3.rdcz.uniimporter.model;
+
+import cz.incad.relief3.rdcz.uniimporter.model.enums.IssueStateEnum;
+import cz.manocz80.utils.StringUtils;
+import cz.manocz80.utils.XmlUtils;
+import java.io.BufferedInputStream;
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.xml.parsers.DocumentBuilderFactory;
+import javax.xml.parsers.ParserConfigurationException;
+import org.w3c.dom.Document;
+import org.w3c.dom.Node;
+import org.w3c.dom.NodeList;
+import org.xml.sax.SAXException;
+
+/** ****************************************************************************
+ *
+ * @author martin
+ */
+public class DataParserMarcXml implements DataParser {
+    private static final Logger LOG = Logger.getLogger(DataParserMarcXml.class.getName());
+
+    /** ************************************************************************
+     * 
+     * @param oneIssue
+     * @return 
+     */
+    public OneIssue parseIt(OneIssue oneIssue) {
+        LOG.log(Level.INFO, "Start Parsing...");
+        List<OneRecord> lRecords = new LinkedList<OneRecord>();
+        OneRecord oneRecord;
+        Document doc;
+        NodeList nlRecord;
+        NodeList nlRecordChilds;
+        NodeList nl245;
+        NodeList nl246;
+        NodeList nl100;
+        NodeList nl260;
+        NodeList nl910;
+        NodeList nl300;
+        NodeList nl015;
+        NodeList nl020;
+        NodeList nl022;
+        NodeList nl856;
+        NodeList nlITM;
+        Node nRecord;
+
+        //Bibliograficke udaje
+        String druhDokumentu;
+        List<String> cisloCNB;
+        String identifikatorZaznamu;
+//        String baze                     = null;
+        String sysno;
+        String autor;
+        String nazev;
+//        String podnazev                 = null;
+        String rokyVydani;
+        List<String> isbn;
+        List<String> issn;
+        List<String> variantniNazvy;
+        String siglaVlastnika;
+//        List<String> variantniNazev     = null;
+//        String zdrojFinancovani         = null;
+//        String poznamky                 = null;
+        String urlNaTitul;
+        String mistoVydani;
+        String vydavatel;
+        String pocetStran;
+        String vyskaKnihy;
+        //Exemplar
+//        String carovyKod                = null;
+//        String signatura                = null;
+//        String rokPeriodika             = null;
+//        String castDilRocnik            = null;
+//        String cisloZakazky             = null;
+        //Udaje o digitalizaci
+        String urlCastRokRocnik;
+        List<OneITM> items              = new LinkedList<OneITM>();
+        String nazev_245a;
+        String nazev_245b;
+        String nazev_245n;
+        String nazev_245p;
+//        String pocetSouboru          = null;
+//        boolean ocr                  = false;
+//        boolean ocrSvabach           = false;
+//        String typSkeneru            = null;
+//        String parametrySkenovani    = null;
+//        String dpi                   = null;
+//        String barevnaHloubka        = null;
+
+//        boolean djvu                 = false;
+//        boolean gif                  = false;
+//        boolean jpeg                 = false;
+//        boolean pdf                  = false;
+//        boolean tiff                 = false;
+//        boolean txt                  = false;
+
+
+        DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
+        try {
+            doc = factory.newDocumentBuilder().parse(new BufferedInputStream(new FileInputStream(oneIssue.getFile())));
+        } catch (ParserConfigurationException ex) {
+            LOG.log(Level.SEVERE, null, ex);
+            oneIssue.appendLogFailInfo("Soubor nebyl importován. Nastala chyba při parsování souboru. Chyba: " + ex.getMessage());
+            oneIssue.issueState = IssueStateEnum._9_readyForLog;
+            return oneIssue;
+        } catch (SAXException ex) {
+            LOG.log(Level.SEVERE, null, ex);
+            oneIssue.appendLogFailInfo("Soubor nebyl importován. Nastala chyba při parsování souboru. Chyba: " + ex.getMessage());
+            oneIssue.issueState = IssueStateEnum._9_readyForLog;
+            return oneIssue;
+        } catch (IOException ex) {
+            LOG.log(Level.SEVERE, null, ex);
+            oneIssue.appendLogFailInfo("");
+            oneIssue.appendLogFailInfo("Soubor nebyl importován. Nastala chyba při načtení souboru. Chyba: " + ex.getMessage());
+            oneIssue.issueState = IssueStateEnum._9_readyForLog;
+            return oneIssue;
+        }
+
+        //Načteme všechny záznamy Record
+        nlRecord = doc.getElementsByTagName("record");
+        for (int i = 0; i < nlRecord.getLength(); i++) {
+            //Zpracováváme jeden záznam za druhým.
+            nl245 = null;
+            nl246 = null;
+            nl100 = null;
+            nl260 = null;
+            nl910 = null;
+            nl300 = null;
+            nl015 = null;
+            nl020 = null;
+            nl022 = null;
+            nl856 = null;
+            nlITM = null;
+            //Vynulovani hodnot
+            //Bibliograficke udaje
+            druhDokumentu           = null;
+            cisloCNB                = null;
+            identifikatorZaznamu    = null;
+//            baze                    = null;
+            sysno                   = null;
+            autor                   = null;
+            nazev                   = null;
+//            podnazev                = null;
+            rokyVydani              = null;
+            isbn                    = null;
+            issn                    = null;
+            variantniNazvy          = null;
+            siglaVlastnika          = null;
+//            variantniNazev          = null;
+//            zdrojFinancovani        = null;
+//            poznamky                = null;
+            urlNaTitul              = null;
+            mistoVydani             = null;
+            vydavatel               = null;
+            pocetStran              = null;
+            vyskaKnihy              = null;
+            //Exemplar
+//            carovyKod               = null;
+//            signatura               = null;
+//            rokPeriodika            = null;
+//            castDilRocnik           = null;
+//            cisloZakazky            = null;
+            //Udaje o digitalizaci
+            urlCastRokRocnik        = null;
+            items.clear();
+            nazev_245a              = null;
+            nazev_245b              = null;
+            nazev_245n              = null;
+            nazev_245p              = null;
+//            pocetSouboru            = null;
+//            ocr                     = false;
+//            ocrSvabach              = false;
+//            typSkeneru              = null;
+//            parametrySkenovani      = null;
+//            dpi                     = null;
+//            barevnaHloubka          = null;
+//            djvu                    = false;
+//            gif                     = false;
+//            jpeg                    = false;
+//            pdf                     = false;
+//            tiff                    = false;
+//            txt                     = false;
+
+            nRecord = nlRecord.item(i);
+            nlRecordChilds = nRecord.getChildNodes();
+            for (int j = 0; j < nlRecordChilds.getLength(); j++) {
+                //Procházíme jeden prvek Recordu za druhým.
+                //Odfiltrujeme jen zajímavé elementy
+                if (nlRecordChilds.item(j).getNodeType() == 1) {
+                    //DRUH DOKUMENTU
+                    if ("FMT".equals(XmlUtils.getAttributValue(nlRecordChilds.item(j), "tag"))) {
+                        druhDokumentu = nlRecordChilds.item(j).getTextContent();
+                    }
+                    //POLE 001
+                    if ("001".equals(XmlUtils.getAttributValue(nlRecordChilds.item(j), "tag"))) {
+                        identifikatorZaznamu = nlRecordChilds.item(j).getTextContent();
+                    }
+                    //SYSNO
+                    if ("SYS".equals(XmlUtils.getAttributValue(nlRecordChilds.item(j), "tag"))) {
+                        sysno = nlRecordChilds.item(j).getTextContent();
+                    }
+                    //245abn název podnázev
+                    if ("245".equals(XmlUtils.getAttributValue(nlRecordChilds.item(j), "tag")) && nl245 == null) {
+                        nl245 = nlRecordChilds.item(j).getChildNodes();
+                        for (int k = 0; k < nl245.getLength(); k++) {
+                            //Odfiltrujeme jen zajímavé elementy
+                            if (nl245.item(k).getNodeType() == 1) {
+                                if ("a".equals(XmlUtils.getAttributValue(nl245.item(k), "code"))) {
+                                    nazev_245a = clear_245a(nl245.item(k).getTextContent());
+                                }
+                                if ("b".equals(XmlUtils.getAttributValue(nl245.item(k), "code"))) {
+                                    nazev_245b = clear_245b(nl245.item(k).getTextContent());
+                                }
+                                if ("n".equals(XmlUtils.getAttributValue(nl245.item(k), "code"))) {
+                                    nazev_245n = clear_245n(nl245.item(k).getTextContent());
+                                }
+                                if ("p".equals(XmlUtils.getAttributValue(nl245.item(k), "code"))) {
+                                    nazev_245p = clear_245p(nl245.item(k).getTextContent());
+                                }
+                            }
+                        }
+                    }
+                    //variantní názvy 246a
+                    if ("246".equals(XmlUtils.getAttributValue(nlRecordChilds.item(j), "tag")) && nl246 == null) {
+                        nl246 = nlRecordChilds.item(j).getChildNodes();
+                        for (int k = 0; k < nl246.getLength(); k++) {
+                            //Odfiltrujeme jen zajímavé elementy
+                            if (nl246.item(k).getNodeType() == 1) {
+                                if ("a".equals(XmlUtils.getAttributValue(nl246.item(k), "code"))) {
+                                    if (variantniNazvy == null) {
+                                        variantniNazvy = new LinkedList<String>();
+                                    }
+                                    variantniNazvy.add(nl246.item(k).getTextContent());
+                                }
+                            }
+                        }
+                    }
+                    //Autoři 100a
+                    if ("100".equals(XmlUtils.getAttributValue(nlRecordChilds.item(j), "tag")) && nl100 == null) {
+                        nl100 = nlRecordChilds.item(j).getChildNodes();
+                        for (int k = 0; k < nl100.getLength(); k++) {
+                            //Odfiltrujeme jen zajímavé elementy
+                            if (nl100.item(k).getNodeType() == 1) {
+                                if ("a".equals(XmlUtils.getAttributValue(nl100.item(k), "code"))) {
+                                    autor = clear_100a(nl100.item(k).getTextContent());
+                                }
+                            }
+                        }
+                    }
+                    //Vydavatelské údaje abc
+                    if ("260".equals(XmlUtils.getAttributValue(nlRecordChilds.item(j), "tag")) && nl260 == null) {
+                        nl260 = nlRecordChilds.item(j).getChildNodes();
+                        for (int k = 0; k < nl260.getLength(); k++) {
+                            //Odfiltrujeme jen zajímavé elementy
+                            if (nl260.item(k).getNodeType() == 1) {
+                                //místo vydání
+                                if ("a".equals(XmlUtils.getAttributValue(nl260.item(k), "code"))) {
+                                    mistoVydani = clear_260a(nl260.item(k).getTextContent());
+                                }
+                                //Vydavatel
+                                if ("b".equals(XmlUtils.getAttributValue(nl260.item(k), "code"))) {
+                                    vydavatel = clear_260b(nl260.item(k).getTextContent());
+                                }
+                                //Rok vydání
+                                if ("c".equals(XmlUtils.getAttributValue(nl260.item(k), "code"))) {
+                                    rokyVydani = clear_260c(nl260.item(k).getTextContent());
+                                }
+                            }
+                        }
+                    }
+                    //SIGLA ind='1' a
+                    if ("910".equals(XmlUtils.getAttributValue(nlRecordChilds.item(j), "tag")) && nl910 == null) {
+                        nl910 = nlRecordChilds.item(j).getChildNodes();
+                        for (int k = 0; k < nl910.getLength(); k++) {
+                            //Odfiltrujeme jen zajímavé elementy
+                            if (nl910.item(k).getNodeType() == 1) {
+                                if ("a".equals(XmlUtils.getAttributValue(nl910.item(k), "code"))) {
+                                    siglaVlastnika = nl910.item(k).getTextContent();
+                                }
+                            }
+                        }
+                    }
+                    //počet stran výška knihy 300ac
+                    if ("300".equals(XmlUtils.getAttributValue(nlRecordChilds.item(j), "tag")) && nl300 == null) {
+                        nl300 = nlRecordChilds.item(j).getChildNodes();
+                        for (int k = 0; k < nl300.getLength(); k++) {
+                            //Odfiltrujeme jen zajímavé elementy
+                            if (nl300.item(k).getNodeType() == 1) {
+                                //Počet stran
+                                if ("a".equals(XmlUtils.getAttributValue(nl300.item(k), "code"))) {
+                                    pocetStran = nl300.item(k).getTextContent();
+                                }
+                                //Výška knihy
+                                if ("c".equals(XmlUtils.getAttributValue(nl300.item(k), "code"))) {
+                                    vyskaKnihy = nl300.item(k).getTextContent();
+                                }
+                            }
+                        }
+                    }
+                    //čČNB 015a
+                    if ("015".equals(XmlUtils.getAttributValue(nlRecordChilds.item(j), "tag")) && nl015 == null) {
+                        nl015 = nlRecordChilds.item(j).getChildNodes();
+                        for (int k = 0; k < nl015.getLength(); k++) {
+                            //Odfiltrujeme jen zajímavé elementy
+                            if (nl015.item(k).getNodeType() == 1) {
+                                //Platné čČNB
+                                if ("a".equals(XmlUtils.getAttributValue(nl015.item(k), "code"))) {
+                                    if (cisloCNB == null) {
+                                        cisloCNB = new LinkedList<String>();
+                                    }
+                                    cisloCNB.add(nl015.item(k).getTextContent());
+                                }
+
+                                //Neplatné čČNB
+                                if ("z".equals(XmlUtils.getAttributValue(nl015.item(k), "code"))) {
+                                    if (cisloCNB == null) {
+                                        cisloCNB = new LinkedList<String>();
+                                    }
+                                    cisloCNB.add(nl015.item(k).getTextContent());
+                                }
+                            }
+                        }
+                    }
+                    //ISBN 020az
+                    if ("020".equals(XmlUtils.getAttributValue(nlRecordChilds.item(j), "tag")) && nl020 == null) {
+                        nl020 = nlRecordChilds.item(j).getChildNodes();
+                        for (int k = 0; k < nl020.getLength(); k++) {
+                            //Odfiltrujeme jen zajímavé elementy
+                            if (nl020.item(k).getNodeType() == 1) {
+                                //Platné ISBN
+                                if ("a".equals(XmlUtils.getAttributValue(nl020.item(k), "code"))) {
+                                    if (nl020.item(k).getTextContent() != null) {
+                                        if (nl020.item(k).getTextContent().length() > 0) {
+                                            if (StringUtils.canBeStringInteger(nl020.item(k).getTextContent().substring(0, 1))) {
+                                                if (isbn == null) {
+                                                    isbn = new LinkedList<String>();
+                                                }
+                                                isbn.add(nl020.item(k).getTextContent());
+                                            }
+                                        }
+                                    }
+                                }
+
+                                //Neplatné ISBN
+                                if ("z".equals(XmlUtils.getAttributValue(nl020.item(k), "code"))) {
+                                    if (nl020.item(k).getTextContent() != null) {
+                                        if (nl020.item(k).getTextContent().length() > 0) {
+                                            if (StringUtils.canBeStringInteger(nl020.item(k).getTextContent().substring(0, 1))) {
+                                                if (isbn == null) {
+                                                    isbn = new LinkedList<String>();
+                                                }
+                                                isbn.add(nl020.item(k).getTextContent());
+                                            }
+                                        }
+                                    }
+                                }
+
+                                //Neplatné ISBN
+                                if ("y".equals(XmlUtils.getAttributValue(nl020.item(k), "code"))) {
+                                    if (nl020.item(k).getTextContent() != null) {
+                                        if (nl020.item(k).getTextContent().length() > 0) {
+                                            if (StringUtils.canBeStringInteger(nl020.item(k).getTextContent().substring(0, 1))) {
+                                                if (isbn == null) {
+                                                    isbn = new LinkedList<String>();
+                                                }
+                                                isbn.add(nl020.item(k).getTextContent());
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    //ISSN 022az
+                    if ("022".equals(XmlUtils.getAttributValue(nlRecordChilds.item(j), "tag")) && nl022 == null) {
+                        nl022 = nlRecordChilds.item(j).getChildNodes();
+                        for (int k = 0; k < nl022.getLength(); k++) {
+                            //Odfiltrujeme jen zajímavé elementy
+                            if (nl022.item(k).getNodeType() == 1) {
+                                //Platné ISSN
+                                if ("a".equals(XmlUtils.getAttributValue(nl022.item(k), "code"))) {
+                                    if (issn == null) {
+                                        issn = new LinkedList<String>();
+                                    }
+                                    issn.add(nl022.item(k).getTextContent());
+                                }
+
+                                //Neplatné ISSN
+                                if ("z".equals(XmlUtils.getAttributValue(nl022.item(k), "code"))) {
+                                    if (issn == null) {
+                                        issn = new LinkedList<String>();
+                                    }
+                                    issn.add(nl022.item(k).getTextContent());
+                                }
+                                
+                                //Neplatné ISSN
+                                if ("y".equals(XmlUtils.getAttributValue(nl022.item(k), "code"))) {
+                                    if (issn == null) {
+                                        issn = new LinkedList<String>();
+                                    }
+                                    issn.add(nl022.item(k).getTextContent());
+                                }
+                            }
+                        }
+                    }
+                    //URL 856u
+                    if ("856".equals(XmlUtils.getAttributValue(nlRecordChilds.item(j), "tag")) && nl856 == null) {
+                        nl856 = nlRecordChilds.item(j).getChildNodes();
+                        for (int k = 0; k < nl856.getLength(); k++) {
+                            //Odfiltrujeme jen zajímavé elementy
+                            if (nl856.item(k).getNodeType() == 1) {
+                                //URL TITUL
+                                if ("u".equals(XmlUtils.getAttributValue(nl856.item(k), "code"))) {
+                                    if ("SE".equalsIgnoreCase(druhDokumentu)) {
+                                        urlNaTitul = nl856.item(k).getTextContent();
+                                    } else {
+                                        urlCastRokRocnik = nl856.item(k).getTextContent();
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    
+                    if ("ITM".equals(XmlUtils.getAttributValue(nlRecordChilds.item(j), "tag"))) {
+                        OneITM oneItm = new OneITM();
+                        
+                        nlITM = nlRecordChilds.item(j).getChildNodes();
+                        for (int k = 0; k < nlITM.getLength(); k++) {
+                            //Odfiltrujeme jen zajímavé elementy
+                            if (nlITM.item(k).getNodeType() == 1) {
+                                //Čárový kód
+                                if ("b".equals(XmlUtils.getAttributValue(nlITM.item(k), "code"))) {
+                                    oneItm.b = nlITM.item(k).getTextContent();
+                                }
+                                //signatura
+                                if ("c".equals(XmlUtils.getAttributValue(nlITM.item(k), "code"))) {
+                                    oneItm.c = nlITM.item(k).getTextContent();
+                                }
+                                //poznamka
+                                if ("d".equals(XmlUtils.getAttributValue(nlITM.item(k), "code"))) {
+                                    oneItm.d = nlITM.item(k).getTextContent();
+                                }
+                                //svazek rocnik
+                                if ("v".equals(XmlUtils.getAttributValue(nlITM.item(k), "code"))) {
+                                    oneItm.v = nlITM.item(k).getTextContent();
+                                }
+                                //cislo
+                                if ("i".equals(XmlUtils.getAttributValue(nlITM.item(k), "code"))) {
+                                    oneItm.i = nlITM.item(k).getTextContent();
+                                }
+                                //Rok
+                                if ("y".equals(XmlUtils.getAttributValue(nlITM.item(k), "code"))) {
+                                    oneItm.y = nlITM.item(k).getTextContent();
+                                }
+                            }
+                        }
+                        //Připojíme oneItem do pole všech itemů
+                        items.add(oneItm);
+                    }
+                }
+            }
+            
+            //Malej podvůdek, když přijde záznam bez exempláře,
+            //tak musime vytvořit nafakeovaný exemplář bez hodnot aby se předloha vůbec založila
+            if (items.isEmpty()) {
+                items.add(new OneITM());
+            }
+            
+            //Rozparzovaný záznam přidáme do listu
+            for (int itemCount = 0; itemCount < items.size(); itemCount++) {
+                //Vytvožíme si nový záznam
+                oneRecord = new OneRecord();
+                //Nastavíme záznamu rozparzované hodnoty
+                oneRecord.setDruhDokumentu(druhDokumentu);
+                oneRecord.setIdentifikatorZaznamu(identifikatorZaznamu);
+                oneRecord.setSysno(sysno);
+
+                nazev = null;
+                if (nazev_245a != null) {
+                    nazev = nazev_245a;
+                }
+                if (nazev_245n != null) {
+                    if (nazev == null) {
+                        nazev = nazev_245n;
+                    } else {
+                        nazev += " " + nazev_245n;
+                    }
+                }
+                if (nazev_245p != null) {
+                    if (nazev == null) {
+                        nazev = nazev_245p;
+                    } else {
+                        nazev += " " + nazev_245p;
+                    }
+                }
+                oneRecord.setNazev(nazev);
+                oneRecord.setPodnazev(nazev_245b);
+                oneRecord.setAutor(autor);
+                oneRecord.setMistoVydani(mistoVydani);
+                oneRecord.setVydavatel(vydavatel);
+                oneRecord.setRokyVydani(rokyVydani);
+                oneRecord.setSiglaVlastnika(siglaVlastnika);
+                oneRecord.setPocetStran(pocetStran);
+                oneRecord.setVyskaKnihy(vyskaKnihy);
+                oneRecord.setCisloCNB(cisloCNB);
+                oneRecord.setIsbn(isbn);
+                oneRecord.setIssn(issn);
+                oneRecord.setVariantniNazev(variantniNazvy);
+                oneRecord.setUrlNaTitul(urlNaTitul);
+                oneRecord.setUrlCastRokRocnik(urlCastRokRocnik);
+                oneRecord.setCarovyKod(items.get(itemCount).b);
+                oneRecord.setSignatura(items.get(itemCount).c);
+                oneRecord.setPoznamkaExemplar(items.get(itemCount).d);
+                oneRecord.setCastDilRocnik(items.get(itemCount).v);
+                oneRecord.setCisloPeriodika(items.get(itemCount).i);
+                oneRecord.setRokPeriodika(items.get(itemCount).y);
+
+                lRecords.add(oneRecord);
+            }
+        }
+
+        oneIssue.lRecords = lRecords;
+        LOG.log(Level.INFO, "Finish Parsing...");
+        //Změna stavu issue
+        oneIssue.issueState = IssueStateEnum._2_readyForImport;
+        return oneIssue;
+    }
+
+    /** ************************************************************************
+     * 
+     * @param value
+     * @return 
+     */
+    private static String clear_245a(String value) {
+        if (value == null) return null;
+        boolean isOk = false;
+        while (!isOk) {
+            isOk = true;
+            value = value.trim();
+            if (value.length() > 1 && (value.endsWith(":") || value.endsWith("/") || value.endsWith("="))) {
+                value = value.substring(0, value.length() - 1);
+                isOk = false;
+            }
+        }
+        return value;
+    }
+
+    /** ************************************************************************
+     * 
+     * @param value
+     * @return 
+     */
+    private static String clear_245b(String value) {
+        if (value == null) return null;
+        boolean isOk = false;
+        while (!isOk) {
+            isOk = true;
+            value = value.trim();
+            if (value.length() > 1 && (value.endsWith("/"))) {
+                value = value.substring(0, value.length() - 1);
+                isOk = false;
+            }
+        }
+        return value;
+    }
+
+    /** ************************************************************************
+     * 
+     * @param value
+     * @return 
+     */
+    private static String clear_245n(String value) {
+        if (value == null) return null;
+        boolean isOk = false;
+        while (!isOk) {
+            isOk = true;
+            value = value.trim();
+            if (value.length() > 1 && (value.endsWith(":") || value.endsWith("/") || value.endsWith("="))) {
+                value = value.substring(0, value.length() - 1);
+                isOk = false;
+            }
+        }
+        return value;
+    }
+
+    /** ************************************************************************
+     * 
+     * @param value
+     * @return 
+     */
+    private static String clear_245p(String value) {
+        if (value == null) return null;
+        boolean isOk = false;
+        while (!isOk) {
+            isOk = true;
+            value = value.trim();
+            if (value.length() > 1 && (value.endsWith(":") || value.endsWith("/") || value.endsWith("="))) {
+                value = value.substring(0, value.length() - 1);
+                isOk = false;
+            }
+        }
+        return value;
+    }
+    
+    /** ************************************************************************
+     * 
+     * @param value
+     * @return 
+     */
+    private static String clear_260a(String value) {
+        if (value == null) return null;
+        boolean isOk = false;
+        while (!isOk) {
+            isOk = true;
+            value = value.trim();
+            if (value.length() > 1 && (value.endsWith(";") || value.endsWith(":") || value.endsWith(","))) {
+                value = value.substring(0, value.length() - 1);
+                isOk = false;
+            }
+        }
+        return value;
+    }
+
+    /** ************************************************************************
+     * 
+     * @param value
+     * @return 
+     */
+    private static String clear_260b(String value) {
+        if (value == null) return null;
+        boolean isOk = false;
+        while (!isOk) {
+            isOk = true;
+            value = value.trim();
+            if (value.length() > 1 && (value.endsWith(","))) {
+                value = value.substring(0, value.length() - 1);
+                isOk = false;
+            }
+        }
+        return value;
+    }
+
+    /** ************************************************************************
+     * 
+     * @param value
+     * @return 
+     */
+    private static String clear_100a(String value) {
+        if (value == null) return null;
+        boolean isOk = false;
+        while (!isOk) {
+            isOk = true;
+            value = value.trim();
+            if (value.length() > 1 && (value.endsWith(","))) {
+                value = value.substring(0, value.length() - 1);
+                isOk = false;
+            }
+        }
+        return value;
+    }
+
+    /** ************************************************************************
+     * 
+     * @param value
+     * @return 
+     */
+    private static String clear_260c(String value) {
+        if (value == null) return null;
+        StringBuilder sb = new StringBuilder(value);
+        boolean isOk = false;
+        while (!isOk) {
+            isOk = true;
+            if (sb.length() > 1 && (sb.indexOf("[") != -1)) {
+                sb = sb.deleteCharAt(sb.indexOf("["));
+                isOk = false;
+            }
+            if (sb.length() > 1 && (sb.indexOf("]") != -1)) {
+                sb = sb.deleteCharAt(sb.indexOf("]"));
+                isOk = false;
+            }
+        }
+
+        return sb.toString().trim();
+    }
+
+}
+
+/** ****************************************************************************
+ * 
+ * @author martin.novacek@incad.cz
+ */
+class OneITM {
+    /** Čárový kód */
+    public String b = null;
+    /** Signatura */
+    public String c = null;
+    /** Poznámka */
+    public String d = null;
+    /** Svazek / ročník */
+    public String v = null;
+    /** Číslo */
+    public String i = null;
+    /** Rok */
+    public String y = null;
+}

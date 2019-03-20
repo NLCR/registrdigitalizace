@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<desk bundle="ServerBundle">
+  <deskPackage>cz.incad.core.part</deskPackage>
+  <deskName>CFyz</deskName>
+  <deskHumanHelp>cz.incad.core.part.CFyz_help</deskHumanHelp>
+  <deskHumanName>cz.incad.core.part.CFyz</deskHumanName>
+  <deskDBName>CFyz</deskDBName>
+  <deskRoot/>
+  <machineModel>cz.incad.core.part.CFyz</machineModel>
+  <fields>
+    <field>
+      <fieldName>hodnota</fieldName>
+      <fieldHumanName>CFyz.hodnota</fieldHumanName>
+      <fieldHumanHelp>CFyz.hodnota_help</fieldHumanHelp>
+      <fieldDBName>hodnota</fieldDBName>
+      <fieldType>STR</fieldType>
+      <fieldRepresentation>EDI</fieldRepresentation>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>typ</fieldName>
+      <fieldHumanName>CFyz.typ</fieldHumanName>
+      <fieldHumanHelp>CFyz.typ_help</fieldHumanHelp>
+      <fieldDBName>typ</fieldDBName>
+      <fieldType>STR</fieldType>
+      <fieldRepresentation>COM</fieldRepresentation>
+      <list>DtypFyz</list>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+  </fields>
+  <forms>
+    <screen-form name="CFyzF" formHumanName="CFyzF" id="cz.incad.core.part.CFyz">
+      <form-body align="LEFT" valign="TOP">
+        <row fill="LEFT" vfill="TOP">
+          <select align="LEFT" valign="TOP" indent="false" columnIndex="1" width="20ch" id="typ" precision="19" scale="4" type="combo" multi="false" editable="false"/>
+          <input align="LEFT" valign="TOP" indent="false" columnIndex="2" width="20ch" id="hodnota" precision="19" scale="4" type="text"/>
+        </row>
+      </form-body>
+    </screen-form>
+    <tree name="AvailableForms">
+      <node formName="CFyzF"/>
+    </tree>
+  </forms>
+  <uniqueFields/>
+</desk>

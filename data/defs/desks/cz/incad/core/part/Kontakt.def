@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<desk bundle="ServerBundle">
+  <deskPackage>cz.incad.core.part</deskPackage>
+  <deskName>Kontakt</deskName>
+  <deskHumanHelp>cz.incad.core.part.Kontakt_help</deskHumanHelp>
+  <deskHumanName>cz.incad.core.part.Kontakt</deskHumanName>
+  <deskDBName>Kontakt</deskDBName>
+  <deskRoot/>
+  <machineModel>cz.incad.core.part.Kontakt</machineModel>
+  <fields>
+    <field>
+      <fieldName>hodnota</fieldName>
+      <fieldHumanName>Kontakt.hodnota</fieldHumanName>
+      <fieldHumanHelp>Kontakt.hodnota_help</fieldHumanHelp>
+      <fieldDBName>hodnota</fieldDBName>
+      <fieldType>STR</fieldType>
+      <fieldRepresentation>EDI</fieldRepresentation>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>typ</fieldName>
+      <fieldHumanName>Kontakt.typ</fieldHumanName>
+      <fieldHumanHelp>Kontakt.typ_help</fieldHumanHelp>
+      <fieldDBName>typ</fieldDBName>
+      <fieldType>STR</fieldType>
+      <fieldRepresentation>COM</fieldRepresentation>
+      <list>DtypKontakt</list>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+  </fields>
+  <forms>
+    <screen-form name="KontaktF" formHumanName="KontaktF" id="cz.incad.core.part.Kontakt">
+      <form-body align="LEFT" valign="TOP">
+        <row fill="LEFT" vfill="TOP">
+          <select align="LEFT" valign="TOP" indent="false" columnIndex="1" width="20ch" id="typ" precision="0" scale="0" type="combo" multi="false" editable="false"/>
+          <input align="LEFT" valign="TOP" indent="false" columnIndex="2" width="30ch" id="hodnota" precision="0" scale="0" type="text"/>
+        </row>
+      </form-body>
+    </screen-form>
+    <tree name="AvailableForms">
+      <node formName="KontaktF"/>
+    </tree>
+  </forms>
+  <uniqueFields/>
+</desk>

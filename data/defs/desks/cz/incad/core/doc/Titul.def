@@ -1,0 +1,407 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<desk bundle="ServerBundle">
+  <deskPackage>cz.incad.core.doc</deskPackage>
+  <deskName>Titul</deskName>
+  <deskHumanHelp>cz.incad.core.doc.Titul_help</deskHumanHelp>
+  <deskHumanName>cz.incad.core.doc.Titul</deskHumanName>
+  <deskDBName>Titul</deskDBName>
+  <deskRoot>cz.incad.core.basic.Record</deskRoot>
+  <machineModel>cz.incad.core.doc.Titul</machineModel>
+  <fields>
+    <field>
+      <fieldName>tXTiAutor</fieldName>
+      <fieldHumanName>Titul.tXTiAutor</fieldHumanName>
+      <fieldHumanHelp>Titul.tXTiAutor_help</fieldHumanHelp>
+      <fieldDBName>rTitulXT</fieldDBName>
+      <fieldType>TAB</fieldType>
+      <fieldRepresentation>REP</fieldRepresentation>
+      <reference relationshipType="aggregation" rTable="false">cz.incad.core.doc.XTiAutor</reference>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>tCFyz</fieldName>
+      <fieldHumanName>Titul.tCFyz</fieldHumanName>
+      <fieldHumanHelp>Titul.tCFyz_help</fieldHumanHelp>
+      <fieldDBName>rTitulCF</fieldDBName>
+      <fieldType>TAB</fieldType>
+      <fieldRepresentation>REP</fieldRepresentation>
+      <reference relationshipType="aggregation" rTable="false">cz.incad.core.part.CFyz</reference>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>tCNazev</fieldName>
+      <fieldHumanName>Titul.tCNazev</fieldHumanName>
+      <fieldHumanHelp>Titul.tCNazev_help</fieldHumanHelp>
+      <fieldDBName>rTitulCN</fieldDBName>
+      <fieldType>TAB</fieldType>
+      <fieldRepresentation>REP</fieldRepresentation>
+      <reference relationshipType="aggregation" rTable="false">cz.incad.core.part.CNazev</reference>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>tExemplar</fieldName>
+      <fieldHumanName>Titul.tExemplar</fieldHumanName>
+      <fieldHumanHelp>Titul.tExemplar_help</fieldHumanHelp>
+      <fieldDBName>rTitulEx</fieldDBName>
+      <fieldType>TAB</fieldType>
+      <fieldRepresentation>RTB</fieldRepresentation>
+      <reference relationshipType="aggregation" rTable="false">cz.incad.core.doc.Exemplar</reference>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>hlNazev</fieldName>
+      <fieldHumanName>Titul.hlNazev</fieldHumanName>
+      <fieldHumanHelp>Titul.hlNazev_help</fieldHumanHelp>
+      <fieldDBName>hlNazev</fieldDBName>
+      <fieldType>STR</fieldType>
+      <fieldRepresentation>EDI</fieldRepresentation>
+      <validateLength>1000</validateLength>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>lendTitul</fieldName>
+      <fieldHumanName>Titul.lendTitul</fieldHumanName>
+      <fieldHumanHelp>Titul.lendTitul_help</fieldHumanHelp>
+      <fieldDBName>lendTitul</fieldDBName>
+      <fieldType>STR</fieldType>
+      <fieldRepresentation>EDI</fieldRepresentation>
+      <computed/>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>importCSV</fieldName>
+      <fieldHumanName>Titul.importCSV</fieldHumanName>
+      <fieldHumanHelp>Titul.importCSV_help</fieldHumanHelp>
+      <fieldDBName>importCSV</fieldDBName>
+      <fieldType>STR</fieldType>
+      <fieldRepresentation>EDI</fieldRepresentation>
+      <validateLength>2000</validateLength>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>tCJazyk</fieldName>
+      <fieldHumanName>Titul.tCJazyk</fieldHumanName>
+      <fieldHumanHelp>Titul.tCJazyk_help</fieldHumanHelp>
+      <fieldDBName>rTitulCJ</fieldDBName>
+      <fieldType>TAB</fieldType>
+      <fieldRepresentation>REP</fieldRepresentation>
+      <reference relationshipType="aggregation" rTable="false">cz.incad.core.part.CJazyk</reference>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>tCKlicSlovo</fieldName>
+      <fieldHumanName>Titul.tCKlicSlovo</fieldHumanName>
+      <fieldHumanHelp>Titul.tCKlicSlovo_help</fieldHumanHelp>
+      <fieldDBName>rTitulCK</fieldDBName>
+      <fieldType>TAB</fieldType>
+      <fieldRepresentation>REP</fieldRepresentation>
+      <reference relationshipType="aggregation" rTable="false">cz.incad.core.part.CKlicSlovo</reference>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>tCISBN</fieldName>
+      <fieldHumanName>Titul.tCISBN</fieldHumanName>
+      <fieldHumanHelp>Titul.tCISBN_help</fieldHumanHelp>
+      <fieldDBName>rTitulCI</fieldDBName>
+      <fieldType>TAB</fieldType>
+      <fieldRepresentation>REP</fieldRepresentation>
+      <reference relationshipType="aggregation" rTable="false">cz.incad.core.part.CISBN</reference>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>mistoVyd</fieldName>
+      <fieldHumanName>Titul.mistoVyd</fieldHumanName>
+      <fieldHumanHelp>Titul.mistoVyd_help</fieldHumanHelp>
+      <fieldDBName>mistoVyd</fieldDBName>
+      <fieldType>STR</fieldType>
+      <fieldRepresentation>EDI</fieldRepresentation>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>tXTiInst</fieldName>
+      <fieldHumanName>Titul.tXTiInst</fieldHumanName>
+      <fieldHumanHelp>Titul.tXTiInst_help</fieldHumanHelp>
+      <fieldDBName>rTitulXI</fieldDBName>
+      <fieldType>TAB</fieldType>
+      <fieldRepresentation>REP</fieldRepresentation>
+      <reference relationshipType="aggregation" rTable="false">cz.incad.core.doc.XTiInst</reference>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>pocetStran</fieldName>
+      <fieldHumanName>Titul.pocetStran</fieldHumanName>
+      <fieldHumanHelp>Titul.pocetStran_help</fieldHumanHelp>
+      <fieldDBName>pocetStran</fieldDBName>
+      <fieldType>NUM</fieldType>
+      <fieldRepresentation>EDI</fieldRepresentation>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>tPrivazek</fieldName>
+      <fieldHumanName>Titul.tPrivazek</fieldHumanName>
+      <fieldHumanHelp>Titul.tPrivazek_help</fieldHumanHelp>
+      <fieldDBName>rTitul</fieldDBName>
+      <fieldType>TAB</fieldType>
+      <fieldRepresentation>REP</fieldRepresentation>
+      <reference relationshipType="association" rTable="false">cz.incad.core.doc.Privazek</reference>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>rokVyd</fieldName>
+      <fieldHumanName>Titul.rokVyd</fieldHumanName>
+      <fieldHumanHelp>Titul.rokVyd_help</fieldHumanHelp>
+      <fieldDBName>rokVyd</fieldDBName>
+      <fieldType>STR</fieldType>
+      <fieldRepresentation>EDI</fieldRepresentation>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>listTematika</fieldName>
+      <fieldHumanName>Titul.listTematika</fieldHumanName>
+      <fieldHumanHelp>Titul.listTematika_help</fieldHumanHelp>
+      <fieldDBName>listTematika</fieldDBName>
+      <fieldType>STR</fieldType>
+      <fieldRepresentation>COM</fieldRepresentation>
+      <list>DlistTematika</list>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>rInsVydavatel</fieldName>
+      <fieldHumanName>Titul.rInsVydavatel</fieldHumanName>
+      <fieldHumanHelp>Titul.rInsVydavatel_help</fieldHumanHelp>
+      <fieldDBName>rInsVydavatelTi</fieldDBName>
+      <fieldType>REF</fieldType>
+      <fieldRepresentation>REF</fieldRepresentation>
+      <reference relationshipType="association" rTable="false">cz.incad.core.doc.InsVydavatel</reference>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>vyskaVcm</fieldName>
+      <fieldHumanName>Titul.vyskaVcm</fieldHumanName>
+      <fieldHumanHelp>Titul.vyskaVcm_help</fieldHumanHelp>
+      <fieldDBName>vyskaVcm</fieldDBName>
+      <fieldType>NUM</fieldType>
+      <fieldRepresentation>EDI</fieldRepresentation>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>tCZeme</fieldName>
+      <fieldHumanName>Titul.tCZeme</fieldHumanName>
+      <fieldHumanHelp>Titul.tCZeme_help</fieldHumanHelp>
+      <fieldDBName>rTitulCZ</fieldDBName>
+      <fieldType>TAB</fieldType>
+      <fieldRepresentation>REP</fieldRepresentation>
+      <reference relationshipType="aggregation" rTable="false">cz.incad.core.part.CZeme</reference>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+  </fields>
+  <forms>
+    <screen-form name="TitulF" formHumanName="cz.incad.core.doc.TitulF" id="cz.incad.core.doc.Titul">
+      <form-body align="LEFT" valign="TOP">
+        <row fill="LEFT" vfill="TOP">
+          <selectDate align="LEFT" valign="TOP" indent="false" width="20ch" id="zalDate" precision="19" scale="4">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </selectDate>
+        </row>
+        <row fill="LEFT" vfill="TOP">
+          <repeat align="LEFT" valign="TOP" indent="false" id="tCNazev" precision="0" scale="0" refclass="cz.incad.core.part.CNazev" form="CNazevF">
+            <label place="TOP">
+              <from-field colon="false"/>
+            </label>
+          </repeat>
+        </row>
+        <row fill="LEFT" vfill="TOP">
+          <repeat align="LEFT" valign="TOP" indent="false" id="tCFyz" precision="0" scale="0" refclass="cz.incad.core.part.CFyz" form="CFyzF">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </repeat>
+        </row>
+        <row fill="LEFT" vfill="TOP">
+          <repeat align="LEFT" valign="TOP" indent="false" id="tCISBN" precision="0" scale="0" refclass="cz.incad.core.part.CISBN" form="CISBNF">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </repeat>
+        </row>
+        <row fill="LEFT" vfill="TOP">
+          <repeat align="LEFT" valign="TOP" indent="false" id="tCJazyk" precision="0" scale="0" refclass="cz.incad.core.part.CJazyk" form="CJazykF">
+            <label place="TOP">
+              <from-field colon="false"/>
+            </label>
+          </repeat>
+        </row>
+        <row fill="LEFT" vfill="TOP">
+          <repeat align="LEFT" valign="TOP" indent="false" id="tCZeme" precision="0" scale="0" refclass="cz.incad.core.part.CZeme" form="CZemeF">
+            <label place="TOP">
+              <from-field colon="false"/>
+            </label>
+          </repeat>
+        </row>
+        <row fill="LEFT" vfill="TOP">
+          <input align="LEFT" valign="TOP" indent="false" id="idCislo" precision="19" scale="4" type="text">
+            <label place="TOP">
+              <from-field colon="false"/>
+            </label>
+          </input>
+        </row>
+        <row fill="LEFT" vfill="TOP">
+          <input align="LEFT" valign="TOP" indent="false" width="100ch" id="importCSV" precision="19" scale="4" type="text" rows="5">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </input>
+        </row>
+        <row fill="LEFT" vfill="TOP">
+          <input align="LEFT" valign="TOP" indent="false" width="100ch" id="hlNazev" precision="19" scale="4" type="text" rows="3">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </input>
+        </row>
+      </form-body>
+    </screen-form>
+    <screen-form name="TitulF2" formHumanName="cz.incad.core.doc.TitulF2" id="cz.incad.core.doc.Titul">
+      <form-body align="LEFT" valign="TOP">
+        <row fill="LEFT" vfill="TOP">
+          <input align="LEFT" valign="TOP" indent="false" columnIndex="1" width="15ch" id="idCislo" precision="19" scale="4" type="text">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </input>
+          <empty align="LEFT" valign="TOP" indent="false" columnIndex="2" width="30ch"/>
+          <selectDate align="LEFT" valign="TOP" indent="false" columnIndex="3" width="15ch" id="zalDate" precision="19" scale="4">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </selectDate>
+          <input align="LEFT" valign="TOP" indent="false" columnIndex="4" width="15ch" id="zalUser" precision="19" scale="4" type="text">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </input>
+        </row>
+        <row fill="LEFT" vfill="TOP">
+          <repeat align="LEFT" valign="TOP" indent="false" id="tCNazev" precision="19" scale="4" refclass="cz.incad.core.part.CNazev" form="CNazevF">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </repeat>
+        </row>
+        <row fill="LEFT" vfill="TOP">
+          <col fill="LEFT" vfill="TOP">
+            <repeat align="LEFT" valign="TOP" indent="false" id="tCFyz" precision="19" scale="4" refclass="cz.incad.core.part.CFyz" form="CFyzF">
+              <label place="TOP">
+                <from-field colon="true"/>
+              </label>
+            </repeat>
+          </col>
+          <col fill="LEFT" vfill="TOP">
+            <repeat align="LEFT" valign="TOP" indent="false" id="tCISBN" precision="19" scale="4" refclass="cz.incad.core.part.CISBN" form="CISBNF">
+              <label place="TOP">
+                <from-field colon="true"/>
+              </label>
+            </repeat>
+          </col>
+        </row>
+        <row fill="LEFT" vfill="TOP">
+          <col fill="LEFT" vfill="TOP">
+            <repeat align="LEFT" valign="TOP" indent="false" id="tCJazyk" precision="19" scale="4" refclass="cz.incad.core.part.CJazyk" form="CJazykF">
+              <label place="TOP">
+                <from-field colon="true"/>
+              </label>
+            </repeat>
+          </col>
+          <col fill="LEFT" vfill="TOP">
+            <repeat align="LEFT" valign="TOP" indent="false" id="tCZeme" precision="19" scale="4" refclass="cz.incad.core.part.CZeme" form="CZemeF">
+              <label place="TOP">
+                <from-field colon="true"/>
+              </label>
+            </repeat>
+          </col>
+        </row>
+        <row fill="LEFT" vfill="TOP">
+          <input align="LEFT" valign="TOP" indent="false" width="100ch" id="poznRec" precision="0" scale="0" type="text" rows="2">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </input>
+        </row>
+      </form-body>
+    </screen-form>
+    <tree name="AvailableForms">
+      <node formName="TitulF"/>
+      <node formName="TitulF2"/>
+    </tree>
+  </forms>
+  <functions>
+    <function>
+      <functionName>cz.incad.core.bf.GenerovatEx</functionName>
+      <functionHumanName>cz.incad.core.bf.GenerovatEx</functionHumanName>
+      <functionHumanHelp>Titul_cz.incad.core.bf.GenerovatEx_help</functionHumanHelp>
+      <wizardPanels>
+        <wizardPanel>
+          <panelName>GenerovatExPanel1</panelName>
+          <panelHumanName>GenerovatExPanel1</panelHumanName>
+          <description>GenerovatExPanel1</description>
+          <panelFields>
+            <panelField>
+              <fieldName>pocet</fieldName>
+              <fieldHumanName>pocet</fieldHumanName>
+              <fieldType>INT</fieldType>
+              <fieldRepresentation>EDI</fieldRepresentation>
+            </panelField>
+            <panelField>
+              <fieldName>katExemplar</fieldName>
+              <fieldHumanName>katExemplar</fieldHumanName>
+              <fieldType>STR</fieldType>
+              <fieldRepresentation>COM</fieldRepresentation>
+              <list>KatExemplar</list>
+            </panelField>
+            <panelField>
+              <fieldName>ulozeni</fieldName>
+              <fieldHumanName>ulozeni</fieldHumanName>
+              <fieldType>STR</fieldType>
+              <fieldRepresentation>COM</fieldRepresentation>
+              <list>Dulozeni</list>
+            </panelField>
+            <panelField>
+              <fieldName>cenaKc</fieldName>
+              <fieldHumanName>cenaKc</fieldHumanName>
+              <fieldType>NUM</fieldType>
+              <fieldRepresentation>EDI</fieldRepresentation>
+            </panelField>
+          </panelFields>
+        </wizardPanel>
+      </wizardPanels>
+    </function>
+    <tree name="AvailableBusinessFunctions">
+      <node functionName="cz.incad.core.bf.GenerovatEx"/>
+    </tree>
+  </functions>
+  <uniqueFields>
+    <field name="lendTitul"/>
+  </uniqueFields>
+</desk>

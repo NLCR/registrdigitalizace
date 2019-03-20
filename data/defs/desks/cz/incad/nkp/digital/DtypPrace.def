@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<desk bundle="ServerBundle">
+  <deskPackage>cz.incad.nkp.digital</deskPackage>
+  <deskName>DtypPrace</deskName>
+  <deskHumanHelp>cz.incad.nkp.digital.DtypPrace_help</deskHumanHelp>
+  <deskHumanName>cz.incad.nkp.digital.DtypPrace</deskHumanName>
+  <deskDBName>DtypPrace</deskDBName>
+  <deskRoot>cz.incad.core.basic.DLists</deskRoot>
+  <machineModel>cz.incad.nkp.digital.DtypPrace</machineModel>
+  <fields>
+    <field>
+      <fieldName>navaznePrace</fieldName>
+      <fieldHumanName>DtypPrace.navaznePrace</fieldHumanName>
+      <fieldHumanHelp>DtypPrace.navaznePrace_help</fieldHumanHelp>
+      <fieldDBName>navaznePrace</fieldDBName>
+      <fieldType>STR</fieldType>
+      <fieldRepresentation>LST</fieldRepresentation>
+      <list>DtypPrace</list>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>isZavisly</fieldName>
+      <fieldHumanName>DtypPrace.isZavisly</fieldHumanName>
+      <fieldHumanHelp>DtypPrace.isZavisly</fieldHumanHelp>
+      <fieldDBName>isZavisly</fieldDBName>
+      <fieldType>BOL</fieldType>
+      <fieldRepresentation>CHK</fieldRepresentation>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+  </fields>
+  <forms>
+    <screen-form name="DListsF" formHumanName="DListsF" id="cz.incad.nkp.digital.DtypPrace">
+      <form-body align="LEFT" valign="TOP">
+        <row fill="LEFT" vfill="TOP">
+          <input align="LEFT" valign="TOP" indent="false" columnIndex="1" width="200px" id="value" precision="19" scale="4" type="text">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </input>
+          <check align="LEFT" valign="TOP" indent="false" columnIndex="2" id="use" precision="19" scale="4">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </check>
+          <input align="LEFT" valign="TOP" indent="false" columnIndex="3" id="poradi" precision="19" scale="0" type="text">
+            <label place="TOP">
+              <from-field colon="false"/>
+            </label>
+          </input>
+        </row>
+        <row fill="LEFT" vfill="TOP">
+          <select align="LEFT" valign="TOP" indent="false" columnIndex="1" id="navaznePrace" precision="0" scale="0" type="list" multi="true" editable="false">
+            <label place="TOP">
+              <from-field colon="false"/>
+            </label>
+          </select>
+          <check align="LEFT" valign="TOP" indent="false" columnIndex="2" id="isZavisly" precision="0" scale="0">
+            <label place="TOP">
+              <from-field colon="false"/>
+            </label>
+          </check>
+        </row>
+        <row fill="LEFT" vfill="TOP">
+          <empty align="LEFT" valign="TOP" indent="false" width="40px" height="40px"/>
+        </row>
+        <row fill="LEFT" vfill="TOP">
+          <input align="LEFT" valign="TOP" indent="false" columnIndex="1" width="300px" id="cz" precision="19" scale="4" type="text">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </input>
+          <input align="LEFT" valign="TOP" indent="false" columnIndex="2" width="300px" id="en" precision="19" scale="4" type="text">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </input>
+        </row>
+        <row fill="LEFT" vfill="TOP">
+          <input align="LEFT" valign="TOP" indent="false" columnIndex="1" width="300px" id="de" precision="19" scale="4" type="text">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </input>
+          <input align="LEFT" valign="TOP" indent="false" columnIndex="2" width="300px" id="fr" precision="19" scale="4" type="text">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </input>
+        </row>
+        <row fill="LEFT" vfill="TOP">
+          <input align="LEFT" valign="TOP" indent="false" width="600px" id="poznamka" precision="19" scale="4" type="text" rows="2">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </input>
+        </row>
+      </form-body>
+    </screen-form>
+    <tree name="AvailableForms">
+      <node formName="DListsF"/>
+    </tree>
+  </forms>
+  <uniqueFields/>
+</desk>

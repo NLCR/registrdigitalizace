@@ -1,0 +1,1090 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<desk bundle="ServerBundle">
+  <deskPackage>cz.incad.rd</deskPackage>
+  <deskName>Profil</deskName>
+  <deskHumanHelp>Profil_help</deskHumanHelp>
+  <deskHumanName>Profil</deskHumanName>
+  <deskDBName>Profil</deskDBName>
+  <deskRoot/>
+  <machineModel>cz.incad.rd.Profil</machineModel>
+  <historyEnabled>true</historyEnabled>
+  <fields>
+    <field>
+      <fieldName>archCheck</fieldName>
+      <fieldHumanName>Profil.archCheck</fieldHumanName>
+      <fieldHumanHelp>Profil.archCheck_help</fieldHumanHelp>
+      <fieldDBName>archCheck</fieldDBName>
+      <fieldType>BOL</fieldType>
+      <fieldRepresentation>CHK</fieldRepresentation>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>archPrac</fieldName>
+      <fieldHumanName>Profil.archPrac</fieldHumanName>
+      <fieldHumanHelp>Profil.archPrac_help</fieldHumanHelp>
+      <fieldDBName>archPrac</fieldDBName>
+      <fieldType>STR</fieldType>
+      <fieldRepresentation>COM</fieldRepresentation>
+      <list>DpracovnikUkol</list>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>archStav</fieldName>
+      <fieldHumanName>Profil.archStav</fieldHumanName>
+      <fieldHumanHelp>Profil.archStav_help</fieldHumanHelp>
+      <fieldDBName>archStav</fieldDBName>
+      <fieldType>STR</fieldType>
+      <fieldRepresentation>COM</fieldRepresentation>
+      <list>DdigArchStav</list>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>archNeg</fieldName>
+      <fieldHumanName>Profil.archNeg</fieldHumanName>
+      <fieldHumanHelp>Profil.archNeg_help</fieldHumanHelp>
+      <fieldDBName>archNeg</fieldDBName>
+      <fieldType>BOL</fieldType>
+      <fieldRepresentation>CHK</fieldRepresentation>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>archNegPrac</fieldName>
+      <fieldHumanName>Profil.archNegPrac</fieldHumanName>
+      <fieldHumanHelp>Profil.archNegPrac_help</fieldHumanHelp>
+      <fieldDBName>archNegPrac</fieldDBName>
+      <fieldType>STR</fieldType>
+      <fieldRepresentation>COM</fieldRepresentation>
+      <list>DpracovnikUkol</list>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>barevnaHloubka</fieldName>
+      <fieldHumanName>Profil.barevnaHloubka</fieldHumanName>
+      <fieldHumanHelp>Profil.barevnaHloubka_help</fieldHumanHelp>
+      <fieldDBName>barevnaHloubka</fieldDBName>
+      <fieldType>STR</fieldType>
+      <fieldRepresentation>EDI</fieldRepresentation>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>barevnaSkala</fieldName>
+      <fieldHumanName>Profil.barevnaSkala</fieldHumanName>
+      <fieldHumanHelp>Profil.barevnaSkala_help</fieldHumanHelp>
+      <fieldDBName>barevnaSkala</fieldDBName>
+      <fieldType>STR</fieldType>
+      <fieldRepresentation>COM</fieldRepresentation>
+      <list>SLbarevnaSkala</list>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>idCislo</fieldName>
+      <fieldHumanName>Profil.idCislo</fieldHumanName>
+      <fieldHumanHelp>Profil.idCislo_help</fieldHumanHelp>
+      <fieldDBName>idCislo</fieldDBName>
+      <fieldType>STR</fieldType>
+      <fieldRepresentation>EDI</fieldRepresentation>
+      <computed/>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>tDalsiPrace</fieldName>
+      <fieldHumanName>Profil.tDalsiPrace</fieldHumanName>
+      <fieldHumanHelp>Profil.tDalsiPrace_help</fieldHumanHelp>
+      <fieldDBName>rProfil</fieldDBName>
+      <fieldType>TAB</fieldType>
+      <fieldRepresentation>REP</fieldRepresentation>
+      <reference relationshipType="aggregation" rTable="false">cz.incad.rd.DalsiPrace</reference>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>finDate</fieldName>
+      <fieldHumanName>Profil.finDate</fieldHumanName>
+      <fieldHumanHelp>Profil.finDate_help</fieldHumanHelp>
+      <fieldDBName>finDate</fieldDBName>
+      <fieldType>DAT</fieldType>
+      <fieldRepresentation>EDI</fieldRepresentation>
+      <computed/>
+      <formatPattern>dd.MM.yyyy</formatPattern>
+      <formatPatternForInput>dd.MM.yyyy</formatPatternForInput>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>ediDate</fieldName>
+      <fieldHumanName>Profil.ediDate</fieldHumanName>
+      <fieldHumanHelp>Profil.ediDate_help</fieldHumanHelp>
+      <fieldDBName>ediDate</fieldDBName>
+      <fieldType>DAT</fieldType>
+      <fieldRepresentation>EDI</fieldRepresentation>
+      <computed/>
+      <formatPattern>dd.MM.yyyy</formatPattern>
+      <formatPatternForInput>dd.MM.yyyy</formatPatternForInput>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>zalDate</fieldName>
+      <fieldHumanName>Profil.zalDate</fieldHumanName>
+      <fieldHumanHelp>Profil.zalDate_help</fieldHumanHelp>
+      <fieldDBName>zalDate</fieldDBName>
+      <fieldType>DAT</fieldType>
+      <fieldRepresentation>EDI</fieldRepresentation>
+      <computed/>
+      <formatPattern>dd.MM.yyyy</formatPattern>
+      <formatPatternForInput>dd.MM.yyyy</formatPatternForInput>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>digKnihovna</fieldName>
+      <fieldHumanName>Profil.digKnihovna</fieldHumanName>
+      <fieldHumanHelp>Profil.digKnihovna_help</fieldHumanHelp>
+      <fieldDBName>digKnihovna</fieldDBName>
+      <fieldType>STR</fieldType>
+      <fieldRepresentation>COM</fieldRepresentation>
+      <list>DLDigitalniKnihovna</list>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>skenDJVU</fieldName>
+      <fieldHumanName>Profil.skenDJVU</fieldHumanName>
+      <fieldHumanHelp>Profil.skenDJVU_help</fieldHumanHelp>
+      <fieldDBName>skenDJVU</fieldDBName>
+      <fieldType>BOL</fieldType>
+      <fieldRepresentation>CHK</fieldRepresentation>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>finUser</fieldName>
+      <fieldHumanName>Profil.finUser</fieldHumanName>
+      <fieldHumanHelp>Profil.finUser_help</fieldHumanHelp>
+      <fieldDBName>finUser</fieldDBName>
+      <fieldType>STR</fieldType>
+      <fieldRepresentation>EDI</fieldRepresentation>
+      <computed/>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>ediUser</fieldName>
+      <fieldHumanName>Profil.ediUser</fieldHumanName>
+      <fieldHumanHelp>Profil.ediUser_help</fieldHumanHelp>
+      <fieldDBName>ediUser</fieldDBName>
+      <fieldType>STR</fieldType>
+      <fieldRepresentation>EDI</fieldRepresentation>
+      <computed/>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>financovano</fieldName>
+      <fieldHumanName>Profil.financovano</fieldHumanName>
+      <fieldHumanHelp>Profil.financovano_help</fieldHumanHelp>
+      <fieldDBName>financovano</fieldDBName>
+      <fieldType>STR</fieldType>
+      <fieldRepresentation>COM</fieldRepresentation>
+      <list>Dfinancovano</list>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>headCheck</fieldName>
+      <fieldHumanName>Profil.headCheck</fieldHumanName>
+      <fieldHumanHelp>Profil.headCheck_help</fieldHumanHelp>
+      <fieldDBName>headCheck</fieldDBName>
+      <fieldType>BOL</fieldType>
+      <fieldRepresentation>CHK</fieldRepresentation>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>skenGIF</fieldName>
+      <fieldHumanName>Profil.skenGIF</fieldHumanName>
+      <fieldHumanHelp>Profil.skenGIF_help</fieldHumanHelp>
+      <fieldDBName>skenGIF</fieldDBName>
+      <fieldType>BOL</fieldType>
+      <fieldRepresentation>CHK</fieldRepresentation>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>humanName</fieldName>
+      <fieldHumanName>Profil.humanName</fieldHumanName>
+      <fieldHumanHelp>Profil.humanName_help</fieldHumanHelp>
+      <fieldDBName>humanName</fieldDBName>
+      <fieldType>STR</fieldType>
+      <fieldRepresentation>EDI</fieldRepresentation>
+      <computed/>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>skenJPEG</fieldName>
+      <fieldHumanName>Profil.skenJPEG</fieldHumanName>
+      <fieldHumanHelp>Profil.skenJPEG_help</fieldHumanHelp>
+      <fieldDBName>skenJPEG</fieldDBName>
+      <fieldType>BOL</fieldType>
+      <fieldRepresentation>CHK</fieldRepresentation>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>matNegativPrac</fieldName>
+      <fieldHumanName>Profil.matNegativPrac</fieldHumanName>
+      <fieldHumanHelp>Profil.matNegativPrac_help</fieldHumanHelp>
+      <fieldDBName>matNegativPrac</fieldDBName>
+      <fieldType>STR</fieldType>
+      <fieldRepresentation>COM</fieldRepresentation>
+      <list>DpracovnikUkol</list>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>matNegativ</fieldName>
+      <fieldHumanName>Profil.matNegativ</fieldHumanName>
+      <fieldHumanHelp>Profil.matNegativ_help</fieldHumanHelp>
+      <fieldDBName>matNegativ</fieldDBName>
+      <fieldType>BOL</fieldType>
+      <fieldRepresentation>CHK</fieldRepresentation>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>metaCheck</fieldName>
+      <fieldHumanName>Profil.metaCheck</fieldHumanName>
+      <fieldHumanHelp>Profil.metaCheck_help</fieldHumanHelp>
+      <fieldDBName>metaCheck</fieldDBName>
+      <fieldType>BOL</fieldType>
+      <fieldRepresentation>CHK</fieldRepresentation>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>metaEditor</fieldName>
+      <fieldHumanName>Profil.metaEditor</fieldHumanName>
+      <fieldHumanHelp>Profil.metaEditor_help</fieldHumanHelp>
+      <fieldDBName>metaEditor</fieldDBName>
+      <fieldType>STR</fieldType>
+      <fieldRepresentation>EDI</fieldRepresentation>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>metaPrac</fieldName>
+      <fieldHumanName>Profil.metaPrac</fieldHumanName>
+      <fieldHumanHelp>Profil.metaPrac_help</fieldHumanHelp>
+      <fieldDBName>metaPrac</fieldDBName>
+      <fieldType>STR</fieldType>
+      <fieldRepresentation>COM</fieldRepresentation>
+      <list>DpracovnikUkol</list>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>metaStav</fieldName>
+      <fieldHumanName>Profil.metaStav</fieldHumanName>
+      <fieldHumanHelp>Profil.metaStav_help</fieldHumanHelp>
+      <fieldDBName>metaStav</fieldDBName>
+      <fieldType>STR</fieldType>
+      <fieldRepresentation>COM</fieldRepresentation>
+      <list>DdigMetaStav</list>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>mikroCheck</fieldName>
+      <fieldHumanName>Profil.mikroCheck</fieldHumanName>
+      <fieldHumanHelp>Profil.mikroCheck_help</fieldHumanHelp>
+      <fieldDBName>mikroCheck</fieldDBName>
+      <fieldType>BOL</fieldType>
+      <fieldRepresentation>CHK</fieldRepresentation>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>mikroPrac</fieldName>
+      <fieldHumanName>Profil.mikroPrac</fieldHumanName>
+      <fieldHumanHelp>Profil.mikroPrac_help</fieldHumanHelp>
+      <fieldDBName>mikroPrac</fieldDBName>
+      <fieldType>STR</fieldType>
+      <fieldRepresentation>COM</fieldRepresentation>
+      <list>DpracovnikUkol</list>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>mikroStav</fieldName>
+      <fieldHumanName>Profil.mikroStav</fieldHumanName>
+      <fieldHumanHelp>Profil.mikroStav_help</fieldHumanHelp>
+      <fieldDBName>mikroStav</fieldDBName>
+      <fieldType>STR</fieldType>
+      <fieldRepresentation>COM</fieldRepresentation>
+      <list>DdigMikroStav</list>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>nazev</fieldName>
+      <fieldHumanName>Profil.nazev</fieldHumanName>
+      <fieldHumanHelp>Profil.nazev_help</fieldHumanHelp>
+      <fieldDBName>nazev</fieldDBName>
+      <fieldType>STR</fieldType>
+      <fieldRepresentation>EDI</fieldRepresentation>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>dalsiPraceClearFirst</fieldName>
+      <fieldHumanName>Profil.dalsiPraceClearFirst</fieldHumanName>
+      <fieldHumanHelp>Profil.dalsiPraceClearFirst_help</fieldHumanHelp>
+      <fieldDBName>dalsiPraceClearFirst</fieldDBName>
+      <fieldType>BOL</fieldType>
+      <fieldRepresentation>CHK</fieldRepresentation>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>skenOCRCheck</fieldName>
+      <fieldHumanName>Profil.skenOCRCheck</fieldHumanName>
+      <fieldHumanHelp>Profil.skenOCRCheck_help</fieldHumanHelp>
+      <fieldDBName>skenOCRCheck</fieldDBName>
+      <fieldType>BOL</fieldType>
+      <fieldRepresentation>CHK</fieldRepresentation>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>ocrCheck</fieldName>
+      <fieldHumanName>Profil.ocrCheck</fieldHumanName>
+      <fieldHumanHelp>Profil.ocrCheck_help</fieldHumanHelp>
+      <fieldDBName>ocrCheck</fieldDBName>
+      <fieldType>BOL</fieldType>
+      <fieldRepresentation>CHK</fieldRepresentation>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>skenOCRPrac</fieldName>
+      <fieldHumanName>Profil.skenOCRPrac</fieldHumanName>
+      <fieldHumanHelp>Profil.skenOCRPrac_help</fieldHumanHelp>
+      <fieldDBName>skenOCRPrac</fieldDBName>
+      <fieldType>STR</fieldType>
+      <fieldRepresentation>COM</fieldRepresentation>
+      <list>DpracovnikUkol</list>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>skenOCRSvabach</fieldName>
+      <fieldHumanName>Profil.skenOCRSvabach</fieldHumanName>
+      <fieldHumanHelp>Profil.skenOCRSvabach_help</fieldHumanHelp>
+      <fieldDBName>skenOCRSvabach</fieldDBName>
+      <fieldType>BOL</fieldType>
+      <fieldRepresentation>CHK</fieldRepresentation>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>parSkenovani</fieldName>
+      <fieldHumanName>Profil.parSkenovani</fieldHumanName>
+      <fieldHumanHelp>Profil.parSkenovani_help</fieldHumanHelp>
+      <fieldDBName>parSkenovani</fieldDBName>
+      <fieldType>STR</fieldType>
+      <fieldRepresentation>EDI</fieldRepresentation>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>skenPDF</fieldName>
+      <fieldHumanName>Profil.skenPDF</fieldHumanName>
+      <fieldHumanHelp>Profil.skenPDF_help</fieldHumanHelp>
+      <fieldDBName>skenPDF</fieldDBName>
+      <fieldType>BOL</fieldType>
+      <fieldRepresentation>CHK</fieldRepresentation>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>pozitiv</fieldName>
+      <fieldHumanName>Profil.pozitiv</fieldHumanName>
+      <fieldHumanHelp>Profil.pozitiv_help</fieldHumanHelp>
+      <fieldDBName>pozitiv</fieldDBName>
+      <fieldType>BOL</fieldType>
+      <fieldRepresentation>CHK</fieldRepresentation>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>poznRec</fieldName>
+      <fieldHumanName>Profil.poznRec</fieldHumanName>
+      <fieldHumanHelp>Profil.poznRec_help</fieldHumanHelp>
+      <fieldDBName>poznRec</fieldDBName>
+      <fieldType>STR</fieldType>
+      <fieldRepresentation>EDI</fieldRepresentation>
+      <validateLength>500</validateLength>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>stavPozn</fieldName>
+      <fieldHumanName>Profil.stavPozn</fieldHumanName>
+      <fieldHumanHelp>Profil.stavPozn_help</fieldHumanHelp>
+      <fieldDBName>stavPozn</fieldDBName>
+      <fieldType>STR</fieldType>
+      <fieldRepresentation>EDI</fieldRepresentation>
+      <validateLength>600</validateLength>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>predatKomuOdKoho</fieldName>
+      <fieldHumanName>Profil.predatKomuOdKoho</fieldHumanName>
+      <fieldHumanHelp>Profil.predatKomuOdKoho_help</fieldHumanHelp>
+      <fieldDBName>predatKomuOdKoho</fieldDBName>
+      <fieldType>STR</fieldType>
+      <fieldRepresentation>COM</fieldRepresentation>
+      <list>DzarazeniUser</list>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>pripCheck</fieldName>
+      <fieldHumanName>Profil.pripCheck</fieldHumanName>
+      <fieldHumanHelp>Profil.pripCheck_help</fieldHumanHelp>
+      <fieldDBName>pripCheck</fieldDBName>
+      <fieldType>BOL</fieldType>
+      <fieldRepresentation>CHK</fieldRepresentation>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>pripPrac</fieldName>
+      <fieldHumanName>Profil.pripPrac</fieldHumanName>
+      <fieldHumanHelp>Profil.pripPrac_help</fieldHumanHelp>
+      <fieldDBName>pripPrac</fieldDBName>
+      <fieldType>STR</fieldType>
+      <fieldRepresentation>COM</fieldRepresentation>
+      <list>DpracovnikUkol</list>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>pripStav</fieldName>
+      <fieldHumanName>Profil.pripStav</fieldHumanName>
+      <fieldHumanHelp>Profil.pripStav_help</fieldHumanHelp>
+      <fieldDBName>pripStav</fieldDBName>
+      <fieldType>STR</fieldType>
+      <fieldRepresentation>COM</fieldRepresentation>
+      <list>DdigPripStav</list>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>predatCheck</fieldName>
+      <fieldHumanName>Profil.predatCheck</fieldHumanName>
+      <fieldHumanHelp>Profil.predatCheck_help</fieldHumanHelp>
+      <fieldDBName>predatCheck</fieldDBName>
+      <fieldType>BOL</fieldType>
+      <fieldRepresentation>CHK</fieldRepresentation>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>rozliseni</fieldName>
+      <fieldHumanName>Profil.rozliseni</fieldHumanName>
+      <fieldHumanHelp>Profil.rozliseni_help</fieldHumanHelp>
+      <fieldDBName>rozliseni</fieldDBName>
+      <fieldType>STR</fieldType>
+      <fieldRepresentation>EDI</fieldRepresentation>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>skenerProfil</fieldName>
+      <fieldHumanName>Profil.skenerProfil</fieldHumanName>
+      <fieldHumanHelp>Profil.skenerProfil_help</fieldHumanHelp>
+      <fieldDBName>skenerProfil</fieldDBName>
+      <fieldType>STR</fieldType>
+      <fieldRepresentation>COM</fieldRepresentation>
+      <list>DSkener</list>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>skenCheck</fieldName>
+      <fieldHumanName>Profil.skenCheck</fieldHumanName>
+      <fieldHumanHelp>Profil.skenCheck_help</fieldHumanHelp>
+      <fieldDBName>skenCheck</fieldDBName>
+      <fieldType>BOL</fieldType>
+      <fieldRepresentation>CHK</fieldRepresentation>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>skenPrac</fieldName>
+      <fieldHumanName>Profil.skenPrac</fieldHumanName>
+      <fieldHumanHelp>Profil.skenPrac_help</fieldHumanHelp>
+      <fieldDBName>skenPrac</fieldDBName>
+      <fieldType>STR</fieldType>
+      <fieldRepresentation>COM</fieldRepresentation>
+      <list>DpracovnikUkol</list>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>skenStav</fieldName>
+      <fieldHumanName>Profil.skenStav</fieldHumanName>
+      <fieldHumanHelp>Profil.skenStav_help</fieldHumanHelp>
+      <fieldDBName>skenStav</fieldDBName>
+      <fieldType>STR</fieldType>
+      <fieldRepresentation>COM</fieldRepresentation>
+      <list>DdigSkenStav</list>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>stavRec</fieldName>
+      <fieldHumanName>Profil.stavRec</fieldHumanName>
+      <fieldHumanHelp>Profil.stavRec_help</fieldHumanHelp>
+      <fieldDBName>stavRec</fieldDBName>
+      <fieldType>STR</fieldType>
+      <fieldRepresentation>EDI</fieldRepresentation>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>popis</fieldName>
+      <fieldHumanName>Profil.popis</fieldHumanName>
+      <fieldHumanHelp>Profil.popis_help</fieldHumanHelp>
+      <fieldDBName>popis</fieldDBName>
+      <fieldType>STR</fieldType>
+      <fieldRepresentation>EDI</fieldRepresentation>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>skenTIFF</fieldName>
+      <fieldHumanName>Profil.skenTIFF</fieldHumanName>
+      <fieldHumanHelp>Profil.skenTIFF_help</fieldHumanHelp>
+      <fieldDBName>skenTIFF</fieldDBName>
+      <fieldType>BOL</fieldType>
+      <fieldRepresentation>CHK</fieldRepresentation>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>skenTXT</fieldName>
+      <fieldHumanName>Profil.skenTXT</fieldHumanName>
+      <fieldHumanHelp>Profil.skenTXT_help</fieldHumanHelp>
+      <fieldDBName>skenTXT</fieldDBName>
+      <fieldType>BOL</fieldType>
+      <fieldRepresentation>CHK</fieldRepresentation>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>predTypAkce</fieldName>
+      <fieldHumanName>Profil.predTypAkce</fieldHumanName>
+      <fieldHumanHelp>Profil.predTypAkce_help</fieldHumanHelp>
+      <fieldDBName>predTypAkce</fieldDBName>
+      <fieldType>STR</fieldType>
+      <fieldRepresentation>COM</fieldRepresentation>
+      <list>SLtypAkce</list>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>value</fieldName>
+      <fieldHumanName>Profil.value</fieldHumanName>
+      <fieldHumanHelp>Profil.value_help</fieldHumanHelp>
+      <fieldDBName>value</fieldDBName>
+      <fieldType>STR</fieldType>
+      <fieldRepresentation>EDI</fieldRepresentation>
+      <computed/>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>predatVarka</fieldName>
+      <fieldHumanName>Profil.predatVarka</fieldHumanName>
+      <fieldHumanHelp>Profil.predatVarka_help</fieldHumanHelp>
+      <fieldDBName>predatVarka</fieldDBName>
+      <fieldType>STR</fieldType>
+      <fieldRepresentation>EDI</fieldRepresentation>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>securityOwner</fieldName>
+      <fieldHumanName>Profil.securityOwner</fieldHumanName>
+      <fieldHumanHelp>Profil.securityOwner_help</fieldHumanHelp>
+      <fieldDBName>securityOwner</fieldDBName>
+      <fieldType>STR</fieldType>
+      <fieldRepresentation>COM</fieldRepresentation>
+      <list>DzarazeniUser</list>
+      <computed/>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>zalUser</fieldName>
+      <fieldHumanName>Profil.zalUser</fieldHumanName>
+      <fieldHumanHelp>Profil.zalUser_help</fieldHumanHelp>
+      <fieldDBName>zalUser</fieldDBName>
+      <fieldType>STR</fieldType>
+      <fieldRepresentation>EDI</fieldRepresentation>
+      <computed/>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>zpracCheck</fieldName>
+      <fieldHumanName>Profil.zpracCheck</fieldHumanName>
+      <fieldHumanHelp>Profil.zpracCheck_help</fieldHumanHelp>
+      <fieldDBName>zpracCheck</fieldDBName>
+      <fieldType>BOL</fieldType>
+      <fieldRepresentation>CHK</fieldRepresentation>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>zpracEditor</fieldName>
+      <fieldHumanName>Profil.zpracEditor</fieldHumanName>
+      <fieldHumanHelp>Profil.zpracEditor_help</fieldHumanHelp>
+      <fieldDBName>zpracEditor</fieldDBName>
+      <fieldType>STR</fieldType>
+      <fieldRepresentation>COM</fieldRepresentation>
+      <list>DdigZpracEditor</list>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>zpracParm</fieldName>
+      <fieldHumanName>Profil.zpracParm</fieldHumanName>
+      <fieldHumanHelp>Profil.zpracParm_help</fieldHumanHelp>
+      <fieldDBName>zpracParm</fieldDBName>
+      <fieldType>STR</fieldType>
+      <fieldRepresentation>EDI</fieldRepresentation>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>zpracPrac</fieldName>
+      <fieldHumanName>Profil.zpracPrac</fieldHumanName>
+      <fieldHumanHelp>Profil.zpracPrac_help</fieldHumanHelp>
+      <fieldDBName>zpracPrac</fieldDBName>
+      <fieldType>STR</fieldType>
+      <fieldRepresentation>COM</fieldRepresentation>
+      <list>DpracovnikUkol</list>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>zpracStav</fieldName>
+      <fieldHumanName>Profil.zpracStav</fieldHumanName>
+      <fieldHumanHelp>Profil.zpracStav_help</fieldHumanHelp>
+      <fieldDBName>zpracStav</fieldDBName>
+      <fieldType>STR</fieldType>
+      <fieldRepresentation>COM</fieldRepresentation>
+      <list>DdigZpracStav</list>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>zpusobDig</fieldName>
+      <fieldHumanName>Profil.zpusobDig</fieldHumanName>
+      <fieldHumanHelp>Profil.zpusobDig_help</fieldHumanHelp>
+      <fieldDBName>zpusobDig</fieldDBName>
+      <fieldType>STR</fieldType>
+      <fieldRepresentation>COM</fieldRepresentation>
+      <list>DzpusobDig</list>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>publStav</fieldName>
+      <fieldHumanName>Profil.publStav</fieldHumanName>
+      <fieldHumanHelp>Profil.publStav_help</fieldHumanHelp>
+      <fieldDBName>publStav</fieldDBName>
+      <fieldType>STR</fieldType>
+      <fieldRepresentation>COM</fieldRepresentation>
+      <list>DdigPublStav</list>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>publCheck</fieldName>
+      <fieldHumanName>Profil.publCheck</fieldHumanName>
+      <fieldHumanHelp>Profil.publCheck_help</fieldHumanHelp>
+      <fieldDBName>publCheck</fieldDBName>
+      <fieldType>BOL</fieldType>
+      <fieldRepresentation>CHK</fieldRepresentation>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>publPrac</fieldName>
+      <fieldHumanName>Profil.publPrac</fieldHumanName>
+      <fieldHumanHelp>Profil.publPrac_help</fieldHumanHelp>
+      <fieldDBName>publPrac</fieldDBName>
+      <fieldType>STR</fieldType>
+      <fieldRepresentation>COM</fieldRepresentation>
+      <list>DpracovnikUkol</list>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+  </fields>
+  <forms>
+    <screen-form name="ProfilF" formHumanName="ProfilF" id="cz.incad.rd.Profil">
+      <form-body align="LEFT" valign="TOP">
+        <row fill="LEFT" vfill="TOP">
+          <input align="LEFT" valign="TOP" indent="false" width="100ch" id="nazev" precision="0" scale="0" type="text">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </input>
+        </row>
+        <row fill="LEFT" vfill="TOP">
+          <input align="LEFT" valign="TOP" indent="false" width="100ch" id="popis" precision="0" scale="0" type="text" rows="3">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </input>
+        </row>
+        <row fill="LEFT" vfill="TOP">
+          <border type="solid" color=""/>
+          <check align="LEFT" valign="TOP" indent="false" columnIndex="1" id="headCheck" precision="0" scale="0"/>
+          <select align="LEFT" valign="TOP" indent="false" columnIndex="2" width="30ch" id="financovano" precision="0" scale="0" type="combo" multi="false" editable="false">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </select>
+          <select align="LEFT" valign="TOP" indent="false" columnIndex="3" width="30ch" id="zpusobDig" precision="0" scale="0" type="combo" multi="false" editable="false">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </select>
+        </row>
+        <row fill="LEFT" vfill="TOP">
+          <border type="solid" color="">
+            <title>Profil.F.ProfilF.Priprava</title>
+          </border>
+          <row fill="LEFT" vfill="TOP">
+            <check align="LEFT" valign="TOP" indent="false" columnIndex="1" id="pripCheck" precision="0" scale="0"/>
+            <select align="LEFT" valign="TOP" indent="false" columnIndex="2" id="pripStav" precision="0" scale="0" type="combo" multi="false" editable="false">
+              <label place="TOP">
+                <from-field colon="true"/>
+              </label>
+            </select>
+            <select align="LEFT" valign="TOP" indent="false" columnIndex="3" width="30ch" id="pripPrac" precision="19" scale="4" type="combo" multi="false" editable="false">
+              <label place="TOP">Form.prac</label>
+            </select>
+          </row>
+          <row fill="LEFT" vfill="TOP">
+            <empty align="LEFT" valign="TOP" indent="false" width="100ch"/>
+          </row>
+        </row>
+        <row fill="LEFT" vfill="TOP">
+          <border type="solid" color="">
+            <title>Profil.F.ProfilF.Mikrofilmovani</title>
+          </border>
+          <row fill="LEFT" vfill="TOP">
+            <check align="LEFT" valign="TOP" indent="false" columnIndex="1" id="mikroCheck" precision="19" scale="4"/>
+            <select align="LEFT" valign="TOP" indent="false" columnIndex="2" id="mikroStav" precision="0" scale="0" type="combo" multi="false" editable="false">
+              <label place="TOP">
+                <from-field colon="true"/>
+              </label>
+            </select>
+            <select align="LEFT" valign="TOP" indent="false" columnIndex="3" width="30ch" id="mikroPrac" precision="19" scale="4" type="combo" multi="false" editable="false">
+              <label place="TOP">Form.prac</label>
+            </select>
+          </row>
+          <row fill="LEFT" vfill="TOP">
+            <check align="LEFT" valign="TOP" indent="false" columnIndex="1" id="archNeg" precision="19" scale="4">
+              <label place="TOP">
+                <from-field colon="true"/>
+              </label>
+            </check>
+            <select align="LEFT" valign="TOP" indent="false" columnIndex="2" id="archNegPrac" precision="0" scale="0" type="combo" multi="false" editable="false">
+              <label place="TOP">Form.prac</label>
+            </select>
+            <check align="LEFT" valign="TOP" indent="false" columnIndex="1" id="matNegativ" precision="19" scale="4">
+              <label place="TOP">
+                <from-field colon="true"/>
+              </label>
+            </check>
+            <select align="LEFT" valign="TOP" indent="false" columnIndex="2" id="matNegativPrac" precision="0" scale="0" type="combo" multi="false" editable="false">
+              <label place="TOP">Form.prac</label>
+            </select>
+            <check align="LEFT" valign="TOP" indent="false" columnIndex="1" id="pozitiv" precision="19" scale="4">
+              <label place="TOP">
+                <from-field colon="true"/>
+              </label>
+            </check>
+          </row>
+          <row fill="LEFT" vfill="TOP">
+            <empty align="LEFT" valign="TOP" indent="false" width="100ch"/>
+          </row>
+        </row>
+        <row fill="LEFT" vfill="TOP">
+          <border type="solid" color="">
+            <title>Profil.F.ProfilF.Skenovani</title>
+          </border>
+          <row fill="LEFT" vfill="TOP">
+            <check align="LEFT" valign="TOP" indent="false" columnIndex="1" id="skenCheck" precision="19" scale="4"/>
+            <select align="LEFT" valign="TOP" indent="false" columnIndex="2" id="skenStav" precision="0" scale="0" type="combo" multi="false" editable="false">
+              <label place="TOP">
+                <from-field colon="true"/>
+              </label>
+            </select>
+            <select align="LEFT" valign="TOP" indent="false" columnIndex="3" width="30ch" id="skenPrac" precision="19" scale="4" type="combo" multi="false" editable="false">
+              <label place="TOP">Form.prac</label>
+            </select>
+            <input align="LEFT" valign="TOP" indent="false" columnIndex="4" width="20ch" id="rozliseni" precision="0" scale="0" type="text">
+              <label place="TOP">
+                <from-field colon="true"/>
+              </label>
+            </input>
+            <input align="LEFT" valign="TOP" indent="false" columnIndex="5" width="20ch" id="barevnaHloubka" precision="0" scale="0" type="text">
+              <label place="TOP">
+                <from-field colon="true"/>
+              </label>
+            </input>
+            <select align="LEFT" valign="TOP" indent="false" columnIndex="6" width="20ch" id="barevnaSkala" precision="0" scale="0" type="combo" multi="false" editable="false">
+              <label place="TOP">
+                <from-field colon="true"/>
+              </label>
+            </select>
+          </row>
+          <row fill="LEFT" vfill="TOP">
+            <select align="LEFT" valign="TOP" indent="false" columnIndex="1" width="20ch" id="skenerProfil" precision="0" scale="0" type="combo" multi="false" editable="false">
+              <label place="TOP">
+                <from-field colon="true"/>
+              </label>
+            </select>
+            <input align="LEFT" valign="TOP" indent="false" columnIndex="2" id="parSkenovani" precision="19" scale="4" type="text">
+              <label place="TOP">
+                <from-field colon="true"/>
+              </label>
+            </input>
+          </row>
+          <row fill="LEFT" vfill="TOP">
+            <check align="LEFT" valign="TOP" indent="false" columnIndex="1" id="skenDJVU" precision="0" scale="0">
+              <label place="TOP">
+                <from-field colon="true"/>
+              </label>
+            </check>
+            <empty align="LEFT" valign="TOP" indent="false" width="3ch"/>
+            <check align="LEFT" valign="TOP" indent="false" columnIndex="2" id="skenGIF" precision="0" scale="0">
+              <label place="TOP">
+                <from-field colon="true"/>
+              </label>
+            </check>
+            <empty align="LEFT" valign="TOP" indent="false" width="3ch"/>
+            <check align="LEFT" valign="TOP" indent="false" columnIndex="3" id="skenJPEG" precision="0" scale="0">
+              <label place="TOP">
+                <from-field colon="true"/>
+              </label>
+            </check>
+            <empty align="LEFT" valign="TOP" indent="false" width="3ch"/>
+            <check align="LEFT" valign="TOP" indent="false" columnIndex="4" id="skenPDF" precision="0" scale="0">
+              <label place="TOP">
+                <from-field colon="true"/>
+              </label>
+            </check>
+            <empty align="LEFT" valign="TOP" indent="false" width="3ch"/>
+            <check align="LEFT" valign="TOP" indent="false" columnIndex="5" id="skenTIFF" precision="0" scale="0">
+              <label place="TOP">
+                <from-field colon="true"/>
+              </label>
+            </check>
+            <empty align="LEFT" valign="TOP" indent="false" width="3ch"/>
+            <check align="LEFT" valign="TOP" indent="false" columnIndex="6" id="skenTXT" precision="0" scale="0">
+              <label place="TOP">
+                <from-field colon="true"/>
+              </label>
+            </check>
+          </row>
+          <row fill="LEFT" vfill="TOP">
+            <empty align="LEFT" valign="TOP" indent="false" width="100ch"/>
+          </row>
+        </row>
+        <row fill="LEFT" vfill="TOP">
+          <border type="solid" color="">
+            <title>Profil.F.ProfilF.OCR</title>
+          </border>
+          <row fill="LEFT" vfill="TOP">
+            <check align="LEFT" valign="TOP" indent="false" columnIndex="1" id="ocrCheck" precision="0" scale="0"/>
+            <select align="LEFT" valign="TOP" indent="false" columnIndex="4" id="skenOCRPrac" precision="19" scale="4" type="combo" multi="false" editable="false">
+              <label place="TOP">Form.prac</label>
+            </select>
+            <check align="LEFT" valign="TOP" indent="false" columnIndex="2" id="skenOCRSvabach" precision="0" scale="0">
+              <label place="TOP">
+                <from-field colon="true"/>
+              </label>
+            </check>
+            <check align="LEFT" valign="TOP" indent="false" columnIndex="3" id="skenOCRCheck" precision="19" scale="4">
+              <label place="TOP">
+                <from-field colon="true"/>
+              </label>
+            </check>
+          </row>
+          <row fill="LEFT" vfill="TOP">
+            <empty align="LEFT" valign="TOP" indent="false" width="100ch"/>
+          </row>
+        </row>
+        <row fill="LEFT" vfill="TOP">
+          <border type="solid" color="">
+            <title>Profil.F.ProfilF.Metadata</title>
+          </border>
+          <row fill="LEFT" vfill="TOP">
+            <check align="LEFT" valign="TOP" indent="false" columnIndex="1" id="metaCheck" precision="19" scale="4"/>
+            <select align="LEFT" valign="TOP" indent="false" columnIndex="2" id="metaStav" precision="0" scale="0" type="combo" multi="false" editable="false">
+              <label place="TOP">
+                <from-field colon="true"/>
+              </label>
+            </select>
+            <select align="LEFT" valign="TOP" indent="false" columnIndex="3" width="30ch" id="metaPrac" precision="19" scale="4" type="combo" multi="false" editable="false">
+              <label place="TOP">Form.prac</label>
+            </select>
+            <input align="LEFT" valign="TOP" indent="false" columnIndex="4" width="30ch" id="metaEditor" precision="0" scale="0" type="text">
+              <label place="TOP">
+                <from-field colon="true"/>
+              </label>
+            </input>
+          </row>
+          <row fill="LEFT" vfill="TOP">
+            <empty align="LEFT" valign="TOP" indent="false" width="100ch"/>
+          </row>
+        </row>
+        <row fill="LEFT" vfill="TOP">
+          <border type="solid" color="">
+            <title>Profil.F.ProfilF.Zpracovani</title>
+          </border>
+          <row fill="LEFT" vfill="TOP">
+            <check align="LEFT" valign="TOP" indent="false" columnIndex="1" id="zpracCheck" precision="0" scale="0"/>
+            <select align="LEFT" valign="TOP" indent="false" columnIndex="2" id="zpracStav" precision="0" scale="0" type="combo" multi="false" editable="false">
+              <label place="TOP">
+                <from-field colon="true"/>
+              </label>
+            </select>
+            <select align="LEFT" valign="TOP" indent="false" columnIndex="3" id="zpracPrac" precision="0" scale="0" type="combo" multi="false" editable="false">
+              <label place="TOP">Form.prac</label>
+            </select>
+            <select align="LEFT" valign="TOP" indent="false" columnIndex="4" id="zpracEditor" precision="0" scale="0" type="combo" multi="false" editable="false">
+              <label place="TOP">
+                <from-field colon="true"/>
+              </label>
+            </select>
+            <input align="LEFT" valign="TOP" indent="false" columnIndex="5" width="40ch" id="zpracParm" precision="0" scale="0" type="text">
+              <label place="TOP">
+                <from-field colon="true"/>
+              </label>
+            </input>
+          </row>
+          <row fill="LEFT" vfill="TOP">
+            <empty align="LEFT" valign="TOP" indent="false" width="100ch"/>
+          </row>
+        </row>
+        <row fill="LEFT" vfill="TOP">
+          <border type="solid" color="">
+            <title>Profil.F.ProfilF.Zverejneni</title>
+          </border>
+          <row fill="LEFT" vfill="TOP">
+            <check align="LEFT" valign="TOP" indent="false" columnIndex="1" id="publCheck" precision="19" scale="4"/>
+            <select align="LEFT" valign="TOP" indent="false" columnIndex="2" id="publStav" precision="0" scale="0" type="combo" multi="false" editable="false">
+              <label place="TOP">
+                <from-field colon="true"/>
+              </label>
+            </select>
+            <select align="LEFT" valign="TOP" indent="false" columnIndex="3" width="30ch" id="publPrac" precision="19" scale="4" type="combo" multi="false" editable="false">
+              <label place="TOP">Form.prac</label>
+            </select>
+            <select align="LEFT" valign="TOP" indent="false" columnIndex="4" width="30ch" id="digKnihovna" precision="0" scale="0" type="combo" multi="false" editable="false">
+              <label place="TOP">
+                <from-field colon="true"/>
+              </label>
+            </select>
+          </row>
+          <row fill="LEFT" vfill="TOP">
+            <empty align="LEFT" valign="TOP" indent="false" width="100ch"/>
+          </row>
+        </row>
+        <row fill="LEFT" vfill="TOP">
+          <border type="solid" color="">
+            <title>Profil.F.ProfilF.Archivace</title>
+          </border>
+          <row fill="LEFT" vfill="TOP">
+            <check align="LEFT" valign="TOP" indent="false" columnIndex="1" id="archCheck" precision="19" scale="4"/>
+            <select align="LEFT" valign="TOP" indent="false" columnIndex="2" id="archStav" precision="0" scale="0" type="combo" multi="false" editable="false">
+              <label place="TOP">
+                <from-field colon="true"/>
+              </label>
+            </select>
+            <select align="LEFT" valign="TOP" indent="false" columnIndex="3" id="archPrac" precision="19" scale="4" type="combo" multi="false" editable="false">
+              <label place="TOP">Form.prac</label>
+            </select>
+          </row>
+          <row fill="LEFT" vfill="TOP">
+            <empty align="LEFT" valign="TOP" indent="false" width="100ch"/>
+          </row>
+        </row>
+        <row fill="LEFT" vfill="TOP">
+          <border type="solid" color="">
+            <title>Profil.F.ProfilF.Pedani</title>
+          </border>
+          <row fill="LEFT" vfill="TOP">
+            <check align="LEFT" valign="TOP" indent="false" columnIndex="1" id="predatCheck" precision="0" scale="0"/>
+            <select align="LEFT" valign="TOP" indent="false" columnIndex="2" id="predTypAkce" precision="0" scale="0" type="combo" multi="false" editable="false">
+              <label place="TOP">
+                <from-field colon="true"/>
+              </label>
+            </select>
+            <select align="LEFT" valign="TOP" indent="false" columnIndex="3" id="predatKomuOdKoho" precision="0" scale="0" type="combo" multi="false" editable="false">
+              <label place="TOP">
+                <from-field colon="true"/>
+              </label>
+            </select>
+            <input align="LEFT" valign="TOP" indent="false" columnIndex="4" id="predatVarka" precision="0" scale="0" type="text">
+              <label place="TOP">
+                <from-field colon="true"/>
+              </label>
+            </input>
+          </row>
+          <row fill="LEFT" vfill="TOP">
+            <empty align="LEFT" valign="TOP" indent="false" width="100ch"/>
+          </row>
+        </row>
+        <row fill="LEFT" vfill="TOP">
+          <border type="solid" color="">
+            <title>Profil.F.ProfilF.DalsiPrace</title>
+          </border>
+          <repeat align="LEFT" valign="TOP" indent="false" id="tDalsiPrace" precision="0" scale="0" refclass="cz.incad.rd.DalsiPrace" form="DalsiPraceVProfilu"/>
+        </row>
+        <row fill="LEFT" vfill="TOP">
+          <input align="LEFT" valign="TOP" indent="false" width="100ch" id="poznRec" precision="0" scale="0" type="text" rows="3">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </input>
+        </row>
+      </form-body>
+    </screen-form>
+    <tree name="AvailableForms">
+      <node formName="ProfilF"/>
+    </tree>
+  </forms>
+  <uniqueFields/>
+</desk>

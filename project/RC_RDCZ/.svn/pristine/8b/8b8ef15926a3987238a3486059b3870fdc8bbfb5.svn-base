@@ -1,0 +1,23 @@
+/* *****************************************************************************
+ * To change this template, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package cz.incad.rd;
+
+import cz.incad.core.basic.DListsEntity;
+
+/** ****************************************************************************
+ *
+ * @author martin
+ */
+public class KatalogEntity extends DListsEntity {
+    public static final String F_nazev_STR              = "nazev";
+    public static final String F_zkratka_STR            = "zkratka";
+    public static final String F_urlKatalogu_STR        = "urlKatalogu";
+    public static final String F_moznostiSklizeni_STR   = "moznostiSklizeni";
+    public static final String F_link001Prefix_STR      = "link001Prefix";
+    public static final String F_link001Sufix_STR       = "link001Sufix";
+    public static final String F_rPrispevatel_REF       = "rPrispevatel";
+    public static final String F_stav_STR               = "stav";
+
+}

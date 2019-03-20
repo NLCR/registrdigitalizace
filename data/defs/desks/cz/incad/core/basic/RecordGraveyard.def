@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<desk bundle="ServerBundle">
+  <deskPackage>cz.incad.core.basic</deskPackage>
+  <deskName>RecordGraveyard</deskName>
+  <deskHumanHelp>RecordGraveyard_help</deskHumanHelp>
+  <deskHumanName>RecordGraveyard</deskHumanName>
+  <deskDBName>RecordGraveyard</deskDBName>
+  <deskRoot/>
+  <machineModel>cz.incad.core.basic.RecordGraveyard</machineModel>
+  <fields>
+    <field>
+      <fieldName>agenda</fieldName>
+      <fieldHumanName>RecordGraveyard.agenda</fieldHumanName>
+      <fieldHumanHelp>RecordGraveyard.agenda_help</fieldHumanHelp>
+      <fieldDBName>agenda</fieldDBName>
+      <fieldType>STR</fieldType>
+      <fieldRepresentation>EDI</fieldRepresentation>
+      <computed/>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>datum</fieldName>
+      <fieldHumanName>RecordGraveyard.datum</fieldHumanName>
+      <fieldHumanHelp>RecordGraveyard.datum_help</fieldHumanHelp>
+      <fieldDBName>datum</fieldDBName>
+      <fieldType>DAT</fieldType>
+      <fieldRepresentation>EDI</fieldRepresentation>
+      <computed/>
+      <formatPattern>dd.MM.yyyy</formatPattern>
+      <formatPatternForInput>dd.MM.yyyy</formatPatternForInput>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>recordId</fieldName>
+      <fieldHumanName>RecordGraveyard.recordId</fieldHumanName>
+      <fieldHumanHelp>RecordGraveyard.recordId_help</fieldHumanHelp>
+      <fieldDBName>recordId</fieldDBName>
+      <fieldType>INT</fieldType>
+      <fieldRepresentation>EDI</fieldRepresentation>
+      <computed/>
+      <precision>19</precision>
+    </field>
+    <field>
+      <fieldName>memorial</fieldName>
+      <fieldHumanName>RecordGraveyard.memorial</fieldHumanName>
+      <fieldHumanHelp>RecordGraveyard.memorial_help</fieldHumanHelp>
+      <fieldDBName>memorial</fieldDBName>
+      <fieldType>TXT</fieldType>
+      <fieldRepresentation>TXT</fieldRepresentation>
+      <computed/>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>uzivatel</fieldName>
+      <fieldHumanName>RecordGraveyard.uzivatel</fieldHumanName>
+      <fieldHumanHelp>RecordGraveyard.uzivatel_help</fieldHumanHelp>
+      <fieldDBName>uzivatel</fieldDBName>
+      <fieldType>STR</fieldType>
+      <fieldRepresentation>EDI</fieldRepresentation>
+      <computed/>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+  </fields>
+  <forms>
+    <screen-form name="default" formHumanName="RecordGraveyard.form.default" id="cz.incad.core.basic.RecordGraveyard">
+      <form-body align="LEFT" valign="TOP">
+        <row fill="LEFT" vfill="TOP">
+          <input align="LEFT" valign="TOP" indent="false" width="100ch" id="datum" precision="19" scale="4" formatPattern="dd.MM.yyyy" formatPatternForInput="dd.MM.yyyy" type="text">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </input>
+          <input align="LEFT" valign="TOP" indent="false" width="100ch" id="uzivatel" precision="19" scale="4" type="text">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </input>
+        </row>
+        <row fill="LEFT" vfill="TOP">
+          <input align="LEFT" valign="TOP" indent="false" width="100ch" id="agenda" precision="0" scale="0" type="text">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </input>
+          <input align="LEFT" valign="TOP" indent="false" width="100ch" id="recordId" precision="19" scale="0" type="text">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </input>
+        </row>
+        <row fill="LEFT" vfill="TOP">
+          <input align="LEFT" valign="TOP" indent="false" width="100ch" id="memorial" precision="0" scale="0" type="longtext" rows="30">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </input>
+        </row>
+      </form-body>
+    </screen-form>
+    <tree name="AvailableForms">
+      <node formName="default"/>
+    </tree>
+  </forms>
+  <uniqueFields/>
+</desk>

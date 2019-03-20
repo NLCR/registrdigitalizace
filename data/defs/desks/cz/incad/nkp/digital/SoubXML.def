@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<desk bundle="ServerBundle">
+  <deskPackage>cz.incad.nkp.digital</deskPackage>
+  <deskName>SoubXML</deskName>
+  <deskHumanHelp>cz.incad.nkp.digital.SoubXML_help</deskHumanHelp>
+  <deskHumanName>cz.incad.nkp.digital.SoubXML</deskHumanName>
+  <deskDBName>SoubXML</deskDBName>
+  <deskRoot>cz.incad.core.basic.Soubor</deskRoot>
+  <machineModel>cz.incad.nkp.digital.SoubXML</machineModel>
+  <fields>
+    <field>
+      <fieldName>pocetImg</fieldName>
+      <fieldHumanName>SoubXML.pocetImg</fieldHumanName>
+      <fieldHumanHelp>SoubXML.pocetImg_help</fieldHumanHelp>
+      <fieldDBName>pocetImg</fieldDBName>
+      <fieldType>INT</fieldType>
+      <fieldRepresentation>EDI</fieldRepresentation>
+      <computed/>
+      <precision>19</precision>
+    </field>
+    <field>
+      <fieldName>rozsah</fieldName>
+      <fieldHumanName>SoubXML.rozsah</fieldHumanName>
+      <fieldHumanHelp>SoubXML.rozsah_help</fieldHumanHelp>
+      <fieldDBName>rozsah</fieldDBName>
+      <fieldType>STR</fieldType>
+      <fieldRepresentation>EDI</fieldRepresentation>
+      <validateLength>1000</validateLength>
+      <computed/>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>rTitNkp</fieldName>
+      <fieldHumanName>SoubXML.rTitNkp</fieldHumanName>
+      <fieldHumanHelp>SoubXML.rTitNkp_help</fieldHumanHelp>
+      <fieldDBName>rTitNkpSX</fieldDBName>
+      <fieldType>REF</fieldType>
+      <fieldRepresentation>REF</fieldRepresentation>
+      <reference relationshipType="association" rTable="false">cz.incad.nkp.digital.TitNkp</reference>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>tSouborZakazky</fieldName>
+      <fieldHumanName>SoubXML.tSouborZakazky</fieldHumanName>
+      <fieldHumanHelp>SoubXML.tSouborZakazky_help</fieldHumanHelp>
+      <fieldDBName>rSoubXMLSZ</fieldDBName>
+      <fieldType>TAB</fieldType>
+      <fieldRepresentation>RTB</fieldRepresentation>
+      <reference relationshipType="aggregation" rTable="false">cz.incad.nkp.digital.SouborZakazky</reference>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+  </fields>
+  <forms>
+    <screen-form name="SoubXMLF" formHumanName="SoubXMLF" id="cz.incad.nkp.digital.SoubXML">
+      <form-body align="LEFT" valign="TOP">
+        <row fill="LEFT" vfill="TOP">
+          <bin align="LEFT" valign="TOP" indent="false" columnIndex="1" width="60px" height="60px" id="bSoubor" precision="0" scale="0"/>
+          <input align="LEFT" valign="TOP" indent="false" columnIndex="2" width="200px" id="nazev" precision="19" scale="4" type="text">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </input>
+          <input align="LEFT" valign="TOP" indent="false" columnIndex="3" width="100px" id="velikost" precision="19" scale="4" type="text">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </input>
+          <selectDate align="LEFT" valign="TOP" indent="false" columnIndex="4" width="150px" id="zalDate" precision="19" scale="4">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </selectDate>
+          <input align="LEFT" valign="TOP" indent="false" columnIndex="5" width="100px" id="zalUser" precision="19" scale="4" type="text">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </input>
+        </row>
+        <row fill="LEFT" vfill="TOP">
+          <input align="LEFT" valign="TOP" indent="false" columnIndex="1" width="100ch" id="rTitNkp.hlNazev" precision="19" scale="4" ref="true" type="text">
+            <label place="TOP">SoubXML.SoubXMLF.hlNazev</label>
+          </input>
+          <refbutton align="LEFT" valign="TOP" indent="false" columnIndex="2" id="rTitNkp" precision="19" scale="4" refclass="cz.incad.nkp.digital.TitNkp"/>
+        </row>
+        <row fill="LEFT" vfill="TOP">
+          <input align="LEFT" valign="TOP" indent="false" columnIndex="1" width="500px" id="rozsah" precision="19" scale="4" type="text" rows="2">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </input>
+          <input align="LEFT" valign="TOP" indent="false" columnIndex="2" width="120px" id="pocetImg" precision="19" scale="0" type="text">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </input>
+        </row>
+        <row fill="LEFT" vfill="TOP">
+          <rtb align="LEFT" valign="TOP" indent="false" id="tSouborZakazky" precision="0" scale="0" refclass="cz.incad.nkp.digital.SouborZakazky" form="SouborZakazkyF">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </rtb>
+        </row>
+        <row fill="LEFT" vfill="TOP">
+          <input align="LEFT" valign="TOP" indent="false" width="600px" id="poznRec" precision="19" scale="4" type="text" rows="2">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </input>
+        </row>
+      </form-body>
+    </screen-form>
+    <tree name="AvailableForms">
+      <node formName="SoubXMLF"/>
+    </tree>
+  </forms>
+  <uniqueFields/>
+</desk>
