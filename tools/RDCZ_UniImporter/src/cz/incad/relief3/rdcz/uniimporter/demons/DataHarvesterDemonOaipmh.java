@@ -135,7 +135,7 @@ public class DataHarvesterDemonOaipmh extends DataHarvesterDemon implements Seri
                     fromOutStream.close();
                 }
             }
-
+            
         } catch (Exception ex) {
             LOG.log(Level.SEVERE, "Harvest data failed.", ex);
         }
